@@ -138,14 +138,14 @@ function renderRows(jobs) {
     .map(
       (job) => `
         <tr>
-          <td>${escapeHtml(formatDate(job.posted_on))}</td>
-          <td>${escapeHtml(job.company)}</td>
-          <td>${escapeHtml(job.title)}</td>
-          <td>${escapeHtml(job.location)}</td>
-          <td><span class="pill">${escapeHtml(job.career_bucket_label)}</span></td>
-          <td>${escapeHtml(job.experience_display)}</td>
-          <td>${escapeHtml(job.authorization_category_label)}</td>
-          <td>${escapeHtml(job.sponsorship_status.replaceAll("_", " "))}</td>
+          <td><span class="cell-date">${escapeHtml(formatDate(job.posted_on))}</span></td>
+          <td><span class="cell-primary">${escapeHtml(job.company)}</span></td>
+          <td><span class="cell-primary">${escapeHtml(job.title)}</span></td>
+          <td><span class="cell-secondary">${escapeHtml(job.location)}</span></td>
+          <td><span class="pill pill-bucket">${escapeHtml(job.career_bucket_label)}</span></td>
+          <td><span class="cell-primary">${escapeHtml(job.experience_display)}</span></td>
+          <td><span class="pill pill-auth">${escapeHtml(job.authorization_category_label)}</span></td>
+          <td><span class="pill pill-neutral">${escapeHtml(job.sponsorship_status.replaceAll("_", " "))}</span></td>
           <td><a class="link-button" href="${escapeHtml(job.job_link)}" target="_blank" rel="noopener noreferrer">Apply</a></td>
         </tr>
       `
