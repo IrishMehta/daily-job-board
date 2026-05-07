@@ -1,0 +1,10 @@
+# Ignore everything in this folder by default.
+*
+
+# Keep this file.
+!.gitignore
+
+# Keep the publishable artifacts only.
+!README.md
+!docs/
+!docs/**

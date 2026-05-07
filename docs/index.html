@@ -1,0 +1,114 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Daily Job Board</title>
+  <link rel="stylesheet" href="./styles.css">
+</head>
+<body>
+  <div class="page-shell">
+    <header class="hero">
+      <p class="eyebrow">Daily Job Board</p>
+      <h1>Filter fresh openings by sponsorship and experience</h1>
+      <p class="hero-copy">
+        Browse the latest daily export with client-side filters for work authorization,
+        sponsorship status, career bucket, and experience level.
+      </p>
+      <div class="hero-meta">
+        <span id="generated-at">Loading latest refresh...</span>
+        <a class="hero-link" id="repo-link" href="https://github.com/IrishMehta/daily-job-board">Open the repository</a>
+      </div>
+    </header>
+
+    <section class="stats-grid" id="stats-grid">
+      <article class="stat-card">
+        <span class="stat-label">Openings</span>
+        <strong class="stat-value" id="stat-total">-</strong>
+      </article>
+      <article class="stat-card">
+        <span class="stat-label">Early Career</span>
+        <strong class="stat-value" id="stat-early">-</strong>
+      </article>
+      <article class="stat-card">
+        <span class="stat-label">Mid / Senior</span>
+        <strong class="stat-value" id="stat-mid">-</strong>
+      </article>
+      <article class="stat-card">
+        <span class="stat-label">Managerial</span>
+        <strong class="stat-value" id="stat-managerial">-</strong>
+      </article>
+    </section>
+
+    <section class="controls-panel">
+      <div class="control-group control-group-wide">
+        <label for="search-input">Search</label>
+        <input id="search-input" type="search" placeholder="Title, company, or location">
+      </div>
+      <div class="control-group">
+        <label for="career-filter">Career bucket</label>
+        <select id="career-filter">
+          <option value="">All buckets</option>
+        </select>
+      </div>
+      <div class="control-group">
+        <label for="auth-filter">Authorization category</label>
+        <select id="auth-filter">
+          <option value="">All categories</option>
+        </select>
+      </div>
+      <div class="control-group">
+        <label for="sponsorship-filter">Sponsorship</label>
+        <select id="sponsorship-filter">
+          <option value="">All statuses</option>
+        </select>
+      </div>
+      <div class="control-group">
+        <label for="sort-select">Sort by</label>
+        <select id="sort-select">
+          <option value="date_desc">Newest first</option>
+          <option value="date_asc">Oldest first</option>
+          <option value="experience_asc">Experience low to high</option>
+          <option value="experience_desc">Experience high to low</option>
+          <option value="company_asc">Company A-Z</option>
+        </select>
+      </div>
+      <div class="control-group control-actions">
+        <button id="reset-button" type="button">Reset filters</button>
+      </div>
+    </section>
+
+    <section class="results-header">
+      <div>
+        <h2>Filtered results</h2>
+        <p id="results-meta">Loading jobs...</p>
+      </div>
+    </section>
+
+    <section class="table-shell">
+      <table>
+        <thead>
+          <tr>
+            <th>Date</th>
+            <th>Company</th>
+            <th>Role</th>
+            <th>Location</th>
+            <th>Bucket</th>
+            <th>Experience</th>
+            <th>Authorization</th>
+            <th>Sponsorship</th>
+            <th>Link</th>
+          </tr>
+        </thead>
+        <tbody id="results-body"></tbody>
+      </table>
+      <div class="empty-state hidden" id="empty-state">
+        <h3>No jobs match the current filters.</h3>
+        <p>Try clearing one or more filters or broadening your search.</p>
+      </div>
+    </section>
+  </div>
+
+  <script src="./app.js"></script>
+</body>
+</html>
