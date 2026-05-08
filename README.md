@@ -4,7 +4,7 @@ Latest filtered openings grouped for public GitHub publishing. Each job includes
 
 Use the interactive job board here: [https://irishmehta.github.io/daily-job-board/](https://irishmehta.github.io/daily-job-board/)
 
-_Generated at 2026-05-08T05:00:23.388050+00:00 from `JobExtractor/jobs_filtered.jsonl` using batched Qwen enrichment._
+_Generated at 2026-05-08T05:00:23.388050+00:00_
 
 ## Summary
 

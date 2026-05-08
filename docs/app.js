@@ -1,7 +1,7 @@
 const state = {
   payload: null,
   search: "",
-  location: "",
+  locationQuery: "",
   careerBucket: "",
   authorizationCategory: "",
   sponsorshipStatus: "",
@@ -16,7 +16,8 @@ const els = {
   statMid: document.getElementById("stat-mid"),
   statManagerial: document.getElementById("stat-managerial"),
   searchInput: document.getElementById("search-input"),
-  locationFilter: document.getElementById("location-filter"),
+  locationInput: document.getElementById("location-input"),
+  locationSuggestions: document.getElementById("location-suggestions"),
   careerFilter: document.getElementById("career-filter"),
   authFilter: document.getElementById("auth-filter"),
   sponsorshipFilter: document.getElementById("sponsorship-filter"),
@@ -37,10 +38,29 @@ function escapeHtml(value) {
 }
 
 function formatDate(value) {
-  if (!value) {
-    return "Unknown";
-  }
-  return value;
+  return value ? String(value) : "Unknown";
+}
+
+function unique(values) {
+  return [...new Set(values.filter(Boolean))];
+}
+
+function normalizeComparableText(value) {
+  return String(value ?? "")
+    .normalize("NFKD")
+    .replace(/[\u0300-\u036f]/g, "")
+    .toLowerCase()
+    .replace(/&/g, " and ")
+    .replace(/[^a-z0-9]+/g, " ")
+    .replace(/\s+/g, " ")
+    .trim();
+}
+
+function tokenizeComparable(value) {
+  return normalizeComparableText(value)
+    .split(" ")
+    .map((token) => token.trim())
+    .filter(Boolean);
 }
 
 function maybeParseStructuredLocation(text) {
@@ -81,7 +101,7 @@ function coerceLocationText(value) {
       .flatMap((item) => item.split(" | "))
       .map((item) => item.trim())
       .filter(Boolean);
-    return [...new Set(parts)].join(" | ");
+    return unique(parts).join(" | ");
   }
   if (typeof value === "object") {
     const parts = [];
@@ -107,7 +127,7 @@ function coerceLocationText(value) {
         parts.push(countryCode.trim());
       }
     }
-    return [...new Set(parts)].join(", ");
+    return unique(parts).join(", ");
   }
   return String(value).trim();
 }
@@ -182,15 +202,75 @@ function normalizeCompany(value) {
   return cleaned || text;
 }
 
-function buildLocationOptions(jobs) {
+function buildLocationContext(locationValue, locationProfile = null) {
+  const profile = locationProfile && typeof locationProfile === "object" ? locationProfile : {};
+  const display = normalizeLocation(profile.display || locationValue);
+  const region = profile.region || "";
+  const regionCode = profile.region_code || "";
+  const country = profile.country || "";
+  const countryCode = profile.country_code || "";
+  const city = profile.city || "";
+  const label = profile.label || unique([city, region, country]).join(", ") || display;
+
+  const parsed = maybeParseStructuredLocation(locationValue);
+  const rawParts =
+    parsed && typeof parsed === "object"
+      ? tokenizeComparable(coerceLocationText(parsed))
+      : [];
+
+  const searchTerms = unique([
+    display,
+    label,
+    city,
+    region,
+    regionCode,
+    country,
+    countryCode,
+    ...(Array.isArray(profile.search_terms) ? profile.search_terms : []),
+    ...rawParts,
+  ]);
+
+  const normalizedTerms = unique(searchTerms.map((term) => normalizeComparableText(term)).filter(Boolean));
+  const candidateTokens = unique(normalizedTerms.flatMap((term) => term.split(" ")).filter(Boolean));
+
+  return {
+    display,
+    label,
+    city,
+    region,
+    regionCode,
+    country,
+    countryCode,
+    searchTerms,
+    normalizedTerms,
+    candidateTokens,
+    searchText: normalizedTerms.join(" "),
+  };
+}
+
+function buildLocationSuggestions(jobs) {
   const counts = new Map();
   jobs.forEach((job) => {
-    const location = normalizeLocation(job.location);
-    counts.set(location, (counts.get(location) ?? 0) + 1);
+    const suggestion = job.locationContext.label || job.locationContext.display;
+    if (!suggestion || suggestion === "Unknown") {
+      return;
+    }
+    counts.set(suggestion, (counts.get(suggestion) ?? 0) + 1);
   });
+
   return [...counts.entries()]
     .sort((left, right) => right[1] - left[1] || left[0].localeCompare(right[0]))
-    .map(([value, count]) => ({ value, label: value, count }));
+    .slice(0, 80)
+    .map(([value]) => value);
+}
+
+function populateDatalist(list, options) {
+  list.innerHTML = "";
+  options.forEach((option) => {
+    const el = document.createElement("option");
+    el.value = option;
+    list.appendChild(el);
+  });
 }
 
 function populateSelect(select, options) {
@@ -200,6 +280,67 @@ function populateSelect(select, options) {
     el.textContent = option.count !== undefined ? `${option.label} (${option.count})` : option.label;
     select.appendChild(el);
   });
+}
+
+function levenshteinDistance(left, right) {
+  if (left === right) {
+    return 0;
+  }
+  if (!left.length) {
+    return right.length;
+  }
+  if (!right.length) {
+    return left.length;
+  }
+
+  const rows = Array.from({ length: right.length + 1 }, (_, index) => index);
+  for (let i = 1; i <= left.length; i += 1) {
+    let previous = i - 1;
+    rows[0] = i;
+    for (let j = 1; j <= right.length; j += 1) {
+      const current = rows[j];
+      const cost = left[i - 1] === right[j - 1] ? 0 : 1;
+      rows[j] = Math.min(
+        rows[j] + 1,
+        rows[j - 1] + 1,
+        previous + cost,
+      );
+      previous = current;
+    }
+  }
+  return rows[right.length];
+}
+
+function fuzzyTokenMatch(queryToken, candidateTokens) {
+  if (!queryToken) {
+    return true;
+  }
+
+  for (const candidate of candidateTokens) {
+    if (candidate === queryToken || candidate.startsWith(queryToken) || candidate.includes(queryToken)) {
+      return true;
+    }
+    if (queryToken.length < 4 || Math.abs(candidate.length - queryToken.length) > 2) {
+      continue;
+    }
+    const allowance = queryToken.length >= 8 ? 2 : 1;
+    if (levenshteinDistance(queryToken, candidate) <= allowance) {
+      return true;
+    }
+  }
+  return false;
+}
+
+function matchesLocationQuery(job, query) {
+  const normalizedQuery = normalizeComparableText(query);
+  if (!normalizedQuery) {
+    return true;
+  }
+  if (job.locationContext.searchText.includes(normalizedQuery)) {
+    return true;
+  }
+  const queryTokens = tokenizeComparable(normalizedQuery);
+  return queryTokens.every((token) => fuzzyTokenMatch(token, job.locationContext.candidateTokens));
 }
 
 function loadStats(payload) {
@@ -214,10 +355,24 @@ function loadStats(payload) {
   }
 }
 
+function compareExperience(a, b) {
+  const left = a.yoe_min ?? Number.POSITIVE_INFINITY;
+  const right = b.yoe_min ?? Number.POSITIVE_INFINITY;
+  if (left !== right) {
+    return left - right;
+  }
+  const leftMax = a.yoe_max ?? a.yoe_min ?? Number.POSITIVE_INFINITY;
+  const rightMax = b.yoe_max ?? b.yoe_min ?? Number.POSITIVE_INFINITY;
+  if (leftMax !== rightMax) {
+    return leftMax - rightMax;
+  }
+  return String(a.posted_on).localeCompare(String(b.posted_on));
+}
+
 function applyFilters(jobs) {
-  const query = state.search.trim().toLowerCase();
+  const query = normalizeComparableText(state.search);
   const filtered = jobs.filter((job) => {
-    if (state.location && job.location !== state.location) {
+    if (!matchesLocationQuery(job, state.locationQuery)) {
       return false;
     }
     if (state.careerBucket && job.career_bucket !== state.careerBucket) {
@@ -232,17 +387,18 @@ function applyFilters(jobs) {
     if (!query) {
       return true;
     }
-    const haystack = [
-      job.title,
-      job.company,
-      job.location,
-      job.career_bucket_label,
-      job.authorization_category_label,
-      job.work_authorization_display,
-      job.experience_display,
-    ]
-      .join(" ")
-      .toLowerCase();
+    const haystack = normalizeComparableText(
+      [
+        job.title,
+        job.company,
+        job.locationContext.display,
+        job.locationContext.label,
+        job.career_bucket_label,
+        job.authorization_category_label,
+        job.work_authorization_display,
+        job.experience_display,
+      ].join(" "),
+    );
     return haystack.includes(query);
   });
 
@@ -265,20 +421,6 @@ function applyFilters(jobs) {
   return filtered;
 }
 
-function compareExperience(a, b) {
-  const left = a.yoe_min ?? Number.POSITIVE_INFINITY;
-  const right = b.yoe_min ?? Number.POSITIVE_INFINITY;
-  if (left !== right) {
-    return left - right;
-  }
-  const leftMax = a.yoe_max ?? a.yoe_min ?? Number.POSITIVE_INFINITY;
-  const rightMax = b.yoe_max ?? b.yoe_min ?? Number.POSITIVE_INFINITY;
-  if (leftMax !== rightMax) {
-    return leftMax - rightMax;
-  }
-  return String(a.posted_on).localeCompare(String(b.posted_on));
-}
-
 function renderRows(jobs) {
   if (!jobs.length) {
     els.resultsBody.innerHTML = "";
@@ -295,15 +437,21 @@ function renderRows(jobs) {
         <tr>
           <td><span class="cell-date">${escapeHtml(formatDate(job.posted_on))}</span></td>
           <td><span class="cell-primary">${escapeHtml(job.company)}</span></td>
-          <td><span class="cell-primary">${escapeHtml(job.title)}</span></td>
-          <td><span class="cell-secondary">${escapeHtml(job.location)}</span></td>
-          <td><span class="pill pill-bucket">${escapeHtml(job.career_bucket_label)}</span></td>
-          <td><span class="cell-primary">${escapeHtml(job.experience_display)}</span></td>
-          <td><span class="pill pill-auth">${escapeHtml(job.authorization_category_label)}</span></td>
-          <td><span class="pill pill-neutral">${escapeHtml(job.sponsorship_status.replaceAll("_", " "))}</span></td>
+          <td>
+            <span class="cell-primary">${escapeHtml(job.title)}</span>
+            <span class="cell-subtext">${escapeHtml(job.experience_display)}</span>
+          </td>
+          <td><span class="cell-secondary">${escapeHtml(job.locationContext.label || job.locationContext.display)}</span></td>
+          <td>
+            <div class="snapshot-stack">
+              <span class="pill pill-bucket">${escapeHtml(job.career_bucket_label)}</span>
+              <span class="pill pill-auth">${escapeHtml(job.authorization_category_label)}</span>
+              <span class="pill pill-neutral">${escapeHtml(job.sponsorship_status.replaceAll("_", " "))}</span>
+            </div>
+          </td>
           <td><a class="link-button" href="${escapeHtml(job.job_link)}" target="_blank" rel="noopener noreferrer">Apply</a></td>
         </tr>
-      `
+      `,
     )
     .join("");
 }
@@ -312,8 +460,7 @@ function render() {
   if (!state.payload) {
     return;
   }
-  const filtered = applyFilters(state.payload.jobs);
-  renderRows(filtered);
+  renderRows(applyFilters(state.payload.jobs));
 }
 
 function bindControls() {
@@ -321,8 +468,8 @@ function bindControls() {
     state.search = event.target.value;
     render();
   });
-  els.locationFilter.addEventListener("change", (event) => {
-    state.location = event.target.value;
+  els.locationInput.addEventListener("input", (event) => {
+    state.locationQuery = event.target.value;
     render();
   });
   els.careerFilter.addEventListener("change", (event) => {
@@ -343,13 +490,13 @@ function bindControls() {
   });
   els.resetButton.addEventListener("click", () => {
     state.search = "";
-    state.location = "";
+    state.locationQuery = "";
     state.careerBucket = "";
     state.authorizationCategory = "";
     state.sponsorshipStatus = "";
     state.sort = "date_desc";
     els.searchInput.value = "";
-    els.locationFilter.value = "";
+    els.locationInput.value = "";
     els.careerFilter.value = "";
     els.authFilter.value = "";
     els.sponsorshipFilter.value = "";
@@ -363,15 +510,21 @@ async function init() {
   if (!response.ok) {
     throw new Error(`Failed to load site data: ${response.status}`);
   }
+
   state.payload = await response.json();
-  state.payload.jobs = (state.payload.jobs ?? []).map((job) => ({
-    ...job,
-    company: normalizeCompany(job.company),
-    location: normalizeLocation(job.location),
-  }));
-  state.payload.locations = buildLocationOptions(state.payload.jobs);
+  state.payload.jobs = (state.payload.jobs ?? []).map((job) => {
+    const company = normalizeCompany(job.company);
+    const location = normalizeLocation(job.location);
+    return {
+      ...job,
+      company,
+      location,
+      locationContext: buildLocationContext(location, job.location_profile),
+    };
+  });
+
   loadStats(state.payload);
-  populateSelect(els.locationFilter, state.payload.locations);
+  populateDatalist(els.locationSuggestions, buildLocationSuggestions(state.payload.jobs));
   populateSelect(els.careerFilter, state.payload.career_buckets);
   populateSelect(els.authFilter, state.payload.authorization_categories);
   populateSelect(els.sponsorshipFilter, state.payload.sponsorship_statuses);

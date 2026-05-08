@@ -46,13 +46,12 @@
     <section class="controls-panel">
       <div class="control-group control-group-wide">
         <label for="search-input">Search</label>
-        <input id="search-input" type="search" placeholder="Title, company, or location">
+        <input id="search-input" type="search" placeholder="Title or company">
       </div>
       <div class="control-group">
-        <label for="location-filter">Location</label>
-        <select id="location-filter">
-          <option value="">All locations</option>
-        </select>
+        <label for="location-input">Location</label>
+        <input id="location-input" type="search" list="location-suggestions" placeholder="Type a city, state, or country" autocomplete="off">
+        <datalist id="location-suggestions"></datalist>
       </div>
       <div class="control-group">
         <label for="career-filter">Career bucket</label>
@@ -102,10 +101,7 @@
             <th>Company</th>
             <th>Role</th>
             <th>Location</th>
-            <th>Bucket</th>
-            <th>Experience</th>
-            <th>Authorization</th>
-            <th>Sponsorship</th>
+            <th>Snapshot</th>
             <th>Link</th>
           </tr>
         </thead>

@@ -287,17 +287,15 @@ button:hover {
 }
 
 .table-shell {
-  overflow-x: auto;
-  overflow-y: hidden;
-  -webkit-overflow-scrolling: touch;
+  overflow: hidden;
   background: rgba(255, 252, 246, 0.94);
 }
 
 table {
-  width: max-content;
-  min-width: 100%;
+  width: 100%;
   border-collapse: separate;
   border-spacing: 0;
+  table-layout: fixed;
 }
 
 thead th {
@@ -318,6 +316,32 @@ td {
   padding: 16px 14px;
   border-bottom: 1px solid var(--line);
   vertical-align: top;
+  overflow-wrap: anywhere;
+}
+
+thead th:nth-child(1),
+tbody td:nth-child(1) {
+  width: 114px;
+}
+
+thead th:nth-child(2),
+tbody td:nth-child(2) {
+  width: 168px;
+}
+
+thead th:nth-child(4),
+tbody td:nth-child(4) {
+  width: 210px;
+}
+
+thead th:nth-child(5),
+tbody td:nth-child(5) {
+  width: 300px;
+}
+
+thead th:nth-child(6),
+tbody td:nth-child(6) {
+  width: 92px;
 }
 
 tbody tr:nth-child(even) {
@@ -349,6 +373,15 @@ tbody tr:last-child td {
   line-height: 1.45;
 }
 
+.cell-subtext {
+  display: block;
+  margin-top: 5px;
+  color: var(--muted);
+  font-size: var(--text-xs);
+  font-weight: 700;
+  line-height: 1.4;
+}
+
 .cell-date {
   white-space: nowrap;
   font-weight: 800;
@@ -366,6 +399,12 @@ tbody tr:last-child td {
   font-weight: 800;
   letter-spacing: 0.01em;
   white-space: nowrap;
+}
+
+.snapshot-stack {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
 }
 
 .pill-bucket {
@@ -478,7 +517,14 @@ tbody tr:last-child td {
     align-items: start;
   }
 
+  .table-shell {
+    overflow-x: auto;
+    overflow-y: hidden;
+    -webkit-overflow-scrolling: touch;
+  }
+
   table {
-    min-width: 1040px;
+    min-width: 760px;
+    table-layout: auto;
   }
 }
