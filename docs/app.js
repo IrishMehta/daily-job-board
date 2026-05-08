@@ -1,6 +1,7 @@
 const state = {
   payload: null,
   search: "",
+  location: "",
   careerBucket: "",
   authorizationCategory: "",
   sponsorshipStatus: "",
@@ -15,6 +16,7 @@ const els = {
   statMid: document.getElementById("stat-mid"),
   statManagerial: document.getElementById("stat-managerial"),
   searchInput: document.getElementById("search-input"),
+  locationFilter: document.getElementById("location-filter"),
   careerFilter: document.getElementById("career-filter"),
   authFilter: document.getElementById("auth-filter"),
   sponsorshipFilter: document.getElementById("sponsorship-filter"),
@@ -41,6 +43,156 @@ function formatDate(value) {
   return value;
 }
 
+function maybeParseStructuredLocation(text) {
+  if (typeof text !== "string") {
+    return text;
+  }
+  const trimmed = text.trim();
+  if (!trimmed || (trimmed[0] !== "[" && trimmed[0] !== "{")) {
+    return text;
+  }
+
+  const jsonish = trimmed
+    .replace(/\bNone\b/g, "null")
+    .replace(/\bTrue\b/g, "true")
+    .replace(/\bFalse\b/g, "false");
+
+  try {
+    return JSON.parse(jsonish.replaceAll("'", '"'));
+  } catch {
+    return text;
+  }
+}
+
+function coerceLocationText(value) {
+  const parsed = maybeParseStructuredLocation(value);
+  if (parsed !== value) {
+    return coerceLocationText(parsed);
+  }
+  if (value == null) {
+    return "";
+  }
+  if (typeof value === "string") {
+    return value.trim();
+  }
+  if (Array.isArray(value)) {
+    const parts = value
+      .map((item) => coerceLocationText(item))
+      .flatMap((item) => item.split(" | "))
+      .map((item) => item.trim())
+      .filter(Boolean);
+    return [...new Set(parts)].join(" | ");
+  }
+  if (typeof value === "object") {
+    const parts = [];
+    for (const key of [
+      "name",
+      "location",
+      "city",
+      "region",
+      "state",
+      "country",
+      "addressLocality",
+      "addressRegion",
+      "addressCountry",
+    ]) {
+      const part = value[key];
+      if (typeof part === "string" && part.trim()) {
+        parts.push(part.trim());
+      }
+    }
+    if (!("country" in value || "addressCountry" in value)) {
+      const countryCode = value.countryCode;
+      if (typeof countryCode === "string" && countryCode.trim()) {
+        parts.push(countryCode.trim());
+      }
+    }
+    return [...new Set(parts)].join(", ");
+  }
+  return String(value).trim();
+}
+
+function normalizeLocation(value) {
+  const text = coerceLocationText(value) || "Unknown";
+  return text
+    .replace(/\s*;\s*/g, " | ")
+    .replace(/\s*\|\s*/g, " | ")
+    .replace(/\s+/g, " ")
+    .trim();
+}
+
+function smartTitleCompanyToken(token) {
+  if (!token) {
+    return "";
+  }
+  if (/^\d+$/.test(token)) {
+    return token;
+  }
+  if (/^[a-z]{1,5}$/.test(token)) {
+    return token.toUpperCase();
+  }
+  if (/\d/.test(token)) {
+    return token[0].toUpperCase() + token.slice(1);
+  }
+  return token[0].toUpperCase() + token.slice(1).toLowerCase();
+}
+
+function prettifyCompanySlug(value) {
+  let text = String(value ?? "").trim().replace(/\/+$/, "");
+  if (!text) {
+    return "";
+  }
+  text = text.replace(/-\d+$/, "");
+  text = text.replace(/(jobswd|jobsandcareers|jobsandcareer)$/i, "");
+  text = text.replace(
+    /(careers|career|jobs|job|externalcareersite|externalcareer_site|externalcareers|externalsite|external_site|external|globalexternalsite|global_external_site|global1|global|search|targeted|join|site)$/i,
+    "",
+  );
+  text = text.replace(/^rec_/i, "");
+  text = text.replace(/_ext_/gi, "_");
+  text = text.replace(/_external_/gi, "_");
+  text = text.replace(/[_/-]+/g, " ").replace(/\s+/g, " ").trim();
+  if (!text) {
+    return "";
+  }
+  return text
+    .split(" ")
+    .filter(Boolean)
+    .map((token) => smartTitleCompanyToken(token))
+    .join(" ");
+}
+
+function normalizeCompany(value) {
+  const text = String(value ?? "").trim();
+  if (!text) {
+    return "Unknown";
+  }
+  const workdayMatch = text.match(/\/wd\d+\/([^/]+)/i);
+  if (workdayMatch) {
+    return prettifyCompanySlug(workdayMatch[1]) || prettifyCompanySlug(text.split("/")[0]) || text;
+  }
+  if (text.includes("/")) {
+    const first = text.split("/")[0];
+    const cleaned = prettifyCompanySlug(first);
+    if (cleaned) {
+      return cleaned;
+    }
+  }
+  const cleaned = prettifyCompanySlug(text);
+  return cleaned || text;
+}
+
+function buildLocationOptions(jobs) {
+  const counts = new Map();
+  jobs.forEach((job) => {
+    const location = normalizeLocation(job.location);
+    counts.set(location, (counts.get(location) ?? 0) + 1);
+  });
+  return [...counts.entries()]
+    .sort((left, right) => right[1] - left[1] || left[0].localeCompare(right[0]))
+    .map(([value, count]) => ({ value, label: value, count }));
+}
+
 function populateSelect(select, options) {
   options.forEach((option) => {
     const el = document.createElement("option");
@@ -65,6 +217,9 @@ function loadStats(payload) {
 function applyFilters(jobs) {
   const query = state.search.trim().toLowerCase();
   const filtered = jobs.filter((job) => {
+    if (state.location && job.location !== state.location) {
+      return false;
+    }
     if (state.careerBucket && job.career_bucket !== state.careerBucket) {
       return false;
     }
@@ -166,6 +321,10 @@ function bindControls() {
     state.search = event.target.value;
     render();
   });
+  els.locationFilter.addEventListener("change", (event) => {
+    state.location = event.target.value;
+    render();
+  });
   els.careerFilter.addEventListener("change", (event) => {
     state.careerBucket = event.target.value;
     render();
@@ -184,11 +343,13 @@ function bindControls() {
   });
   els.resetButton.addEventListener("click", () => {
     state.search = "";
+    state.location = "";
     state.careerBucket = "";
     state.authorizationCategory = "";
     state.sponsorshipStatus = "";
     state.sort = "date_desc";
     els.searchInput.value = "";
+    els.locationFilter.value = "";
     els.careerFilter.value = "";
     els.authFilter.value = "";
     els.sponsorshipFilter.value = "";
@@ -203,7 +364,14 @@ async function init() {
     throw new Error(`Failed to load site data: ${response.status}`);
   }
   state.payload = await response.json();
+  state.payload.jobs = (state.payload.jobs ?? []).map((job) => ({
+    ...job,
+    company: normalizeCompany(job.company),
+    location: normalizeLocation(job.location),
+  }));
+  state.payload.locations = buildLocationOptions(state.payload.jobs);
   loadStats(state.payload);
+  populateSelect(els.locationFilter, state.payload.locations);
   populateSelect(els.careerFilter, state.payload.career_buckets);
   populateSelect(els.authFilter, state.payload.authorization_categories);
   populateSelect(els.sponsorshipFilter, state.payload.sponsorship_statuses);
