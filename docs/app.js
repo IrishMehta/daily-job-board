@@ -441,14 +441,14 @@ function renderRows(jobs) {
     .map(
       (job) => `
         <tr>
-          <td><span class="cell-date">${escapeHtml(formatDate(job.posted_on))}</span></td>
-          <td><span class="cell-primary">${escapeHtml(job.company)}</span></td>
-          <td>
+          <td data-label="Date"><span class="cell-date">${escapeHtml(formatDate(job.posted_on))}</span></td>
+          <td data-label="Company"><span class="cell-primary">${escapeHtml(job.company)}</span></td>
+          <td data-label="Role">
             <span class="cell-primary">${escapeHtml(job.title)}</span>
             <span class="cell-subtext">Experience: ${escapeHtml(job.experience_display)}</span>
           </td>
-          <td><span class="cell-secondary">${escapeHtml(job.locationContext.label || job.locationContext.display)}</span></td>
-          <td>
+          <td data-label="Location"><span class="cell-secondary">${escapeHtml(job.locationContext.label || job.locationContext.display)}</span></td>
+          <td data-label="Snapshot">
             <div class="snapshot-stack">
               <div class="snapshot-item">
                 <span class="snapshot-label">Bucket</span>
@@ -464,7 +464,7 @@ function renderRows(jobs) {
               </div>
             </div>
           </td>
-          <td><a class="link-button" href="${escapeHtml(job.job_link)}" target="_blank" rel="noopener noreferrer">Apply</a></td>
+          <td data-label="Link"><a class="link-button" href="${escapeHtml(job.job_link)}" target="_blank" rel="noopener noreferrer">Apply</a></td>
         </tr>
       `,
     )
