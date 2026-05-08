@@ -336,12 +336,12 @@ tbody td:nth-child(4) {
 
 thead th:nth-child(5),
 tbody td:nth-child(5) {
-  width: 300px;
+  width: 340px;
 }
 
 thead th:nth-child(6),
 tbody td:nth-child(6) {
-  width: 92px;
+  width: 116px;
 }
 
 tbody tr:nth-child(even) {
@@ -403,8 +403,25 @@ tbody tr:last-child td {
 
 .snapshot-stack {
   display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.snapshot-item {
+  display: flex;
   flex-wrap: wrap;
+  align-items: center;
   gap: 8px;
+}
+
+.snapshot-label {
+  display: inline-block;
+  min-width: 88px;
+  color: var(--muted);
+  font-size: 0.72rem;
+  font-weight: 800;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
 }
 
 .pill-bucket {
@@ -437,6 +454,7 @@ tbody tr:last-child td {
   font-size: var(--text-sm);
   font-weight: 800;
   text-decoration: none;
+  white-space: nowrap;
 }
 
 .link-button:hover {

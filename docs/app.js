@@ -41,6 +41,12 @@ function formatDate(value) {
   return value ? String(value) : "Unknown";
 }
 
+function formatEnumLabel(value) {
+  return String(value ?? "")
+    .replaceAll("_", " ")
+    .replace(/\b\w/g, (char) => char.toUpperCase());
+}
+
 function unique(values) {
   return [...new Set(values.filter(Boolean))];
 }
@@ -439,14 +445,23 @@ function renderRows(jobs) {
           <td><span class="cell-primary">${escapeHtml(job.company)}</span></td>
           <td>
             <span class="cell-primary">${escapeHtml(job.title)}</span>
-            <span class="cell-subtext">${escapeHtml(job.experience_display)}</span>
+            <span class="cell-subtext">Experience: ${escapeHtml(job.experience_display)}</span>
           </td>
           <td><span class="cell-secondary">${escapeHtml(job.locationContext.label || job.locationContext.display)}</span></td>
           <td>
             <div class="snapshot-stack">
-              <span class="pill pill-bucket">${escapeHtml(job.career_bucket_label)}</span>
-              <span class="pill pill-auth">${escapeHtml(job.authorization_category_label)}</span>
-              <span class="pill pill-neutral">${escapeHtml(job.sponsorship_status.replaceAll("_", " "))}</span>
+              <div class="snapshot-item">
+                <span class="snapshot-label">Bucket</span>
+                <span class="pill pill-bucket">${escapeHtml(job.career_bucket_label)}</span>
+              </div>
+              <div class="snapshot-item">
+                <span class="snapshot-label">Authorization</span>
+                <span class="pill pill-auth">${escapeHtml(job.authorization_category_label)}</span>
+              </div>
+              <div class="snapshot-item">
+                <span class="snapshot-label">Sponsorship</span>
+                <span class="pill pill-neutral">${escapeHtml(formatEnumLabel(job.sponsorship_status))}</span>
+              </div>
             </div>
           </td>
           <td><a class="link-button" href="${escapeHtml(job.job_link)}" target="_blank" rel="noopener noreferrer">Apply</a></td>
