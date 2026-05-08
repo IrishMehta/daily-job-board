@@ -316,8 +316,9 @@ td {
   padding: 16px 14px;
   border-bottom: 1px solid var(--line);
   vertical-align: top;
-  overflow-wrap: break-word;
+  overflow-wrap: normal;
   word-break: normal;
+  hyphens: none;
 }
 
 thead th:nth-child(1),
@@ -494,6 +495,52 @@ tbody tr:last-child td {
 
   .control-group-wide {
     grid-column: span 2;
+  }
+
+  .table-shell {
+    overflow-x: auto;
+    overflow-y: hidden;
+    -webkit-overflow-scrolling: touch;
+  }
+
+  table {
+    min-width: 1040px;
+    table-layout: auto;
+  }
+
+  thead th:nth-child(1),
+  tbody td:nth-child(1) {
+    width: 114px;
+    min-width: 114px;
+  }
+
+  thead th:nth-child(2),
+  tbody td:nth-child(2) {
+    width: 168px;
+    min-width: 168px;
+  }
+
+  thead th:nth-child(3),
+  tbody td:nth-child(3) {
+    min-width: 220px;
+  }
+
+  thead th:nth-child(4),
+  tbody td:nth-child(4) {
+    width: 210px;
+    min-width: 210px;
+  }
+
+  thead th:nth-child(5),
+  tbody td:nth-child(5) {
+    width: 340px;
+    min-width: 340px;
+  }
+
+  thead th:nth-child(6),
+  tbody td:nth-child(6) {
+    width: 116px;
+    min-width: 116px;
   }
 }
 
