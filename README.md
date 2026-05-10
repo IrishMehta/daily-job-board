@@ -4,23 +4,27 @@ Latest filtered openings grouped for public GitHub publishing. Each job includes
 
 Use the interactive job board here: [https://irishmehta.github.io/daily-job-board/](https://irishmehta.github.io/daily-job-board/)
 
-_Generated at 2026-05-09T14:55:52.803351+00:00_
+_Generated at 2026-05-10T14:55:19.930956+00:00_
 
 ## Summary
 
-- Total openings: 1316
+- Total openings: 1322
 - Scope: USA-only jobs in README; dashboard includes all locations
 - Window: jobs posted within the last 7 day(s)
-- Early Career / New Grad: 282
-- Mid-Career / Senior: 1031
+- Early Career / New Grad: 286
+- Mid-Career / Senior: 1033
 - Managerial: 3
 
 ## Early Career / New Grad
 
-Openings in this section: 282
+Openings in this section: 286
 
 | Date | Company | Role | Location | Experience | Work Authorization | Link |
 | --- | --- | --- | --- | --- | --- | --- |
+| 2026-05-10 | Handshake | Software Engineer, Agentic Infrastructure | San Francisco, CA | 2-4 yrs | Open / Not specified; No explicit work authorization requirement stated | [Apply](https://jobs.ashbyhq.com/handshake/750185eb-d575-430a-93ad-51b7e83a5581) |
+| 2026-05-09 | Neuralink | Software Engineer, Agentic AI | Austin, Texas, United States \| South San Francisco, California, United States | Not stated | Open / Not specified; No work authorization requirement stated | [Apply](https://boards.greenhouse.io/neuralink/jobs/7729500003?gh_jid=7729500003) |
+| 2026-05-09 | 0090 CORP-Corporate Office | Embedded Software Engineer - Level 2 or 3 | COBO05, United States of America | 2+ yrs | Requires unrestricted US work authorization; Must have active US government Secret clearance | [Apply](https://ngc.wd1.myworkdayjobs.com/Northrop_Grumman_External_Site/job/United-States-Colorado-Boulder/Embedded-Software-Engineer---Level-2-or-3_R10232441) |
+| 2026-05-09 | 00100 LEIDOS, INC. | Software Engineer | 3400 Reston VA Headquarters, United States of America | 1+ yrs | Requires US citizenship; U.S. citizenship required | [Apply](https://leidos.wd5.myworkdayjobs.com/External/job/Reston-VA/Software-Engineer_R-00181566) |
 | 2026-05-08 | ZOOX | Software Engineer, Full-Stack Android | Foster City, CA | Not stated | Open / Not specified; No work authorization requirement stated | [Apply](https://jobs.lever.co/zoox/d48270e1-81e0-4f04-ab9e-d1fc25313f76) |
 | 2026-05-08 | Worcester Polytechnic Institute - WPI | Research Scientist | Worcester, United States of America | Not stated | Open / Not specified; No work authorization requirement stated | [Apply](https://wpi.wd5.myworkdayjobs.com/WPI_External_Career_Site/job/Worcester/Research-Scientist_R0003437) |
 | 2026-05-08 | WarnerMedia Services, LLC | Senior Software Engineer | GA Atlanta 1050 Techwood Drive NW, United States of America | 0+ yrs | Open / Not specified; No explicit work authorization or sponsorship requirements stated | [Apply](https://warnerbros.wd5.myworkdayjobs.com/global/job/GA-Atlanta-1050-Techwood-Drive-NW/Software-Developer-II--Machine-Learning-_R000096157) |
@@ -306,12 +310,18 @@ Openings in this section: 282
 
 ## Mid-Career / Senior
 
-Openings in this section: 1031
+Openings in this section: 1033
 
 | Date | Company | Role | Location | Experience | Work Authorization | Link |
 | --- | --- | --- | --- | --- | --- | --- |
+| 2026-05-10 | Handshake | Senior Software Engineer, Agentic Infrastructure | San Francisco, CA | 4-7 yrs | Open / Not specified; No explicit work authorization requirement stated | [Apply](https://jobs.ashbyhq.com/handshake/747bd14b-b957-4fca-b5bd-12d571f6886e) |
+| 2026-05-10 | 003 Humana Inc. | Senior Software Engineer | Work at Home - Kentucky, United States of America | 5+ yrs | Open / Not specified; No explicit work authorization requirement stated | [Apply](https://humana.wd5.myworkdayjobs.com/Humana_External_Career_Site/job/Louisville-KY/Senior-Software-Engineer_R-411618) |
 | 2026-05-09 | TP LINK USA CORP | Cloud Engineer - Frontend Engineer | Irvine, California, United States | Not stated | Open / Not specified; No work authorization requirement stated | [Apply](https://apply.workable.com/j/3F741E060B) |
+| 2026-05-09 | PS0178 GE Energy Management Services, LLC | Sr. Software Engineer - Electricity Market Optimization w/Remote Option | Bellevue WA US, United States of America | 4+ yrs | Requires unrestricted US work authorization; Legal authorization to work in the U.S. is required | [Apply](https://gevernova.wd5.myworkdayjobs.com/Vernova_ExternalSite/job/Bellevue-WA-US/Sr-Electricity-Market-Optimization-Software-Engineer_R5037146-2) |
+| 2026-05-09 | PS0178 GE Energy Management Services, LLC | Sr. Software Engineer - Electricity Market Optimization w/Remote Option | Bellevue WA US, United States of America | 4+ yrs | Requires unrestricted US work authorization; Legal authorization to work in the U.S. is required | [Apply](https://gevernova.wd5.myworkdayjobs.com/Only_Confidential_Executive_Recruiting/job/Bellevue-WA-US/Sr-Electricity-Market-Optimization-Software-Engineer_R5037146-1) |
+| 2026-05-09 | GD Information Technology, Inc. | AI/ML Lead Software Engineer | USA DC Washington - 550 12th St SW (DCC019), United States of America | 8+ yrs | Requires clearance / public trust; Security clearance required; no sponsorship | [Apply](https://gdit.wd5.myworkdayjobs.com/External_Career_Site/job/USA-DC-Washington/AI-ML-Lead-Software-Engineer_RQ219798-1) |
 | 2026-05-09 | Cogent Security | AI Research Engineer | San Francisco, CA | Not stated | Open / Not specified; No explicit work authorization or sponsorship requirements stated | [Apply](https://jobs.ashbyhq.com/cogent-security/d0b45843-f1d7-4711-8e0d-9cd180d336d7) |
+| 2026-05-09 | 0090 CORP-Corporate Office | Modeling &amp; Simulation Software Engineer - Level 3 or 4 | COBO05, United States of America | 5+ yrs | Requires unrestricted US work authorization; Must have active US government Secret clearance | [Apply](https://ngc.wd1.myworkdayjobs.com/Northrop_Grumman_External_Site/job/United-States-Colorado-Boulder/Modeling---Simulation-Software-Engineer---Level-3-or-4_R10232446) |
 | 2026-05-08 | nCino OpCo, Inc. | Senior Data Scientist | US - Utah - Lehi, United States of America | 5+ yrs | Open / Not specified; No explicit work authorization or sponsorship requirements stated | [Apply](https://ncino.wd5.myworkdayjobs.com/nCinoCareers/job/US---Utah---Lehi/Senior-Data-Scientist_R6214) |
 | 2026-05-08 | Zone 5 Technologies | DevOps Engineer III | United States | 4+ yrs | Requires unrestricted US work authorization; Must verify eligibility to work in the United States | [Apply](https://job-boards.greenhouse.io/zone5technologies/jobs/5214907008) |
 | 2026-05-08 | Y99000 General Electric Company | Sr Software Engineer | Remote, United States of America | 3+ yrs | Requires US person status; U.S. Person status required for export control | [Apply](https://geaerospace.wd5.myworkdayjobs.com/GE_ExternalSite/job/Remote/Sr-Software-Engineer_R5033749-2) |
@@ -1337,10 +1347,6 @@ Openings in this section: 1031
 | 2026-05-03 | The New York Times | Machine Learning Scientist, Marketing | New York, NY | 3+ yrs | Open / Not specified; No explicit work authorization requirement stated | [Apply](https://job-boards.greenhouse.io/thenewyorktimes/jobs/4687007005) |
 | 2026-05-03 | Smartsheet | Senior Software Engineer II - Applied AI (Remote Eligible) | -REMOTE, USA- | 8+ yrs | Open / Not specified; No explicit work authorization requirement stated | [Apply](https://job-boards.greenhouse.io/smartsheet/jobs/7849785) |
 | 2026-05-03 | Defense Unicorns | Senior Software Engineer | Remote, United States | 5+ yrs | Open / Not specified; No explicit work authorization requirement stated | [Apply](https://job-boards.greenhouse.io/defenseunicorns/jobs/5125872007) |
-| 2026-05-02 | WDAY | Lead Software Engineer | Stamford - 56 Top Gallant, United States of America | 6-9 yrs | Open / Not specified; No explicit work authorization or sponsorship requirements stated | [Apply](https://gartner.wd5.myworkdayjobs.com/EXT/job/Stamford-CT/Lead-Software-Engineer_109725) |
-| 2026-05-02 | The Allen Institute for Artificial Intelligence | Senior Software Engineer, Platform | Seattle, WA | 8+ yrs | Open / Not specified; E-Verify participation mentioned, no explicit work authorization requirement stated | [Apply](https://job-boards.greenhouse.io/thealleninstitute/jobs/7872683) |
-| 2026-05-02 | The Allen Institute for Artificial Intelligence | Senior Software Engineer, Fullstack | Seattle, WA | 8+ yrs | Open / Not specified; E-Verify mentioned but no explicit work authorization requirement stated | [Apply](https://job-boards.greenhouse.io/thealleninstitute/jobs/7872642) |
-| 2026-05-02 | The Allen Institute for Artificial Intelligence | Senior Software Engineer, Data | Seattle, WA | 8+ yrs | Open / Not specified; E-Verify available; no explicit work authorization requirement stated | [Apply](https://job-boards.greenhouse.io/thealleninstitute/jobs/7872631) |
 
 ## Managerial
 

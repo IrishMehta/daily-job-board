@@ -1,18 +1,18 @@
 {
-  "generated_at": "2026-05-09T14:55:22.635240+00:00",
-  "total_openings": 1551,
+  "generated_at": "2026-05-10T14:54:54.234767+00:00",
+  "total_openings": 1556,
   "posted_within_days": 7,
   "repo_url": "https://github.com/IrishMehta/daily-job-board",
   "career_buckets": [
     {
       "value": "early_career_or_new_grad",
       "label": "Early Career / New Grad",
-      "count": 324
+      "count": 328
     },
     {
       "value": "mid_career_or_senior",
       "label": "Mid-Career / Senior",
-      "count": 1223
+      "count": 1224
     },
     {
       "value": "managerial",
@@ -39,7 +39,7 @@
     {
       "value": "open_or_not_specified",
       "label": "Open / Not specified",
-      "count": 870
+      "count": 869
     },
     {
       "value": "requires_permanent_residency_or_green_card",
@@ -49,17 +49,17 @@
     {
       "value": "requires_security_clearance_or_public_trust",
       "label": "Requires clearance / public trust",
-      "count": 169
+      "count": 170
     },
     {
       "value": "requires_unrestricted_us_work_authorization",
       "label": "Requires unrestricted US work authorization",
-      "count": 124
+      "count": 128
     },
     {
       "value": "requires_us_citizenship",
       "label": "Requires US citizenship",
-      "count": 154
+      "count": 155
     },
     {
       "value": "requires_us_person_status",
@@ -95,7 +95,7 @@
     {
       "value": "San Francisco, CA",
       "label": "San Francisco, CA",
-      "count": 25
+      "count": 27
     },
     {
       "value": "USA, VA, McLean (8283 Greensboro Dr, Hamilton), United States of America",
@@ -328,6 +328,11 @@
       "count": 5
     },
     {
+      "value": "Work at Home - Kentucky, United States of America",
+      "label": "Work at Home - Kentucky, United States of America",
+      "count": 5
+    },
+    {
       "value": "2586 Fort Meade MD, United States of America",
       "label": "2586 Fort Meade MD, United States of America",
       "count": 4
@@ -350,6 +355,11 @@
     {
       "value": "Arlington, VA",
       "label": "Arlington, VA",
+      "count": 4
+    },
+    {
+      "value": "Bellevue",
+      "label": "Bellevue",
       "count": 4
     },
     {
@@ -443,11 +453,6 @@
       "count": 4
     },
     {
-      "value": "Seattle, WA",
-      "label": "Seattle, WA",
-      "count": 4
-    },
-    {
       "value": "Tampa (USA), United States of America",
       "label": "Tampa (USA), United States of America",
       "count": 4
@@ -483,13 +488,13 @@
       "count": 4
     },
     {
-      "value": "Work at Home - Kentucky, United States of America",
-      "label": "Work at Home - Kentucky, United States of America",
-      "count": 4
-    },
-    {
       "value": "112646-OH-Easton, Columbus, United States of America",
       "label": "112646-OH-Easton, Columbus, United States of America",
+      "count": 3
+    },
+    {
+      "value": "3400 Reston VA Headquarters, United States of America",
+      "label": "3400 Reston VA Headquarters, United States of America",
       "count": 3
     },
     {
@@ -500,11 +505,6 @@
     {
       "value": "AZCH02, United States of America",
       "label": "AZCH02, United States of America",
-      "count": 3
-    },
-    {
-      "value": "Bellevue",
-      "label": "Bellevue",
       "count": 3
     },
     {
@@ -768,11 +768,6 @@
       "count": 2
     },
     {
-      "value": "3400 Reston VA Headquarters, United States of America",
-      "label": "3400 Reston VA Headquarters, United States of America",
-      "count": 2
-    },
-    {
       "value": "3555 Norfolk VA, United States of America",
       "label": "3555 Norfolk VA, United States of America",
       "count": 2
@@ -815,6 +810,11 @@
     {
       "value": "Baltimore, MD, United States",
       "label": "Baltimore, MD, United States",
+      "count": 2
+    },
+    {
+      "value": "Bellevue WA US, United States of America",
+      "label": "Bellevue WA US, United States of America",
       "count": 2
     },
     {
@@ -875,6 +875,11 @@
     {
       "value": "Chicago, IL-200 W Madison St, United States of America",
       "label": "Chicago, IL-200 W Madison St, United States of America",
+      "count": 2
+    },
+    {
+      "value": "COBO05, United States of America",
+      "label": "COBO05, United States of America",
       "count": 2
     },
     {
@@ -1043,11 +1048,6 @@
       "count": 2
     },
     {
-      "value": "Remote (Bulgaria)",
-      "label": "Remote (Bulgaria)",
-      "count": 2
-    },
-    {
       "value": "Remote US",
       "label": "Remote US",
       "count": 2
@@ -1125,11 +1125,6 @@
     {
       "value": "South San Francisco, CA",
       "label": "South San Francisco, CA",
-      "count": 2
-    },
-    {
-      "value": "Stamford - 56 Top Gallant, United States of America",
-      "label": "Stamford - 56 Top Gallant, United States of America",
       "count": 2
     },
     {
@@ -1700,6 +1695,11 @@
     {
       "value": "Austin, Texas, United States of America",
       "label": "Austin, Texas, United States of America",
+      "count": 1
+    },
+    {
+      "value": "Austin, Texas, United States | South San Francisco, California, United States",
+      "label": "Austin, Texas, United States | South San Francisco, California, United States",
       "count": 1
     },
     {
@@ -3068,6 +3068,11 @@
       "count": 1
     },
     {
+      "value": "Seattle, WA",
+      "label": "Seattle, WA",
+      "count": 1
+    },
+    {
       "value": "Seattle, WA, United States of America",
       "label": "Seattle, WA, United States of America",
       "count": 1
@@ -3120,6 +3125,11 @@
     {
       "value": "Springfield, MO (Bass Pro Shops Base Camp), United States of America",
       "label": "Springfield, MO (Bass Pro Shops Base Camp), United States of America",
+      "count": 1
+    },
+    {
+      "value": "Stamford - 56 Top Gallant, United States of America",
+      "label": "Stamford - 56 Top Gallant, United States of America",
       "count": 1
     },
     {
@@ -3693,6 +3703,11 @@
       "count": 1
     },
     {
+      "value": "USA DC Washington - 550 12th St SW (DCC019), United States of America",
+      "label": "USA DC Washington - 550 12th St SW (DCC019), United States of America",
+      "count": 1
+    },
+    {
       "value": "USA DC Washington - Customer Proprietary (DCC047), United States of America",
       "label": "USA DC Washington - Customer Proprietary (DCC047), United States of America",
       "count": 1
@@ -4000,6 +4015,112 @@
   ],
   "jobs": [
     {
+      "id": "https://jobs.ashbyhq.com/handshake/750185eb-d575-430a-93ad-51b7e83a5581",
+      "posted_on": "2026-05-10",
+      "company": "Handshake",
+      "title": "Software Engineer, Agentic Infrastructure",
+      "location": "San Francisco, CA",
+      "location_profile": {
+        "display": "San Francisco, CA",
+        "label": "San Francisco, Canada",
+        "city": "",
+        "region": "San Francisco",
+        "region_code": "",
+        "country": "Canada",
+        "country_code": "CA",
+        "search_terms": [
+          "San Francisco, CA",
+          "San Francisco, Canada",
+          "San Francisco",
+          "Canada",
+          "CA"
+        ]
+      },
+      "career_bucket": "early_career_or_new_grad",
+      "career_bucket_label": "Early Career / New Grad",
+      "experience_level": "senior_individual_contributor",
+      "experience_level_label": "Senior IC",
+      "yoe_min": 2,
+      "yoe_max": 4,
+      "experience_display": "2-4 yrs",
+      "authorization_category": "open_or_not_specified",
+      "authorization_category_label": "Open / Not specified",
+      "sponsorship_status": "not_specified",
+      "work_authorization_display": "Open / Not specified; No explicit work authorization requirement stated",
+      "job_link": "https://jobs.ashbyhq.com/handshake/750185eb-d575-430a-93ad-51b7e83a5581"
+    },
+    {
+      "id": "https://jobs.ashbyhq.com/handshake/747bd14b-b957-4fca-b5bd-12d571f6886e",
+      "posted_on": "2026-05-10",
+      "company": "Handshake",
+      "title": "Senior Software Engineer, Agentic Infrastructure",
+      "location": "San Francisco, CA",
+      "location_profile": {
+        "display": "San Francisco, CA",
+        "label": "San Francisco, Canada",
+        "city": "",
+        "region": "San Francisco",
+        "region_code": "",
+        "country": "Canada",
+        "country_code": "CA",
+        "search_terms": [
+          "San Francisco, CA",
+          "San Francisco, Canada",
+          "San Francisco",
+          "Canada",
+          "CA"
+        ]
+      },
+      "career_bucket": "mid_career_or_senior",
+      "career_bucket_label": "Mid-Career / Senior",
+      "experience_level": "senior_individual_contributor",
+      "experience_level_label": "Senior IC",
+      "yoe_min": 4,
+      "yoe_max": 7,
+      "experience_display": "4-7 yrs",
+      "authorization_category": "open_or_not_specified",
+      "authorization_category_label": "Open / Not specified",
+      "sponsorship_status": "not_specified",
+      "work_authorization_display": "Open / Not specified; No explicit work authorization requirement stated",
+      "job_link": "https://jobs.ashbyhq.com/handshake/747bd14b-b957-4fca-b5bd-12d571f6886e"
+    },
+    {
+      "id": "https://humana.wd5.myworkdayjobs.com/Humana_External_Career_Site/job/Louisville-KY/Senior-Software-Engineer_R-411618",
+      "posted_on": "2026-05-10",
+      "company": "003 Humana Inc.",
+      "title": "Senior Software Engineer",
+      "location": "Work at Home - Kentucky, United States of America",
+      "location_profile": {
+        "display": "Work at Home - Kentucky, United States of America",
+        "label": "Work at Home - Kentucky, United States",
+        "city": "",
+        "region": "Work at Home - Kentucky",
+        "region_code": "",
+        "country": "United States",
+        "country_code": "US",
+        "search_terms": [
+          "Work at Home - Kentucky, United States of America",
+          "Work at Home - Kentucky, United States",
+          "Work at Home - Kentucky",
+          "United States",
+          "US",
+          "USA"
+        ]
+      },
+      "career_bucket": "mid_career_or_senior",
+      "career_bucket_label": "Mid-Career / Senior",
+      "experience_level": "senior_individual_contributor",
+      "experience_level_label": "Senior IC",
+      "yoe_min": 5,
+      "yoe_max": null,
+      "experience_display": "5+ yrs",
+      "authorization_category": "open_or_not_specified",
+      "authorization_category_label": "Open / Not specified",
+      "sponsorship_status": "not_specified",
+      "work_authorization_display": "Open / Not specified; No explicit work authorization requirement stated",
+      "job_link": "https://humana.wd5.myworkdayjobs.com/Humana_External_Career_Site/job/Louisville-KY/Senior-Software-Engineer_R-411618"
+    },
+    {
       "id": "https://apply.workable.com/j/B09EB7ECCF",
       "posted_on": "2026-05-09",
       "company": "Weekday",
@@ -4078,6 +4199,37 @@
       "job_link": "https://apply.workable.com/j/70A1E7EA17"
     },
     {
+      "id": "https://jobs.ashbyhq.com/uipath/87dd032c-dfac-44e2-8fd2-d383ed3f53e7",
+      "posted_on": "2026-05-09",
+      "company": "Uipath",
+      "title": "Senior Frontend Engineer ",
+      "location": "Bellevue",
+      "location_profile": {
+        "display": "Bellevue",
+        "label": "Bellevue",
+        "city": "Bellevue",
+        "region": "",
+        "region_code": "",
+        "country": "",
+        "country_code": "",
+        "search_terms": [
+          "Bellevue"
+        ]
+      },
+      "career_bucket": "mid_career_or_senior",
+      "career_bucket_label": "Mid-Career / Senior",
+      "experience_level": "senior_individual_contributor",
+      "experience_level_label": "Senior IC",
+      "yoe_min": 7,
+      "yoe_max": null,
+      "experience_display": "7+ yrs",
+      "authorization_category": "open_or_not_specified",
+      "authorization_category_label": "Open / Not specified",
+      "sponsorship_status": "not_specified",
+      "work_authorization_display": "Open / Not specified; No explicit work authorization requirement stated",
+      "job_link": "https://jobs.ashbyhq.com/uipath/87dd032c-dfac-44e2-8fd2-d383ed3f53e7"
+    },
+    {
       "id": "https://apply.workable.com/j/3F741E060B",
       "posted_on": "2026-05-09",
       "company": "TP LINK USA CORP",
@@ -4116,6 +4268,155 @@
       "sponsorship_status": "not_specified",
       "work_authorization_display": "Open / Not specified; No work authorization requirement stated",
       "job_link": "https://apply.workable.com/j/3F741E060B"
+    },
+    {
+      "id": "https://gevernova.wd5.myworkdayjobs.com/Vernova_ExternalSite/job/Bellevue-WA-US/Sr-Electricity-Market-Optimization-Software-Engineer_R5037146-2",
+      "posted_on": "2026-05-09",
+      "company": "PS0178 GE Energy Management Services, LLC",
+      "title": "Sr. Software Engineer - Electricity Market Optimization w/Remote Option",
+      "location": "Bellevue WA US, United States of America",
+      "location_profile": {
+        "display": "Bellevue WA US, United States of America",
+        "label": "Bellevue WA US, United States",
+        "city": "",
+        "region": "Bellevue WA US",
+        "region_code": "",
+        "country": "United States",
+        "country_code": "US",
+        "search_terms": [
+          "Bellevue WA US, United States of America",
+          "Bellevue WA US, United States",
+          "Bellevue WA US",
+          "United States",
+          "US",
+          "USA"
+        ]
+      },
+      "career_bucket": "mid_career_or_senior",
+      "career_bucket_label": "Mid-Career / Senior",
+      "experience_level": "senior_individual_contributor",
+      "experience_level_label": "Senior IC",
+      "yoe_min": 4,
+      "yoe_max": null,
+      "experience_display": "4+ yrs",
+      "authorization_category": "requires_unrestricted_us_work_authorization",
+      "authorization_category_label": "Requires unrestricted US work authorization",
+      "sponsorship_status": "not_specified",
+      "work_authorization_display": "Requires unrestricted US work authorization; Legal authorization to work in the U.S. is required",
+      "job_link": "https://gevernova.wd5.myworkdayjobs.com/Vernova_ExternalSite/job/Bellevue-WA-US/Sr-Electricity-Market-Optimization-Software-Engineer_R5037146-2"
+    },
+    {
+      "id": "https://gevernova.wd5.myworkdayjobs.com/Only_Confidential_Executive_Recruiting/job/Bellevue-WA-US/Sr-Electricity-Market-Optimization-Software-Engineer_R5037146-1",
+      "posted_on": "2026-05-09",
+      "company": "PS0178 GE Energy Management Services, LLC",
+      "title": "Sr. Software Engineer - Electricity Market Optimization w/Remote Option",
+      "location": "Bellevue WA US, United States of America",
+      "location_profile": {
+        "display": "Bellevue WA US, United States of America",
+        "label": "Bellevue WA US, United States",
+        "city": "",
+        "region": "Bellevue WA US",
+        "region_code": "",
+        "country": "United States",
+        "country_code": "US",
+        "search_terms": [
+          "Bellevue WA US, United States of America",
+          "Bellevue WA US, United States",
+          "Bellevue WA US",
+          "United States",
+          "US",
+          "USA"
+        ]
+      },
+      "career_bucket": "mid_career_or_senior",
+      "career_bucket_label": "Mid-Career / Senior",
+      "experience_level": "senior_individual_contributor",
+      "experience_level_label": "Senior IC",
+      "yoe_min": 4,
+      "yoe_max": null,
+      "experience_display": "4+ yrs",
+      "authorization_category": "requires_unrestricted_us_work_authorization",
+      "authorization_category_label": "Requires unrestricted US work authorization",
+      "sponsorship_status": "not_specified",
+      "work_authorization_display": "Requires unrestricted US work authorization; Legal authorization to work in the U.S. is required",
+      "job_link": "https://gevernova.wd5.myworkdayjobs.com/Only_Confidential_Executive_Recruiting/job/Bellevue-WA-US/Sr-Electricity-Market-Optimization-Software-Engineer_R5037146-1"
+    },
+    {
+      "id": "https://boards.greenhouse.io/neuralink/jobs/7729500003?gh_jid=7729500003",
+      "posted_on": "2026-05-09",
+      "company": "Neuralink",
+      "title": "Software Engineer, Agentic AI",
+      "location": "Austin, Texas, United States | South San Francisco, California, United States",
+      "location_profile": {
+        "display": "Austin, Texas, United States | South San Francisco, California, United States",
+        "label": "Austin, Texas, United States",
+        "city": "Austin",
+        "region": "Texas",
+        "region_code": "TX",
+        "country": "United States",
+        "country_code": "US",
+        "search_terms": [
+          "Austin, Texas, United States | South San Francisco, California, United States",
+          "Austin, Texas, United States",
+          "Austin",
+          "Texas",
+          "TX",
+          "United States",
+          "US",
+          "Austin, Texas",
+          "Austin, United States",
+          "Texas, United States",
+          "USA"
+        ]
+      },
+      "career_bucket": "early_career_or_new_grad",
+      "career_bucket_label": "Early Career / New Grad",
+      "experience_level": "entry_level_or_new_grad",
+      "experience_level_label": "Entry-Level / New Grad",
+      "yoe_min": null,
+      "yoe_max": null,
+      "experience_display": "Not stated",
+      "authorization_category": "open_or_not_specified",
+      "authorization_category_label": "Open / Not specified",
+      "sponsorship_status": "not_specified",
+      "work_authorization_display": "Open / Not specified; No work authorization requirement stated",
+      "job_link": "https://boards.greenhouse.io/neuralink/jobs/7729500003?gh_jid=7729500003"
+    },
+    {
+      "id": "https://gdit.wd5.myworkdayjobs.com/External_Career_Site/job/USA-DC-Washington/AI-ML-Lead-Software-Engineer_RQ219798-1",
+      "posted_on": "2026-05-09",
+      "company": "GD Information Technology, Inc.",
+      "title": "AI/ML Lead Software Engineer",
+      "location": "USA DC Washington - 550 12th St SW (DCC019), United States of America",
+      "location_profile": {
+        "display": "USA DC Washington - 550 12th St SW (DCC019), United States of America",
+        "label": "USA DC Washington - 550 12th St SW (DCC019), United States",
+        "city": "",
+        "region": "USA DC Washington - 550 12th St SW (DCC019)",
+        "region_code": "",
+        "country": "United States",
+        "country_code": "US",
+        "search_terms": [
+          "USA DC Washington - 550 12th St SW (DCC019), United States of America",
+          "USA DC Washington - 550 12th St SW (DCC019), United States",
+          "USA DC Washington - 550 12th St SW (DCC019)",
+          "United States",
+          "US",
+          "USA"
+        ]
+      },
+      "career_bucket": "mid_career_or_senior",
+      "career_bucket_label": "Mid-Career / Senior",
+      "experience_level": "senior_individual_contributor",
+      "experience_level_label": "Senior IC",
+      "yoe_min": 8,
+      "yoe_max": null,
+      "experience_display": "8+ yrs",
+      "authorization_category": "requires_security_clearance_or_public_trust",
+      "authorization_category_label": "Requires clearance / public trust",
+      "sponsorship_status": "not_specified",
+      "work_authorization_display": "Requires clearance / public trust; Security clearance required; no sponsorship",
+      "job_link": "https://gdit.wd5.myworkdayjobs.com/External_Career_Site/job/USA-DC-Washington/AI-ML-Lead-Software-Engineer_RQ219798-1"
     },
     {
       "id": "https://jobs.ashbyhq.com/cogent-security/d0b45843-f1d7-4711-8e0d-9cd180d336d7",
@@ -4567,6 +4868,114 @@
       "sponsorship_status": "not_specified",
       "work_authorization_display": "Open / Not specified; No explicit work authorization or sponsorship requirements stated",
       "job_link": "https://jobs.ashbyhq.com/bjakcareer/50eb5db2-07f4-42a5-bd79-1e3f35789add"
+    },
+    {
+      "id": "https://ngc.wd1.myworkdayjobs.com/Northrop_Grumman_External_Site/job/United-States-Colorado-Boulder/Modeling---Simulation-Software-Engineer---Level-3-or-4_R10232446",
+      "posted_on": "2026-05-09",
+      "company": "0090 CORP-Corporate Office",
+      "title": "Modeling &amp; Simulation Software Engineer - Level 3 or 4",
+      "location": "COBO05, United States of America",
+      "location_profile": {
+        "display": "COBO05, United States of America",
+        "label": "COBO05, United States",
+        "city": "",
+        "region": "COBO05",
+        "region_code": "",
+        "country": "United States",
+        "country_code": "US",
+        "search_terms": [
+          "COBO05, United States of America",
+          "COBO05, United States",
+          "COBO05",
+          "United States",
+          "US",
+          "USA"
+        ]
+      },
+      "career_bucket": "mid_career_or_senior",
+      "career_bucket_label": "Mid-Career / Senior",
+      "experience_level": "senior_individual_contributor",
+      "experience_level_label": "Senior IC",
+      "yoe_min": 5,
+      "yoe_max": null,
+      "experience_display": "5+ yrs",
+      "authorization_category": "requires_unrestricted_us_work_authorization",
+      "authorization_category_label": "Requires unrestricted US work authorization",
+      "sponsorship_status": "not_specified",
+      "work_authorization_display": "Requires unrestricted US work authorization; Must have active US government Secret clearance",
+      "job_link": "https://ngc.wd1.myworkdayjobs.com/Northrop_Grumman_External_Site/job/United-States-Colorado-Boulder/Modeling---Simulation-Software-Engineer---Level-3-or-4_R10232446"
+    },
+    {
+      "id": "https://ngc.wd1.myworkdayjobs.com/Northrop_Grumman_External_Site/job/United-States-Colorado-Boulder/Embedded-Software-Engineer---Level-2-or-3_R10232441",
+      "posted_on": "2026-05-09",
+      "company": "0090 CORP-Corporate Office",
+      "title": "Embedded Software Engineer - Level 2 or 3",
+      "location": "COBO05, United States of America",
+      "location_profile": {
+        "display": "COBO05, United States of America",
+        "label": "COBO05, United States",
+        "city": "",
+        "region": "COBO05",
+        "region_code": "",
+        "country": "United States",
+        "country_code": "US",
+        "search_terms": [
+          "COBO05, United States of America",
+          "COBO05, United States",
+          "COBO05",
+          "United States",
+          "US",
+          "USA"
+        ]
+      },
+      "career_bucket": "early_career_or_new_grad",
+      "career_bucket_label": "Early Career / New Grad",
+      "experience_level": "mid_level",
+      "experience_level_label": "Mid-Level",
+      "yoe_min": 2,
+      "yoe_max": null,
+      "experience_display": "2+ yrs",
+      "authorization_category": "requires_unrestricted_us_work_authorization",
+      "authorization_category_label": "Requires unrestricted US work authorization",
+      "sponsorship_status": "not_specified",
+      "work_authorization_display": "Requires unrestricted US work authorization; Must have active US government Secret clearance",
+      "job_link": "https://ngc.wd1.myworkdayjobs.com/Northrop_Grumman_External_Site/job/United-States-Colorado-Boulder/Embedded-Software-Engineer---Level-2-or-3_R10232441"
+    },
+    {
+      "id": "https://leidos.wd5.myworkdayjobs.com/External/job/Reston-VA/Software-Engineer_R-00181566",
+      "posted_on": "2026-05-09",
+      "company": "00100 LEIDOS, INC.",
+      "title": "Software Engineer",
+      "location": "3400 Reston VA Headquarters, United States of America",
+      "location_profile": {
+        "display": "3400 Reston VA Headquarters, United States of America",
+        "label": "3400 Reston VA Headquarters, United States",
+        "city": "",
+        "region": "3400 Reston VA Headquarters",
+        "region_code": "",
+        "country": "United States",
+        "country_code": "US",
+        "search_terms": [
+          "3400 Reston VA Headquarters, United States of America",
+          "3400 Reston VA Headquarters, United States",
+          "3400 Reston VA Headquarters",
+          "United States",
+          "US",
+          "USA"
+        ]
+      },
+      "career_bucket": "early_career_or_new_grad",
+      "career_bucket_label": "Early Career / New Grad",
+      "experience_level": "entry_level_or_new_grad",
+      "experience_level_label": "Entry-Level / New Grad",
+      "yoe_min": 1,
+      "yoe_max": null,
+      "experience_display": "1+ yrs",
+      "authorization_category": "requires_us_citizenship",
+      "authorization_category_label": "Requires US citizenship",
+      "sponsorship_status": "not_specified",
+      "work_authorization_display": "Requires US citizenship; U.S. citizenship required",
+      "job_link": "https://leidos.wd5.myworkdayjobs.com/External/job/Reston-VA/Software-Engineer_R-00181566"
     },
     {
       "id": "https://job-boards.greenhouse.io/ilia/jobs/5991382004",
@@ -60541,227 +60950,6 @@
       "sponsorship_status": "not_specified",
       "work_authorization_display": "Open / Not specified; No work authorization requirement stated",
       "job_link": "https://job-boards.greenhouse.io/capstoneintegratedsolutions/jobs/5126842007"
-    },
-    {
-      "id": "https://gartner.wd5.myworkdayjobs.com/EXT/job/Stamford-CT/Lead-Software-Engineer_109725",
-      "posted_on": "2026-05-02",
-      "company": "WDAY",
-      "title": "Lead Software Engineer",
-      "location": "Stamford - 56 Top Gallant, United States of America",
-      "location_profile": {
-        "display": "Stamford - 56 Top Gallant, United States of America",
-        "label": "Stamford - 56 Top Gallant, United States",
-        "city": "",
-        "region": "Stamford - 56 Top Gallant",
-        "region_code": "",
-        "country": "United States",
-        "country_code": "US",
-        "search_terms": [
-          "Stamford - 56 Top Gallant, United States of America",
-          "Stamford - 56 Top Gallant, United States",
-          "Stamford - 56 Top Gallant",
-          "United States",
-          "US",
-          "USA"
-        ]
-      },
-      "career_bucket": "mid_career_or_senior",
-      "career_bucket_label": "Mid-Career / Senior",
-      "experience_level": "senior_individual_contributor",
-      "experience_level_label": "Senior IC",
-      "yoe_min": 6,
-      "yoe_max": 9,
-      "experience_display": "6-9 yrs",
-      "authorization_category": "open_or_not_specified",
-      "authorization_category_label": "Open / Not specified",
-      "sponsorship_status": "not_specified",
-      "work_authorization_display": "Open / Not specified; No explicit work authorization or sponsorship requirements stated",
-      "job_link": "https://gartner.wd5.myworkdayjobs.com/EXT/job/Stamford-CT/Lead-Software-Engineer_109725"
-    },
-    {
-      "id": "https://job-boards.greenhouse.io/thealleninstitute/jobs/7872683",
-      "posted_on": "2026-05-02",
-      "company": "The Allen Institute for Artificial Intelligence",
-      "title": "Senior Software Engineer, Platform",
-      "location": "Seattle, WA",
-      "location_profile": {
-        "display": "Seattle, WA",
-        "label": "Seattle, Washington, United States",
-        "city": "Seattle",
-        "region": "Washington",
-        "region_code": "WA",
-        "country": "United States",
-        "country_code": "US",
-        "search_terms": [
-          "Seattle, WA",
-          "Seattle, Washington, United States",
-          "Seattle",
-          "Washington",
-          "WA",
-          "United States",
-          "US",
-          "Seattle, Washington",
-          "Seattle, United States",
-          "Washington, United States",
-          "USA"
-        ]
-      },
-      "career_bucket": "mid_career_or_senior",
-      "career_bucket_label": "Mid-Career / Senior",
-      "experience_level": "senior_individual_contributor",
-      "experience_level_label": "Senior IC",
-      "yoe_min": 8,
-      "yoe_max": null,
-      "experience_display": "8+ yrs",
-      "authorization_category": "open_or_not_specified",
-      "authorization_category_label": "Open / Not specified",
-      "sponsorship_status": "not_specified",
-      "work_authorization_display": "Open / Not specified; E-Verify participation mentioned, no explicit work authorization requirement stated",
-      "job_link": "https://job-boards.greenhouse.io/thealleninstitute/jobs/7872683"
-    },
-    {
-      "id": "https://job-boards.greenhouse.io/thealleninstitute/jobs/7872642",
-      "posted_on": "2026-05-02",
-      "company": "The Allen Institute for Artificial Intelligence",
-      "title": "Senior Software Engineer, Fullstack",
-      "location": "Seattle, WA",
-      "location_profile": {
-        "display": "Seattle, WA",
-        "label": "Seattle, Washington, United States",
-        "city": "Seattle",
-        "region": "Washington",
-        "region_code": "WA",
-        "country": "United States",
-        "country_code": "US",
-        "search_terms": [
-          "Seattle, WA",
-          "Seattle, Washington, United States",
-          "Seattle",
-          "Washington",
-          "WA",
-          "United States",
-          "US",
-          "Seattle, Washington",
-          "Seattle, United States",
-          "Washington, United States",
-          "USA"
-        ]
-      },
-      "career_bucket": "mid_career_or_senior",
-      "career_bucket_label": "Mid-Career / Senior",
-      "experience_level": "senior_individual_contributor",
-      "experience_level_label": "Senior IC",
-      "yoe_min": 8,
-      "yoe_max": null,
-      "experience_display": "8+ yrs",
-      "authorization_category": "open_or_not_specified",
-      "authorization_category_label": "Open / Not specified",
-      "sponsorship_status": "not_specified",
-      "work_authorization_display": "Open / Not specified; E-Verify mentioned but no explicit work authorization requirement stated",
-      "job_link": "https://job-boards.greenhouse.io/thealleninstitute/jobs/7872642"
-    },
-    {
-      "id": "https://job-boards.greenhouse.io/thealleninstitute/jobs/7872631",
-      "posted_on": "2026-05-02",
-      "company": "The Allen Institute for Artificial Intelligence",
-      "title": "Senior Software Engineer, Data",
-      "location": "Seattle, WA",
-      "location_profile": {
-        "display": "Seattle, WA",
-        "label": "Seattle, Washington, United States",
-        "city": "Seattle",
-        "region": "Washington",
-        "region_code": "WA",
-        "country": "United States",
-        "country_code": "US",
-        "search_terms": [
-          "Seattle, WA",
-          "Seattle, Washington, United States",
-          "Seattle",
-          "Washington",
-          "WA",
-          "United States",
-          "US",
-          "Seattle, Washington",
-          "Seattle, United States",
-          "Washington, United States",
-          "USA"
-        ]
-      },
-      "career_bucket": "mid_career_or_senior",
-      "career_bucket_label": "Mid-Career / Senior",
-      "experience_level": "senior_individual_contributor",
-      "experience_level_label": "Senior IC",
-      "yoe_min": 8,
-      "yoe_max": null,
-      "experience_display": "8+ yrs",
-      "authorization_category": "open_or_not_specified",
-      "authorization_category_label": "Open / Not specified",
-      "sponsorship_status": "not_specified",
-      "work_authorization_display": "Open / Not specified; E-Verify available; no explicit work authorization requirement stated",
-      "job_link": "https://job-boards.greenhouse.io/thealleninstitute/jobs/7872631"
-    },
-    {
-      "id": "https://job-boards.greenhouse.io/muckrack/jobs/8533887002",
-      "posted_on": "2026-05-02",
-      "company": "Muck Rack",
-      "title": "Software Engineer, Reporting & Insights",
-      "location": "Remote (Bulgaria)",
-      "location_profile": {
-        "display": "Remote (Bulgaria)",
-        "label": "Remote (Bulgaria)",
-        "city": "Remote (Bulgaria)",
-        "region": "",
-        "region_code": "",
-        "country": "",
-        "country_code": "",
-        "search_terms": [
-          "Remote (Bulgaria)"
-        ]
-      },
-      "career_bucket": "mid_career_or_senior",
-      "career_bucket_label": "Mid-Career / Senior",
-      "experience_level": "mid_level",
-      "experience_level_label": "Mid-Level",
-      "yoe_min": 3,
-      "yoe_max": null,
-      "experience_display": "3+ yrs",
-      "authorization_category": "open_or_not_specified",
-      "authorization_category_label": "Open / Not specified",
-      "sponsorship_status": "not_specified",
-      "work_authorization_display": "Open / Not specified; No explicit work authorization requirement stated",
-      "job_link": "https://job-boards.greenhouse.io/muckrack/jobs/8533887002"
-    },
-    {
-      "id": "https://job-boards.greenhouse.io/muckrack/jobs/8533886002",
-      "posted_on": "2026-05-02",
-      "company": "Muck Rack",
-      "title": "Lead Software Engineer, Content Ingestion",
-      "location": "Remote (Bulgaria)",
-      "location_profile": {
-        "display": "Remote (Bulgaria)",
-        "label": "Remote (Bulgaria)",
-        "city": "Remote (Bulgaria)",
-        "region": "",
-        "region_code": "",
-        "country": "",
-        "country_code": "",
-        "search_terms": [
-          "Remote (Bulgaria)"
-        ]
-      },
-      "career_bucket": "mid_career_or_senior",
-      "career_bucket_label": "Mid-Career / Senior",
-      "experience_level": "senior_individual_contributor",
-      "experience_level_label": "Senior IC",
-      "yoe_min": 8,
-      "yoe_max": null,
-      "experience_display": "8+ yrs",
-      "authorization_category": "open_or_not_specified",
-      "authorization_category_label": "Open / Not specified",
-      "sponsorship_status": "not_specified",
-      "work_authorization_display": "Open / Not specified; No explicit work authorization requirement stated",
-      "job_link": "https://job-boards.greenhouse.io/muckrack/jobs/8533886002"
     }
   ]
 }
