@@ -1,18 +1,18 @@
 {
-  "generated_at": "2026-05-16T15:04:43.917389+00:00",
-  "total_openings": 1794,
+  "generated_at": "2026-05-17T14:59:33.025955+00:00",
+  "total_openings": 1778,
   "posted_within_days": 7,
   "repo_url": "https://github.com/IrishMehta/daily-job-board",
   "career_buckets": [
     {
       "value": "early_career_or_new_grad",
       "label": "Early Career / New Grad",
-      "count": 390
+      "count": 384
     },
     {
       "value": "mid_career_or_senior",
       "label": "Mid-Career / Senior",
-      "count": 1395
+      "count": 1385
     },
     {
       "value": "managerial",
@@ -34,12 +34,12 @@
     {
       "value": "no_sponsorship",
       "label": "No sponsorship",
-      "count": 168
+      "count": 169
     },
     {
       "value": "open_or_not_specified",
       "label": "Open / Not specified",
-      "count": 1021
+      "count": 1007
     },
     {
       "value": "requires_permanent_residency_or_green_card",
@@ -49,17 +49,17 @@
     {
       "value": "requires_security_clearance_or_public_trust",
       "label": "Requires clearance / public trust",
-      "count": 167
+      "count": 166
     },
     {
       "value": "requires_unrestricted_us_work_authorization",
       "label": "Requires unrestricted US work authorization",
-      "count": 154
+      "count": 151
     },
     {
       "value": "requires_us_citizenship",
       "label": "Requires US citizenship",
-      "count": 205
+      "count": 206
     },
     {
       "value": "requires_us_person_status",
@@ -85,7 +85,7 @@
     {
       "value": "US, CA, Santa Clara, United States of America",
       "label": "US, CA, Santa Clara, United States of America",
-      "count": 64
+      "count": 66
     },
     {
       "value": "Remote",
@@ -95,7 +95,7 @@
     {
       "value": "San Francisco, CA",
       "label": "San Francisco, CA",
-      "count": 28
+      "count": 27
     },
     {
       "value": "Two PNC Plaza (PA374), United States of America",
@@ -138,6 +138,11 @@
       "count": 10
     },
     {
+      "value": "San Jose, United States of America",
+      "label": "San Jose, United States of America",
+      "count": 10
+    },
+    {
       "value": "Seattle, WA",
       "label": "Seattle, WA",
       "count": 10
@@ -148,11 +153,6 @@
       "count": 10
     },
     {
-      "value": "China",
-      "label": "China",
-      "count": 9
-    },
-    {
       "value": "New York City, NY",
       "label": "New York City, NY",
       "count": 9
@@ -160,11 +160,6 @@
     {
       "value": "New York, NY",
       "label": "New York, NY",
-      "count": 9
-    },
-    {
-      "value": "San Jose, United States of America",
-      "label": "San Jose, United States of America",
       "count": 9
     },
     {
@@ -190,16 +185,6 @@
     {
       "value": "Gurugram",
       "label": "Gurugram",
-      "count": 8
-    },
-    {
-      "value": "Indonesia",
-      "label": "Indonesia",
-      "count": 8
-    },
-    {
-      "value": "Malaysia",
-      "label": "Malaysia",
       "count": 8
     },
     {
@@ -368,11 +353,6 @@
       "count": 4
     },
     {
-      "value": "Bellevue WA US, United States of America",
-      "label": "Bellevue WA US, United States of America",
-      "count": 4
-    },
-    {
       "value": "Boise, ID - Main Site, United States of America",
       "label": "Boise, ID - Main Site, United States of America",
       "count": 4
@@ -403,13 +383,28 @@
       "count": 4
     },
     {
+      "value": "China",
+      "label": "China",
+      "count": 4
+    },
+    {
       "value": "Dearborn, MI, United States",
       "label": "Dearborn, MI, United States",
       "count": 4
     },
     {
+      "value": "Indonesia",
+      "label": "Indonesia",
+      "count": 4
+    },
+    {
       "value": "King of Prussia, Pennsylvania, United States of America",
       "label": "King of Prussia, Pennsylvania, United States of America",
+      "count": 4
+    },
+    {
+      "value": "Malaysia",
+      "label": "Malaysia",
       "count": 4
     },
     {
@@ -1033,6 +1028,11 @@
       "count": 2
     },
     {
+      "value": "Bellevue WA US, United States of America",
+      "label": "Bellevue WA US, United States of America",
+      "count": 2
+    },
+    {
       "value": "Bellevue, WA",
       "label": "Bellevue, WA",
       "count": 2
@@ -1135,11 +1135,6 @@
     {
       "value": "COBO01, United States of America",
       "label": "COBO01, United States of America",
-      "count": 2
-    },
-    {
-      "value": "COBO05, United States of America",
-      "label": "COBO05, United States of America",
       "count": 2
     },
     {
@@ -1315,6 +1310,11 @@
     {
       "value": "New York City",
       "label": "New York City",
+      "count": 2
+    },
+    {
+      "value": "New York, New York, United States of America",
+      "label": "New York, New York, United States of America",
       "count": 2
     },
     {
@@ -1698,6 +1698,11 @@
       "count": 2
     },
     {
+      "value": "USA VA Home Office (VAHOME), United States of America",
+      "label": "USA VA Home Office (VAHOME), United States of America",
+      "count": 2
+    },
+    {
       "value": "USA VA Oakton - Oakton3, 10467 White Granite Dr (VAS135), United States of America",
       "label": "USA VA Oakton - Oakton3, 10467 White Granite Dr (VAS135), United States of America",
       "count": 2
@@ -1908,6 +1913,11 @@
       "count": 1
     },
     {
+      "value": "155 Seaport Blvd, Boston MA, United States of America",
+      "label": "155 Seaport Blvd, Boston MA, United States of America",
+      "count": 1
+    },
+    {
       "value": "1FM RESTON VA, United States of America",
       "label": "1FM RESTON VA, United States of America",
       "count": 1
@@ -1930,11 +1940,6 @@
     {
       "value": "302 O'FALLON IL, United States of America",
       "label": "302 O'FALLON IL, United States of America",
-      "count": 1
-    },
-    {
-      "value": "3400 Reston VA Headquarters, United States of America",
-      "label": "3400 Reston VA Headquarters, United States of America",
       "count": 1
     },
     {
@@ -2093,11 +2098,6 @@
       "count": 1
     },
     {
-      "value": "Austin, Texas, United States | South San Francisco, California, United States",
-      "label": "Austin, Texas, United States | South San Francisco, California, United States",
-      "count": 1
-    },
-    {
       "value": "Austin, TX",
       "label": "Austin, TX",
       "count": 1
@@ -2123,11 +2123,6 @@
       "count": 1
     },
     {
-      "value": "Bellevue",
-      "label": "Bellevue",
-      "count": 1
-    },
-    {
       "value": "Bellevue | San Francisco",
       "label": "Bellevue | San Francisco",
       "count": 1
@@ -2135,11 +2130,6 @@
     {
       "value": "Bellevue | Seattle",
       "label": "Bellevue | Seattle",
-      "count": 1
-    },
-    {
-      "value": "Bengaluru, Karnataka, India",
-      "label": "Bengaluru, Karnataka, India",
       "count": 1
     },
     {
@@ -2165,6 +2155,11 @@
     {
       "value": "Boston Office",
       "label": "Boston Office",
+      "count": 1
+    },
+    {
+      "value": "Boston or NYC",
+      "label": "Boston or NYC",
       "count": 1
     },
     {
@@ -2828,11 +2823,6 @@
       "count": 1
     },
     {
-      "value": "Irvine, California, United States",
-      "label": "Irvine, California, United States",
-      "count": 1
-    },
-    {
       "value": "Irving, Texas, United States of America",
       "label": "Irving, Texas, United States of America",
       "count": 1
@@ -3083,11 +3073,6 @@
       "count": 1
     },
     {
-      "value": "Nagpur, Maharashtra, India",
-      "label": "Nagpur, Maharashtra, India",
-      "count": 1
-    },
-    {
       "value": "Nationwide Remote Office (US99), United States of America",
       "label": "Nationwide Remote Office (US99), United States of America",
       "count": 1
@@ -3120,11 +3105,6 @@
     {
       "value": "New York, New York, United States",
       "label": "New York, New York, United States",
-      "count": 1
-    },
-    {
-      "value": "New York, New York, United States of America",
-      "label": "New York, New York, United States of America",
       "count": 1
     },
     {
@@ -4098,11 +4078,6 @@
       "count": 1
     },
     {
-      "value": "USA DC Washington - 550 12th St SW (DCC019), United States of America",
-      "label": "USA DC Washington - 550 12th St SW (DCC019), United States of America",
-      "count": 1
-    },
-    {
       "value": "USA DC Washington - Other (DCC135), United States of America",
       "label": "USA DC Washington - Other (DCC135), United States of America",
       "count": 1
@@ -4148,6 +4123,11 @@
       "count": 1
     },
     {
+      "value": "USA NY Albany - 22 Corporate Woods Blvd (NYS014), United States of America",
+      "label": "USA NY Albany - 22 Corporate Woods Blvd (NYS014), United States of America",
+      "count": 1
+    },
+    {
       "value": "USA NY Home Office (NYHOME), United States of America",
       "label": "USA NY Home Office (NYHOME), United States of America",
       "count": 1
@@ -4158,8 +4138,8 @@
       "count": 1
     },
     {
-      "value": "USA VA Home Office (VAHOME), United States of America",
-      "label": "USA VA Home Office (VAHOME), United States of America",
+      "value": "USA VA Yorktown - Bldg 1351, Spring Rd (VAC275), United States of America",
+      "label": "USA VA Yorktown - Bldg 1351, Spring Rd (VAC275), United States of America",
       "count": 1
     },
     {
@@ -4545,6 +4525,158 @@
   ],
   "jobs": [
     {
+      "id": "https://gdit.wd5.myworkdayjobs.com/External_Career_Site/job/USA-VA-Yorktown/Senior-Cloud-Engineer---Active-Top-Secret-clearance_RQ220264-1",
+      "posted_on": "2026-05-17",
+      "company": "GD Information Technology, Inc.",
+      "title": "Senior Cloud Engineer | Active Top Secret clearance",
+      "location": "USA VA Yorktown - Bldg 1351, Spring Rd (VAC275), United States of America",
+      "location_profile": {
+        "display": "USA VA Yorktown - Bldg 1351, Spring Rd (VAC275), United States of America",
+        "label": "USA VA Yorktown - Bldg 1351, Spring Rd (VAC275), United States",
+        "city": "USA VA Yorktown - Bldg 1351",
+        "region": "Spring Rd (VAC275)",
+        "region_code": "",
+        "country": "United States",
+        "country_code": "US",
+        "search_terms": [
+          "USA VA Yorktown - Bldg 1351, Spring Rd (VAC275), United States of America",
+          "USA VA Yorktown - Bldg 1351, Spring Rd (VAC275), United States",
+          "USA VA Yorktown - Bldg 1351",
+          "Spring Rd (VAC275)",
+          "United States",
+          "US",
+          "USA VA Yorktown - Bldg 1351, Spring Rd (VAC275)",
+          "USA VA Yorktown - Bldg 1351, United States",
+          "Spring Rd (VAC275), United States",
+          "USA"
+        ]
+      },
+      "career_bucket": "mid_career_or_senior",
+      "career_bucket_label": "Mid-Career / Senior",
+      "experience_level": "senior_individual_contributor",
+      "experience_level_label": "Senior IC",
+      "yoe_min": 8,
+      "yoe_max": null,
+      "experience_display": "8+ yrs",
+      "authorization_category": "requires_unrestricted_us_work_authorization",
+      "authorization_category_label": "Requires unrestricted US work authorization",
+      "sponsorship_status": "not_specified",
+      "work_authorization_display": "Requires unrestricted US work authorization; US citizenship required; no sponsorship",
+      "job_link": "https://gdit.wd5.myworkdayjobs.com/External_Career_Site/job/USA-VA-Yorktown/Senior-Cloud-Engineer---Active-Top-Secret-clearance_RQ220264-1"
+    },
+    {
+      "id": "https://gdit.wd5.myworkdayjobs.com/External_Career_Site/job/Any-Location--Remote/CNIC-Cloud-Engineer---Active-TS-clearance_RQ220244-1",
+      "posted_on": "2026-05-17",
+      "company": "GD Information Technology, Inc.",
+      "title": "CNIC Cloud Engineer | Active TS clearance",
+      "location": "USA VA Home Office (VAHOME), United States of America",
+      "location_profile": {
+        "display": "USA VA Home Office (VAHOME), United States of America",
+        "label": "USA VA Home Office (VAHOME), United States",
+        "city": "",
+        "region": "USA VA Home Office (VAHOME)",
+        "region_code": "",
+        "country": "United States",
+        "country_code": "US",
+        "search_terms": [
+          "USA VA Home Office (VAHOME), United States of America",
+          "USA VA Home Office (VAHOME), United States",
+          "USA VA Home Office (VAHOME)",
+          "United States",
+          "US",
+          "USA"
+        ]
+      },
+      "career_bucket": "mid_career_or_senior",
+      "career_bucket_label": "Mid-Career / Senior",
+      "experience_level": "senior_individual_contributor",
+      "experience_level_label": "Senior IC",
+      "yoe_min": 8,
+      "yoe_max": null,
+      "experience_display": "8+ yrs",
+      "authorization_category": "requires_us_citizenship",
+      "authorization_category_label": "Requires US citizenship",
+      "sponsorship_status": "not_specified",
+      "work_authorization_display": "Requires US citizenship; US citizenship required; Top Secret clearance required",
+      "job_link": "https://gdit.wd5.myworkdayjobs.com/External_Career_Site/job/Any-Location--Remote/CNIC-Cloud-Engineer---Active-TS-clearance_RQ220244-1"
+    },
+    {
+      "id": "https://fmr.wd1.myworkdayjobs.com/FidelityCareers/job/Boston-MA/Principal-Software-Engineer_2128935",
+      "posted_on": "2026-05-17",
+      "company": "Fidelity Technology Group, LLC",
+      "title": "Principal Software Engineer",
+      "location": "155 Seaport Blvd, Boston MA, United States of America",
+      "location_profile": {
+        "display": "155 Seaport Blvd, Boston MA, United States of America",
+        "label": "155 Seaport Blvd, Boston MA, United States",
+        "city": "155 Seaport Blvd",
+        "region": "Boston MA",
+        "region_code": "",
+        "country": "United States",
+        "country_code": "US",
+        "search_terms": [
+          "155 Seaport Blvd, Boston MA, United States of America",
+          "155 Seaport Blvd, Boston MA, United States",
+          "155 Seaport Blvd",
+          "Boston MA",
+          "United States",
+          "US",
+          "155 Seaport Blvd, Boston MA",
+          "155 Seaport Blvd, United States",
+          "Boston MA, United States",
+          "USA"
+        ]
+      },
+      "career_bucket": "mid_career_or_senior",
+      "career_bucket_label": "Mid-Career / Senior",
+      "experience_level": "senior_individual_contributor",
+      "experience_level_label": "Senior IC",
+      "yoe_min": null,
+      "yoe_max": null,
+      "experience_display": "Not stated",
+      "authorization_category": "open_or_not_specified",
+      "authorization_category_label": "Open / Not specified",
+      "sponsorship_status": "not_specified",
+      "work_authorization_display": "Open / Not specified; No explicit work authorization requirement stated",
+      "job_link": "https://fmr.wd1.myworkdayjobs.com/FidelityCareers/job/Boston-MA/Principal-Software-Engineer_2128935"
+    },
+    {
+      "id": "https://gdit.wd5.myworkdayjobs.com/External_Career_Site/job/USA-NY-Albany/Software-Developer-Senior--COBOL-_RQ220158-1",
+      "posted_on": "2026-05-17",
+      "company": "CSRA State and Local Solutions LLC",
+      "title": "Software Developer Senior (COBOL)",
+      "location": "USA NY Albany - 22 Corporate Woods Blvd (NYS014), United States of America",
+      "location_profile": {
+        "display": "USA NY Albany - 22 Corporate Woods Blvd (NYS014), United States of America",
+        "label": "USA NY Albany - 22 Corporate Woods Blvd (NYS014), United States",
+        "city": "",
+        "region": "USA NY Albany - 22 Corporate Woods Blvd (NYS014)",
+        "region_code": "",
+        "country": "United States",
+        "country_code": "US",
+        "search_terms": [
+          "USA NY Albany - 22 Corporate Woods Blvd (NYS014), United States of America",
+          "USA NY Albany - 22 Corporate Woods Blvd (NYS014), United States",
+          "USA NY Albany - 22 Corporate Woods Blvd (NYS014)",
+          "United States",
+          "US",
+          "USA"
+        ]
+      },
+      "career_bucket": "mid_career_or_senior",
+      "career_bucket_label": "Mid-Career / Senior",
+      "experience_level": "senior_individual_contributor",
+      "experience_level_label": "Senior IC",
+      "yoe_min": 5,
+      "yoe_max": null,
+      "experience_display": "5+ yrs",
+      "authorization_category": "requires_us_citizenship",
+      "authorization_category_label": "Requires US citizenship",
+      "sponsorship_status": "not_specified",
+      "work_authorization_display": "Requires US citizenship; US citizenship required",
+      "job_link": "https://gdit.wd5.myworkdayjobs.com/External_Career_Site/job/USA-NY-Albany/Software-Developer-Senior--COBOL-_RQ220158-1"
+    },
+    {
       "id": "https://jobs.ashbyhq.com/handshake/6a644ba3-0afd-441c-a8d6-38e12ff0624a",
       "posted_on": "2026-05-16",
       "company": "Handshake",
@@ -4578,6 +4710,43 @@
       "sponsorship_status": "not_specified",
       "work_authorization_display": "Open / Not specified; No explicit work authorization requirement stated",
       "job_link": "https://jobs.ashbyhq.com/handshake/6a644ba3-0afd-441c-a8d6-38e12ff0624a"
+    },
+    {
+      "id": "https://gnw.wd1.myworkdayjobs.com/GNW/job/New-York-New-York/Senior-Software-Engineer_REQ-260173",
+      "posted_on": "2026-05-16",
+      "company": "Genworth North America Corporation",
+      "title": "Senior Software Engineer",
+      "location": "New York, New York, United States of America",
+      "location_profile": {
+        "display": "New York, New York, United States of America",
+        "label": "New York, United States",
+        "city": "New York",
+        "region": "New York",
+        "region_code": "NY",
+        "country": "United States",
+        "country_code": "US",
+        "search_terms": [
+          "New York, New York, United States of America",
+          "New York, United States",
+          "New York",
+          "NY",
+          "United States",
+          "US",
+          "USA"
+        ]
+      },
+      "career_bucket": "mid_career_or_senior",
+      "career_bucket_label": "Mid-Career / Senior",
+      "experience_level": "senior_individual_contributor",
+      "experience_level_label": "Senior IC",
+      "yoe_min": 10,
+      "yoe_max": null,
+      "experience_display": "10+ yrs",
+      "authorization_category": "no_sponsorship",
+      "authorization_category_label": "No sponsorship",
+      "sponsorship_status": "no_sponsorship",
+      "work_authorization_display": "No sponsorship; No visa sponsorship available",
+      "job_link": "https://gnw.wd1.myworkdayjobs.com/GNW/job/New-York-New-York/Senior-Software-Engineer_REQ-260173"
     },
     {
       "id": "https://gdit.wd5.myworkdayjobs.com/External_Career_Site/job/USA-TX-San-Antonio/Principal-Software-Engineer_RQ220141-1",
@@ -4614,6 +4783,151 @@
       "sponsorship_status": "not_specified",
       "work_authorization_display": "Requires US citizenship; US citizenship and clearance required",
       "job_link": "https://gdit.wd5.myworkdayjobs.com/External_Career_Site/job/USA-TX-San-Antonio/Principal-Software-Engineer_RQ220141-1"
+    },
+    {
+      "id": "https://job-boards.greenhouse.io/daymarkhealth/jobs/5222679008",
+      "posted_on": "2026-05-16",
+      "company": "Daymark Health",
+      "title": "Senior Software Engineer",
+      "location": "Boston or NYC",
+      "location_profile": {
+        "display": "Boston or NYC",
+        "label": "Boston or NYC",
+        "city": "Boston or NYC",
+        "region": "",
+        "region_code": "",
+        "country": "",
+        "country_code": "",
+        "search_terms": [
+          "Boston or NYC"
+        ]
+      },
+      "career_bucket": "mid_career_or_senior",
+      "career_bucket_label": "Mid-Career / Senior",
+      "experience_level": "senior_individual_contributor",
+      "experience_level_label": "Senior IC",
+      "yoe_min": 4,
+      "yoe_max": null,
+      "experience_display": "4+ yrs",
+      "authorization_category": "open_or_not_specified",
+      "authorization_category_label": "Open / Not specified",
+      "sponsorship_status": "not_specified",
+      "work_authorization_display": "Open / Not specified; No work authorization requirement stated",
+      "job_link": "https://job-boards.greenhouse.io/daymarkhealth/jobs/5222679008"
+    },
+    {
+      "id": "https://adobe.wd5.myworkdayjobs.com/external_experienced/job/San-Jose/Senior-Applied-Machine-Learning-Engineer--Typographic-Intelligence_R166553",
+      "posted_on": "2026-05-16",
+      "company": "ADUS-Adobe Inc.",
+      "title": "Senior Applied Machine Learning Engineer",
+      "location": "San Jose, United States of America",
+      "location_profile": {
+        "display": "San Jose, United States of America",
+        "label": "San Jose, United States",
+        "city": "",
+        "region": "San Jose",
+        "region_code": "",
+        "country": "United States",
+        "country_code": "US",
+        "search_terms": [
+          "San Jose, United States of America",
+          "San Jose, United States",
+          "San Jose",
+          "United States",
+          "US",
+          "USA"
+        ]
+      },
+      "career_bucket": "mid_career_or_senior",
+      "career_bucket_label": "Mid-Career / Senior",
+      "experience_level": "senior_individual_contributor",
+      "experience_level_label": "Senior IC",
+      "yoe_min": 5,
+      "yoe_max": 8,
+      "experience_display": "5-8 yrs",
+      "authorization_category": "open_or_not_specified",
+      "authorization_category_label": "Open / Not specified",
+      "sponsorship_status": "not_specified",
+      "work_authorization_display": "Open / Not specified; No explicit work authorization requirement stated",
+      "job_link": "https://adobe.wd5.myworkdayjobs.com/external_experienced/job/San-Jose/Senior-Applied-Machine-Learning-Engineer--Typographic-Intelligence_R166553"
+    },
+    {
+      "id": "https://nvidia.wd5.myworkdayjobs.com/NVIDIAExternalCareerSite/job/US-CA-Santa-Clara/Senior-Software-Engineer--Platform-Engineering_JR2015832",
+      "posted_on": "2026-05-16",
+      "company": "2100 NVIDIA USA",
+      "title": "Senior Software Engineer, Platform Engineering",
+      "location": "US, CA, Santa Clara, United States of America",
+      "location_profile": {
+        "display": "US, CA, Santa Clara, United States of America",
+        "label": "US, Santa Clara, United States",
+        "city": "US",
+        "region": "Santa Clara",
+        "region_code": "",
+        "country": "United States",
+        "country_code": "US",
+        "search_terms": [
+          "US, CA, Santa Clara, United States of America",
+          "US, Santa Clara, United States",
+          "US",
+          "Santa Clara",
+          "United States",
+          "US, Santa Clara",
+          "US, United States",
+          "Santa Clara, United States",
+          "USA"
+        ]
+      },
+      "career_bucket": "mid_career_or_senior",
+      "career_bucket_label": "Mid-Career / Senior",
+      "experience_level": "senior_individual_contributor",
+      "experience_level_label": "Senior IC",
+      "yoe_min": 8,
+      "yoe_max": null,
+      "experience_display": "8+ yrs",
+      "authorization_category": "open_or_not_specified",
+      "authorization_category_label": "Open / Not specified",
+      "sponsorship_status": "not_specified",
+      "work_authorization_display": "Open / Not specified; No explicit work authorization requirement stated",
+      "job_link": "https://nvidia.wd5.myworkdayjobs.com/NVIDIAExternalCareerSite/job/US-CA-Santa-Clara/Senior-Software-Engineer--Platform-Engineering_JR2015832"
+    },
+    {
+      "id": "https://nvidia.wd5.myworkdayjobs.com/NVIDIAExternalCareerSite/job/US-CA-Santa-Clara/Senior-Software-Engineer--Platform-Engineering_JR2015832",
+      "posted_on": "2026-05-16",
+      "company": "2100 NVIDIA USA",
+      "title": "Senior Software Engineer, Platform Engineering",
+      "location": "US, CA, Santa Clara, United States of America",
+      "location_profile": {
+        "display": "US, CA, Santa Clara, United States of America",
+        "label": "US, Santa Clara, United States",
+        "city": "US",
+        "region": "Santa Clara",
+        "region_code": "",
+        "country": "United States",
+        "country_code": "US",
+        "search_terms": [
+          "US, CA, Santa Clara, United States of America",
+          "US, Santa Clara, United States",
+          "US",
+          "Santa Clara",
+          "United States",
+          "US, Santa Clara",
+          "US, United States",
+          "Santa Clara, United States",
+          "USA"
+        ]
+      },
+      "career_bucket": "mid_career_or_senior",
+      "career_bucket_label": "Mid-Career / Senior",
+      "experience_level": "senior_individual_contributor",
+      "experience_level_label": "Senior IC",
+      "yoe_min": 8,
+      "yoe_max": null,
+      "experience_display": "8+ yrs",
+      "authorization_category": "open_or_not_specified",
+      "authorization_category_label": "Open / Not specified",
+      "sponsorship_status": "not_specified",
+      "work_authorization_display": "Open / Not specified; No explicit work authorization or sponsorship requirements stated",
+      "job_link": "https://nvidia.wd5.myworkdayjobs.com/NVIDIAExternalCareerSite/job/US-CA-Santa-Clara/Senior-Software-Engineer--Platform-Engineering_JR2015832"
     },
     {
       "id": "https://boards.greenhouse.io/zuora/jobs/7895656?gh_jid=7895656",
@@ -69615,863 +69929,6 @@
       "sponsorship_status": "not_specified",
       "work_authorization_display": "Open / Not specified; No explicit work authorization requirement stated",
       "job_link": "https://humana.wd5.myworkdayjobs.com/Humana_External_Career_Site/job/Louisville-KY/Senior-Software-Engineer_R-411618"
-    },
-    {
-      "id": "https://apply.workable.com/j/B09EB7ECCF",
-      "posted_on": "2026-05-09",
-      "company": "Weekday",
-      "title": "Full Stack Developer",
-      "location": "Bengaluru, Karnataka, India",
-      "location_profile": {
-        "display": "Bengaluru, Karnataka, India",
-        "label": "Bengaluru, Karnataka, India",
-        "city": "Bengaluru",
-        "region": "Karnataka",
-        "region_code": "KA",
-        "country": "India",
-        "country_code": "IN",
-        "search_terms": [
-          "Bengaluru, Karnataka, India",
-          "Bengaluru",
-          "Karnataka",
-          "KA",
-          "India",
-          "IN",
-          "Bengaluru, Karnataka",
-          "Bengaluru, India",
-          "Karnataka, India"
-        ]
-      },
-      "career_bucket": "mid_career_or_senior",
-      "career_bucket_label": "Mid-Career / Senior",
-      "experience_level": "unknown",
-      "experience_level_label": "Unknown",
-      "yoe_min": null,
-      "yoe_max": null,
-      "experience_display": "Not stated",
-      "authorization_category": "open_or_not_specified",
-      "authorization_category_label": "Open / Not specified",
-      "sponsorship_status": "not_specified",
-      "work_authorization_display": "Open / Not specified; No work authorization requirement stated",
-      "job_link": "https://apply.workable.com/j/B09EB7ECCF"
-    },
-    {
-      "id": "https://apply.workable.com/j/70A1E7EA17",
-      "posted_on": "2026-05-09",
-      "company": "Weekday",
-      "title": "Frontend Developer (Flutter)",
-      "location": "Nagpur, Maharashtra, India",
-      "location_profile": {
-        "display": "Nagpur, Maharashtra, India",
-        "label": "Nagpur, Maharashtra, India",
-        "city": "Nagpur",
-        "region": "Maharashtra",
-        "region_code": "MH",
-        "country": "India",
-        "country_code": "IN",
-        "search_terms": [
-          "Nagpur, Maharashtra, India",
-          "Nagpur",
-          "Maharashtra",
-          "MH",
-          "India",
-          "IN",
-          "Nagpur, Maharashtra",
-          "Nagpur, India",
-          "Maharashtra, India"
-        ]
-      },
-      "career_bucket": "mid_career_or_senior",
-      "career_bucket_label": "Mid-Career / Senior",
-      "experience_level": "unknown",
-      "experience_level_label": "Unknown",
-      "yoe_min": null,
-      "yoe_max": null,
-      "experience_display": "Not stated",
-      "authorization_category": "open_or_not_specified",
-      "authorization_category_label": "Open / Not specified",
-      "sponsorship_status": "not_specified",
-      "work_authorization_display": "Open / Not specified; No work authorization requirement stated",
-      "job_link": "https://apply.workable.com/j/70A1E7EA17"
-    },
-    {
-      "id": "https://jobs.ashbyhq.com/uipath/87dd032c-dfac-44e2-8fd2-d383ed3f53e7",
-      "posted_on": "2026-05-09",
-      "company": "Uipath",
-      "title": "Senior Frontend Engineer ",
-      "location": "Bellevue",
-      "location_profile": {
-        "display": "Bellevue",
-        "label": "Bellevue",
-        "city": "Bellevue",
-        "region": "",
-        "region_code": "",
-        "country": "",
-        "country_code": "",
-        "search_terms": [
-          "Bellevue"
-        ]
-      },
-      "career_bucket": "mid_career_or_senior",
-      "career_bucket_label": "Mid-Career / Senior",
-      "experience_level": "senior_individual_contributor",
-      "experience_level_label": "Senior IC",
-      "yoe_min": 7,
-      "yoe_max": null,
-      "experience_display": "7+ yrs",
-      "authorization_category": "open_or_not_specified",
-      "authorization_category_label": "Open / Not specified",
-      "sponsorship_status": "not_specified",
-      "work_authorization_display": "Open / Not specified; No explicit work authorization requirement stated",
-      "job_link": "https://jobs.ashbyhq.com/uipath/87dd032c-dfac-44e2-8fd2-d383ed3f53e7"
-    },
-    {
-      "id": "https://apply.workable.com/j/3F741E060B",
-      "posted_on": "2026-05-09",
-      "company": "TP LINK USA CORP",
-      "title": "Cloud Engineer - Frontend Engineer",
-      "location": "Irvine, California, United States",
-      "location_profile": {
-        "display": "Irvine, California, United States",
-        "label": "Irvine, California, United States",
-        "city": "Irvine",
-        "region": "California",
-        "region_code": "CA",
-        "country": "United States",
-        "country_code": "US",
-        "search_terms": [
-          "Irvine, California, United States",
-          "Irvine",
-          "California",
-          "CA",
-          "United States",
-          "US",
-          "Irvine, California",
-          "Irvine, United States",
-          "California, United States",
-          "USA"
-        ]
-      },
-      "career_bucket": "mid_career_or_senior",
-      "career_bucket_label": "Mid-Career / Senior",
-      "experience_level": "unknown",
-      "experience_level_label": "Unknown",
-      "yoe_min": null,
-      "yoe_max": null,
-      "experience_display": "Not stated",
-      "authorization_category": "open_or_not_specified",
-      "authorization_category_label": "Open / Not specified",
-      "sponsorship_status": "not_specified",
-      "work_authorization_display": "Open / Not specified; No work authorization requirement stated",
-      "job_link": "https://apply.workable.com/j/3F741E060B"
-    },
-    {
-      "id": "https://gevernova.wd5.myworkdayjobs.com/Vernova_ExternalSite/job/Bellevue-WA-US/Sr-Electricity-Market-Optimization-Software-Engineer_R5037146-2",
-      "posted_on": "2026-05-09",
-      "company": "PS0178 GE Energy Management Services, LLC",
-      "title": "Sr. Software Engineer - Electricity Market Optimization w/Remote Option",
-      "location": "Bellevue WA US, United States of America",
-      "location_profile": {
-        "display": "Bellevue WA US, United States of America",
-        "label": "Bellevue WA US, United States",
-        "city": "",
-        "region": "Bellevue WA US",
-        "region_code": "",
-        "country": "United States",
-        "country_code": "US",
-        "search_terms": [
-          "Bellevue WA US, United States of America",
-          "Bellevue WA US, United States",
-          "Bellevue WA US",
-          "United States",
-          "US",
-          "USA"
-        ]
-      },
-      "career_bucket": "mid_career_or_senior",
-      "career_bucket_label": "Mid-Career / Senior",
-      "experience_level": "senior_individual_contributor",
-      "experience_level_label": "Senior IC",
-      "yoe_min": 4,
-      "yoe_max": null,
-      "experience_display": "4+ yrs",
-      "authorization_category": "requires_unrestricted_us_work_authorization",
-      "authorization_category_label": "Requires unrestricted US work authorization",
-      "sponsorship_status": "not_specified",
-      "work_authorization_display": "Requires unrestricted US work authorization; Legal authorization to work in the U.S. is required",
-      "job_link": "https://gevernova.wd5.myworkdayjobs.com/Vernova_ExternalSite/job/Bellevue-WA-US/Sr-Electricity-Market-Optimization-Software-Engineer_R5037146-2"
-    },
-    {
-      "id": "https://gevernova.wd5.myworkdayjobs.com/Only_Confidential_Executive_Recruiting/job/Bellevue-WA-US/Sr-Electricity-Market-Optimization-Software-Engineer_R5037146-1",
-      "posted_on": "2026-05-09",
-      "company": "PS0178 GE Energy Management Services, LLC",
-      "title": "Sr. Software Engineer - Electricity Market Optimization w/Remote Option",
-      "location": "Bellevue WA US, United States of America",
-      "location_profile": {
-        "display": "Bellevue WA US, United States of America",
-        "label": "Bellevue WA US, United States",
-        "city": "",
-        "region": "Bellevue WA US",
-        "region_code": "",
-        "country": "United States",
-        "country_code": "US",
-        "search_terms": [
-          "Bellevue WA US, United States of America",
-          "Bellevue WA US, United States",
-          "Bellevue WA US",
-          "United States",
-          "US",
-          "USA"
-        ]
-      },
-      "career_bucket": "mid_career_or_senior",
-      "career_bucket_label": "Mid-Career / Senior",
-      "experience_level": "senior_individual_contributor",
-      "experience_level_label": "Senior IC",
-      "yoe_min": 4,
-      "yoe_max": null,
-      "experience_display": "4+ yrs",
-      "authorization_category": "requires_unrestricted_us_work_authorization",
-      "authorization_category_label": "Requires unrestricted US work authorization",
-      "sponsorship_status": "not_specified",
-      "work_authorization_display": "Requires unrestricted US work authorization; Legal authorization to work in the U.S. is required",
-      "job_link": "https://gevernova.wd5.myworkdayjobs.com/Only_Confidential_Executive_Recruiting/job/Bellevue-WA-US/Sr-Electricity-Market-Optimization-Software-Engineer_R5037146-1"
-    },
-    {
-      "id": "https://boards.greenhouse.io/neuralink/jobs/7729500003?gh_jid=7729500003",
-      "posted_on": "2026-05-09",
-      "company": "Neuralink",
-      "title": "Software Engineer, Agentic AI",
-      "location": "Austin, Texas, United States | South San Francisco, California, United States",
-      "location_profile": {
-        "display": "Austin, Texas, United States | South San Francisco, California, United States",
-        "label": "Austin, Texas, United States",
-        "city": "Austin",
-        "region": "Texas",
-        "region_code": "TX",
-        "country": "United States",
-        "country_code": "US",
-        "search_terms": [
-          "Austin, Texas, United States | South San Francisco, California, United States",
-          "Austin, Texas, United States",
-          "Austin",
-          "Texas",
-          "TX",
-          "United States",
-          "US",
-          "Austin, Texas",
-          "Austin, United States",
-          "Texas, United States",
-          "USA"
-        ]
-      },
-      "career_bucket": "early_career_or_new_grad",
-      "career_bucket_label": "Early Career / New Grad",
-      "experience_level": "entry_level_or_new_grad",
-      "experience_level_label": "Entry-Level / New Grad",
-      "yoe_min": null,
-      "yoe_max": null,
-      "experience_display": "Not stated",
-      "authorization_category": "open_or_not_specified",
-      "authorization_category_label": "Open / Not specified",
-      "sponsorship_status": "not_specified",
-      "work_authorization_display": "Open / Not specified; No work authorization requirement stated",
-      "job_link": "https://boards.greenhouse.io/neuralink/jobs/7729500003?gh_jid=7729500003"
-    },
-    {
-      "id": "https://gdit.wd5.myworkdayjobs.com/External_Career_Site/job/USA-DC-Washington/AI-ML-Lead-Software-Engineer_RQ219798-1",
-      "posted_on": "2026-05-09",
-      "company": "GD Information Technology, Inc.",
-      "title": "AI/ML Lead Software Engineer",
-      "location": "USA DC Washington - 550 12th St SW (DCC019), United States of America",
-      "location_profile": {
-        "display": "USA DC Washington - 550 12th St SW (DCC019), United States of America",
-        "label": "USA DC Washington - 550 12th St SW (DCC019), United States",
-        "city": "",
-        "region": "USA DC Washington - 550 12th St SW (DCC019)",
-        "region_code": "",
-        "country": "United States",
-        "country_code": "US",
-        "search_terms": [
-          "USA DC Washington - 550 12th St SW (DCC019), United States of America",
-          "USA DC Washington - 550 12th St SW (DCC019), United States",
-          "USA DC Washington - 550 12th St SW (DCC019)",
-          "United States",
-          "US",
-          "USA"
-        ]
-      },
-      "career_bucket": "mid_career_or_senior",
-      "career_bucket_label": "Mid-Career / Senior",
-      "experience_level": "senior_individual_contributor",
-      "experience_level_label": "Senior IC",
-      "yoe_min": 8,
-      "yoe_max": null,
-      "experience_display": "8+ yrs",
-      "authorization_category": "requires_security_clearance_or_public_trust",
-      "authorization_category_label": "Requires clearance / public trust",
-      "sponsorship_status": "not_specified",
-      "work_authorization_display": "Requires clearance / public trust; Security clearance required; no sponsorship",
-      "job_link": "https://gdit.wd5.myworkdayjobs.com/External_Career_Site/job/USA-DC-Washington/AI-ML-Lead-Software-Engineer_RQ219798-1"
-    },
-    {
-      "id": "https://jobs.ashbyhq.com/cogent-security/d0b45843-f1d7-4711-8e0d-9cd180d336d7",
-      "posted_on": "2026-05-09",
-      "company": "Cogent Security",
-      "title": "AI Research Engineer",
-      "location": "San Francisco, CA",
-      "location_profile": {
-        "display": "San Francisco, CA",
-        "label": "San Francisco, Canada",
-        "city": "",
-        "region": "San Francisco",
-        "region_code": "",
-        "country": "Canada",
-        "country_code": "CA",
-        "search_terms": [
-          "San Francisco, CA",
-          "San Francisco, Canada",
-          "San Francisco",
-          "Canada",
-          "CA"
-        ]
-      },
-      "career_bucket": "mid_career_or_senior",
-      "career_bucket_label": "Mid-Career / Senior",
-      "experience_level": "mid_level",
-      "experience_level_label": "Mid-Level",
-      "yoe_min": null,
-      "yoe_max": null,
-      "experience_display": "Not stated",
-      "authorization_category": "open_or_not_specified",
-      "authorization_category_label": "Open / Not specified",
-      "sponsorship_status": "not_specified",
-      "work_authorization_display": "Open / Not specified; No explicit work authorization or sponsorship requirements stated",
-      "job_link": "https://jobs.ashbyhq.com/cogent-security/d0b45843-f1d7-4711-8e0d-9cd180d336d7"
-    },
-    {
-      "id": "https://jobs.ashbyhq.com/bjakcareer/31024ded-dc43-4973-8c05-18011a40c7be",
-      "posted_on": "2026-05-09",
-      "company": "BJAK",
-      "title": "高级软件工程师, JavaScript/TypeScript (Senior Software Engineer) (Remote)",
-      "location": "China",
-      "location_profile": {
-        "display": "China",
-        "label": "China",
-        "city": "",
-        "region": "",
-        "region_code": "",
-        "country": "China",
-        "country_code": "CN",
-        "search_terms": [
-          "China",
-          "CN"
-        ]
-      },
-      "career_bucket": "mid_career_or_senior",
-      "career_bucket_label": "Mid-Career / Senior",
-      "experience_level": "senior_individual_contributor",
-      "experience_level_label": "Senior IC",
-      "yoe_min": 3,
-      "yoe_max": null,
-      "experience_display": "3+ yrs",
-      "authorization_category": "open_or_not_specified",
-      "authorization_category_label": "Open / Not specified",
-      "sponsorship_status": "not_specified",
-      "work_authorization_display": "Open / Not specified; No explicit work authorization or sponsorship requirements stated",
-      "job_link": "https://jobs.ashbyhq.com/bjakcareer/31024ded-dc43-4973-8c05-18011a40c7be"
-    },
-    {
-      "id": "https://jobs.ashbyhq.com/bjakcareer/9a06019b-07fd-4e2d-b7d1-d8693c3b92b5",
-      "posted_on": "2026-05-09",
-      "company": "BJAK",
-      "title": "全栈工程师, JavaScript/TypeScript (Full Stack Engineer) (Remote)",
-      "location": "China",
-      "location_profile": {
-        "display": "China",
-        "label": "China",
-        "city": "",
-        "region": "",
-        "region_code": "",
-        "country": "China",
-        "country_code": "CN",
-        "search_terms": [
-          "China",
-          "CN"
-        ]
-      },
-      "career_bucket": "mid_career_or_senior",
-      "career_bucket_label": "Mid-Career / Senior",
-      "experience_level": "mid_level",
-      "experience_level_label": "Mid-Level",
-      "yoe_min": 3,
-      "yoe_max": null,
-      "experience_display": "3+ yrs",
-      "authorization_category": "open_or_not_specified",
-      "authorization_category_label": "Open / Not specified",
-      "sponsorship_status": "not_specified",
-      "work_authorization_display": "Open / Not specified; No explicit work authorization or sponsorship requirements stated",
-      "job_link": "https://jobs.ashbyhq.com/bjakcareer/9a06019b-07fd-4e2d-b7d1-d8693c3b92b5"
-    },
-    {
-      "id": "https://jobs.ashbyhq.com/bjakcareer/6667e31e-707f-4dea-aff6-061fe80aa0ff",
-      "posted_on": "2026-05-09",
-      "company": "BJAK",
-      "title": "Senior Software Engineer, JavaScript/TypeScript (Remote)",
-      "location": "Indonesia",
-      "location_profile": {
-        "display": "Indonesia",
-        "label": "Indonesia",
-        "city": "",
-        "region": "",
-        "region_code": "",
-        "country": "Indonesia",
-        "country_code": "ID",
-        "search_terms": [
-          "Indonesia",
-          "ID"
-        ]
-      },
-      "career_bucket": "mid_career_or_senior",
-      "career_bucket_label": "Mid-Career / Senior",
-      "experience_level": "senior_individual_contributor",
-      "experience_level_label": "Senior IC",
-      "yoe_min": null,
-      "yoe_max": null,
-      "experience_display": "Not stated",
-      "authorization_category": "open_or_not_specified",
-      "authorization_category_label": "Open / Not specified",
-      "sponsorship_status": "not_specified",
-      "work_authorization_display": "Open / Not specified; No work authorization requirement stated",
-      "job_link": "https://jobs.ashbyhq.com/bjakcareer/6667e31e-707f-4dea-aff6-061fe80aa0ff"
-    },
-    {
-      "id": "https://jobs.ashbyhq.com/bjakcareer/b17eb29a-f46a-463d-bcfe-02b397a474bb",
-      "posted_on": "2026-05-09",
-      "company": "BJAK",
-      "title": "Senior Software Engineer, JavaScript/TypeScript",
-      "location": "Malaysia",
-      "location_profile": {
-        "display": "Malaysia",
-        "label": "Malaysia",
-        "city": "",
-        "region": "",
-        "region_code": "",
-        "country": "Malaysia",
-        "country_code": "MY",
-        "search_terms": [
-          "Malaysia",
-          "MY"
-        ]
-      },
-      "career_bucket": "mid_career_or_senior",
-      "career_bucket_label": "Mid-Career / Senior",
-      "experience_level": "senior_individual_contributor",
-      "experience_level_label": "Senior IC",
-      "yoe_min": 3,
-      "yoe_max": null,
-      "experience_display": "3+ yrs",
-      "authorization_category": "open_or_not_specified",
-      "authorization_category_label": "Open / Not specified",
-      "sponsorship_status": "not_specified",
-      "work_authorization_display": "Open / Not specified; No work authorization requirement stated",
-      "job_link": "https://jobs.ashbyhq.com/bjakcareer/b17eb29a-f46a-463d-bcfe-02b397a474bb"
-    },
-    {
-      "id": "https://jobs.ashbyhq.com/bjakcareer/627acc82-a3d1-490a-a5ff-a6bdfb40b0f2",
-      "posted_on": "2026-05-09",
-      "company": "BJAK",
-      "title": "Senior Frontend Engineer",
-      "location": "Malaysia",
-      "location_profile": {
-        "display": "Malaysia",
-        "label": "Malaysia",
-        "city": "",
-        "region": "",
-        "region_code": "",
-        "country": "Malaysia",
-        "country_code": "MY",
-        "search_terms": [
-          "Malaysia",
-          "MY"
-        ]
-      },
-      "career_bucket": "early_career_or_new_grad",
-      "career_bucket_label": "Early Career / New Grad",
-      "experience_level": "entry_level_or_new_grad",
-      "experience_level_label": "Entry-Level / New Grad",
-      "yoe_min": null,
-      "yoe_max": null,
-      "experience_display": "Not stated",
-      "authorization_category": "open_or_not_specified",
-      "authorization_category_label": "Open / Not specified",
-      "sponsorship_status": "not_specified",
-      "work_authorization_display": "Open / Not specified; No work authorization requirement stated",
-      "job_link": "https://jobs.ashbyhq.com/bjakcareer/627acc82-a3d1-490a-a5ff-a6bdfb40b0f2"
-    },
-    {
-      "id": "https://jobs.ashbyhq.com/bjakcareer/2293c680-1bab-4a4c-a7f8-ad5c70798a36",
-      "posted_on": "2026-05-09",
-      "company": "BJAK",
-      "title": "Senior Frontend Engineer",
-      "location": "Indonesia",
-      "location_profile": {
-        "display": "Indonesia",
-        "label": "Indonesia",
-        "city": "",
-        "region": "",
-        "region_code": "",
-        "country": "Indonesia",
-        "country_code": "ID",
-        "search_terms": [
-          "Indonesia",
-          "ID"
-        ]
-      },
-      "career_bucket": "early_career_or_new_grad",
-      "career_bucket_label": "Early Career / New Grad",
-      "experience_level": "entry_level_or_new_grad",
-      "experience_level_label": "Entry-Level / New Grad",
-      "yoe_min": null,
-      "yoe_max": null,
-      "experience_display": "Not stated",
-      "authorization_category": "open_or_not_specified",
-      "authorization_category_label": "Open / Not specified",
-      "sponsorship_status": "not_specified",
-      "work_authorization_display": "Open / Not specified; No work authorization requirement stated",
-      "job_link": "https://jobs.ashbyhq.com/bjakcareer/2293c680-1bab-4a4c-a7f8-ad5c70798a36"
-    },
-    {
-      "id": "https://jobs.ashbyhq.com/bjakcareer/417f22b7-66fa-4cba-a4e7-24e4453510d0",
-      "posted_on": "2026-05-09",
-      "company": "BJAK",
-      "title": "Senior Frontend Engineer",
-      "location": "China",
-      "location_profile": {
-        "display": "China",
-        "label": "China",
-        "city": "",
-        "region": "",
-        "region_code": "",
-        "country": "China",
-        "country_code": "CN",
-        "search_terms": [
-          "China",
-          "CN"
-        ]
-      },
-      "career_bucket": "early_career_or_new_grad",
-      "career_bucket_label": "Early Career / New Grad",
-      "experience_level": "entry_level_or_new_grad",
-      "experience_level_label": "Entry-Level / New Grad",
-      "yoe_min": null,
-      "yoe_max": null,
-      "experience_display": "Not stated",
-      "authorization_category": "open_or_not_specified",
-      "authorization_category_label": "Open / Not specified",
-      "sponsorship_status": "not_specified",
-      "work_authorization_display": "Open / Not specified; No work authorization requirement stated",
-      "job_link": "https://jobs.ashbyhq.com/bjakcareer/417f22b7-66fa-4cba-a4e7-24e4453510d0"
-    },
-    {
-      "id": "https://jobs.ashbyhq.com/bjakcareer/fd448655-4081-4c6f-96e9-9a4592e32d62",
-      "posted_on": "2026-05-09",
-      "company": "BJAK",
-      "title": "Lead Software Engineer, JavaScript/TypeScript (Remote)",
-      "location": "Indonesia",
-      "location_profile": {
-        "display": "Indonesia",
-        "label": "Indonesia",
-        "city": "",
-        "region": "",
-        "region_code": "",
-        "country": "Indonesia",
-        "country_code": "ID",
-        "search_terms": [
-          "Indonesia",
-          "ID"
-        ]
-      },
-      "career_bucket": "mid_career_or_senior",
-      "career_bucket_label": "Mid-Career / Senior",
-      "experience_level": "senior_individual_contributor",
-      "experience_level_label": "Senior IC",
-      "yoe_min": null,
-      "yoe_max": null,
-      "experience_display": "Not stated",
-      "authorization_category": "open_or_not_specified",
-      "authorization_category_label": "Open / Not specified",
-      "sponsorship_status": "not_specified",
-      "work_authorization_display": "Open / Not specified; No work authorization requirement stated",
-      "job_link": "https://jobs.ashbyhq.com/bjakcareer/fd448655-4081-4c6f-96e9-9a4592e32d62"
-    },
-    {
-      "id": "https://jobs.ashbyhq.com/bjakcareer/cdf13429-e8d0-4005-a56e-4d954763a4eb",
-      "posted_on": "2026-05-09",
-      "company": "BJAK",
-      "title": "Lead Software Engineer, JavaScript/TypeScript",
-      "location": "Malaysia",
-      "location_profile": {
-        "display": "Malaysia",
-        "label": "Malaysia",
-        "city": "",
-        "region": "",
-        "region_code": "",
-        "country": "Malaysia",
-        "country_code": "MY",
-        "search_terms": [
-          "Malaysia",
-          "MY"
-        ]
-      },
-      "career_bucket": "mid_career_or_senior",
-      "career_bucket_label": "Mid-Career / Senior",
-      "experience_level": "senior_individual_contributor",
-      "experience_level_label": "Senior IC",
-      "yoe_min": 7,
-      "yoe_max": null,
-      "experience_display": "7+ yrs",
-      "authorization_category": "open_or_not_specified",
-      "authorization_category_label": "Open / Not specified",
-      "sponsorship_status": "not_specified",
-      "work_authorization_display": "Open / Not specified; No work authorization requirement stated",
-      "job_link": "https://jobs.ashbyhq.com/bjakcareer/cdf13429-e8d0-4005-a56e-4d954763a4eb"
-    },
-    {
-      "id": "https://jobs.ashbyhq.com/bjakcareer/859da312-02b9-4efa-91f5-35570ab73649",
-      "posted_on": "2026-05-09",
-      "company": "BJAK",
-      "title": "Lead Software Engineer (Remote)",
-      "location": "China",
-      "location_profile": {
-        "display": "China",
-        "label": "China",
-        "city": "",
-        "region": "",
-        "region_code": "",
-        "country": "China",
-        "country_code": "CN",
-        "search_terms": [
-          "China",
-          "CN"
-        ]
-      },
-      "career_bucket": "mid_career_or_senior",
-      "career_bucket_label": "Mid-Career / Senior",
-      "experience_level": "senior_individual_contributor",
-      "experience_level_label": "Senior IC",
-      "yoe_min": 7,
-      "yoe_max": null,
-      "experience_display": "7+ yrs",
-      "authorization_category": "open_or_not_specified",
-      "authorization_category_label": "Open / Not specified",
-      "sponsorship_status": "not_specified",
-      "work_authorization_display": "Open / Not specified; No work authorization requirement stated",
-      "job_link": "https://jobs.ashbyhq.com/bjakcareer/859da312-02b9-4efa-91f5-35570ab73649"
-    },
-    {
-      "id": "https://jobs.ashbyhq.com/bjakcareer/4284594f-f3e6-447c-b0b0-46e36ebeecda",
-      "posted_on": "2026-05-09",
-      "company": "BJAK",
-      "title": "DevOps Engineer",
-      "location": "Malaysia",
-      "location_profile": {
-        "display": "Malaysia",
-        "label": "Malaysia",
-        "city": "",
-        "region": "",
-        "region_code": "",
-        "country": "Malaysia",
-        "country_code": "MY",
-        "search_terms": [
-          "Malaysia",
-          "MY"
-        ]
-      },
-      "career_bucket": "mid_career_or_senior",
-      "career_bucket_label": "Mid-Career / Senior",
-      "experience_level": "mid_level",
-      "experience_level_label": "Mid-Level",
-      "yoe_min": null,
-      "yoe_max": null,
-      "experience_display": "Not stated",
-      "authorization_category": "open_or_not_specified",
-      "authorization_category_label": "Open / Not specified",
-      "sponsorship_status": "not_specified",
-      "work_authorization_display": "Open / Not specified; No explicit work authorization or sponsorship requirements stated",
-      "job_link": "https://jobs.ashbyhq.com/bjakcareer/4284594f-f3e6-447c-b0b0-46e36ebeecda"
-    },
-    {
-      "id": "https://jobs.ashbyhq.com/bjakcareer/96830547-f9a6-43ca-878f-3b8ab745d266",
-      "posted_on": "2026-05-09",
-      "company": "BJAK",
-      "title": "DevOps Engineer",
-      "location": "Indonesia",
-      "location_profile": {
-        "display": "Indonesia",
-        "label": "Indonesia",
-        "city": "",
-        "region": "",
-        "region_code": "",
-        "country": "Indonesia",
-        "country_code": "ID",
-        "search_terms": [
-          "Indonesia",
-          "ID"
-        ]
-      },
-      "career_bucket": "mid_career_or_senior",
-      "career_bucket_label": "Mid-Career / Senior",
-      "experience_level": "mid_level",
-      "experience_level_label": "Mid-Level",
-      "yoe_min": null,
-      "yoe_max": null,
-      "experience_display": "Not stated",
-      "authorization_category": "open_or_not_specified",
-      "authorization_category_label": "Open / Not specified",
-      "sponsorship_status": "not_specified",
-      "work_authorization_display": "Open / Not specified; No explicit work authorization or sponsorship requirements stated",
-      "job_link": "https://jobs.ashbyhq.com/bjakcareer/96830547-f9a6-43ca-878f-3b8ab745d266"
-    },
-    {
-      "id": "https://jobs.ashbyhq.com/bjakcareer/50eb5db2-07f4-42a5-bd79-1e3f35789add",
-      "posted_on": "2026-05-09",
-      "company": "BJAK",
-      "title": "DevOps Engineer",
-      "location": "China",
-      "location_profile": {
-        "display": "China",
-        "label": "China",
-        "city": "",
-        "region": "",
-        "region_code": "",
-        "country": "China",
-        "country_code": "CN",
-        "search_terms": [
-          "China",
-          "CN"
-        ]
-      },
-      "career_bucket": "mid_career_or_senior",
-      "career_bucket_label": "Mid-Career / Senior",
-      "experience_level": "mid_level",
-      "experience_level_label": "Mid-Level",
-      "yoe_min": null,
-      "yoe_max": null,
-      "experience_display": "Not stated",
-      "authorization_category": "open_or_not_specified",
-      "authorization_category_label": "Open / Not specified",
-      "sponsorship_status": "not_specified",
-      "work_authorization_display": "Open / Not specified; No explicit work authorization or sponsorship requirements stated",
-      "job_link": "https://jobs.ashbyhq.com/bjakcareer/50eb5db2-07f4-42a5-bd79-1e3f35789add"
-    },
-    {
-      "id": "https://ngc.wd1.myworkdayjobs.com/Northrop_Grumman_External_Site/job/United-States-Colorado-Boulder/Modeling---Simulation-Software-Engineer---Level-3-or-4_R10232446",
-      "posted_on": "2026-05-09",
-      "company": "0090 CORP-Corporate Office",
-      "title": "Modeling &amp; Simulation Software Engineer - Level 3 or 4",
-      "location": "COBO05, United States of America",
-      "location_profile": {
-        "display": "COBO05, United States of America",
-        "label": "COBO05, United States",
-        "city": "",
-        "region": "COBO05",
-        "region_code": "",
-        "country": "United States",
-        "country_code": "US",
-        "search_terms": [
-          "COBO05, United States of America",
-          "COBO05, United States",
-          "COBO05",
-          "United States",
-          "US",
-          "USA"
-        ]
-      },
-      "career_bucket": "mid_career_or_senior",
-      "career_bucket_label": "Mid-Career / Senior",
-      "experience_level": "senior_individual_contributor",
-      "experience_level_label": "Senior IC",
-      "yoe_min": 5,
-      "yoe_max": null,
-      "experience_display": "5+ yrs",
-      "authorization_category": "requires_unrestricted_us_work_authorization",
-      "authorization_category_label": "Requires unrestricted US work authorization",
-      "sponsorship_status": "not_specified",
-      "work_authorization_display": "Requires unrestricted US work authorization; Must have active US government Secret clearance",
-      "job_link": "https://ngc.wd1.myworkdayjobs.com/Northrop_Grumman_External_Site/job/United-States-Colorado-Boulder/Modeling---Simulation-Software-Engineer---Level-3-or-4_R10232446"
-    },
-    {
-      "id": "https://ngc.wd1.myworkdayjobs.com/Northrop_Grumman_External_Site/job/United-States-Colorado-Boulder/Embedded-Software-Engineer---Level-2-or-3_R10232441",
-      "posted_on": "2026-05-09",
-      "company": "0090 CORP-Corporate Office",
-      "title": "Embedded Software Engineer - Level 2 or 3",
-      "location": "COBO05, United States of America",
-      "location_profile": {
-        "display": "COBO05, United States of America",
-        "label": "COBO05, United States",
-        "city": "",
-        "region": "COBO05",
-        "region_code": "",
-        "country": "United States",
-        "country_code": "US",
-        "search_terms": [
-          "COBO05, United States of America",
-          "COBO05, United States",
-          "COBO05",
-          "United States",
-          "US",
-          "USA"
-        ]
-      },
-      "career_bucket": "early_career_or_new_grad",
-      "career_bucket_label": "Early Career / New Grad",
-      "experience_level": "mid_level",
-      "experience_level_label": "Mid-Level",
-      "yoe_min": 2,
-      "yoe_max": null,
-      "experience_display": "2+ yrs",
-      "authorization_category": "requires_unrestricted_us_work_authorization",
-      "authorization_category_label": "Requires unrestricted US work authorization",
-      "sponsorship_status": "not_specified",
-      "work_authorization_display": "Requires unrestricted US work authorization; Must have active US government Secret clearance",
-      "job_link": "https://ngc.wd1.myworkdayjobs.com/Northrop_Grumman_External_Site/job/United-States-Colorado-Boulder/Embedded-Software-Engineer---Level-2-or-3_R10232441"
-    },
-    {
-      "id": "https://leidos.wd5.myworkdayjobs.com/External/job/Reston-VA/Software-Engineer_R-00181566",
-      "posted_on": "2026-05-09",
-      "company": "00100 LEIDOS, INC.",
-      "title": "Software Engineer",
-      "location": "3400 Reston VA Headquarters, United States of America",
-      "location_profile": {
-        "display": "3400 Reston VA Headquarters, United States of America",
-        "label": "3400 Reston VA Headquarters, United States",
-        "city": "",
-        "region": "3400 Reston VA Headquarters",
-        "region_code": "",
-        "country": "United States",
-        "country_code": "US",
-        "search_terms": [
-          "3400 Reston VA Headquarters, United States of America",
-          "3400 Reston VA Headquarters, United States",
-          "3400 Reston VA Headquarters",
-          "United States",
-          "US",
-          "USA"
-        ]
-      },
-      "career_bucket": "early_career_or_new_grad",
-      "career_bucket_label": "Early Career / New Grad",
-      "experience_level": "entry_level_or_new_grad",
-      "experience_level_label": "Entry-Level / New Grad",
-      "yoe_min": 1,
-      "yoe_max": null,
-      "experience_display": "1+ yrs",
-      "authorization_category": "requires_us_citizenship",
-      "authorization_category_label": "Requires US citizenship",
-      "sponsorship_status": "not_specified",
-      "work_authorization_display": "Requires US citizenship; U.S. citizenship required",
-      "job_link": "https://leidos.wd5.myworkdayjobs.com/External/job/Reston-VA/Software-Engineer_R-00181566"
     }
   ]
 }

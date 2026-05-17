@@ -4,20 +4,20 @@ Latest filtered openings grouped for public GitHub publishing. Each job includes
 
 Use the interactive job board here: [https://irishmehta.github.io/daily-job-board/](https://irishmehta.github.io/daily-job-board/)
 
-_Generated at 2026-05-16T15:05:13.948995+00:00_
+_Generated at 2026-05-17T15:00:03.418200+00:00_
 
 ## Summary
 
-- Total openings: 1520
+- Total openings: 1519
 - Scope: USA-only jobs in README; dashboard includes all locations
 - Window: jobs posted within the last 7 day(s)
-- Early Career / New Grad: 342
-- Mid-Career / Senior: 1169
+- Early Career / New Grad: 339
+- Mid-Career / Senior: 1171
 - Managerial: 9
 
 ## Early Career / New Grad
 
-Openings in this section: 342
+Openings in this section: 339
 
 | Date | Company | Role | Location | Experience | Work Authorization | Link |
 | --- | --- | --- | --- | --- | --- | --- |
@@ -360,18 +360,23 @@ Openings in this section: 342
 | 2026-05-11 | 00100 LEIDOS, INC. | Entry-Level Software Engineer | 2683 Huntsville AL, United States of America | Not stated | Requires US citizenship; US citizen and Secret clearance required | [Apply](https://leidos.wd5.myworkdayjobs.com/External/job/Huntsville-AL/Entry-Level-Software-Engineer_R-00182934) |
 | 2026-05-11 | 0001 Applied Materials, Inc | Software Engineer II | Gloucester,MA, United States of America | 2-4 yrs | Open / Not specified; No explicit work authorization or sponsorship requirements stated | [Apply](https://amat.wd1.myworkdayjobs.com/External/job/GloucesterMA/Software-Engineer-II_R2619175) |
 | 2026-05-10 | Handshake | Software Engineer, Agentic Infrastructure | San Francisco, CA | 2-4 yrs | Open / Not specified; No explicit work authorization requirement stated | [Apply](https://jobs.ashbyhq.com/handshake/750185eb-d575-430a-93ad-51b7e83a5581) |
-| 2026-05-09 | Neuralink | Software Engineer, Agentic AI | Austin, Texas, United States \| South San Francisco, California, United States | Not stated | Open / Not specified; No work authorization requirement stated | [Apply](https://boards.greenhouse.io/neuralink/jobs/7729500003?gh_jid=7729500003) |
-| 2026-05-09 | 0090 CORP-Corporate Office | Embedded Software Engineer - Level 2 or 3 | COBO05, United States of America | 2+ yrs | Requires unrestricted US work authorization; Must have active US government Secret clearance | [Apply](https://ngc.wd1.myworkdayjobs.com/Northrop_Grumman_External_Site/job/United-States-Colorado-Boulder/Embedded-Software-Engineer---Level-2-or-3_R10232441) |
-| 2026-05-09 | 00100 LEIDOS, INC. | Software Engineer | 3400 Reston VA Headquarters, United States of America | 1+ yrs | Requires US citizenship; U.S. citizenship required | [Apply](https://leidos.wd5.myworkdayjobs.com/External/job/Reston-VA/Software-Engineer_R-00181566) |
 
 ## Mid-Career / Senior
 
-Openings in this section: 1169
+Openings in this section: 1171
 
 | Date | Company | Role | Location | Experience | Work Authorization | Link |
 | --- | --- | --- | --- | --- | --- | --- |
+| 2026-05-17 | GD Information Technology, Inc. | Senior Cloud Engineer \| Active Top Secret clearance | USA VA Yorktown - Bldg 1351, Spring Rd (VAC275), United States of America | 8+ yrs | Requires unrestricted US work authorization; US citizenship required; no sponsorship | [Apply](https://gdit.wd5.myworkdayjobs.com/External_Career_Site/job/USA-VA-Yorktown/Senior-Cloud-Engineer---Active-Top-Secret-clearance_RQ220264-1) |
+| 2026-05-17 | GD Information Technology, Inc. | CNIC Cloud Engineer \| Active TS clearance | USA VA Home Office (VAHOME), United States of America | 8+ yrs | Requires US citizenship; US citizenship required; Top Secret clearance required | [Apply](https://gdit.wd5.myworkdayjobs.com/External_Career_Site/job/Any-Location--Remote/CNIC-Cloud-Engineer---Active-TS-clearance_RQ220244-1) |
+| 2026-05-17 | Fidelity Technology Group, LLC | Principal Software Engineer | 155 Seaport Blvd, Boston MA, United States of America | Not stated | Open / Not specified; No explicit work authorization requirement stated | [Apply](https://fmr.wd1.myworkdayjobs.com/FidelityCareers/job/Boston-MA/Principal-Software-Engineer_2128935) |
+| 2026-05-17 | CSRA State and Local Solutions LLC | Software Developer Senior (COBOL) | USA NY Albany - 22 Corporate Woods Blvd (NYS014), United States of America | 5+ yrs | Requires US citizenship; US citizenship required | [Apply](https://gdit.wd5.myworkdayjobs.com/External_Career_Site/job/USA-NY-Albany/Software-Developer-Senior--COBOL-_RQ220158-1) |
 | 2026-05-16 | Handshake | Senior Forward Deployed Engineer | San Francisco, CA | 5+ yrs | Open / Not specified; No explicit work authorization requirement stated | [Apply](https://jobs.ashbyhq.com/handshake/6a644ba3-0afd-441c-a8d6-38e12ff0624a) |
+| 2026-05-16 | Genworth North America Corporation | Senior Software Engineer | New York, New York, United States of America | 10+ yrs | No sponsorship; No visa sponsorship available | [Apply](https://gnw.wd1.myworkdayjobs.com/GNW/job/New-York-New-York/Senior-Software-Engineer_REQ-260173) |
 | 2026-05-16 | GD Information Technology, Inc. | Principal Software Engineer | USA TX San Antonio - 638 Davy Crockett (TXS011), United States of America | 10+ yrs | Requires US citizenship; US citizenship and clearance required | [Apply](https://gdit.wd5.myworkdayjobs.com/External_Career_Site/job/USA-TX-San-Antonio/Principal-Software-Engineer_RQ220141-1) |
+| 2026-05-16 | ADUS-Adobe Inc. | Senior Applied Machine Learning Engineer | San Jose, United States of America | 5-8 yrs | Open / Not specified; No explicit work authorization requirement stated | [Apply](https://adobe.wd5.myworkdayjobs.com/external_experienced/job/San-Jose/Senior-Applied-Machine-Learning-Engineer--Typographic-Intelligence_R166553) |
+| 2026-05-16 | 2100 NVIDIA USA | Senior Software Engineer, Platform Engineering | US, CA, Santa Clara, United States of America | 8+ yrs | Open / Not specified; No explicit work authorization requirement stated | [Apply](https://nvidia.wd5.myworkdayjobs.com/NVIDIAExternalCareerSite/job/US-CA-Santa-Clara/Senior-Software-Engineer--Platform-Engineering_JR2015832) |
+| 2026-05-16 | 2100 NVIDIA USA | Senior Software Engineer, Platform Engineering | US, CA, Santa Clara, United States of America | 8+ yrs | Open / Not specified; No explicit work authorization or sponsorship requirements stated | [Apply](https://nvidia.wd5.myworkdayjobs.com/NVIDIAExternalCareerSite/job/US-CA-Santa-Clara/Senior-Software-Engineer--Platform-Engineering_JR2015832) |
 | 2026-05-15 | Zuora | Senior Software Engineer | Foster City, California, United States | 3+ yrs | Open / Not specified; No explicit work authorization or sponsorship requirements stated | [Apply](https://boards.greenhouse.io/zuora/jobs/7895656?gh_jid=7895656) |
 | 2026-05-15 | Zipline | Senior Motion Planning Software Engineer - Droid | South San Francisco, California, USA | 3+ yrs | Open / Not specified; No explicit work authorization or sponsorship requirements stated | [Apply](https://www.zipline.com/careers?gh_jid=7735403003) |
 | 2026-05-15 | ZINC Zillow, Inc. | Principal Machine Learning Engineer | Remote-USA, United States of America | 10+ yrs | Open / Not specified; No explicit work authorization or sponsorship requirements stated | [Apply](https://zillow.wd5.myworkdayjobs.com/Zillow_Group_External/job/Remote-USA/Principal-Machine-Learning-Engineer_P750400-1) |
@@ -1533,12 +1538,6 @@ Openings in this section: 1169
 | 2026-05-10 | 1118 S&amp;P OPCO LLC | Lead III, Software Engineer | US - NY NYC - 55 WATER ST 35 HRS, United States of America | 3+ yrs | Open / Not specified; No explicit work authorization requirement stated | [Apply](https://spgi.wd5.myworkdayjobs.com/SPGI_Careers/job/New-York-NY/Manager-IV--Software-Development-Engineering_324590) |
 | 2026-05-10 | 1118 S&amp;P OPCO LLC | Lead III, Software Engineer | US - NY NYC - 55 WATER ST 35 HRS, United States of America | 3+ yrs | Open / Not specified; No explicit work authorization requirement stated | [Apply](https://spgi.wd5.myworkdayjobs.com/SPGI_Internal/job/New-York-NY/Manager-IV--Software-Development-Engineering_324590-2) |
 | 2026-05-10 | 003 Humana Inc. | Senior Software Engineer | Work at Home - Kentucky, United States of America | 5+ yrs | Open / Not specified; No explicit work authorization requirement stated | [Apply](https://humana.wd5.myworkdayjobs.com/Humana_External_Career_Site/job/Louisville-KY/Senior-Software-Engineer_R-411618) |
-| 2026-05-09 | TP LINK USA CORP | Cloud Engineer - Frontend Engineer | Irvine, California, United States | Not stated | Open / Not specified; No work authorization requirement stated | [Apply](https://apply.workable.com/j/3F741E060B) |
-| 2026-05-09 | PS0178 GE Energy Management Services, LLC | Sr. Software Engineer - Electricity Market Optimization w/Remote Option | Bellevue WA US, United States of America | 4+ yrs | Requires unrestricted US work authorization; Legal authorization to work in the U.S. is required | [Apply](https://gevernova.wd5.myworkdayjobs.com/Vernova_ExternalSite/job/Bellevue-WA-US/Sr-Electricity-Market-Optimization-Software-Engineer_R5037146-2) |
-| 2026-05-09 | PS0178 GE Energy Management Services, LLC | Sr. Software Engineer - Electricity Market Optimization w/Remote Option | Bellevue WA US, United States of America | 4+ yrs | Requires unrestricted US work authorization; Legal authorization to work in the U.S. is required | [Apply](https://gevernova.wd5.myworkdayjobs.com/Only_Confidential_Executive_Recruiting/job/Bellevue-WA-US/Sr-Electricity-Market-Optimization-Software-Engineer_R5037146-1) |
-| 2026-05-09 | GD Information Technology, Inc. | AI/ML Lead Software Engineer | USA DC Washington - 550 12th St SW (DCC019), United States of America | 8+ yrs | Requires clearance / public trust; Security clearance required; no sponsorship | [Apply](https://gdit.wd5.myworkdayjobs.com/External_Career_Site/job/USA-DC-Washington/AI-ML-Lead-Software-Engineer_RQ219798-1) |
-| 2026-05-09 | Cogent Security | AI Research Engineer | San Francisco, CA | Not stated | Open / Not specified; No explicit work authorization or sponsorship requirements stated | [Apply](https://jobs.ashbyhq.com/cogent-security/d0b45843-f1d7-4711-8e0d-9cd180d336d7) |
-| 2026-05-09 | 0090 CORP-Corporate Office | Modeling &amp; Simulation Software Engineer - Level 3 or 4 | COBO05, United States of America | 5+ yrs | Requires unrestricted US work authorization; Must have active US government Secret clearance | [Apply](https://ngc.wd1.myworkdayjobs.com/Northrop_Grumman_External_Site/job/United-States-Colorado-Boulder/Modeling---Simulation-Software-Engineer---Level-3-or-4_R10232446) |
 
 ## Managerial
 
