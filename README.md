@@ -4,24 +4,26 @@ Latest filtered openings grouped for public GitHub publishing. Each job includes
 
 Use the interactive job board here: [https://irishmehta.github.io/daily-job-board/](https://irishmehta.github.io/daily-job-board/)
 
-_Generated at 2026-05-23T15:09:20.041898+00:00_
+_Generated at 2026-05-24T15:04:31.973871+00:00_
 
 ## Summary
 
-- Total openings: 899
+- Total openings: 907
 - Scope: USA-only jobs in README; dashboard includes all locations
 - Window: jobs posted within the last 7 day(s)
-- Early Career / New Grad: 209
-- Mid-Career / Senior: 689
+- Early Career / New Grad: 211
+- Mid-Career / Senior: 695
 - Managerial: 1
 
 ## Early Career / New Grad
 
-Openings in this section: 209
+Openings in this section: 211
 
 | Date | Company | Role | Location | Experience | Work Authorization | Link |
 | --- | --- | --- | --- | --- | --- | --- |
+| 2026-05-23 | Snowflake | Software Engineer - Secret, Cryptographic and Identity Infrastructure | US-WA-Bellevue | Not stated | Requires clearance / public trust; Secret clearance required | [Apply](https://jobs.ashbyhq.com/snowflake/eb704210-4c4a-4ab7-8838-8ba7abd55af3) |
 | 2026-05-23 | Shieldai | Associate Infrastructure Engineer (R4897) | San Francisco, California | Not stated | Open / Not specified; No explicit work authorization or sponsorship requirements stated | [Apply](https://jobs.lever.co/shieldai/c612382a-3a0c-4ed1-add8-631bb6791445) |
+| 2026-05-23 | Captivation Software | Software Engineer 1 - Linux/HPC/Bash/Python/Docker/Gitlab/CI/CD | Annapolis Junction, MD | 2-4 yrs | Requires US citizenship; Must hold Top Secret clearance; US citizen required | [Apply](https://job-boards.greenhouse.io/captivation/jobs/5230024008) |
 | 2026-05-22 | Zscaler | Senior Software Development Engineer (Datapath) | San Jose, California, USA | 2+ yrs | Open / Not specified; No explicit work authorization or sponsorship requirements stated | [Apply](https://job-boards.greenhouse.io/zscaler/jobs/5140593007) |
 | 2026-05-22 | Velera Solutions, LLC | Data Scientist I - Remote | Remote-USA, United States of America | 2+ yrs | No sponsorship; No sponsorship available | [Apply](https://velera.wd5.myworkdayjobs.com/VeleraCareers/job/Remote-USA/Data-Scientist-I---Remote_8941) |
 | 2026-05-22 | University of Chicago | Research Data Scientist | Charles M. Harper Center, United States of America | 2-5 yrs | Open / Not specified; No explicit work authorization requirement stated | [Apply](https://uchicago.wd5.myworkdayjobs.com/External/job/Charles-M-Harper-Center/Research-Data-Scientist_JR33692-1) |
@@ -233,13 +235,25 @@ Openings in this section: 209
 
 ## Mid-Career / Senior
 
-Openings in this section: 689
+Openings in this section: 695
 
 | Date | Company | Role | Location | Experience | Work Authorization | Link |
 | --- | --- | --- | --- | --- | --- | --- |
+| 2026-05-23 | Zipline | Senior Full Stack Software Engineer, Application Software (Remote) | Remote in USA | Not stated | Open / Not specified; No explicit work authorization or sponsorship requirements stated | [Apply](https://www.zipline.com/careers?gh_jid=7747476003) |
+| 2026-05-23 | Zipline | Principal Software Engineer, Application Software (Remote) | Remote in USA | Not stated | Open / Not specified; No explicit work authorization or sponsorship requirements stated | [Apply](https://www.zipline.com/careers?gh_jid=7747479003) |
+| 2026-05-23 | USA - Smith &amp; Nephew, Inc. | Software Development Engineer | Pittsburgh, PA, United States of America | 3+ yrs | No sponsorship; No visa sponsorship offered | [Apply](https://smithnephew.wd5.myworkdayjobs.com/External/job/Pittsburgh-PA/Software-Development-Engineer_R90731) |
+| 2026-05-23 | TTM Technologies, Inc. | Senior Cloud Engineer | Remote - California, United States of America | 7+ yrs | Requires unrestricted US work authorization; Must comply with ITAR, EAR, and OFAC export control policies | [Apply](https://ttmtech.wd5.myworkdayjobs.com/jobs/job/Remote---California/Senior-Cloud-Engineer_R16138) |
+| 2026-05-23 | Mixpanel | Senior Software Engineer, AI Platform | San Francisco, US (Hybrid) | 5+ yrs | Open / Not specified; No explicit work authorization or sponsorship requirements stated | [Apply](https://job-boards.greenhouse.io/mixpanel/jobs/7941944) |
 | 2026-05-23 | GD Information Technology, Inc. | Cloud Software Developer | USA MD Home Office (MDHOME), United States of America | 5+ yrs | Requires US person status; Must be a US person | [Apply](https://gdit.wd5.myworkdayjobs.com/External_Career_Site/job/Any-Location--Remote/Cloud-Software-Developer_RQ219602-1) |
 | 2026-05-23 | GD Information Technology, Inc. | Azure Cloud Engineer | USA MD Fort Meade - Fort Meade (MDC025), United States of America | 8+ yrs | Requires unrestricted US work authorization; Must be authorized to work in the US | [Apply](https://gdit.wd5.myworkdayjobs.com/External_Career_Site/job/USA-MD-Fort-Meade/Azure-Cloud-Engineer_RQ220522-2) |
 | 2026-05-23 | GD Information Technology, Inc. | AI/ML Platform Engineer | USA VA Sterling - 22626 Sally Ride Dr (VAS111), United States of America | 8+ yrs | Requires US citizenship; US citizenship and Secret clearance required | [Apply](https://gdit.wd5.myworkdayjobs.com/External_Career_Site/job/USA-VA-Sterling/AI-ML-Platform-Engineer_RQ220407-1) |
+| 2026-05-23 | Captivation Software | Software Engineer 3 - Linux/Bash/Python/Rust/NoSQL/Docker/Kubernetes/Helm | Annapolis Junction, MD | 5+ yrs | Requires US citizenship; Must be a U.S. citizen | [Apply](https://job-boards.greenhouse.io/captivation/jobs/5230020008) |
+| 2026-05-23 | Captivation Software | Software Engineer 3 - Linux/Bash/Python/JavaScript/React/Jupyter/JSON/NumPy | Annapolis Junction, MD | 5+ yrs | Requires US citizenship; Must be a U.S. citizen | [Apply](https://job-boards.greenhouse.io/captivation/jobs/5230019008) |
+| 2026-05-23 | Captivation Software | Software Engineer 3 - Linux/Bash/Python/Java/Gitlab/CI/CD/Docker/Ansible/Grafana/NiFi | Annapolis Junction, MD | 5+ yrs | Requires US citizenship; Must hold Top Secret clearance; U.S. citizen required | [Apply](https://job-boards.greenhouse.io/captivation/jobs/5230018008) |
+| 2026-05-23 | Captivation Software | Software Engineer 3 - Linux/Bash/Python/Apache Airflow/SQL/Jupyter Notebook/NumPy/JSON | Annapolis Junction, MD | 5+ yrs | Requires US citizenship; Must hold Top Secret clearance; U.S. citizen required | [Apply](https://job-boards.greenhouse.io/captivation/jobs/5230017008) |
+| 2026-05-23 | Captivation Software | Software Engineer 2 - Linux/Bash/Python/HashiCorp/Docker/Ansible/HPC | Annapolis Junction, MD | 3+ yrs | Requires US citizenship; Must hold Top Secret clearance; U.S. citizen required | [Apply](https://job-boards.greenhouse.io/captivation/jobs/5230023008) |
+| 2026-05-23 | Captivation Software | Software Engineer 2 - Linux/Bash/Python/Docker/Kubernetes/Helm/SQL/REST | Annapolis Junction, MD - Hybrid | 3+ yrs | Requires US citizenship; Must hold Top Secret clearance; U.S. citizen required | [Apply](https://job-boards.greenhouse.io/captivation/jobs/5230021008) |
+| 2026-05-23 | Captivation Software | Software Engineer 2 (Hybrid) - Linux/Bash/Apache Airflow/Apache Spark/Docker/Podman/Git/AWS | Annapolis Junction, MD - Hybrid | 3+ yrs | Requires US citizenship; Must hold Top Secret clearance; US citizen required | [Apply](https://job-boards.greenhouse.io/captivation/jobs/5230016008) |
 | 2026-05-22 | xAI | X Developer Platform – Forward Deployed Engineer, X API | New York, NY \| Palo Alto, CA | 5+ yrs | Open / Not specified; No explicit work authorization or sponsorship requirements stated | [Apply](https://job-boards.greenhouse.io/xai/jobs/5136287007) |
 | 2026-05-22 | ZoomInfo Technologies LLC | Principal AI Engineer, Data | Waltham, Massachusetts, United States | 8+ yrs | Open / Not specified; No explicit work authorization or sponsorship requirements stated | [Apply](https://www.zoominfo.com/careers?gh_jid=8561609002) |
 | 2026-05-22 | Zipline | Software Engineer – Marketplace Growth | South San Francisco, California, USA | 5+ yrs | Open / Not specified; No work authorization requirement stated | [Apply](https://www.zipline.com/careers?gh_jid=7747190003) |
@@ -920,12 +934,6 @@ Openings in this section: 689
 | 2026-05-17 | GD Information Technology, Inc. | CNIC Cloud Engineer \| Active TS clearance | USA VA Home Office (VAHOME), United States of America | 8+ yrs | Requires US citizenship; US citizenship required; Top Secret clearance required | [Apply](https://gdit.wd5.myworkdayjobs.com/External_Career_Site/job/Any-Location--Remote/CNIC-Cloud-Engineer---Active-TS-clearance_RQ220244-1) |
 | 2026-05-17 | Fidelity Technology Group, LLC | Principal Software Engineer | 155 Seaport Blvd, Boston MA, United States of America | Not stated | Open / Not specified; No explicit work authorization requirement stated | [Apply](https://fmr.wd1.myworkdayjobs.com/FidelityCareers/job/Boston-MA/Principal-Software-Engineer_2128935) |
 | 2026-05-17 | CSRA State and Local Solutions LLC | Software Developer Senior (COBOL) | USA NY Albany - 22 Corporate Woods Blvd (NYS014), United States of America | 5+ yrs | Requires US citizenship; US citizenship required | [Apply](https://gdit.wd5.myworkdayjobs.com/External_Career_Site/job/USA-NY-Albany/Software-Developer-Senior--COBOL-_RQ220158-1) |
-| 2026-05-16 | Handshake | Senior Forward Deployed Engineer | San Francisco, CA | 5+ yrs | Open / Not specified; No explicit work authorization requirement stated | [Apply](https://jobs.ashbyhq.com/handshake/6a644ba3-0afd-441c-a8d6-38e12ff0624a) |
-| 2026-05-16 | Genworth North America Corporation | Senior Software Engineer | New York, New York, United States of America | 10+ yrs | No sponsorship; No visa sponsorship available | [Apply](https://gnw.wd1.myworkdayjobs.com/GNW/job/New-York-New-York/Senior-Software-Engineer_REQ-260173) |
-| 2026-05-16 | GD Information Technology, Inc. | Principal Software Engineer | USA TX San Antonio - 638 Davy Crockett (TXS011), United States of America | 10+ yrs | Requires US citizenship; US citizenship and clearance required | [Apply](https://gdit.wd5.myworkdayjobs.com/External_Career_Site/job/USA-TX-San-Antonio/Principal-Software-Engineer_RQ220141-1) |
-| 2026-05-16 | ADUS-Adobe Inc. | Senior Applied Machine Learning Engineer | San Jose, United States of America | 5-8 yrs | Open / Not specified; No explicit work authorization requirement stated | [Apply](https://adobe.wd5.myworkdayjobs.com/external_experienced/job/San-Jose/Senior-Applied-Machine-Learning-Engineer--Typographic-Intelligence_R166553) |
-| 2026-05-16 | 2100 NVIDIA USA | Senior Software Engineer, Platform Engineering | US, CA, Santa Clara, United States of America | 8+ yrs | Open / Not specified; No explicit work authorization requirement stated | [Apply](https://nvidia.wd5.myworkdayjobs.com/NVIDIAExternalCareerSite/job/US-CA-Santa-Clara/Senior-Software-Engineer--Platform-Engineering_JR2015832) |
-| 2026-05-16 | 2100 NVIDIA USA | Senior Software Engineer, Platform Engineering | US, CA, Santa Clara, United States of America | 8+ yrs | Open / Not specified; No explicit work authorization or sponsorship requirements stated | [Apply](https://nvidia.wd5.myworkdayjobs.com/NVIDIAExternalCareerSite/job/US-CA-Santa-Clara/Senior-Software-Engineer--Platform-Engineering_JR2015832) |
 
 ## Managerial
 
