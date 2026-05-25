@@ -4,23 +4,27 @@ Latest filtered openings grouped for public GitHub publishing. Each job includes
 
 Use the interactive job board here: [https://irishmehta.github.io/daily-job-board/](https://irishmehta.github.io/daily-job-board/)
 
-_Generated at 2026-05-24T15:04:31.973871+00:00_
+_Generated at 2026-05-25T15:27:21.432005+00:00_
 
 ## Summary
 
-- Total openings: 907
+- Total openings: 926
 - Scope: USA-only jobs in README; dashboard includes all locations
 - Window: jobs posted within the last 7 day(s)
-- Early Career / New Grad: 211
-- Mid-Career / Senior: 695
+- Early Career / New Grad: 215
+- Mid-Career / Senior: 710
 - Managerial: 1
 
 ## Early Career / New Grad
 
-Openings in this section: 211
+Openings in this section: 215
 
 | Date | Company | Role | Location | Experience | Work Authorization | Link |
 | --- | --- | --- | --- | --- | --- | --- |
+| 2026-05-25 | Walmart Inc. | (USA) Software Engineer III | (USA) J STREET OFFICE SPACE AR BENTONVILLE Home Office, United States of America | 2+ yrs | Open / Not specified; No explicit work authorization requirement stated | [Apply](https://walmart.wd5.myworkdayjobs.com/WalmartExternal/job/USA-J-STREET-OFFICE-SPACE-AR-BENTONVILLE-Home-Office/XMLNAME--USA--Software-Engineer-III_R-2465469) |
+| 2026-05-25 | Sigma Computing | Senior Software Engineer - Backend | New York City, NY | 2+ yrs | Open / Not specified; No explicit work authorization or sponsorship requirements stated | [Apply](https://job-boards.greenhouse.io/sigmacomputing/jobs/7747577003) |
+| 2026-05-24 | 2100 NVIDIA USA | System Software Engineer - Performance | US, CA, Santa Clara, United States of America | 2+ yrs | Open / Not specified; No explicit work authorization or sponsorship requirements stated | [Apply](https://nvidia.wd5.myworkdayjobs.com/NVIDIAExternalCareerSite/job/US-CA-Santa-Clara/System-Software-Engineer---Performance_JR2018651) |
+| 2026-05-24 | 2100 NVIDIA USA | System Software Engineer - Performance | US, CA, Santa Clara, United States of America | 2+ yrs | Open / Not specified; No explicit work authorization or sponsorship requirements stated | [Apply](https://nvidia.wd5.myworkdayjobs.com/NVIDIAExternalCareerSite/job/US-CA-Santa-Clara/System-Software-Engineer---Performance_JR2018651) |
 | 2026-05-23 | Snowflake | Software Engineer - Secret, Cryptographic and Identity Infrastructure | US-WA-Bellevue | Not stated | Requires clearance / public trust; Secret clearance required | [Apply](https://jobs.ashbyhq.com/snowflake/eb704210-4c4a-4ab7-8838-8ba7abd55af3) |
 | 2026-05-23 | Shieldai | Associate Infrastructure Engineer (R4897) | San Francisco, California | Not stated | Open / Not specified; No explicit work authorization or sponsorship requirements stated | [Apply](https://jobs.lever.co/shieldai/c612382a-3a0c-4ed1-add8-631bb6791445) |
 | 2026-05-23 | Captivation Software | Software Engineer 1 - Linux/HPC/Bash/Python/Docker/Gitlab/CI/CD | Annapolis Junction, MD | 2-4 yrs | Requires US citizenship; Must hold Top Secret clearance; US citizen required | [Apply](https://job-boards.greenhouse.io/captivation/jobs/5230024008) |
@@ -235,10 +239,29 @@ Openings in this section: 211
 
 ## Mid-Career / Senior
 
-Openings in this section: 695
+Openings in this section: 710
 
 | Date | Company | Role | Location | Experience | Work Authorization | Link |
 | --- | --- | --- | --- | --- | --- | --- |
+| 2026-05-25 | Sigma Computing | Senior Software Engineer - Fullstack | San Francisco, CA | 5+ yrs | Open / Not specified; No explicit work authorization or sponsorship requirements stated | [Apply](https://job-boards.greenhouse.io/sigmacomputing/jobs/7747581003) |
+| 2026-05-25 | Sigma Computing | Senior Software Engineer - Fullstack | New York City, NY | 5+ yrs | Open / Not specified; No explicit work authorization or sponsorship requirements stated | [Apply](https://job-boards.greenhouse.io/sigmacomputing/jobs/7747583003) |
+| 2026-05-25 | Sigma Computing | Senior Software Engineer - Frontend | San Francisco, CA | 5+ yrs | Open / Not specified; No explicit work authorization or sponsorship requirements stated | [Apply](https://job-boards.greenhouse.io/sigmacomputing/jobs/7747579003) |
+| 2026-05-25 | Sigma Computing | Senior Software Engineer - Backend | San Francisco, CA | 5+ yrs | Open / Not specified; No explicit work authorization or sponsorship requirements stated | [Apply](https://job-boards.greenhouse.io/sigmacomputing/jobs/7747573003) |
+| 2026-05-25 | Sigma Computing | Senior Software Engineer - Observability and Reliability | San Francisco, CA | 5+ yrs | Open / Not specified; No explicit work authorization or sponsorship requirements stated | [Apply](https://job-boards.greenhouse.io/sigmacomputing/jobs/7747585003) |
+| 2026-05-25 | Sigma Computing | Senior Software Engineer - Observability and Reliability | New York City, NY | 5+ yrs | Open / Not specified; No explicit work authorization or sponsorship requirements stated | [Apply](https://job-boards.greenhouse.io/sigmacomputing/jobs/7747586003) |
+| 2026-05-25 | Red Hat, LLC | Senior Software Engineer -GCP | Remote US CO, United States of America | 5+ yrs | Open / Not specified; No explicit work authorization requirement stated | [Apply](https://redhat.wd5.myworkdayjobs.com/Jobs/job/Remote-US-CO/Senior-Software-Engineer--GCP_R-053100) |
+| 2026-05-25 | Anthropic | Data Scientist, Platform Product | New York City, NY \| Seattle, WA \| San Francisco, CA | 6+ yrs | No sponsorship; Visa sponsorship not offered | [Apply](https://job-boards.greenhouse.io/anthropic/jobs/5116820008) |
+| 2026-05-25 | ADUS-Adobe Inc. | Sr. Software Development Engineer 5.5 | San Jose, United States of America | 9+ yrs | Open / Not specified; No explicit work authorization requirement stated | [Apply](https://adobe.wd5.myworkdayjobs.com/external_experienced/job/San-Jose/Sr-Software-Development-Engineer-55_R168185-1) |
+| 2026-05-25 | 1 Fair Isaac Corporation | Senior/Lead - Backend Engineer/Data Engineer - AI Engineering | Work from Home, United States, United States of America | 7+ yrs | Open / Not specified; No explicit work authorization or sponsorship requirements stated | [Apply](https://fico.wd1.myworkdayjobs.com/External/job/Work-from-Home-United-States/Senior-Lead---Backend-Engineer-Data-Engineer---AI-Engineering_31941) |
+| 2026-05-25 | 001 Plexus Corp. | Senior Cloud/Platform Engineer | Global Headquarters, United States of America | 4+ yrs | Open / Not specified; No explicit work authorization or sponsorship requirements stated | [Apply](https://plexus.wd5.myworkdayjobs.com/Plexus_Careers/job/Neenah-WI/Senior-Cloud-Platform-Engineer_R038755-1) |
+| 2026-05-24 | Sigma Computing | Senior AI/ML Engineer | New York City, NY | 10+ yrs | Open / Not specified; No explicit work authorization or sponsorship requirements stated | [Apply](https://job-boards.greenhouse.io/sigmacomputing/jobs/7747540003) |
+| 2026-05-24 | Sigma Computing | Senior AI/ML Engineer | San Francisco, CA | 10+ yrs | Open / Not specified; No explicit work authorization or sponsorship requirements stated | [Apply](https://job-boards.greenhouse.io/sigmacomputing/jobs/7747538003) |
+| 2026-05-24 | Airbnb | Principal Machine Learning Engineer- LLM Fine-tuning and Optimization | United States | 10+ yrs | Open / Not specified; Remote eligible; no explicit work authorization requirement stated | [Apply](https://careers.airbnb.com/positions/7955579?gh_jid=7955579) |
+| 2026-05-24 | 5014 Disney Entertainment &amp; Sports LLC | Lead Software Engineer | USA - NY - 7 Hudson Square, United States of America | 7+ yrs | Open / Not specified; No explicit work authorization or sponsorship requirements stated | [Apply](https://disney.wd5.myworkdayjobs.com/disneycareer/job/New-York-NY-USA/Lead-Software-Engineer_10149370) |
+| 2026-05-24 | 2100 NVIDIA USA | Senior System Software Engineer - Performance | US, CA, Santa Clara, United States of America | 6+ yrs | Open / Not specified; No explicit work authorization or sponsorship requirements stated | [Apply](https://nvidia.wd5.myworkdayjobs.com/NVIDIAExternalCareerSite/job/US-CA-Santa-Clara/Senior-System-Software-Engineer---Performance_JR2018642) |
+| 2026-05-24 | 2100 NVIDIA USA | Senior System Software Engineer - Performance | US, CA, Santa Clara, United States of America | 6+ yrs | Open / Not specified; No explicit work authorization or sponsorship requirements stated | [Apply](https://nvidia.wd5.myworkdayjobs.com/NVIDIAExternalCareerSite/job/US-CA-Santa-Clara/Senior-System-Software-Engineer---Performance_JR2018642) |
+| 2026-05-24 | 2100 NVIDIA USA | Senior Software Engineer â MD Simulation Engineering | US, CA, Santa Clara, United States of America | 8+ yrs | Open / Not specified; No explicit work authorization or sponsorship requirements stated | [Apply](https://nvidia.wd5.myworkdayjobs.com/NVIDIAExternalCareerSite/job/US-CA-Santa-Clara/Senior-Software-Engineer---MD-Simulation-Engineering_JR2018333) |
+| 2026-05-24 | 2100 NVIDIA USA | Senior Software Engineer â MD Simulation Engineering | US, CA, Santa Clara, United States of America | 8+ yrs | Open / Not specified; No explicit work authorization or sponsorship requirements stated | [Apply](https://nvidia.wd5.myworkdayjobs.com/NVIDIAExternalCareerSite/job/US-CA-Santa-Clara/Senior-Software-Engineer---MD-Simulation-Engineering_JR2018333) |
 | 2026-05-23 | Zipline | Senior Full Stack Software Engineer, Application Software (Remote) | Remote in USA | Not stated | Open / Not specified; No explicit work authorization or sponsorship requirements stated | [Apply](https://www.zipline.com/careers?gh_jid=7747476003) |
 | 2026-05-23 | Zipline | Principal Software Engineer, Application Software (Remote) | Remote in USA | Not stated | Open / Not specified; No explicit work authorization or sponsorship requirements stated | [Apply](https://www.zipline.com/careers?gh_jid=7747479003) |
 | 2026-05-23 | USA - Smith &amp; Nephew, Inc. | Software Development Engineer | Pittsburgh, PA, United States of America | 3+ yrs | No sponsorship; No visa sponsorship offered | [Apply](https://smithnephew.wd5.myworkdayjobs.com/External/job/Pittsburgh-PA/Software-Development-Engineer_R90731) |
@@ -930,10 +953,6 @@ Openings in this section: 695
 | 2026-05-20 | 00100 LEIDOS, INC. | Analytic Developer (SWE-2) | 10008 Annapolis Junction MD, United States of America | 5+ yrs | Requires clearance / public trust; Active TS/SCI clearance required | [Apply](https://leidos.wd5.myworkdayjobs.com/External/job/Annapolis-Junction-MD/Analytic-Developer--SWE-2-_R-00183710) |
 | 2026-05-20 | 00100 LEIDOS, INC. | Analytic Developer (SWE-2) | 10008 Annapolis Junction MD, United States of America | 5+ yrs | Requires clearance / public trust; Active TS/SCI required | [Apply](https://leidos.wd5.myworkdayjobs.com/External/job/Annapolis-Junction-MD/Analytic-Developer--SWE-2-_R-00183710) |
 | 2026-05-20 | 0000050176 RBC Capital Markets, LLC | Sr. Informatica IDMC MDM Software Engineer | 250 NICOLLET MALL:MINNEAPOLIS, United States of America | Not stated | Open / Not specified; No explicit work authorization requirement stated | [Apply](https://rbc.wd3.myworkdayjobs.com/RBCGLOBAL1/job/250-NICOLLET-MALLMINNEAPOLIS/Sr-Informatica-IDMC-MDM-Software-Engineer_R-0000159076-1) |
-| 2026-05-17 | GD Information Technology, Inc. | Senior Cloud Engineer \| Active Top Secret clearance | USA VA Yorktown - Bldg 1351, Spring Rd (VAC275), United States of America | 8+ yrs | Requires unrestricted US work authorization; US citizenship required; no sponsorship | [Apply](https://gdit.wd5.myworkdayjobs.com/External_Career_Site/job/USA-VA-Yorktown/Senior-Cloud-Engineer---Active-Top-Secret-clearance_RQ220264-1) |
-| 2026-05-17 | GD Information Technology, Inc. | CNIC Cloud Engineer \| Active TS clearance | USA VA Home Office (VAHOME), United States of America | 8+ yrs | Requires US citizenship; US citizenship required; Top Secret clearance required | [Apply](https://gdit.wd5.myworkdayjobs.com/External_Career_Site/job/Any-Location--Remote/CNIC-Cloud-Engineer---Active-TS-clearance_RQ220244-1) |
-| 2026-05-17 | Fidelity Technology Group, LLC | Principal Software Engineer | 155 Seaport Blvd, Boston MA, United States of America | Not stated | Open / Not specified; No explicit work authorization requirement stated | [Apply](https://fmr.wd1.myworkdayjobs.com/FidelityCareers/job/Boston-MA/Principal-Software-Engineer_2128935) |
-| 2026-05-17 | CSRA State and Local Solutions LLC | Software Developer Senior (COBOL) | USA NY Albany - 22 Corporate Woods Blvd (NYS014), United States of America | 5+ yrs | Requires US citizenship; US citizenship required | [Apply](https://gdit.wd5.myworkdayjobs.com/External_Career_Site/job/USA-NY-Albany/Software-Developer-Senior--COBOL-_RQ220158-1) |
 
 ## Managerial
 
