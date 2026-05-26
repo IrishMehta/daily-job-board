@@ -1,18 +1,18 @@
 {
-  "generated_at": "2026-05-25T15:27:19.268762+00:00",
-  "total_openings": 1140,
+  "generated_at": "2026-05-26T15:36:37.303487+00:00",
+  "total_openings": 1221,
   "posted_within_days": 7,
   "repo_url": "https://github.com/IrishMehta/daily-job-board",
   "career_buckets": [
     {
       "value": "early_career_or_new_grad",
       "label": "Early Career / New Grad",
-      "count": 246
+      "count": 266
     },
     {
       "value": "mid_career_or_senior",
       "label": "Mid-Career / Senior",
-      "count": 893
+      "count": 954
     },
     {
       "value": "managerial",
@@ -24,7 +24,7 @@
     {
       "value": "country_specific_work_authorization",
       "label": "Country-specific work authorization",
-      "count": 15
+      "count": 17
     },
     {
       "value": "independent_contractor_only",
@@ -34,12 +34,12 @@
     {
       "value": "no_sponsorship",
       "label": "No sponsorship",
-      "count": 78
+      "count": 86
     },
     {
       "value": "open_or_not_specified",
       "label": "Open / Not specified",
-      "count": 661
+      "count": 714
     },
     {
       "value": "requires_permanent_residency_or_green_card",
@@ -49,22 +49,22 @@
     {
       "value": "requires_security_clearance_or_public_trust",
       "label": "Requires clearance / public trust",
-      "count": 133
+      "count": 139
     },
     {
       "value": "requires_unrestricted_us_work_authorization",
       "label": "Requires unrestricted US work authorization",
-      "count": 89
+      "count": 94
     },
     {
       "value": "requires_us_citizenship",
       "label": "Requires US citizenship",
-      "count": 133
+      "count": 139
     },
     {
       "value": "requires_us_person_status",
       "label": "Requires US person status",
-      "count": 19
+      "count": 20
     }
   ],
   "sponsorship_statuses": [
@@ -90,6 +90,11 @@
     {
       "value": "Remote",
       "label": "Remote",
+      "count": 16
+    },
+    {
+      "value": "Washington, DC",
+      "label": "Washington, DC",
       "count": 14
     },
     {
@@ -98,13 +103,13 @@
       "count": 13
     },
     {
-      "value": "Washington, DC",
-      "label": "Washington, DC",
-      "count": 13
-    },
-    {
       "value": "3325 Fort George G. Meade MD, United States of America",
       "label": "3325 Fort George G. Meade MD, United States of America",
+      "count": 12
+    },
+    {
+      "value": "San Francisco",
+      "label": "San Francisco",
       "count": 12
     },
     {
@@ -113,8 +118,8 @@
       "count": 11
     },
     {
-      "value": "San Francisco",
-      "label": "San Francisco",
+      "value": "142019-NC-300 South Brevard, Charlotte, United States of America",
+      "label": "142019-NC-300 South Brevard, Charlotte, United States of America",
       "count": 10
     },
     {
@@ -123,8 +128,8 @@
       "count": 10
     },
     {
-      "value": "142019-NC-300 South Brevard, Charlotte, United States of America",
-      "label": "142019-NC-300 South Brevard, Charlotte, United States of America",
+      "value": "New York City, NY",
+      "label": "New York City, NY",
       "count": 9
     },
     {
@@ -138,8 +143,23 @@
       "count": 8
     },
     {
+      "value": "New York City",
+      "label": "New York City",
+      "count": 8
+    },
+    {
       "value": "O'Fallon, Missouri (Main Campus), United States of America",
       "label": "O'Fallon, Missouri (Main Campus), United States of America",
+      "count": 8
+    },
+    {
+      "value": "Portugal",
+      "label": "Portugal",
+      "count": 8
+    },
+    {
+      "value": "Romania",
+      "label": "Romania",
       "count": 8
     },
     {
@@ -150,16 +170,6 @@
     {
       "value": "King of Prussia, PA, US",
       "label": "King of Prussia, PA, US",
-      "count": 7
-    },
-    {
-      "value": "New York City",
-      "label": "New York City",
-      "count": 7
-    },
-    {
-      "value": "Romania",
-      "label": "Romania",
       "count": 7
     },
     {
@@ -188,13 +198,13 @@
       "count": 6
     },
     {
-      "value": "New York City, NY",
-      "label": "New York City, NY",
+      "value": "Dallas Innovation Center - Luna Rd (TX270), United States of America",
+      "label": "Dallas Innovation Center - Luna Rd (TX270), United States of America",
       "count": 6
     },
     {
-      "value": "Portugal",
-      "label": "Portugal",
+      "value": "USA - Chantilly, VA, United States of America",
+      "label": "USA - Chantilly, VA, United States of America",
       "count": 6
     },
     {
@@ -223,8 +233,18 @@
       "count": 5
     },
     {
+      "value": "Malaysia",
+      "label": "Malaysia",
+      "count": 5
+    },
+    {
       "value": "Miami",
       "label": "Miami",
+      "count": 5
+    },
+    {
+      "value": "North America",
+      "label": "North America",
       "count": 5
     },
     {
@@ -238,6 +258,11 @@
       "count": 5
     },
     {
+      "value": "Seattle, WA",
+      "label": "Seattle, WA",
+      "count": 5
+    },
+    {
       "value": "US",
       "label": "US",
       "count": 5
@@ -245,6 +270,11 @@
     {
       "value": "US-IN-INDIANAPOLIS-206 ~ 3939 Priority Way S Dr ~ PRIORITY BLDG 6, United States of America",
       "label": "US-IN-INDIANAPOLIS-206 ~ 3939 Priority Way S Dr ~ PRIORITY BLDG 6, United States of America",
+      "count": 5
+    },
+    {
+      "value": "USA - Hazelwood, MO, United States of America",
+      "label": "USA - Hazelwood, MO, United States of America",
       "count": 5
     },
     {
@@ -278,11 +308,6 @@
       "count": 4
     },
     {
-      "value": "Dallas Innovation Center - Luna Rd (TX270), United States of America",
-      "label": "Dallas Innovation Center - Luna Rd (TX270), United States of America",
-      "count": 4
-    },
-    {
       "value": "Indonesia",
       "label": "Indonesia",
       "count": 4
@@ -290,11 +315,6 @@
     {
       "value": "Kyiv",
       "label": "Kyiv",
-      "count": 4
-    },
-    {
-      "value": "Malaysia",
-      "label": "Malaysia",
       "count": 4
     },
     {
@@ -328,11 +348,6 @@
       "count": 4
     },
     {
-      "value": "Seattle, WA",
-      "label": "Seattle, WA",
-      "count": 4
-    },
-    {
       "value": "South San Francisco, California, USA",
       "label": "South San Francisco, California, USA",
       "count": 4
@@ -360,16 +375,6 @@
     {
       "value": "USA - CA - 1200 Grand Central Ave, United States of America",
       "label": "USA - CA - 1200 Grand Central Ave, United States of America",
-      "count": 4
-    },
-    {
-      "value": "USA - Chantilly, VA, United States of America",
-      "label": "USA - Chantilly, VA, United States of America",
-      "count": 4
-    },
-    {
-      "value": "USA - Hazelwood, MO, United States of America",
-      "label": "USA - Hazelwood, MO, United States of America",
       "count": 4
     },
     {
@@ -438,13 +443,23 @@
       "count": 3
     },
     {
-      "value": "North America",
-      "label": "North America",
+      "value": "Raleigh, United States of America",
+      "label": "Raleigh, United States of America",
       "count": 3
     },
     {
       "value": "Remote - International",
       "label": "Remote - International",
+      "count": 3
+    },
+    {
+      "value": "Remote US",
+      "label": "Remote US",
+      "count": 3
+    },
+    {
+      "value": "Remote, US",
+      "label": "Remote, US",
       "count": 3
     },
     {
@@ -483,6 +498,11 @@
       "count": 3
     },
     {
+      "value": "São Paulo",
+      "label": "São Paulo",
+      "count": 3
+    },
+    {
       "value": "US - San Francisco",
       "label": "US - San Francisco",
       "count": 3
@@ -490,6 +510,11 @@
     {
       "value": "US-AL-HUNTSVILLE-401 ~ 401 Jan Davis Dr NW ~ JAN DAVIS 401, United States of America",
       "label": "US-AL-HUNTSVILLE-401 ~ 401 Jan Davis Dr NW ~ JAN DAVIS 401, United States of America",
+      "count": 3
+    },
+    {
+      "value": "US-IA-CEDAR RAPIDS-130 ~ 5350 C Ave NE ~ BLDG 130, United States of America",
+      "label": "US-IA-CEDAR RAPIDS-130 ~ 5350 C Ave NE ~ BLDG 130, United States of America",
       "count": 3
     },
     {
@@ -518,6 +543,11 @@
       "count": 3
     },
     {
+      "value": "USA, Massachusetts, Boston, 200 Berkeley Street, United States of America",
+      "label": "USA, Massachusetts, Boston, 200 Berkeley Street, United States of America",
+      "count": 3
+    },
+    {
       "value": "USA-MI-Ann Arbor-KLA, United States of America",
       "label": "USA-MI-Ann Arbor-KLA, United States of America",
       "count": 3
@@ -538,8 +568,18 @@
       "count": 3
     },
     {
+      "value": "(USA) Crossman Excellence Building CA SUNNYVALE Home Office, United States of America",
+      "label": "(USA) Crossman Excellence Building CA SUNNYVALE Home Office, United States of America",
+      "count": 2
+    },
+    {
       "value": "0462 Fort Belvoir VA, United States of America",
       "label": "0462 Fort Belvoir VA, United States of America",
+      "count": 2
+    },
+    {
+      "value": "1 Spartan Way, Merrimack NH, United States of America",
+      "label": "1 Spartan Way, Merrimack NH, United States of America",
       "count": 2
     },
     {
@@ -600,6 +640,11 @@
     {
       "value": "2676 San Diego CA, United States of America",
       "label": "2676 San Diego CA, United States of America",
+      "count": 2
+    },
+    {
+      "value": "339 CHANTILLY VA, United States of America",
+      "label": "339 CHANTILLY VA, United States of America",
       "count": 2
     },
     {
@@ -683,6 +728,11 @@
       "count": 2
     },
     {
+      "value": "Bogota",
+      "label": "Bogota",
+      "count": 2
+    },
+    {
       "value": "Boston, Massachusetts, United States",
       "label": "Boston, Massachusetts, United States",
       "count": 2
@@ -703,6 +753,11 @@
       "count": 2
     },
     {
+      "value": "Budapest",
+      "label": "Budapest",
+      "count": 2
+    },
+    {
       "value": "Buffalo Grove-2100 E Lake Cook, United States of America",
       "label": "Buffalo Grove-2100 E Lake Cook, United States of America",
       "count": 2
@@ -715,6 +770,11 @@
     {
       "value": "Cary,North Carolina,United States",
       "label": "Cary,North Carolina,United States",
+      "count": 2
+    },
+    {
+      "value": "Chantilly, Virginia",
+      "label": "Chantilly, Virginia",
       "count": 2
     },
     {
@@ -745,6 +805,11 @@
     {
       "value": "Colorado Springs, CO",
       "label": "Colorado Springs, CO",
+      "count": 2
+    },
+    {
+      "value": "Czechia",
+      "label": "Czechia",
       "count": 2
     },
     {
@@ -788,6 +853,11 @@
       "count": 2
     },
     {
+      "value": "Hyderabad, Telangana, India",
+      "label": "Hyderabad, Telangana, India",
+      "count": 2
+    },
+    {
       "value": "IL-70 W Madison St, 10th Fl, United States of America",
       "label": "IL-70 W Madison St, 10th Fl, United States of America",
       "count": 2
@@ -810,6 +880,11 @@
     {
       "value": "Lehi, United States of America",
       "label": "Lehi, United States of America",
+      "count": 2
+    },
+    {
+      "value": "Malmö",
+      "label": "Malmö",
       "count": 2
     },
     {
@@ -848,13 +923,13 @@
       "count": 2
     },
     {
-      "value": "Raleigh, NC",
-      "label": "Raleigh, NC",
+      "value": "Porto",
+      "label": "Porto",
       "count": 2
     },
     {
-      "value": "Raleigh, United States of America",
-      "label": "Raleigh, United States of America",
+      "value": "Raleigh, NC",
+      "label": "Raleigh, NC",
       "count": 2
     },
     {
@@ -873,13 +948,13 @@
       "count": 2
     },
     {
-      "value": "Remote in USA",
-      "label": "Remote in USA",
+      "value": "Remote - Americas",
+      "label": "Remote - Americas",
       "count": 2
     },
     {
-      "value": "Remote US",
-      "label": "Remote US",
+      "value": "Remote in USA",
+      "label": "Remote in USA",
       "count": 2
     },
     {
@@ -893,8 +968,8 @@
       "count": 2
     },
     {
-      "value": "Remote, US",
-      "label": "Remote, US",
+      "value": "Remote, USA",
+      "label": "Remote, USA",
       "count": 2
     },
     {
@@ -928,6 +1003,11 @@
       "count": 2
     },
     {
+      "value": "San Francisco, California (In-Office)",
+      "label": "San Francisco, California (In-Office)",
+      "count": 2
+    },
+    {
       "value": "San Francisco, United States of America",
       "label": "San Francisco, United States of America",
       "count": 2
@@ -935,6 +1015,11 @@
     {
       "value": "Santa Monica - 3100 Ocean Park Blvd, United States of America",
       "label": "Santa Monica - 3100 Ocean Park Blvd, United States of America",
+      "count": 2
+    },
+    {
+      "value": "Santo Domingo",
+      "label": "Santo Domingo",
       "count": 2
     },
     {
@@ -1023,6 +1108,11 @@
       "count": 2
     },
     {
+      "value": "US-IN-FT WAYNE-150A ~ 1010 Production Rd ~ BLDG 150A, United States of America",
+      "label": "US-IN-FT WAYNE-150A ~ 1010 Production Rd ~ BLDG 150A, United States of America",
+      "count": 2
+    },
+    {
       "value": "US-PR-AGUADILLA-110 ~ Rd 110 N Km 28.8 ~ RD110, United States of America",
       "label": "US-PR-AGUADILLA-110 ~ Rd 110 N Km 28.8 ~ RD110, United States of America",
       "count": 2
@@ -1093,13 +1183,13 @@
       "count": 2
     },
     {
-      "value": "USA, Massachusetts, Boston, 200 Berkeley Street, United States of America",
-      "label": "USA, Massachusetts, Boston, 200 Berkeley Street, United States of America",
+      "value": "USA, VA, Arlington (1500 Crystal Dr), United States of America",
+      "label": "USA, VA, Arlington (1500 Crystal Dr), United States of America",
       "count": 2
     },
     {
-      "value": "USA, VA, Arlington (1500 Crystal Dr), United States of America",
-      "label": "USA, VA, Arlington (1500 Crystal Dr), United States of America",
+      "value": "USCNC05 - Charlotte - 9300 Arrowpoint Boulevard, United States of America",
+      "label": "USCNC05 - Charlotte - 9300 Arrowpoint Boulevard, United States of America",
       "count": 2
     },
     {
@@ -1110,11 +1200,6 @@
     {
       "value": "(Hybrid) Mansfield, MA",
       "label": "(Hybrid) Mansfield, MA",
-      "count": 1
-    },
-    {
-      "value": "(USA) Crossman Excellence Building CA SUNNYVALE Home Office, United States of America",
-      "label": "(USA) Crossman Excellence Building CA SUNNYVALE Home Office, United States of America",
       "count": 1
     },
     {
@@ -1153,18 +1238,23 @@
       "count": 1
     },
     {
+      "value": "(USA) VIZIO SERVICES SEATTLE WA Seattle Home Office, United States of America",
+      "label": "(USA) VIZIO SERVICES SEATTLE WA Seattle Home Office, United States of America",
+      "count": 1
+    },
+    {
       "value": "-REMOTE, BULGARIA-",
       "label": "-REMOTE, BULGARIA-",
       "count": 1
     },
     {
-      "value": "1 Exact Lane, United States of America",
-      "label": "1 Exact Lane, United States of America",
+      "value": "0YL EGLIN AFB FL (HURLBURT FIELD), United States of America",
+      "label": "0YL EGLIN AFB FL (HURLBURT FIELD), United States of America",
       "count": 1
     },
     {
-      "value": "1 Spartan Way, Merrimack NH, United States of America",
-      "label": "1 Spartan Way, Merrimack NH, United States of America",
+      "value": "1 Exact Lane, United States of America",
+      "label": "1 Exact Lane, United States of America",
       "count": 1
     },
     {
@@ -1298,6 +1388,16 @@
       "count": 1
     },
     {
+      "value": "Americas Remote",
+      "label": "Americas Remote",
+      "count": 1
+    },
+    {
+      "value": "Ann Arbor, MI",
+      "label": "Ann Arbor, MI",
+      "count": 1
+    },
+    {
       "value": "Ann Arbor, Michigan, United States",
       "label": "Ann Arbor, Michigan, United States",
       "count": 1
@@ -1350,6 +1450,11 @@
     {
       "value": "Atlanta HQ North Tower Office, United States of America",
       "label": "Atlanta HQ North Tower Office, United States of America",
+      "count": 1
+    },
+    {
+      "value": "Atlanta, Georgia - USA | Oakville, Ontario - Canada | Toronto, Ontario - Canada | Waterloo, Ontario - Canada",
+      "label": "Atlanta, Georgia - USA | Oakville, Ontario - Canada | Toronto, Ontario - Canada | Waterloo, Ontario - Canada",
       "count": 1
     },
     {
@@ -1418,11 +1523,6 @@
       "count": 1
     },
     {
-      "value": "Bogota",
-      "label": "Bogota",
-      "count": 1
-    },
-    {
       "value": "Boise, ID - Main Site, United States of America",
       "label": "Boise, ID - Main Site, United States of America",
       "count": 1
@@ -1450,11 +1550,6 @@
     {
       "value": "Brookfield, WI, United States of America",
       "label": "Brookfield, WI, United States of America",
-      "count": 1
-    },
-    {
-      "value": "Budapest",
-      "label": "Budapest",
       "count": 1
     },
     {
@@ -1518,6 +1613,11 @@
       "count": 1
     },
     {
+      "value": "CASU21, United States of America",
+      "label": "CASU21, United States of America",
+      "count": 1
+    },
+    {
       "value": "Cedar Rapids, Iowa, United States of America",
       "label": "Cedar Rapids, Iowa, United States of America",
       "count": 1
@@ -1528,18 +1628,23 @@
       "count": 1
     },
     {
-      "value": "Chantilly, Virginia",
-      "label": "Chantilly, Virginia",
-      "count": 1
-    },
-    {
       "value": "Charles M. Harper Center, United States of America",
       "label": "Charles M. Harper Center, United States of America",
       "count": 1
     },
     {
+      "value": "Chattanooga, Tennessee, USA, United States of America",
+      "label": "Chattanooga, Tennessee, USA, United States of America",
+      "count": 1
+    },
+    {
       "value": "Chicago, IL, United States of America",
       "label": "Chicago, IL, United States of America",
+      "count": 1
+    },
+    {
+      "value": "Chicago, Illinois, United States",
+      "label": "Chicago, Illinois, United States",
       "count": 1
     },
     {
@@ -1628,13 +1733,13 @@
       "count": 1
     },
     {
-      "value": "Czechia",
-      "label": "Czechia",
+      "value": "Dallas, Texas",
+      "label": "Dallas, Texas",
       "count": 1
     },
     {
-      "value": "Dallas, Texas",
-      "label": "Dallas, Texas",
+      "value": "Dallas, Texas, United States",
+      "label": "Dallas, Texas, United States",
       "count": 1
     },
     {
@@ -1718,6 +1823,11 @@
       "count": 1
     },
     {
+      "value": "FOOD SC - Food Sciences Building, United States of America",
+      "label": "FOOD SC - Food Sciences Building, United States of America",
+      "count": 1
+    },
+    {
       "value": "Fort Meade, MD - Onsite",
       "label": "Fort Meade, MD - Onsite",
       "count": 1
@@ -1788,6 +1898,11 @@
       "count": 1
     },
     {
+      "value": "Hendrick Technical Solutions, United States of America",
+      "label": "Hendrick Technical Solutions, United States of America",
+      "count": 1
+    },
+    {
       "value": "Herndon, VA",
       "label": "Herndon, VA",
       "count": 1
@@ -1810,6 +1925,11 @@
     {
       "value": "Honolulu, Hawaii- Onsite",
       "label": "Honolulu, Hawaii- Onsite",
+      "count": 1
+    },
+    {
+      "value": "Houston, TX, United States of America",
+      "label": "Houston, TX, United States of America",
       "count": 1
     },
     {
@@ -1988,11 +2108,6 @@
       "count": 1
     },
     {
-      "value": "Malmö",
-      "label": "Malmö",
-      "count": 1
-    },
-    {
       "value": "Malta",
       "label": "Malta",
       "count": 1
@@ -2033,6 +2148,11 @@
       "count": 1
     },
     {
+      "value": "MIAMI, FL, United States of America",
+      "label": "MIAMI, FL, United States of America",
+      "count": 1
+    },
+    {
       "value": "Milwaukee, WI Corporate, United States of America",
       "label": "Milwaukee, WI Corporate, United States of America",
       "count": 1
@@ -2048,8 +2168,18 @@
       "count": 1
     },
     {
+      "value": "Mississauga",
+      "label": "Mississauga",
+      "count": 1
+    },
+    {
       "value": "Mojave, CA",
       "label": "Mojave, CA",
+      "count": 1
+    },
+    {
+      "value": "Moldova",
+      "label": "Moldova",
       "count": 1
     },
     {
@@ -2060,6 +2190,11 @@
     {
       "value": "Montpellier",
       "label": "Montpellier",
+      "count": 1
+    },
+    {
+      "value": "Mountain View",
+      "label": "Mountain View",
       "count": 1
     },
     {
@@ -2095,6 +2230,11 @@
     {
       "value": "Netanya",
       "label": "Netanya",
+      "count": 1
+    },
+    {
+      "value": "New Haven - CT",
+      "label": "New Haven - CT",
       "count": 1
     },
     {
@@ -2273,13 +2413,13 @@
       "count": 1
     },
     {
-      "value": "Porto",
-      "label": "Porto",
+      "value": "Porto, Portugal (Hybrid)",
+      "label": "Porto, Portugal (Hybrid)",
       "count": 1
     },
     {
-      "value": "Porto, Portugal (Hybrid)",
-      "label": "Porto, Portugal (Hybrid)",
+      "value": "Portugal, Remote",
+      "label": "Portugal, Remote",
       "count": 1
     },
     {
@@ -2325,11 +2465,6 @@
     {
       "value": "Remote (within the countries we operate from) | UK, France, Netherlands, Spain, or Belgium. Some travel to our offices will be required from time-to-time",
       "label": "Remote (within the countries we operate from) | UK, France, Netherlands, Spain, or Belgium. Some travel to our offices will be required from time-to-time",
-      "count": 1
-    },
-    {
-      "value": "Remote - Americas",
-      "label": "Remote - Americas",
       "count": 1
     },
     {
@@ -2395,11 +2530,6 @@
     {
       "value": "Remote, United States",
       "label": "Remote, United States",
-      "count": 1
-    },
-    {
-      "value": "Remote, USA",
-      "label": "Remote, USA",
       "count": 1
     },
     {
@@ -2558,11 +2688,6 @@
       "count": 1
     },
     {
-      "value": "Santo Domingo",
-      "label": "Santo Domingo",
-      "count": 1
-    },
-    {
       "value": "Schaumburg, Illinois, United States",
       "label": "Schaumburg, Illinois, United States",
       "count": 1
@@ -2588,6 +2713,16 @@
       "count": 1
     },
     {
+      "value": "Slovakia",
+      "label": "Slovakia",
+      "count": 1
+    },
+    {
+      "value": "Somerset, New Jersey, United States",
+      "label": "Somerset, New Jersey, United States",
+      "count": 1
+    },
+    {
       "value": "Springfield, MO (Bass Pro Shops Base Camp), United States of America",
       "label": "Springfield, MO (Bass Pro Shops Base Camp), United States of America",
       "count": 1
@@ -2600,11 +2735,6 @@
     {
       "value": "Sunnyvale, CA, United States of America",
       "label": "Sunnyvale, CA, United States of America",
-      "count": 1
-    },
-    {
-      "value": "São Paulo",
-      "label": "São Paulo",
       "count": 1
     },
     {
@@ -2633,6 +2763,16 @@
       "count": 1
     },
     {
+      "value": "Toronto, ON, CA",
+      "label": "Toronto, ON, CA",
+      "count": 1
+    },
+    {
+      "value": "Toronto, Ontario, Canada",
+      "label": "Toronto, Ontario, Canada",
+      "count": 1
+    },
+    {
       "value": "Towson MD USA - 701 E Joppa Rd Bg 100-300, United States of America",
       "label": "Towson MD USA - 701 E Joppa Rd Bg 100-300, United States of America",
       "count": 1
@@ -2655,6 +2795,11 @@
     {
       "value": "United States | Remote",
       "label": "United States | Remote",
+      "count": 1
+    },
+    {
+      "value": "United States, New York",
+      "label": "United States, New York",
       "count": 1
     },
     {
@@ -2728,6 +2873,11 @@
       "count": 1
     },
     {
+      "value": "US, Portland, OR, United States of America",
+      "label": "US, Portland, OR, United States of America",
+      "count": 1
+    },
+    {
       "value": "US- IL40- Chicago-151N Frankln, United States of America",
       "label": "US- IL40- Chicago-151N Frankln, United States of America",
       "count": 1
@@ -2773,8 +2923,8 @@
       "count": 1
     },
     {
-      "value": "US-IN-FT WAYNE-150A ~ 1010 Production Rd ~ BLDG 150A, United States of America",
-      "label": "US-IN-FT WAYNE-150A ~ 1010 Production Rd ~ BLDG 150A, United States of America",
+      "value": "US-IL-Illinois-Virtual, United States of America",
+      "label": "US-IL-Illinois-Virtual, United States of America",
       "count": 1
     },
     {
@@ -2828,8 +2978,18 @@
       "count": 1
     },
     {
+      "value": "US-TX-MCKINNEY-513WC ~ 2501 W University Dr ~ WING C BLDG, United States of America",
+      "label": "US-TX-MCKINNEY-513WC ~ 2501 W University Dr ~ WING C BLDG, United States of America",
+      "count": 1
+    },
+    {
       "value": "US-TX-RICHARDSON-C27 ~ 1727 Cityline Dr ~ CITYLINE C27, United States of America",
       "label": "US-TX-RICHARDSON-C27 ~ 1727 Cityline Dr ~ CITYLINE C27, United States of America",
+      "count": 1
+    },
+    {
+      "value": "US-VA Arlington, United States of America",
+      "label": "US-VA Arlington, United States of America",
       "count": 1
     },
     {
@@ -3053,6 +3213,11 @@
       "count": 1
     },
     {
+      "value": "USA, Palo Alto",
+      "label": "USA, Palo Alto",
+      "count": 1
+    },
+    {
       "value": "USA, TX, San Antonio (3133 General Hudnell Dr), United States of America",
       "label": "USA, TX, San Antonio (3133 General Hudnell Dr), United States of America",
       "count": 1
@@ -3123,6 +3288,11 @@
       "count": 1
     },
     {
+      "value": "USA-St. Louis-795 Office Pkwy, United States of America",
+      "label": "USA-St. Louis-795 Office Pkwy, United States of America",
+      "count": 1
+    },
+    {
       "value": "USA:GA:Atlanta / 1025 Lenox Park Blvd Ne - Adm:1025 Lenox Park Blvd Ne, United States of America",
       "label": "USA:GA:Atlanta / 1025 Lenox Park Blvd Ne - Adm:1025 Lenox Park Blvd Ne, United States of America",
       "count": 1
@@ -3135,11 +3305,6 @@
     {
       "value": "USA:VA:Chantilly / Stonecroft Blvd - Adm:4807 Stonecroft Blvd, United States of America",
       "label": "USA:VA:Chantilly / Stonecroft Blvd - Adm:4807 Stonecroft Blvd, United States of America",
-      "count": 1
-    },
-    {
-      "value": "USCNC05 - Charlotte - 9300 Arrowpoint Boulevard, United States of America",
-      "label": "USCNC05 - Charlotte - 9300 Arrowpoint Boulevard, United States of America",
       "count": 1
     },
     {
@@ -3173,6 +3338,11 @@
       "count": 1
     },
     {
+      "value": "Washington - Seattle, United States of America",
+      "label": "Washington - Seattle, United States of America",
+      "count": 1
+    },
+    {
       "value": "Washington DC",
       "label": "Washington DC",
       "count": 1
@@ -3203,6 +3373,11 @@
       "count": 1
     },
     {
+      "value": "Work At Home-Colorado, United States of America",
+      "label": "Work At Home-Colorado, United States of America",
+      "count": 1
+    },
+    {
       "value": "Work At Home-Connecticut, United States of America",
       "label": "Work At Home-Connecticut, United States of America",
       "count": 1
@@ -3214,6 +3389,1673 @@
     }
   ],
   "jobs": [
+    {
+      "id": "https://apply.workable.com/j/C79D191952",
+      "posted_on": "2026-05-26",
+      "company": "Weekday",
+      "title": "Full Stack Engineer",
+      "location": "Hyderabad, Telangana, India",
+      "location_profile": {
+        "display": "Hyderabad, Telangana, India",
+        "label": "Hyderabad, Telangana, India",
+        "city": "Hyderabad",
+        "region": "Telangana",
+        "region_code": "",
+        "country": "India",
+        "country_code": "IN",
+        "search_terms": [
+          "Hyderabad, Telangana, India",
+          "Hyderabad",
+          "Telangana",
+          "India",
+          "IN",
+          "Hyderabad, Telangana",
+          "Hyderabad, India",
+          "Telangana, India"
+        ]
+      },
+      "career_bucket": "mid_career_or_senior",
+      "career_bucket_label": "Mid-Career / Senior",
+      "experience_level": "unknown",
+      "experience_level_label": "Unknown",
+      "yoe_min": null,
+      "yoe_max": null,
+      "experience_display": "Not stated",
+      "authorization_category": "open_or_not_specified",
+      "authorization_category_label": "Open / Not specified",
+      "sponsorship_status": "not_specified",
+      "work_authorization_display": "Open / Not specified; No work authorization requirement stated",
+      "job_link": "https://apply.workable.com/j/C79D191952"
+    },
+    {
+      "id": "https://apply.workable.com/j/88AF8DE817",
+      "posted_on": "2026-05-26",
+      "company": "Weekday",
+      "title": "Frontend Engineer",
+      "location": "Hyderabad, Telangana, India",
+      "location_profile": {
+        "display": "Hyderabad, Telangana, India",
+        "label": "Hyderabad, Telangana, India",
+        "city": "Hyderabad",
+        "region": "Telangana",
+        "region_code": "",
+        "country": "India",
+        "country_code": "IN",
+        "search_terms": [
+          "Hyderabad, Telangana, India",
+          "Hyderabad",
+          "Telangana",
+          "India",
+          "IN",
+          "Hyderabad, Telangana",
+          "Hyderabad, India",
+          "Telangana, India"
+        ]
+      },
+      "career_bucket": "mid_career_or_senior",
+      "career_bucket_label": "Mid-Career / Senior",
+      "experience_level": "unknown",
+      "experience_level_label": "Unknown",
+      "yoe_min": null,
+      "yoe_max": null,
+      "experience_display": "Not stated",
+      "authorization_category": "open_or_not_specified",
+      "authorization_category_label": "Open / Not specified",
+      "sponsorship_status": "not_specified",
+      "work_authorization_display": "Open / Not specified; No work authorization requirement stated",
+      "job_link": "https://apply.workable.com/j/88AF8DE817"
+    },
+    {
+      "id": "https://jobs.lever.co/woven-by-toyota/43bdae02-424e-48f2-9648-b5aa16abcfc3",
+      "posted_on": "2026-05-26",
+      "company": "WOVEN BY Toyota",
+      "title": "Software Engineer, Calibration",
+      "location": "Ann Arbor, MI",
+      "location_profile": {
+        "display": "Ann Arbor, MI",
+        "label": "Ann Arbor, MI, United States",
+        "city": "Ann Arbor",
+        "region": "MI",
+        "region_code": "",
+        "country": "United States",
+        "country_code": "US",
+        "search_terms": [
+          "Ann Arbor, MI",
+          "Ann Arbor, MI, United States",
+          "Ann Arbor",
+          "MI",
+          "United States",
+          "US",
+          "Ann Arbor, United States",
+          "MI, United States",
+          "USA"
+        ]
+      },
+      "career_bucket": "early_career_or_new_grad",
+      "career_bucket_label": "Early Career / New Grad",
+      "experience_level": "entry_level_or_new_grad",
+      "experience_level_label": "Entry-Level / New Grad",
+      "yoe_min": null,
+      "yoe_max": null,
+      "experience_display": "Not stated",
+      "authorization_category": "open_or_not_specified",
+      "authorization_category_label": "Open / Not specified",
+      "sponsorship_status": "not_specified",
+      "work_authorization_display": "Open / Not specified; No explicit work authorization or sponsorship requirements stated",
+      "job_link": "https://jobs.lever.co/woven-by-toyota/43bdae02-424e-48f2-9648-b5aa16abcfc3"
+    },
+    {
+      "id": "https://wfscorp.wd5.myworkdayjobs.com/wfscareers/job/MIAMI-FL/IT-Software-Developer-II_R22576",
+      "posted_on": "2026-05-26",
+      "company": "WFS",
+      "title": "IT Software Developer II",
+      "location": "MIAMI, FL, United States of America",
+      "location_profile": {
+        "display": "MIAMI, FL, United States of America",
+        "label": "MIAMI, United States of America, United States",
+        "city": "MIAMI",
+        "region": "United States of America",
+        "region_code": "",
+        "country": "United States",
+        "country_code": "US",
+        "search_terms": [
+          "MIAMI, FL, United States of America",
+          "MIAMI, United States of America, United States",
+          "MIAMI",
+          "United States of America",
+          "United States",
+          "US",
+          "MIAMI, United States of America",
+          "MIAMI, United States",
+          "United States of America, United States",
+          "USA"
+        ]
+      },
+      "career_bucket": "mid_career_or_senior",
+      "career_bucket_label": "Mid-Career / Senior",
+      "experience_level": "mid_level",
+      "experience_level_label": "Mid-Level",
+      "yoe_min": 3,
+      "yoe_max": null,
+      "experience_display": "3+ yrs",
+      "authorization_category": "open_or_not_specified",
+      "authorization_category_label": "Open / Not specified",
+      "sponsorship_status": "not_specified",
+      "work_authorization_display": "Open / Not specified; No explicit work authorization or sponsorship requirements stated",
+      "job_link": "https://wfscorp.wd5.myworkdayjobs.com/wfscareers/job/MIAMI-FL/IT-Software-Developer-II_R22576"
+    },
+    {
+      "id": "https://walmart.wd5.myworkdayjobs.com/WalmartExternal/job/Seattle-WA/XMLNAME--USA--Senior--Software-Engineer_R-2502788",
+      "posted_on": "2026-05-26",
+      "company": "Vizio Services LLC",
+      "title": "(USA) Senior, Software Engineer",
+      "location": "(USA) VIZIO SERVICES SEATTLE WA Seattle Home Office, United States of America",
+      "location_profile": {
+        "display": "(USA) VIZIO SERVICES SEATTLE WA Seattle Home Office, United States of America",
+        "label": "(USA) VIZIO SERVICES SEATTLE WA Seattle Home Office, United States of America, United States",
+        "city": "(USA) VIZIO SERVICES SEATTLE WA Seattle Home Office",
+        "region": "United States of America",
+        "region_code": "",
+        "country": "United States",
+        "country_code": "US",
+        "search_terms": [
+          "(USA) VIZIO SERVICES SEATTLE WA Seattle Home Office, United States of America",
+          "(USA) VIZIO SERVICES SEATTLE WA Seattle Home Office, United States of America, United States",
+          "(USA) VIZIO SERVICES SEATTLE WA Seattle Home Office",
+          "United States of America",
+          "United States",
+          "US",
+          "(USA) VIZIO SERVICES SEATTLE WA Seattle Home Office, United States",
+          "United States of America, United States",
+          "USA"
+        ]
+      },
+      "career_bucket": "mid_career_or_senior",
+      "career_bucket_label": "Mid-Career / Senior",
+      "experience_level": "senior_individual_contributor",
+      "experience_level_label": "Senior IC",
+      "yoe_min": 3,
+      "yoe_max": 5,
+      "experience_display": "3-5 yrs",
+      "authorization_category": "open_or_not_specified",
+      "authorization_category_label": "Open / Not specified",
+      "sponsorship_status": "not_specified",
+      "work_authorization_display": "Open / Not specified; No explicit work authorization requirement stated",
+      "job_link": "https://walmart.wd5.myworkdayjobs.com/WalmartExternal/job/Seattle-WA/XMLNAME--USA--Senior--Software-Engineer_R-2502788"
+    },
+    {
+      "id": "https://job-boards.eu.greenhouse.io/valtech/jobs/4874079101",
+      "posted_on": "2026-05-26",
+      "company": "Valtech",
+      "title": "AI Engineer – Microsoft Fabric & Azure AI Foundry ",
+      "location": "New York City",
+      "location_profile": {
+        "display": "New York City",
+        "label": "New York City, United States",
+        "city": "New York City",
+        "region": "",
+        "region_code": "",
+        "country": "United States",
+        "country_code": "US",
+        "search_terms": [
+          "New York City",
+          "New York City, United States",
+          "United States",
+          "US",
+          "USA"
+        ]
+      },
+      "career_bucket": "mid_career_or_senior",
+      "career_bucket_label": "Mid-Career / Senior",
+      "experience_level": "senior_individual_contributor",
+      "experience_level_label": "Senior IC",
+      "yoe_min": 5,
+      "yoe_max": null,
+      "experience_display": "5+ yrs",
+      "authorization_category": "open_or_not_specified",
+      "authorization_category_label": "Open / Not specified",
+      "sponsorship_status": "not_specified",
+      "work_authorization_display": "Open / Not specified; No explicit work authorization or sponsorship requirements stated",
+      "job_link": "https://job-boards.eu.greenhouse.io/valtech/jobs/4874079101"
+    },
+    {
+      "id": "https://ulse.wd5.myworkdayjobs.com/ulricareers/job/Houston-TX/Research-Scientist-III---Electrochemical-Safety-Research-Institute_JR1517-1",
+      "posted_on": "2026-05-26",
+      "company": "Underwriters Laboratories Inc.",
+      "title": "Research Scientist III - Electrochemical Safety Research Institute",
+      "location": "Houston, TX, United States of America",
+      "location_profile": {
+        "display": "Houston, TX, United States of America",
+        "label": "Houston, United States of America, United States",
+        "city": "Houston",
+        "region": "United States of America",
+        "region_code": "",
+        "country": "United States",
+        "country_code": "US",
+        "search_terms": [
+          "Houston, TX, United States of America",
+          "Houston, United States of America, United States",
+          "Houston",
+          "United States of America",
+          "United States",
+          "US",
+          "Houston, United States of America",
+          "Houston, United States",
+          "United States of America, United States",
+          "USA"
+        ]
+      },
+      "career_bucket": "early_career_or_new_grad",
+      "career_bucket_label": "Early Career / New Grad",
+      "experience_level": "senior_individual_contributor",
+      "experience_level_label": "Senior IC",
+      "yoe_min": 2,
+      "yoe_max": null,
+      "experience_display": "2+ yrs",
+      "authorization_category": "open_or_not_specified",
+      "authorization_category_label": "Open / Not specified",
+      "sponsorship_status": "not_specified",
+      "work_authorization_display": "Open / Not specified; No explicit work authorization or sponsorship requirements stated",
+      "job_link": "https://ulse.wd5.myworkdayjobs.com/ulricareers/job/Houston-TX/Research-Scientist-III---Electrochemical-Safety-Research-Institute_JR1517-1"
+    },
+    {
+      "id": "https://job-boards.greenhouse.io/twosixtechnologies/jobs/6004340004",
+      "posted_on": "2026-05-26",
+      "company": "Two Six Technologies",
+      "title": "Software Engineer",
+      "location": "Chantilly, Virginia",
+      "location_profile": {
+        "display": "Chantilly, Virginia",
+        "label": "Chantilly, Virginia, United States",
+        "city": "Chantilly",
+        "region": "Virginia",
+        "region_code": "",
+        "country": "United States",
+        "country_code": "US",
+        "search_terms": [
+          "Chantilly, Virginia",
+          "Chantilly, Virginia, United States",
+          "Chantilly",
+          "Virginia",
+          "United States",
+          "US",
+          "Chantilly, United States",
+          "Virginia, United States",
+          "USA"
+        ]
+      },
+      "career_bucket": "mid_career_or_senior",
+      "career_bucket_label": "Mid-Career / Senior",
+      "experience_level": "senior_individual_contributor",
+      "experience_level_label": "Senior IC",
+      "yoe_min": 15,
+      "yoe_max": null,
+      "experience_display": "15+ yrs",
+      "authorization_category": "requires_security_clearance_or_public_trust",
+      "authorization_category_label": "Requires clearance / public trust",
+      "sponsorship_status": "not_specified",
+      "work_authorization_display": "Requires clearance / public trust; Security clearance required",
+      "job_link": "https://job-boards.greenhouse.io/twosixtechnologies/jobs/6004340004"
+    },
+    {
+      "id": "https://boeing.wd1.myworkdayjobs.com/EXTERNAL_CAREERS/job/USA---Chantilly-VA/Full-Stack-Software-Engineer--Associate---Experienced-_JR2026511246-1",
+      "posted_on": "2026-05-26",
+      "company": "The Boeing Company",
+      "title": "Full-Stack Software Engineer (Associate / Experienced)",
+      "location": "USA - Chantilly, VA, United States of America",
+      "location_profile": {
+        "display": "USA - Chantilly, VA, United States of America",
+        "label": "USA - Chantilly, United States of America, United States",
+        "city": "USA - Chantilly",
+        "region": "United States of America",
+        "region_code": "",
+        "country": "United States",
+        "country_code": "US",
+        "search_terms": [
+          "USA - Chantilly, VA, United States of America",
+          "USA - Chantilly, United States of America, United States",
+          "USA - Chantilly",
+          "United States of America",
+          "United States",
+          "US",
+          "USA - Chantilly, United States of America",
+          "USA - Chantilly, United States",
+          "United States of America, United States",
+          "USA"
+        ]
+      },
+      "career_bucket": "early_career_or_new_grad",
+      "career_bucket_label": "Early Career / New Grad",
+      "experience_level": "entry_level_or_new_grad",
+      "experience_level_label": "Entry-Level / New Grad",
+      "yoe_min": 1,
+      "yoe_max": null,
+      "experience_display": "1+ yrs",
+      "authorization_category": "requires_security_clearance_or_public_trust",
+      "authorization_category_label": "Requires clearance / public trust",
+      "sponsorship_status": "no_sponsorship",
+      "work_authorization_display": "Requires clearance / public trust; U.S. Top Secret clearance required; no visa sponsorship",
+      "job_link": "https://boeing.wd1.myworkdayjobs.com/EXTERNAL_CAREERS/job/USA---Chantilly-VA/Full-Stack-Software-Engineer--Associate---Experienced-_JR2026511246-1"
+    },
+    {
+      "id": "https://boeing.wd1.myworkdayjobs.com/external_subsidiary/job/USA---Chantilly-VA/Full-Stack-Software-Engineer--Associate---Experienced-_JR2026511246",
+      "posted_on": "2026-05-26",
+      "company": "The Boeing Company",
+      "title": "Full-Stack Software Engineer (Associate / Experienced)",
+      "location": "USA - Chantilly, VA, United States of America",
+      "location_profile": {
+        "display": "USA - Chantilly, VA, United States of America",
+        "label": "USA - Chantilly, United States of America, United States",
+        "city": "USA - Chantilly",
+        "region": "United States of America",
+        "region_code": "",
+        "country": "United States",
+        "country_code": "US",
+        "search_terms": [
+          "USA - Chantilly, VA, United States of America",
+          "USA - Chantilly, United States of America, United States",
+          "USA - Chantilly",
+          "United States of America",
+          "United States",
+          "US",
+          "USA - Chantilly, United States of America",
+          "USA - Chantilly, United States",
+          "United States of America, United States",
+          "USA"
+        ]
+      },
+      "career_bucket": "early_career_or_new_grad",
+      "career_bucket_label": "Early Career / New Grad",
+      "experience_level": "entry_level_or_new_grad",
+      "experience_level_label": "Entry-Level / New Grad",
+      "yoe_min": 1,
+      "yoe_max": null,
+      "experience_display": "1+ yrs",
+      "authorization_category": "requires_security_clearance_or_public_trust",
+      "authorization_category_label": "Requires clearance / public trust",
+      "sponsorship_status": "no_sponsorship",
+      "work_authorization_display": "Requires clearance / public trust; U.S. Top Secret clearance required; no visa sponsorship",
+      "job_link": "https://boeing.wd1.myworkdayjobs.com/external_subsidiary/job/USA---Chantilly-VA/Full-Stack-Software-Engineer--Associate---Experienced-_JR2026511246"
+    },
+    {
+      "id": "https://boeing.wd1.myworkdayjobs.com/external_subsidiary/job/USA---Hazelwood-MO/Advanced-Information-Technologist---Mid-Level-Cloud-Engineer_JR2026511876-1",
+      "posted_on": "2026-05-26",
+      "company": "The Boeing Company",
+      "title": "Advanced Information Technologist â Mid Level Cloud Engineer",
+      "location": "USA - Hazelwood, MO, United States of America",
+      "location_profile": {
+        "display": "USA - Hazelwood, MO, United States of America",
+        "label": "USA - Hazelwood, United States of America, United States",
+        "city": "USA - Hazelwood",
+        "region": "United States of America",
+        "region_code": "",
+        "country": "United States",
+        "country_code": "US",
+        "search_terms": [
+          "USA - Hazelwood, MO, United States of America",
+          "USA - Hazelwood, United States of America, United States",
+          "USA - Hazelwood",
+          "United States of America",
+          "United States",
+          "US",
+          "USA - Hazelwood, United States of America",
+          "USA - Hazelwood, United States",
+          "United States of America, United States",
+          "USA"
+        ]
+      },
+      "career_bucket": "mid_career_or_senior",
+      "career_bucket_label": "Mid-Career / Senior",
+      "experience_level": "mid_level",
+      "experience_level_label": "Mid-Level",
+      "yoe_min": 5,
+      "yoe_max": null,
+      "experience_display": "5+ yrs",
+      "authorization_category": "requires_us_citizenship",
+      "authorization_category_label": "Requires US citizenship",
+      "sponsorship_status": "no_sponsorship",
+      "work_authorization_display": "Requires US citizenship; U.S. citizenship required; no visa sponsorship",
+      "job_link": "https://boeing.wd1.myworkdayjobs.com/external_subsidiary/job/USA---Hazelwood-MO/Advanced-Information-Technologist---Mid-Level-Cloud-Engineer_JR2026511876-1"
+    },
+    {
+      "id": "https://jobs.ashbyhq.com/traba/cae225b4-79fc-482e-8d3a-935d63e00c82",
+      "posted_on": "2026-05-26",
+      "company": "TRABA",
+      "title": "Software Engineer (Generalist)",
+      "location": "New York City, NY",
+      "location_profile": {
+        "display": "New York City, NY",
+        "label": "New York City, NY, United States",
+        "city": "New York City",
+        "region": "NY",
+        "region_code": "",
+        "country": "United States",
+        "country_code": "US",
+        "search_terms": [
+          "New York City, NY",
+          "New York City, NY, United States",
+          "New York City",
+          "NY",
+          "United States",
+          "US",
+          "New York City, United States",
+          "NY, United States",
+          "USA"
+        ]
+      },
+      "career_bucket": "mid_career_or_senior",
+      "career_bucket_label": "Mid-Career / Senior",
+      "experience_level": "mid_level",
+      "experience_level_label": "Mid-Level",
+      "yoe_min": 3,
+      "yoe_max": null,
+      "experience_display": "3+ yrs",
+      "authorization_category": "open_or_not_specified",
+      "authorization_category_label": "Open / Not specified",
+      "sponsorship_status": "not_specified",
+      "work_authorization_display": "Open / Not specified; No explicit work authorization requirement stated",
+      "job_link": "https://jobs.ashbyhq.com/traba/cae225b4-79fc-482e-8d3a-935d63e00c82"
+    },
+    {
+      "id": "https://jobs.ashbyhq.com/traba/fca99734-b011-40cf-97d8-c9266dd29e64",
+      "posted_on": "2026-05-26",
+      "company": "TRABA",
+      "title": "Senior Software Engineer (Generalist)",
+      "location": "New York City, NY",
+      "location_profile": {
+        "display": "New York City, NY",
+        "label": "New York City, NY, United States",
+        "city": "New York City",
+        "region": "NY",
+        "region_code": "",
+        "country": "United States",
+        "country_code": "US",
+        "search_terms": [
+          "New York City, NY",
+          "New York City, NY, United States",
+          "New York City",
+          "NY",
+          "United States",
+          "US",
+          "New York City, United States",
+          "NY, United States",
+          "USA"
+        ]
+      },
+      "career_bucket": "mid_career_or_senior",
+      "career_bucket_label": "Mid-Career / Senior",
+      "experience_level": "senior_individual_contributor",
+      "experience_level_label": "Senior IC",
+      "yoe_min": 5,
+      "yoe_max": null,
+      "experience_display": "5+ yrs",
+      "authorization_category": "open_or_not_specified",
+      "authorization_category_label": "Open / Not specified",
+      "sponsorship_status": "not_specified",
+      "work_authorization_display": "Open / Not specified; No explicit work authorization requirement stated",
+      "job_link": "https://jobs.ashbyhq.com/traba/fca99734-b011-40cf-97d8-c9266dd29e64"
+    },
+    {
+      "id": "https://jobs.ashbyhq.com/traba/be334dd3-ede8-4737-81fe-a937791880c6",
+      "posted_on": "2026-05-26",
+      "company": "TRABA",
+      "title": "Senior Software Engineer (AI Agents)",
+      "location": "New York City, NY",
+      "location_profile": {
+        "display": "New York City, NY",
+        "label": "New York City, NY, United States",
+        "city": "New York City",
+        "region": "NY",
+        "region_code": "",
+        "country": "United States",
+        "country_code": "US",
+        "search_terms": [
+          "New York City, NY",
+          "New York City, NY, United States",
+          "New York City",
+          "NY",
+          "United States",
+          "US",
+          "New York City, United States",
+          "NY, United States",
+          "USA"
+        ]
+      },
+      "career_bucket": "mid_career_or_senior",
+      "career_bucket_label": "Mid-Career / Senior",
+      "experience_level": "senior_individual_contributor",
+      "experience_level_label": "Senior IC",
+      "yoe_min": 5,
+      "yoe_max": null,
+      "experience_display": "5+ yrs",
+      "authorization_category": "open_or_not_specified",
+      "authorization_category_label": "Open / Not specified",
+      "sponsorship_status": "not_specified",
+      "work_authorization_display": "Open / Not specified; No explicit work authorization or sponsorship requirements stated",
+      "job_link": "https://jobs.ashbyhq.com/traba/be334dd3-ede8-4737-81fe-a937791880c6"
+    },
+    {
+      "id": "https://apply.workable.com/j/1DF7EF0CD9",
+      "posted_on": "2026-05-26",
+      "company": "TIGER Analytics",
+      "title": "Senior Data Scientist - GenAI",
+      "location": "Chicago, Illinois, United States",
+      "location_profile": {
+        "display": "Chicago, Illinois, United States",
+        "label": "Chicago, Illinois, United States",
+        "city": "Chicago",
+        "region": "Illinois",
+        "region_code": "",
+        "country": "United States",
+        "country_code": "US",
+        "search_terms": [
+          "Chicago, Illinois, United States",
+          "Chicago",
+          "Illinois",
+          "United States",
+          "US",
+          "Chicago, Illinois",
+          "Chicago, United States",
+          "Illinois, United States",
+          "USA"
+        ]
+      },
+      "career_bucket": "mid_career_or_senior",
+      "career_bucket_label": "Mid-Career / Senior",
+      "experience_level": "unknown",
+      "experience_level_label": "Unknown",
+      "yoe_min": null,
+      "yoe_max": null,
+      "experience_display": "Not stated",
+      "authorization_category": "open_or_not_specified",
+      "authorization_category_label": "Open / Not specified",
+      "sponsorship_status": "not_specified",
+      "work_authorization_display": "Open / Not specified; No work authorization requirement stated",
+      "job_link": "https://apply.workable.com/j/1DF7EF0CD9"
+    },
+    {
+      "id": "https://job-boards.greenhouse.io/singlestore/jobs/7912783",
+      "posted_on": "2026-05-26",
+      "company": "SingleStore",
+      "title": "Software Engineer",
+      "location": "Portugal",
+      "location_profile": {
+        "display": "Portugal",
+        "label": "Portugal",
+        "city": "Portugal",
+        "region": "",
+        "region_code": "",
+        "country": "",
+        "country_code": "",
+        "search_terms": [
+          "Portugal"
+        ]
+      },
+      "career_bucket": "early_career_or_new_grad",
+      "career_bucket_label": "Early Career / New Grad",
+      "experience_level": "entry_level_or_new_grad",
+      "experience_level_label": "Entry-Level / New Grad",
+      "yoe_min": null,
+      "yoe_max": null,
+      "experience_display": "Not stated",
+      "authorization_category": "open_or_not_specified",
+      "authorization_category_label": "Open / Not specified",
+      "sponsorship_status": "not_specified",
+      "work_authorization_display": "Open / Not specified; No explicit work authorization requirement stated",
+      "job_link": "https://job-boards.greenhouse.io/singlestore/jobs/7912783"
+    },
+    {
+      "id": "https://redhat.wd5.myworkdayjobs.com/Jobs/job/Raleigh/Senior-Software-Engineer--DevOps_R-057070",
+      "posted_on": "2026-05-26",
+      "company": "Red Hat, LLC",
+      "title": "Senior Software Engineer, DevOps",
+      "location": "Raleigh, United States of America",
+      "location_profile": {
+        "display": "Raleigh, United States of America",
+        "label": "Raleigh, United States of America, United States",
+        "city": "Raleigh",
+        "region": "United States of America",
+        "region_code": "",
+        "country": "United States",
+        "country_code": "US",
+        "search_terms": [
+          "Raleigh, United States of America",
+          "Raleigh, United States of America, United States",
+          "Raleigh",
+          "United States of America",
+          "United States",
+          "US",
+          "Raleigh, United States",
+          "United States of America, United States",
+          "USA"
+        ]
+      },
+      "career_bucket": "mid_career_or_senior",
+      "career_bucket_label": "Mid-Career / Senior",
+      "experience_level": "senior_individual_contributor",
+      "experience_level_label": "Senior IC",
+      "yoe_min": 5,
+      "yoe_max": null,
+      "experience_display": "5+ yrs",
+      "authorization_category": "no_sponsorship",
+      "authorization_category_label": "No sponsorship",
+      "sponsorship_status": "no_sponsorship",
+      "work_authorization_display": "No sponsorship; Must work without visa sponsorship",
+      "job_link": "https://redhat.wd5.myworkdayjobs.com/Jobs/job/Raleigh/Senior-Software-Engineer--DevOps_R-057070"
+    },
+    {
+      "id": "https://globalhr.wd5.myworkdayjobs.com/REC_RTX_Ext_Gateway/job/US-TX-MCKINNEY-513WC--2501-W-University-Dr--WING-C-BLDG/Software-Engineer-II---Embedded_01821785",
+      "posted_on": "2026-05-26",
+      "company": "RTX",
+      "title": "Software Engineer II â Embedded",
+      "location": "US-TX-MCKINNEY-513WC ~ 2501 W University Dr ~ WING C BLDG, United States of America",
+      "location_profile": {
+        "display": "US-TX-MCKINNEY-513WC ~ 2501 W University Dr ~ WING C BLDG, United States of America",
+        "label": "US-TX-MCKINNEY-513WC ~ 2501 W University Dr ~ WING C BLDG, United States of America, United States",
+        "city": "US-TX-MCKINNEY-513WC ~ 2501 W University Dr ~ WING C BLDG",
+        "region": "United States of America",
+        "region_code": "",
+        "country": "United States",
+        "country_code": "US",
+        "search_terms": [
+          "US-TX-MCKINNEY-513WC ~ 2501 W University Dr ~ WING C BLDG, United States of America",
+          "US-TX-MCKINNEY-513WC ~ 2501 W University Dr ~ WING C BLDG, United States of America, United States",
+          "US-TX-MCKINNEY-513WC ~ 2501 W University Dr ~ WING C BLDG",
+          "United States of America",
+          "United States",
+          "US",
+          "US-TX-MCKINNEY-513WC ~ 2501 W University Dr ~ WING C BLDG, United States",
+          "United States of America, United States",
+          "USA"
+        ]
+      },
+      "career_bucket": "early_career_or_new_grad",
+      "career_bucket_label": "Early Career / New Grad",
+      "experience_level": "entry_level_or_new_grad",
+      "experience_level_label": "Entry-Level / New Grad",
+      "yoe_min": 2,
+      "yoe_max": null,
+      "experience_display": "2+ yrs",
+      "authorization_category": "requires_us_citizenship",
+      "authorization_category_label": "Requires US citizenship",
+      "sponsorship_status": "not_specified",
+      "work_authorization_display": "Requires US citizenship; U.S. citizenship and Secret clearance required",
+      "job_link": "https://globalhr.wd5.myworkdayjobs.com/REC_RTX_Ext_Gateway/job/US-TX-MCKINNEY-513WC--2501-W-University-Dr--WING-C-BLDG/Software-Engineer-II---Embedded_01821785"
+    },
+    {
+      "id": "https://jobs.ashbyhq.com/rerun/11a2a716-4d15-4ea5-8f68-1c8b06f3b725",
+      "posted_on": "2026-05-26",
+      "company": "RERUN",
+      "title": "Software Engineer (Rust) - Backend ",
+      "location": "Remote",
+      "location_profile": {
+        "display": "Remote",
+        "label": "Remote",
+        "city": "Remote",
+        "region": "",
+        "region_code": "",
+        "country": "",
+        "country_code": "",
+        "search_terms": [
+          "Remote"
+        ]
+      },
+      "career_bucket": "mid_career_or_senior",
+      "career_bucket_label": "Mid-Career / Senior",
+      "experience_level": "mid_level",
+      "experience_level_label": "Mid-Level",
+      "yoe_min": 3,
+      "yoe_max": 5,
+      "experience_display": "3-5 yrs",
+      "authorization_category": "open_or_not_specified",
+      "authorization_category_label": "Open / Not specified",
+      "sponsorship_status": "not_specified",
+      "work_authorization_display": "Open / Not specified; No explicit work authorization or sponsorship requirements stated",
+      "job_link": "https://jobs.ashbyhq.com/rerun/11a2a716-4d15-4ea5-8f68-1c8b06f3b725"
+    },
+    {
+      "id": "https://pnc.wd5.myworkdayjobs.com/External/job/Dallas-Innovation-Center---Luna-Rd-TX270/Senior-Software-Engineer---Java-Spring-Boot-Kafka_R223061-1",
+      "posted_on": "2026-05-26",
+      "company": "PNC Bank NA",
+      "title": "Senior Software Engineer - Java/Spring Boot/Kafka",
+      "location": "Dallas Innovation Center - Luna Rd (TX270), United States of America",
+      "location_profile": {
+        "display": "Dallas Innovation Center - Luna Rd (TX270), United States of America",
+        "label": "Dallas Innovation Center - Luna Rd (TX270), United States of America, United States",
+        "city": "Dallas Innovation Center - Luna Rd (TX270)",
+        "region": "United States of America",
+        "region_code": "",
+        "country": "United States",
+        "country_code": "US",
+        "search_terms": [
+          "Dallas Innovation Center - Luna Rd (TX270), United States of America",
+          "Dallas Innovation Center - Luna Rd (TX270), United States of America, United States",
+          "Dallas Innovation Center - Luna Rd (TX270)",
+          "United States of America",
+          "United States",
+          "US",
+          "Dallas Innovation Center - Luna Rd (TX270), United States",
+          "United States of America, United States",
+          "USA"
+        ]
+      },
+      "career_bucket": "mid_career_or_senior",
+      "career_bucket_label": "Mid-Career / Senior",
+      "experience_level": "senior_individual_contributor",
+      "experience_level_label": "Senior IC",
+      "yoe_min": 3,
+      "yoe_max": null,
+      "experience_display": "3+ yrs",
+      "authorization_category": "no_sponsorship",
+      "authorization_category_label": "No sponsorship",
+      "sponsorship_status": "no_sponsorship",
+      "work_authorization_display": "No sponsorship; No visa sponsorship or STEM OPT provided",
+      "job_link": "https://pnc.wd5.myworkdayjobs.com/External/job/Dallas-Innovation-Center---Luna-Rd-TX270/Senior-Software-Engineer---Java-Spring-Boot-Kafka_R223061-1"
+    },
+    {
+      "id": "https://pnc.wd5.myworkdayjobs.com/External/job/Dallas-Innovation-Center---Luna-Rd-TX270/Principal-Software-Engineer---Java-Spring-Boot-Kafka-Microservices_R223057-1",
+      "posted_on": "2026-05-26",
+      "company": "PNC Bank NA",
+      "title": "Principal Software Engineer - Java/Spring Boot/Kafka/Microservices",
+      "location": "Dallas Innovation Center - Luna Rd (TX270), United States of America",
+      "location_profile": {
+        "display": "Dallas Innovation Center - Luna Rd (TX270), United States of America",
+        "label": "Dallas Innovation Center - Luna Rd (TX270), United States of America, United States",
+        "city": "Dallas Innovation Center - Luna Rd (TX270)",
+        "region": "United States of America",
+        "region_code": "",
+        "country": "United States",
+        "country_code": "US",
+        "search_terms": [
+          "Dallas Innovation Center - Luna Rd (TX270), United States of America",
+          "Dallas Innovation Center - Luna Rd (TX270), United States of America, United States",
+          "Dallas Innovation Center - Luna Rd (TX270)",
+          "United States of America",
+          "United States",
+          "US",
+          "Dallas Innovation Center - Luna Rd (TX270), United States",
+          "United States of America, United States",
+          "USA"
+        ]
+      },
+      "career_bucket": "mid_career_or_senior",
+      "career_bucket_label": "Mid-Career / Senior",
+      "experience_level": "senior_individual_contributor",
+      "experience_level_label": "Senior IC",
+      "yoe_min": 5,
+      "yoe_max": null,
+      "experience_display": "5+ yrs",
+      "authorization_category": "no_sponsorship",
+      "authorization_category_label": "No sponsorship",
+      "sponsorship_status": "no_sponsorship",
+      "work_authorization_display": "No sponsorship; No visa sponsorship or OPT provided",
+      "job_link": "https://pnc.wd5.myworkdayjobs.com/External/job/Dallas-Innovation-Center---Luna-Rd-TX270/Principal-Software-Engineer---Java-Spring-Boot-Kafka-Microservices_R223057-1"
+    },
+    {
+      "id": "https://job-boards.greenhouse.io/nubank/jobs/7729825",
+      "posted_on": "2026-05-26",
+      "company": "Nubank",
+      "title": "Software Engineer (Crypto - SV) - US - 2026",
+      "location": "USA, Palo Alto",
+      "location_profile": {
+        "display": "USA, Palo Alto",
+        "label": "USA, Palo Alto, United States",
+        "city": "USA",
+        "region": "Palo Alto",
+        "region_code": "",
+        "country": "United States",
+        "country_code": "US",
+        "search_terms": [
+          "USA, Palo Alto",
+          "USA, Palo Alto, United States",
+          "USA",
+          "Palo Alto",
+          "United States",
+          "US",
+          "USA, United States",
+          "Palo Alto, United States"
+        ]
+      },
+      "career_bucket": "mid_career_or_senior",
+      "career_bucket_label": "Mid-Career / Senior",
+      "experience_level": "senior_individual_contributor",
+      "experience_level_label": "Senior IC",
+      "yoe_min": null,
+      "yoe_max": null,
+      "experience_display": "Not stated",
+      "authorization_category": "requires_unrestricted_us_work_authorization",
+      "authorization_category_label": "Requires unrestricted US work authorization",
+      "sponsorship_status": "not_specified",
+      "work_authorization_display": "Requires unrestricted US work authorization; Must have legal right to work in USA",
+      "job_link": "https://job-boards.greenhouse.io/nubank/jobs/7729825"
+    },
+    {
+      "id": "https://boards.greenhouse.io/neo4j/jobs/4684177006?gh_jid=4684177006",
+      "posted_on": "2026-05-26",
+      "company": "Neo4j",
+      "title": "Software Engineer - Vector Index",
+      "location": "Malmö",
+      "location_profile": {
+        "display": "Malmö",
+        "label": "Malmö",
+        "city": "Malmö",
+        "region": "",
+        "region_code": "",
+        "country": "",
+        "country_code": "",
+        "search_terms": [
+          "Malmö"
+        ]
+      },
+      "career_bucket": "mid_career_or_senior",
+      "career_bucket_label": "Mid-Career / Senior",
+      "experience_level": "mid_level",
+      "experience_level_label": "Mid-Level",
+      "yoe_min": null,
+      "yoe_max": null,
+      "experience_display": "Not stated",
+      "authorization_category": "open_or_not_specified",
+      "authorization_category_label": "Open / Not specified",
+      "sponsorship_status": "not_specified",
+      "work_authorization_display": "Open / Not specified; No explicit work authorization or sponsorship requirements stated",
+      "job_link": "https://boards.greenhouse.io/neo4j/jobs/4684177006?gh_jid=4684177006"
+    },
+    {
+      "id": "https://fmr.wd1.myworkdayjobs.com/FidelityCareers/job/Merrimack-NH/Software-Engineer_2129532",
+      "posted_on": "2026-05-26",
+      "company": "National Charitable Services LLC",
+      "title": "Software Engineer",
+      "location": "1 Spartan Way, Merrimack NH, United States of America",
+      "location_profile": {
+        "display": "1 Spartan Way, Merrimack NH, United States of America",
+        "label": "1 Spartan Way, United States of America, United States",
+        "city": "1 Spartan Way",
+        "region": "United States of America",
+        "region_code": "",
+        "country": "United States",
+        "country_code": "US",
+        "search_terms": [
+          "1 Spartan Way, Merrimack NH, United States of America",
+          "1 Spartan Way, United States of America, United States",
+          "1 Spartan Way",
+          "United States of America",
+          "United States",
+          "US",
+          "1 Spartan Way, United States of America",
+          "1 Spartan Way, United States",
+          "United States of America, United States",
+          "USA"
+        ]
+      },
+      "career_bucket": "early_career_or_new_grad",
+      "career_bucket_label": "Early Career / New Grad",
+      "experience_level": "entry_level_or_new_grad",
+      "experience_level_label": "Entry-Level / New Grad",
+      "yoe_min": null,
+      "yoe_max": null,
+      "experience_display": "Not stated",
+      "authorization_category": "no_sponsorship",
+      "authorization_category_label": "No sponsorship",
+      "sponsorship_status": "no_sponsorship",
+      "work_authorization_display": "No sponsorship; No immigration sponsorship mentioned",
+      "job_link": "https://fmr.wd1.myworkdayjobs.com/FidelityCareers/job/Merrimack-NH/Software-Engineer_2129532"
+    },
+    {
+      "id": "https://maersk.wd3.myworkdayjobs.com/Maersk_Careers/job/USCNC05---Charlotte---9300-Arrowpoint-Boulevard/Senior-Software-Engineer---Java-Integration_R172679",
+      "posted_on": "2026-05-26",
+      "company": "Maersk Logistics &amp; Services USA Inc.",
+      "title": "Software Engineer - Java Integration",
+      "location": "USCNC05 - Charlotte - 9300 Arrowpoint Boulevard, United States of America",
+      "location_profile": {
+        "display": "USCNC05 - Charlotte - 9300 Arrowpoint Boulevard, United States of America",
+        "label": "USCNC05 - Charlotte - 9300 Arrowpoint Boulevard, United States of America, United States",
+        "city": "USCNC05 - Charlotte - 9300 Arrowpoint Boulevard",
+        "region": "United States of America",
+        "region_code": "",
+        "country": "United States",
+        "country_code": "US",
+        "search_terms": [
+          "USCNC05 - Charlotte - 9300 Arrowpoint Boulevard, United States of America",
+          "USCNC05 - Charlotte - 9300 Arrowpoint Boulevard, United States of America, United States",
+          "USCNC05 - Charlotte - 9300 Arrowpoint Boulevard",
+          "United States of America",
+          "United States",
+          "US",
+          "USCNC05 - Charlotte - 9300 Arrowpoint Boulevard, United States",
+          "United States of America, United States",
+          "USA"
+        ]
+      },
+      "career_bucket": "mid_career_or_senior",
+      "career_bucket_label": "Mid-Career / Senior",
+      "experience_level": "senior_individual_contributor",
+      "experience_level_label": "Senior IC",
+      "yoe_min": 6,
+      "yoe_max": null,
+      "experience_display": "6+ yrs",
+      "authorization_category": "requires_unrestricted_us_work_authorization",
+      "authorization_category_label": "Requires unrestricted US work authorization",
+      "sponsorship_status": "not_specified",
+      "work_authorization_display": "Requires unrestricted US work authorization; Must be authorized to work in the U.S.",
+      "job_link": "https://maersk.wd3.myworkdayjobs.com/Maersk_Careers/job/USCNC05---Charlotte---9300-Arrowpoint-Boulevard/Senior-Software-Engineer---Java-Integration_R172679"
+    },
+    {
+      "id": "https://job-boards.greenhouse.io/legendcareers/jobs/4698813005",
+      "posted_on": "2026-05-26",
+      "company": "Legend Biotech US",
+      "title": "Senior Clinical Research Scientist",
+      "location": "Somerset, New Jersey, United States",
+      "location_profile": {
+        "display": "Somerset, New Jersey, United States",
+        "label": "Somerset, United States",
+        "city": "Somerset",
+        "region": "United States",
+        "region_code": "",
+        "country": "United States",
+        "country_code": "US",
+        "search_terms": [
+          "Somerset, New Jersey, United States",
+          "Somerset, United States",
+          "Somerset",
+          "United States",
+          "US",
+          "USA"
+        ]
+      },
+      "career_bucket": "mid_career_or_senior",
+      "career_bucket_label": "Mid-Career / Senior",
+      "experience_level": "senior_individual_contributor",
+      "experience_level_label": "Senior IC",
+      "yoe_min": 4,
+      "yoe_max": null,
+      "experience_display": "4+ yrs",
+      "authorization_category": "open_or_not_specified",
+      "authorization_category_label": "Open / Not specified",
+      "sponsorship_status": "not_specified",
+      "work_authorization_display": "Open / Not specified; No explicit work authorization or sponsorship requirements stated",
+      "job_link": "https://job-boards.greenhouse.io/legendcareers/jobs/4698813005"
+    },
+    {
+      "id": "https://isu.wd1.myworkdayjobs.com/IowaStateJobs/job/Ames-IA/Research-Scientist-II_R19251",
+      "posted_on": "2026-05-26",
+      "company": "Iowa State University",
+      "title": "Research Scientist II",
+      "location": "FOOD SC - Food Sciences Building, United States of America",
+      "location_profile": {
+        "display": "FOOD SC - Food Sciences Building, United States of America",
+        "label": "FOOD SC - Food Sciences Building, United States of America, United States",
+        "city": "FOOD SC - Food Sciences Building",
+        "region": "United States of America",
+        "region_code": "",
+        "country": "United States",
+        "country_code": "US",
+        "search_terms": [
+          "FOOD SC - Food Sciences Building, United States of America",
+          "FOOD SC - Food Sciences Building, United States of America, United States",
+          "FOOD SC - Food Sciences Building",
+          "United States of America",
+          "United States",
+          "US",
+          "FOOD SC - Food Sciences Building, United States",
+          "United States of America, United States",
+          "USA"
+        ]
+      },
+      "career_bucket": "early_career_or_new_grad",
+      "career_bucket_label": "Early Career / New Grad",
+      "experience_level": "entry_level_or_new_grad",
+      "experience_level_label": "Entry-Level / New Grad",
+      "yoe_min": 2,
+      "yoe_max": null,
+      "experience_display": "2+ yrs",
+      "authorization_category": "no_sponsorship",
+      "authorization_category_label": "No sponsorship",
+      "sponsorship_status": "no_sponsorship",
+      "work_authorization_display": "No sponsorship; Candidates must be legally authorized to work in the U.S.",
+      "job_link": "https://isu.wd1.myworkdayjobs.com/IowaStateJobs/job/Ames-IA/Research-Scientist-II_R19251"
+    },
+    {
+      "id": "https://hendrick.wd5.myworkdayjobs.com/HMSCareers/job/Hendrick-Technical-Solutions/Software-Engineer_R-80786",
+      "posted_on": "2026-05-26",
+      "company": "HMS",
+      "title": "Software Engineer",
+      "location": "Hendrick Technical Solutions, United States of America",
+      "location_profile": {
+        "display": "Hendrick Technical Solutions, United States of America",
+        "label": "Hendrick Technical Solutions, United States of America, United States",
+        "city": "Hendrick Technical Solutions",
+        "region": "United States of America",
+        "region_code": "",
+        "country": "United States",
+        "country_code": "US",
+        "search_terms": [
+          "Hendrick Technical Solutions, United States of America",
+          "Hendrick Technical Solutions, United States of America, United States",
+          "Hendrick Technical Solutions",
+          "United States of America",
+          "United States",
+          "US",
+          "Hendrick Technical Solutions, United States",
+          "United States of America, United States",
+          "USA"
+        ]
+      },
+      "career_bucket": "early_career_or_new_grad",
+      "career_bucket_label": "Early Career / New Grad",
+      "experience_level": "mid_level",
+      "experience_level_label": "Mid-Level",
+      "yoe_min": 2,
+      "yoe_max": 4,
+      "experience_display": "2-4 yrs",
+      "authorization_category": "requires_us_person_status",
+      "authorization_category_label": "Requires US person status",
+      "sponsorship_status": "not_specified",
+      "work_authorization_display": "Requires US person status; U.S. Person Status required for ITAR compliance",
+      "job_link": "https://hendrick.wd5.myworkdayjobs.com/HMSCareers/job/Hendrick-Technical-Solutions/Software-Engineer_R-80786"
+    },
+    {
+      "id": "https://careers.formlabs.com/job/7957459/apply/?gh_jid=7957459",
+      "posted_on": "2026-05-26",
+      "company": "Formlabs",
+      "title": "Senior Full Stack Software Engineer",
+      "location": "Budapest",
+      "location_profile": {
+        "display": "Budapest",
+        "label": "Budapest",
+        "city": "Budapest",
+        "region": "",
+        "region_code": "",
+        "country": "",
+        "country_code": "",
+        "search_terms": [
+          "Budapest"
+        ]
+      },
+      "career_bucket": "mid_career_or_senior",
+      "career_bucket_label": "Mid-Career / Senior",
+      "experience_level": "senior_individual_contributor",
+      "experience_level_label": "Senior IC",
+      "yoe_min": null,
+      "yoe_max": null,
+      "experience_display": "Not stated",
+      "authorization_category": "open_or_not_specified",
+      "authorization_category_label": "Open / Not specified",
+      "sponsorship_status": "not_specified",
+      "work_authorization_display": "Open / Not specified; No explicit work authorization requirement stated",
+      "job_link": "https://careers.formlabs.com/job/7957459/apply/?gh_jid=7957459"
+    },
+    {
+      "id": "https://jobs.lever.co/farfetch/141b5d17-54ea-448e-8a09-7b26fdf47651",
+      "posted_on": "2026-05-26",
+      "company": "Farfetch",
+      "title": "Platform Engineer",
+      "location": "Porto",
+      "location_profile": {
+        "display": "Porto",
+        "label": "Porto",
+        "city": "Porto",
+        "region": "",
+        "region_code": "",
+        "country": "",
+        "country_code": "",
+        "search_terms": [
+          "Porto"
+        ]
+      },
+      "career_bucket": "mid_career_or_senior",
+      "career_bucket_label": "Mid-Career / Senior",
+      "experience_level": "mid_level",
+      "experience_level_label": "Mid-Level",
+      "yoe_min": null,
+      "yoe_max": null,
+      "experience_display": "Not stated",
+      "authorization_category": "open_or_not_specified",
+      "authorization_category_label": "Open / Not specified",
+      "sponsorship_status": "not_specified",
+      "work_authorization_display": "Open / Not specified; No work authorization requirement stated",
+      "job_link": "https://jobs.lever.co/farfetch/141b5d17-54ea-448e-8a09-7b26fdf47651"
+    },
+    {
+      "id": "https://careers.datadoghq.com/detail/7957461/?gh_jid=7957461",
+      "posted_on": "2026-05-26",
+      "company": "Datadog",
+      "title": "Senior Software Engineer- Linux/eBPF",
+      "location": "Portugal, Remote",
+      "location_profile": {
+        "display": "Portugal, Remote",
+        "label": "Portugal, Remote",
+        "city": "Portugal",
+        "region": "Remote",
+        "region_code": "",
+        "country": "",
+        "country_code": "",
+        "search_terms": [
+          "Portugal, Remote",
+          "Portugal",
+          "Remote"
+        ]
+      },
+      "career_bucket": "mid_career_or_senior",
+      "career_bucket_label": "Mid-Career / Senior",
+      "experience_level": "senior_individual_contributor",
+      "experience_level_label": "Senior IC",
+      "yoe_min": 5,
+      "yoe_max": null,
+      "experience_display": "5+ yrs",
+      "authorization_category": "open_or_not_specified",
+      "authorization_category_label": "Open / Not specified",
+      "sponsorship_status": "not_specified",
+      "work_authorization_display": "Open / Not specified; No explicit work authorization or citizenship requirements stated",
+      "job_link": "https://careers.datadoghq.com/detail/7957461/?gh_jid=7957461"
+    },
+    {
+      "id": "https://job-boards.greenhouse.io/customerio/jobs/7956880",
+      "posted_on": "2026-05-26",
+      "company": "Customer.io",
+      "title": "Senior Data Scientist",
+      "location": "Americas Remote",
+      "location_profile": {
+        "display": "Americas Remote",
+        "label": "Americas Remote",
+        "city": "Americas Remote",
+        "region": "",
+        "region_code": "",
+        "country": "",
+        "country_code": "",
+        "search_terms": [
+          "Americas Remote"
+        ]
+      },
+      "career_bucket": "mid_career_or_senior",
+      "career_bucket_label": "Mid-Career / Senior",
+      "experience_level": "senior_individual_contributor",
+      "experience_level_label": "Senior IC",
+      "yoe_min": 5,
+      "yoe_max": null,
+      "experience_display": "5+ yrs",
+      "authorization_category": "open_or_not_specified",
+      "authorization_category_label": "Open / Not specified",
+      "sponsorship_status": "not_specified",
+      "work_authorization_display": "Open / Not specified; No explicit work authorization or sponsorship requirements stated",
+      "job_link": "https://job-boards.greenhouse.io/customerio/jobs/7956880"
+    },
+    {
+      "id": "https://costar.wd1.myworkdayjobs.com/CoStarCareers/job/US-VA-Arlington/Senior-DevOps-Engineer--Arlington--VA-_R38963",
+      "posted_on": "2026-05-26",
+      "company": "CoStar Realty Information, Inc.",
+      "title": "Senior DevOps Engineer (Arlington, VA)",
+      "location": "US-VA Arlington, United States of America",
+      "location_profile": {
+        "display": "US-VA Arlington, United States of America",
+        "label": "US-VA Arlington, United States of America, United States",
+        "city": "US-VA Arlington",
+        "region": "United States of America",
+        "region_code": "",
+        "country": "United States",
+        "country_code": "US",
+        "search_terms": [
+          "US-VA Arlington, United States of America",
+          "US-VA Arlington, United States of America, United States",
+          "US-VA Arlington",
+          "United States of America",
+          "United States",
+          "US",
+          "US-VA Arlington, United States",
+          "United States of America, United States",
+          "USA"
+        ]
+      },
+      "career_bucket": "mid_career_or_senior",
+      "career_bucket_label": "Mid-Career / Senior",
+      "experience_level": "senior_individual_contributor",
+      "experience_level_label": "Senior IC",
+      "yoe_min": 5,
+      "yoe_max": null,
+      "experience_display": "5+ yrs",
+      "authorization_category": "no_sponsorship",
+      "authorization_category_label": "No sponsorship",
+      "sponsorship_status": "no_sponsorship",
+      "work_authorization_display": "No sponsorship; No visa sponsorship available",
+      "job_link": "https://costar.wd1.myworkdayjobs.com/CoStarCareers/job/US-VA-Arlington/Senior-DevOps-Engineer--Arlington--VA-_R38963"
+    },
+    {
+      "id": "https://unum.wd1.myworkdayjobs.com/External/job/Chattanooga-Tennessee-USA/Software-Engineer-II---Java-J2EE_835462",
+      "posted_on": "2026-05-26",
+      "company": "C3035 Unum Group",
+      "title": "Software Engineer II - Java/J2EE",
+      "location": "Chattanooga, Tennessee, USA, United States of America",
+      "location_profile": {
+        "display": "Chattanooga, Tennessee, USA, United States of America",
+        "label": "Chattanooga, United States of America, United States",
+        "city": "Chattanooga",
+        "region": "United States of America",
+        "region_code": "",
+        "country": "United States",
+        "country_code": "US",
+        "search_terms": [
+          "Chattanooga, Tennessee, USA, United States of America",
+          "Chattanooga, United States of America, United States",
+          "Chattanooga",
+          "United States of America",
+          "United States",
+          "US",
+          "Chattanooga, United States of America",
+          "Chattanooga, United States",
+          "United States of America, United States",
+          "USA"
+        ]
+      },
+      "career_bucket": "mid_career_or_senior",
+      "career_bucket_label": "Mid-Career / Senior",
+      "experience_level": "mid_level",
+      "experience_level_label": "Mid-Level",
+      "yoe_min": 4,
+      "yoe_max": null,
+      "experience_display": "4+ yrs",
+      "authorization_category": "open_or_not_specified",
+      "authorization_category_label": "Open / Not specified",
+      "sponsorship_status": "not_specified",
+      "work_authorization_display": "Open / Not specified; No explicit work authorization or sponsorship requirements stated",
+      "job_link": "https://unum.wd1.myworkdayjobs.com/External/job/Chattanooga-Tennessee-USA/Software-Engineer-II---Java-J2EE_835462"
+    },
+    {
+      "id": "https://job-boards.greenhouse.io/bloomreach/jobs/7529865",
+      "posted_on": "2026-05-26",
+      "company": "Bloomreach",
+      "title": "Senior Machine Learning Engineer / Data Scientist",
+      "location": "Czechia",
+      "location_profile": {
+        "display": "Czechia",
+        "label": "Czechia",
+        "city": "Czechia",
+        "region": "",
+        "region_code": "",
+        "country": "",
+        "country_code": "",
+        "search_terms": [
+          "Czechia"
+        ]
+      },
+      "career_bucket": "mid_career_or_senior",
+      "career_bucket_label": "Mid-Career / Senior",
+      "experience_level": "senior_individual_contributor",
+      "experience_level_label": "Senior IC",
+      "yoe_min": 3,
+      "yoe_max": null,
+      "experience_display": "3+ yrs",
+      "authorization_category": "open_or_not_specified",
+      "authorization_category_label": "Open / Not specified",
+      "sponsorship_status": "not_specified",
+      "work_authorization_display": "Open / Not specified; No explicit work authorization requirement stated",
+      "job_link": "https://job-boards.greenhouse.io/bloomreach/jobs/7529865"
+    },
+    {
+      "id": "https://job-boards.greenhouse.io/bloomreach/jobs/7529866",
+      "posted_on": "2026-05-26",
+      "company": "Bloomreach",
+      "title": "Senior Machine Learning Engineer / Data Scientist",
+      "location": "Slovakia",
+      "location_profile": {
+        "display": "Slovakia",
+        "label": "Slovakia",
+        "city": "Slovakia",
+        "region": "",
+        "region_code": "",
+        "country": "",
+        "country_code": "",
+        "search_terms": [
+          "Slovakia"
+        ]
+      },
+      "career_bucket": "mid_career_or_senior",
+      "career_bucket_label": "Mid-Career / Senior",
+      "experience_level": "senior_individual_contributor",
+      "experience_level_label": "Senior IC",
+      "yoe_min": 3,
+      "yoe_max": null,
+      "experience_display": "3+ yrs",
+      "authorization_category": "open_or_not_specified",
+      "authorization_category_label": "Open / Not specified",
+      "sponsorship_status": "not_specified",
+      "work_authorization_display": "Open / Not specified; No explicit work authorization requirement stated",
+      "job_link": "https://job-boards.greenhouse.io/bloomreach/jobs/7529866"
+    },
+    {
+      "id": "https://wf.wd1.myworkdayjobs.com/WellsFargoJobs/job/CHARLOTTE-NC/Lead-Software-Engineer---Advisor-Platform_R-540502",
+      "posted_on": "2026-05-26",
+      "company": "B10 Wells Fargo Bank, N. A.",
+      "title": "Lead Software Engineer - Advisor Platform",
+      "location": "142019-NC-300 South Brevard, Charlotte, United States of America",
+      "location_profile": {
+        "display": "142019-NC-300 South Brevard, Charlotte, United States of America",
+        "label": "142019-NC-300 South Brevard, United States of America, United States",
+        "city": "142019-NC-300 South Brevard",
+        "region": "United States of America",
+        "region_code": "",
+        "country": "United States",
+        "country_code": "US",
+        "search_terms": [
+          "142019-NC-300 South Brevard, Charlotte, United States of America",
+          "142019-NC-300 South Brevard, United States of America, United States",
+          "142019-NC-300 South Brevard",
+          "United States of America",
+          "United States",
+          "US",
+          "142019-NC-300 South Brevard, United States of America",
+          "142019-NC-300 South Brevard, United States",
+          "United States of America, United States",
+          "USA"
+        ]
+      },
+      "career_bucket": "mid_career_or_senior",
+      "career_bucket_label": "Mid-Career / Senior",
+      "experience_level": "senior_individual_contributor",
+      "experience_level_label": "Senior IC",
+      "yoe_min": 5,
+      "yoe_max": null,
+      "experience_display": "5+ yrs",
+      "authorization_category": "open_or_not_specified",
+      "authorization_category_label": "Open / Not specified",
+      "sponsorship_status": "not_specified",
+      "work_authorization_display": "Open / Not specified; No explicit work authorization or sponsorship requirements stated",
+      "job_link": "https://wf.wd1.myworkdayjobs.com/WellsFargoJobs/job/CHARLOTTE-NC/Lead-Software-Engineer---Advisor-Platform_R-540502"
+    },
+    {
+      "id": "https://job-boards.greenhouse.io/alpaca/jobs/6001849004",
+      "posted_on": "2026-05-26",
+      "company": "Alpaca",
+      "title": "Senior Software Engineer - Prime  ",
+      "location": "Remote - Americas",
+      "location_profile": {
+        "display": "Remote - Americas",
+        "label": "Remote - Americas",
+        "city": "Remote - Americas",
+        "region": "",
+        "region_code": "",
+        "country": "",
+        "country_code": "",
+        "search_terms": [
+          "Remote - Americas"
+        ]
+      },
+      "career_bucket": "mid_career_or_senior",
+      "career_bucket_label": "Mid-Career / Senior",
+      "experience_level": "senior_individual_contributor",
+      "experience_level_label": "Senior IC",
+      "yoe_min": 3,
+      "yoe_max": null,
+      "experience_display": "3+ yrs",
+      "authorization_category": "open_or_not_specified",
+      "authorization_category_label": "Open / Not specified",
+      "sponsorship_status": "not_specified",
+      "work_authorization_display": "Open / Not specified; No explicit work authorization or sponsorship requirements stated",
+      "job_link": "https://job-boards.greenhouse.io/alpaca/jobs/6001849004"
+    },
+    {
+      "id": "https://jobs.ashbyhq.com/afterquery/99afbbe0-5ad1-4f25-a00a-049f14428ac6",
+      "posted_on": "2026-05-26",
+      "company": "Afterquery",
+      "title": "Software Engineer - Security/Infrastructure",
+      "location": "San Francisco",
+      "location_profile": {
+        "display": "San Francisco",
+        "label": "San Francisco",
+        "city": "San Francisco",
+        "region": "",
+        "region_code": "",
+        "country": "",
+        "country_code": "",
+        "search_terms": [
+          "San Francisco"
+        ]
+      },
+      "career_bucket": "early_career_or_new_grad",
+      "career_bucket_label": "Early Career / New Grad",
+      "experience_level": "senior_individual_contributor",
+      "experience_level_label": "Senior IC",
+      "yoe_min": 2,
+      "yoe_max": 7,
+      "experience_display": "2-7 yrs",
+      "authorization_category": "open_or_not_specified",
+      "authorization_category_label": "Open / Not specified",
+      "sponsorship_status": "not_specified",
+      "work_authorization_display": "Open / Not specified; No explicit work authorization or sponsorship requirements stated",
+      "job_link": "https://jobs.ashbyhq.com/afterquery/99afbbe0-5ad1-4f25-a00a-049f14428ac6"
+    },
+    {
+      "id": "https://cvshealth.wd1.myworkdayjobs.com/CVS_Health_Careers/job/CO---Work-from-home/Senior-Software-Engineer_R0816592-1",
+      "posted_on": "2026-05-26",
+      "company": "9025 CVS Shared Services Resources LLC",
+      "title": "Senior Software Engineer",
+      "location": "Work At Home-Colorado, United States of America",
+      "location_profile": {
+        "display": "Work At Home-Colorado, United States of America",
+        "label": "Work At Home-Colorado, United States of America, United States",
+        "city": "Work At Home-Colorado",
+        "region": "United States of America",
+        "region_code": "",
+        "country": "United States",
+        "country_code": "US",
+        "search_terms": [
+          "Work At Home-Colorado, United States of America",
+          "Work At Home-Colorado, United States of America, United States",
+          "Work At Home-Colorado",
+          "United States of America",
+          "United States",
+          "US",
+          "Work At Home-Colorado, United States",
+          "United States of America, United States",
+          "USA"
+        ]
+      },
+      "career_bucket": "mid_career_or_senior",
+      "career_bucket_label": "Mid-Career / Senior",
+      "experience_level": "senior_individual_contributor",
+      "experience_level_label": "Senior IC",
+      "yoe_min": 5,
+      "yoe_max": null,
+      "experience_display": "5+ yrs",
+      "authorization_category": "open_or_not_specified",
+      "authorization_category_label": "Open / Not specified",
+      "sponsorship_status": "not_specified",
+      "work_authorization_display": "Open / Not specified; No explicit work authorization requirement stated",
+      "job_link": "https://cvshealth.wd1.myworkdayjobs.com/CVS_Health_Careers/job/CO---Work-from-home/Senior-Software-Engineer_R0816592-1"
+    },
+    {
+      "id": "https://icon.wd3.myworkdayjobs.com/broadbean_external/job/US-Portland-OR/Senior-Research-Scientist_JR145008",
+      "posted_on": "2026-05-26",
+      "company": "410 ICR United States USA",
+      "title": "Senior Research Scientist",
+      "location": "US, Portland, OR, United States of America",
+      "location_profile": {
+        "display": "US, Portland, OR, United States of America",
+        "label": "US, United States of America, United States",
+        "city": "US",
+        "region": "United States of America",
+        "region_code": "",
+        "country": "United States",
+        "country_code": "US",
+        "search_terms": [
+          "US, Portland, OR, United States of America",
+          "US, United States of America, United States",
+          "US",
+          "United States of America",
+          "United States",
+          "US, United States of America",
+          "US, United States",
+          "United States of America, United States",
+          "USA"
+        ]
+      },
+      "career_bucket": "mid_career_or_senior",
+      "career_bucket_label": "Mid-Career / Senior",
+      "experience_level": "senior_individual_contributor",
+      "experience_level_label": "Senior IC",
+      "yoe_min": 6,
+      "yoe_max": null,
+      "experience_display": "6+ yrs",
+      "authorization_category": "country_specific_work_authorization",
+      "authorization_category_label": "Country-specific work authorization",
+      "sponsorship_status": "not_specified",
+      "work_authorization_display": "Country-specific work authorization; Legal right to work in US required",
+      "job_link": "https://icon.wd3.myworkdayjobs.com/broadbean_external/job/US-Portland-OR/Senior-Research-Scientist_JR145008"
+    },
+    {
+      "id": "https://salesforce.wd12.myworkdayjobs.com/External_Career_Site/job/Washington---Seattle/Software-Engineer--Search-Data-Infrastructure---Slack_JR331617-1",
+      "posted_on": "2026-05-26",
+      "company": "100 Salesforce, Inc.",
+      "title": "Software Engineer II, Search &amp; Data Infrastructure -Slack",
+      "location": "Washington - Seattle, United States of America",
+      "location_profile": {
+        "display": "Washington - Seattle, United States of America",
+        "label": "Washington - Seattle, United States of America, United States",
+        "city": "Washington - Seattle",
+        "region": "United States of America",
+        "region_code": "",
+        "country": "United States",
+        "country_code": "US",
+        "search_terms": [
+          "Washington - Seattle, United States of America",
+          "Washington - Seattle, United States of America, United States",
+          "Washington - Seattle",
+          "United States of America",
+          "United States",
+          "US",
+          "Washington - Seattle, United States",
+          "United States of America, United States",
+          "USA"
+        ]
+      },
+      "career_bucket": "mid_career_or_senior",
+      "career_bucket_label": "Mid-Career / Senior",
+      "experience_level": "senior_individual_contributor",
+      "experience_level_label": "Senior IC",
+      "yoe_min": 4,
+      "yoe_max": null,
+      "experience_display": "4+ yrs",
+      "authorization_category": "open_or_not_specified",
+      "authorization_category_label": "Open / Not specified",
+      "sponsorship_status": "not_specified",
+      "work_authorization_display": "Open / Not specified; No explicit work authorization or sponsorship requirements stated",
+      "job_link": "https://salesforce.wd12.myworkdayjobs.com/External_Career_Site/job/Washington---Seattle/Software-Engineer--Search-Data-Infrastructure---Slack_JR331617-1"
+    },
+    {
+      "id": "https://caci.wd1.myworkdayjobs.com/External/job/Chantilly-VA-US/UI-Software-Developer_326954",
+      "posted_on": "2026-05-26",
+      "company": "02 CACI, INC.-FEDERAL",
+      "title": "UI Software Developer",
+      "location": "339 CHANTILLY VA, United States of America",
+      "location_profile": {
+        "display": "339 CHANTILLY VA, United States of America",
+        "label": "339 CHANTILLY VA, United States of America, United States",
+        "city": "339 CHANTILLY VA",
+        "region": "United States of America",
+        "region_code": "",
+        "country": "United States",
+        "country_code": "US",
+        "search_terms": [
+          "339 CHANTILLY VA, United States of America",
+          "339 CHANTILLY VA, United States of America, United States",
+          "339 CHANTILLY VA",
+          "United States of America",
+          "United States",
+          "US",
+          "339 CHANTILLY VA, United States",
+          "United States of America, United States",
+          "USA"
+        ]
+      },
+      "career_bucket": "early_career_or_new_grad",
+      "career_bucket_label": "Early Career / New Grad",
+      "experience_level": "entry_level_or_new_grad",
+      "experience_level_label": "Entry-Level / New Grad",
+      "yoe_min": null,
+      "yoe_max": null,
+      "experience_display": "Not stated",
+      "authorization_category": "requires_security_clearance_or_public_trust",
+      "authorization_category_label": "Requires clearance / public trust",
+      "sponsorship_status": "not_specified",
+      "work_authorization_display": "Requires clearance / public trust; TS/SCI clearance required",
+      "job_link": "https://caci.wd1.myworkdayjobs.com/External/job/Chantilly-VA-US/UI-Software-Developer_326954"
+    },
+    {
+      "id": "https://caci.wd1.myworkdayjobs.com/External/job/Eglin-AFB-FL-US/Systems-Software-Engineer_326930",
+      "posted_on": "2026-05-26",
+      "company": "02 CACI, INC.-FEDERAL",
+      "title": "Systems/Software Engineer",
+      "location": "0YL EGLIN AFB FL (HURLBURT FIELD), United States of America",
+      "location_profile": {
+        "display": "0YL EGLIN AFB FL (HURLBURT FIELD), United States of America",
+        "label": "0YL EGLIN AFB FL (HURLBURT FIELD), United States of America, United States",
+        "city": "0YL EGLIN AFB FL (HURLBURT FIELD)",
+        "region": "United States of America",
+        "region_code": "",
+        "country": "United States",
+        "country_code": "US",
+        "search_terms": [
+          "0YL EGLIN AFB FL (HURLBURT FIELD), United States of America",
+          "0YL EGLIN AFB FL (HURLBURT FIELD), United States of America, United States",
+          "0YL EGLIN AFB FL (HURLBURT FIELD)",
+          "United States of America",
+          "United States",
+          "US",
+          "0YL EGLIN AFB FL (HURLBURT FIELD), United States",
+          "United States of America, United States",
+          "USA"
+        ]
+      },
+      "career_bucket": "mid_career_or_senior",
+      "career_bucket_label": "Mid-Career / Senior",
+      "experience_level": "senior_individual_contributor",
+      "experience_level_label": "Senior IC",
+      "yoe_min": 5,
+      "yoe_max": null,
+      "experience_display": "5+ yrs",
+      "authorization_category": "requires_security_clearance_or_public_trust",
+      "authorization_category_label": "Requires clearance / public trust",
+      "sponsorship_status": "not_specified",
+      "work_authorization_display": "Requires clearance / public trust; TS/SCI clearance required",
+      "job_link": "https://caci.wd1.myworkdayjobs.com/External/job/Eglin-AFB-FL-US/Systems-Software-Engineer_326930"
+    },
+    {
+      "id": "https://caci.wd1.myworkdayjobs.com/External/job/Chantilly-VA-US/Software-Developer_326951",
+      "posted_on": "2026-05-26",
+      "company": "02 CACI, INC.-FEDERAL",
+      "title": "Software Developer",
+      "location": "339 CHANTILLY VA, United States of America",
+      "location_profile": {
+        "display": "339 CHANTILLY VA, United States of America",
+        "label": "339 CHANTILLY VA, United States of America, United States",
+        "city": "339 CHANTILLY VA",
+        "region": "United States of America",
+        "region_code": "",
+        "country": "United States",
+        "country_code": "US",
+        "search_terms": [
+          "339 CHANTILLY VA, United States of America",
+          "339 CHANTILLY VA, United States of America, United States",
+          "339 CHANTILLY VA",
+          "United States of America",
+          "United States",
+          "US",
+          "339 CHANTILLY VA, United States",
+          "United States of America, United States",
+          "USA"
+        ]
+      },
+      "career_bucket": "early_career_or_new_grad",
+      "career_bucket_label": "Early Career / New Grad",
+      "experience_level": "entry_level_or_new_grad",
+      "experience_level_label": "Entry-Level / New Grad",
+      "yoe_min": null,
+      "yoe_max": null,
+      "experience_display": "Not stated",
+      "authorization_category": "requires_security_clearance_or_public_trust",
+      "authorization_category_label": "Requires clearance / public trust",
+      "sponsorship_status": "not_specified",
+      "work_authorization_display": "Requires clearance / public trust; TS/SCI clearance required",
+      "job_link": "https://caci.wd1.myworkdayjobs.com/External/job/Chantilly-VA-US/Software-Developer_326951"
+    },
     {
       "id": "https://apply.workable.com/j/7A7260231C",
       "posted_on": "2026-05-25",
@@ -3292,6 +5134,177 @@
       "job_link": "https://walmart.wd5.myworkdayjobs.com/WalmartExternal/job/USA-J-STREET-OFFICE-SPACE-AR-BENTONVILLE-Home-Office/XMLNAME--USA--Software-Engineer-III_R-2465469"
     },
     {
+      "id": "https://walmart.wd5.myworkdayjobs.com/WalmartExternal/job/USA-Crossman-Excellence-Building-CA-SUNNYVALE-Home-Office/XMLNAME--USA--Principal--Software-Engineer_R-2518188",
+      "posted_on": "2026-05-25",
+      "company": "Walmart Inc.",
+      "title": "(USA) Principal, Software Engineer",
+      "location": "(USA) Crossman Excellence Building CA SUNNYVALE Home Office, United States of America",
+      "location_profile": {
+        "display": "(USA) Crossman Excellence Building CA SUNNYVALE Home Office, United States of America",
+        "label": "(USA) Crossman Excellence Building CA SUNNYVALE Home Office, United States of America, United States",
+        "city": "(USA) Crossman Excellence Building CA SUNNYVALE Home Office",
+        "region": "United States of America",
+        "region_code": "",
+        "country": "United States",
+        "country_code": "US",
+        "search_terms": [
+          "(USA) Crossman Excellence Building CA SUNNYVALE Home Office, United States of America",
+          "(USA) Crossman Excellence Building CA SUNNYVALE Home Office, United States of America, United States",
+          "(USA) Crossman Excellence Building CA SUNNYVALE Home Office",
+          "United States of America",
+          "United States",
+          "US",
+          "(USA) Crossman Excellence Building CA SUNNYVALE Home Office, United States",
+          "United States of America, United States",
+          "USA"
+        ]
+      },
+      "career_bucket": "mid_career_or_senior",
+      "career_bucket_label": "Mid-Career / Senior",
+      "experience_level": "senior_individual_contributor",
+      "experience_level_label": "Senior IC",
+      "yoe_min": 5,
+      "yoe_max": null,
+      "experience_display": "5+ yrs",
+      "authorization_category": "no_sponsorship",
+      "authorization_category_label": "No sponsorship",
+      "sponsorship_status": "no_sponsorship",
+      "work_authorization_display": "No sponsorship; Immigration sponsorship not available",
+      "job_link": "https://walmart.wd5.myworkdayjobs.com/WalmartExternal/job/USA-Crossman-Excellence-Building-CA-SUNNYVALE-Home-Office/XMLNAME--USA--Principal--Software-Engineer_R-2518188"
+    },
+    {
+      "id": "https://lseg.wd3.myworkdayjobs.com/Careers/job/USA-St-Louis-795-Office-Pkwy/Senior-DevOps-Engineer_R0118701-1",
+      "posted_on": "2026-05-25",
+      "company": "USA016 Refinitiv US LLC",
+      "title": "Senior DevOps Engineer",
+      "location": "USA-St. Louis-795 Office Pkwy, United States of America",
+      "location_profile": {
+        "display": "USA-St. Louis-795 Office Pkwy, United States of America",
+        "label": "USA-St. Louis-795 Office Pkwy, United States of America, United States",
+        "city": "USA-St. Louis-795 Office Pkwy",
+        "region": "United States of America",
+        "region_code": "",
+        "country": "United States",
+        "country_code": "US",
+        "search_terms": [
+          "USA-St. Louis-795 Office Pkwy, United States of America",
+          "USA-St. Louis-795 Office Pkwy, United States of America, United States",
+          "USA-St. Louis-795 Office Pkwy",
+          "United States of America",
+          "United States",
+          "US",
+          "USA-St. Louis-795 Office Pkwy, United States",
+          "United States of America, United States",
+          "USA"
+        ]
+      },
+      "career_bucket": "mid_career_or_senior",
+      "career_bucket_label": "Mid-Career / Senior",
+      "experience_level": "senior_individual_contributor",
+      "experience_level_label": "Senior IC",
+      "yoe_min": null,
+      "yoe_max": null,
+      "experience_display": "Not stated",
+      "authorization_category": "open_or_not_specified",
+      "authorization_category_label": "Open / Not specified",
+      "sponsorship_status": "not_specified",
+      "work_authorization_display": "Open / Not specified; No explicit work authorization or sponsorship requirements stated",
+      "job_link": "https://lseg.wd3.myworkdayjobs.com/Careers/job/USA-St-Louis-795-Office-Pkwy/Senior-DevOps-Engineer_R0118701-1"
+    },
+    {
+      "id": "https://jobs.ashbyhq.com/truelogic/00bc2260-b877-4edf-9a7d-e44e41138436",
+      "posted_on": "2026-05-25",
+      "company": "Truelogic",
+      "title": "Senior Fullstack Engineer (.NET/React + Umbraco CMS) - (Part-time) - Digital Agency ",
+      "location": "São Paulo",
+      "location_profile": {
+        "display": "São Paulo",
+        "label": "São Paulo",
+        "city": "São Paulo",
+        "region": "",
+        "region_code": "",
+        "country": "",
+        "country_code": "",
+        "search_terms": [
+          "São Paulo"
+        ]
+      },
+      "career_bucket": "mid_career_or_senior",
+      "career_bucket_label": "Mid-Career / Senior",
+      "experience_level": "senior_individual_contributor",
+      "experience_level_label": "Senior IC",
+      "yoe_min": 5,
+      "yoe_max": null,
+      "experience_display": "5+ yrs",
+      "authorization_category": "open_or_not_specified",
+      "authorization_category_label": "Open / Not specified",
+      "sponsorship_status": "not_specified",
+      "work_authorization_display": "Open / Not specified; No explicit work authorization or sponsorship requirements stated",
+      "job_link": "https://jobs.ashbyhq.com/truelogic/00bc2260-b877-4edf-9a7d-e44e41138436"
+    },
+    {
+      "id": "https://jobs.ashbyhq.com/truelogic/12f92c9c-cf46-466c-ad42-d7bdafdb6f18",
+      "posted_on": "2026-05-25",
+      "company": "Truelogic",
+      "title": "Senior Fullstack Engineer (.NET/React + Umbraco CMS) - (Part-time) - Digital Agency ",
+      "location": "Bogota",
+      "location_profile": {
+        "display": "Bogota",
+        "label": "Bogota",
+        "city": "Bogota",
+        "region": "",
+        "region_code": "",
+        "country": "",
+        "country_code": "",
+        "search_terms": [
+          "Bogota"
+        ]
+      },
+      "career_bucket": "mid_career_or_senior",
+      "career_bucket_label": "Mid-Career / Senior",
+      "experience_level": "senior_individual_contributor",
+      "experience_level_label": "Senior IC",
+      "yoe_min": 5,
+      "yoe_max": null,
+      "experience_display": "5+ yrs",
+      "authorization_category": "open_or_not_specified",
+      "authorization_category_label": "Open / Not specified",
+      "sponsorship_status": "not_specified",
+      "work_authorization_display": "Open / Not specified; No explicit work authorization or sponsorship requirements stated",
+      "job_link": "https://jobs.ashbyhq.com/truelogic/12f92c9c-cf46-466c-ad42-d7bdafdb6f18"
+    },
+    {
+      "id": "https://jobs.ashbyhq.com/truelogic/f11e945b-cc75-480f-9872-8bd52c7f9905",
+      "posted_on": "2026-05-25",
+      "company": "Truelogic",
+      "title": "Senior Fullstack Engineer (.NET/React + Umbraco CMS) - (Part-time) - Digital Agency ",
+      "location": "Santo Domingo",
+      "location_profile": {
+        "display": "Santo Domingo",
+        "label": "Santo Domingo",
+        "city": "Santo Domingo",
+        "region": "",
+        "region_code": "",
+        "country": "",
+        "country_code": "",
+        "search_terms": [
+          "Santo Domingo"
+        ]
+      },
+      "career_bucket": "mid_career_or_senior",
+      "career_bucket_label": "Mid-Career / Senior",
+      "experience_level": "senior_individual_contributor",
+      "experience_level_label": "Senior IC",
+      "yoe_min": 5,
+      "yoe_max": null,
+      "experience_display": "5+ yrs",
+      "authorization_category": "open_or_not_specified",
+      "authorization_category_label": "Open / Not specified",
+      "sponsorship_status": "not_specified",
+      "work_authorization_display": "Open / Not specified; No explicit work authorization or sponsorship requirements stated",
+      "job_link": "https://jobs.ashbyhq.com/truelogic/f11e945b-cc75-480f-9872-8bd52c7f9905"
+    },
+    {
       "id": "https://job-boards.eu.greenhouse.io/teads1/jobs/4867522101",
       "posted_on": "2026-05-25",
       "company": "Teads",
@@ -3321,6 +5334,176 @@
       "sponsorship_status": "not_specified",
       "work_authorization_display": "Open / Not specified; No explicit work authorization or sponsorship requirements stated",
       "job_link": "https://job-boards.eu.greenhouse.io/teads1/jobs/4867522101"
+    },
+    {
+      "id": "https://jobs.ashbyhq.com/trm-labs/de07bc8b-6b57-4b20-9d28-d6417112708d",
+      "posted_on": "2026-05-25",
+      "company": "TRM LABS",
+      "title": "Senior Software Engineer, Data Platform (Canada)",
+      "location": "North America",
+      "location_profile": {
+        "display": "North America",
+        "label": "North America",
+        "city": "North America",
+        "region": "",
+        "region_code": "",
+        "country": "",
+        "country_code": "",
+        "search_terms": [
+          "North America"
+        ]
+      },
+      "career_bucket": "mid_career_or_senior",
+      "career_bucket_label": "Mid-Career / Senior",
+      "experience_level": "senior_individual_contributor",
+      "experience_level_label": "Senior IC",
+      "yoe_min": 5,
+      "yoe_max": null,
+      "experience_display": "5+ yrs",
+      "authorization_category": "open_or_not_specified",
+      "authorization_category_label": "Open / Not specified",
+      "sponsorship_status": "not_specified",
+      "work_authorization_display": "Open / Not specified; No explicit work authorization requirement stated",
+      "job_link": "https://jobs.ashbyhq.com/trm-labs/de07bc8b-6b57-4b20-9d28-d6417112708d"
+    },
+    {
+      "id": "https://jobs.ashbyhq.com/trm-labs/23df8728-7b04-4340-a767-07e8ce3c23dc",
+      "posted_on": "2026-05-25",
+      "company": "TRM LABS",
+      "title": "Senior Data Scientist, Full Stack",
+      "location": "North America",
+      "location_profile": {
+        "display": "North America",
+        "label": "North America",
+        "city": "North America",
+        "region": "",
+        "region_code": "",
+        "country": "",
+        "country_code": "",
+        "search_terms": [
+          "North America"
+        ]
+      },
+      "career_bucket": "mid_career_or_senior",
+      "career_bucket_label": "Mid-Career / Senior",
+      "experience_level": "senior_individual_contributor",
+      "experience_level_label": "Senior IC",
+      "yoe_min": 6,
+      "yoe_max": null,
+      "experience_display": "6+ yrs",
+      "authorization_category": "open_or_not_specified",
+      "authorization_category_label": "Open / Not specified",
+      "sponsorship_status": "not_specified",
+      "work_authorization_display": "Open / Not specified; No explicit work authorization or sponsorship requirements stated",
+      "job_link": "https://jobs.ashbyhq.com/trm-labs/23df8728-7b04-4340-a767-07e8ce3c23dc"
+    },
+    {
+      "id": "https://apply.workable.com/j/B6C94F31DB",
+      "posted_on": "2026-05-25",
+      "company": "TIGER Analytics",
+      "title": "Senior Data Scientist - Operation Research",
+      "location": "Dallas, Texas, United States",
+      "location_profile": {
+        "display": "Dallas, Texas, United States",
+        "label": "Dallas, Texas, United States",
+        "city": "Dallas",
+        "region": "Texas",
+        "region_code": "",
+        "country": "United States",
+        "country_code": "US",
+        "search_terms": [
+          "Dallas, Texas, United States",
+          "Dallas",
+          "Texas",
+          "United States",
+          "US",
+          "Dallas, Texas",
+          "Dallas, United States",
+          "Texas, United States",
+          "USA"
+        ]
+      },
+      "career_bucket": "mid_career_or_senior",
+      "career_bucket_label": "Mid-Career / Senior",
+      "experience_level": "unknown",
+      "experience_level_label": "Unknown",
+      "yoe_min": null,
+      "yoe_max": null,
+      "experience_display": "Not stated",
+      "authorization_category": "open_or_not_specified",
+      "authorization_category_label": "Open / Not specified",
+      "sponsorship_status": "not_specified",
+      "work_authorization_display": "Open / Not specified; No work authorization requirement stated",
+      "job_link": "https://apply.workable.com/j/B6C94F31DB"
+    },
+    {
+      "id": "https://apply.workable.com/j/50A4A89F2B",
+      "posted_on": "2026-05-25",
+      "company": "TIGER Analytics",
+      "title": "Senior Data Scientist - Operation Research",
+      "location": "Toronto, Ontario, Canada",
+      "location_profile": {
+        "display": "Toronto, Ontario, Canada",
+        "label": "Toronto, Ontario, Canada",
+        "city": "Toronto",
+        "region": "Ontario",
+        "region_code": "",
+        "country": "Canada",
+        "country_code": "CA",
+        "search_terms": [
+          "Toronto, Ontario, Canada",
+          "Toronto",
+          "Ontario",
+          "Canada",
+          "CA",
+          "Toronto, Ontario",
+          "Toronto, Canada",
+          "Ontario, Canada"
+        ]
+      },
+      "career_bucket": "mid_career_or_senior",
+      "career_bucket_label": "Mid-Career / Senior",
+      "experience_level": "unknown",
+      "experience_level_label": "Unknown",
+      "yoe_min": null,
+      "yoe_max": null,
+      "experience_display": "Not stated",
+      "authorization_category": "open_or_not_specified",
+      "authorization_category_label": "Open / Not specified",
+      "sponsorship_status": "not_specified",
+      "work_authorization_display": "Open / Not specified; No work authorization requirement stated",
+      "job_link": "https://apply.workable.com/j/50A4A89F2B"
+    },
+    {
+      "id": "https://job-boards.greenhouse.io/singlestore/jobs/7956622",
+      "posted_on": "2026-05-25",
+      "company": "SingleStore",
+      "title": "Senior Software Engineer | Aura Platform ",
+      "location": "Portugal",
+      "location_profile": {
+        "display": "Portugal",
+        "label": "Portugal",
+        "city": "Portugal",
+        "region": "",
+        "region_code": "",
+        "country": "",
+        "country_code": "",
+        "search_terms": [
+          "Portugal"
+        ]
+      },
+      "career_bucket": "mid_career_or_senior",
+      "career_bucket_label": "Mid-Career / Senior",
+      "experience_level": "senior_individual_contributor",
+      "experience_level_label": "Senior IC",
+      "yoe_min": 4,
+      "yoe_max": null,
+      "experience_display": "4+ yrs",
+      "authorization_category": "open_or_not_specified",
+      "authorization_category_label": "Open / Not specified",
+      "sponsorship_status": "not_specified",
+      "work_authorization_display": "Open / Not specified; No explicit work authorization or sponsorship requirements stated",
+      "job_link": "https://job-boards.greenhouse.io/singlestore/jobs/7956622"
     },
     {
       "id": "https://job-boards.greenhouse.io/sigmacomputing/jobs/7747581003",
@@ -3635,6 +5818,333 @@
       "job_link": "https://redhat.wd5.myworkdayjobs.com/Jobs/job/Remote-US-CO/Senior-Software-Engineer--GCP_R-053100"
     },
     {
+      "id": "https://job-boards.greenhouse.io/razorpaysoftwareprivatelimited/jobs/4694070005",
+      "posted_on": "2026-05-25",
+      "company": "Razorpay Software Private Limited",
+      "title": "Senior Software Development Engineer",
+      "location": "Malaysia",
+      "location_profile": {
+        "display": "Malaysia",
+        "label": "Malaysia",
+        "city": "Malaysia",
+        "region": "",
+        "region_code": "",
+        "country": "",
+        "country_code": "",
+        "search_terms": [
+          "Malaysia"
+        ]
+      },
+      "career_bucket": "mid_career_or_senior",
+      "career_bucket_label": "Mid-Career / Senior",
+      "experience_level": "senior_individual_contributor",
+      "experience_level_label": "Senior IC",
+      "yoe_min": 4,
+      "yoe_max": 5,
+      "experience_display": "4-5 yrs",
+      "authorization_category": "open_or_not_specified",
+      "authorization_category_label": "Open / Not specified",
+      "sponsorship_status": "not_specified",
+      "work_authorization_display": "Open / Not specified; No explicit work authorization or sponsorship requirements stated",
+      "job_link": "https://job-boards.greenhouse.io/razorpaysoftwareprivatelimited/jobs/4694070005"
+    },
+    {
+      "id": "https://globalhr.wd5.myworkdayjobs.com/REC_RTX_Ext_Gateway/job/US-IA-CEDAR-RAPIDS-130--5350-C-Ave-NE--BLDG-130/Software-Engineer---Embedded-Communications--ONSITE-_01846376",
+      "posted_on": "2026-05-25",
+      "company": "RTX",
+      "title": "Software Engineer - Embedded Communications (ONSITE)",
+      "location": "US-IA-CEDAR RAPIDS-130 ~ 5350 C Ave NE ~ BLDG 130, United States of America",
+      "location_profile": {
+        "display": "US-IA-CEDAR RAPIDS-130 ~ 5350 C Ave NE ~ BLDG 130, United States of America",
+        "label": "US-IA-CEDAR RAPIDS-130 ~ 5350 C Ave NE ~ BLDG 130, United States of America, United States",
+        "city": "US-IA-CEDAR RAPIDS-130 ~ 5350 C Ave NE ~ BLDG 130",
+        "region": "United States of America",
+        "region_code": "",
+        "country": "United States",
+        "country_code": "US",
+        "search_terms": [
+          "US-IA-CEDAR RAPIDS-130 ~ 5350 C Ave NE ~ BLDG 130, United States of America",
+          "US-IA-CEDAR RAPIDS-130 ~ 5350 C Ave NE ~ BLDG 130, United States of America, United States",
+          "US-IA-CEDAR RAPIDS-130 ~ 5350 C Ave NE ~ BLDG 130",
+          "United States of America",
+          "United States",
+          "US",
+          "US-IA-CEDAR RAPIDS-130 ~ 5350 C Ave NE ~ BLDG 130, United States",
+          "United States of America, United States",
+          "USA"
+        ]
+      },
+      "career_bucket": "early_career_or_new_grad",
+      "career_bucket_label": "Early Career / New Grad",
+      "experience_level": "mid_level",
+      "experience_level_label": "Mid-Level",
+      "yoe_min": 2,
+      "yoe_max": null,
+      "experience_display": "2+ yrs",
+      "authorization_category": "requires_us_citizenship",
+      "authorization_category_label": "Requires US citizenship",
+      "sponsorship_status": "not_specified",
+      "work_authorization_display": "Requires US citizenship; U.S. citizenship and active SECRET clearance required",
+      "job_link": "https://globalhr.wd5.myworkdayjobs.com/REC_RTX_Ext_Gateway/job/US-IA-CEDAR-RAPIDS-130--5350-C-Ave-NE--BLDG-130/Software-Engineer---Embedded-Communications--ONSITE-_01846376"
+    },
+    {
+      "id": "https://globalhr.wd5.myworkdayjobs.com/REC_RTX_Ext_Gateway/job/US-IA-CEDAR-RAPIDS-130--5350-C-Ave-NE--BLDG-130/Software-Engineer---Embedded-Communications--ONSITE-_01844642",
+      "posted_on": "2026-05-25",
+      "company": "RTX",
+      "title": "Software Engineer - Embedded Communications (ONSITE)",
+      "location": "US-IA-CEDAR RAPIDS-130 ~ 5350 C Ave NE ~ BLDG 130, United States of America",
+      "location_profile": {
+        "display": "US-IA-CEDAR RAPIDS-130 ~ 5350 C Ave NE ~ BLDG 130, United States of America",
+        "label": "US-IA-CEDAR RAPIDS-130 ~ 5350 C Ave NE ~ BLDG 130, United States of America, United States",
+        "city": "US-IA-CEDAR RAPIDS-130 ~ 5350 C Ave NE ~ BLDG 130",
+        "region": "United States of America",
+        "region_code": "",
+        "country": "United States",
+        "country_code": "US",
+        "search_terms": [
+          "US-IA-CEDAR RAPIDS-130 ~ 5350 C Ave NE ~ BLDG 130, United States of America",
+          "US-IA-CEDAR RAPIDS-130 ~ 5350 C Ave NE ~ BLDG 130, United States of America, United States",
+          "US-IA-CEDAR RAPIDS-130 ~ 5350 C Ave NE ~ BLDG 130",
+          "United States of America",
+          "United States",
+          "US",
+          "US-IA-CEDAR RAPIDS-130 ~ 5350 C Ave NE ~ BLDG 130, United States",
+          "United States of America, United States",
+          "USA"
+        ]
+      },
+      "career_bucket": "early_career_or_new_grad",
+      "career_bucket_label": "Early Career / New Grad",
+      "experience_level": "mid_level",
+      "experience_level_label": "Mid-Level",
+      "yoe_min": 2,
+      "yoe_max": null,
+      "experience_display": "2+ yrs",
+      "authorization_category": "requires_us_citizenship",
+      "authorization_category_label": "Requires US citizenship",
+      "sponsorship_status": "not_specified",
+      "work_authorization_display": "Requires US citizenship; U.S. citizenship and active SECRET clearance required",
+      "job_link": "https://globalhr.wd5.myworkdayjobs.com/REC_RTX_Ext_Gateway/job/US-IA-CEDAR-RAPIDS-130--5350-C-Ave-NE--BLDG-130/Software-Engineer---Embedded-Communications--ONSITE-_01844642"
+    },
+    {
+      "id": "https://globalhr.wd5.myworkdayjobs.com/REC_RTX_Ext_Gateway/job/US-IN-FT-WAYNE-150A--1010-Production-Rd--BLDG-150A/Senior-Software-Engineer---Embedded-Communications--ONSITE-_01846377",
+      "posted_on": "2026-05-25",
+      "company": "RTX",
+      "title": "Senior Software Engineer - Embedded Communications (ONSITE)",
+      "location": "US-IN-FT WAYNE-150A ~ 1010 Production Rd ~ BLDG 150A, United States of America",
+      "location_profile": {
+        "display": "US-IN-FT WAYNE-150A ~ 1010 Production Rd ~ BLDG 150A, United States of America",
+        "label": "US-IN-FT WAYNE-150A ~ 1010 Production Rd ~ BLDG 150A, United States of America, United States",
+        "city": "US-IN-FT WAYNE-150A ~ 1010 Production Rd ~ BLDG 150A",
+        "region": "United States of America",
+        "region_code": "",
+        "country": "United States",
+        "country_code": "US",
+        "search_terms": [
+          "US-IN-FT WAYNE-150A ~ 1010 Production Rd ~ BLDG 150A, United States of America",
+          "US-IN-FT WAYNE-150A ~ 1010 Production Rd ~ BLDG 150A, United States of America, United States",
+          "US-IN-FT WAYNE-150A ~ 1010 Production Rd ~ BLDG 150A",
+          "United States of America",
+          "United States",
+          "US",
+          "US-IN-FT WAYNE-150A ~ 1010 Production Rd ~ BLDG 150A, United States",
+          "United States of America, United States",
+          "USA"
+        ]
+      },
+      "career_bucket": "mid_career_or_senior",
+      "career_bucket_label": "Mid-Career / Senior",
+      "experience_level": "senior_individual_contributor",
+      "experience_level_label": "Senior IC",
+      "yoe_min": 5,
+      "yoe_max": null,
+      "experience_display": "5+ yrs",
+      "authorization_category": "requires_us_citizenship",
+      "authorization_category_label": "Requires US citizenship",
+      "sponsorship_status": "not_specified",
+      "work_authorization_display": "Requires US citizenship; U.S. citizenship and active SECRET clearance required",
+      "job_link": "https://globalhr.wd5.myworkdayjobs.com/REC_RTX_Ext_Gateway/job/US-IN-FT-WAYNE-150A--1010-Production-Rd--BLDG-150A/Senior-Software-Engineer---Embedded-Communications--ONSITE-_01846377"
+    },
+    {
+      "id": "https://globalhr.wd5.myworkdayjobs.com/REC_RTX_Ext_Gateway/job/US-IA-CEDAR-RAPIDS-130--5350-C-Ave-NE--BLDG-130/Senior-Software-Engineer---Embedded-Communications--ONSITE-_01847195",
+      "posted_on": "2026-05-25",
+      "company": "RTX",
+      "title": "Senior Software Engineer - Embedded Communications (ONSITE)",
+      "location": "US-IA-CEDAR RAPIDS-130 ~ 5350 C Ave NE ~ BLDG 130, United States of America",
+      "location_profile": {
+        "display": "US-IA-CEDAR RAPIDS-130 ~ 5350 C Ave NE ~ BLDG 130, United States of America",
+        "label": "US-IA-CEDAR RAPIDS-130 ~ 5350 C Ave NE ~ BLDG 130, United States of America, United States",
+        "city": "US-IA-CEDAR RAPIDS-130 ~ 5350 C Ave NE ~ BLDG 130",
+        "region": "United States of America",
+        "region_code": "",
+        "country": "United States",
+        "country_code": "US",
+        "search_terms": [
+          "US-IA-CEDAR RAPIDS-130 ~ 5350 C Ave NE ~ BLDG 130, United States of America",
+          "US-IA-CEDAR RAPIDS-130 ~ 5350 C Ave NE ~ BLDG 130, United States of America, United States",
+          "US-IA-CEDAR RAPIDS-130 ~ 5350 C Ave NE ~ BLDG 130",
+          "United States of America",
+          "United States",
+          "US",
+          "US-IA-CEDAR RAPIDS-130 ~ 5350 C Ave NE ~ BLDG 130, United States",
+          "United States of America, United States",
+          "USA"
+        ]
+      },
+      "career_bucket": "mid_career_or_senior",
+      "career_bucket_label": "Mid-Career / Senior",
+      "experience_level": "senior_individual_contributor",
+      "experience_level_label": "Senior IC",
+      "yoe_min": 5,
+      "yoe_max": null,
+      "experience_display": "5+ yrs",
+      "authorization_category": "requires_us_citizenship",
+      "authorization_category_label": "Requires US citizenship",
+      "sponsorship_status": "not_specified",
+      "work_authorization_display": "Requires US citizenship; U.S. citizenship and active SECRET clearance required",
+      "job_link": "https://globalhr.wd5.myworkdayjobs.com/REC_RTX_Ext_Gateway/job/US-IA-CEDAR-RAPIDS-130--5350-C-Ave-NE--BLDG-130/Senior-Software-Engineer---Embedded-Communications--ONSITE-_01847195"
+    },
+    {
+      "id": "https://jobs.lever.co/pointclickcare/b9907dcb-01de-4edc-87a9-41aef45e0de9",
+      "posted_on": "2026-05-25",
+      "company": "Pointclickcare",
+      "title": "Principal GenAI Platform Engineer (US)",
+      "location": "Remote, USA",
+      "location_profile": {
+        "display": "Remote, USA",
+        "label": "Remote, USA, United States",
+        "city": "Remote",
+        "region": "USA",
+        "region_code": "",
+        "country": "United States",
+        "country_code": "US",
+        "search_terms": [
+          "Remote, USA",
+          "Remote, USA, United States",
+          "Remote",
+          "USA",
+          "United States",
+          "US",
+          "Remote, United States",
+          "USA, United States"
+        ]
+      },
+      "career_bucket": "mid_career_or_senior",
+      "career_bucket_label": "Mid-Career / Senior",
+      "experience_level": "senior_individual_contributor",
+      "experience_level_label": "Senior IC",
+      "yoe_min": null,
+      "yoe_max": null,
+      "experience_display": "Not stated",
+      "authorization_category": "open_or_not_specified",
+      "authorization_category_label": "Open / Not specified",
+      "sponsorship_status": "not_specified",
+      "work_authorization_display": "Open / Not specified; No explicit work authorization requirement stated",
+      "job_link": "https://jobs.lever.co/pointclickcare/b9907dcb-01de-4edc-87a9-41aef45e0de9"
+    },
+    {
+      "id": "https://jobs.lever.co/pointclickcare/4a7d2c85-2835-46ab-a970-3e4ae6aa07f8",
+      "posted_on": "2026-05-25",
+      "company": "Pointclickcare",
+      "title": "Principal GenAI Platform Engineer (CA)",
+      "location": "Mississauga",
+      "location_profile": {
+        "display": "Mississauga",
+        "label": "Mississauga",
+        "city": "Mississauga",
+        "region": "",
+        "region_code": "",
+        "country": "",
+        "country_code": "",
+        "search_terms": [
+          "Mississauga"
+        ]
+      },
+      "career_bucket": "mid_career_or_senior",
+      "career_bucket_label": "Mid-Career / Senior",
+      "experience_level": "unknown",
+      "experience_level_label": "Unknown",
+      "yoe_min": null,
+      "yoe_max": null,
+      "experience_display": "Not stated",
+      "authorization_category": "open_or_not_specified",
+      "authorization_category_label": "Open / Not specified",
+      "sponsorship_status": "not_specified",
+      "work_authorization_display": "Open / Not specified; No work authorization requirement stated",
+      "job_link": "https://jobs.lever.co/pointclickcare/4a7d2c85-2835-46ab-a970-3e4ae6aa07f8"
+    },
+    {
+      "id": "https://www.pinterestcareers.com/jobs/?gh_jid=7901817",
+      "posted_on": "2026-05-25",
+      "company": "Pinterest",
+      "title": "Software Engineer II, Data",
+      "location": "Toronto, ON, CA",
+      "location_profile": {
+        "display": "Toronto, ON, CA",
+        "label": "Toronto, CA, United States",
+        "city": "Toronto",
+        "region": "CA",
+        "region_code": "",
+        "country": "United States",
+        "country_code": "US",
+        "search_terms": [
+          "Toronto, ON, CA",
+          "Toronto, CA, United States",
+          "Toronto",
+          "CA",
+          "United States",
+          "US",
+          "Toronto, CA",
+          "Toronto, United States",
+          "CA, United States",
+          "USA"
+        ]
+      },
+      "career_bucket": "early_career_or_new_grad",
+      "career_bucket_label": "Early Career / New Grad",
+      "experience_level": "mid_level",
+      "experience_level_label": "Mid-Level",
+      "yoe_min": 2,
+      "yoe_max": null,
+      "experience_display": "2+ yrs",
+      "authorization_category": "country_specific_work_authorization",
+      "authorization_category_label": "Country-specific work authorization",
+      "sponsorship_status": "not_specified",
+      "work_authorization_display": "Country-specific work authorization; Canada based applicants only",
+      "job_link": "https://www.pinterestcareers.com/jobs/?gh_jid=7901817"
+    },
+    {
+      "id": "https://jobs.ashbyhq.com/openai/202eb061-23d7-4a58-80c8-bc3b41e56d39",
+      "posted_on": "2026-05-25",
+      "company": "Openai",
+      "title": "Software Engineer, Build Systems / CI",
+      "location": "San Francisco",
+      "location_profile": {
+        "display": "San Francisco",
+        "label": "San Francisco",
+        "city": "San Francisco",
+        "region": "",
+        "region_code": "",
+        "country": "",
+        "country_code": "",
+        "search_terms": [
+          "San Francisco"
+        ]
+      },
+      "career_bucket": "mid_career_or_senior",
+      "career_bucket_label": "Mid-Career / Senior",
+      "experience_level": "senior_individual_contributor",
+      "experience_level_label": "Senior IC",
+      "yoe_min": 5,
+      "yoe_max": null,
+      "experience_display": "5+ yrs",
+      "authorization_category": "open_or_not_specified",
+      "authorization_category_label": "Open / Not specified",
+      "sponsorship_status": "not_specified",
+      "work_authorization_display": "Open / Not specified; No explicit work authorization or sponsorship requirements stated",
+      "job_link": "https://jobs.ashbyhq.com/openai/202eb061-23d7-4a58-80c8-bc3b41e56d39"
+    },
+    {
       "id": "https://jobs.lever.co/noodle/9acfec34-2084-4b92-be63-95551173bbfd",
       "posted_on": "2026-05-25",
       "company": "Noodle",
@@ -3730,6 +6240,268 @@
       "sponsorship_status": "not_specified",
       "work_authorization_display": "Open / Not specified; No explicit work authorization or sponsorship requirements stated",
       "job_link": "https://www.mongodb.com/careers/job/?gh_jid=7956226"
+    },
+    {
+      "id": "https://job-boards.greenhouse.io/interfaceai/jobs/4684101006",
+      "posted_on": "2026-05-25",
+      "company": "Interface AI",
+      "title": "Software Engineer II",
+      "location": "San Francisco, California (In-Office)",
+      "location_profile": {
+        "display": "San Francisco, California (In-Office)",
+        "label": "San Francisco, California (In-Office), United States",
+        "city": "San Francisco",
+        "region": "California (In-Office)",
+        "region_code": "",
+        "country": "United States",
+        "country_code": "US",
+        "search_terms": [
+          "San Francisco, California (In-Office)",
+          "San Francisco, California (In-Office), United States",
+          "San Francisco",
+          "California (In-Office)",
+          "United States",
+          "US",
+          "San Francisco, United States",
+          "California (In-Office), United States",
+          "USA"
+        ]
+      },
+      "career_bucket": "early_career_or_new_grad",
+      "career_bucket_label": "Early Career / New Grad",
+      "experience_level": "mid_level",
+      "experience_level_label": "Mid-Level",
+      "yoe_min": 2,
+      "yoe_max": null,
+      "experience_display": "2+ yrs",
+      "authorization_category": "open_or_not_specified",
+      "authorization_category_label": "Open / Not specified",
+      "sponsorship_status": "not_specified",
+      "work_authorization_display": "Open / Not specified; No explicit work authorization or sponsorship requirements stated",
+      "job_link": "https://job-boards.greenhouse.io/interfaceai/jobs/4684101006"
+    },
+    {
+      "id": "https://job-boards.greenhouse.io/interfaceai/jobs/4684103006",
+      "posted_on": "2026-05-25",
+      "company": "Interface AI",
+      "title": "Senior Software Engineer",
+      "location": "San Francisco, California (In-Office)",
+      "location_profile": {
+        "display": "San Francisco, California (In-Office)",
+        "label": "San Francisco, California (In-Office), United States",
+        "city": "San Francisco",
+        "region": "California (In-Office)",
+        "region_code": "",
+        "country": "United States",
+        "country_code": "US",
+        "search_terms": [
+          "San Francisco, California (In-Office)",
+          "San Francisco, California (In-Office), United States",
+          "San Francisco",
+          "California (In-Office)",
+          "United States",
+          "US",
+          "San Francisco, United States",
+          "California (In-Office), United States",
+          "USA"
+        ]
+      },
+      "career_bucket": "mid_career_or_senior",
+      "career_bucket_label": "Mid-Career / Senior",
+      "experience_level": "senior_individual_contributor",
+      "experience_level_label": "Senior IC",
+      "yoe_min": 5,
+      "yoe_max": null,
+      "experience_display": "5+ yrs",
+      "authorization_category": "open_or_not_specified",
+      "authorization_category_label": "Open / Not specified",
+      "sponsorship_status": "not_specified",
+      "work_authorization_display": "Open / Not specified; No explicit work authorization or sponsorship requirements stated",
+      "job_link": "https://job-boards.greenhouse.io/interfaceai/jobs/4684103006"
+    },
+    {
+      "id": "https://careers.gofasti.com/job-application/6005526004?gh_jid=6005526004",
+      "posted_on": "2026-05-25",
+      "company": "GoFasti",
+      "title": "1098- Full Stack Engineer",
+      "location": "Remote",
+      "location_profile": {
+        "display": "Remote",
+        "label": "Remote",
+        "city": "Remote",
+        "region": "",
+        "region_code": "",
+        "country": "",
+        "country_code": "",
+        "search_terms": [
+          "Remote"
+        ]
+      },
+      "career_bucket": "mid_career_or_senior",
+      "career_bucket_label": "Mid-Career / Senior",
+      "experience_level": "mid_level",
+      "experience_level_label": "Mid-Level",
+      "yoe_min": 3,
+      "yoe_max": null,
+      "experience_display": "3+ yrs",
+      "authorization_category": "open_or_not_specified",
+      "authorization_category_label": "Open / Not specified",
+      "sponsorship_status": "not_specified",
+      "work_authorization_display": "Open / Not specified; No explicit work authorization or sponsorship requirements stated",
+      "job_link": "https://careers.gofasti.com/job-application/6005526004?gh_jid=6005526004"
+    },
+    {
+      "id": "https://job-boards.greenhouse.io/gitlab/jobs/8548545002",
+      "posted_on": "2026-05-25",
+      "company": "GitLab",
+      "title": "Senior AI Engineer",
+      "location": "Remote, US",
+      "location_profile": {
+        "display": "Remote, US",
+        "label": "Remote, US, United States",
+        "city": "Remote",
+        "region": "US",
+        "region_code": "",
+        "country": "United States",
+        "country_code": "US",
+        "search_terms": [
+          "Remote, US",
+          "Remote, US, United States",
+          "Remote",
+          "US",
+          "United States",
+          "Remote, United States",
+          "US, United States",
+          "USA"
+        ]
+      },
+      "career_bucket": "early_career_or_new_grad",
+      "career_bucket_label": "Early Career / New Grad",
+      "experience_level": "senior_individual_contributor",
+      "experience_level_label": "Senior IC",
+      "yoe_min": 0,
+      "yoe_max": null,
+      "experience_display": "0+ yrs",
+      "authorization_category": "open_or_not_specified",
+      "authorization_category_label": "Open / Not specified",
+      "sponsorship_status": "not_specified",
+      "work_authorization_display": "Open / Not specified; No explicit work authorization requirement stated",
+      "job_link": "https://job-boards.greenhouse.io/gitlab/jobs/8548545002"
+    },
+    {
+      "id": "https://job-boards.greenhouse.io/geotab/jobs/5163511008",
+      "posted_on": "2026-05-25",
+      "company": "Geotab",
+      "title": "Software Developer ",
+      "location": "Atlanta, Georgia - USA | Oakville, Ontario - Canada | Toronto, Ontario - Canada | Waterloo, Ontario - Canada",
+      "location_profile": {
+        "display": "Atlanta, Georgia - USA | Oakville, Ontario - Canada | Toronto, Ontario - Canada | Waterloo, Ontario - Canada",
+        "label": "Atlanta, Georgia - USA, United States",
+        "city": "Atlanta",
+        "region": "Georgia - USA",
+        "region_code": "",
+        "country": "United States",
+        "country_code": "US",
+        "search_terms": [
+          "Atlanta, Georgia - USA | Oakville, Ontario - Canada | Toronto, Ontario - Canada | Waterloo, Ontario - Canada",
+          "Atlanta, Georgia - USA, United States",
+          "Atlanta",
+          "Georgia - USA",
+          "United States",
+          "US",
+          "Atlanta, Georgia - USA",
+          "Atlanta, United States",
+          "Georgia - USA, United States",
+          "USA"
+        ]
+      },
+      "career_bucket": "early_career_or_new_grad",
+      "career_bucket_label": "Early Career / New Grad",
+      "experience_level": "mid_level",
+      "experience_level_label": "Mid-Level",
+      "yoe_min": 2,
+      "yoe_max": null,
+      "experience_display": "2+ yrs",
+      "authorization_category": "open_or_not_specified",
+      "authorization_category_label": "Open / Not specified",
+      "sponsorship_status": "not_specified",
+      "work_authorization_display": "Open / Not specified; No explicit work authorization requirement stated",
+      "job_link": "https://job-boards.greenhouse.io/geotab/jobs/5163511008"
+    },
+    {
+      "id": "https://job-boards.greenhouse.io/dataiku/jobs/6002762004",
+      "posted_on": "2026-05-25",
+      "company": "Dataiku",
+      "title": "Generative AI Engineer",
+      "location": "United States, New York",
+      "location_profile": {
+        "display": "United States, New York",
+        "label": "United States, New York",
+        "city": "United States",
+        "region": "New York",
+        "region_code": "",
+        "country": "United States",
+        "country_code": "US",
+        "search_terms": [
+          "United States, New York",
+          "United States",
+          "New York",
+          "US",
+          "New York, United States",
+          "USA"
+        ]
+      },
+      "career_bucket": "mid_career_or_senior",
+      "career_bucket_label": "Mid-Career / Senior",
+      "experience_level": "mid_level",
+      "experience_level_label": "Mid-Level",
+      "yoe_min": null,
+      "yoe_max": null,
+      "experience_display": "Not stated",
+      "authorization_category": "open_or_not_specified",
+      "authorization_category_label": "Open / Not specified",
+      "sponsorship_status": "not_specified",
+      "work_authorization_display": "Open / Not specified; No explicit work authorization requirement stated",
+      "job_link": "https://job-boards.greenhouse.io/dataiku/jobs/6002762004"
+    },
+    {
+      "id": "https://manulife.wd3.myworkdayjobs.com/MFCJH_AdminJobs/job/USA-Massachusetts-Boston-200-Berkeley-Street/Full-Stack-Software-Engineer_JR26040202-3",
+      "posted_on": "2026-05-25",
+      "company": "Company 19 - John Hancock Life Insurance Company (U.S.A.)",
+      "title": "Full-Stack Software Engineer",
+      "location": "USA, Massachusetts, Boston, 200 Berkeley Street, United States of America",
+      "location_profile": {
+        "display": "USA, Massachusetts, Boston, 200 Berkeley Street, United States of America",
+        "label": "USA, United States of America, United States",
+        "city": "USA",
+        "region": "United States of America",
+        "region_code": "",
+        "country": "United States",
+        "country_code": "US",
+        "search_terms": [
+          "USA, Massachusetts, Boston, 200 Berkeley Street, United States of America",
+          "USA, United States of America, United States",
+          "USA",
+          "United States of America",
+          "United States",
+          "US",
+          "USA, United States of America",
+          "USA, United States",
+          "United States of America, United States"
+        ]
+      },
+      "career_bucket": "early_career_or_new_grad",
+      "career_bucket_label": "Early Career / New Grad",
+      "experience_level": "entry_level_or_new_grad",
+      "experience_level_label": "Entry-Level / New Grad",
+      "yoe_min": 1,
+      "yoe_max": null,
+      "experience_display": "1+ yrs",
+      "authorization_category": "open_or_not_specified",
+      "authorization_category_label": "Open / Not specified",
+      "sponsorship_status": "not_specified",
+      "work_authorization_display": "Open / Not specified; No explicit work authorization or sponsorship requirements stated",
+      "job_link": "https://manulife.wd3.myworkdayjobs.com/MFCJH_AdminJobs/job/USA-Massachusetts-Boston-200-Berkeley-Street/Full-Stack-Software-Engineer_JR26040202-3"
     },
     {
       "id": "https://cast.ai/careers/apply/?gh_jid=4258342009",
@@ -3856,6 +6628,76 @@
       "job_link": "https://cast.ai/careers/apply/?gh_jid=4258350009"
     },
     {
+      "id": "https://carbonrobotics.com/job-openings?gh_jid=4683733006",
+      "posted_on": "2026-05-25",
+      "company": "Carbon Robotics",
+      "title": "Sr. Software Engineer, Backend",
+      "location": "Seattle, WA",
+      "location_profile": {
+        "display": "Seattle, WA",
+        "label": "Seattle, WA, United States",
+        "city": "Seattle",
+        "region": "WA",
+        "region_code": "",
+        "country": "United States",
+        "country_code": "US",
+        "search_terms": [
+          "Seattle, WA",
+          "Seattle, WA, United States",
+          "Seattle",
+          "WA",
+          "United States",
+          "US",
+          "Seattle, United States",
+          "WA, United States",
+          "USA"
+        ]
+      },
+      "career_bucket": "mid_career_or_senior",
+      "career_bucket_label": "Mid-Career / Senior",
+      "experience_level": "mid_level",
+      "experience_level_label": "Mid-Level",
+      "yoe_min": 5,
+      "yoe_max": null,
+      "experience_display": "5+ yrs",
+      "authorization_category": "open_or_not_specified",
+      "authorization_category_label": "Open / Not specified",
+      "sponsorship_status": "not_specified",
+      "work_authorization_display": "Open / Not specified; No explicit work authorization or sponsorship requirements stated",
+      "job_link": "https://carbonrobotics.com/job-openings?gh_jid=4683733006"
+    },
+    {
+      "id": "https://boards.greenhouse.io/braze/jobs/7956629?gh_jid=7956629",
+      "posted_on": "2026-05-25",
+      "company": "Braze",
+      "title": "Senior Data Scientist (AI Deployment)",
+      "location": "São Paulo",
+      "location_profile": {
+        "display": "São Paulo",
+        "label": "São Paulo",
+        "city": "São Paulo",
+        "region": "",
+        "region_code": "",
+        "country": "",
+        "country_code": "",
+        "search_terms": [
+          "São Paulo"
+        ]
+      },
+      "career_bucket": "mid_career_or_senior",
+      "career_bucket_label": "Mid-Career / Senior",
+      "experience_level": "senior_individual_contributor",
+      "experience_level_label": "Senior IC",
+      "yoe_min": 5,
+      "yoe_max": null,
+      "experience_display": "5+ yrs",
+      "authorization_category": "open_or_not_specified",
+      "authorization_category_label": "Open / Not specified",
+      "sponsorship_status": "not_specified",
+      "work_authorization_display": "Open / Not specified; No explicit work authorization requirement stated",
+      "job_link": "https://boards.greenhouse.io/braze/jobs/7956629?gh_jid=7956629"
+    },
+    {
       "id": "https://jobs.ashbyhq.com/braiins/2731381a-f6f2-4147-9b24-14ccb142f1d5",
       "posted_on": "2026-05-25",
       "company": "Braiins",
@@ -3885,6 +6727,68 @@
       "sponsorship_status": "not_specified",
       "work_authorization_display": "Open / Not specified; No explicit work authorization or sponsorship requirements stated",
       "job_link": "https://jobs.ashbyhq.com/braiins/2731381a-f6f2-4147-9b24-14ccb142f1d5"
+    },
+    {
+      "id": "https://jobs.ashbyhq.com/bespokelabs/800d6254-ce99-480f-bb2f-2334f7714114",
+      "posted_on": "2026-05-25",
+      "company": "Bespokelabs",
+      "title": "Full Stack Engineer - MTV ",
+      "location": "Mountain View",
+      "location_profile": {
+        "display": "Mountain View",
+        "label": "Mountain View",
+        "city": "Mountain View",
+        "region": "",
+        "region_code": "",
+        "country": "",
+        "country_code": "",
+        "search_terms": [
+          "Mountain View"
+        ]
+      },
+      "career_bucket": "mid_career_or_senior",
+      "career_bucket_label": "Mid-Career / Senior",
+      "experience_level": "senior_individual_contributor",
+      "experience_level_label": "Senior IC",
+      "yoe_min": 4,
+      "yoe_max": 8,
+      "experience_display": "4-8 yrs",
+      "authorization_category": "open_or_not_specified",
+      "authorization_category_label": "Open / Not specified",
+      "sponsorship_status": "not_specified",
+      "work_authorization_display": "Open / Not specified; No work authorization requirement stated",
+      "job_link": "https://jobs.ashbyhq.com/bespokelabs/800d6254-ce99-480f-bb2f-2334f7714114"
+    },
+    {
+      "id": "https://job-boards.greenhouse.io/arvinas/jobs/7747837003",
+      "posted_on": "2026-05-25",
+      "company": "Arvinas",
+      "title": "Senior Research Scientist - Neuroscience",
+      "location": "New Haven - CT",
+      "location_profile": {
+        "display": "New Haven - CT",
+        "label": "New Haven - CT",
+        "city": "New Haven - CT",
+        "region": "",
+        "region_code": "",
+        "country": "",
+        "country_code": "",
+        "search_terms": [
+          "New Haven - CT"
+        ]
+      },
+      "career_bucket": "mid_career_or_senior",
+      "career_bucket_label": "Mid-Career / Senior",
+      "experience_level": "senior_individual_contributor",
+      "experience_level_label": "Senior IC",
+      "yoe_min": 3,
+      "yoe_max": null,
+      "experience_display": "3+ yrs",
+      "authorization_category": "no_sponsorship",
+      "authorization_category_label": "No sponsorship",
+      "sponsorship_status": "no_sponsorship",
+      "work_authorization_display": "No sponsorship; No visa sponsorship provided; must work without VISA",
+      "job_link": "https://job-boards.greenhouse.io/arvinas/jobs/7747837003"
     },
     {
       "id": "https://careers.appsflyer.com/jobs/position/8557846002?gh_jid=8557846002",
@@ -3989,6 +6893,80 @@
       "job_link": "https://job-boards.greenhouse.io/anthropic/jobs/5116820008"
     },
     {
+      "id": "https://job-boards.greenhouse.io/affirm/jobs/7719651003",
+      "posted_on": "2026-05-25",
+      "company": "Affirm",
+      "title": "Machine Learning Engineer II",
+      "location": "Remote US",
+      "location_profile": {
+        "display": "Remote US",
+        "label": "Remote US, United States",
+        "city": "Remote US",
+        "region": "",
+        "region_code": "",
+        "country": "United States",
+        "country_code": "US",
+        "search_terms": [
+          "Remote US",
+          "Remote US, United States",
+          "United States",
+          "US",
+          "USA"
+        ]
+      },
+      "career_bucket": "early_career_or_new_grad",
+      "career_bucket_label": "Early Career / New Grad",
+      "experience_level": "entry_level_or_new_grad",
+      "experience_level_label": "Entry-Level / New Grad",
+      "yoe_min": 2,
+      "yoe_max": null,
+      "experience_display": "2+ yrs",
+      "authorization_category": "open_or_not_specified",
+      "authorization_category_label": "Open / Not specified",
+      "sponsorship_status": "not_specified",
+      "work_authorization_display": "Open / Not specified; No explicit work authorization requirement stated",
+      "job_link": "https://job-boards.greenhouse.io/affirm/jobs/7719651003"
+    },
+    {
+      "id": "https://boards.greenhouse.io/accenturefederalservices/jobs/4684107006?gh_jid=4684107006",
+      "posted_on": "2026-05-25",
+      "company": "Accenture Federal Services",
+      "title": "Cleared Senior Cloud Engineer (Washington, DC)",
+      "location": "Washington, DC",
+      "location_profile": {
+        "display": "Washington, DC",
+        "label": "Washington, DC, United States",
+        "city": "Washington",
+        "region": "DC",
+        "region_code": "",
+        "country": "United States",
+        "country_code": "US",
+        "search_terms": [
+          "Washington, DC",
+          "Washington, DC, United States",
+          "Washington",
+          "DC",
+          "United States",
+          "US",
+          "Washington, United States",
+          "DC, United States",
+          "USA"
+        ]
+      },
+      "career_bucket": "mid_career_or_senior",
+      "career_bucket_label": "Mid-Career / Senior",
+      "experience_level": "senior_individual_contributor",
+      "experience_level_label": "Senior IC",
+      "yoe_min": 7,
+      "yoe_max": null,
+      "experience_display": "7+ yrs",
+      "authorization_category": "requires_unrestricted_us_work_authorization",
+      "authorization_category_label": "Requires unrestricted US work authorization",
+      "sponsorship_status": "not_specified",
+      "work_authorization_display": "Requires unrestricted US work authorization; Must have unrestricted US work authorization",
+      "job_link": "https://boards.greenhouse.io/accenturefederalservices/jobs/4684107006?gh_jid=4684107006"
+    },
+    {
       "id": "https://adobe.wd5.myworkdayjobs.com/external_experienced/job/San-Jose/Sr-Software-Development-Engineer-55_R168185-1",
       "posted_on": "2026-05-25",
       "company": "ADUS-Adobe Inc.",
@@ -4026,6 +7004,107 @@
       "sponsorship_status": "not_specified",
       "work_authorization_display": "Open / Not specified; No explicit work authorization requirement stated",
       "job_link": "https://adobe.wd5.myworkdayjobs.com/external_experienced/job/San-Jose/Sr-Software-Development-Engineer-55_R168185-1"
+    },
+    {
+      "id": "https://jobs.lever.co/3pillarglobal/72ca15e2-eaa5-4b94-aa3e-195f94a2abac",
+      "posted_on": "2026-05-25",
+      "company": "3pillar",
+      "title": "Full-Stack Python/React Software Engineer",
+      "location": "Moldova",
+      "location_profile": {
+        "display": "Moldova",
+        "label": "Moldova",
+        "city": "Moldova",
+        "region": "",
+        "region_code": "",
+        "country": "",
+        "country_code": "",
+        "search_terms": [
+          "Moldova"
+        ]
+      },
+      "career_bucket": "mid_career_or_senior",
+      "career_bucket_label": "Mid-Career / Senior",
+      "experience_level": "senior_individual_contributor",
+      "experience_level_label": "Senior IC",
+      "yoe_min": null,
+      "yoe_max": null,
+      "experience_display": "Not stated",
+      "authorization_category": "open_or_not_specified",
+      "authorization_category_label": "Open / Not specified",
+      "sponsorship_status": "not_specified",
+      "work_authorization_display": "Open / Not specified; No work authorization requirement stated",
+      "job_link": "https://jobs.lever.co/3pillarglobal/72ca15e2-eaa5-4b94-aa3e-195f94a2abac"
+    },
+    {
+      "id": "https://jobs.lever.co/3pillarglobal/e6d4d27b-291d-4d2b-a904-d8df5dc6cb3d",
+      "posted_on": "2026-05-25",
+      "company": "3pillar",
+      "title": "Full-Stack Python/React Software Engineer",
+      "location": "Romania",
+      "location_profile": {
+        "display": "Romania",
+        "label": "Romania",
+        "city": "Romania",
+        "region": "",
+        "region_code": "",
+        "country": "",
+        "country_code": "",
+        "search_terms": [
+          "Romania"
+        ]
+      },
+      "career_bucket": "mid_career_or_senior",
+      "career_bucket_label": "Mid-Career / Senior",
+      "experience_level": "senior_individual_contributor",
+      "experience_level_label": "Senior IC",
+      "yoe_min": null,
+      "yoe_max": null,
+      "experience_display": "Not stated",
+      "authorization_category": "open_or_not_specified",
+      "authorization_category_label": "Open / Not specified",
+      "sponsorship_status": "not_specified",
+      "work_authorization_display": "Open / Not specified; No explicit work authorization or sponsorship requirements stated",
+      "job_link": "https://jobs.lever.co/3pillarglobal/e6d4d27b-291d-4d2b-a904-d8df5dc6cb3d"
+    },
+    {
+      "id": "https://alight.wd5.myworkdayjobs.com/Careers/job/US-IL-Illinois-Virtual/Software-Engineer---Web-Application-Developer---Java-Angular_R-36272",
+      "posted_on": "2026-05-25",
+      "company": "1US01 Alight Solutions LLC",
+      "title": "Software Engineer â Web Application Developer - Java/Angular",
+      "location": "US-IL-Illinois-Virtual, United States of America",
+      "location_profile": {
+        "display": "US-IL-Illinois-Virtual, United States of America",
+        "label": "US-IL-Illinois-Virtual, United States of America, United States",
+        "city": "US-IL-Illinois-Virtual",
+        "region": "United States of America",
+        "region_code": "",
+        "country": "United States",
+        "country_code": "US",
+        "search_terms": [
+          "US-IL-Illinois-Virtual, United States of America",
+          "US-IL-Illinois-Virtual, United States of America, United States",
+          "US-IL-Illinois-Virtual",
+          "United States of America",
+          "United States",
+          "US",
+          "US-IL-Illinois-Virtual, United States",
+          "United States of America, United States",
+          "USA"
+        ]
+      },
+      "career_bucket": "mid_career_or_senior",
+      "career_bucket_label": "Mid-Career / Senior",
+      "experience_level": "senior_individual_contributor",
+      "experience_level_label": "Senior IC",
+      "yoe_min": 5,
+      "yoe_max": null,
+      "experience_display": "5+ yrs",
+      "authorization_category": "requires_unrestricted_us_work_authorization",
+      "authorization_category_label": "Requires unrestricted US work authorization",
+      "sponsorship_status": "not_specified",
+      "work_authorization_display": "Requires unrestricted US work authorization; Must have work authorization without sponsorship",
+      "job_link": "https://alight.wd5.myworkdayjobs.com/Careers/job/US-IL-Illinois-Virtual/Software-Engineer---Web-Application-Developer---Java-Angular_R-36272"
     },
     {
       "id": "https://fico.wd1.myworkdayjobs.com/External/job/Work-from-Home-United-States/Senior-Lead---Backend-Engineer-Data-Engineer---AI-Engineering_31941",
@@ -4066,6 +7145,45 @@
       "sponsorship_status": "not_specified",
       "work_authorization_display": "Open / Not specified; No explicit work authorization or sponsorship requirements stated",
       "job_link": "https://fico.wd1.myworkdayjobs.com/External/job/Work-from-Home-United-States/Senior-Lead---Backend-Engineer-Data-Engineer---AI-Engineering_31941"
+    },
+    {
+      "id": "https://ngc.wd1.myworkdayjobs.com/Northrop_Grumman_External_Site/job/United-States-California-Sunnyvale/LabVIEW-Systems-Engineer-Level-4_R10234004",
+      "posted_on": "2026-05-25",
+      "company": "0090 CORP-Corporate Office",
+      "title": "LabVIEW Software Engineer Level 4",
+      "location": "CASU21, United States of America",
+      "location_profile": {
+        "display": "CASU21, United States of America",
+        "label": "CASU21, United States of America, United States",
+        "city": "CASU21",
+        "region": "United States of America",
+        "region_code": "",
+        "country": "United States",
+        "country_code": "US",
+        "search_terms": [
+          "CASU21, United States of America",
+          "CASU21, United States of America, United States",
+          "CASU21",
+          "United States of America",
+          "United States",
+          "US",
+          "CASU21, United States",
+          "United States of America, United States",
+          "USA"
+        ]
+      },
+      "career_bucket": "mid_career_or_senior",
+      "career_bucket_label": "Mid-Career / Senior",
+      "experience_level": "senior_individual_contributor",
+      "experience_level_label": "Senior IC",
+      "yoe_min": 8,
+      "yoe_max": null,
+      "experience_display": "8+ yrs",
+      "authorization_category": "requires_unrestricted_us_work_authorization",
+      "authorization_category_label": "Requires unrestricted US work authorization",
+      "sponsorship_status": "not_specified",
+      "work_authorization_display": "Requires unrestricted US work authorization; US work authorization required; Secret clearance preferred",
+      "job_link": "https://ngc.wd1.myworkdayjobs.com/Northrop_Grumman_External_Site/job/United-States-California-Sunnyvale/LabVIEW-Systems-Engineer-Level-4_R10234004"
     },
     {
       "id": "https://plexus.wd5.myworkdayjobs.com/Plexus_Careers/job/Neenah-WI/Senior-Cloud-Platform-Engineer_R038755-1",
