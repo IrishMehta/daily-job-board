@@ -4,15 +4,6 @@ Latest filtered openings grouped for public GitHub publishing. Each job includes
 
 Use the interactive job board here: [https://irishmehta.github.io/daily-job-board/](https://irishmehta.github.io/daily-job-board/)
 
-To rebuild the published dashboard payload from the current enriched 7-day artifact, run:
-
-```bash
-module load mamba
-source activate job_automation
-export HF_HOME="/scratch/ihmehta/hf_cache"
-python PublicJobBoard/scripts/build_public_jobs.py
-```
-
 _Generated at 2026-05-28T15:57:38.973980+00:00_
 
 ## Summary

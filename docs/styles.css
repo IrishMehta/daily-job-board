@@ -396,15 +396,27 @@ input:disabled {
   display: flex;
   flex-direction: column;
   gap: var(--space-2);
+  width: 100%;
+  min-width: 0;
 }
 
 .resume-panel-form label {
   margin-top: 2px;
 }
 
+#resume-input,
 .resume-panel-form textarea {
+  display: block;
+  width: 100%;
   min-height: 220px;
   padding: 14px;
+  border: 1px solid var(--line);
+  border-radius: var(--radius-md);
+  background: var(--surface-strong);
+  color: var(--ink);
+  font-family: var(--font-body);
+  font-size: var(--text-sm);
+  box-sizing: border-box;
   resize: vertical;
   line-height: 1.55;
 }
@@ -414,6 +426,10 @@ input:disabled {
   flex-wrap: wrap;
   gap: var(--space-2);
   margin-top: 2px;
+}
+
+.resume-actions button {
+  width: auto;
 }
 
 .resume-helper,
