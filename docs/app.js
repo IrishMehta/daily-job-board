@@ -6,7 +6,10 @@ const state = {
   authorizationCategory: "",
   sponsorshipStatus: "",
   sort: "date_desc",
+  currentPage: 1,
 };
+
+const PAGE_SIZE = 20;
 
 const els = {
   generatedAt: document.getElementById("generated-at"),
@@ -26,6 +29,11 @@ const els = {
   resultsMeta: document.getElementById("results-meta"),
   resultsBody: document.getElementById("results-body"),
   emptyState: document.getElementById("empty-state"),
+  paginationShell: document.getElementById("pagination-shell"),
+  paginationSummary: document.getElementById("pagination-summary"),
+  paginationPrev: document.getElementById("pagination-prev"),
+  paginationNext: document.getElementById("pagination-next"),
+  paginationPages: document.getElementById("pagination-pages"),
 };
 
 function escapeHtml(value) {
@@ -427,6 +435,76 @@ function applyFilters(jobs) {
   return filtered;
 }
 
+function getPagination(totalItems) {
+  const totalPages = Math.max(1, Math.ceil(totalItems / PAGE_SIZE));
+  const currentPage = Math.min(state.currentPage, totalPages);
+  const startIndex = totalItems ? (currentPage - 1) * PAGE_SIZE : 0;
+  const endIndex = Math.min(startIndex + PAGE_SIZE, totalItems);
+
+  return {
+    totalPages,
+    currentPage,
+    startIndex,
+    endIndex,
+  };
+}
+
+function buildVisiblePageNumbers(totalPages, currentPage) {
+  const pages = [];
+  const startPage = Math.max(1, currentPage - 2);
+  const endPage = Math.min(totalPages, startPage + 4);
+  const adjustedStart = Math.max(1, endPage - 4);
+
+  for (let page = adjustedStart; page <= endPage; page += 1) {
+    pages.push(page);
+  }
+  return pages;
+}
+
+function renderPagination(totalItems, pagination) {
+  const { totalPages, currentPage, startIndex, endIndex } = pagination;
+  const shownStart = totalItems ? startIndex + 1 : 0;
+
+  els.paginationSummary.textContent = `Showing ${shownStart}-${endIndex} of ${totalItems} job${totalItems === 1 ? "" : "s"}`;
+  els.paginationPrev.disabled = currentPage <= 1;
+  els.paginationNext.disabled = currentPage >= totalPages;
+  els.paginationShell.classList.toggle("hidden", totalItems === 0);
+
+  if (totalItems === 0) {
+    els.paginationPages.innerHTML = "";
+    return;
+  }
+
+  const visiblePages = buildVisiblePageNumbers(totalPages, currentPage);
+  const buttons = [];
+
+  if (visiblePages[0] > 1) {
+    buttons.push(
+      `<button class="pagination-page" type="button" data-page="1">1</button>`,
+    );
+    if (visiblePages[0] > 2) {
+      buttons.push('<span class="pagination-ellipsis" aria-hidden="true">...</span>');
+    }
+  }
+
+  visiblePages.forEach((page) => {
+    buttons.push(
+      `<button class="pagination-page${page === currentPage ? " is-active" : ""}" type="button" data-page="${page}"${page === currentPage ? ' aria-current="page"' : ""}>${page}</button>`,
+    );
+  });
+
+  if (visiblePages[visiblePages.length - 1] < totalPages) {
+    if (visiblePages[visiblePages.length - 1] < totalPages - 1) {
+      buttons.push('<span class="pagination-ellipsis" aria-hidden="true">...</span>');
+    }
+    buttons.push(
+      `<button class="pagination-page" type="button" data-page="${totalPages}">${totalPages}</button>`,
+    );
+  }
+
+  els.paginationPages.innerHTML = buttons.join("");
+}
+
 function renderRows(jobs) {
   if (!jobs.length) {
     els.resultsBody.innerHTML = "";
@@ -436,7 +514,6 @@ function renderRows(jobs) {
   }
 
   els.emptyState.classList.add("hidden");
-  els.resultsMeta.textContent = `${jobs.length} job${jobs.length === 1 ? "" : "s"} shown`;
   els.resultsBody.innerHTML = jobs
     .map(
       (job) => `
@@ -475,32 +552,45 @@ function render() {
   if (!state.payload) {
     return;
   }
-  renderRows(applyFilters(state.payload.jobs));
+  const filteredJobs = applyFilters(state.payload.jobs);
+  const pagination = getPagination(filteredJobs.length);
+  state.currentPage = pagination.currentPage;
+
+  const paginatedJobs = filteredJobs.slice(pagination.startIndex, pagination.endIndex);
+  els.resultsMeta.textContent = `${filteredJobs.length} job${filteredJobs.length === 1 ? "" : "s"} match the current filters.`;
+  renderRows(paginatedJobs);
+  renderPagination(filteredJobs.length, pagination);
 }
 
 function bindControls() {
   els.searchInput.addEventListener("input", (event) => {
     state.search = event.target.value;
+    state.currentPage = 1;
     render();
   });
   els.locationInput.addEventListener("input", (event) => {
     state.locationQuery = event.target.value;
+    state.currentPage = 1;
     render();
   });
   els.careerFilter.addEventListener("change", (event) => {
     state.careerBucket = event.target.value;
+    state.currentPage = 1;
     render();
   });
   els.authFilter.addEventListener("change", (event) => {
     state.authorizationCategory = event.target.value;
+    state.currentPage = 1;
     render();
   });
   els.sponsorshipFilter.addEventListener("change", (event) => {
     state.sponsorshipStatus = event.target.value;
+    state.currentPage = 1;
     render();
   });
   els.sortSelect.addEventListener("change", (event) => {
     state.sort = event.target.value;
+    state.currentPage = 1;
     render();
   });
   els.resetButton.addEventListener("click", () => {
@@ -510,6 +600,7 @@ function bindControls() {
     state.authorizationCategory = "";
     state.sponsorshipStatus = "";
     state.sort = "date_desc";
+    state.currentPage = 1;
     els.searchInput.value = "";
     els.locationInput.value = "";
     els.careerFilter.value = "";
@@ -517,6 +608,32 @@ function bindControls() {
     els.sponsorshipFilter.value = "";
     els.sortSelect.value = "date_desc";
     render();
+  });
+  els.paginationPrev.addEventListener("click", () => {
+    if (state.currentPage <= 1) {
+      return;
+    }
+    state.currentPage -= 1;
+    render();
+    window.scrollTo({ top: 0, behavior: "smooth" });
+  });
+  els.paginationNext.addEventListener("click", () => {
+    state.currentPage += 1;
+    render();
+    window.scrollTo({ top: 0, behavior: "smooth" });
+  });
+  els.paginationPages.addEventListener("click", (event) => {
+    const button = event.target.closest("[data-page]");
+    if (!button) {
+      return;
+    }
+    const page = Number(button.dataset.page);
+    if (!Number.isFinite(page) || page < 1 || page === state.currentPage) {
+      return;
+    }
+    state.currentPage = page;
+    render();
+    window.scrollTo({ top: 0, behavior: "smooth" });
   });
 }
 
