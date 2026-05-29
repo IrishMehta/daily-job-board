@@ -153,6 +153,34 @@
       </div>
     </section>
 
+    <section class="resume-panel" aria-labelledby="resume-match-heading">
+      <div class="resume-panel-copy">
+        <p class="seo-kicker">Resume Match</p>
+        <h2 id="resume-match-heading">Paste resume text to surface closer job matches</h2>
+        <p>
+          Matching happens locally in your browser. Paste resume text and the board will
+          keep only the jobs whose titles and descriptions overlap with it most closely.
+        </p>
+      </div>
+      <div class="resume-panel-form">
+        <label for="resume-input">Resume text</label>
+        <textarea
+          id="resume-input"
+          rows="8"
+          placeholder="Paste your resume text here. Nothing is uploaded or stored."
+          aria-describedby="resume-helper resume-status"
+        ></textarea>
+        <div class="resume-actions">
+          <button id="resume-apply-button" type="button">Find matches</button>
+          <button class="button-secondary" id="resume-clear-button" type="button">Clear</button>
+        </div>
+        <p class="resume-helper" id="resume-helper">
+          Paste at least 200 non-whitespace characters and 20 normalized tokens. Matching stays local to this tab.
+        </p>
+        <p class="resume-status" id="resume-status" aria-live="polite"></p>
+      </div>
+    </section>
+
     <section class="results-header">
       <div>
         <h2>Filtered results</h2>

@@ -68,6 +68,7 @@ a {
 }
 
 .hero,
+.resume-panel,
 .controls-panel,
 .table-shell,
 .stat-card {
@@ -279,12 +280,14 @@ label {
 }
 
 input,
+textarea,
 select,
 button {
   font: inherit;
 }
 
 input,
+textarea,
 select {
   width: 100%;
   min-height: 48px;
@@ -302,6 +305,7 @@ input::placeholder {
 }
 
 input:focus,
+textarea:focus,
 select:focus,
 button:focus {
   outline: none;
@@ -325,6 +329,130 @@ button {
 button:hover {
   transform: translateY(-1px);
   box-shadow: 0 10px 20px rgba(20, 76, 58, 0.18);
+}
+
+.button-secondary {
+  border-color: rgba(28, 107, 81, 0.14);
+  background: rgba(255, 252, 246, 0.9);
+  color: var(--accent-strong);
+  box-shadow: none;
+}
+
+.button-secondary:hover {
+  background: rgba(223, 240, 231, 0.8);
+  box-shadow: none;
+}
+
+button:disabled,
+select:disabled,
+textarea:disabled,
+input:disabled {
+  cursor: not-allowed;
+}
+
+.control-group.is-disabled label {
+  opacity: 0.68;
+}
+
+.control-group.is-disabled select {
+  background: rgba(242, 239, 233, 0.95);
+  color: var(--muted);
+}
+
+.control-group.is-disabled .control-note {
+  margin: 4px 0 0;
+  color: var(--muted);
+  font-size: 0.78rem;
+  font-weight: 700;
+}
+
+.resume-panel {
+  display: grid;
+  grid-template-columns: minmax(0, 0.95fr) minmax(0, 1.05fr);
+  gap: var(--space-5);
+  padding: var(--space-5);
+  margin-bottom: var(--space-4);
+  border: 1px solid var(--line);
+  border-radius: var(--radius-lg);
+  background:
+    linear-gradient(180deg, rgba(255, 253, 248, 0.96), rgba(246, 241, 232, 0.92)),
+    var(--surface);
+  box-shadow: var(--shadow-soft);
+}
+
+.resume-panel-copy h2 {
+  margin: 0 0 var(--space-2);
+  font-family: var(--font-display);
+  font-size: clamp(1.55rem, 2.1vw, 2.15rem);
+  line-height: 1.05;
+}
+
+.resume-panel-copy p:last-child {
+  margin: 0;
+  color: var(--muted);
+}
+
+.resume-panel-form {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-2);
+}
+
+.resume-panel-form label {
+  margin-top: 2px;
+}
+
+.resume-panel-form textarea {
+  min-height: 220px;
+  padding: 14px;
+  resize: vertical;
+  line-height: 1.55;
+}
+
+.resume-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-2);
+  margin-top: 2px;
+}
+
+.resume-helper,
+.resume-status {
+  margin: 0;
+  font-size: var(--text-sm);
+}
+
+.resume-helper {
+  color: var(--muted);
+}
+
+.resume-status {
+  min-height: 24px;
+  font-weight: 700;
+}
+
+.resume-status.is-active {
+  color: var(--accent-strong);
+}
+
+.resume-status.is-error {
+  color: #a24f2f;
+}
+
+.cell-match-note {
+  display: inline-flex;
+  align-items: center;
+  min-height: 26px;
+  margin-top: 7px;
+  padding: 0 10px;
+  border: 1px solid rgba(28, 107, 81, 0.14);
+  border-radius: var(--radius-pill);
+  background: rgba(223, 240, 231, 0.72);
+  color: var(--accent-strong);
+  font-size: 0.74rem;
+  font-weight: 800;
+  letter-spacing: 0.03em;
+  text-transform: uppercase;
 }
 
 .results-header {
@@ -637,6 +765,10 @@ tbody tr:last-child td {
     grid-template-columns: repeat(2, minmax(0, 1fr));
   }
 
+  .resume-panel {
+    grid-template-columns: 1fr;
+  }
+
   .control-group-wide {
     grid-column: span 2;
   }
@@ -694,6 +826,7 @@ tbody tr:last-child td {
   }
 
   .hero,
+  .resume-panel,
   .controls-panel,
   .stat-card {
     padding-left: 16px;
@@ -716,6 +849,14 @@ tbody tr:last-child td {
 
   .seo-intro {
     padding: var(--space-4);
+  }
+
+  .resume-panel {
+    gap: var(--space-4);
+  }
+
+  .resume-panel-form textarea {
+    min-height: 180px;
   }
 
   .stats-grid,

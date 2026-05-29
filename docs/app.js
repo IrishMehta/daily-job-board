@@ -7,9 +7,141 @@ const state = {
   sponsorshipStatus: "",
   sort: "date_desc",
   currentPage: 1,
+  resumeActive: false,
+  resumeTokenSet: null,
 };
 
 const PAGE_SIZE = 20;
+const RESUME_MATCH_MIN_CHARS = 200;
+const RESUME_MATCH_MIN_TOKENS = 20;
+const RESUME_MATCH_STOPWORDS = new Set([
+  "a",
+  "about",
+  "above",
+  "after",
+  "again",
+  "against",
+  "all",
+  "also",
+  "am",
+  "an",
+  "and",
+  "any",
+  "are",
+  "as",
+  "at",
+  "be",
+  "because",
+  "been",
+  "before",
+  "being",
+  "below",
+  "between",
+  "both",
+  "but",
+  "by",
+  "can",
+  "could",
+  "did",
+  "do",
+  "does",
+  "doing",
+  "down",
+  "during",
+  "each",
+  "few",
+  "for",
+  "from",
+  "further",
+  "had",
+  "has",
+  "have",
+  "having",
+  "he",
+  "her",
+  "here",
+  "hers",
+  "herself",
+  "him",
+  "himself",
+  "his",
+  "how",
+  "i",
+  "if",
+  "in",
+  "into",
+  "is",
+  "it",
+  "its",
+  "itself",
+  "just",
+  "me",
+  "more",
+  "most",
+  "my",
+  "myself",
+  "no",
+  "nor",
+  "not",
+  "now",
+  "of",
+  "off",
+  "on",
+  "once",
+  "only",
+  "or",
+  "other",
+  "our",
+  "ours",
+  "ourselves",
+  "out",
+  "over",
+  "own",
+  "same",
+  "she",
+  "should",
+  "so",
+  "some",
+  "such",
+  "than",
+  "that",
+  "the",
+  "their",
+  "theirs",
+  "them",
+  "themselves",
+  "then",
+  "there",
+  "these",
+  "they",
+  "this",
+  "those",
+  "through",
+  "to",
+  "too",
+  "under",
+  "until",
+  "up",
+  "very",
+  "was",
+  "we",
+  "were",
+  "what",
+  "when",
+  "where",
+  "which",
+  "while",
+  "who",
+  "whom",
+  "why",
+  "will",
+  "with",
+  "you",
+  "your",
+  "yours",
+  "yourself",
+  "yourselves",
+]);
 
 const els = {
   generatedAt: document.getElementById("generated-at"),
@@ -25,7 +157,12 @@ const els = {
   authFilter: document.getElementById("auth-filter"),
   sponsorshipFilter: document.getElementById("sponsorship-filter"),
   sortSelect: document.getElementById("sort-select"),
+  sortGroup: document.getElementById("sort-select")?.closest(".control-group"),
   resetButton: document.getElementById("reset-button"),
+  resumeInput: document.getElementById("resume-input"),
+  resumeApplyButton: document.getElementById("resume-apply-button"),
+  resumeClearButton: document.getElementById("resume-clear-button"),
+  resumeStatus: document.getElementById("resume-status"),
   resultsMeta: document.getElementById("results-meta"),
   resultsBody: document.getElementById("results-body"),
   emptyState: document.getElementById("empty-state"),
@@ -75,6 +212,21 @@ function tokenizeComparable(value) {
     .split(" ")
     .map((token) => token.trim())
     .filter(Boolean);
+}
+
+function tokenizeResumeMatch(value) {
+  return normalizeComparableText(value)
+    .split(" ")
+    .map((token) => token.trim())
+    .filter((token) => token && !RESUME_MATCH_STOPWORDS.has(token));
+}
+
+function buildResumeTokenSet(value) {
+  return new Set(tokenizeResumeMatch(value));
+}
+
+function countNonWhitespaceChars(value) {
+  return String(value ?? "").replace(/\s+/g, "").length;
 }
 
 function maybeParseStructuredLocation(text) {
@@ -383,6 +535,54 @@ function compareExperience(a, b) {
   return String(a.posted_on).localeCompare(String(b.posted_on));
 }
 
+function sortJobs(jobs) {
+  jobs.sort((a, b) => {
+    if (state.sort === "date_asc") {
+      return String(a.posted_on).localeCompare(String(b.posted_on));
+    }
+    if (state.sort === "experience_asc") {
+      return compareExperience(a, b);
+    }
+    if (state.sort === "experience_desc") {
+      return compareExperience(b, a);
+    }
+    if (state.sort === "company_asc") {
+      return String(a.company).localeCompare(String(b.company)) || String(a.title).localeCompare(String(b.title));
+    }
+    return String(b.posted_on).localeCompare(String(a.posted_on));
+  });
+  return jobs;
+}
+
+function ensureResumeMatchIndex(job) {
+  if (!job.resumeTitleTokens) {
+    job.resumeTitleTokens = buildResumeTokenSet(job.title);
+  }
+  if (!job.resumeDescriptionTokens) {
+    job.resumeDescriptionTokens = buildResumeTokenSet(job.job_description);
+  }
+}
+
+function scoreJobAgainstResume(job, resumeTokenSet) {
+  ensureResumeMatchIndex(job);
+
+  let titleTokenOverlap = 0;
+  for (const token of job.resumeTitleTokens) {
+    if (resumeTokenSet.has(token)) {
+      titleTokenOverlap += 1;
+    }
+  }
+
+  let jdTokenOverlap = 0;
+  for (const token of job.resumeDescriptionTokens) {
+    if (resumeTokenSet.has(token)) {
+      jdTokenOverlap += 1;
+    }
+  }
+
+  return (3 * titleTokenOverlap) + jdTokenOverlap;
+}
+
 function applyFilters(jobs) {
   const query = normalizeComparableText(state.search);
   const filtered = jobs.filter((job) => {
@@ -416,23 +616,26 @@ function applyFilters(jobs) {
     return haystack.includes(query);
   });
 
-  filtered.sort((a, b) => {
-    if (state.sort === "date_asc") {
-      return String(a.posted_on).localeCompare(String(b.posted_on));
+  if (!state.resumeActive || !state.resumeTokenSet || state.resumeTokenSet.size === 0) {
+    return sortJobs(filtered);
+  }
+
+  const matched = [];
+  filtered.forEach((job) => {
+    job.resumeMatchScore = scoreJobAgainstResume(job, state.resumeTokenSet);
+    if (job.resumeMatchScore > 0) {
+      matched.push(job);
     }
-    if (state.sort === "experience_asc") {
-      return compareExperience(a, b);
-    }
-    if (state.sort === "experience_desc") {
-      return compareExperience(b, a);
-    }
-    if (state.sort === "company_asc") {
-      return String(a.company).localeCompare(String(b.company)) || String(a.title).localeCompare(String(b.title));
-    }
-    return String(b.posted_on).localeCompare(String(a.posted_on));
   });
 
-  return filtered;
+  matched.sort((a, b) => (
+    b.resumeMatchScore - a.resumeMatchScore
+    || String(b.posted_on).localeCompare(String(a.posted_on))
+    || String(a.company).localeCompare(String(b.company))
+    || String(a.title).localeCompare(String(b.title))
+  ));
+
+  return matched;
 }
 
 function getPagination(totalItems) {
@@ -509,7 +712,13 @@ function renderRows(jobs) {
   if (!jobs.length) {
     els.resultsBody.innerHTML = "";
     els.emptyState.classList.remove("hidden");
-    els.resultsMeta.textContent = "0 jobs match the current filters.";
+    if (state.resumeActive) {
+      els.emptyState.innerHTML = "<h3>No jobs match your filters and resume text.</h3><p>Try broadening your filters or pasting a fuller resume snapshot.</p>";
+      els.resultsMeta.textContent = "0 jobs match the current filters and resume text.";
+    } else {
+      els.emptyState.innerHTML = "<h3>No jobs match the current filters.</h3><p>Try clearing one or more filters or broadening your search.</p>";
+      els.resultsMeta.textContent = "0 jobs match the current filters.";
+    }
     return;
   }
 
@@ -523,6 +732,7 @@ function renderRows(jobs) {
           <td data-label="Role">
             <span class="cell-primary">${escapeHtml(job.title)}</span>
             <span class="cell-subtext">Experience: ${escapeHtml(job.experience_display)}</span>
+            ${state.resumeActive ? '<span class="cell-match-note">Resume match</span>' : ""}
           </td>
           <td data-label="Location"><span class="cell-secondary">${escapeHtml(job.locationContext.label || job.locationContext.display)}</span></td>
           <td data-label="Snapshot">
@@ -548,16 +758,85 @@ function renderRows(jobs) {
     .join("");
 }
 
+function setResumeStatus(message = "", tone = "idle") {
+  els.resumeStatus.textContent = message;
+  els.resumeStatus.classList.toggle("is-active", tone === "active");
+  els.resumeStatus.classList.toggle("is-error", tone === "error");
+}
+
+function updateSortControlState() {
+  els.sortSelect.disabled = state.resumeActive;
+  if (els.sortGroup) {
+    els.sortGroup.classList.toggle("is-disabled", state.resumeActive);
+  }
+  els.sortSelect.title = state.resumeActive
+    ? "Sorting is locked to resume match while resume mode is active."
+    : "";
+}
+
+function getResumeValidationMessage(rawText) {
+  const charCount = countNonWhitespaceChars(rawText);
+  const tokenCount = tokenizeResumeMatch(rawText).length;
+  if (charCount >= RESUME_MATCH_MIN_CHARS && tokenCount >= RESUME_MATCH_MIN_TOKENS) {
+    return "";
+  }
+
+  const parts = [];
+  if (charCount < RESUME_MATCH_MIN_CHARS) {
+    parts.push(`at least ${RESUME_MATCH_MIN_CHARS} non-whitespace characters`);
+  }
+  if (tokenCount < RESUME_MATCH_MIN_TOKENS) {
+    parts.push(`at least ${RESUME_MATCH_MIN_TOKENS} normalized tokens`);
+  }
+  return `Paste ${parts.join(" and ")} before running resume match.`;
+}
+
+function applyResumeMatch() {
+  const rawText = els.resumeInput.value;
+  const validationMessage = getResumeValidationMessage(rawText);
+  if (validationMessage) {
+    setResumeStatus(
+      state.resumeActive
+        ? `${validationMessage} Current resume match is still active.`
+        : validationMessage,
+      "error",
+    );
+    return;
+  }
+
+  state.resumeTokenSet = new Set(tokenizeResumeMatch(rawText));
+  state.resumeActive = true;
+  state.currentPage = 1;
+  setResumeStatus(
+    "Resume match is active. Results now show only jobs with overlapping title or description terms.",
+    "active",
+  );
+  render();
+}
+
+function clearResumeMatch() {
+  state.resumeActive = false;
+  state.resumeTokenSet = null;
+  state.currentPage = 1;
+  els.resumeInput.value = "";
+  setResumeStatus("", "idle");
+  render();
+}
+
 function render() {
   if (!state.payload) {
     return;
   }
+
+  updateSortControlState();
   const filteredJobs = applyFilters(state.payload.jobs);
   const pagination = getPagination(filteredJobs.length);
   state.currentPage = pagination.currentPage;
 
   const paginatedJobs = filteredJobs.slice(pagination.startIndex, pagination.endIndex);
-  els.resultsMeta.textContent = `${filteredJobs.length} job${filteredJobs.length === 1 ? "" : "s"} match the current filters.`;
+  els.resultsMeta.textContent = state.resumeActive
+    ? `${filteredJobs.length} job${filteredJobs.length === 1 ? "" : "s"} match the current filters and resume text. Sorted by resume match.`
+    : `${filteredJobs.length} job${filteredJobs.length === 1 ? "" : "s"} match the current filters.`;
   renderRows(paginatedJobs);
   renderPagination(filteredJobs.length, pagination);
 }
@@ -609,6 +888,18 @@ function bindControls() {
     els.sortSelect.value = "date_desc";
     render();
   });
+  els.resumeInput.addEventListener("input", () => {
+    if (els.resumeStatus.classList.contains("is-error")) {
+      setResumeStatus(
+        state.resumeActive
+          ? "Resume match is active. Click Find matches again to refresh results with the edited text."
+          : "",
+        state.resumeActive ? "active" : "idle",
+      );
+    }
+  });
+  els.resumeApplyButton.addEventListener("click", applyResumeMatch);
+  els.resumeClearButton.addEventListener("click", clearResumeMatch);
   els.paginationPrev.addEventListener("click", () => {
     if (state.currentPage <= 1) {
       return;
