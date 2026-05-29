@@ -124,6 +124,28 @@ a {
   font-size: var(--text-lg);
 }
 
+.hero-pills {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-2);
+  margin-bottom: var(--space-4);
+}
+
+.hero-pill {
+  display: inline-flex;
+  align-items: center;
+  min-height: 36px;
+  padding: 0 14px;
+  border: 1px solid rgba(28, 107, 81, 0.15);
+  border-radius: var(--radius-pill);
+  background: rgba(223, 240, 231, 0.72);
+  color: var(--accent-strong);
+  font-size: var(--text-xs);
+  font-weight: 800;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+}
+
 .hero-meta {
   display: flex;
   flex-wrap: wrap;
@@ -149,6 +171,46 @@ a {
 
 .hero-link:hover {
   background: rgba(223, 240, 231, 0.95);
+}
+
+.seo-intro {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr);
+  gap: var(--space-3);
+  padding: var(--space-5);
+  margin-bottom: var(--space-5);
+  border: 1px solid var(--line);
+  border-radius: var(--radius-lg);
+  background:
+    linear-gradient(180deg, rgba(255, 253, 248, 0.96), rgba(246, 241, 232, 0.9)),
+    var(--surface);
+  box-shadow: var(--shadow-soft);
+}
+
+.seo-intro-copy {
+  max-width: 900px;
+}
+
+.seo-kicker {
+  margin: 0 0 var(--space-2);
+  color: var(--sand-ink);
+  font-size: var(--text-xs);
+  font-weight: 800;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+
+.seo-intro h2 {
+  margin: 0 0 var(--space-2);
+  font-family: var(--font-display);
+  font-size: clamp(1.65rem, 2.3vw, 2.35rem);
+  line-height: 1.05;
+}
+
+.seo-intro p:last-child {
+  margin: 0;
+  color: var(--muted);
+  font-size: var(--text-base);
 }
 
 .stats-grid {
@@ -568,6 +630,10 @@ tbody tr:last-child td {
 
   .hero-copy {
     font-size: var(--text-base);
+  }
+
+  .seo-intro {
+    padding: var(--space-4);
   }
 
   .stats-grid,
