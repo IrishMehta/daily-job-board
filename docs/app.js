@@ -8,12 +8,16 @@ const state = {
   sort: "date_desc",
   currentPage: 1,
   resumeActive: false,
-  resumeTokenSet: null,
+  resumeQueryTokens: null,
+  bm25Index: null,
 };
 
 const PAGE_SIZE = 20;
 const RESUME_MATCH_MIN_CHARS = 200;
 const RESUME_MATCH_MIN_TOKENS = 20;
+const BM25_K1 = 1.2;
+const BM25_B = 0.75;
+const TITLE_BM25_BOOST = 3;
 const RESUME_MATCH_STOPWORDS = new Set([
   "a",
   "about",
@@ -223,6 +227,10 @@ function tokenizeResumeMatch(value) {
 
 function buildResumeTokenSet(value) {
   return new Set(tokenizeResumeMatch(value));
+}
+
+function buildResumeQueryTokens(value) {
+  return [...buildResumeTokenSet(value)];
 }
 
 function countNonWhitespaceChars(value) {
@@ -535,6 +543,54 @@ function compareExperience(a, b) {
   return String(a.posted_on).localeCompare(String(b.posted_on));
 }
 
+function buildTermFrequencyMap(tokens) {
+  const freqs = new Map();
+  tokens.forEach((token) => {
+    freqs.set(token, (freqs.get(token) ?? 0) + 1);
+  });
+  return freqs;
+}
+
+function updateDocumentFrequency(docFreqs, termFreqs) {
+  termFreqs.forEach((_, token) => {
+    docFreqs.set(token, (docFreqs.get(token) ?? 0) + 1);
+  });
+}
+
+function buildBm25Index(jobs) {
+  const titleDocFreqs = new Map();
+  const descriptionDocFreqs = new Map();
+  let totalTitleLength = 0;
+  let totalDescriptionLength = 0;
+
+  jobs.forEach((job) => {
+    const titleTokens = tokenizeResumeMatch(job.title);
+    const descriptionTokens = tokenizeResumeMatch(job.job_description);
+    const titleTermFreqs = buildTermFrequencyMap(titleTokens);
+    const descriptionTermFreqs = buildTermFrequencyMap(descriptionTokens);
+
+    job.resumeTitleTermFreqs = titleTermFreqs;
+    job.resumeDescriptionTermFreqs = descriptionTermFreqs;
+    job.resumeTitleLength = titleTokens.length;
+    job.resumeDescriptionLength = descriptionTokens.length;
+
+    totalTitleLength += titleTokens.length;
+    totalDescriptionLength += descriptionTokens.length;
+    updateDocumentFrequency(titleDocFreqs, titleTermFreqs);
+    updateDocumentFrequency(descriptionDocFreqs, descriptionTermFreqs);
+  });
+
+  const totalDocs = jobs.length || 1;
+
+  return {
+    totalDocs,
+    titleDocFreqs,
+    descriptionDocFreqs,
+    avgTitleLength: Math.max(totalTitleLength / totalDocs, 1),
+    avgDescriptionLength: Math.max(totalDescriptionLength / totalDocs, 1),
+  };
+}
+
 function sortJobs(jobs) {
   jobs.sort((a, b) => {
     if (state.sort === "date_asc") {
@@ -554,33 +610,60 @@ function sortJobs(jobs) {
   return jobs;
 }
 
-function ensureResumeMatchIndex(job) {
-  if (!job.resumeTitleTokens) {
-    job.resumeTitleTokens = buildResumeTokenSet(job.title);
+function getBm25Idf(totalDocs, documentFrequency) {
+  if (!documentFrequency) {
+    return 0;
   }
-  if (!job.resumeDescriptionTokens) {
-    job.resumeDescriptionTokens = buildResumeTokenSet(job.job_description);
-  }
+  return Math.log(1 + ((totalDocs - documentFrequency + 0.5) / (documentFrequency + 0.5)));
 }
 
-function scoreJobAgainstResume(job, resumeTokenSet) {
-  ensureResumeMatchIndex(job);
-
-  let titleTokenOverlap = 0;
-  for (const token of job.resumeTitleTokens) {
-    if (resumeTokenSet.has(token)) {
-      titleTokenOverlap += 1;
-    }
+function scoreBm25Field(queryTokens, termFreqs, docLength, avgDocLength, docFreqs, totalDocs) {
+  if (!queryTokens?.length || !termFreqs?.size || !docLength) {
+    return 0;
   }
 
-  let jdTokenOverlap = 0;
-  for (const token of job.resumeDescriptionTokens) {
-    if (resumeTokenSet.has(token)) {
-      jdTokenOverlap += 1;
+  let score = 0;
+  queryTokens.forEach((token) => {
+    const termFrequency = termFreqs.get(token);
+    if (!termFrequency) {
+      return;
     }
+
+    const documentFrequency = docFreqs.get(token) ?? 0;
+    const idf = getBm25Idf(totalDocs, documentFrequency);
+    const numerator = termFrequency * (BM25_K1 + 1);
+    const denominator = termFrequency + BM25_K1 * (1 - BM25_B + BM25_B * (docLength / avgDocLength));
+    score += idf * (numerator / denominator);
+  });
+
+  return score;
+}
+
+function scoreJobAgainstResume(job, resumeQueryTokens) {
+  const index = state.bm25Index;
+  if (!index) {
+    return 0;
   }
 
-  return (3 * titleTokenOverlap) + jdTokenOverlap;
+  const titleScore = scoreBm25Field(
+    resumeQueryTokens,
+    job.resumeTitleTermFreqs,
+    job.resumeTitleLength,
+    index.avgTitleLength,
+    index.titleDocFreqs,
+    index.totalDocs,
+  );
+
+  const descriptionScore = scoreBm25Field(
+    resumeQueryTokens,
+    job.resumeDescriptionTermFreqs,
+    job.resumeDescriptionLength,
+    index.avgDescriptionLength,
+    index.descriptionDocFreqs,
+    index.totalDocs,
+  );
+
+  return (TITLE_BM25_BOOST * titleScore) + descriptionScore;
 }
 
 function applyFilters(jobs) {
@@ -616,13 +699,13 @@ function applyFilters(jobs) {
     return haystack.includes(query);
   });
 
-  if (!state.resumeActive || !state.resumeTokenSet || state.resumeTokenSet.size === 0) {
+  if (!state.resumeActive || !state.resumeQueryTokens?.length) {
     return sortJobs(filtered);
   }
 
   const matched = [];
   filtered.forEach((job) => {
-    job.resumeMatchScore = scoreJobAgainstResume(job, state.resumeTokenSet);
+    job.resumeMatchScore = scoreJobAgainstResume(job, state.resumeQueryTokens);
     if (job.resumeMatchScore > 0) {
       matched.push(job);
     }
@@ -804,11 +887,11 @@ function applyResumeMatch() {
     return;
   }
 
-  state.resumeTokenSet = new Set(tokenizeResumeMatch(rawText));
+  state.resumeQueryTokens = buildResumeQueryTokens(rawText);
   state.resumeActive = true;
   state.currentPage = 1;
   setResumeStatus(
-    "Resume match is active. Results now show only jobs with overlapping title or description terms.",
+    "Resume match is active. Results now show only jobs ranked by BM25 lexical relevance to your resume text.",
     "active",
   );
   render();
@@ -816,7 +899,7 @@ function applyResumeMatch() {
 
 function clearResumeMatch() {
   state.resumeActive = false;
-  state.resumeTokenSet = null;
+  state.resumeQueryTokens = null;
   state.currentPage = 1;
   els.resumeInput.value = "";
   setResumeStatus("", "idle");
@@ -835,7 +918,7 @@ function render() {
 
   const paginatedJobs = filteredJobs.slice(pagination.startIndex, pagination.endIndex);
   els.resultsMeta.textContent = state.resumeActive
-    ? `${filteredJobs.length} job${filteredJobs.length === 1 ? "" : "s"} match the current filters and resume text. Sorted by resume match.`
+    ? `${filteredJobs.length} job${filteredJobs.length === 1 ? "" : "s"} match the current filters and resume text. Sorted by BM25 relevance.`
     : `${filteredJobs.length} job${filteredJobs.length === 1 ? "" : "s"} match the current filters.`;
   renderRows(paginatedJobs);
   renderPagination(filteredJobs.length, pagination);
@@ -945,6 +1028,7 @@ async function init() {
       locationContext: buildLocationContext(location, job.location_profile),
     };
   });
+  state.bm25Index = buildBm25Index(state.payload.jobs);
 
   loadStats(state.payload);
   populateDatalist(els.locationSuggestions, buildLocationSuggestions(state.payload.jobs));
