@@ -6,5 +6,7 @@
 
 # Keep the publishable artifacts only.
 !README.md
+!scripts/
+!scripts/**
 !docs/
 !docs/**
