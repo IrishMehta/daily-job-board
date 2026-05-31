@@ -1,23 +1,23 @@
 {
-  "generated_at": "2026-05-30T15:20:47.084927+00:00",
-  "total_openings": 1406,
+  "generated_at": "2026-05-31T15:29:57.812032+00:00",
+  "total_openings": 1394,
   "posted_within_days": 7,
   "repo_url": "https://github.com/IrishMehta/daily-job-board",
   "career_buckets": [
     {
       "value": "early_career_or_new_grad",
       "label": "Early Career / New Grad",
-      "count": 292
+      "count": 289
     },
     {
       "value": "mid_career_or_senior",
       "label": "Mid-Career / Senior",
-      "count": 1109
+      "count": 1099
     },
     {
       "value": "managerial",
       "label": "Managerial",
-      "count": 5
+      "count": 6
     }
   ],
   "authorization_categories": [
@@ -34,12 +34,12 @@
     {
       "value": "no_sponsorship",
       "label": "No sponsorship",
-      "count": 132
+      "count": 131
     },
     {
       "value": "open_or_not_specified",
       "label": "Open / Not specified",
-      "count": 769
+      "count": 767
     },
     {
       "value": "requires_permanent_residency_or_green_card",
@@ -54,17 +54,17 @@
     {
       "value": "requires_unrestricted_us_work_authorization",
       "label": "Requires unrestricted US work authorization",
-      "count": 109
+      "count": 107
     },
     {
       "value": "requires_us_citizenship",
       "label": "Requires US citizenship",
-      "count": 151
+      "count": 143
     },
     {
       "value": "requires_us_person_status",
       "label": "Requires US person status",
-      "count": 28
+      "count": 29
     }
   ],
   "sponsorship_statuses": [
@@ -95,7 +95,7 @@
     {
       "value": "Remote",
       "label": "Remote",
-      "count": 24
+      "count": 22
     },
     {
       "value": "US, CA, Santa Clara",
@@ -105,7 +105,7 @@
     {
       "value": "San Francisco",
       "label": "San Francisco",
-      "count": 18
+      "count": 17
     },
     {
       "value": "New York City",
@@ -215,11 +215,6 @@
     {
       "value": "6314 Remote/Teleworker US, United States of America",
       "label": "6314 Remote/Teleworker US, United States of America",
-      "count": 6
-    },
-    {
-      "value": "Annapolis Junction, MD",
-      "label": "Annapolis Junction, MD",
       "count": 6
     },
     {
@@ -443,11 +438,6 @@
       "count": 4
     },
     {
-      "value": "Seattle",
-      "label": "Seattle",
-      "count": 4
-    },
-    {
       "value": "Spring, Texas, United States of America, United States of America",
       "label": "Spring, Texas, United States of America, United States of America",
       "count": 4
@@ -480,11 +470,6 @@
     {
       "value": "USA - Tukwila, WA, United States of America",
       "label": "USA - Tukwila, WA, United States of America",
-      "count": 4
-    },
-    {
-      "value": "USA MD Home Office (MDHOME), United States of America",
-      "label": "USA MD Home Office (MDHOME), United States of America",
       "count": 4
     },
     {
@@ -573,6 +558,11 @@
       "count": 3
     },
     {
+      "value": "Seattle",
+      "label": "Seattle",
+      "count": 3
+    },
+    {
       "value": "Sunnyvale, California, United States of America, United States of America",
       "label": "Sunnyvale, California, United States of America, United States of America",
       "count": 3
@@ -605,6 +595,11 @@
     {
       "value": "US-IN-FT WAYNE-150A ~ 1010 Production Rd ~ BLDG 150A, United States of America",
       "label": "US-IN-FT WAYNE-150A ~ 1010 Production Rd ~ BLDG 150A, United States of America",
+      "count": 3
+    },
+    {
+      "value": "USA MD Home Office (MDHOME), United States of America",
+      "label": "USA MD Home Office (MDHOME), United States of America",
       "count": 3
     },
     {
@@ -743,13 +738,13 @@
       "count": 2
     },
     {
-      "value": "Annapolis Junction, MD - Hybrid",
-      "label": "Annapolis Junction, MD - Hybrid",
+      "value": "Annapolis Junction, MD, US",
+      "label": "Annapolis Junction, MD, US",
       "count": 2
     },
     {
-      "value": "Annapolis Junction, MD, US",
-      "label": "Annapolis Junction, MD, US",
+      "value": "Austin, in-person",
+      "label": "Austin, in-person",
       "count": 2
     },
     {
@@ -850,6 +845,11 @@
     {
       "value": "East Hanover, United States of America",
       "label": "East Hanover, United States of America",
+      "count": 2
+    },
+    {
+      "value": "El Segundo, California, United States",
+      "label": "El Segundo, California, United States",
       "count": 2
     },
     {
@@ -1018,11 +1018,6 @@
       "count": 2
     },
     {
-      "value": "Remote in USA",
-      "label": "Remote in USA",
-      "count": 2
-    },
-    {
       "value": "Remote, South Africa",
       "label": "Remote, South Africa",
       "count": 2
@@ -1045,11 +1040,6 @@
     {
       "value": "San Francisco, CA, United States",
       "label": "San Francisco, CA, United States",
-      "count": 2
-    },
-    {
-      "value": "San Francisco, California",
-      "label": "San Francisco, California",
       "count": 2
     },
     {
@@ -1085,6 +1075,11 @@
     {
       "value": "Tampa, FL",
       "label": "Tampa, FL",
+      "count": 2
+    },
+    {
+      "value": "Tel Aviv",
+      "label": "Tel Aviv",
       "count": 2
     },
     {
@@ -1573,11 +1568,6 @@
       "count": 1
     },
     {
-      "value": "Anywhere (Open Globally)",
-      "label": "Anywhere (Open Globally)",
-      "count": 1
-    },
-    {
       "value": "Anywhere, USA",
       "label": "Anywhere, USA",
       "count": 1
@@ -1638,11 +1628,6 @@
       "count": 1
     },
     {
-      "value": "Austin, in-person",
-      "label": "Austin, in-person",
-      "count": 1
-    },
-    {
       "value": "Austin, Texas",
       "label": "Austin, Texas",
       "count": 1
@@ -1660,6 +1645,11 @@
     {
       "value": "Baltimore, MD, United States",
       "label": "Baltimore, MD, United States",
+      "count": 1
+    },
+    {
+      "value": "Belgrade",
+      "label": "Belgrade",
       "count": 1
     },
     {
@@ -2268,6 +2258,11 @@
       "count": 1
     },
     {
+      "value": "New York City, NY | San Francisco, CA | New York City, NY",
+      "label": "New York City, NY | San Francisco, CA | New York City, NY",
+      "count": 1
+    },
+    {
       "value": "New York City, NY | Seattle, WA | San Francisco, CA",
       "label": "New York City, NY | Seattle, WA | San Francisco, CA",
       "count": 1
@@ -2418,11 +2413,6 @@
       "count": 1
     },
     {
-      "value": "Pittsburgh, PA, United States of America",
-      "label": "Pittsburgh, PA, United States of America",
-      "count": 1
-    },
-    {
       "value": "Plano, Texas | Hybrid Option",
       "label": "Plano, Texas | Hybrid Option",
       "count": 1
@@ -2520,11 +2510,6 @@
     {
       "value": "Remote - CA",
       "label": "Remote - CA",
-      "count": 1
-    },
-    {
-      "value": "Remote - California, United States of America",
-      "label": "Remote - California, United States of America",
       "count": 1
     },
     {
@@ -2703,8 +2688,8 @@
       "count": 1
     },
     {
-      "value": "San Francisco, US (Hybrid)",
-      "label": "San Francisco, US (Hybrid)",
+      "value": "San Francisco, California",
+      "label": "San Francisco, California",
       "count": 1
     },
     {
@@ -2818,6 +2803,11 @@
       "count": 1
     },
     {
+      "value": "Sunnyvale, California, United States",
+      "label": "Sunnyvale, California, United States",
+      "count": 1
+    },
+    {
       "value": "Sunnyvale, California, United States of America",
       "label": "Sunnyvale, California, United States of America",
       "count": 1
@@ -2890,6 +2880,11 @@
     {
       "value": "TX171 - DXC Plano Windcrest (TX171), United States of America",
       "label": "TX171 - DXC Plano Windcrest (TX171), United States of America",
+      "count": 1
+    },
+    {
+      "value": "Tysons",
+      "label": "Tysons",
       "count": 1
     },
     {
@@ -3103,6 +3098,11 @@
       "count": 1
     },
     {
+      "value": "US-OR-WILSONVILLE-596 ~ 27500 SW Parkway Ave ~ BLDG 596, United States of America",
+      "label": "US-OR-WILSONVILLE-596 ~ 27500 SW Parkway Ave ~ BLDG 596, United States of America",
+      "count": 1
+    },
+    {
       "value": "US-PR-AGUADILLA-110 ~ Rd 110 N Km 28.8 ~ RD110, United States of America",
       "label": "US-PR-AGUADILLA-110 ~ Rd 110 N Km 28.8 ~ RD110, United States of America",
       "count": 1
@@ -3145,11 +3145,6 @@
     {
       "value": "US-VA-Vienna-3 Follin (VA222), United States of America",
       "label": "US-VA-Vienna-3 Follin (VA222), United States of America",
-      "count": 1
-    },
-    {
-      "value": "US-WA-Bellevue",
-      "label": "US-WA-Bellevue",
       "count": 1
     },
     {
@@ -3198,11 +3193,6 @@
       "count": 1
     },
     {
-      "value": "USA MD Fort Meade - Fort Meade (MDC025), United States of America",
-      "label": "USA MD Fort Meade - Fort Meade (MDC025), United States of America",
-      "count": 1
-    },
-    {
       "value": "USA MD Hanover - 1340 Ashton Road (MDS068), United States of America",
       "label": "USA MD Hanover - 1340 Ashton Road (MDS068), United States of America",
       "count": 1
@@ -3220,11 +3210,6 @@
     {
       "value": "USA VA Springfield - 7500 Geoint Dr (VAC138), United States of America",
       "label": "USA VA Springfield - 7500 Geoint Dr (VAC138), United States of America",
-      "count": 1
-    },
-    {
-      "value": "USA VA Sterling - 22626 Sally Ride Dr (VAS111), United States of America",
-      "label": "USA VA Sterling - 22626 Sally Ride Dr (VAS111), United States of America",
       "count": 1
     },
     {
@@ -3443,6 +3428,11 @@
       "count": 1
     },
     {
+      "value": "Waltham, Massachusetts, United States",
+      "label": "Waltham, Massachusetts, United States",
+      "count": 1
+    },
+    {
       "value": "Warsaw",
       "label": "Warsaw",
       "count": 1
@@ -3540,6 +3530,209 @@
   ],
   "jobs": [
     {
+      "id": "https://jobs.ashbyhq.com/lavendo/d4eb3723-23ec-4d5d-a152-f34949e1621c",
+      "posted_on": "2026-05-31",
+      "company": "Lavendo",
+      "title": "Software Engineer, Data Privacy (Remote)",
+      "location": "Belgrade",
+      "location_profile": {
+        "display": "Belgrade",
+        "label": "Belgrade",
+        "city": "Belgrade",
+        "region": "",
+        "region_code": "",
+        "country": "",
+        "country_code": "",
+        "search_terms": [
+          "Belgrade"
+        ]
+      },
+      "career_bucket": "mid_career_or_senior",
+      "career_bucket_label": "Mid-Career / Senior",
+      "experience_level": "mid_level",
+      "experience_level_label": "Mid-Level",
+      "yoe_min": 4,
+      "yoe_max": 7,
+      "experience_display": "4-7 yrs",
+      "authorization_category": "open_or_not_specified",
+      "authorization_category_label": "Open / Not specified",
+      "sponsorship_status": "not_specified",
+      "work_authorization_display": "Open / Not specified; No explicit work authorization or sponsorship requirements stated",
+      "job_link": "https://jobs.ashbyhq.com/lavendo/d4eb3723-23ec-4d5d-a152-f34949e1621c"
+    },
+    {
+      "id": "https://jobs.ashbyhq.com/lavendo/7b87d6ac-1469-4c93-8312-7f8a35ea0795",
+      "posted_on": "2026-05-31",
+      "company": "Lavendo",
+      "title": "Senior Software Engineer, Data Privacy Platform (DC)",
+      "location": "Tysons",
+      "location_profile": {
+        "display": "Tysons",
+        "label": "Tysons",
+        "city": "Tysons",
+        "region": "",
+        "region_code": "",
+        "country": "",
+        "country_code": "",
+        "search_terms": [
+          "Tysons"
+        ]
+      },
+      "career_bucket": "mid_career_or_senior",
+      "career_bucket_label": "Mid-Career / Senior",
+      "experience_level": "senior_individual_contributor",
+      "experience_level_label": "Senior IC",
+      "yoe_min": 6,
+      "yoe_max": 10,
+      "experience_display": "6-10 yrs",
+      "authorization_category": "open_or_not_specified",
+      "authorization_category_label": "Open / Not specified",
+      "sponsorship_status": "not_specified",
+      "work_authorization_display": "Open / Not specified; No explicit work authorization or sponsorship requirements stated",
+      "job_link": "https://jobs.ashbyhq.com/lavendo/7b87d6ac-1469-4c93-8312-7f8a35ea0795"
+    },
+    {
+      "id": "https://job-boards.greenhouse.io/gongio/jobs/4676482006",
+      "posted_on": "2026-05-31",
+      "company": "Gong.io",
+      "title": "Senior Backend Engineer (Python)",
+      "location": "Tel Aviv",
+      "location_profile": {
+        "display": "Tel Aviv",
+        "label": "Tel Aviv",
+        "city": "Tel Aviv",
+        "region": "",
+        "region_code": "",
+        "country": "",
+        "country_code": "",
+        "search_terms": [
+          "Tel Aviv"
+        ]
+      },
+      "career_bucket": "mid_career_or_senior",
+      "career_bucket_label": "Mid-Career / Senior",
+      "experience_level": "senior_individual_contributor",
+      "experience_level_label": "Senior IC",
+      "yoe_min": 7,
+      "yoe_max": null,
+      "experience_display": "7+ yrs",
+      "authorization_category": "open_or_not_specified",
+      "authorization_category_label": "Open / Not specified",
+      "sponsorship_status": "not_specified",
+      "work_authorization_display": "Open / Not specified; No explicit work authorization or sponsorship requirements stated",
+      "job_link": "https://job-boards.greenhouse.io/gongio/jobs/4676482006"
+    },
+    {
+      "id": "https://job-boards.greenhouse.io/brainpop/jobs/4671622006",
+      "posted_on": "2026-05-31",
+      "company": "BrainPOP",
+      "title": "Full Stack Developer",
+      "location": "Tel Aviv",
+      "location_profile": {
+        "display": "Tel Aviv",
+        "label": "Tel Aviv",
+        "city": "Tel Aviv",
+        "region": "",
+        "region_code": "",
+        "country": "",
+        "country_code": "",
+        "search_terms": [
+          "Tel Aviv"
+        ]
+      },
+      "career_bucket": "mid_career_or_senior",
+      "career_bucket_label": "Mid-Career / Senior",
+      "experience_level": "mid_level",
+      "experience_level_label": "Mid-Level",
+      "yoe_min": 3,
+      "yoe_max": 7,
+      "experience_display": "3-7 yrs",
+      "authorization_category": "open_or_not_specified",
+      "authorization_category_label": "Open / Not specified",
+      "sponsorship_status": "not_specified",
+      "work_authorization_display": "Open / Not specified; No explicit work authorization requirement stated",
+      "job_link": "https://job-boards.greenhouse.io/brainpop/jobs/4671622006"
+    },
+    {
+      "id": "https://job-boards.greenhouse.io/anthropic/jobs/5196852008",
+      "posted_on": "2026-05-31",
+      "company": "Anthropic",
+      "title": "Data Scientist, GTM",
+      "location": "New York City, NY | San Francisco, CA | New York City, NY",
+      "location_profile": {
+        "display": "New York City, NY | San Francisco, CA | New York City, NY",
+        "label": "New York City, NY, United States",
+        "city": "New York City",
+        "region": "NY",
+        "region_code": "",
+        "country": "United States",
+        "country_code": "US",
+        "search_terms": [
+          "New York City, NY | San Francisco, CA | New York City, NY",
+          "New York City, NY, United States",
+          "New York City",
+          "NY",
+          "United States",
+          "US",
+          "New York City, NY",
+          "New York City, United States",
+          "NY, United States",
+          "USA"
+        ]
+      },
+      "career_bucket": "mid_career_or_senior",
+      "career_bucket_label": "Mid-Career / Senior",
+      "experience_level": "senior_individual_contributor",
+      "experience_level_label": "Senior IC",
+      "yoe_min": 5,
+      "yoe_max": null,
+      "experience_display": "5+ yrs",
+      "authorization_category": "no_sponsorship",
+      "authorization_category_label": "No sponsorship",
+      "sponsorship_status": "no_sponsorship",
+      "work_authorization_display": "No sponsorship; Visa sponsorship not offered",
+      "job_link": "https://job-boards.greenhouse.io/anthropic/jobs/5196852008"
+    },
+    {
+      "id": "https://job-boards.greenhouse.io/inkind/jobs/5236903008",
+      "posted_on": "2026-05-30",
+      "company": "inKind",
+      "title": "Senior React Native Software Engineer",
+      "location": "Austin, in-person",
+      "location_profile": {
+        "display": "Austin, in-person",
+        "label": "Austin, in-person, United States",
+        "city": "Austin",
+        "region": "in-person",
+        "region_code": "",
+        "country": "United States",
+        "country_code": "US",
+        "search_terms": [
+          "Austin, in-person",
+          "Austin, in-person, United States",
+          "Austin",
+          "in-person",
+          "United States",
+          "US",
+          "Austin, United States",
+          "in-person, United States",
+          "USA"
+        ]
+      },
+      "career_bucket": "mid_career_or_senior",
+      "career_bucket_label": "Mid-Career / Senior",
+      "experience_level": "senior_individual_contributor",
+      "experience_level_label": "Senior IC",
+      "yoe_min": 5,
+      "yoe_max": null,
+      "experience_display": "5+ yrs",
+      "authorization_category": "open_or_not_specified",
+      "authorization_category_label": "Open / Not specified",
+      "sponsorship_status": "not_specified",
+      "work_authorization_display": "Open / Not specified; No work authorization requirement stated",
+      "job_link": "https://job-boards.greenhouse.io/inkind/jobs/5236903008"
+    },
+    {
       "id": "https://walmart.wd5.myworkdayjobs.com/WalmartExternal/job/USA-Crossman-Service-Building-CA-SUNNYVALE-Home-Office/XMLNAME--USA--Software-Engineer-III_R-2500709",
       "posted_on": "2026-05-30",
       "company": "Walmart Inc.",
@@ -3579,6 +3772,78 @@
       "job_link": "https://walmart.wd5.myworkdayjobs.com/WalmartExternal/job/USA-Crossman-Service-Building-CA-SUNNYVALE-Home-Office/XMLNAME--USA--Software-Engineer-III_R-2500709"
     },
     {
+      "id": "https://job-boards.greenhouse.io/vardaspace/jobs/7755455003",
+      "posted_on": "2026-05-30",
+      "company": "Varda Space Industries",
+      "title": "Spacecraft Flight Software Engineer",
+      "location": "El Segundo, California, United States",
+      "location_profile": {
+        "display": "El Segundo, California, United States",
+        "label": "El Segundo, United States",
+        "city": "El Segundo",
+        "region": "United States",
+        "region_code": "",
+        "country": "United States",
+        "country_code": "US",
+        "search_terms": [
+          "El Segundo, California, United States",
+          "El Segundo, United States",
+          "El Segundo",
+          "United States",
+          "US",
+          "USA"
+        ]
+      },
+      "career_bucket": "mid_career_or_senior",
+      "career_bucket_label": "Mid-Career / Senior",
+      "experience_level": "senior_individual_contributor",
+      "experience_level_label": "Senior IC",
+      "yoe_min": 3,
+      "yoe_max": null,
+      "experience_display": "3+ yrs",
+      "authorization_category": "requires_us_person_status",
+      "authorization_category_label": "Requires US person status",
+      "sponsorship_status": "not_specified",
+      "work_authorization_display": "Requires US person status; Must hire U.S. persons only",
+      "job_link": "https://job-boards.greenhouse.io/vardaspace/jobs/7755455003"
+    },
+    {
+      "id": "https://job-boards.greenhouse.io/vardaspace/jobs/7755457003",
+      "posted_on": "2026-05-30",
+      "company": "Varda Space Industries",
+      "title": "Senior Spacecraft Flight Software Engineer",
+      "location": "El Segundo, California, United States",
+      "location_profile": {
+        "display": "El Segundo, California, United States",
+        "label": "El Segundo, United States",
+        "city": "El Segundo",
+        "region": "United States",
+        "region_code": "",
+        "country": "United States",
+        "country_code": "US",
+        "search_terms": [
+          "El Segundo, California, United States",
+          "El Segundo, United States",
+          "El Segundo",
+          "United States",
+          "US",
+          "USA"
+        ]
+      },
+      "career_bucket": "mid_career_or_senior",
+      "career_bucket_label": "Mid-Career / Senior",
+      "experience_level": "senior_individual_contributor",
+      "experience_level_label": "Senior IC",
+      "yoe_min": 5,
+      "yoe_max": null,
+      "experience_display": "5+ yrs",
+      "authorization_category": "requires_us_person_status",
+      "authorization_category_label": "Requires US person status",
+      "sponsorship_status": "not_specified",
+      "work_authorization_display": "Requires US person status; Must hire U.S. persons only",
+      "job_link": "https://job-boards.greenhouse.io/vardaspace/jobs/7755457003"
+    },
+    {
       "id": "https://job-boards.greenhouse.io/sesolabor/jobs/4701277005",
       "posted_on": "2026-05-30",
       "company": "Seso Inc.,",
@@ -3608,6 +3873,45 @@
       "sponsorship_status": "not_specified",
       "work_authorization_display": "Open / Not specified; No explicit work authorization requirement stated",
       "job_link": "https://job-boards.greenhouse.io/sesolabor/jobs/4701277005"
+    },
+    {
+      "id": "https://globalhr.wd5.myworkdayjobs.com/REC_RTX_Ext_Gateway/job/US-OR-WILSONVILLE-596--27500-SW-Parkway-Ave--BLDG-596/Head-up-Guidance-System-Software-Engineer--Onsite-_01849007",
+      "posted_on": "2026-05-30",
+      "company": "RTX",
+      "title": "Head-up Guidance System Software Engineer (Onsite)",
+      "location": "US-OR-WILSONVILLE-596 ~ 27500 SW Parkway Ave ~ BLDG 596, United States of America",
+      "location_profile": {
+        "display": "US-OR-WILSONVILLE-596 ~ 27500 SW Parkway Ave ~ BLDG 596, United States of America",
+        "label": "US-OR-WILSONVILLE-596 ~ 27500 SW Parkway Ave ~ BLDG 596, United States of America, United States",
+        "city": "US-OR-WILSONVILLE-596 ~ 27500 SW Parkway Ave ~ BLDG 596",
+        "region": "United States of America",
+        "region_code": "",
+        "country": "United States",
+        "country_code": "US",
+        "search_terms": [
+          "US-OR-WILSONVILLE-596 ~ 27500 SW Parkway Ave ~ BLDG 596, United States of America",
+          "US-OR-WILSONVILLE-596 ~ 27500 SW Parkway Ave ~ BLDG 596, United States of America, United States",
+          "US-OR-WILSONVILLE-596 ~ 27500 SW Parkway Ave ~ BLDG 596",
+          "United States of America",
+          "United States",
+          "US",
+          "US-OR-WILSONVILLE-596 ~ 27500 SW Parkway Ave ~ BLDG 596, United States",
+          "United States of America, United States",
+          "USA"
+        ]
+      },
+      "career_bucket": "managerial",
+      "career_bucket_label": "Managerial",
+      "experience_level": "entry_level_or_new_grad",
+      "experience_level_label": "Entry-Level / New Grad",
+      "yoe_min": 2,
+      "yoe_max": null,
+      "experience_display": "2+ yrs",
+      "authorization_category": "requires_us_citizenship",
+      "authorization_category_label": "Requires US citizenship",
+      "sponsorship_status": "not_specified",
+      "work_authorization_display": "Requires US citizenship; U.S. citizenship required",
+      "job_link": "https://globalhr.wd5.myworkdayjobs.com/REC_RTX_Ext_Gateway/job/US-OR-WILSONVILLE-596--27500-SW-Parkway-Ave--BLDG-596/Head-up-Guidance-System-Software-Engineer--Onsite-_01849007"
     },
     {
       "id": "https://job-boards.greenhouse.io/muonspace/jobs/5150891007",
@@ -3717,6 +4021,78 @@
       "sponsorship_status": "not_specified",
       "work_authorization_display": "Open / Not specified; No explicit work authorization or sponsorship requirements stated",
       "job_link": "https://job-boards.greenhouse.io/clara/jobs/5150839007"
+    },
+    {
+      "id": "https://boards.greenhouse.io/appliedintuition/jobs/4671923005?gh_jid=4671923005",
+      "posted_on": "2026-05-30",
+      "company": "Applied Intuition",
+      "title": "Research Engineer, AI/RL Infrastructure (Research)",
+      "location": "Sunnyvale, California, United States",
+      "location_profile": {
+        "display": "Sunnyvale, California, United States",
+        "label": "Sunnyvale, United States",
+        "city": "Sunnyvale",
+        "region": "United States",
+        "region_code": "",
+        "country": "United States",
+        "country_code": "US",
+        "search_terms": [
+          "Sunnyvale, California, United States",
+          "Sunnyvale, United States",
+          "Sunnyvale",
+          "United States",
+          "US",
+          "USA"
+        ]
+      },
+      "career_bucket": "mid_career_or_senior",
+      "career_bucket_label": "Mid-Career / Senior",
+      "experience_level": "unknown",
+      "experience_level_label": "Unknown",
+      "yoe_min": null,
+      "yoe_max": null,
+      "experience_display": "Not stated",
+      "authorization_category": "open_or_not_specified",
+      "authorization_category_label": "Open / Not specified",
+      "sponsorship_status": "not_specified",
+      "work_authorization_display": "Open / Not specified; No explicit work authorization or sponsorship requirements stated",
+      "job_link": "https://boards.greenhouse.io/appliedintuition/jobs/4671923005?gh_jid=4671923005"
+    },
+    {
+      "id": "https://boards.greenhouse.io/andurilindustries/jobs/5150958007?gh_jid=5150958007",
+      "posted_on": "2026-05-30",
+      "company": "Anduril Industries",
+      "title": "GNC Software Engineer",
+      "location": "Waltham, Massachusetts, United States",
+      "location_profile": {
+        "display": "Waltham, Massachusetts, United States",
+        "label": "Waltham, United States",
+        "city": "Waltham",
+        "region": "United States",
+        "region_code": "",
+        "country": "United States",
+        "country_code": "US",
+        "search_terms": [
+          "Waltham, Massachusetts, United States",
+          "Waltham, United States",
+          "Waltham",
+          "United States",
+          "US",
+          "USA"
+        ]
+      },
+      "career_bucket": "mid_career_or_senior",
+      "career_bucket_label": "Mid-Career / Senior",
+      "experience_level": "senior_individual_contributor",
+      "experience_level_label": "Senior IC",
+      "yoe_min": null,
+      "yoe_max": null,
+      "experience_display": "Not stated",
+      "authorization_category": "requires_security_clearance_or_public_trust",
+      "authorization_category_label": "Requires clearance / public trust",
+      "sponsorship_status": "not_specified",
+      "work_authorization_display": "Requires clearance / public trust; Active U.S. Top Secret clearance required",
+      "job_link": "https://boards.greenhouse.io/andurilindustries/jobs/5150958007?gh_jid=5150958007"
     },
     {
       "id": "https://job-boards.greenhouse.io/eclinicalsolutions/jobs/5150460007",
@@ -55549,852 +55925,6 @@
       "sponsorship_status": "not_specified",
       "work_authorization_display": "Open / Not specified; No explicit work authorization or sponsorship requirements stated",
       "job_link": "https://nvidia.wd5.myworkdayjobs.com/NVIDIAExternalCareerSite/job/US-CA-Santa-Clara/Senior-Software-Engineer---MD-Simulation-Engineering_JR2018333"
-    },
-    {
-      "id": "https://job-boards.greenhouse.io/inkind/jobs/5230007008",
-      "posted_on": "2026-05-23",
-      "company": "inKind",
-      "title": "Senior Software Engineer",
-      "location": "Remote",
-      "location_profile": {
-        "display": "Remote",
-        "label": "Remote",
-        "city": "Remote",
-        "region": "",
-        "region_code": "",
-        "country": "",
-        "country_code": "",
-        "search_terms": [
-          "Remote"
-        ]
-      },
-      "career_bucket": "mid_career_or_senior",
-      "career_bucket_label": "Mid-Career / Senior",
-      "experience_level": "senior_individual_contributor",
-      "experience_level_label": "Senior IC",
-      "yoe_min": 8,
-      "yoe_max": null,
-      "experience_display": "8+ yrs",
-      "authorization_category": "open_or_not_specified",
-      "authorization_category_label": "Open / Not specified",
-      "sponsorship_status": "not_specified",
-      "work_authorization_display": "Open / Not specified; No work authorization requirement stated",
-      "job_link": "https://job-boards.greenhouse.io/inkind/jobs/5230007008"
-    },
-    {
-      "id": "https://www.zoominfo.com/careers?gh_jid=8547975002",
-      "posted_on": "2026-05-23",
-      "company": "ZoomInfo Technologies LLC",
-      "title": "Principal Software Engineer",
-      "location": "Remote",
-      "location_profile": {
-        "display": "Remote",
-        "label": "Remote",
-        "city": "Remote",
-        "region": "",
-        "region_code": "",
-        "country": "",
-        "country_code": "",
-        "search_terms": [
-          "Remote"
-        ]
-      },
-      "career_bucket": "mid_career_or_senior",
-      "career_bucket_label": "Mid-Career / Senior",
-      "experience_level": "senior_individual_contributor",
-      "experience_level_label": "Senior IC",
-      "yoe_min": 12,
-      "yoe_max": null,
-      "experience_display": "12+ yrs",
-      "authorization_category": "open_or_not_specified",
-      "authorization_category_label": "Open / Not specified",
-      "sponsorship_status": "not_specified",
-      "work_authorization_display": "Open / Not specified; No explicit work authorization or sponsorship requirements stated",
-      "job_link": "https://www.zoominfo.com/careers?gh_jid=8547975002"
-    },
-    {
-      "id": "https://www.zipline.com/careers?gh_jid=7747476003",
-      "posted_on": "2026-05-23",
-      "company": "Zipline",
-      "title": "Senior Full Stack Software Engineer, Application Software (Remote)",
-      "location": "Remote in USA",
-      "location_profile": {
-        "display": "Remote in USA",
-        "label": "Remote in USA, United States",
-        "city": "Remote in USA",
-        "region": "",
-        "region_code": "",
-        "country": "United States",
-        "country_code": "US",
-        "search_terms": [
-          "Remote in USA",
-          "Remote in USA, United States",
-          "United States",
-          "US",
-          "USA"
-        ]
-      },
-      "career_bucket": "mid_career_or_senior",
-      "career_bucket_label": "Mid-Career / Senior",
-      "experience_level": "senior_individual_contributor",
-      "experience_level_label": "Senior IC",
-      "yoe_min": null,
-      "yoe_max": null,
-      "experience_display": "Not stated",
-      "authorization_category": "open_or_not_specified",
-      "authorization_category_label": "Open / Not specified",
-      "sponsorship_status": "not_specified",
-      "work_authorization_display": "Open / Not specified; No explicit work authorization or sponsorship requirements stated",
-      "job_link": "https://www.zipline.com/careers?gh_jid=7747476003"
-    },
-    {
-      "id": "https://www.zipline.com/careers?gh_jid=7747479003",
-      "posted_on": "2026-05-23",
-      "company": "Zipline",
-      "title": "Principal Software Engineer, Application Software (Remote)",
-      "location": "Remote in USA",
-      "location_profile": {
-        "display": "Remote in USA",
-        "label": "Remote in USA, United States",
-        "city": "Remote in USA",
-        "region": "",
-        "region_code": "",
-        "country": "United States",
-        "country_code": "US",
-        "search_terms": [
-          "Remote in USA",
-          "Remote in USA, United States",
-          "United States",
-          "US",
-          "USA"
-        ]
-      },
-      "career_bucket": "mid_career_or_senior",
-      "career_bucket_label": "Mid-Career / Senior",
-      "experience_level": "senior_individual_contributor",
-      "experience_level_label": "Senior IC",
-      "yoe_min": null,
-      "yoe_max": null,
-      "experience_display": "Not stated",
-      "authorization_category": "open_or_not_specified",
-      "authorization_category_label": "Open / Not specified",
-      "sponsorship_status": "not_specified",
-      "work_authorization_display": "Open / Not specified; No explicit work authorization or sponsorship requirements stated",
-      "job_link": "https://www.zipline.com/careers?gh_jid=7747479003"
-    },
-    {
-      "id": "https://smithnephew.wd5.myworkdayjobs.com/External/job/Pittsburgh-PA/Software-Development-Engineer_R90731",
-      "posted_on": "2026-05-23",
-      "company": "USA - Smith &amp; Nephew, Inc.",
-      "title": "Software Development Engineer",
-      "location": "Pittsburgh, PA, United States of America",
-      "location_profile": {
-        "display": "Pittsburgh, PA, United States of America",
-        "label": "Pittsburgh, United States of America, United States",
-        "city": "Pittsburgh",
-        "region": "United States of America",
-        "region_code": "",
-        "country": "United States",
-        "country_code": "US",
-        "search_terms": [
-          "Pittsburgh, PA, United States of America",
-          "Pittsburgh, United States of America, United States",
-          "Pittsburgh",
-          "United States of America",
-          "United States",
-          "US",
-          "Pittsburgh, United States of America",
-          "Pittsburgh, United States",
-          "United States of America, United States",
-          "USA"
-        ]
-      },
-      "career_bucket": "mid_career_or_senior",
-      "career_bucket_label": "Mid-Career / Senior",
-      "experience_level": "mid_level",
-      "experience_level_label": "Mid-Level",
-      "yoe_min": 3,
-      "yoe_max": null,
-      "experience_display": "3+ yrs",
-      "authorization_category": "no_sponsorship",
-      "authorization_category_label": "No sponsorship",
-      "sponsorship_status": "no_sponsorship",
-      "work_authorization_display": "No sponsorship; No visa sponsorship offered",
-      "job_link": "https://smithnephew.wd5.myworkdayjobs.com/External/job/Pittsburgh-PA/Software-Development-Engineer_R90731"
-    },
-    {
-      "id": "https://ttmtech.wd5.myworkdayjobs.com/jobs/job/Remote---California/Senior-Cloud-Engineer_R16138",
-      "posted_on": "2026-05-23",
-      "company": "TTM Technologies, Inc.",
-      "title": "Senior Cloud Engineer",
-      "location": "Remote - California, United States of America",
-      "location_profile": {
-        "display": "Remote - California, United States of America",
-        "label": "Remote - California, United States of America, United States",
-        "city": "Remote - California",
-        "region": "United States of America",
-        "region_code": "",
-        "country": "United States",
-        "country_code": "US",
-        "search_terms": [
-          "Remote - California, United States of America",
-          "Remote - California, United States of America, United States",
-          "Remote - California",
-          "United States of America",
-          "United States",
-          "US",
-          "Remote - California, United States",
-          "United States of America, United States",
-          "USA"
-        ]
-      },
-      "career_bucket": "mid_career_or_senior",
-      "career_bucket_label": "Mid-Career / Senior",
-      "experience_level": "senior_individual_contributor",
-      "experience_level_label": "Senior IC",
-      "yoe_min": 7,
-      "yoe_max": null,
-      "experience_display": "7+ yrs",
-      "authorization_category": "requires_unrestricted_us_work_authorization",
-      "authorization_category_label": "Requires unrestricted US work authorization",
-      "sponsorship_status": "not_specified",
-      "work_authorization_display": "Requires unrestricted US work authorization; Must comply with ITAR, EAR, and OFAC export control policies",
-      "job_link": "https://ttmtech.wd5.myworkdayjobs.com/jobs/job/Remote---California/Senior-Cloud-Engineer_R16138"
-    },
-    {
-      "id": "https://jobs.ashbyhq.com/snowflake/eb704210-4c4a-4ab7-8838-8ba7abd55af3",
-      "posted_on": "2026-05-23",
-      "company": "Snowflake",
-      "title": "Software Engineer - Secret, Cryptographic and Identity Infrastructure",
-      "location": "US-WA-Bellevue",
-      "location_profile": {
-        "display": "US-WA-Bellevue",
-        "label": "US-WA-Bellevue, United States",
-        "city": "US-WA-Bellevue",
-        "region": "",
-        "region_code": "",
-        "country": "United States",
-        "country_code": "US",
-        "search_terms": [
-          "US-WA-Bellevue",
-          "US-WA-Bellevue, United States",
-          "United States",
-          "US",
-          "USA"
-        ]
-      },
-      "career_bucket": "early_career_or_new_grad",
-      "career_bucket_label": "Early Career / New Grad",
-      "experience_level": "entry_level_or_new_grad",
-      "experience_level_label": "Entry-Level / New Grad",
-      "yoe_min": null,
-      "yoe_max": null,
-      "experience_display": "Not stated",
-      "authorization_category": "requires_security_clearance_or_public_trust",
-      "authorization_category_label": "Requires clearance / public trust",
-      "sponsorship_status": "not_specified",
-      "work_authorization_display": "Requires clearance / public trust; Secret clearance required",
-      "job_link": "https://jobs.ashbyhq.com/snowflake/eb704210-4c4a-4ab7-8838-8ba7abd55af3"
-    },
-    {
-      "id": "https://jobs.lever.co/shieldai/c612382a-3a0c-4ed1-add8-631bb6791445",
-      "posted_on": "2026-05-23",
-      "company": "Shieldai",
-      "title": "Associate Infrastructure Engineer (R4897)",
-      "location": "San Francisco, California",
-      "location_profile": {
-        "display": "San Francisco, California",
-        "label": "San Francisco, California, United States",
-        "city": "San Francisco",
-        "region": "California",
-        "region_code": "",
-        "country": "United States",
-        "country_code": "US",
-        "search_terms": [
-          "San Francisco, California",
-          "San Francisco, California, United States",
-          "San Francisco",
-          "California",
-          "United States",
-          "US",
-          "San Francisco, United States",
-          "California, United States",
-          "USA"
-        ]
-      },
-      "career_bucket": "early_career_or_new_grad",
-      "career_bucket_label": "Early Career / New Grad",
-      "experience_level": "entry_level_or_new_grad",
-      "experience_level_label": "Entry-Level / New Grad",
-      "yoe_min": null,
-      "yoe_max": null,
-      "experience_display": "Not stated",
-      "authorization_category": "open_or_not_specified",
-      "authorization_category_label": "Open / Not specified",
-      "sponsorship_status": "not_specified",
-      "work_authorization_display": "Open / Not specified; No explicit work authorization or sponsorship requirements stated",
-      "job_link": "https://jobs.lever.co/shieldai/c612382a-3a0c-4ed1-add8-631bb6791445"
-    },
-    {
-      "id": "https://jobs.ashbyhq.com/openai/13995549-e8cc-498f-9eaa-1869067ac35b",
-      "posted_on": "2026-05-23",
-      "company": "Openai",
-      "title": "Software Engineer, RL Training Infra",
-      "location": "San Francisco",
-      "location_profile": {
-        "display": "San Francisco",
-        "label": "San Francisco",
-        "city": "San Francisco",
-        "region": "",
-        "region_code": "",
-        "country": "",
-        "country_code": "",
-        "search_terms": [
-          "San Francisco"
-        ]
-      },
-      "career_bucket": "mid_career_or_senior",
-      "career_bucket_label": "Mid-Career / Senior",
-      "experience_level": "mid_level",
-      "experience_level_label": "Mid-Level",
-      "yoe_min": null,
-      "yoe_max": null,
-      "experience_display": "Not stated",
-      "authorization_category": "open_or_not_specified",
-      "authorization_category_label": "Open / Not specified",
-      "sponsorship_status": "not_specified",
-      "work_authorization_display": "Open / Not specified; No explicit work authorization or sponsorship requirements stated",
-      "job_link": "https://jobs.ashbyhq.com/openai/13995549-e8cc-498f-9eaa-1869067ac35b"
-    },
-    {
-      "id": "https://jobs.lever.co/omnidian/687c041e-6f8a-4334-be17-19ec3ea8a23a",
-      "posted_on": "2026-05-23",
-      "company": "Omnidian",
-      "title": "Senior Infrastructure Engineer",
-      "location": "Seattle",
-      "location_profile": {
-        "display": "Seattle",
-        "label": "Seattle",
-        "city": "Seattle",
-        "region": "",
-        "region_code": "",
-        "country": "",
-        "country_code": "",
-        "search_terms": [
-          "Seattle"
-        ]
-      },
-      "career_bucket": "mid_career_or_senior",
-      "career_bucket_label": "Mid-Career / Senior",
-      "experience_level": "senior_individual_contributor",
-      "experience_level_label": "Senior IC",
-      "yoe_min": null,
-      "yoe_max": null,
-      "experience_display": "Not stated",
-      "authorization_category": "open_or_not_specified",
-      "authorization_category_label": "Open / Not specified",
-      "sponsorship_status": "not_specified",
-      "work_authorization_display": "Open / Not specified; No explicit work authorization or sponsorship requirements stated",
-      "job_link": "https://jobs.lever.co/omnidian/687c041e-6f8a-4334-be17-19ec3ea8a23a"
-    },
-    {
-      "id": "https://job-boards.greenhouse.io/mixpanel/jobs/7941944",
-      "posted_on": "2026-05-23",
-      "company": "Mixpanel",
-      "title": "Senior Software Engineer, AI Platform",
-      "location": "San Francisco, US (Hybrid)",
-      "location_profile": {
-        "display": "San Francisco, US (Hybrid)",
-        "label": "San Francisco, US (Hybrid), United States",
-        "city": "San Francisco",
-        "region": "US (Hybrid)",
-        "region_code": "",
-        "country": "United States",
-        "country_code": "US",
-        "search_terms": [
-          "San Francisco, US (Hybrid)",
-          "San Francisco, US (Hybrid), United States",
-          "San Francisco",
-          "US (Hybrid)",
-          "United States",
-          "US",
-          "San Francisco, United States",
-          "US (Hybrid), United States",
-          "USA"
-        ]
-      },
-      "career_bucket": "mid_career_or_senior",
-      "career_bucket_label": "Mid-Career / Senior",
-      "experience_level": "senior_individual_contributor",
-      "experience_level_label": "Senior IC",
-      "yoe_min": 5,
-      "yoe_max": null,
-      "experience_display": "5+ yrs",
-      "authorization_category": "open_or_not_specified",
-      "authorization_category_label": "Open / Not specified",
-      "sponsorship_status": "not_specified",
-      "work_authorization_display": "Open / Not specified; No explicit work authorization or sponsorship requirements stated",
-      "job_link": "https://job-boards.greenhouse.io/mixpanel/jobs/7941944"
-    },
-    {
-      "id": "https://gdit.wd5.myworkdayjobs.com/External_Career_Site/job/Any-Location--Remote/Cloud-Software-Developer_RQ219602-1",
-      "posted_on": "2026-05-23",
-      "company": "GD Information Technology, Inc.",
-      "title": "Cloud Software Developer",
-      "location": "USA MD Home Office (MDHOME), United States of America",
-      "location_profile": {
-        "display": "USA MD Home Office (MDHOME), United States of America",
-        "label": "USA MD Home Office (MDHOME), United States of America, United States",
-        "city": "USA MD Home Office (MDHOME)",
-        "region": "United States of America",
-        "region_code": "",
-        "country": "United States",
-        "country_code": "US",
-        "search_terms": [
-          "USA MD Home Office (MDHOME), United States of America",
-          "USA MD Home Office (MDHOME), United States of America, United States",
-          "USA MD Home Office (MDHOME)",
-          "United States of America",
-          "United States",
-          "US",
-          "USA MD Home Office (MDHOME), United States",
-          "United States of America, United States",
-          "USA"
-        ]
-      },
-      "career_bucket": "mid_career_or_senior",
-      "career_bucket_label": "Mid-Career / Senior",
-      "experience_level": "senior_individual_contributor",
-      "experience_level_label": "Senior IC",
-      "yoe_min": 5,
-      "yoe_max": null,
-      "experience_display": "5+ yrs",
-      "authorization_category": "requires_us_person_status",
-      "authorization_category_label": "Requires US person status",
-      "sponsorship_status": "not_specified",
-      "work_authorization_display": "Requires US person status; Must be a US person",
-      "job_link": "https://gdit.wd5.myworkdayjobs.com/External_Career_Site/job/Any-Location--Remote/Cloud-Software-Developer_RQ219602-1"
-    },
-    {
-      "id": "https://gdit.wd5.myworkdayjobs.com/External_Career_Site/job/USA-MD-Fort-Meade/Azure-Cloud-Engineer_RQ220522-2",
-      "posted_on": "2026-05-23",
-      "company": "GD Information Technology, Inc.",
-      "title": "Azure Cloud Engineer",
-      "location": "USA MD Fort Meade - Fort Meade (MDC025), United States of America",
-      "location_profile": {
-        "display": "USA MD Fort Meade - Fort Meade (MDC025), United States of America",
-        "label": "USA MD Fort Meade - Fort Meade (MDC025), United States of America, United States",
-        "city": "USA MD Fort Meade - Fort Meade (MDC025)",
-        "region": "United States of America",
-        "region_code": "",
-        "country": "United States",
-        "country_code": "US",
-        "search_terms": [
-          "USA MD Fort Meade - Fort Meade (MDC025), United States of America",
-          "USA MD Fort Meade - Fort Meade (MDC025), United States of America, United States",
-          "USA MD Fort Meade - Fort Meade (MDC025)",
-          "United States of America",
-          "United States",
-          "US",
-          "USA MD Fort Meade - Fort Meade (MDC025), United States",
-          "United States of America, United States",
-          "USA"
-        ]
-      },
-      "career_bucket": "mid_career_or_senior",
-      "career_bucket_label": "Mid-Career / Senior",
-      "experience_level": "senior_individual_contributor",
-      "experience_level_label": "Senior IC",
-      "yoe_min": 8,
-      "yoe_max": null,
-      "experience_display": "8+ yrs",
-      "authorization_category": "requires_unrestricted_us_work_authorization",
-      "authorization_category_label": "Requires unrestricted US work authorization",
-      "sponsorship_status": "not_specified",
-      "work_authorization_display": "Requires unrestricted US work authorization; Must be authorized to work in the US",
-      "job_link": "https://gdit.wd5.myworkdayjobs.com/External_Career_Site/job/USA-MD-Fort-Meade/Azure-Cloud-Engineer_RQ220522-2"
-    },
-    {
-      "id": "https://gdit.wd5.myworkdayjobs.com/External_Career_Site/job/USA-VA-Sterling/AI-ML-Platform-Engineer_RQ220407-1",
-      "posted_on": "2026-05-23",
-      "company": "GD Information Technology, Inc.",
-      "title": "AI/ML Platform Engineer",
-      "location": "USA VA Sterling - 22626 Sally Ride Dr (VAS111), United States of America",
-      "location_profile": {
-        "display": "USA VA Sterling - 22626 Sally Ride Dr (VAS111), United States of America",
-        "label": "USA VA Sterling - 22626 Sally Ride Dr (VAS111), United States of America, United States",
-        "city": "USA VA Sterling - 22626 Sally Ride Dr (VAS111)",
-        "region": "United States of America",
-        "region_code": "",
-        "country": "United States",
-        "country_code": "US",
-        "search_terms": [
-          "USA VA Sterling - 22626 Sally Ride Dr (VAS111), United States of America",
-          "USA VA Sterling - 22626 Sally Ride Dr (VAS111), United States of America, United States",
-          "USA VA Sterling - 22626 Sally Ride Dr (VAS111)",
-          "United States of America",
-          "United States",
-          "US",
-          "USA VA Sterling - 22626 Sally Ride Dr (VAS111), United States",
-          "United States of America, United States",
-          "USA"
-        ]
-      },
-      "career_bucket": "mid_career_or_senior",
-      "career_bucket_label": "Mid-Career / Senior",
-      "experience_level": "senior_individual_contributor",
-      "experience_level_label": "Senior IC",
-      "yoe_min": 8,
-      "yoe_max": null,
-      "experience_display": "8+ yrs",
-      "authorization_category": "requires_us_citizenship",
-      "authorization_category_label": "Requires US citizenship",
-      "sponsorship_status": "not_specified",
-      "work_authorization_display": "Requires US citizenship; US citizenship and Secret clearance required",
-      "job_link": "https://gdit.wd5.myworkdayjobs.com/External_Career_Site/job/USA-VA-Sterling/AI-ML-Platform-Engineer_RQ220407-1"
-    },
-    {
-      "id": "https://jobs.lever.co/futureof-life/916022e2-b817-4e70-b4c2-18cfb1660065",
-      "posted_on": "2026-05-23",
-      "company": "Futureof LIFE",
-      "title": "AI Safety Argumentation Platform Research Engineer",
-      "location": "Anywhere (Open Globally)",
-      "location_profile": {
-        "display": "Anywhere (Open Globally)",
-        "label": "Anywhere (Open Globally)",
-        "city": "Anywhere (Open Globally)",
-        "region": "",
-        "region_code": "",
-        "country": "",
-        "country_code": "",
-        "search_terms": [
-          "Anywhere (Open Globally)"
-        ]
-      },
-      "career_bucket": "mid_career_or_senior",
-      "career_bucket_label": "Mid-Career / Senior",
-      "experience_level": "mid_level",
-      "experience_level_label": "Mid-Level",
-      "yoe_min": null,
-      "yoe_max": null,
-      "experience_display": "Not stated",
-      "authorization_category": "no_sponsorship",
-      "authorization_category_label": "No sponsorship",
-      "sponsorship_status": "no_sponsorship",
-      "work_authorization_display": "No sponsorship; Visa sponsorship unavailable; independent contractor only",
-      "job_link": "https://jobs.lever.co/futureof-life/916022e2-b817-4e70-b4c2-18cfb1660065"
-    },
-    {
-      "id": "https://job-boards.greenhouse.io/captivation/jobs/5230020008",
-      "posted_on": "2026-05-23",
-      "company": "Captivation Software",
-      "title": "Software Engineer 3 - Linux/Bash/Python/Rust/NoSQL/Docker/Kubernetes/Helm",
-      "location": "Annapolis Junction, MD",
-      "location_profile": {
-        "display": "Annapolis Junction, MD",
-        "label": "Annapolis Junction, MD, United States",
-        "city": "Annapolis Junction",
-        "region": "MD",
-        "region_code": "",
-        "country": "United States",
-        "country_code": "US",
-        "search_terms": [
-          "Annapolis Junction, MD",
-          "Annapolis Junction, MD, United States",
-          "Annapolis Junction",
-          "MD",
-          "United States",
-          "US",
-          "Annapolis Junction, United States",
-          "MD, United States",
-          "USA"
-        ]
-      },
-      "career_bucket": "mid_career_or_senior",
-      "career_bucket_label": "Mid-Career / Senior",
-      "experience_level": "senior_individual_contributor",
-      "experience_level_label": "Senior IC",
-      "yoe_min": 5,
-      "yoe_max": null,
-      "experience_display": "5+ yrs",
-      "authorization_category": "requires_us_citizenship",
-      "authorization_category_label": "Requires US citizenship",
-      "sponsorship_status": "not_specified",
-      "work_authorization_display": "Requires US citizenship; Must be a U.S. citizen",
-      "job_link": "https://job-boards.greenhouse.io/captivation/jobs/5230020008"
-    },
-    {
-      "id": "https://job-boards.greenhouse.io/captivation/jobs/5230019008",
-      "posted_on": "2026-05-23",
-      "company": "Captivation Software",
-      "title": "Software Engineer 3 - Linux/Bash/Python/JavaScript/React/Jupyter/JSON/NumPy",
-      "location": "Annapolis Junction, MD",
-      "location_profile": {
-        "display": "Annapolis Junction, MD",
-        "label": "Annapolis Junction, MD, United States",
-        "city": "Annapolis Junction",
-        "region": "MD",
-        "region_code": "",
-        "country": "United States",
-        "country_code": "US",
-        "search_terms": [
-          "Annapolis Junction, MD",
-          "Annapolis Junction, MD, United States",
-          "Annapolis Junction",
-          "MD",
-          "United States",
-          "US",
-          "Annapolis Junction, United States",
-          "MD, United States",
-          "USA"
-        ]
-      },
-      "career_bucket": "mid_career_or_senior",
-      "career_bucket_label": "Mid-Career / Senior",
-      "experience_level": "senior_individual_contributor",
-      "experience_level_label": "Senior IC",
-      "yoe_min": 5,
-      "yoe_max": null,
-      "experience_display": "5+ yrs",
-      "authorization_category": "requires_us_citizenship",
-      "authorization_category_label": "Requires US citizenship",
-      "sponsorship_status": "not_specified",
-      "work_authorization_display": "Requires US citizenship; Must be a U.S. citizen",
-      "job_link": "https://job-boards.greenhouse.io/captivation/jobs/5230019008"
-    },
-    {
-      "id": "https://job-boards.greenhouse.io/captivation/jobs/5230018008",
-      "posted_on": "2026-05-23",
-      "company": "Captivation Software",
-      "title": "Software Engineer 3 - Linux/Bash/Python/Java/Gitlab/CI/CD/Docker/Ansible/Grafana/NiFi",
-      "location": "Annapolis Junction, MD",
-      "location_profile": {
-        "display": "Annapolis Junction, MD",
-        "label": "Annapolis Junction, MD, United States",
-        "city": "Annapolis Junction",
-        "region": "MD",
-        "region_code": "",
-        "country": "United States",
-        "country_code": "US",
-        "search_terms": [
-          "Annapolis Junction, MD",
-          "Annapolis Junction, MD, United States",
-          "Annapolis Junction",
-          "MD",
-          "United States",
-          "US",
-          "Annapolis Junction, United States",
-          "MD, United States",
-          "USA"
-        ]
-      },
-      "career_bucket": "mid_career_or_senior",
-      "career_bucket_label": "Mid-Career / Senior",
-      "experience_level": "senior_individual_contributor",
-      "experience_level_label": "Senior IC",
-      "yoe_min": 5,
-      "yoe_max": null,
-      "experience_display": "5+ yrs",
-      "authorization_category": "requires_us_citizenship",
-      "authorization_category_label": "Requires US citizenship",
-      "sponsorship_status": "not_specified",
-      "work_authorization_display": "Requires US citizenship; Must hold Top Secret clearance; U.S. citizen required",
-      "job_link": "https://job-boards.greenhouse.io/captivation/jobs/5230018008"
-    },
-    {
-      "id": "https://job-boards.greenhouse.io/captivation/jobs/5230017008",
-      "posted_on": "2026-05-23",
-      "company": "Captivation Software",
-      "title": "Software Engineer 3 - Linux/Bash/Python/Apache Airflow/SQL/Jupyter Notebook/NumPy/JSON",
-      "location": "Annapolis Junction, MD",
-      "location_profile": {
-        "display": "Annapolis Junction, MD",
-        "label": "Annapolis Junction, MD, United States",
-        "city": "Annapolis Junction",
-        "region": "MD",
-        "region_code": "",
-        "country": "United States",
-        "country_code": "US",
-        "search_terms": [
-          "Annapolis Junction, MD",
-          "Annapolis Junction, MD, United States",
-          "Annapolis Junction",
-          "MD",
-          "United States",
-          "US",
-          "Annapolis Junction, United States",
-          "MD, United States",
-          "USA"
-        ]
-      },
-      "career_bucket": "mid_career_or_senior",
-      "career_bucket_label": "Mid-Career / Senior",
-      "experience_level": "senior_individual_contributor",
-      "experience_level_label": "Senior IC",
-      "yoe_min": 5,
-      "yoe_max": null,
-      "experience_display": "5+ yrs",
-      "authorization_category": "requires_us_citizenship",
-      "authorization_category_label": "Requires US citizenship",
-      "sponsorship_status": "not_specified",
-      "work_authorization_display": "Requires US citizenship; Must hold Top Secret clearance; U.S. citizen required",
-      "job_link": "https://job-boards.greenhouse.io/captivation/jobs/5230017008"
-    },
-    {
-      "id": "https://job-boards.greenhouse.io/captivation/jobs/5230023008",
-      "posted_on": "2026-05-23",
-      "company": "Captivation Software",
-      "title": "Software Engineer 2 - Linux/Bash/Python/HashiCorp/Docker/Ansible/HPC",
-      "location": "Annapolis Junction, MD",
-      "location_profile": {
-        "display": "Annapolis Junction, MD",
-        "label": "Annapolis Junction, MD, United States",
-        "city": "Annapolis Junction",
-        "region": "MD",
-        "region_code": "",
-        "country": "United States",
-        "country_code": "US",
-        "search_terms": [
-          "Annapolis Junction, MD",
-          "Annapolis Junction, MD, United States",
-          "Annapolis Junction",
-          "MD",
-          "United States",
-          "US",
-          "Annapolis Junction, United States",
-          "MD, United States",
-          "USA"
-        ]
-      },
-      "career_bucket": "mid_career_or_senior",
-      "career_bucket_label": "Mid-Career / Senior",
-      "experience_level": "mid_level",
-      "experience_level_label": "Mid-Level",
-      "yoe_min": 3,
-      "yoe_max": null,
-      "experience_display": "3+ yrs",
-      "authorization_category": "requires_us_citizenship",
-      "authorization_category_label": "Requires US citizenship",
-      "sponsorship_status": "not_specified",
-      "work_authorization_display": "Requires US citizenship; Must hold Top Secret clearance; U.S. citizen required",
-      "job_link": "https://job-boards.greenhouse.io/captivation/jobs/5230023008"
-    },
-    {
-      "id": "https://job-boards.greenhouse.io/captivation/jobs/5230021008",
-      "posted_on": "2026-05-23",
-      "company": "Captivation Software",
-      "title": "Software Engineer 2 - Linux/Bash/Python/Docker/Kubernetes/Helm/SQL/REST",
-      "location": "Annapolis Junction, MD - Hybrid",
-      "location_profile": {
-        "display": "Annapolis Junction, MD - Hybrid",
-        "label": "Annapolis Junction, MD - Hybrid, United States",
-        "city": "Annapolis Junction",
-        "region": "MD - Hybrid",
-        "region_code": "",
-        "country": "United States",
-        "country_code": "US",
-        "search_terms": [
-          "Annapolis Junction, MD - Hybrid",
-          "Annapolis Junction, MD - Hybrid, United States",
-          "Annapolis Junction",
-          "MD - Hybrid",
-          "United States",
-          "US",
-          "Annapolis Junction, United States",
-          "MD - Hybrid, United States",
-          "USA"
-        ]
-      },
-      "career_bucket": "mid_career_or_senior",
-      "career_bucket_label": "Mid-Career / Senior",
-      "experience_level": "mid_level",
-      "experience_level_label": "Mid-Level",
-      "yoe_min": 3,
-      "yoe_max": null,
-      "experience_display": "3+ yrs",
-      "authorization_category": "requires_us_citizenship",
-      "authorization_category_label": "Requires US citizenship",
-      "sponsorship_status": "not_specified",
-      "work_authorization_display": "Requires US citizenship; Must hold Top Secret clearance; U.S. citizen required",
-      "job_link": "https://job-boards.greenhouse.io/captivation/jobs/5230021008"
-    },
-    {
-      "id": "https://job-boards.greenhouse.io/captivation/jobs/5230024008",
-      "posted_on": "2026-05-23",
-      "company": "Captivation Software",
-      "title": "Software Engineer 1 - Linux/HPC/Bash/Python/Docker/Gitlab/CI/CD",
-      "location": "Annapolis Junction, MD",
-      "location_profile": {
-        "display": "Annapolis Junction, MD",
-        "label": "Annapolis Junction, MD, United States",
-        "city": "Annapolis Junction",
-        "region": "MD",
-        "region_code": "",
-        "country": "United States",
-        "country_code": "US",
-        "search_terms": [
-          "Annapolis Junction, MD",
-          "Annapolis Junction, MD, United States",
-          "Annapolis Junction",
-          "MD",
-          "United States",
-          "US",
-          "Annapolis Junction, United States",
-          "MD, United States",
-          "USA"
-        ]
-      },
-      "career_bucket": "early_career_or_new_grad",
-      "career_bucket_label": "Early Career / New Grad",
-      "experience_level": "entry_level_or_new_grad",
-      "experience_level_label": "Entry-Level / New Grad",
-      "yoe_min": 2,
-      "yoe_max": 4,
-      "experience_display": "2-4 yrs",
-      "authorization_category": "requires_us_citizenship",
-      "authorization_category_label": "Requires US citizenship",
-      "sponsorship_status": "not_specified",
-      "work_authorization_display": "Requires US citizenship; Must hold Top Secret clearance; US citizen required",
-      "job_link": "https://job-boards.greenhouse.io/captivation/jobs/5230024008"
-    },
-    {
-      "id": "https://job-boards.greenhouse.io/captivation/jobs/5230016008",
-      "posted_on": "2026-05-23",
-      "company": "Captivation Software",
-      "title": " Software Engineer 2 (Hybrid) - Linux/Bash/Apache Airflow/Apache Spark/Docker/Podman/Git/AWS",
-      "location": "Annapolis Junction, MD - Hybrid",
-      "location_profile": {
-        "display": "Annapolis Junction, MD - Hybrid",
-        "label": "Annapolis Junction, MD - Hybrid, United States",
-        "city": "Annapolis Junction",
-        "region": "MD - Hybrid",
-        "region_code": "",
-        "country": "United States",
-        "country_code": "US",
-        "search_terms": [
-          "Annapolis Junction, MD - Hybrid",
-          "Annapolis Junction, MD - Hybrid, United States",
-          "Annapolis Junction",
-          "MD - Hybrid",
-          "United States",
-          "US",
-          "Annapolis Junction, United States",
-          "MD - Hybrid, United States",
-          "USA"
-        ]
-      },
-      "career_bucket": "mid_career_or_senior",
-      "career_bucket_label": "Mid-Career / Senior",
-      "experience_level": "mid_level",
-      "experience_level_label": "Mid-Level",
-      "yoe_min": 3,
-      "yoe_max": null,
-      "experience_display": "3+ yrs",
-      "authorization_category": "requires_us_citizenship",
-      "authorization_category_label": "Requires US citizenship",
-      "sponsorship_status": "not_specified",
-      "work_authorization_display": "Requires US citizenship; Must hold Top Secret clearance; US citizen required",
-      "job_link": "https://job-boards.greenhouse.io/captivation/jobs/5230016008"
     }
   ]
 }
