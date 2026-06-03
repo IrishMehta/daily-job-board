@@ -96,7 +96,24 @@ def iter_jsonl(path: Path) -> list[dict[str, Any]]:
     return records
 
 
-def build_location_profile(location: str) -> dict[str, Any]:
+def build_location_profile(location: str, company_location: dict[str, Any] | None = None) -> dict[str, Any]:
+    assessment_profile = company_location.get("location_profile") if isinstance(company_location, dict) else None
+    if isinstance(assessment_profile, dict):
+        normalized = str(assessment_profile.get("display") or location or "").strip() or "Unknown"
+        search_terms = assessment_profile.get("search_terms")
+        if not isinstance(search_terms, list) or not search_terms:
+            search_terms = [normalized]
+        return {
+            "display": normalized,
+            "label": str(assessment_profile.get("label") or normalized).strip() or normalized,
+            "city": str(assessment_profile.get("city") or "").strip(),
+            "region": str(assessment_profile.get("region") or "").strip(),
+            "region_code": str(assessment_profile.get("region_code") or "").strip(),
+            "country": str(assessment_profile.get("country") or "").strip(),
+            "country_code": str(assessment_profile.get("country_code") or "").strip(),
+            "search_terms": [str(term).strip() for term in search_terms if str(term).strip()],
+        }
+
     normalized = str(location or "").strip() or "Unknown"
     search_terms = [normalized]
     upper = normalized.upper()
@@ -145,14 +162,26 @@ def infer_authorization_category(assessment: dict[str, Any]) -> str:
 def build_job(record: dict[str, Any]) -> dict[str, Any]:
     job = record.get("job") or {}
     public_card = record.get("public_card") or {}
+    company_location = record.get("company_location_assessment") or {}
     experience = record.get("experience_assessment") or {}
     work_auth = record.get("work_authorization_assessment") or {}
 
     job_link = str(public_card.get("job_link") or job.get("absolute_url") or "").strip()
     posted_on = str(public_card.get("date") or job.get("posted_on") or "").strip()
-    company = str(public_card.get("company") or record.get("display_company") or job.get("company") or "").strip() or "Unknown"
+    company = str(
+        public_card.get("company")
+        or company_location.get("company_name")
+        or record.get("display_company")
+        or job.get("company")
+        or ""
+    ).strip() or "Unknown"
     title = str(public_card.get("title") or job.get("title") or "").strip() or "Untitled role"
-    location = str(public_card.get("location") or job.get("location") or "").strip() or "Unknown"
+    location = str(
+        public_card.get("location")
+        or company_location.get("location_display")
+        or job.get("location")
+        or ""
+    ).strip() or "Unknown"
 
     career_bucket = str(record.get("career_bucket") or "").strip() or "mid_career_or_senior"
     experience_level = str(experience.get("experience_level") or "").strip() or "not_stated"
@@ -165,7 +194,7 @@ def build_job(record: dict[str, Any]) -> dict[str, Any]:
         "company": company,
         "title": title,
         "location": location,
-        "location_profile": build_location_profile(location),
+        "location_profile": build_location_profile(location, company_location),
         "career_bucket": career_bucket,
         "career_bucket_label": CAREER_BUCKET_LABELS.get(career_bucket, career_bucket.replace("_", " ").title()),
         "experience_level": experience_level,
