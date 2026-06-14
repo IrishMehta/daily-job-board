@@ -4,7 +4,7 @@ Latest filtered openings grouped for public GitHub publishing. Each job includes
 
 Use the interactive job board here: [https://irishmehta.github.io/daily-job-board/](https://irishmehta.github.io/daily-job-board/)
 
-_Generated at 2026-06-14T03:27:20.175117+00:00_
+_Generated at 2026-06-14T13:15:08.995915+00:00_
 
 ## Summary
 
