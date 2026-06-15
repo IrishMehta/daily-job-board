@@ -4,23 +4,30 @@ Latest filtered openings grouped for public GitHub publishing. Each job includes
 
 Use the interactive job board here: [https://irishmehta.github.io/daily-job-board/](https://irishmehta.github.io/daily-job-board/)
 
-_Generated at 2026-06-14T13:15:08.995915+00:00_
+_Generated at 2026-06-15T13:11:50.635912+00:00_
 
 ## Summary
 
-- Total openings: 1794
+- Total openings: 1820
 - Scope: US-based openings only (README and dashboard)
 - Window: jobs posted within the last 7 day(s)
-- Early Career / New Grad: 269
-- Mid-Career / Senior: 1519
+- Early Career / New Grad: 276
+- Mid-Career / Senior: 1538
 - Managerial: 6
 
 ## Early Career / New Grad
 
-Openings in this section: 269
+Openings in this section: 276
 
 | Date | Company | Role | Location | Experience | Work Authorization | Link |
 | --- | --- | --- | --- | --- | --- | --- |
+| 2026-06-15 | Northrop Grumman | Software Engineer - CLOUDworks (SkillBridge) | Wright Patterson AFB, OH | 2+ yrs | Requires unrestricted US work authorization; Must be eligible to work in the US | [Apply](https://ngc.wd1.myworkdayjobs.com/Northrop_Grumman_External_Site/job/United-States-Ohio-Wright-Patterson-AFB/Software-Engineer---CLOUDworks--SkillBridge-_R10211395) |
+| 2026-06-15 | Leidos | Data Scientist | Bethesda, MD | 2+ yrs | Requires clearance / public trust; Active TS and ability to obtain a TS/SCI required | [Apply](https://leidos.wd5.myworkdayjobs.com/External/job/Bethesda-MD/Data-Scientist_R-00185399) |
+| 2026-06-15 | Leidos | Data Scientist | Bethesda, MD | 2+ yrs | Requires clearance / public trust; Active TS required | [Apply](https://leidos.wd5.myworkdayjobs.com/External/job/Bethesda-MD/Data-Scientist_R-00185399) |
+| 2026-06-14 | sprymethods | Full Stack Software Developer | Hybrid | Not stated | Open / Not specified; No work authorization requirement stated | [Apply](https://jobs.lever.co/sprymethods/606c57f8-16ed-451a-8497-cbfed0866d02) |
+| 2026-06-14 | Striveworks | Machine Learning Engineer (Active Secret Clearance) | Remote (US) | 2+ yrs | Requires unrestricted US work authorization; Must be eligible to work in the US | [Apply](https://job-boards.greenhouse.io/striveworks/jobs/7772335003) |
+| 2026-06-14 | Striveworks | Data Scientist (Active Secret Clearance) | Remote (US) | 2+ yrs | Requires unrestricted US work authorization; Must be eligible to work in the US | [Apply](https://job-boards.greenhouse.io/striveworks/jobs/7772314003) |
+| 2026-06-14 | PNC | Software Engineer- Full Stack | Two PNC Plaza, PA | 2+ yrs | No sponsorship; No visa sponsorship or OPT mentioned | [Apply](https://pnc.wd5.myworkdayjobs.com/External/job/PA---Pittsburgh-15222/Software-Engineer--Full-Stack_R224586-1) |
 | 2026-06-12 | iHeartMedia | Software Engineer | Virtual, NY | 2+ yrs | Open / Not specified; No work authorization requirement stated | [Apply](https://iheartmedia.wd5.myworkdayjobs.com/iHM_Technology_Site/job/Virtual-NY/Software-Engineer_Req38372) |
 | 2026-06-12 | iHeartMedia | Software Engineer | Virtual, NY | 2+ yrs | Open / Not specified; No work authorization requirement stated | [Apply](https://iheartmedia.wd5.myworkdayjobs.com/External_iHM/job/Virtual-NY/Software-Engineer_Req38372-2) |
 | 2026-06-12 | generalmotors | Embedded Software Engineer - Electrification | Milford, MA | 2+ yrs | No sponsorship; No work authorization sponsorship required | [Apply](https://generalmotors.wd5.myworkdayjobs.com/Careers_GM/job/Milford-Michigan-United-States-of-America/Software-Engineer---Electrification_JR-202612865-1) |
@@ -293,10 +300,34 @@ Openings in this section: 269
 
 ## Mid-Career / Senior
 
-Openings in this section: 1519
+Openings in this section: 1538
 
 | Date | Company | Role | Location | Experience | Work Authorization | Link |
 | --- | --- | --- | --- | --- | --- | --- |
+| 2026-06-15 | U.S. Bank | Sr. Software Engineer (Java/Spring Boot/DevOps) | Irving, TX | 5-6 yrs | Requires unrestricted US work authorization; Must be eligible to work in the US | [Apply](https://usbank.wd1.myworkdayjobs.com/US_Bank_Careers/job/Irving-TX/Sr-Software-Engineer--Java-Spring-Boot-DevOps-_2026-0016245) |
+| 2026-06-15 | Truist | Lead Software Engineer | Charlotte, NC | 10+ yrs | No sponsorship; Truist does not sponsor work visas | [Apply](https://truist.wd1.myworkdayjobs.com/Careers/job/Charlotte-NC/Lead-Software-Engineer_R0115712) |
+| 2026-06-15 | State Street | Senior Software Engineer | Burlington, MA | 3+ yrs | Open / Not specified; No work authorization requirement stated | [Apply](https://statestreet.wd1.myworkdayjobs.com/Global/job/Burlington-Massachusetts/Senior-Software-Engineer_R-792395) |
+| 2026-06-15 | Roger Healthcare | Senior Frontend Engineer | San Francisco, CA | 6+ yrs | Open / Not specified; No work authorization requirement stated | [Apply](https://jobs.ashbyhq.com/rogerhealthcare/8472b148-69ce-468b-baa8-d72b07af8b7f) |
+| 2026-06-15 | Roger Healthcare | AI Engineer | San Francisco, CA | 7+ yrs | Open / Not specified; No explicit work authorization requirement stated | [Apply](https://jobs.ashbyhq.com/rogerhealthcare/5c5a96ca-819b-4fe2-97c3-50e7245f8937) |
+| 2026-06-15 | Resmed | Senior Software Engineer | San Diego, CA | 8+ yrs | Open / Not specified; No explicit work authorization requirement stated | [Apply](https://resmed.wd3.myworkdayjobs.com/ResMed_External_Careers/job/San-Diego-CA-United-States/Senior-Software-Engineer---Front-End_JR_048640) |
+| 2026-06-15 | Nintex | Senior Software Engineer | Bellevue, WA | 6+ yrs | Open / Not specified; E-Verify participation mentioned; no explicit work authorization requirement stated | [Apply](https://www.nintex.com/careers/jobs/?gh_jid=7985394) |
+| 2026-06-15 | MoonPay | Senior Infrastructure Engineer | Hybrid (New York) | Not stated | No sponsorship; No visas offered; work authorization not specified | [Apply](https://jobs.lever.co/moonpay/982e4e92-2337-49f6-9a9f-31333d73ed5f) |
+| 2026-06-15 | Insightsoftware | Senior Software Engineer - Platform Integrations | Remote (US) | 6+ yrs | Open / Not specified; No explicit work authorization requirement stated | [Apply](https://magnitudesoftware.wd1.myworkdayjobs.com/External/job/USA---Remote/Senior-Software-Engineer---Platform-Integrations_REQ000763-1) |
+| 2026-06-15 | GDIT | Infrastructure Engineer | Fort Meade, MD | 10+ yrs | Requires US citizenship; US citizenship and Secret clearance required | [Apply](https://gdit.wd5.myworkdayjobs.com/External_Career_Site/job/USA-MD-Fort-Meade/Infrastructure-Engineer_RQ222295-1) |
+| 2026-06-15 | Elevance Health | AI Machine Learning Scientist | Richmond, VA | 4+ yrs | Open / Not specified; No explicit work authorization requirement stated | [Apply](https://elevancehealth.wd1.myworkdayjobs.com/ANT/job/VA-RICHMOND-2015-STAPLES-MILL-RD/AI-Machine-Learning-Scientist_JR191030) |
+| 2026-06-15 | Curtiss-Wright | Principal Software Developer | Frederick, MD | 12-15 yrs | Requires unrestricted US work authorization; Must be eligible to work in the US | [Apply](https://curtisswright.wd1.myworkdayjobs.com/CW_External_Career_Site/job/US-MD-Frederick-Nuclear/Principal-Software-Developer_JR12311) |
+| 2026-06-15 | Cisco | Senior Kubernetes Platform Engineer - AI/ML Infrastructure | Research Triangle Park, NC | 8+ yrs | Open / Not specified; No explicit work authorization requirement stated | [Apply](https://cisco.wd5.myworkdayjobs.com/Cisco_Careers/job/RTP-North-Carolina-US/Senior-Kubernetes-Platform-Engineer---AI-ML-Infrastructure_2013054-1) |
+| 2026-06-15 | Cisco | Kubernetes Platform Engineer - AI Infrastructure | Research Triangle Park, NC | 5+ yrs | Open / Not specified; No explicit work authorization requirement stated | [Apply](https://cisco.wd5.myworkdayjobs.com/Cisco_Careers/job/RTP-North-Carolina-US/Kubernetes-Platform-Engineer---AI-Infrastructure_2013578) |
+| 2026-06-14 | sprymethods | Senior Microsoft Cloud Engineer | Hybrid | Not stated | Requires unrestricted US work authorization; Senior Microsoft Cloud Engineer role requires US work authorization | [Apply](https://jobs.lever.co/sprymethods/e1981a89-e071-48d2-b52a-7305f8c45877) |
+| 2026-06-14 | Zayo | Senior Software Engineer, Network Tools | Remote (US) | 7+ yrs | Open / Not specified; No work authorization requirement stated | [Apply](https://zayo.wd1.myworkdayjobs.com/Zayo_Careers/job/United-States/Senior-Software-Engineer--Network-Tools_R0015863) |
+| 2026-06-14 | Tutor Intelligence | Robotics Forward Deployed Engineer | Watertown, MA | Not stated | Open / Not specified; No work authorization requirement stated | [Apply](https://jobs.lever.co/tutorintelligence/96219c90-a468-477a-b8e9-dd80bfe82b8e) |
+| 2026-06-14 | Roche | Senior Research Engineer, Microfluidic Systems, R&amp;D | Santa Clara, CA | 2-5 yrs | Open / Not specified; No work authorization requirement stated | [Apply](https://roche.wd3.myworkdayjobs.com/roche-ext/job/Santa-Clara/Senior-Research-Engineer--Microfluidic-Systems--R-D_202606-115001-2) |
+| 2026-06-14 | PNC | Software Engineer Senior- Kafka Expert &amp; Microservices and Web UI Angular | Two PNC Plaza, PA374 | 3+ yrs | No sponsorship; No visa sponsorship for this role | [Apply](https://pnc.wd5.myworkdayjobs.com/External/job/PA---Pittsburgh-15222/Software-Engineer-Senior--Kafka-Expert---Microservices-and-Web-UI-Angular_R219803-1) |
+| 2026-06-14 | Lyft | Senior Software Engineer, Growth Platforms | San Francisco, CA | 5+ yrs | Open / Not specified; No explicit work authorization requirement stated | [Apply](https://app.careerpuck.com/job-board/lyft/job/8586322002?gh_jid=8586322002) |
+| 2026-06-14 | Lyft | Senior Software Engineer, Growth Platforms | New York, NY | 5+ yrs | Open / Not specified; No work authorization requirement stated | [Apply](https://app.careerpuck.com/job-board/lyft/job/8586469002?gh_jid=8586469002) |
+| 2026-06-14 | Hewlett Packard Enterprise | Senior Systems/Software Engineer | Durham, NC | Not stated | Open / Not specified; No explicit work authorization requirement stated | [Apply](https://hpe.wd5.myworkdayjobs.com/Jobsathpe/job/Durham-North-Carolina-United-States-of-America/Senior-Systems-Software-Engineer_1207869-2) |
+| 2026-06-14 | Hewlett Packard Enterprise | Senior Systems/Software Engineer | Durham, NC | Not stated | Open / Not specified; No explicit work authorization requirement stated | [Apply](https://hpe.wd5.myworkdayjobs.com/WFMathpe/job/Durham-North-Carolina-United-States-of-America/Senior-Systems-Software-Engineer_1207869-1) |
+| 2026-06-14 | Exa | Software Engineer, Knowledge Systems | San Francisco, CA | Not stated | Open / Not specified; No work authorization requirement stated | [Apply](https://jobs.ashbyhq.com/exa/1f90ebb9-0f74-4a52-822a-d0ea6acdef4f) |
 | 2026-06-13 | Waymo | Machine Learning Engineer, Simulation Evaluation | Mountain View, CA \| San Francisco, CA | 5+ yrs | Open / Not specified; No work authorization requirement stated | [Apply](https://careers.withwaymo.com/jobs?gh_jid=8001797) |
 | 2026-06-13 | Nimble | Software Engineer III, Robotics Throughput | San Francisco, CA | 2-4 yrs | Open / Not specified; No work authorization requirement stated | [Apply](https://job-boards.greenhouse.io/nimblerobotics/jobs/4285654009) |
 | 2026-06-13 | GDIT | Azure Cloud Engineer | Remote (US) | 8+ yrs | Requires US person status; U.S. person status required | [Apply](https://gdit.wd5.myworkdayjobs.com/External_Career_Site/job/Any-Location--Remote/Azure-Cloud-Engineer_RQ222160-1) |
@@ -1811,11 +1842,6 @@ Openings in this section: 1519
 | 2026-06-08 | Adobe | Senior Software Engineer - Backend | San Jose, CA | 5-10 yrs | Open / Not specified; No explicit work authorization requirement stated | [Apply](https://adobe.wd5.myworkdayjobs.com/external_experienced/job/San-Jose/Senior-Software-Engineer---Backend_R169447) |
 | 2026-06-08 | AEP | Data Scientist Associate - Data Scientist Sr. | Ft Wayne, IN | Not stated | Open / Not specified; No work authorization requirement stated | [Apply](https://aep.wd1.myworkdayjobs.com/AEPCareerSite/job/Ft-Wayne-IN/Data-Scientist-Associate---Data-Scientist-Sr_R14489) |
 | 2026-06-08 | 3M | Senior Research Engineer - Measurement / Inspection | Woodbury, MN | 5+ yrs | Requires unrestricted US work authorization; Must be legally authorized to work in US without sponsorship | [Apply](https://3m.wd1.myworkdayjobs.com/Search/job/US-Minnesota-Woodbury/Senior-Research-Engineer---Measurement---Inspection_R01166194) |
-| 2026-06-07 | jobgether | AI / ML Engineer | Remote (US) | Not stated | Open / Not specified; No explicit work authorization requirement stated | [Apply](https://jobs.lever.co/jobgether/7b2ffd25-f39f-4234-86a3-24bd723df101) |
-| 2026-06-07 | Workday | Machine Learning Engineer - Document Intelligence | Pleasanton, CA | 3+ yrs | Open / Not specified; No explicit work authorization requirement stated | [Apply](https://workday.wd5.myworkdayjobs.com/Workday/job/USA-CA-Pleasanton/Machine-Learning-Engineer---Document-Intelligence_JR-0107515) |
-| 2026-06-07 | PNC | Software Engineer Sr - QE Tester - Automation/.Net/Angular/SQL | Pittsburgh, PA | 3+ yrs | No sponsorship; No visa sponsorship for this role | [Apply](https://pnc.wd5.myworkdayjobs.com/External/job/PA---Pittsburgh-15222/Software-Engineer-Sr---QE-Tester---Automation-Net-Angular-SQL_R221006-1) |
-| 2026-06-07 | Ford | Senior Full Stack Software Engineer - DNEE | Dearborn, MI | 7+ yrs | No sponsorship; Must be authorized to work in the US | [Apply](https://ford.eightfold.ai/careers/job/563568451354536) |
-| 2026-06-07 | Fidelity | Principal Software Engineer- Contact Center Platform | Westlake, TX | 8+ yrs | No sponsorship; No sponsorship for this role | [Apply](https://fmr.wd1.myworkdayjobs.com/FidelityCareers/job/Westlake-TX/Principal-Software-Engineer--Contact-Center-Platform_2127322) |
 
 ## Managerial
 
