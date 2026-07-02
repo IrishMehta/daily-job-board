@@ -1,6 +1,6 @@
-# Public Job Board
+# Early & Mid-Career Tech Job Openings in the USA
 
-Latest filtered openings grouped for public GitHub publishing. Each job includes a small-model estimate of years of experience and explicit work authorization requirements.
+A daily-refreshed list of early-career, new-grad, and mid-career tech job openings in the USA — AI, machine learning, data science, and software engineering roles. Each job includes a small-model estimate of years of experience and explicit work authorization requirements.
 
 Use the interactive job board here: [https://irishmehta.github.io/daily-job-board/](https://irishmehta.github.io/daily-job-board/)
 
