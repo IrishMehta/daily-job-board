@@ -4,23 +4,24 @@ A daily-refreshed list of early-career, new-grad, and mid-career tech job openin
 
 Use the interactive job board here: [https://irishmehta.github.io/daily-job-board/](https://irishmehta.github.io/daily-job-board/)
 
-_Generated at 2026-07-04T13:11:06.236957+00:00_
+_Generated at 2026-07-05T13:12:28.460169+00:00_
 
 ## Summary
 
-- Total openings: 1787
+- Total openings: 1767
 - Scope: US-based openings only (README and dashboard)
 - Window: jobs posted within the last 7 day(s)
-- Early Career / New Grad: 328
-- Mid-Career / Senior: 1451
-- Managerial: 8
+- Early Career / New Grad: 327
+- Mid-Career / Senior: 1433
+- Managerial: 7
 
 ## Early Career / New Grad
 
-Openings in this section: 328
+Openings in this section: 327
 
 | Date | Company | Role | Location | Experience | Work Authorization | Link |
 | --- | --- | --- | --- | --- | --- | --- |
+| 2026-07-04 | Plaud | Full-Stack Engineer, Mobile & SDK - San Francisco | San Francisco, CA | Not stated | Open / Not specified; No work authorization requirement stated | [Apply](https://jobs.ashbyhq.com/plaud/3a36edb2-0070-4d6e-b91a-b9e5dda187b4) |
 | 2026-07-04 | BD | Commercial Analytics Engineer Business Decision Intelligence | Franklin Lakes, NJ | 1+ yrs | Open / Not specified; No explicit work authorization requirement stated | [Apply](https://bdx.wd1.myworkdayjobs.com/EXTERNAL_CAREER_SITE_USA/job/USA-NJ---Franklin-Lakes/Commercial-Analytics-Engineer-Business-Decision-Intelligence_R-549477-1) |
 | 2026-07-03 | jobgether | AI & ML Engineer | Remote (US) | Not stated | Open / Not specified; No explicit work authorization requirement stated | [Apply](https://jobs.lever.co/jobgether/88aeb534-9659-4bfc-b60a-8aa5f7f574f3) |
 | 2026-07-03 | hirehangar | Full Stack Engineer - Founding Engineer | San Francisco, CA | Not stated | Open / Not specified; No work authorization requirement stated | [Apply](https://jobs.ashbyhq.com/hirehangar/99ffdde3-52a1-43d1-8916-5962d17f677f) |
@@ -347,15 +348,14 @@ Openings in this section: 328
 | 2026-06-28 | airbnb | Data Scientist - Algorithms, Community Support | Remote (US) | 2+ yrs | Open / Not specified; Remote US position; no explicit work authorization requirement | [Apply](https://careers.airbnb.com/positions/8031901?gh_jid=8031901) |
 | 2026-06-28 | Mirage | ML Engineer, Generative Video | Union Square, New York City | 2+ yrs | Open / Not specified; No work authorization requirement stated | [Apply](https://jobs.ashbyhq.com/mirage/3cdd0d39-f0b4-4255-837f-bcff17288143) |
 | 2026-06-28 | Caterpillar | Aftermarket Insights Sales Data Scientist | Peoria, IL | 2+ yrs | No sponsorship; No visa sponsorship available | [Apply](https://cat.wd5.myworkdayjobs.com/CaterpillarCareers/job/Peoria-Illinois/Aftermarket-Insights-Sales-Data-Scientist_R0000379553) |
-| 2026-06-27 | Varda | Controls and Automation Software Engineer | El Segundo, CA | 2+ yrs | Requires US person status; Must hire U.S. persons only | [Apply](https://job-boards.greenhouse.io/vardaspace/jobs/7787934003) |
-| 2026-06-27 | Cox Automotive | Software Engineer I | Atlanta, GA | 0+ yrs | No sponsorship; Must be authorized to work in the US without sponsorship | [Apply](https://cox.wd1.myworkdayjobs.com/Cox_External_Career_Site_1/job/Atlanta-GA/Software-Engineer-I_R202679352) |
 
 ## Mid-Career / Senior
 
-Openings in this section: 1451
+Openings in this section: 1433
 
 | Date | Company | Role | Location | Experience | Work Authorization | Link |
 | --- | --- | --- | --- | --- | --- | --- |
+| 2026-07-05 | GDIT | Sr. Java Software Developer | Remote (US) | 7+ yrs | Requires unrestricted US work authorization; Must be eligible to work in the US | [Apply](https://gdit.wd5.myworkdayjobs.com/External_Career_Site/job/Any-Location--Remote/Sr-Java-Software-Developer_RQ223594-1) |
 | 2026-07-04 | BD | Senior Commercial Analytics Engineer - Business Decision Intelligence | Franklin Lakes, NJ | 4+ yrs | Open / Not specified; No explicit work authorization requirement stated | [Apply](https://bdx.wd1.myworkdayjobs.com/EXTERNAL_CAREER_SITE_USA/job/USA-NJ---Franklin-Lakes/Senior-Commercial-Analytics-Engineer---Business-Decision-Intelligence_R-549479-1) |
 | 2026-07-04 | BD | Principal Commercial Analytics Engineer - Business Decision Intelligence&nbsp; | Franklin Lakes, NJ | 6+ yrs | Open / Not specified; No explicit work authorization requirement stated | [Apply](https://bdx.wd1.myworkdayjobs.com/EXTERNAL_CAREER_SITE_USA/job/USA-NJ---Franklin-Lakes/Principal-Commercial-Analytics-Engineer---Business-Decision-Intelligence-_R-548949-1) |
 | 2026-07-03 | jobgether | Blockchain Security Engineer - Senior Level (Solidity / Rust / Golang ) | Remote (US) | Not stated | Open / Not specified; US role listed; no explicit work authorization stated | [Apply](https://jobs.lever.co/jobgether/e89b8043-2e81-4e8a-8ab9-4d31aba1114d) |
@@ -387,8 +387,8 @@ Openings in this section: 1451
 | 2026-07-03 | NVIDIA | Senior Software Engineer, Metrics and Evaluation - Autonomous Vehicles | Santa Clara, CA | 5+ yrs | Open / Not specified; No explicit work authorization requirement stated | [Apply](https://nvidia.eightfold.ai/careers/job/893394111963) |
 | 2026-07-03 | NVIDIA | Senior Software Engineer, Metrics and Evaluation - Autonomous Vehicles | Santa Clara, CA | 5+ yrs | Open / Not specified; No explicit work authorization requirement stated | [Apply](https://nvidia.wd5.myworkdayjobs.com/NVIDIAExternalCareerSite/job/US-CA-Santa-Clara/Senior-Software-Engineer--Metrics-and-Evaluation---Autonomous-Vehicles_JR2014651) |
 | 2026-07-03 | NVIDIA | Senior Software Engineer, Metrics and Evaluation - Autonomous Vehicles | Santa Clara, CA | 5+ yrs | Open / Not specified; No explicit work authorization requirement stated | [Apply](https://nvidia.wd5.myworkdayjobs.com/NVIDIAExternalCareerSite/job/US-CA-Santa-Clara/Senior-Software-Engineer--Metrics-and-Evaluation---Autonomous-Vehicles_JR2014651) |
-| 2026-07-03 | Medtronic | Sr. Product Security Engineer - (Embedded/IoT) - Onsite | Rice Creek, MN | 4+ yrs | Requires unrestricted US work authorization; Must have unrestricted U.S. work authorization | [Apply](https://medtronic.wd1.myworkdayjobs.com/RedeploymentMedtronicCareers/job/Minneapolis-Minnesota-United-States-of-America/Sr-Product-Security-Engineer----Embedded-IoT----Onsite_R70005) |
 | 2026-07-03 | Medtronic | Sr. Product Security Engineer - (Embedded/IoT) - Onsite | Rice Creek, MN | 4+ yrs | Requires unrestricted US work authorization; Must have unrestricted U.S. work authorization | [Apply](https://medtronic.wd1.myworkdayjobs.com/MedtronicCareers/job/Minneapolis-Minnesota-United-States-of-America/Sr-Product-Security-Engineer----Embedded-IoT----Onsite_R70005-1) |
+| 2026-07-03 | Medtronic | Sr. Product Security Engineer - (Embedded/IoT) - Onsite | Rice Creek, MN | 4+ yrs | Requires unrestricted US work authorization; Must have unrestricted U.S. work authorization | [Apply](https://medtronic.wd1.myworkdayjobs.com/RedeploymentMedtronicCareers/job/Minneapolis-Minnesota-United-States-of-America/Sr-Product-Security-Engineer----Embedded-IoT----Onsite_R70005) |
 | 2026-07-03 | Lavendo | Senior Embedded Systems Engineer, Humanoid Robotics (Santa Clara) | Santa Clara, CA | 5+ yrs | Open / Not specified; No explicit work authorization or sponsorship requirements stated | [Apply](https://jobs.ashbyhq.com/lavendo/70507114-8d13-48e7-99cc-880f7f1b7a29) |
 | 2026-07-03 | Kizen | Senior Backend Engineer | Austin, TX | 5+ yrs | No sponsorship; Visa sponsorship not available | [Apply](https://kizen.com/jobs?gh_jid=5291125008) |
 | 2026-07-03 | Johns Hopkins University | Data Engineer I- Pathology | Baltimore, MD | 3+ yrs | Open / Not specified; No work authorization requirement stated | [Apply](https://jhu.eightfold.ai/careers/job/1133911706171) |
@@ -408,7 +408,7 @@ Openings in this section: 1451
 | 2026-07-03 | Booz Allen | Software Engineer | McLean, VA | 4+ yrs | Requires clearance / public trust; Secret clearance required | [Apply](https://bah.wd1.myworkdayjobs.com/BAH_Jobs/job/McLean-VA/Software-Engineer_R0243761) |
 | 2026-07-03 | Booz Allen | Software Developer | Huntsville, AL | 8+ yrs | Requires clearance / public trust; Top Secret clearance required | [Apply](https://bah.wd1.myworkdayjobs.com/BAH_Jobs/job/Huntsville-AL/Software-Developer_R0243724) |
 | 2026-07-03 | Baker Hughes | R&amp;D System Engineer | Skaneateles, NY | 5-10 yrs | Requires unrestricted US work authorization; Must have current work authorization in the US | [Apply](https://bakerhughes.wd5.myworkdayjobs.com/BakerHughes/job/US-NY-SKANEATELES-721-VISIONS-DRIVE/R-D-System-Engineer_R165921-1) |
-| 2026-07-03 | BMO | Data Engineer | 320 S Canal Street, US | 5-7 yrs | Open / Not specified; No explicit work authorization requirement stated | [Apply](https://bmo.wd3.myworkdayjobs.com/External/job/Chicago-IL-USA/Data-Engineer_R260019331) |
+| 2026-07-03 | BMO | Data Engineer | 320Canal | 5-7 yrs | Open / Not specified; No explicit work authorization requirement stated | [Apply](https://bmo.wd3.myworkdayjobs.com/External/job/Chicago-IL-USA/Data-Engineer_R260019331) |
 | 2026-07-03 | Ameriprise | Sr Full Stack AI Engineer | Boston, MA | 8+ yrs | Open / Not specified; No explicit work authorization requirement stated | [Apply](https://ameriprise.wd5.myworkdayjobs.com/Ameriprise/job/Boston-Massachusetts/Sr-Full-Stack-AI-Engineer_R26_1770-1) |
 | 2026-07-02 | usventure | Test Software Developer II (IGEN) | Appleton, WI | 2-4 yrs | No sponsorship; Must be authorized to work in the US; no sponsorship | [Apply](https://usventure.wd1.myworkdayjobs.com/USVExternal/job/WI---Appleton/Test-Software-Developer-II--IGEN-_R7810) |
 | 2026-07-02 | tatari | Senior Backend Engineer | Los Angeles, CA | 6+ yrs | Open / Not specified; No work authorization requirement stated | [Apply](https://job-boards.greenhouse.io/tatari/jobs/8617788002) |
@@ -1788,29 +1788,10 @@ Openings in this section: 1451
 | 2026-06-28 | BJAK | Applied AI Engineer | Remote (US) | Not stated | Open / Not specified; No explicit work authorization requirement stated | [Apply](https://jobs.ashbyhq.com/bjakcareer/07f77951-b023-4a97-9d42-df673874eae1) |
 | 2026-06-28 | BJAK | Android Software Engineer | Remote (US) | 3+ yrs | Open / Not specified; Fully remote position; no work authorization requirement stated | [Apply](https://jobs.ashbyhq.com/bjakcareer/cad74f2c-54d1-4c78-adbe-65cb24855d6f) |
 | 2026-06-28 | BJAK | AI Backend Engineer (AI Workflow Systems) | Remote (US) | Not stated | Open / Not specified; Fully remote position; no work authorization requirement stated | [Apply](https://jobs.ashbyhq.com/bjakcareer/320caacb-87b5-4a8a-b23c-2300cfb6c56f) |
-| 2026-06-27 | Varda | Senior Controls and Automation Software Engineer | El Segundo, CA | 5+ yrs | Requires US person status; Must hire U.S. persons for export-controlled items | [Apply](https://job-boards.greenhouse.io/vardaspace/jobs/7787935003) |
-| 2026-06-27 | Ro | Senior AI Engineer | New York, NY | Not stated | Open / Not specified; No work authorization requirement stated | [Apply](https://jobs.lever.co/ro/81dd41da-ba24-435b-83c4-bd19a312744b) |
-| 2026-06-27 | Ro | AI Engineer | New York, NY | Not stated | Open / Not specified; No work authorization requirement stated | [Apply](https://jobs.lever.co/ro/0b6ded09-e358-4e39-a428-a2cbf6b15cda) |
-| 2026-06-27 | Ro | AI Data Scientist | New York, NY | Not stated | Open / Not specified; No work authorization requirement stated | [Apply](https://jobs.lever.co/ro/68d2dbb0-7e75-412a-8067-ef0e11ea7f19) |
-| 2026-06-27 | Philips | Research Scientist - Computed Tomography (Orange, OH) | Orange, OH | 3+ yrs | Requires unrestricted US work authorization; US work authorization required; no sponsorship | [Apply](https://philips.wd3.myworkdayjobs.com/jobs-and-careers/job/Orange-OH-Ohio-United-States/Research-Scientist---Computed-Tomography--Orange--OH-_586925) |
-| 2026-06-27 | NVIDIA | Senior Systems Software Engineer, CUDA Driver - Multi-Node and Memory Model | Santa Clara, CA | 8+ yrs | Open / Not specified; No explicit work authorization requirement stated | [Apply](https://nvidia.eightfold.ai/careers/job/893394677335) |
-| 2026-06-27 | NVIDIA | Senior Systems Software Engineer, CUDA Driver - Multi-Node and Memory Model | Santa Clara, CA | 8+ yrs | Open / Not specified; No explicit work authorization requirement stated | [Apply](https://nvidia.wd5.myworkdayjobs.com/NVIDIAExternalCareerSite/job/US-CA-Santa-Clara/Senior-Systems-Software-Engineer--CUDA-Driver---Multi-Node-and-Memory-Model_JR2014447) |
-| 2026-06-27 | NVIDIA | Senior Systems Software Engineer, CUDA Driver - Multi-Node and Memory Model | Santa Clara, CA | 8+ yrs | Open / Not specified; No explicit work authorization requirement stated | [Apply](https://nvidia.wd5.myworkdayjobs.com/NVIDIAExternalCareerSite/job/US-CA-Santa-Clara/Senior-Systems-Software-Engineer--CUDA-Driver---Multi-Node-and-Memory-Model_JR2014447) |
-| 2026-06-27 | NVIDIA | Senior Systems Software Engineer, CUDA Driver | Santa Clara, CA | 7+ yrs | Open / Not specified; No explicit work authorization requirement stated | [Apply](https://nvidia.eightfold.ai/careers/job/893394695284) |
-| 2026-06-27 | NVIDIA | Senior Systems Software Engineer, CUDA Driver | Santa Clara, CA | 7+ yrs | Open / Not specified; No explicit work authorization requirement stated | [Apply](https://nvidia.wd5.myworkdayjobs.com/NVIDIAExternalCareerSite/job/US-CA-Santa-Clara/Senior-Systems-Software-Engineer--CUDA-Driver_JR2009427) |
-| 2026-06-27 | NVIDIA | Senior Systems Software Engineer, CUDA Driver | Santa Clara, CA | 7+ yrs | Open / Not specified; No explicit work authorization requirement stated | [Apply](https://nvidia.wd5.myworkdayjobs.com/NVIDIAExternalCareerSite/job/US-CA-Santa-Clara/Senior-Systems-Software-Engineer--CUDA-Driver_JR2009427) |
-| 2026-06-27 | NVIDIA | Senior Software Engineer, CUDA Deep Learning Systems | Santa Clara, CA | 8+ yrs | Open / Not specified; No explicit work authorization requirement stated | [Apply](https://nvidia.eightfold.ai/careers/job/893395142941) |
-| 2026-06-27 | NVIDIA | Senior Software Engineer - Python Numerical Computing Libraries | Santa Clara, CA | 6+ yrs | Open / Not specified; No explicit work authorization requirement stated | [Apply](https://nvidia.eightfold.ai/careers/job/893394577551) |
-| 2026-06-27 | NVIDIA | Senior Software Engineer - Python Numerical Computing Libraries | Santa Clara, CA | 6+ yrs | Open / Not specified; No explicit work authorization requirement stated | [Apply](https://nvidia.wd5.myworkdayjobs.com/NVIDIAExternalCareerSite/job/US-CA-Santa-Clara/Senior-Software-Engineer---Python-Numerical-Computing-Libraries_JR2016201) |
-| 2026-06-27 | NVIDIA | Senior Software Engineer - Python Numerical Computing Libraries | Santa Clara, CA | 6+ yrs | Open / Not specified; No explicit work authorization requirement stated | [Apply](https://nvidia.wd5.myworkdayjobs.com/NVIDIAExternalCareerSite/job/US-CA-Santa-Clara/Senior-Software-Engineer---Python-Numerical-Computing-Libraries_JR2016201) |
-| 2026-06-27 | NVIDIA | Principal System Software Engineer - CUDA Driver | Santa Clara, CA | 15+ yrs | Open / Not specified; No explicit work authorization requirement stated | [Apply](https://nvidia.eightfold.ai/careers/job/893383891844) |
-| 2026-06-27 | Higharc | Sr. Software Engineer, Estimate | Remote (US) | Not stated | Open / Not specified; No work authorization requirement stated | [Apply](https://jobs.ashbyhq.com/higharc/fe1d6538-2ac1-4ff8-aada-3fa7b202adc1) |
-| 2026-06-27 | Doxel | Senior Platform Engineer, Security | San Francisco, CA | Not stated | Open / Not specified; No explicit work authorization or sponsorship requirements stated | [Apply](https://jobs.lever.co/doxel/9f0abbc9-3579-4bf4-9657-988bfc859539) |
-| 2026-06-27 | Commure | Senior Software Engineer, R&D | Mountain View, CA | Not stated | Open / Not specified; No work authorization requirement stated | [Apply](https://jobs.ashbyhq.com/commure/cf28305f-0a9f-4b1b-a449-7f77aa0e2b14) |
 
 ## Managerial
 
-Openings in this section: 8
+Openings in this section: 7
 
 | Date | Company | Role | Location | Experience | Work Authorization | Link |
 | --- | --- | --- | --- | --- | --- | --- |
@@ -1821,4 +1802,3 @@ Openings in this section: 8
 | 2026-07-01 | Barclays | SRE Virtual Desktop Operations Engineer - AVP | New York, NY | 5+ yrs | Open / Not specified; No explicit work authorization requirement stated | [Apply](https://barclays.wd3.myworkdayjobs.com/External_Career_Site_Barclays/job/New-York-745-7th-Avenue/SRE-Virtual-Desktop-Operations-Engineer---AVP_JR-0000099354-1) |
 | 2026-06-30 | Lumafield | Forward Deployed Engineer | Boston, MA | Not stated | Open / Not specified; No work authorization requirement stated | [Apply](https://jobs.lever.co/lumafield/489ed061-1187-4b6b-bd13-786ed72abb6f) |
 | 2026-06-29 | Barclays | Compliance Data Scientist | New York, NY | Not stated | Open / Not specified; No work authorization requirement stated | [Apply](https://barclays.wd3.myworkdayjobs.com/External_Career_Site_Barclays/job/New-York-745-7th-Avenue/Compliance-Data-Scientist_JR-0000120463) |
-| 2026-06-27 | Plaud | Senior Full-Stack Engineer -Headless Commerce | San Francisco, CA | 5+ yrs | Open / Not specified; No work authorization requirement stated | [Apply](https://jobs.ashbyhq.com/plaud/d5a5ea33-c6ed-44ab-ad1c-ff597c5e89ea) |
