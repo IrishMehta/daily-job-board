@@ -4,23 +4,29 @@ A daily-refreshed list of early-career, new-grad, and mid-career tech job openin
 
 Use the interactive job board here: [https://irishmehta.github.io/daily-job-board/](https://irishmehta.github.io/daily-job-board/)
 
-_Generated at 2026-07-12T13:02:05.516057+00:00_
+_Generated at 2026-07-13T13:06:31.069722+00:00_
 
 ## Summary
 
-- Total openings: 2488
+- Total openings: 2509
 - Scope: US-based openings only (README and dashboard)
 - Window: jobs posted within the last 7 day(s)
-- Early Career / New Grad: 437
-- Mid-Career / Senior: 2042
+- Early Career / New Grad: 443
+- Mid-Career / Senior: 2057
 - Managerial: 9
 
 ## Early Career / New Grad
 
-Openings in this section: 437
+Openings in this section: 443
 
 | Date | Company | Role | Location | Experience | Work Authorization | Link |
 | --- | --- | --- | --- | --- | --- | --- |
+| 2026-07-13 | Saia | Systems Engineer | Atlanta, GA | 2+ yrs | Open / Not specified; No explicit work authorization requirement stated | [Apply](https://saia.wd1.myworkdayjobs.com/SaiaCareers/job/US---GA---Johns-Creek/Systems-Engineer_JR4701-2026) |
+| 2026-07-13 | KLA | Associate Test Engineer Trainee | Milpitas, CA | Not stated | Open / Not specified; No explicit work authorization requirement stated | [Apply](https://kla.wd1.myworkdayjobs.com/Search/job/Milpitas-CA/Associate-Test-Engineer-Trainee_2638174) |
+| 2026-07-13 | KLA | Associate Test Engineer Trainee | Milpitas, CA | Not stated | Open / Not specified; No explicit work authorization requirement stated | [Apply](https://kla.wd1.myworkdayjobs.com/Search/job/Milpitas-CA/Associate-Test-Engineer-Trainee_2638174) |
+| 2026-07-12 | Raytheon | Systems Integration and Test Engineer | Richardson, TX | 2+ yrs | Requires unrestricted US work authorization; Must be eligible to work in the US | [Apply](https://globalhr.wd5.myworkdayjobs.com/REC_RTX_Ext_Gateway/job/US-TX-RICHARDSON-C17--1717-Cityline-Dr--CITYLINE-C17/Systems-Integration-and-Test-Engineer_01859086) |
+| 2026-07-12 | Northrop Grumman | Systems Engineer 2/3 | Aurora, CO | 0+ yrs | Requires clearance / public trust; SCI clearance required | [Apply](https://ngc.eightfold.ai/careers/job/1340072848625) |
+| 2026-07-12 | Northrop Grumman | Systems Engineer 2/3 | Aurora, CO | 2+ yrs | Requires unrestricted US work authorization; Must have active U.S. Government DoD SCI clearance | [Apply](https://ngc.wd1.myworkdayjobs.com/Northrop_Grumman_External_Site/job/United-States-Colorado-Aurora/Systems-Engineer-2-3_R10239633) |
 | 2026-07-12 | Genworth | Data Engineer | Richmond, VA \| Stamford, CT | 2+ yrs | Open / Not specified; No work authorization requirement stated | [Apply](https://gnw.wd1.myworkdayjobs.com/GNW/job/Richmond-Virginia/Data-Engineer_REQ-260206) |
 | 2026-07-12 | Cisco | Cloud Engineer | Milpitas, CA | 1-2 yrs | Open / Not specified; No explicit work authorization requirement stated | [Apply](https://cisco.wd5.myworkdayjobs.com/Cisco_Careers/job/Milpitas-California-US/Cloud-Engineer_2018124) |
 | 2026-07-11 | Northwood Space | Electronics Test Engineer (Early Career) | Torrance, CA | 0-4 yrs | Requires US person status; Must be U.S. citizen or LPR for ITAR compliance | [Apply](https://jobs.ashbyhq.com/northwoodspace/e153b809-8535-4d9d-b48c-c25acdeadae7) |
@@ -461,13 +467,54 @@ Openings in this section: 437
 
 ## Mid-Career / Senior
 
-Openings in this section: 2042
+Openings in this section: 2057
 
 | Date | Company | Role | Location | Experience | Work Authorization | Link |
 | --- | --- | --- | --- | --- | --- | --- |
+| 2026-07-13 | jobgether | Backend Infrastructure Engineer | Remote (US) | Not stated | Open / Not specified; No explicit work authorization requirement stated | [Apply](https://jobs.lever.co/jobgether/d5fe2092-0eab-447d-b8b8-c914c38d101c) |
+| 2026-07-13 | Workstream | Senior Software Engineer (Ruby on Rails) | San Francisco, CA | 3+ yrs | Open / Not specified; No work authorization requirement stated | [Apply](https://job-boards.greenhouse.io/workstream/jobs/5597335004) |
+| 2026-07-13 | U.S. Bank | Tealium Senior Software Engineer (multiple positions) in Irving, TX. | Irving, TX | 3+ yrs | No sponsorship; No visa sponsorship available | [Apply](https://usbank.wd1.myworkdayjobs.com/US_Bank_Careers/job/Irving-TX/Tealium-Senior-Software-Engineer--multiple-positions--in-Irving--TX_2026-0020428) |
+| 2026-07-13 | U.S. Bank | Senior Software Engineer - Mobile (Multiple openings) in Cupertino, CA. | Cupertino, CA | 5+ yrs | No sponsorship; No visa sponsorship available | [Apply](https://usbank.wd1.myworkdayjobs.com/US_Bank_Careers/job/Cupertino-CA/Senior-Software-Engineer---Mobile--Multiple-openings--in-Cupertino--CA_2026-0020113) |
+| 2026-07-13 | Travelers | Software Engineer II - Enterprise AI Products | Hartford, CT | 4+ yrs | Requires unrestricted US work authorization; Authorized to work in the U.S. | [Apply](https://travelers.wd5.myworkdayjobs.com/External/job/CT---Hartford/Software-Engineer-II---Enterprise-AI-Products_R-51192-1) |
+| 2026-07-13 | Taptap Send | Analytics Engineer | New York, NY | 3+ yrs | Country-specific work authorization; Right to work in the UK required | [Apply](https://jobs.ashbyhq.com/taptapsend/a96ce6ce-0e8c-424d-9870-6efa74d82b85) |
+| 2026-07-13 | State Street | Principal Software Engineer | Burlington, MA | 10+ yrs | Open / Not specified; No work authorization requirement stated | [Apply](https://statestreet.wd1.myworkdayjobs.com/Global/job/Burlington-Massachusetts/Principal-Software-Engineer_R-794063) |
+| 2026-07-13 | NVIDIA | Senior System Software Engineer for Cloud – GeForce NOW | Remote (US) | 8+ yrs | Open / Not specified; No explicit work authorization requirement stated | [Apply](https://nvidia.eightfold.ai/careers/job/893396308312) |
+| 2026-07-13 | NVIDIA | Senior System Software Engineer for Cloud â GeForce NOW | Remote (US) | 8+ yrs | Open / Not specified; No explicit work authorization requirement stated | [Apply](https://nvidia.wd5.myworkdayjobs.com/NVIDIAExternalCareerSite/job/US-TX-Remote/Senior-System-Software-Engineer-for-Cloud---GeForce-NOW_JR2021248) |
+| 2026-07-13 | NVIDIA | Senior System Software Engineer for Cloud â GeForce NOW | Remote (US) | 8+ yrs | Open / Not specified; No explicit work authorization requirement stated | [Apply](https://nvidia.wd5.myworkdayjobs.com/NVIDIAExternalCareerSite/job/US-TX-Remote/Senior-System-Software-Engineer-for-Cloud---GeForce-NOW_JR2021248) |
+| 2026-07-13 | NVIDIA | Senior Data Scientist, Voice of the Customer - GeForce NOW | Santa Clara, CA | 5+ yrs | Open / Not specified; No explicit work authorization requirement stated | [Apply](https://nvidia.eightfold.ai/careers/job/893396308283) |
+| 2026-07-13 | NVIDIA | Senior Data Scientist, Voice of the Customer - GeForce NOW | Santa Clara, CA | 5+ yrs | Requires unrestricted US work authorization; Must be eligible to work in the US | [Apply](https://nvidia.wd5.myworkdayjobs.com/NVIDIAExternalCareerSite/job/US-CA-Santa-Clara/Senior-Data-Scientist--Voice-of-the-Customer---GeForce-NOW_JR2021250) |
+| 2026-07-13 | NVIDIA | Senior Data Scientist, Voice of the Customer - GeForce NOW | Santa Clara, CA | 5+ yrs | Requires unrestricted US work authorization; Must be eligible to work in the US | [Apply](https://nvidia.wd5.myworkdayjobs.com/NVIDIAExternalCareerSite/job/US-CA-Santa-Clara/Senior-Data-Scientist--Voice-of-the-Customer---GeForce-NOW_JR2021250) |
+| 2026-07-13 | Mass General Brigham | Senior Software Engineer - Deep Neurophenotyping | Boston, MA | 5-7 yrs | Open / Not specified; No explicit work authorization requirement stated | [Apply](https://massgeneralbrigham.wd1.myworkdayjobs.com/MGBExternal/job/Boston-MA/Senior-Software-Engineer---Deep-Neurophenotyping_RQ4072068) |
+| 2026-07-13 | Leidos | Senior Software Engineer | Baltimore, MD | 12+ yrs | Requires clearance / public trust; Public trust clearance required | [Apply](https://leidos.wd5.myworkdayjobs.com/External/job/Baltimore-MD/Senior-Software-Engineer_R-00187109-1) |
+| 2026-07-13 | Leidos | Senior Software Engineer | Baltimore, MD | 12+ yrs | Requires clearance / public trust; Public trust clearance required | [Apply](https://leidos.wd5.myworkdayjobs.com/External/job/Baltimore-MD/Senior-Software-Engineer_R-00187109-1) |
+| 2026-07-13 | Ford | Research Engineer | Dearborn, MI | 3+ yrs | No sponsorship; Must be legally authorized to work in the US | [Apply](https://ford.eightfold.ai/careers/job/563568453094361) |
+| 2026-07-13 | Cisco | Software Engineer, Front-End | Milpitas, CA | 3+ yrs | Open / Not specified; No explicit work authorization requirement stated | [Apply](https://cisco.wd5.myworkdayjobs.com/Cisco_Careers/job/Milpitas-California-US/Software-Engineer--Front-End_2018231) |
+| 2026-07-13 | Booz Allen | UI Full Stack Software Developer | Fort Meade, MD | 3+ yrs | Requires clearance / public trust; TS/SCI clearance with polygraph required | [Apply](https://bah.wd1.myworkdayjobs.com/BAH_Jobs/job/Fort-Meade-MD/UI-Full-Stack-Software-Developer_R0237666) |
+| 2026-07-13 | Booz Allen | Software Engineer, Senior | Fort Meade, MD | 16+ yrs | Requires US person status; TS/SCI clearance required | [Apply](https://bah.wd1.myworkdayjobs.com/BAH_Jobs/job/Fort-Meade-MD/Software-Engineer--Senior_R0237633) |
+| 2026-07-13 | Booz Allen | Software Engineer, Lead | Fort Meade, MD | 12+ yrs | Requires US person status; TS/SCI clearance with polygraph required | [Apply](https://bah.wd1.myworkdayjobs.com/BAH_Jobs/job/Fort-Meade-MD/Software-Engineer--Lead_R0237634) |
+| 2026-07-13 | Booz Allen | Software Developer, Lead | Fort Meade, MD | 20+ yrs | Requires US person status; TS/SCI clearance with polygraph required | [Apply](https://bah.wd1.myworkdayjobs.com/BAH_Jobs/job/Fort-Meade-MD/Software-Developer--Lead_R0226754) |
+| 2026-07-13 | Adobe | Software Development Engineer | San Jose, CA | 3+ yrs | Open / Not specified; No explicit work authorization requirement stated | [Apply](https://adobe.wd5.myworkdayjobs.com/external_experienced/job/San-Jose/Software-Development-Engineer_R170145) |
 | 2026-07-12 | xAI | Software Engineer - X Data | Palo Alto, CA | 3+ yrs | Open / Not specified; No work authorization requirement stated | [Apply](https://job-boards.greenhouse.io/xai/jobs/5182183007) |
+| 2026-07-12 | onoshealth | Lead Data Scientist | San Francisco, CA | 8+ yrs | Open / Not specified; No explicit work authorization requirement stated | [Apply](https://jobs.ashbyhq.com/onoshealth/725910e1-eeac-4306-a270-857db0fd6eea) |
+| 2026-07-12 | firecrawl | Platform Engineer | San Francisco, CA \| Remote (US) | 4+ yrs | Requires unrestricted US work authorization; Must already be authorized to work in the US | [Apply](https://jobs.ashbyhq.com/firecrawl/b47dca7f-7f74-4046-a569-1da6f24873ef) |
+| 2026-07-12 | firecrawl | Backend Infrastructure Engineer | San Francisco, CA \| Remote (US) | 3+ yrs | Requires unrestricted US work authorization; Must already be authorized to work in the US | [Apply](https://jobs.ashbyhq.com/firecrawl/6840bbee-aae5-4846-97a2-ec2e764ee75b) |
+| 2026-07-12 | Zipline | Senior Production Test Engineer | South San Francisco, CA | 7+ yrs | Open / Not specified; No explicit work authorization or sponsorship requirements stated | [Apply](https://www.zipline.com/open-roles?gh_jid=7802159003) |
+| 2026-07-12 | Northrop Grumman | Systems Integration &amp; Test Engineer - Level 3/4 | Aurora, CO | 3+ yrs | Requires unrestricted US work authorization; Must be eligible to work in the US | [Apply](https://ngc.wd1.myworkdayjobs.com/Northrop_Grumman_External_Site/job/United-States-Colorado-Aurora/Systems-Integration---Test-Engineer---Level-3-4_R10238978-1) |
+| 2026-07-12 | Northrop Grumman | Systems Integration & Test Engineer - Level 3/4 | Aurora, CO | 3+ yrs | Requires clearance / public trust; SCI clearance required | [Apply](https://ngc.eightfold.ai/careers/job/1340072715954) |
+| 2026-07-12 | Northrop Grumman | RF Systems Engineer 3/4 | Boulder, CO | 5+ yrs | Requires US citizenship; U.S. citizenship required; no sponsorship | [Apply](https://ngc.eightfold.ai/careers/job/1340072847322) |
+| 2026-07-12 | Northrop Grumman | RF Systems Engineer 3/4 | Boulder, CO | 5+ yrs | Requires unrestricted US work authorization; Must be a U.S. citizen with ability to obtain U.S. government clearance | [Apply](https://ngc.wd1.myworkdayjobs.com/Northrop_Grumman_External_Site/job/United-States-Colorado-Boulder/RF-Systems-Engineer-3-4_R10239605) |
+| 2026-07-12 | Northrop Grumman | Principal / Sr Principal Missile Warning System Engineer | Warner Robins, GA | 5+ yrs | Requires clearance / public trust; U.S. Secret clearance required | [Apply](https://ngc.eightfold.ai/careers/job/1340072898872) |
+| 2026-07-12 | Northrop Grumman | Principal / Sr Principal Missile Warning System Engineer | Warner Robins, GA | 5+ yrs | Requires unrestricted US work authorization; Must hold US government Secret clearance | [Apply](https://ngc.wd1.myworkdayjobs.com/Northrop_Grumman_External_Site/job/United-States-Georgia-Warner-Robins/Principal---Sr-Principal-Missile-Warning-System-Engineer_R10239991) |
+| 2026-07-12 | Hewlett Packard Enterprise | Senior Presales, Systems Engineer - NYC Metro | New York, NY | 8+ yrs | Open / Not specified; No explicit work authorization requirement stated | [Apply](https://hpe.wd5.myworkdayjobs.com/WFMathpe/job/All-New-York-United-States-of-America/Senior-Presales--Systems-Engineer---NYC-Metro_1209464-3) |
+| 2026-07-12 | Hewlett Packard Enterprise | Senior Presales, Systems Engineer - NYC Metro | New York, NY | 8+ yrs | Open / Not specified; No explicit work authorization requirement stated | [Apply](https://hpe.wd5.myworkdayjobs.com/Jobsathpe/job/All-New-York-United-States-of-America/Senior-Presales--Systems-Engineer---NYC-Metro_1209464) |
+| 2026-07-12 | General Motors | Sr. Systems Engineer - Global Design IT | Global Technical Center - Design Ctr, US | 7+ yrs | No sponsorship; No work authorization or sponsorship required | [Apply](https://generalmotors.wd5.myworkdayjobs.com/Careers_GM/job/Warren-Michigan-United-States-of-America/Sr-Systems-Engineer---Global-Design-IT_JR-202614005) |
 | 2026-07-12 | GDIT | Software Developer/Web Master Senior | Fort Meade, MD | 20+ yrs | Requires unrestricted US work authorization; Must be eligible to work in the US | [Apply](https://gdit.wd5.myworkdayjobs.com/External_Career_Site/job/USA-MD-Fort-Meade/Software-Developer-Web-Master-Senior_RQ223697-2) |
+| 2026-07-12 | Fractal | Lead Architect, Forward Deployed Engineer (Cogentiq) | New York, NY | Not stated | No sponsorship; No work authorization or sponsorship required | [Apply](https://fractal.wd1.myworkdayjobs.com/Careers/job/New-York/Lead-Architect--Forward-Deployed-Engineer--Cogentiq-_SR-43516) |
+| 2026-07-12 | Fractal | Lead Architect, Forward Deployed Engineer (Cogentiq) | New York, NY | Not stated | No sponsorship; No work authorization or sponsorship required | [Apply](https://fractal.wd1.myworkdayjobs.com/Careers/job/New-York/Lead-Architect--Forward-Deployed-Engineer--Cogentiq-_SR-43516) |
+| 2026-07-12 | Fractal | Architect, Forward Deployed Engineer (Cogentiq) | New York, NY | Not stated | No sponsorship; No work authorization or sponsorship required | [Apply](https://fractal.wd1.myworkdayjobs.com/Careers/job/New-York/Architect--Forward-Deployed-Engineer--Cogentiq-_SR-43515) |
+| 2026-07-12 | Fractal | Architect, Forward Deployed Engineer (Cogentiq) | New York, NY | Not stated | No sponsorship; No work authorization or sponsorship required | [Apply](https://fractal.wd1.myworkdayjobs.com/Careers/job/New-York/Architect--Forward-Deployed-Engineer--Cogentiq-_SR-43515) |
 | 2026-07-12 | Cisco | Cloud Engineer | Milpitas, CA | 5+ yrs | Open / Not specified; No explicit work authorization requirement stated | [Apply](https://cisco.wd5.myworkdayjobs.com/Cisco_Careers/job/Milpitas-California-US/Cloud-Engineer_2017918) |
+| 2026-07-12 | Accenture Federal Services | Front End Developer | Washington, DC | 8+ yrs | Requires unrestricted US work authorization; Must have work authorization without visa sponsorship | [Apply](https://boards.greenhouse.io/accenturefederalservices/jobs/4692035006?gh_jid=4692035006) |
 | 2026-07-11 | tp-link-usa-corp | Senior Cloud Security Engineer | Irvine, CA | Not stated | Open / Not specified; No work authorization requirement stated | [Apply](https://apply.workable.com/j/CC4B515ADB) |
 | 2026-07-11 | gdit | Test Engineer | Huntsville, AL | Not stated | Open / Not specified; No work authorization requirement stated | [Apply](https://gdit.wd5.myworkdayjobs.com/job/USA-AL-Huntsville/Test-Engineer_RQ223918-2) |
 | 2026-07-11 | Zipline | Senior Integration and Test Software Engineer - Long Range Plaform | South San Francisco, CA | 5+ yrs | Open / Not specified; Visa sponsorship available | [Apply](https://www.zipline.com/open-roles?gh_jid=7802156003) |
@@ -2481,32 +2528,6 @@ Openings in this section: 2042
 | 2026-07-06 | ALTEN Technology USA | Test Engineer – Power Electronics Compliance | Mountain View, CA | 4+ yrs | Requires unrestricted US work authorization; Must be eligible to work in the US | [Apply](https://job-boards.greenhouse.io/altentechnologyusa/jobs/5180805007) |
 | 2026-07-06 | 8451 | Senior Data Engineer (P1692) | Cincinnati, OH \| Chicago, IL | 3+ yrs | No sponsorship; No visa sponsorship required | [Apply](https://job-boards.greenhouse.io/8451/jobs/8620974002) |
 | 2026-07-06 | 5amventures | Machine Learning Engineer - Computational Drug Discovery | Watertown, MA | Not stated | Open / Not specified; No work authorization requirement stated | [Apply](https://jobs.lever.co/5amventures/b7c66d8b-7416-4d40-aadd-8cacbfb83d13) |
-| 2026-07-05 | SuperDial | Sr. Software Engineer I | Burlingame, CA | 3+ yrs | Open / Not specified; No work authorization requirement stated | [Apply](https://jobs.ashbyhq.com/superdial/be6a3484-cccd-4baf-8741-7ab368c8f964) |
-| 2026-07-05 | Sony Pictures Entertainment | Principal Forward Deployed Engineer | Culver City, CA | 8+ yrs | Open / Not specified; No explicit work authorization requirement stated | [Apply](https://spe.wd1.myworkdayjobs.com/SonyPicturesEntertainment/job/Culver-City-California/Principal-Forward-Deployed-Engineer_JR113582) |
-| 2026-07-05 | NVIDIA | Senior Physics-Machine Learning Engineer - CAE | Santa Clara, CA | 5+ yrs | Open / Not specified; No explicit work authorization requirement stated | [Apply](https://nvidia.eightfold.ai/careers/job/893393264029) |
-| 2026-07-05 | NVIDIA | Senior Physics-Machine Learning Engineer - CAE | Santa Clara, CA | 5+ yrs | Open / Not specified; No explicit work authorization requirement stated | [Apply](https://nvidia.wd5.myworkdayjobs.com/NVIDIAExternalCareerSite/job/US-CA-Santa-Clara/Senior-Physics-Machine-Learning-Engineer---CAE_JR2012866) |
-| 2026-07-05 | NVIDIA | Senior Physics-Machine Learning Engineer - CAE | Santa Clara, CA | 5+ yrs | Open / Not specified; No explicit work authorization requirement stated | [Apply](https://nvidia.wd5.myworkdayjobs.com/NVIDIAExternalCareerSite/job/US-CA-Santa-Clara/Senior-Physics-Machine-Learning-Engineer---CAE_JR2012866) |
-| 2026-07-05 | NVIDIA | Senior Machine Learning Engineer | Santa Clara, CA | 6+ yrs | Open / Not specified; No explicit work authorization requirement stated | [Apply](https://nvidia.eightfold.ai/careers/job/893396092303) |
-| 2026-07-05 | NVIDIA | Senior Machine Learning Engineer | Santa Clara, CA | 6+ yrs | Open / Not specified; No explicit work authorization requirement stated | [Apply](https://nvidia.wd5.myworkdayjobs.com/NVIDIAExternalCareerSite/job/US-CA-Santa-Clara/Senior-Machine-Learning-Engineer_JR2020765) |
-| 2026-07-05 | NVIDIA | Senior Machine Learning Engineer | Santa Clara, CA | 6+ yrs | Open / Not specified; No explicit work authorization requirement stated | [Apply](https://nvidia.wd5.myworkdayjobs.com/NVIDIAExternalCareerSite/job/US-CA-Santa-Clara/Senior-Machine-Learning-Engineer_JR2020765) |
-| 2026-07-05 | GRVTY | Data Scientist - Senior | Springfield, VA | 10+ yrs | Requires clearance / public trust; Active TS/SCI Clearance required | [Apply](https://job-boards.greenhouse.io/grvty/jobs/4243149009) |
-| 2026-07-05 | GDIT | Sr. Java Software Developer | Remote (US) | 7+ yrs | Requires unrestricted US work authorization; Must be eligible to work in the US | [Apply](https://gdit.wd5.myworkdayjobs.com/External_Career_Site/job/Any-Location--Remote/Sr-Java-Software-Developer_RQ223594-1) |
-| 2026-07-05 | Fluidstack | Software Engineer, Product | San Francisco, CA | 5+ yrs | Open / Not specified; No work authorization requirement stated | [Apply](https://jobs.ashbyhq.com/fluidstack/9f85d103-8e64-48f5-9f82-268b5cb3374d) |
-| 2026-07-05 | Fluidstack | Software Engineer, GPU Infrastructure | San Francisco, CA | Not stated | Open / Not specified; No work authorization requirement stated | [Apply](https://jobs.ashbyhq.com/fluidstack/474c1a81-c4ee-4504-8751-3ff9bee9759f) |
-| 2026-07-05 | Fluidstack | Software Engineer, Frontend | Austin, TX | 3+ yrs | Open / Not specified; No work authorization requirement stated | [Apply](https://jobs.ashbyhq.com/fluidstack/501588d1-8980-4ec9-ae69-5c39cc5bfabc) |
-| 2026-07-05 | Fluidstack | Software Engineer, Compute (GPU) | San Francisco, CA | Not stated | Open / Not specified; No work authorization requirement stated | [Apply](https://jobs.ashbyhq.com/fluidstack/f134128a-29e3-4b5d-88c9-602c479edcbe) |
-| 2026-07-05 | Fluidstack | Software Engineer, Cloud Infrastructure | San Francisco, CA | Not stated | Open / Not specified; No work authorization requirement stated | [Apply](https://jobs.ashbyhq.com/fluidstack/b2c06bf2-6153-41ff-ade8-638894552984) |
-| 2026-07-05 | Fluidstack | Site Reliability Engineer, Compute | San Francisco, CA | Not stated | Open / Not specified; No work authorization requirement stated | [Apply](https://jobs.ashbyhq.com/fluidstack/ca838ed3-f61a-4d75-993f-3ab837998991) |
-| 2026-07-05 | Fluidstack | Senior Software Engineer | San Francisco, CA | Not stated | Open / Not specified; No work authorization requirement stated | [Apply](https://jobs.ashbyhq.com/fluidstack/af4d0d75-47cd-46d0-aae7-e6de8dd97871) |
-| 2026-07-05 | Fluidstack | Platform Engineer | San Francisco, CA | 3+ yrs | Open / Not specified; No work authorization requirement stated | [Apply](https://jobs.ashbyhq.com/fluidstack/cd97ec50-81f7-4fdd-a95b-602e6e1303a8) |
-| 2026-07-05 | Fluidstack | Full-Stack Software Engineer | San Francisco, CA | 5+ yrs | Open / Not specified; No work authorization requirement stated | [Apply](https://jobs.ashbyhq.com/fluidstack/1d9ee763-e222-4df9-b5e2-6636ab24ed02) |
-| 2026-07-05 | Fluidstack | Distributed Systems Engineer | San Francisco, CA | Not stated | Open / Not specified; No work authorization requirement stated | [Apply](https://jobs.ashbyhq.com/fluidstack/fdf7e107-e93b-4eff-aa66-713bfe2e1411) |
-| 2026-07-05 | Fluidstack | Backend Engineer | San Francisco, CA | Not stated | Open / Not specified; No work authorization requirement stated | [Apply](https://jobs.ashbyhq.com/fluidstack/bff2c500-d321-4bde-b251-9f7a2ef2d894) |
-| 2026-07-05 | Equal1 | Cryogenic Systems Engineer | California | 10+ yrs | Open / Not specified; No work authorization requirement stated | [Apply](https://jobs.ashbyhq.com/equal1/59104d2e-52d4-458c-be62-42b16fa2a01c) |
-| 2026-07-05 | Cisco | Software Engineer | Research Triangle Park, NC | 5+ yrs | Open / Not specified; No explicit work authorization requirement stated | [Apply](https://cisco.wd5.myworkdayjobs.com/Cisco_Careers/job/RTP-North-Carolina-US/Software-Engineer_2017070-1) |
-| 2026-07-05 | Caterpillar | Senior Software Engineer | Chicago, IL | 8+ yrs | No sponsorship; No visa sponsorship available | [Apply](https://cat.wd5.myworkdayjobs.com/CaterpillarCareers/job/Chicago-Illinois/Senior-Software-Engineer_R0000378740) |
-| 2026-07-05 | Boeing | Senior Software Engineer - Vehicle Health Management | Hazelwood, MO | 9+ yrs | Requires unrestricted US work authorization; Must be eligible to work in the US; no sponsorship | [Apply](https://boeing.wd1.myworkdayjobs.com/EXTERNAL_CAREERS/job/USA---Hazelwood-MO/Senior-Software-Engineer---Vehicle-Health-Management_JR2026516360-1) |
-| 2026-07-05 | Boeing | Senior Software Engineer - Vehicle Health Management | Hazelwood, MO | 9+ yrs | Requires unrestricted US work authorization; Must be eligible to work in the US; no sponsorship | [Apply](https://boeing.wd1.myworkdayjobs.com/external_subsidiary/job/USA---Hazelwood-MO/Senior-Software-Engineer---Vehicle-Health-Management_JR2026516360) |
 
 ## Managerial
 
