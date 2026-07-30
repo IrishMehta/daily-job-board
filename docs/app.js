@@ -425,7 +425,7 @@ function buildLocationContext(locationValue, locationProfile = null) {
 function buildLocationSuggestions(jobs) {
   const counts = new Map();
   jobs.forEach((job) => {
-    const suggestion = job.locationContext.label || job.locationContext.display;
+    const suggestion = job.locationContext.display || job.locationContext.label;
     if (!suggestion || suggestion === "Unknown") {
       return;
     }
@@ -817,7 +817,7 @@ function renderRows(jobs) {
             <span class="cell-subtext">Experience: ${escapeHtml(job.experience_display)}</span>
             ${state.resumeActive ? '<span class="cell-match-note">Resume match</span>' : ""}
           </td>
-          <td data-label="Location"><span class="cell-secondary">${escapeHtml(job.locationContext.label || job.locationContext.display)}</span></td>
+          <td data-label="Location"><span class="cell-secondary">${escapeHtml(job.locationContext.display || job.locationContext.label)}</span></td>
           <td data-label="Snapshot">
             <div class="snapshot-stack">
               <div class="snapshot-item">
