@@ -40,10 +40,9 @@
       <p class="eyebrow">Daily US Tech Jobs · AI · ML · Data · Software</p>
       <h1>Early &amp; Mid-Career Tech Job Openings in the USA</h1>
       <p class="hero-copy">
-        Browse fresh AI, machine learning, data science, and software engineering jobs
-        with filters for work authorization, sponsorship status, location, and experience.
-        This board is built for individual contributors, from new grad and early-career
-        roles through senior IC positions.
+        Explore fresh individual-contributor openings by choosing a domain, narrowing to a
+        specialization, and then selecting the industry context that interests you. Every
+        result includes work authorization, sponsorship, location, and experience details.
       </p>
       <div class="hero-pills" aria-label="Board scope">
         <span class="hero-pill">Early Career</span>
@@ -90,7 +89,21 @@
       </article>
     </section>
 
-    <section class="controls-panel">
+    <section class="taxonomy-panel" id="taxonomy-panel" aria-labelledby="taxonomy-heading">
+      <div class="taxonomy-heading-row">
+        <div>
+          <p class="seo-kicker">Browse by focus</p>
+          <h2 id="taxonomy-heading" tabindex="-1">Choose a domain</h2>
+          <p id="taxonomy-helper">Start with the kind of work you want to do.</p>
+        </div>
+        <button class="button-secondary taxonomy-reset hidden" id="taxonomy-reset-button" type="button">Start over</button>
+      </div>
+      <nav class="breadcrumb" id="taxonomy-breadcrumb" aria-label="Job focus navigation"></nav>
+      <div class="taxonomy-grid" id="taxonomy-grid"></div>
+      <button class="browse-all-button" id="browse-all-button" type="button">Browse all jobs</button>
+    </section>
+
+    <section class="controls-panel hidden" id="controls-panel">
       <div class="control-group control-group-wide">
         <label for="search-input">Search</label>
         <input id="search-input" type="search" placeholder="Title or company">
@@ -133,7 +146,7 @@
       </div>
     </section>
 
-    <section class="resume-panel" aria-labelledby="resume-match-heading">
+    <section class="resume-panel hidden" id="resume-panel" aria-labelledby="resume-match-heading">
       <div class="resume-panel-copy">
         <p class="seo-kicker">Resume Match</p>
         <h2 id="resume-match-heading">Paste resume text to surface closer job matches</h2>
@@ -161,27 +174,15 @@
       </div>
     </section>
 
-    <section class="results-header">
+    <section class="results-header hidden" id="results-header">
       <div>
         <h2>Filtered results</h2>
-        <p id="results-meta">Loading jobs...</p>
+        <p id="results-meta" aria-live="polite">Loading jobs...</p>
       </div>
     </section>
 
-    <section class="table-shell">
-      <table>
-        <thead>
-          <tr>
-            <th>Date</th>
-            <th>Company</th>
-            <th>Role</th>
-            <th>Location</th>
-            <th>Snapshot</th>
-            <th>Link</th>
-          </tr>
-        </thead>
-        <tbody id="results-body"></tbody>
-      </table>
+    <section class="table-shell hidden" id="results-shell">
+      <div class="job-grid" id="results-body"></div>
       <div class="empty-state hidden" id="empty-state">
         <h3>No jobs match the current filters.</h3>
         <p>Try clearing one or more filters or broadening your search.</p>

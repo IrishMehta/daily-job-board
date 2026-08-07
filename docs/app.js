@@ -1,5 +1,9 @@
 const state = {
   payload: null,
+  domain: "",
+  specialization: "",
+  industry: "",
+  browseAll: false,
   search: "",
   locationQuery: "",
   careerBucket: "",
@@ -154,6 +158,17 @@ const els = {
   statEarly: document.getElementById("stat-early"),
   statMid: document.getElementById("stat-mid"),
   statManagerial: document.getElementById("stat-managerial"),
+  taxonomyPanel: document.getElementById("taxonomy-panel"),
+  taxonomyHeading: document.getElementById("taxonomy-heading"),
+  taxonomyHelper: document.getElementById("taxonomy-helper"),
+  taxonomyBreadcrumb: document.getElementById("taxonomy-breadcrumb"),
+  taxonomyGrid: document.getElementById("taxonomy-grid"),
+  taxonomyResetButton: document.getElementById("taxonomy-reset-button"),
+  browseAllButton: document.getElementById("browse-all-button"),
+  controlsPanel: document.getElementById("controls-panel"),
+  resumePanel: document.getElementById("resume-panel"),
+  resultsHeader: document.getElementById("results-header"),
+  resultsShell: document.getElementById("results-shell"),
   searchInput: document.getElementById("search-input"),
   locationInput: document.getElementById("location-input"),
   locationSuggestions: document.getElementById("location-suggestions"),
@@ -198,6 +213,197 @@ function formatEnumLabel(value) {
 
 function unique(values) {
   return [...new Set(values.filter(Boolean))];
+}
+
+function taxonomyConfig() {
+  return state.payload?.taxonomy ?? { domains: [], industries: [] };
+}
+
+function findDomain(value) {
+  return taxonomyConfig().domains.find((entry) => entry.value === value);
+}
+
+function findSpecialization(value) {
+  return findDomain(state.domain)?.specializations?.find((entry) => entry.value === value);
+}
+
+function findIndustry(value) {
+  return taxonomyConfig().industries.find((entry) => entry.value === value);
+}
+
+function jobMatchesTaxonomy(job, selection = state) {
+  if (!selection.domain && !selection.specialization && !selection.industry) {
+    return true;
+  }
+  return (job.classification_paths ?? []).some((path) => (
+    (!selection.domain || path.domain === selection.domain)
+    && (!selection.specialization || (path.specializations ?? []).includes(selection.specialization))
+    && (!selection.industry || path.industry === selection.industry)
+  ));
+}
+
+function taxonomyJobs(selection = {}) {
+  return (state.payload?.jobs ?? []).filter((job) => jobMatchesTaxonomy(job, selection));
+}
+
+function uniqueJobCount(jobs) {
+  return new Set(jobs.map((job) => job.id)).size;
+}
+
+function taxonomyCard(entry, type, count, description = "") {
+  return `
+    <button class="taxonomy-card" type="button" data-taxonomy-type="${escapeHtml(type)}" data-taxonomy-value="${escapeHtml(entry.value)}">
+      <span class="taxonomy-card-label">${escapeHtml(entry.label)}</span>
+      <span class="taxonomy-card-count">${escapeHtml(count)} job${count === 1 ? "" : "s"}</span>
+      ${description ? `<span class="taxonomy-card-description">${escapeHtml(description)}</span>` : ""}
+      <span class="taxonomy-card-arrow" aria-hidden="true">→</span>
+    </button>
+  `;
+}
+
+function currentTaxonomyView() {
+  if (state.browseAll) {
+    return "jobs";
+  }
+  if (!state.domain) {
+    return "domains";
+  }
+  if (!state.specialization) {
+    return "specializations";
+  }
+  if (!state.industry) {
+    return "industries";
+  }
+  return "jobs";
+}
+
+function readUrlState() {
+  const params = new URLSearchParams(window.location.search);
+  state.domain = params.get("domain") || "";
+  state.specialization = params.get("specialization") || "";
+  state.industry = params.get("industry") || "";
+  state.browseAll = params.get("view") === "all";
+  if (!findDomain(state.domain)) {
+    state.domain = "";
+  }
+  if (!findSpecialization(state.specialization)) {
+    state.specialization = "";
+  }
+  if (!findIndustry(state.industry)) {
+    state.industry = "";
+  }
+  if (!state.domain) {
+    state.specialization = "";
+    state.industry = "";
+  } else if (!state.specialization) {
+    state.industry = "";
+  }
+}
+
+function writeUrlState(replace = false) {
+  const params = new URLSearchParams();
+  if (state.browseAll) {
+    params.set("view", "all");
+  } else {
+    if (state.domain) params.set("domain", state.domain);
+    if (state.specialization) params.set("specialization", state.specialization);
+    if (state.industry) params.set("industry", state.industry);
+  }
+  const query = params.toString();
+  const nextUrl = `${window.location.pathname}${query ? `?${query}` : ""}`;
+  const method = replace ? "replaceState" : "pushState";
+  window.history[method]({}, "", nextUrl);
+}
+
+function selectTaxonomy(type, value) {
+  state.browseAll = false;
+  state.currentPage = 1;
+  if (type === "domain") {
+    state.domain = value;
+    state.specialization = "";
+    state.industry = "";
+  } else if (type === "specialization") {
+    state.specialization = value;
+    state.industry = "";
+  } else if (type === "industry") {
+    state.industry = value;
+  }
+  writeUrlState();
+  render();
+  els.taxonomyHeading?.focus();
+}
+
+function renderTaxonomyBrowser() {
+  const view = currentTaxonomyView();
+  const domain = findDomain(state.domain);
+  const specialization = findSpecialization(state.specialization);
+  const industry = findIndustry(state.industry);
+  const scopedSpecializationJobs = state.specialization
+    ? taxonomyJobs({ domain: state.domain, specialization: state.specialization })
+    : [];
+
+  els.taxonomyBreadcrumb.innerHTML = [
+    `<button type="button" class="breadcrumb-link" data-taxonomy-reset="true">Domains</button>`,
+    domain ? `<span aria-hidden="true">/</span><button type="button" class="breadcrumb-link" data-taxonomy-domain="${escapeHtml(domain.value)}">${escapeHtml(domain.label)}</button>` : "",
+    specialization ? `<span aria-hidden="true">/</span><button type="button" class="breadcrumb-link" data-taxonomy-specialization="${escapeHtml(specialization.value)}">${escapeHtml(specialization.label)}</button>` : "",
+    industry ? `<span aria-hidden="true">/</span><span aria-current="page">${escapeHtml(industry.label)}</span>` : "",
+  ].join("");
+
+  if (view === "domains") {
+    els.taxonomyHeading.textContent = "Choose a domain";
+    els.taxonomyHelper.textContent = "Start with the kind of work you want to do.";
+    els.taxonomyGrid.innerHTML = taxonomyConfig().domains
+      .map((entry) => ({
+        entry,
+        count: uniqueJobCount(taxonomyJobs({ domain: entry.value })),
+      }))
+      .filter((item) => item.count > 0)
+      .map((item) => taxonomyCard(item.entry, "domain", item.count, item.entry.description))
+      .join("");
+  } else if (view === "specializations") {
+    els.taxonomyHeading.textContent = `${domain?.label ?? "Domain"}: choose a specialization`;
+    els.taxonomyHelper.textContent = "Narrow the results to the specific kind of work you want to see.";
+    els.taxonomyGrid.innerHTML = (domain?.specializations ?? [])
+      .map((entry) => ({
+        entry,
+        count: uniqueJobCount(taxonomyJobs({ domain: state.domain, specialization: entry.value })),
+      }))
+      .filter((item) => item.count > 0)
+      .map((item) => taxonomyCard(item.entry, "specialization", item.count))
+      .join("");
+  } else if (view === "industries") {
+    els.taxonomyHeading.textContent = `${specialization?.label ?? "Specialization"}: choose an industry`;
+    els.taxonomyHelper.textContent = "Choose the sector or context in which you want to apply this specialization.";
+    els.taxonomyGrid.innerHTML = taxonomyConfig().industries
+      .map((entry) => ({
+        entry,
+        count: uniqueJobCount(taxonomyJobs({ domain: state.domain, specialization: state.specialization, industry: entry.value })),
+      }))
+      .filter((item) => item.count > 0)
+      .map((item) => taxonomyCard(item.entry, "industry", item.count, item.entry.description))
+      .join("");
+  } else {
+    els.taxonomyHeading.textContent = `${specialization?.label ?? "Job"} openings${industry ? ` in ${industry.label}` : ""}`;
+    els.taxonomyHelper.textContent = `${uniqueJobCount(state.browseAll ? state.payload.jobs : scopedSpecializationJobs)} matching openings.`;
+    els.taxonomyGrid.innerHTML = "";
+  }
+
+  if (view !== "jobs" && !els.taxonomyGrid.innerHTML.trim()) {
+    els.taxonomyGrid.innerHTML = '<div class="taxonomy-empty">No categorized jobs are available in this refresh. Use “Browse all jobs” to view the current board.</div>';
+  }
+
+  els.taxonomyResetButton.classList.toggle("hidden", !state.domain && !state.browseAll);
+  els.browseAllButton.classList.toggle("hidden", view === "jobs");
+}
+
+function updateViewVisibility() {
+  const showResults = currentTaxonomyView() === "jobs";
+  els.taxonomyPanel.classList.toggle("results-mode", showResults);
+  els.controlsPanel.classList.toggle("hidden", !showResults);
+  els.resumePanel.classList.toggle("hidden", !showResults);
+  els.resultsHeader.classList.toggle("hidden", !showResults);
+  els.resultsShell.classList.toggle("hidden", !showResults);
+  els.paginationShell.classList.toggle("hidden", !showResults || !state.payload?.jobs?.length);
 }
 
 function normalizeComparableText(value) {
@@ -669,6 +875,9 @@ function scoreJobAgainstResume(job, resumeQueryTokens) {
 function applyFilters(jobs) {
   const query = normalizeComparableText(state.search);
   const filtered = jobs.filter((job) => {
+    if (!state.browseAll && !jobMatchesTaxonomy(job)) {
+      return false;
+    }
     if (!matchesLocationQuery(job, state.locationQuery)) {
       return false;
     }
@@ -694,6 +903,11 @@ function applyFilters(jobs) {
         job.authorization_category_label,
         job.work_authorization_display,
         job.experience_display,
+        ...(job.classification_paths ?? []).flatMap((path) => [
+          path.domain,
+          ...(path.specializations ?? []),
+          path.industry,
+        ]),
       ].join(" "),
     );
     return haystack.includes(query);
@@ -808,35 +1022,43 @@ function renderRows(jobs) {
   els.emptyState.classList.add("hidden");
   els.resultsBody.innerHTML = jobs
     .map(
-      (job) => `
-        <tr>
-          <td data-label="Date"><span class="cell-date">${escapeHtml(formatDate(job.posted_on))}</span></td>
-          <td data-label="Company"><span class="cell-primary">${escapeHtml(job.company)}</span></td>
-          <td data-label="Role">
-            <span class="cell-primary">${escapeHtml(job.title)}</span>
-            <span class="cell-subtext">Experience: ${escapeHtml(job.experience_display)}</span>
-            ${state.resumeActive ? '<span class="cell-match-note">Resume match</span>' : ""}
-          </td>
-          <td data-label="Location"><span class="cell-secondary">${escapeHtml(job.locationContext.display || job.locationContext.label)}</span></td>
-          <td data-label="Snapshot">
-            <div class="snapshot-stack">
-              <div class="snapshot-item">
-                <span class="snapshot-label">Bucket</span>
-                <span class="pill pill-bucket">${escapeHtml(job.career_bucket_label)}</span>
-              </div>
-              <div class="snapshot-item">
-                <span class="snapshot-label">Authorization</span>
-                <span class="pill pill-auth">${escapeHtml(job.authorization_category_label)}</span>
-              </div>
-              <div class="snapshot-item">
-                <span class="snapshot-label">Sponsorship</span>
-                <span class="pill pill-neutral">${escapeHtml(formatEnumLabel(job.sponsorship_status))}</span>
-              </div>
+      (job) => {
+        const path = (job.classification_paths ?? []).find((candidate) => (
+          (!state.domain || candidate.domain === state.domain)
+          && (!state.specialization || (candidate.specializations ?? []).includes(state.specialization))
+          && (!state.industry || candidate.industry === state.industry)
+        )) || (job.classification_paths ?? [])[0];
+        const domain = taxonomyConfig().domains.find((entry) => entry.value === path?.domain);
+        const specializationLabels = (path?.specializations ?? []).map((value) => {
+          const spec = taxonomyConfig().domains.flatMap((entry) => entry.specializations ?? []).find((entry) => entry.value === value);
+          return spec?.label || formatEnumLabel(value);
+        });
+        const industryLabel = findIndustry(path?.industry)?.label || "Uncategorized";
+        return `
+          <article class="job-card">
+            <div class="job-card-topline">
+              <span class="cell-date">${escapeHtml(formatDate(job.posted_on))}</span>
+              <span class="job-card-location">${escapeHtml(job.locationContext.display || job.locationContext.label)}</span>
             </div>
-          </td>
-          <td data-label="Link"><a class="link-button" href="${escapeHtml(job.job_link)}" target="_blank" rel="noopener noreferrer">Apply</a></td>
-        </tr>
-      `,
+            <h3 class="job-card-title">${escapeHtml(job.title)}</h3>
+            <p class="job-card-company">${escapeHtml(job.company)}</p>
+            <div class="job-card-taxonomy" aria-label="Job classification">
+              ${domain ? `<span class="pill pill-domain">${escapeHtml(domain.label)}</span>` : ""}
+              ${specializationLabels.map((label) => `<span class="pill pill-specialization">${escapeHtml(label)}</span>`).join("")}
+              <span class="pill pill-industry">${escapeHtml(industryLabel)}</span>
+            </div>
+            <div class="job-card-meta">
+              <span>${escapeHtml(job.career_bucket_label)}</span>
+              <span>${escapeHtml(job.experience_display)}</span>
+              <span>${escapeHtml(job.authorization_category_label)}</span>
+            </div>
+            <div class="job-card-footer">
+              ${state.resumeActive ? '<span class="cell-match-note">Resume match</span>' : ""}
+              <a class="link-button" href="${escapeHtml(job.job_link)}" target="_blank" rel="noopener noreferrer">Apply</a>
+            </div>
+          </article>
+        `;
+      },
     )
     .join("");
 }
@@ -911,7 +1133,14 @@ function render() {
     return;
   }
 
+  renderTaxonomyBrowser();
+  updateViewVisibility();
   updateSortControlState();
+  if (currentTaxonomyView() !== "jobs") {
+    els.resultsBody.innerHTML = "";
+    els.emptyState.classList.add("hidden");
+    return;
+  }
   const filteredJobs = applyFilters(state.payload.jobs);
   const pagination = getPagination(filteredJobs.length);
   state.currentPage = pagination.currentPage;
@@ -925,6 +1154,49 @@ function render() {
 }
 
 function bindControls() {
+  els.taxonomyGrid.addEventListener("click", (event) => {
+    const card = event.target.closest("[data-taxonomy-type]");
+    if (!card) {
+      return;
+    }
+    selectTaxonomy(card.dataset.taxonomyType, card.dataset.taxonomyValue);
+  });
+  els.taxonomyBreadcrumb.addEventListener("click", (event) => {
+    const reset = event.target.closest("[data-taxonomy-reset]");
+    const domain = event.target.closest("[data-taxonomy-domain]");
+    const specialization = event.target.closest("[data-taxonomy-specialization]");
+    if (reset) {
+      state.domain = "";
+      state.specialization = "";
+      state.industry = "";
+      state.browseAll = false;
+      state.currentPage = 1;
+      writeUrlState();
+      render();
+    } else if (domain) {
+      selectTaxonomy("domain", domain.dataset.taxonomyDomain);
+    } else if (specialization) {
+      selectTaxonomy("specialization", specialization.dataset.taxonomySpecialization);
+    }
+  });
+  els.taxonomyResetButton.addEventListener("click", () => {
+    state.domain = "";
+    state.specialization = "";
+    state.industry = "";
+    state.browseAll = false;
+    state.currentPage = 1;
+    writeUrlState();
+    render();
+  });
+  els.browseAllButton.addEventListener("click", () => {
+    state.domain = "";
+    state.specialization = "";
+    state.industry = "";
+    state.browseAll = true;
+    state.currentPage = 1;
+    writeUrlState();
+    render();
+  });
   els.searchInput.addEventListener("input", (event) => {
     state.search = event.target.value;
     state.currentPage = 1;
@@ -983,6 +1255,11 @@ function bindControls() {
   });
   els.resumeApplyButton.addEventListener("click", applyResumeMatch);
   els.resumeClearButton.addEventListener("click", clearResumeMatch);
+  window.addEventListener("popstate", () => {
+    readUrlState();
+    state.currentPage = 1;
+    render();
+  });
   els.paginationPrev.addEventListener("click", () => {
     if (state.currentPage <= 1) {
       return;
@@ -1031,6 +1308,7 @@ async function init() {
   state.bm25Index = buildBm25Index(state.payload.jobs);
 
   loadStats(state.payload);
+  readUrlState();
   populateDatalist(els.locationSuggestions, buildLocationSuggestions(state.payload.jobs));
   populateSelect(els.careerFilter, state.payload.career_buckets);
   populateSelect(els.authFilter, state.payload.authorization_categories);
