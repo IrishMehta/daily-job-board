@@ -339,6 +339,25 @@ a {
   box-shadow: 0 16px 30px rgba(49, 56, 49, 0.13);
 }
 
+.taxonomy-card-all {
+  border-color: rgba(134, 84, 47, 0.24);
+  background:
+    linear-gradient(145deg, rgba(255, 250, 240, 0.99), rgba(241, 227, 205, 0.78)),
+    var(--surface-strong);
+}
+
+.taxonomy-card-all:hover {
+  border-color: rgba(134, 84, 47, 0.48);
+}
+
+.taxonomy-card-eyebrow {
+  color: var(--sand-ink);
+  font-size: var(--text-xs);
+  font-weight: 800;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+
 .taxonomy-card-label {
   max-width: 18ch;
   color: var(--accent-strong);

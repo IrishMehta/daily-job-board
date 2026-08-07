@@ -4,6 +4,7 @@ const state = {
   specialization: "",
   industry: "",
   browseAll: false,
+  scopeView: "",
   search: "",
   locationQuery: "",
   careerBucket: "",
@@ -261,8 +262,20 @@ function taxonomyCard(entry, type, count, description = "") {
   `;
 }
 
+function taxonomyScopeCard(label, scope, count, description) {
+  return `
+    <button class="taxonomy-card taxonomy-card-all" type="button" data-taxonomy-scope="${escapeHtml(scope)}">
+      <span class="taxonomy-card-eyebrow">View all</span>
+      <span class="taxonomy-card-label">${escapeHtml(label)}</span>
+      <span class="taxonomy-card-count">${escapeHtml(count)} job${count === 1 ? "" : "s"}</span>
+      <span class="taxonomy-card-description">${escapeHtml(description)}</span>
+      <span class="taxonomy-card-arrow" aria-hidden="true">→</span>
+    </button>
+  `;
+}
+
 function currentTaxonomyView() {
-  if (state.browseAll) {
+  if (state.browseAll || state.scopeView) {
     return "jobs";
   }
   if (!state.domain) {
@@ -279,10 +292,12 @@ function currentTaxonomyView() {
 
 function readUrlState() {
   const params = new URLSearchParams(window.location.search);
+  const requestedView = params.get("view") || "";
   state.domain = params.get("domain") || "";
   state.specialization = params.get("specialization") || "";
   state.industry = params.get("industry") || "";
-  state.browseAll = params.get("view") === "all";
+  state.browseAll = requestedView === "all";
+  state.scopeView = ["domain", "specialization"].includes(requestedView) ? requestedView : "";
   if (!findDomain(state.domain)) {
     state.domain = "";
   }
@@ -295,7 +310,22 @@ function readUrlState() {
   if (!state.domain) {
     state.specialization = "";
     state.industry = "";
+    state.scopeView = "";
   } else if (!state.specialization) {
+    state.industry = "";
+    if (state.scopeView === "specialization") {
+      state.scopeView = "";
+    }
+  }
+  if (state.browseAll) {
+    state.domain = "";
+    state.specialization = "";
+    state.industry = "";
+    state.scopeView = "";
+  } else if (state.scopeView === "domain") {
+    state.specialization = "";
+    state.industry = "";
+  } else if (state.scopeView === "specialization") {
     state.industry = "";
   }
 }
@@ -308,6 +338,7 @@ function writeUrlState(replace = false) {
     if (state.domain) params.set("domain", state.domain);
     if (state.specialization) params.set("specialization", state.specialization);
     if (state.industry) params.set("industry", state.industry);
+    if (state.scopeView) params.set("view", state.scopeView);
   }
   const query = params.toString();
   const nextUrl = `${window.location.pathname}${query ? `?${query}` : ""}`;
@@ -317,6 +348,7 @@ function writeUrlState(replace = false) {
 
 function selectTaxonomy(type, value) {
   state.browseAll = false;
+  state.scopeView = "";
   state.currentPage = 1;
   if (type === "domain") {
     state.domain = value;
@@ -333,20 +365,49 @@ function selectTaxonomy(type, value) {
   els.taxonomyHeading?.focus();
 }
 
+function viewTaxonomyScope(scope) {
+  if (scope === "domain" && !state.domain) {
+    return;
+  }
+  if (scope === "specialization" && (!state.domain || !state.specialization)) {
+    return;
+  }
+  state.browseAll = false;
+  state.scopeView = scope;
+  state.industry = "";
+  if (scope === "domain") {
+    state.specialization = "";
+  }
+  state.currentPage = 1;
+  writeUrlState();
+  render();
+  els.taxonomyHeading?.focus();
+}
+
 function renderTaxonomyBrowser() {
   const view = currentTaxonomyView();
   const domain = findDomain(state.domain);
   const specialization = findSpecialization(state.specialization);
   const industry = findIndustry(state.industry);
-  const scopedSpecializationJobs = state.specialization
-    ? taxonomyJobs({ domain: state.domain, specialization: state.specialization })
-    : [];
+  const scopedJobs = state.browseAll
+    ? state.payload.jobs
+    : taxonomyJobs({
+      domain: state.domain,
+      specialization: state.specialization,
+      industry: state.industry,
+    });
+  const scopeBreadcrumb = state.scopeView === "domain"
+    ? '<span aria-hidden="true">/</span><span aria-current="page">All domain jobs</span>'
+    : state.scopeView === "specialization"
+      ? '<span aria-hidden="true">/</span><span aria-current="page">All industries</span>'
+      : "";
 
   els.taxonomyBreadcrumb.innerHTML = [
     `<button type="button" class="breadcrumb-link" data-taxonomy-reset="true">Domains</button>`,
     domain ? `<span aria-hidden="true">/</span><button type="button" class="breadcrumb-link" data-taxonomy-domain="${escapeHtml(domain.value)}">${escapeHtml(domain.label)}</button>` : "",
     specialization ? `<span aria-hidden="true">/</span><button type="button" class="breadcrumb-link" data-taxonomy-specialization="${escapeHtml(specialization.value)}">${escapeHtml(specialization.label)}</button>` : "",
     industry ? `<span aria-hidden="true">/</span><span aria-current="page">${escapeHtml(industry.label)}</span>` : "",
+    scopeBreadcrumb,
   ].join("");
 
   if (view === "domains") {
@@ -362,19 +423,34 @@ function renderTaxonomyBrowser() {
       .join("");
   } else if (view === "specializations") {
     els.taxonomyHeading.textContent = `${domain?.label ?? "Domain"}: choose a specialization`;
-    els.taxonomyHelper.textContent = "Narrow the results to the specific kind of work you want to see.";
-    els.taxonomyGrid.innerHTML = (domain?.specializations ?? [])
+    els.taxonomyHelper.textContent = "View the whole domain now, or narrow to a specific kind of work.";
+    const domainJobCount = uniqueJobCount(taxonomyJobs({ domain: state.domain }));
+    els.taxonomyGrid.innerHTML = taxonomyScopeCard(
+      `All ${domain?.label ?? "domain"} jobs`,
+      "domain",
+      domainJobCount,
+      "Show every opening in this domain across all specializations and industries.",
+    ) + (domain?.specializations ?? [])
       .map((entry) => ({
         entry,
         count: uniqueJobCount(taxonomyJobs({ domain: state.domain, specialization: entry.value })),
       }))
       .filter((item) => item.count > 0)
-      .map((item) => taxonomyCard(item.entry, "specialization", item.count))
+      .map((item) => taxonomyCard(item.entry, "specialization", item.count, item.entry.description))
       .join("");
   } else if (view === "industries") {
     els.taxonomyHeading.textContent = `${specialization?.label ?? "Specialization"}: choose an industry`;
-    els.taxonomyHelper.textContent = "Choose the sector or context in which you want to apply this specialization.";
-    els.taxonomyGrid.innerHTML = taxonomyConfig().industries
+    els.taxonomyHelper.textContent = "View this specialization across every industry, or choose a sector.";
+    const specializationJobCount = uniqueJobCount(taxonomyJobs({
+      domain: state.domain,
+      specialization: state.specialization,
+    }));
+    els.taxonomyGrid.innerHTML = taxonomyScopeCard(
+      `All ${specialization?.label ?? "specialization"} jobs`,
+      "specialization",
+      specializationJobCount,
+      "Show every opening in this specialization across all industries.",
+    ) + taxonomyConfig().industries
       .map((entry) => ({
         entry,
         count: uniqueJobCount(taxonomyJobs({ domain: state.domain, specialization: state.specialization, industry: entry.value })),
@@ -383,8 +459,19 @@ function renderTaxonomyBrowser() {
       .map((item) => taxonomyCard(item.entry, "industry", item.count, item.entry.description))
       .join("");
   } else {
-    els.taxonomyHeading.textContent = `${specialization?.label ?? "Job"} openings${industry ? ` in ${industry.label}` : ""}`;
-    els.taxonomyHelper.textContent = `${uniqueJobCount(state.browseAll ? state.payload.jobs : scopedSpecializationJobs)} matching openings.`;
+    if (state.browseAll) {
+      els.taxonomyHeading.textContent = "All job openings";
+      els.taxonomyHelper.textContent = `${uniqueJobCount(scopedJobs)} openings across every domain, specialization, and industry.`;
+    } else if (state.scopeView === "domain") {
+      els.taxonomyHeading.textContent = `All ${domain?.label ?? "domain"} openings`;
+      els.taxonomyHelper.textContent = `${uniqueJobCount(scopedJobs)} openings across every specialization and industry in this domain.`;
+    } else if (state.scopeView === "specialization") {
+      els.taxonomyHeading.textContent = `All ${specialization?.label ?? "specialization"} openings`;
+      els.taxonomyHelper.textContent = `${uniqueJobCount(scopedJobs)} openings across every industry in this specialization.`;
+    } else {
+      els.taxonomyHeading.textContent = `${specialization?.label ?? "Job"} openings${industry ? ` in ${industry.label}` : ""}`;
+      els.taxonomyHelper.textContent = `${uniqueJobCount(scopedJobs)} matching openings.`;
+    }
     els.taxonomyGrid.innerHTML = "";
   }
 
@@ -1155,6 +1242,11 @@ function render() {
 
 function bindControls() {
   els.taxonomyGrid.addEventListener("click", (event) => {
+    const scopeCard = event.target.closest("[data-taxonomy-scope]");
+    if (scopeCard) {
+      viewTaxonomyScope(scopeCard.dataset.taxonomyScope);
+      return;
+    }
     const card = event.target.closest("[data-taxonomy-type]");
     if (!card) {
       return;
@@ -1170,6 +1262,7 @@ function bindControls() {
       state.specialization = "";
       state.industry = "";
       state.browseAll = false;
+      state.scopeView = "";
       state.currentPage = 1;
       writeUrlState();
       render();
@@ -1184,6 +1277,7 @@ function bindControls() {
     state.specialization = "";
     state.industry = "";
     state.browseAll = false;
+    state.scopeView = "";
     state.currentPage = 1;
     writeUrlState();
     render();
@@ -1193,6 +1287,7 @@ function bindControls() {
     state.specialization = "";
     state.industry = "";
     state.browseAll = true;
+    state.scopeView = "";
     state.currentPage = 1;
     writeUrlState();
     render();
