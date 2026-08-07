@@ -1252,3 +1252,234 @@ tbody tr:last-child td {
     width: max-content;
   }
 }
+
+/* Compact browsing chrome: filters live in an off-canvas drawer and resume
+   matching starts as a single-line action instead of a large form. */
+body.filter-drawer-open {
+  overflow: hidden;
+}
+
+.hero {
+  padding: 22px var(--space-6);
+  margin-bottom: var(--space-4);
+}
+
+.hero h1 {
+  max-width: 18ch;
+  font-size: clamp(2.2rem, 3.4vw, 3.35rem);
+}
+
+.hero-copy {
+  max-width: 680px;
+  margin: var(--space-2) 0 var(--space-3);
+  font-size: var(--text-base);
+}
+
+.hero-pills {
+  gap: 7px;
+  margin-bottom: var(--space-3);
+}
+
+.hero-pill {
+  min-height: 30px;
+  padding: 0 11px;
+  font-size: 0.72rem;
+}
+
+.hero-meta {
+  font-size: 0.82rem;
+}
+
+.stats-grid-compact {
+  gap: var(--space-2);
+  margin-bottom: var(--space-4);
+}
+
+.stats-grid-compact .stat-card {
+  min-height: 76px;
+  padding: 12px 14px;
+}
+
+.stats-grid-compact .stat-label {
+  margin-bottom: 4px;
+  font-size: 0.76rem;
+}
+
+.stats-grid-compact .stat-value {
+  font-size: 1.55rem;
+}
+
+.taxonomy-panel {
+  padding: var(--space-4);
+  margin-bottom: var(--space-3);
+}
+
+.controls-panel:not(.hidden) {
+  position: fixed;
+  z-index: 1002;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  align-content: start;
+  width: min(440px, calc(100vw - 24px));
+  max-height: 100vh;
+  margin: 0;
+  padding: 24px;
+  overflow-y: auto;
+  border-radius: 20px 0 0 20px;
+  background: var(--surface-strong);
+  box-shadow: -18px 0 48px rgba(31, 43, 36, 0.18);
+  visibility: hidden;
+  pointer-events: none;
+  transform: translateX(110%);
+  transition: transform 180ms ease;
+}
+
+.controls-panel.drawer-open {
+  visibility: visible;
+  pointer-events: auto;
+  transform: translateX(0);
+}
+
+.drawer-header {
+  display: flex;
+  grid-column: 1 / -1;
+  align-items: start;
+  justify-content: space-between;
+  gap: var(--space-3);
+  padding-bottom: var(--space-3);
+  border-bottom: 1px solid var(--line);
+}
+
+.drawer-header h2 {
+  margin: 0;
+  font-family: var(--font-display);
+  font-size: 2rem;
+  line-height: 1;
+}
+
+.drawer-kicker {
+  margin: 0 0 4px;
+  color: var(--sand-ink);
+  font-size: var(--text-xs);
+  font-weight: 800;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+
+.drawer-close {
+  min-width: 42px;
+  min-height: 42px;
+  padding: 0;
+  font-size: 1.5rem;
+  line-height: 1;
+}
+
+.drawer-backdrop:not(.hidden) {
+  position: fixed;
+  z-index: 1001;
+  inset: 0;
+  display: block;
+  background: rgba(20, 34, 27, 0.28);
+  backdrop-filter: blur(2px);
+}
+
+.filter-toggle {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  min-height: 44px;
+  padding: 0 15px;
+  white-space: nowrap;
+}
+
+.filter-toggle-icon {
+  font-size: 1.15rem;
+  line-height: 1;
+}
+
+.filter-count {
+  display: inline-grid;
+  min-width: 22px;
+  min-height: 22px;
+  place-items: center;
+  padding: 0 6px;
+  border-radius: var(--radius-pill);
+  background: rgba(255, 255, 255, 0.2);
+  font-size: 0.75rem;
+}
+
+.resume-panel {
+  grid-template-columns: minmax(0, 1fr) auto;
+  align-items: center;
+  gap: var(--space-3);
+  padding: 16px 20px;
+  margin-bottom: var(--space-3);
+}
+
+.resume-panel-copy h2 {
+  margin-bottom: 2px;
+  font-size: clamp(1.35rem, 2vw, 1.8rem);
+}
+
+.resume-panel-copy p:last-child {
+  font-size: var(--text-sm);
+}
+
+.resume-expand-button {
+  white-space: nowrap;
+}
+
+.resume-panel-form {
+  grid-column: 1 / -1;
+}
+
+.resume-panel-form.is-collapsed {
+  display: none;
+}
+
+@media (max-width: 720px) {
+  .hero {
+    padding: 18px 16px;
+  }
+
+  .hero h1 {
+    max-width: none;
+    font-size: 2.25rem;
+  }
+
+  .hero-copy {
+    font-size: 0.94rem;
+  }
+
+  .controls-panel:not(.hidden) {
+    grid-template-columns: 1fr;
+    width: min(420px, calc(100vw - 12px));
+    padding: 20px 16px;
+    border-radius: 16px 0 0 16px;
+  }
+
+  .controls-panel:not(.hidden) .control-group-wide,
+  .controls-panel:not(.hidden) .drawer-header {
+    grid-column: span 1;
+  }
+
+  .resume-panel {
+    grid-template-columns: 1fr auto;
+    padding: 14px 16px;
+  }
+
+  .resume-panel-copy h2 {
+    font-size: 1.25rem;
+  }
+
+  .resume-panel-copy .seo-kicker {
+    margin-bottom: 2px;
+  }
+
+  .resume-panel-copy p:last-child {
+    display: none;
+  }
+}

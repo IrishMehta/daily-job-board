@@ -40,9 +40,7 @@
       <p class="eyebrow">Daily US Tech Jobs · AI · ML · Data · Software</p>
       <h1>Early &amp; Mid-Career Tech Job Openings in the USA</h1>
       <p class="hero-copy">
-        Explore fresh individual-contributor openings by choosing a domain, narrowing to a
-        specialization, and then selecting the industry context that interests you. Every
-        result includes work authorization, sponsorship, location, and experience details.
+        Browse fresh US individual-contributor openings by domain, specialization, and industry.
       </p>
       <div class="hero-pills" aria-label="Board scope">
         <span class="hero-pill">Early Career</span>
@@ -57,20 +55,21 @@
       </div>
     </header>
 
-    <section class="seo-intro" aria-labelledby="scope-heading">
-      <div class="seo-intro-copy">
-        <p class="seo-kicker">Built for Individual Contributors</p>
-        <h2 id="scope-heading">A daily job board for AI, ML, software, and data science roles</h2>
-        <p>
-          The board is optimized for people targeting individual-contributor roles rather than
-          leadership hiring. That means the strongest coverage is across early-career, associate,
-          mid-level, senior, and senior IC openings in AI engineering, machine learning,
-          software engineering, applied science, and data science.
-        </p>
+    <section class="taxonomy-panel" id="taxonomy-panel" aria-labelledby="taxonomy-heading">
+      <div class="taxonomy-heading-row">
+        <div>
+          <p class="seo-kicker">Browse by focus</p>
+          <h2 id="taxonomy-heading" tabindex="-1">Choose a domain</h2>
+          <p id="taxonomy-helper">Start with the kind of work you want to do.</p>
+        </div>
+        <button class="button-secondary taxonomy-reset hidden" id="taxonomy-reset-button" type="button">Start over</button>
       </div>
+      <nav class="breadcrumb" id="taxonomy-breadcrumb" aria-label="Job focus navigation"></nav>
+      <div class="taxonomy-grid" id="taxonomy-grid"></div>
+      <button class="browse-all-button" id="browse-all-button" type="button">Browse all jobs across every domain</button>
     </section>
 
-    <section class="stats-grid" id="stats-grid">
+    <section class="stats-grid stats-grid-compact" id="stats-grid" aria-label="Board totals">
       <article class="stat-card">
         <span class="stat-label">Openings</span>
         <strong class="stat-value" id="stat-total">-</strong>
@@ -89,21 +88,14 @@
       </article>
     </section>
 
-    <section class="taxonomy-panel" id="taxonomy-panel" aria-labelledby="taxonomy-heading">
-      <div class="taxonomy-heading-row">
-        <div>
-          <p class="seo-kicker">Browse by focus</p>
-          <h2 id="taxonomy-heading" tabindex="-1">Choose a domain</h2>
-          <p id="taxonomy-helper">Start with the kind of work you want to do.</p>
-        </div>
-        <button class="button-secondary taxonomy-reset hidden" id="taxonomy-reset-button" type="button">Start over</button>
-      </div>
-      <nav class="breadcrumb" id="taxonomy-breadcrumb" aria-label="Job focus navigation"></nav>
-      <div class="taxonomy-grid" id="taxonomy-grid"></div>
-      <button class="browse-all-button" id="browse-all-button" type="button">Browse all jobs across every domain</button>
-    </section>
-
     <section class="controls-panel hidden" id="controls-panel">
+      <div class="drawer-header">
+        <div>
+          <p class="drawer-kicker">Refine results</p>
+          <h2>Filters</h2>
+        </div>
+        <button class="drawer-close button-secondary" id="filters-close-button" type="button" aria-label="Close filters">×</button>
+      </div>
       <div class="control-group control-group-wide">
         <label for="search-input">Search</label>
         <input id="search-input" type="search" placeholder="Title or company">
@@ -145,17 +137,16 @@
         <button id="reset-button" type="button">Reset filters</button>
       </div>
     </section>
+    <div class="drawer-backdrop hidden" id="drawer-backdrop"></div>
 
     <section class="resume-panel hidden" id="resume-panel" aria-labelledby="resume-match-heading">
       <div class="resume-panel-copy">
         <p class="seo-kicker">Resume Match</p>
-        <h2 id="resume-match-heading">Paste resume text to surface closer job matches</h2>
-        <p>
-          Matching happens locally in your browser. Paste resume text and the board will
-          keep only the jobs whose titles and descriptions are lexically closest to it.
-        </p>
+        <h2 id="resume-match-heading">Find closer matches with your resume</h2>
+        <p>Runs locally in this tab.</p>
       </div>
-      <div class="resume-panel-form">
+      <button class="resume-expand-button button-secondary" id="resume-expand-button" type="button" aria-expanded="false" aria-controls="resume-panel-form">Paste resume</button>
+      <div class="resume-panel-form is-collapsed" id="resume-panel-form">
         <label for="resume-input">Resume text</label>
         <textarea
           id="resume-input"
@@ -179,6 +170,10 @@
         <h2>Filtered results</h2>
         <p id="results-meta" aria-live="polite">Loading jobs...</p>
       </div>
+      <button class="filter-toggle" id="filters-open-button" type="button" aria-controls="controls-panel" aria-expanded="false">
+        <span class="filter-toggle-icon" aria-hidden="true">☷</span>
+        Filters <span class="filter-count hidden" id="filter-count">0</span>
+      </button>
     </section>
 
     <section class="table-shell hidden" id="results-shell">

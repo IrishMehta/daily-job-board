@@ -13,6 +13,7 @@ const state = {
   sort: "date_desc",
   currentPage: 1,
   resumeActive: false,
+  resumeExpanded: false,
   resumeQueryTokens: null,
   bm25Index: null,
 };
@@ -166,8 +167,14 @@ const els = {
   taxonomyGrid: document.getElementById("taxonomy-grid"),
   taxonomyResetButton: document.getElementById("taxonomy-reset-button"),
   browseAllButton: document.getElementById("browse-all-button"),
+  filtersOpenButton: document.getElementById("filters-open-button"),
+  filtersCloseButton: document.getElementById("filters-close-button"),
+  filterCount: document.getElementById("filter-count"),
+  drawerBackdrop: document.getElementById("drawer-backdrop"),
   controlsPanel: document.getElementById("controls-panel"),
   resumePanel: document.getElementById("resume-panel"),
+  resumeExpandButton: document.getElementById("resume-expand-button"),
+  resumePanelForm: document.getElementById("resume-panel-form"),
   resultsHeader: document.getElementById("results-header"),
   resultsShell: document.getElementById("results-shell"),
   searchInput: document.getElementById("search-input"),
@@ -485,12 +492,58 @@ function renderTaxonomyBrowser() {
 
 function updateViewVisibility() {
   const showResults = currentTaxonomyView() === "jobs";
+  if (!showResults) {
+    closeFilters();
+  }
   els.taxonomyPanel.classList.toggle("results-mode", showResults);
   els.controlsPanel.classList.toggle("hidden", !showResults);
   els.resumePanel.classList.toggle("hidden", !showResults);
   els.resultsHeader.classList.toggle("hidden", !showResults);
   els.resultsShell.classList.toggle("hidden", !showResults);
   els.paginationShell.classList.toggle("hidden", !showResults || !state.payload?.jobs?.length);
+}
+
+function closeFilters() {
+  els.controlsPanel?.classList.remove("drawer-open");
+  els.drawerBackdrop?.classList.add("hidden");
+  els.filtersOpenButton?.setAttribute("aria-expanded", "false");
+  document.body.classList.remove("filter-drawer-open");
+}
+
+function openFilters() {
+  if (currentTaxonomyView() !== "jobs") {
+    return;
+  }
+  els.controlsPanel?.classList.add("drawer-open");
+  els.drawerBackdrop?.classList.remove("hidden");
+  els.filtersOpenButton?.setAttribute("aria-expanded", "true");
+  document.body.classList.add("filter-drawer-open");
+  els.controlsPanel?.querySelector("input, select")?.focus();
+}
+
+function updateFilterButton() {
+  const activeFilters = [
+    state.search,
+    state.locationQuery,
+    state.careerBucket,
+    state.authorizationCategory,
+    state.sponsorshipStatus,
+    state.sort !== "date_desc" ? state.sort : "",
+  ].filter(Boolean).length;
+  els.filterCount.textContent = String(activeFilters);
+  els.filterCount.classList.toggle("hidden", activeFilters === 0);
+}
+
+function setResumeExpanded(expanded) {
+  state.resumeExpanded = expanded;
+  els.resumePanelForm?.classList.toggle("is-collapsed", !expanded);
+  els.resumePanel?.classList.toggle("is-expanded", expanded);
+  els.resumeExpandButton?.setAttribute("aria-expanded", String(expanded));
+  if (els.resumeExpandButton) {
+    els.resumeExpandButton.textContent = expanded
+      ? "Hide resume"
+      : (state.resumeActive ? "Edit resume" : "Paste resume");
+  }
 }
 
 function normalizeComparableText(value) {
@@ -1198,9 +1251,10 @@ function applyResumeMatch() {
 
   state.resumeQueryTokens = buildResumeQueryTokens(rawText);
   state.resumeActive = true;
+  setResumeExpanded(true);
   state.currentPage = 1;
   setResumeStatus(
-    "Resume match is active. Results now show only jobs ranked by BM25 lexical relevance to your resume text.",
+    "Matching active · results are ranked locally.",
     "active",
   );
   render();
@@ -1212,6 +1266,7 @@ function clearResumeMatch() {
   state.currentPage = 1;
   els.resumeInput.value = "";
   setResumeStatus("", "idle");
+  setResumeExpanded(false);
   render();
 }
 
@@ -1223,6 +1278,7 @@ function render() {
   renderTaxonomyBrowser();
   updateViewVisibility();
   updateSortControlState();
+  updateFilterButton();
   if (currentTaxonomyView() !== "jobs") {
     els.resultsBody.innerHTML = "";
     els.emptyState.classList.add("hidden");
@@ -1241,6 +1297,15 @@ function render() {
 }
 
 function bindControls() {
+  els.filtersOpenButton.addEventListener("click", openFilters);
+  els.filtersCloseButton.addEventListener("click", closeFilters);
+  els.drawerBackdrop.addEventListener("click", closeFilters);
+  els.resumeExpandButton.addEventListener("click", () => setResumeExpanded(!state.resumeExpanded));
+  document.addEventListener("keydown", (event) => {
+    if (event.key === "Escape") {
+      closeFilters();
+    }
+  });
   els.taxonomyGrid.addEventListener("click", (event) => {
     const scopeCard = event.target.closest("[data-taxonomy-scope]");
     if (scopeCard) {
@@ -1336,6 +1401,7 @@ function bindControls() {
     els.authFilter.value = "";
     els.sponsorshipFilter.value = "";
     els.sortSelect.value = "date_desc";
+    closeFilters();
     render();
   });
   els.resumeInput.addEventListener("input", () => {
