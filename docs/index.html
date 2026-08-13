@@ -62,11 +62,13 @@
           <h2 id="taxonomy-heading" tabindex="-1">Choose a domain</h2>
           <p id="taxonomy-helper">Start with the kind of work you want to do.</p>
         </div>
-        <button class="button-secondary taxonomy-reset hidden" id="taxonomy-reset-button" type="button">Start over</button>
+        <div class="taxonomy-heading-actions">
+          <button class="browse-all-button" id="browse-all-button" type="button">Browse All Jobs</button>
+          <button class="button-secondary taxonomy-reset hidden" id="taxonomy-reset-button" type="button">Start over</button>
+        </div>
       </div>
       <nav class="breadcrumb" id="taxonomy-breadcrumb" aria-label="Job focus navigation"></nav>
       <div class="taxonomy-grid" id="taxonomy-grid"></div>
-      <button class="browse-all-button" id="browse-all-button" type="button">Browse all jobs across every domain</button>
     </section>
 
     <section class="stats-grid stats-grid-compact" id="stats-grid" aria-label="Board totals">
@@ -104,6 +106,12 @@
         <label for="location-input">Location</label>
         <input id="location-input" type="search" list="location-suggestions" placeholder="Type a city, state, or country" autocomplete="off">
         <datalist id="location-suggestions"></datalist>
+      </div>
+      <div class="control-group">
+        <label for="industry-filter">Industry</label>
+        <select id="industry-filter">
+          <option value="">All industries</option>
+        </select>
       </div>
       <div class="control-group">
         <label for="career-filter">Career bucket</label>

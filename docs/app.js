@@ -7,6 +7,7 @@ const state = {
   scopeView: "",
   search: "",
   locationQuery: "",
+  industryFilter: "",
   careerBucket: "",
   authorizationCategory: "",
   sponsorshipStatus: "",
@@ -15,6 +16,14 @@ const state = {
   resumeActive: false,
   resumeExpanded: false,
   resumeQueryTokens: null,
+  resumeEmbedding: null,
+  resumeMatchMode: "",
+  embeddingExtractor: null,
+  embeddingMode: "",
+  embeddingManifest: null,
+  embeddingVectors: null,
+  embeddingIndexById: null,
+  embeddingLoadPromise: null,
   bm25Index: null,
 };
 
@@ -24,6 +33,11 @@ const RESUME_MATCH_MIN_TOKENS = 20;
 const BM25_K1 = 1.2;
 const BM25_B = 0.75;
 const TITLE_BM25_BOOST = 3;
+const EMBEDDING_MANIFEST_PATH = "./data/job_embeddings_manifest.json";
+const EMBEDDING_LIBRARY_URL = "https://cdn.jsdelivr.net/npm/@huggingface/transformers@4.0.1";
+const RESUME_EMBEDDING_CHUNK_WORDS = 150;
+const RESUME_EMBEDDING_CHUNK_OVERLAP_WORDS = 24;
+const RESUME_EMBEDDING_MAX_CHUNKS = 8;
 const RESUME_MATCH_STOPWORDS = new Set([
   "a",
   "about",
@@ -180,6 +194,7 @@ const els = {
   searchInput: document.getElementById("search-input"),
   locationInput: document.getElementById("location-input"),
   locationSuggestions: document.getElementById("location-suggestions"),
+  industryFilter: document.getElementById("industry-filter"),
   careerFilter: document.getElementById("career-filter"),
   authFilter: document.getElementById("auth-filter"),
   sponsorshipFilter: document.getElementById("sponsorship-filter"),
@@ -525,6 +540,7 @@ function updateFilterButton() {
   const activeFilters = [
     state.search,
     state.locationQuery,
+    state.industryFilter,
     state.careerBucket,
     state.authorizationCategory,
     state.sponsorshipStatus,
@@ -1012,6 +1028,166 @@ function scoreJobAgainstResume(job, resumeQueryTokens) {
   return (TITLE_BM25_BOOST * titleScore) + descriptionScore;
 }
 
+function normalizeEmbedding(vector) {
+  let squaredNorm = 0;
+  vector.forEach((value) => {
+    squaredNorm += value * value;
+  });
+  const norm = Math.sqrt(squaredNorm) || 1;
+  return vector.map((value) => value / norm);
+}
+
+function splitResumeEmbeddingChunks(value) {
+  const words = String(value ?? "").trim().split(/\s+/).filter(Boolean);
+  if (!words.length) {
+    return [];
+  }
+  const step = RESUME_EMBEDDING_CHUNK_WORDS - RESUME_EMBEDDING_CHUNK_OVERLAP_WORDS;
+  const chunks = [];
+  for (let start = 0; start < words.length; start += step) {
+    chunks.push(words.slice(start, start + RESUME_EMBEDDING_CHUNK_WORDS).join(" "));
+  }
+  if (chunks.length <= RESUME_EMBEDDING_MAX_CHUNKS) {
+    return chunks;
+  }
+  return [...chunks.slice(0, RESUME_EMBEDDING_MAX_CHUNKS - 1), chunks.at(-1)];
+}
+
+function tensorRowsToNormalizedMean(tensor) {
+  const dimensions = tensor?.dims ?? [];
+  const dimension = dimensions.at(-1);
+  const rows = dimensions.length > 1 ? dimensions[0] : 1;
+  if (!dimension || !tensor?.data || tensor.data.length !== rows * dimension) {
+    throw new Error("Embedding model returned an unexpected tensor shape.");
+  }
+  const mean = Array.from({ length: dimension }, () => 0);
+  for (let row = 0; row < rows; row += 1) {
+    for (let column = 0; column < dimension; column += 1) {
+      mean[column] += Number(tensor.data[(row * dimension) + column]) / rows;
+    }
+  }
+  return normalizeEmbedding(mean);
+}
+
+async function loadEmbeddingMatcher() {
+  if (state.embeddingExtractor && state.embeddingManifest && state.embeddingVectors) {
+    return;
+  }
+  if (state.embeddingLoadPromise) {
+    return state.embeddingLoadPromise;
+  }
+
+  state.embeddingLoadPromise = (async () => {
+    const manifestResponse = await fetch(EMBEDDING_MANIFEST_PATH);
+    if (!manifestResponse.ok) {
+      throw new Error(`Embedding manifest unavailable (${manifestResponse.status}).`);
+    }
+    const manifest = await manifestResponse.json();
+    const dimension = Number(manifest.dimension);
+    const manifestJobs = Array.isArray(manifest.jobs) ? manifest.jobs : [];
+    if (!dimension || !manifestJobs.length || !manifest.vectors_file) {
+      throw new Error("Embedding manifest is incomplete.");
+    }
+
+    const vectorsResponse = await fetch(`./data/${manifest.vectors_file}`);
+    if (!vectorsResponse.ok) {
+      throw new Error(`Embedding vectors unavailable (${vectorsResponse.status}).`);
+    }
+    const vectorBytes = await vectorsResponse.arrayBuffer();
+    if (vectorBytes.byteLength !== manifestJobs.length * dimension * 4) {
+      throw new Error("Embedding vector file size does not match its manifest.");
+    }
+
+    const { pipeline } = await import(EMBEDDING_LIBRARY_URL);
+    const modelId = manifest.browser_model_id || "Xenova/all-MiniLM-L6-v2";
+    const attempts = [];
+    if (navigator.gpu) {
+      attempts.push({
+        label: "WebGPU",
+        options: { device: "webgpu" },
+      });
+    }
+    attempts.push({
+      label: "WASM/CPU",
+      options: { dtype: "q8" },
+    });
+
+    let extractor = null;
+    let mode = "";
+    let lastError = null;
+    for (const attempt of attempts) {
+      try {
+        setResumeStatus(`Loading local semantic matcher (${attempt.label})...`, "active");
+        extractor = await pipeline("feature-extraction", modelId, attempt.options);
+        mode = attempt.label;
+        break;
+      } catch (error) {
+        lastError = error;
+      }
+    }
+    if (!extractor) {
+      throw lastError || new Error("No browser embedding runtime was available.");
+    }
+
+    state.embeddingManifest = manifest;
+    state.embeddingVectors = new Float32Array(vectorBytes);
+    state.embeddingIndexById = new Map(
+      manifestJobs.map((entry) => [entry.id, Number(entry.index)]),
+    );
+    state.embeddingExtractor = extractor;
+    state.embeddingMode = mode;
+  })().catch((error) => {
+    state.embeddingLoadPromise = null;
+    throw error;
+  });
+
+  return state.embeddingLoadPromise;
+}
+
+async function embedResumeText(rawText) {
+  await loadEmbeddingMatcher();
+  const chunks = splitResumeEmbeddingChunks(rawText);
+  if (!chunks.length) {
+    throw new Error("Resume text is empty.");
+  }
+  const runExtractor = () => state.embeddingExtractor(chunks, {
+    pooling: "mean",
+    normalize: true,
+  });
+  try {
+    return tensorRowsToNormalizedMean(await runExtractor());
+  } catch (error) {
+    if (state.embeddingMode !== "WebGPU") {
+      throw error;
+    }
+    // Some browsers expose WebGPU but fail on a model operator at inference
+    // time. Retry the same model through quantized WASM/CPU before using BM25.
+    const { pipeline } = await import(EMBEDDING_LIBRARY_URL);
+    setResumeStatus("WebGPU was unavailable; retrying local WASM/CPU matching...", "active");
+    state.embeddingExtractor = await pipeline(
+      "feature-extraction",
+      state.embeddingManifest.browser_model_id,
+      { dtype: "q8" },
+    );
+    state.embeddingMode = "WASM/CPU";
+    return tensorRowsToNormalizedMean(await runExtractor());
+  }
+}
+
+function scoreJobAgainstEmbedding(job, resumeEmbedding) {
+  const rowIndex = state.embeddingIndexById?.get(job.id);
+  const dimension = Number(state.embeddingManifest?.dimension || 0);
+  if (rowIndex === undefined || !dimension || !state.embeddingVectors) {
+    return null;
+  }
+  const offset = rowIndex * dimension;
+  let score = 0;
+  for (let index = 0; index < dimension; index += 1) {
+    score += resumeEmbedding[index] * state.embeddingVectors[offset + index];
+  }
+  return score;
+}
+
 function applyFilters(jobs) {
   const query = normalizeComparableText(state.search);
   const filtered = jobs.filter((job) => {
@@ -1019,6 +1195,11 @@ function applyFilters(jobs) {
       return false;
     }
     if (!matchesLocationQuery(job, state.locationQuery)) {
+      return false;
+    }
+    if (state.industryFilter && !(job.classification_paths ?? []).some((path) => (
+      path.industry === state.industryFilter
+    ))) {
       return false;
     }
     if (state.careerBucket && job.career_bucket !== state.careerBucket) {
@@ -1059,8 +1240,12 @@ function applyFilters(jobs) {
 
   const matched = [];
   filtered.forEach((job) => {
-    job.resumeMatchScore = scoreJobAgainstResume(job, state.resumeQueryTokens);
-    if (job.resumeMatchScore > 0) {
+    job.resumeMatchScore = state.resumeEmbedding
+      ? scoreJobAgainstEmbedding(job, state.resumeEmbedding)
+      : scoreJobAgainstResume(job, state.resumeQueryTokens);
+    if (state.resumeEmbedding
+      ? job.resumeMatchScore !== null
+      : job.resumeMatchScore > 0) {
       matched.push(job);
     }
   });
@@ -1167,6 +1352,7 @@ function renderRows(jobs) {
           (!state.domain || candidate.domain === state.domain)
           && (!state.specialization || (candidate.specializations ?? []).includes(state.specialization))
           && (!state.industry || candidate.industry === state.industry)
+          && (!state.industryFilter || candidate.industry === state.industryFilter)
         )) || (job.classification_paths ?? [])[0];
         const domain = taxonomyConfig().domains.find((entry) => entry.value === path?.domain);
         const specializationLabels = (path?.specializations ?? []).map((value) => {
@@ -1236,7 +1422,7 @@ function getResumeValidationMessage(rawText) {
   return `Paste ${parts.join(" and ")} before running resume match.`;
 }
 
-function applyResumeMatch() {
+async function applyResumeMatch() {
   const rawText = els.resumeInput.value;
   const validationMessage = getResumeValidationMessage(rawText);
   if (validationMessage) {
@@ -1251,18 +1437,37 @@ function applyResumeMatch() {
 
   state.resumeQueryTokens = buildResumeQueryTokens(rawText);
   state.resumeActive = true;
+  state.resumeEmbedding = null;
+  state.resumeMatchMode = "";
   setResumeExpanded(true);
   state.currentPage = 1;
-  setResumeStatus(
-    "Matching active · results are ranked locally.",
-    "active",
-  );
-  render();
+  els.resumeApplyButton.disabled = true;
+  setResumeStatus("Preparing local semantic matching...", "active");
+  try {
+    state.resumeEmbedding = await embedResumeText(rawText);
+    state.resumeMatchMode = state.embeddingMode;
+    setResumeStatus(
+      `Matching active · ranked locally with ${state.resumeMatchMode}.`,
+      "active",
+    );
+  } catch (error) {
+    state.resumeEmbedding = null;
+    state.resumeMatchMode = "BM25";
+    setResumeStatus(
+      "Semantic matching is unavailable in this browser; using local lexical matching.",
+      "active",
+    );
+  } finally {
+    els.resumeApplyButton.disabled = false;
+    render();
+  }
 }
 
 function clearResumeMatch() {
   state.resumeActive = false;
   state.resumeQueryTokens = null;
+  state.resumeEmbedding = null;
+  state.resumeMatchMode = "";
   state.currentPage = 1;
   els.resumeInput.value = "";
   setResumeStatus("", "idle");
@@ -1290,7 +1495,7 @@ function render() {
 
   const paginatedJobs = filteredJobs.slice(pagination.startIndex, pagination.endIndex);
   els.resultsMeta.textContent = state.resumeActive
-    ? `${filteredJobs.length} job${filteredJobs.length === 1 ? "" : "s"} match the current filters and resume text. Sorted by BM25 relevance.`
+    ? `${filteredJobs.length} job${filteredJobs.length === 1 ? "" : "s"} match the current filters and resume text. Sorted by ${state.resumeMatchMode || "local"} relevance.`
     : `${filteredJobs.length} job${filteredJobs.length === 1 ? "" : "s"} match the current filters.`;
   renderRows(paginatedJobs);
   renderPagination(filteredJobs.length, pagination);
@@ -1367,6 +1572,11 @@ function bindControls() {
     state.currentPage = 1;
     render();
   });
+  els.industryFilter.addEventListener("change", (event) => {
+    state.industryFilter = event.target.value;
+    state.currentPage = 1;
+    render();
+  });
   els.careerFilter.addEventListener("change", (event) => {
     state.careerBucket = event.target.value;
     state.currentPage = 1;
@@ -1390,6 +1600,7 @@ function bindControls() {
   els.resetButton.addEventListener("click", () => {
     state.search = "";
     state.locationQuery = "";
+    state.industryFilter = "";
     state.careerBucket = "";
     state.authorizationCategory = "";
     state.sponsorshipStatus = "";
@@ -1397,6 +1608,7 @@ function bindControls() {
     state.currentPage = 1;
     els.searchInput.value = "";
     els.locationInput.value = "";
+    els.industryFilter.value = "";
     els.careerFilter.value = "";
     els.authFilter.value = "";
     els.sponsorshipFilter.value = "";
@@ -1471,6 +1683,7 @@ async function init() {
   loadStats(state.payload);
   readUrlState();
   populateDatalist(els.locationSuggestions, buildLocationSuggestions(state.payload.jobs));
+  populateSelect(els.industryFilter, state.payload.taxonomy?.industries ?? []);
   populateSelect(els.careerFilter, state.payload.career_buckets);
   populateSelect(els.authFilter, state.payload.authorization_categories);
   populateSelect(els.sponsorshipFilter, state.payload.sponsorship_statuses);
