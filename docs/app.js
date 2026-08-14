@@ -310,7 +310,7 @@ function renderJobList(results) {
   els.job_list.innerHTML = visible.map((job) => {
     const saved = Boolean(state.shortlist[job.id]);
     return `
-      <div class="job-row${state.selectedId === job.id ? " is-selected" : ""}" role="option" tabindex="-1" aria-selected="${state.selectedId === job.id}" data-job-id="${escapeHtml(job.id)}">
+      <div class="job-row${state.selectedId === job.id ? " is-selected" : ""}" role="option" tabindex="-1" aria-selected="${state.selectedId === job.id}" data-job-id="${escapeHtml(job.id)}" data-domain="${escapeHtml(job._domains[0] || "")}">
         <div class="job-row-top">
           <h2 class="job-title">${escapeHtml(job.title)}</h2>
           <span class="job-age">${escapeHtml(dateAge(job.posted_on))}</span>

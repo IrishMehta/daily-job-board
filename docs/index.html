@@ -121,14 +121,16 @@
         </div>
         <span class="match-mode hidden" id="match-mode"></span>
       </div>
-      <div class="job-list" id="job-list" role="listbox" aria-label="Job results" tabindex="0"></div>
-      <div class="empty-state hidden" id="empty-state">
-        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M9 6V5a2 2 0 0 1 2-2h2a2 2 0 0 1 2 2v1M5 6h14a1 1 0 0 1 1 1v11a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V7a1 1 0 0 1 1-1Z"/></svg>
-        <h2 id="empty-title">No jobs match these filters</h2>
-        <p id="empty-copy">Clear one or more filters to broaden the search.</p>
-        <button class="button button-secondary" id="empty-action" type="button">Clear filters</button>
+      <div class="results-scroll">
+        <div class="job-list" id="job-list" role="listbox" aria-label="Job results" tabindex="0"></div>
+        <div class="empty-state hidden" id="empty-state">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M9 6V5a2 2 0 0 1 2-2h2a2 2 0 0 1 2 2v1M5 6h14a1 1 0 0 1 1 1v11a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V7a1 1 0 0 1 1-1Z"/></svg>
+          <h2 id="empty-title">No jobs match these filters</h2>
+          <p id="empty-copy">Clear one or more filters to broaden the search.</p>
+          <button class="button button-secondary" id="empty-action" type="button">Clear filters</button>
+        </div>
+        <button class="load-more hidden" id="load-more" type="button">Load 40 more jobs</button>
       </div>
-      <button class="load-more hidden" id="load-more" type="button">Load 40 more jobs</button>
     </section>
 
     <aside class="detail-pane" id="detail-pane" aria-label="Selected job details">
