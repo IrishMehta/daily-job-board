@@ -3,205 +3,169 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Early &amp; Mid-Career Tech Job Openings in the USA | AI, ML, Data &amp; Software Engineering</title>
-  <meta
-    name="description"
-    content="Daily list of early-career, new-grad, and mid-career tech job openings in the USA — AI, machine learning, data science, and software engineering roles. Filter by sponsorship, work authorization, location, and experience."
-  >
-  <meta
-    name="keywords"
-    content="early career tech jobs, new grad software engineer jobs, entry level tech jobs USA, mid career tech jobs, AI jobs, machine learning jobs, data science jobs, software engineer jobs, sponsorship friendly jobs, US tech job openings"
-  >
+  <title>US Tech Job Discovery | Fresh AI, Data &amp; Software Roles</title>
+  <meta name="description" content="Search and shortlist fresh US technology jobs by role, experience, location, sponsorship, and work authorization.">
+  <meta name="keywords" content="tech jobs, software engineering jobs, AI jobs, machine learning jobs, data jobs, sponsorship jobs, early career jobs">
   <meta name="robots" content="index,follow">
-  <meta name="theme-color" content="#1c6b51">
+  <meta name="theme-color" content="#ffffff">
   <link rel="canonical" href="https://irishmehta.github.io/daily-job-board/">
   <meta property="og:type" content="website">
-  <meta property="og:title" content="Early & Mid-Career Tech Job Openings in the USA">
-  <meta
-    property="og:description"
-    content="Daily early-career, new-grad, and mid-career tech jobs in the USA — AI, ML, data science, and software engineering roles."
-  >
+  <meta property="og:title" content="US Tech Job Discovery">
+  <meta property="og:description" content="A focused workspace for searching and shortlisting fresh US technology roles.">
   <meta property="og:url" content="https://irishmehta.github.io/daily-job-board/">
-  <meta property="og:site_name" content="Early & Mid-Career Tech Jobs in the USA">
   <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="Early & Mid-Career Tech Job Openings in the USA">
-  <meta
-    name="twitter:description"
-    content="Filter daily US-based early-career and mid-career AI, ML, data science, and software engineering openings by sponsorship, location, and experience."
-  >
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=Newsreader:opsz,wght@6..72,600;6..72,700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="./styles.css">
 </head>
 <body>
-  <div class="page-shell">
-    <header class="hero">
-      <p class="eyebrow">Daily US Tech Jobs · AI · ML · Data · Software</p>
-      <h1>Early &amp; Mid-Career Tech Job Openings in the USA</h1>
-      <p class="hero-copy">
-        Browse fresh US individual-contributor openings by domain, specialization, and industry.
-      </p>
-      <div class="hero-pills" aria-label="Board scope">
-        <span class="hero-pill">Early Career</span>
-        <span class="hero-pill">Mid-Level</span>
-        <span class="hero-pill">Senior IC</span>
-        <span class="hero-pill">US-Focused</span>
-        <span class="hero-pill">Daily Refresh</span>
-      </div>
-      <div class="hero-meta">
-        <span id="generated-at">Loading latest refresh...</span>
-        <a class="hero-link" id="repo-link" href="https://github.com/IrishMehta/daily-job-board">Open the repository</a>
-      </div>
-    </header>
+  <a class="skip-link" href="#job-list">Skip to job results</a>
 
-    <section class="taxonomy-panel" id="taxonomy-panel" aria-labelledby="taxonomy-heading">
-      <div class="taxonomy-heading-row">
-        <div>
-          <p class="seo-kicker">Browse by focus</p>
-          <h2 id="taxonomy-heading" tabindex="-1">Choose a domain</h2>
-          <p id="taxonomy-helper">Start with the kind of work you want to do.</p>
-        </div>
-        <div class="taxonomy-heading-actions">
-          <button class="browse-all-button" id="browse-all-button" type="button">Browse All Jobs</button>
-          <button class="button-secondary taxonomy-reset hidden" id="taxonomy-reset-button" type="button">Start over</button>
-        </div>
-      </div>
-      <nav class="breadcrumb" id="taxonomy-breadcrumb" aria-label="Job focus navigation"></nav>
-      <div class="taxonomy-grid" id="taxonomy-grid"></div>
-    </section>
+  <header class="app-header">
+    <div class="brand-block">
+      <a class="brand" href="./" aria-label="Job Discovery home">
+        <span class="brand-mark" aria-hidden="true">
+          <svg viewBox="0 0 24 24"><path d="M9 6V4.8A1.8 1.8 0 0 1 10.8 3h2.4A1.8 1.8 0 0 1 15 4.8V6m5 4H4m1-4h14a1 1 0 0 1 1 1v11a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V7a1 1 0 0 1 1-1Zm5 4v2h4v-2"/></svg>
+        </span>
+        <span>Job Discovery</span>
+      </a>
+      <span class="freshness" id="freshness">Loading current jobs…</span>
+    </div>
 
-    <section class="stats-grid stats-grid-compact" id="stats-grid" aria-label="Board totals">
-      <article class="stat-card">
-        <span class="stat-label">Openings</span>
-        <strong class="stat-value" id="stat-total">-</strong>
-      </article>
-      <article class="stat-card">
-        <span class="stat-label">Early Career</span>
-        <strong class="stat-value" id="stat-early">-</strong>
-      </article>
-      <article class="stat-card">
-        <span class="stat-label">Mid / Senior</span>
-        <strong class="stat-value" id="stat-mid">-</strong>
-      </article>
-      <article class="stat-card">
-        <span class="stat-label">Managerial</span>
-        <strong class="stat-value" id="stat-managerial">-</strong>
-      </article>
-    </section>
+    <nav class="view-tabs" aria-label="Job views">
+      <button class="view-tab is-active" type="button" data-view="all" aria-pressed="true">All jobs <span id="all-count"></span></button>
+      <button class="view-tab" type="button" data-view="shortlist" aria-pressed="false">
+        Shortlist <span class="tab-count" id="shortlist-count">0</span>
+      </button>
+    </nav>
 
-    <section class="controls-panel hidden" id="controls-panel">
-      <div class="drawer-header">
-        <div>
-          <p class="drawer-kicker">Refine results</p>
-          <h2>Filters</h2>
-        </div>
-        <button class="drawer-close button-secondary" id="filters-close-button" type="button" aria-label="Close filters">×</button>
+    <div class="header-actions">
+      <button class="button button-secondary" id="resume-open" type="button">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3v18M3 12h18M5.6 5.6l12.8 12.8m0-12.8L5.6 18.4"/></svg>
+        Match resume
+      </button>
+      <a class="icon-link" id="repo-link" href="https://github.com/IrishMehta/daily-job-board" target="_blank" rel="noopener noreferrer" aria-label="About this board">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 11v5m0-8h.01"/></svg>
+      </a>
+    </div>
+  </header>
+
+  <section class="search-shell" aria-label="Search and filter jobs">
+    <div class="search-row">
+      <label class="search-field" for="search-input">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="11" cy="11" r="6"/><path d="m16 16 4 4"/></svg>
+        <span class="sr-only">Search jobs</span>
+        <input id="search-input" type="search" placeholder="Search roles, companies, skills, or locations" autocomplete="off">
+        <kbd aria-label="Keyboard shortcut slash">/</kbd>
+      </label>
+      <button class="button button-secondary mobile-filter-button" id="mobile-filter-open" type="button" aria-expanded="false" aria-controls="filter-panel">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 7h16M7 12h10m-7 5h4"/></svg>
+        Filters <span class="filter-badge hidden" id="mobile-filter-count">0</span>
+      </button>
+    </div>
+
+    <div class="filter-panel" id="filter-panel">
+      <div class="mobile-filter-header">
+        <strong>Refine jobs</strong>
+        <button class="icon-button" id="mobile-filter-close" type="button" aria-label="Close filters">×</button>
       </div>
-      <div class="control-group control-group-wide">
-        <label for="search-input">Search</label>
-        <input id="search-input" type="search" placeholder="Title or company">
-      </div>
-      <div class="control-group">
-        <label for="location-input">Location</label>
-        <input id="location-input" type="search" list="location-suggestions" placeholder="Type a city, state, or country" autocomplete="off">
+      <label class="filter-field">Focus
+        <select id="domain-filter"><option value="">All focus areas</option></select>
+      </label>
+      <label class="filter-field">Specialization
+        <select id="specialization-filter"><option value="">All specializations</option></select>
+      </label>
+      <label class="filter-field">Location
+        <input id="location-filter" type="search" list="location-suggestions" placeholder="Any location" autocomplete="off">
         <datalist id="location-suggestions"></datalist>
-      </div>
-      <div class="control-group">
-        <label for="industry-filter">Industry</label>
-        <select id="industry-filter">
-          <option value="">All industries</option>
+      </label>
+      <label class="filter-field">Industry
+        <select id="industry-filter"><option value="">All industries</option></select>
+      </label>
+      <label class="filter-field">Experience
+        <select id="career-filter"><option value="">All experience</option></select>
+      </label>
+      <label class="filter-field">Authorization
+        <select id="authorization-filter"><option value="">Any authorization</option></select>
+      </label>
+      <label class="filter-field">Sponsorship
+        <select id="sponsorship-filter"><option value="">Any sponsorship</option></select>
+      </label>
+      <label class="filter-field">Posted
+        <select id="posted-filter">
+          <option value="1d">Last 24 hours</option>
+          <option value="3d">Last 3 days</option>
+          <option value="7d">Last 7 days</option>
         </select>
-      </div>
-      <div class="control-group">
-        <label for="career-filter">Career bucket</label>
-        <select id="career-filter">
-          <option value="">All buckets</option>
-        </select>
-      </div>
-      <div class="control-group">
-        <label for="auth-filter">Authorization</label>
-        <select id="auth-filter">
-          <option value="">All categories</option>
-        </select>
-      </div>
-      <div class="control-group">
-        <label for="sponsorship-filter">Sponsorship</label>
-        <select id="sponsorship-filter">
-          <option value="">All statuses</option>
-        </select>
-      </div>
-      <div class="control-group">
-        <label for="sort-select">Sort by</label>
-        <select id="sort-select">
+      </label>
+      <label class="filter-field">Sort
+        <select id="sort-filter">
           <option value="date_desc">Newest first</option>
           <option value="date_asc">Oldest first</option>
-          <option value="experience_asc">Experience low to high</option>
-          <option value="experience_desc">Experience high to low</option>
-          <option value="company_asc">Company A-Z</option>
+          <option value="experience_asc">Experience: low to high</option>
+          <option value="experience_desc">Experience: high to low</option>
+          <option value="company_asc">Company A–Z</option>
         </select>
-      </div>
-      <div class="control-group control-actions">
-        <button id="reset-button" type="button">Reset filters</button>
-      </div>
-    </section>
-    <div class="drawer-backdrop hidden" id="drawer-backdrop"></div>
+      </label>
+      <button class="button button-quiet clear-button" id="clear-filters" type="button">Clear all</button>
+    </div>
+    <div class="active-filters hidden" id="active-filters" aria-label="Active filters"></div>
+  </section>
 
-    <section class="resume-panel hidden" id="resume-panel" aria-labelledby="resume-match-heading">
-      <div class="resume-panel-copy">
-        <p class="seo-kicker">Resume Match</p>
-        <h2 id="resume-match-heading">Find closer matches with your resume</h2>
-        <p>Runs locally in this tab.</p>
-      </div>
-      <button class="resume-expand-button button-secondary" id="resume-expand-button" type="button" aria-expanded="false" aria-controls="resume-panel-form">Paste resume</button>
-      <div class="resume-panel-form is-collapsed" id="resume-panel-form">
-        <label for="resume-input">Resume text</label>
-        <textarea
-          id="resume-input"
-          rows="8"
-          placeholder="Paste your resume text here. Nothing is uploaded or stored."
-          aria-describedby="resume-helper resume-status"
-        ></textarea>
-        <div class="resume-actions">
-          <button id="resume-apply-button" type="button">Find matches</button>
-          <button class="button-secondary" id="resume-clear-button" type="button">Clear</button>
+  <div class="storage-warning hidden" id="storage-warning" role="status"></div>
+
+  <main class="workspace">
+    <section class="results-pane" aria-labelledby="results-heading">
+      <div class="results-toolbar">
+        <div>
+          <h1 id="results-heading">All jobs</h1>
+          <p id="results-summary" aria-live="polite">Loading jobs…</p>
         </div>
-        <p class="resume-helper" id="resume-helper">
-          Paste at least 200 non-whitespace characters and 20 normalized tokens. Matching stays local to this tab.
-        </p>
-        <p class="resume-status" id="resume-status" aria-live="polite"></p>
+        <span class="match-mode hidden" id="match-mode"></span>
       </div>
-    </section>
-
-    <section class="results-header hidden" id="results-header">
-      <div>
-        <h2>Filtered results</h2>
-        <p id="results-meta" aria-live="polite">Loading jobs...</p>
-      </div>
-      <button class="filter-toggle" id="filters-open-button" type="button" aria-controls="controls-panel" aria-expanded="false">
-        <span class="filter-toggle-icon" aria-hidden="true">☷</span>
-        Filters <span class="filter-count hidden" id="filter-count">0</span>
-      </button>
-    </section>
-
-    <section class="table-shell hidden" id="results-shell">
-      <div class="job-grid" id="results-body"></div>
+      <div class="job-list" id="job-list" role="listbox" aria-label="Job results" tabindex="0"></div>
       <div class="empty-state hidden" id="empty-state">
-        <h3>No jobs match the current filters.</h3>
-        <p>Try clearing one or more filters or broadening your search.</p>
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M9 6V5a2 2 0 0 1 2-2h2a2 2 0 0 1 2 2v1M5 6h14a1 1 0 0 1 1 1v11a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V7a1 1 0 0 1 1-1Z"/></svg>
+        <h2 id="empty-title">No jobs match these filters</h2>
+        <p id="empty-copy">Clear one or more filters to broaden the search.</p>
+        <button class="button button-secondary" id="empty-action" type="button">Clear filters</button>
       </div>
+      <button class="load-more hidden" id="load-more" type="button">Load 40 more jobs</button>
     </section>
 
-    <nav class="pagination-shell" id="pagination-shell" aria-label="Job results pages">
-      <p class="pagination-summary" id="pagination-summary">Showing 0-0 of 0 jobs</p>
-      <div class="pagination-controls">
-        <button class="pagination-button" id="pagination-prev" type="button">Previous</button>
-        <div class="pagination-pages" id="pagination-pages"></div>
-        <button class="pagination-button" id="pagination-next" type="button">Next</button>
+    <aside class="detail-pane" id="detail-pane" aria-label="Selected job details">
+      <div class="detail-empty" id="detail-empty">
+        <div class="detail-empty-icon" aria-hidden="true">
+          <svg viewBox="0 0 24 24"><path d="M8 6h11a1 1 0 0 1 1 1v12a2 2 0 0 1-2 2H8a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2Z"/><path d="M9 3h6v6H9zM10 13h6m-6 4h5"/></svg>
+        </div>
+        <h2>Select a job to inspect the details</h2>
+        <p>Compare experience, location, work authorization, and the complete posting without losing your place.</p>
       </div>
-    </nav>
-  </div>
+      <div class="detail-content hidden" id="detail-content"></div>
+    </aside>
+  </main>
 
-  <script src="./app.js"></script>
+  <div class="sheet-backdrop hidden" id="sheet-backdrop"></div>
+
+  <dialog class="resume-dialog" id="resume-dialog" aria-labelledby="resume-title">
+    <form method="dialog" class="dialog-header">
+      <div>
+        <span class="dialog-kicker">Private, in-browser matching</span>
+        <h2 id="resume-title">Find closer matches</h2>
+      </div>
+      <button class="icon-button" value="cancel" aria-label="Close resume matcher">×</button>
+    </form>
+    <div class="dialog-body">
+      <p>Your resume stays in this tab. It is never uploaded or saved.</p>
+      <label for="resume-input">Resume text</label>
+      <textarea id="resume-input" rows="10" placeholder="Paste at least 200 characters of resume text"></textarea>
+      <p class="form-hint" id="resume-status" aria-live="polite">Matching combines local semantic relevance with visible keyword evidence.</p>
+    </div>
+    <div class="dialog-actions">
+      <button class="button button-quiet hidden" id="resume-clear" type="button">Turn off matching</button>
+      <button class="button button-primary" id="resume-apply" type="button">Find matches</button>
+    </div>
+  </dialog>
+
+  <div class="toast hidden" id="toast" role="status" aria-live="polite"></div>
+  <script type="module" src="./app.js"></script>
 </body>
 </html>
