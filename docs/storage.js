@@ -9,6 +9,7 @@ export const DEFAULT_FILTERS = Object.freeze({
   careerBuckets: [],
   authorizationCategories: [],
   sponsorshipStatuses: [],
+  experienceYears: "",
   postedRange: "7d",
   sort: "date_desc",
 });
@@ -35,11 +36,17 @@ function cleanStringArray(value) {
   return [...new Set(value.map((item) => cleanString(item, 120)).filter(Boolean))].slice(0, 50);
 }
 
+function cleanYears(value) {
+  const years = Number.parseInt(value, 10);
+  return Number.isInteger(years) && years >= 0 && years <= 60 ? String(years) : "";
+}
+
 export function sanitizeFilters(value) {
   const input = value && typeof value === "object" ? value : {};
   const filters = freshFilters();
   filters.query = cleanString(input.query);
   filters.location = cleanString(input.location);
+  filters.experienceYears = cleanYears(input.experienceYears);
   ARRAY_FILTERS.forEach((key) => { filters[key] = cleanStringArray(input[key]); });
   filters.postedRange = ["1d", "3d", "7d"].includes(input.postedRange) ? input.postedRange : "7d";
   filters.sort = ["date_desc", "date_asc", "experience_asc", "experience_desc", "company_asc"].includes(input.sort)

@@ -21,6 +21,7 @@ const FILTER_PARAM_MAP = {
   careerBuckets: "career",
   authorizationCategories: "authorization",
   sponsorshipStatuses: "sponsorship",
+  experienceYears: "years",
   postedRange: "posted",
   sort: "sort",
 };
@@ -48,7 +49,7 @@ const state = {
 const els = Object.fromEntries([
   "freshness", "job-count", "filter-apply", "all-count", "shortlist-count", "repo-link", "resume-open", "search-input", "mobile-filter-open",
   "mobile-filter-close", "mobile-filter-count", "filter-panel", "domain-filter", "specialization-filter",
-  "industry-filter", "location-filter", "location-suggestions", "career-filter", "authorization-filter",
+  "industry-filter", "location-filter", "location-suggestions", "career-filter", "experience-years-filter", "authorization-filter",
   "sponsorship-filter", "posted-filter", "sort-filter", "clear-filters", "active-filters", "storage-warning",
   "results-heading", "results-summary", "match-mode", "job-list", "empty-state", "empty-title", "empty-copy",
   "empty-action", "load-more", "detail-pane", "detail-empty", "detail-content", "sheet-backdrop", "resume-dialog",
@@ -251,6 +252,7 @@ function syncControlsFromState() {
   els.industry_filter.value = state.filters.industries[0] || "";
   els.location_filter.value = state.filters.location;
   els.career_filter.value = state.filters.careerBuckets[0] || "";
+  els.experience_years_filter.value = state.filters.experienceYears;
   els.authorization_filter.value = state.filters.authorizationCategories[0] || "";
   els.sponsorship_filter.value = state.filters.sponsorshipStatuses[0] || "";
   els.posted_filter.value = state.filters.postedRange;
@@ -260,6 +262,7 @@ function syncControlsFromState() {
 function filterLabel(key, value) {
   if (key === "query") return `Search: ${value}`;
   if (key === "location") return `Location: ${value}`;
+  if (key === "experienceYears") return `Fits ${value} ${value === "1" ? "yr" : "yrs"}`;
   if (key === "postedRange") return { "1d": "Posted: 24 hours", "3d": "Posted: 3 days", "7d": "" }[value] || value;
   if (key === "sort") return value === "date_desc" ? "" : `Sort: ${els.sort_filter.selectedOptions[0]?.textContent || value}`;
   const lookup = {
@@ -327,7 +330,7 @@ function renderJobList(results) {
     const days = jobAgeDays(job.posted_on);
     return `
       <div class="job-row${state.selectedId === job.id ? " is-selected" : ""}" role="option" tabindex="-1" aria-selected="${state.selectedId === job.id}" data-job-id="${escapeHtml(job.id)}">
-        <div class="job-age-cell"><span class="job-age${days === 0 ? " is-new" : ""}">${days === 0 ? "NEW" : `${days}D`}</span></div>
+        <div class="job-age-cell"><span class="job-age${days === 0 ? " is-new" : ""}">${days === 0 ? "NEW" : `${days}D<small>AGO</small>`}</span></div>
         <div class="job-main">
           <h2 class="job-title">${escapeHtml(job.title)}</h2>
           <p class="job-company">${escapeHtml(job.company)}<span class="job-loc-sep">·</span><span class="job-loc">${escapeHtml(job.location || "Location not stated")}</span></p>
@@ -596,6 +599,15 @@ function bindEvents() {
   els.specialization_filter.addEventListener("change", () => setSingleArrayFilter("specializations", els.specialization_filter.value));
   els.industry_filter.addEventListener("change", () => setSingleArrayFilter("industries", els.industry_filter.value));
   els.career_filter.addEventListener("change", () => setSingleArrayFilter("careerBuckets", els.career_filter.value));
+  els.experience_years_filter.addEventListener("input", () => {
+    window.clearTimeout(searchTimer);
+    searchTimer = window.setTimeout(() => {
+      const years = Number.parseInt(els.experience_years_filter.value, 10);
+      state.filters.experienceYears = Number.isInteger(years) && years >= 0 && years <= 60 ? String(years) : "";
+      state.visibleLimit = PAGE_BATCH;
+      persist(); writeUrlState(); render();
+    }, 160);
+  });
   els.authorization_filter.addEventListener("change", () => setSingleArrayFilter("authorizationCategories", els.authorization_filter.value));
   els.sponsorship_filter.addEventListener("change", () => setSingleArrayFilter("sponsorshipStatuses", els.sponsorship_filter.value));
   els.location_filter.addEventListener("input", () => {

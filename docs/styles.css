@@ -178,7 +178,7 @@ svg { width: 18px; height: 18px; fill: none; stroke: currentColor; stroke-width:
 .search-field kbd { padding: 2px 7px; border: 1px solid var(--line); border-radius: 3px; background: var(--surface-dim); color: var(--subtle); font-family: var(--font-mono); font-size: 11px; }
 .mobile-filter-button, .mobile-filter-header { display: none; }
 
-.filter-panel { display: grid; min-width: 0; grid-template-columns: repeat(9, minmax(104px, 1fr)) auto; gap: 8px; margin-top: 10px; }
+.filter-panel { display: grid; min-width: 0; grid-template-columns: repeat(10, minmax(96px, 1fr)) auto; gap: 8px; margin-top: 10px; }
 .filter-field { display: grid; min-width: 0; gap: 4px; color: var(--muted); font-size: 9px; font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase; }
 .filter-field input, .filter-field select {
   width: 100%; height: 34px; padding: 0 26px 0 9px; border: 1px solid var(--line-strong); border-radius: 3px; outline: 0;
@@ -186,6 +186,8 @@ svg { width: 18px; height: 18px; fill: none; stroke: currentColor; stroke-width:
   font-family: var(--font-sans); font-size: 12.5px; font-weight: 500; letter-spacing: normal; text-transform: none;
 }
 .filter-field input { padding-right: 9px; }
+.filter-field input[type="number"] { -moz-appearance: textfield; appearance: textfield; }
+.filter-field input[type="number"]::-webkit-inner-spin-button, .filter-field input[type="number"]::-webkit-outer-spin-button { -webkit-appearance: none; margin: 0; }
 .filter-field input:focus, .filter-field select:focus { border-color: var(--ink); box-shadow: 0 0 0 2px rgba(28, 31, 42, 0.08); }
 .sheet-footer { display: contents; }
 .clear-button { align-self: end; min-height: 34px; padding: 0 10px; font-size: 12px; }
@@ -243,7 +245,9 @@ svg { width: 18px; height: 18px; fill: none; stroke: currentColor; stroke-width:
   background: var(--surface-dim);
   transition: background 120ms ease, border-color 120ms ease;
 }
-.job-age { color: var(--muted); font-size: 10px; font-weight: 600; letter-spacing: 0.08em; }
+.job-age { color: var(--muted); font-size: 10px; font-weight: 600; letter-spacing: 0.08em; text-align: center; line-height: 1.2; }
+.job-age small { display: block; margin-top: 1px; color: var(--subtle); font-size: 7.5px; font-weight: 500; letter-spacing: 0.14em; }
+.job-row.is-selected .job-age small { color: var(--board-dim); }
 .job-age.is-new { color: var(--flap-ink); }
 .job-row.is-selected .job-age.is-new { color: var(--flap); }
 

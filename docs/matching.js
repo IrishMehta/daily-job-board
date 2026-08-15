@@ -45,6 +45,8 @@ export function filterAndSortJobs(jobs, filters, { shortlist = null, resumeActiv
   const queryTokens = tokenize(filters.query);
   const location = normalizeText(filters.location);
   const cutoff = postedCutoff(filters.postedRange, jobs);
+  const years = Number.parseInt(filters.experienceYears, 10);
+  const yearsActive = Number.isInteger(years) && years >= 0;
   const filtered = jobs.filter((job) => {
     if (shortlist && !shortlist[job.id]) return false;
     if (cutoff && new Date(`${job.posted_on}T00:00:00`) < cutoff) return false;
@@ -52,6 +54,8 @@ export function filterAndSortJobs(jobs, filters, { shortlist = null, resumeActiv
     if (!hasAny(job._domains, filters.domains)) return false;
     if (!hasAny(job._specializations, filters.specializations)) return false;
     if (!hasAny(job._industries, filters.industries)) return false;
+    if (yearsActive && job.yoe_min != null
+      && (job.yoe_min > years || (job.yoe_max != null && job.yoe_max < years))) return false;
     if (filters.careerBuckets.length && !filters.careerBuckets.includes(job.career_bucket)) return false;
     if (filters.authorizationCategories.length && !filters.authorizationCategories.includes(job.authorization_category)) return false;
     if (filters.sponsorshipStatuses.length && !filters.sponsorshipStatuses.includes(job.sponsorship_status)) return false;
