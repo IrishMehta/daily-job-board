@@ -8,7 +8,6 @@ import {
   sanitizeFilters,
   toggleShortlist,
 } from "./storage.js";
-import { loadJobDetail } from "./details.js";
 import { explainResumeMatch, filterAndSortJobs, normalizeText, ResumeMatcher, tokenize } from "./matching.js";
 
 const PAGE_BATCH = 40;
@@ -37,9 +36,6 @@ const state = {
   view: "all",
   visibleLimit: PAGE_BATCH,
   selectedId: "",
-  detailById: new Map(),
-  detailLoadingId: "",
-  detailErrorById: new Map(),
   storageWarning: "",
   resumeActive: false,
   resumeTokens: [],
@@ -150,7 +146,7 @@ function prepareJobs(payload) {
       _locationSearch: normalizeText([job.location, ...(job.location_profile?.search_terms ?? [])].join(" ")),
       _searchText: normalizeText([
         job.title, job.company, job.location, job.experience_display, job.work_authorization_display,
-        taxonomyText, job.description_excerpt, ...(job.match_terms ?? []),
+        taxonomyText, job.summary, job.description_excerpt, ...(job.match_terms ?? []),
       ].join(" ")),
       _resumeScore: null,
     };
@@ -393,13 +389,21 @@ function renderMatchEvidence(job) {
     </section>`;
 }
 
-function detailDescription(job) {
-  const detail = state.detailById.get(job.id);
-  const error = state.detailErrorById.get(job.id);
-  if (detail) return `<p class="description-text">${escapeHtml(detail.description || "Description not available.")}</p>`;
-  if (state.detailLoadingId === job.id) return '<div class="detail-skeleton" aria-label="Loading full description"><span></span><span></span><span></span></div>';
-  if (error) return `<p>${escapeHtml(error)}</p><button class="button button-secondary description-load" type="button" data-retry-detail="${escapeHtml(job.id)}">Retry description</button>`;
-  return `<div class="description-preview"><p class="description-text">${escapeHtml(job.description_excerpt || "Open the employer posting to review the full description.")}</p></div>`;
+function summarySection(job) {
+  if (job.summary) {
+    return `
+    <section class="detail-section">
+      <h3>Role summary</h3>
+      <p class="summary-text">${escapeHtml(job.summary)}</p>
+      <p class="disclosure">AI-generated summary. The complete posting is on the employer site.</p>
+    </section>`;
+  }
+  return `
+    <section class="detail-section">
+      <h3>Role summary</h3>
+      <p class="summary-text">${escapeHtml(job.description_excerpt || "Open the employer posting to review the role details.")}</p>
+      <p class="disclosure">Excerpt from the posting. The complete posting is on the employer site.</p>
+    </section>`;
 }
 
 function renderDetail() {
@@ -434,11 +438,8 @@ function renderDetail() {
       <div class="decision-item"><span class="decision-label">Sponsorship</span><span class="decision-value ${authSignalClass(job)}">${escapeHtml(sponsorship)}</span></div>
       <div class="decision-item"><span class="decision-label">Authorization</span><span class="decision-value ${authSignalClass(job)}">${escapeHtml(job.authorization_category_label || "Not specified")}</span></div>
     </div>
+    ${summarySection(job)}
     ${renderMatchEvidence(job)}
-    <section class="detail-section">
-      <h3>Job description</h3>
-      ${detailDescription(job)}
-    </section>
     <section class="detail-section">
       <h3>Role classification</h3>
       <div class="taxonomy-row">${taxonomy.tags.map((tag) => `<span class="taxonomy-tag">${escapeHtml(tag)}</span>`).join("") || '<span class="taxonomy-tag">Uncategorized</span>'}</div>
@@ -447,25 +448,11 @@ function renderDetail() {
     </section>`;
 }
 
-async function selectJob(id, { openMobile = true, forceDetail = false } = {}) {
+function selectJob(id, { openMobile = true } = {}) {
   if (!state.jobs.some((job) => job.id === id)) return;
   state.selectedId = id;
-  state.detailErrorById.delete(id);
   if (openMobile && window.matchMedia("(max-width: 840px)").matches) document.body.classList.add("detail-open");
   render();
-  const job = selectedJob();
-  if (!job || state.detailById.has(id)) return;
-  state.detailLoadingId = id;
-  renderDetail();
-  try {
-    const detail = await loadJobDetail(job, { force: forceDetail });
-    state.detailById.set(id, detail);
-  } catch (error) {
-    state.detailErrorById.set(id, error.message || "The full description could not be loaded.");
-  } finally {
-    if (state.detailLoadingId === id) state.detailLoadingId = "";
-    if (state.selectedId === id) renderDetail();
-  }
 }
 
 function render() {
@@ -662,8 +649,6 @@ function bindEvents() {
     const save = event.target.closest("[data-shortlist-id]");
     if (save) { toggleSaved(save.dataset.shortlistId); return; }
     if (event.target.closest("[data-close-detail]")) document.body.classList.remove("detail-open");
-    const retry = event.target.closest("[data-retry-detail]");
-    if (retry) selectJob(retry.dataset.retryDetail, { forceDetail: true });
   });
   els.load_more.addEventListener("click", () => { state.visibleLimit += PAGE_BATCH; render(); });
   els.empty_action.addEventListener("click", () => {

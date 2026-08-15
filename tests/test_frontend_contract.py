@@ -17,7 +17,7 @@ class FrontendContractTests(unittest.TestCase):
 
     def test_main_payload_budget_and_schema(self):
         self.assertEqual("public-job-board-site-v3", self.payload["schema_version"])
-        self.assertLess(self.payload_path.stat().st_size, 8 * 1024 * 1024)
+        self.assertLess(self.payload_path.stat().st_size, 15 * 1024 * 1024)
         self.assertTrue(self.payload["jobs"])
         for job in self.payload["jobs"]:
             self.assertNotIn("job_description", job)
