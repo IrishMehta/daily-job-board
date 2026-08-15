@@ -46,7 +46,7 @@ const state = {
 };
 
 const els = Object.fromEntries([
-  "freshness", "all-count", "shortlist-count", "repo-link", "resume-open", "search-input", "mobile-filter-open",
+  "freshness", "job-count", "filter-apply", "all-count", "shortlist-count", "repo-link", "resume-open", "search-input", "mobile-filter-open",
   "mobile-filter-close", "mobile-filter-count", "filter-panel", "domain-filter", "specialization-filter",
   "industry-filter", "location-filter", "location-suggestions", "career-filter", "authorization-filter",
   "sponsorship-filter", "posted-filter", "sort-filter", "clear-filters", "active-filters", "storage-warning",
@@ -80,14 +80,11 @@ function formatCount(value) {
   return new Intl.NumberFormat("en-US").format(Number(value) || 0);
 }
 
-function dateAge(value) {
+function jobAgeDays(value) {
   const date = new Date(`${value}T00:00:00`);
   const today = new Date();
   today.setHours(0, 0, 0, 0);
-  const days = Math.max(0, Math.round((today - date) / 86400000));
-  if (days === 0) return "Today";
-  if (days === 1) return "1d ago";
-  return `${days}d ago`;
+  return Math.max(0, Math.round((today - date) / 86400000));
 }
 
 function formatGeneratedAt(value) {
@@ -95,7 +92,25 @@ function formatGeneratedAt(value) {
   if (Number.isNaN(date.getTime())) return "Current US openings";
   const today = new Date();
   const sameDay = date.toDateString() === today.toDateString();
-  return `${sameDay ? "Updated today" : `Updated ${date.toLocaleDateString(undefined, { month: "short", day: "numeric" })}`} · ${formatCount(state.jobs.length)} US jobs`;
+  return sameDay ? "Updated today · 7-day window" : `Updated ${date.toLocaleDateString(undefined, { month: "short", day: "numeric" })} · 7-day window`;
+}
+
+function renderFlapCount(total) {
+  if (!els.job_count) return;
+  const text = formatCount(total);
+  els.job_count.setAttribute("aria-label", `${text} roles on the board`);
+  els.job_count.innerHTML = [...text].map((ch, i) =>
+    `<span class="flap-tile${/\d/.test(ch) ? "" : " flap-sep"}" style="--i:${i}">${escapeHtml(ch)}</span>`).join("");
+  if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) return;
+  els.job_count.querySelectorAll(".flap-tile:not(.flap-sep)").forEach((tile, index) => {
+    const finalDigit = Number(tile.textContent);
+    let remaining = 5 + index * 3;
+    const timer = window.setInterval(() => {
+      remaining -= 1;
+      tile.textContent = String(remaining <= 0 ? finalDigit : (finalDigit + remaining) % 10);
+      if (remaining <= 0) window.clearInterval(timer);
+    }, 70);
+  });
 }
 
 function companyInitials(value) {
@@ -309,18 +324,18 @@ function renderJobList(results) {
   const visible = results.slice(0, state.visibleLimit);
   els.job_list.innerHTML = visible.map((job) => {
     const saved = Boolean(state.shortlist[job.id]);
+    const days = jobAgeDays(job.posted_on);
     return `
-      <div class="job-row${state.selectedId === job.id ? " is-selected" : ""}" role="option" tabindex="-1" aria-selected="${state.selectedId === job.id}" data-job-id="${escapeHtml(job.id)}" data-domain="${escapeHtml(job._domains[0] || "")}">
-        <div class="job-row-top">
+      <div class="job-row${state.selectedId === job.id ? " is-selected" : ""}" role="option" tabindex="-1" aria-selected="${state.selectedId === job.id}" data-job-id="${escapeHtml(job.id)}">
+        <div class="job-age-cell"><span class="job-age${days === 0 ? " is-new" : ""}">${days === 0 ? "NEW" : `${days}D`}</span></div>
+        <div class="job-main">
           <h2 class="job-title">${escapeHtml(job.title)}</h2>
-          <span class="job-age">${escapeHtml(dateAge(job.posted_on))}</span>
-        </div>
-        <p class="job-company">${escapeHtml(job.company)}</p>
-        <p class="job-location">${escapeHtml(job.location || "Location not stated")}</p>
-        <div class="job-meta">
-          <span>${escapeHtml(job.experience_display || "Experience not stated")}</span>
-          <span class="${authSignalClass(job)}">${escapeHtml(sponsorshipLabel(job))}</span>
-          <span>${escapeHtml(primarySpecialization(job))}</span>
+          <p class="job-company">${escapeHtml(job.company)}<span class="job-loc-sep">·</span><span class="job-loc">${escapeHtml(job.location || "Location not stated")}</span></p>
+          <div class="job-meta">
+            <span>${escapeHtml(job.experience_display || "Experience not stated")}</span>
+            <span class="${authSignalClass(job)}">${escapeHtml(sponsorshipLabel(job))}</span>
+            <span>${escapeHtml(primarySpecialization(job))}</span>
+          </div>
         </div>
         <button class="shortlist-button${saved ? " is-saved" : ""}" type="button" data-shortlist-id="${escapeHtml(job.id)}" aria-label="${saved ? "Remove from" : "Add to"} shortlist" aria-pressed="${saved}">${bookmarkIcon()}</button>
       </div>`;
@@ -338,8 +353,8 @@ function renderEmpty(results) {
     els.empty_copy.textContent = "Bookmark promising roles from All jobs to compare them here.";
     els.empty_action.textContent = "Browse all jobs";
   } else {
-    els.empty_title.textContent = "No jobs match these filters";
-    els.empty_copy.textContent = "Clear one or more filters to broaden the search.";
+    els.empty_title.textContent = "Nothing on the board matches";
+    els.empty_copy.textContent = "Clear one or more filters to widen the search.";
     els.empty_action.textContent = "Clear filters";
   }
 }
@@ -460,9 +475,10 @@ function render() {
     button.setAttribute("aria-pressed", String(active));
   });
   els.results_heading.textContent = state.view === "shortlist" ? "Shortlist" : "All jobs";
-  els.results_summary.textContent = `${formatCount(results.length)} ${results.length === 1 ? "role" : "roles"} match your current view`;
+  els.results_summary.textContent = `${formatCount(results.length)} ${results.length === 1 ? "role" : "roles"} in view`;
   els.all_count.textContent = `(${formatCount(state.jobs.length)})`;
   els.shortlist_count.textContent = formatCount(Object.keys(state.shortlist).length);
+  if (els.filter_apply) els.filter_apply.textContent = `Show ${formatCount(results.length)} ${results.length === 1 ? "role" : "roles"}`;
   els.match_mode.textContent = state.resumeActive ? `Sorted by ${state.resumeMode}` : "";
   els.match_mode.classList.toggle("hidden", !state.resumeActive);
   els.sort_filter.disabled = state.resumeActive;
@@ -645,6 +661,7 @@ function bindEvents() {
   });
   els.mobile_filter_open.addEventListener("click", openFilters);
   els.mobile_filter_close.addEventListener("click", closeFilters);
+  els.filter_apply.addEventListener("click", closeFilters);
   els.sheet_backdrop.addEventListener("click", closeFilters);
   els.resume_open.addEventListener("click", () => els.resume_dialog.showModal());
   els.resume_apply.addEventListener("click", applyResume);
@@ -688,6 +705,7 @@ async function init() {
   if (pruned.removed) state.storageWarning = `${pruned.removed} expired shortlisted ${pruned.removed === 1 ? "job was" : "jobs were"} removed because they left the seven-day feed.`;
 
   els.freshness.textContent = formatGeneratedAt(state.payload.generated_at);
+  renderFlapCount(state.jobs.length);
   if (state.payload.repo_url) els.repo_link.href = state.payload.repo_url;
   populateFilters();
   bindEvents();

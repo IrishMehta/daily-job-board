@@ -7,27 +7,33 @@
   <meta name="description" content="Search and shortlist fresh US technology jobs by role, experience, location, sponsorship, and work authorization.">
   <meta name="keywords" content="tech jobs, software engineering jobs, AI jobs, machine learning jobs, data jobs, sponsorship jobs, early career jobs">
   <meta name="robots" content="index,follow">
-  <meta name="theme-color" content="#ffffff">
+  <meta name="theme-color" content="#1a1d27">
   <link rel="canonical" href="https://irishmehta.github.io/daily-job-board/">
   <meta property="og:type" content="website">
   <meta property="og:title" content="US Tech Job Discovery">
   <meta property="og:description" content="A focused workspace for searching and shortlisting fresh US technology roles.">
   <meta property="og:url" content="https://irishmehta.github.io/daily-job-board/">
   <meta name="twitter:card" content="summary_large_image">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Archivo:ital,wdth,wght@0,62..125,100..900;1,62..125,100..900&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="./styles.css">
 </head>
 <body>
   <a class="skip-link" href="#job-list">Skip to job results</a>
 
   <header class="app-header">
-    <div class="brand-block">
-      <a class="brand" href="./" aria-label="Job Discovery home">
-        <span class="brand-mark" aria-hidden="true">
-          <svg viewBox="0 0 24 24"><path d="M9 6V4.8A1.8 1.8 0 0 1 10.8 3h2.4A1.8 1.8 0 0 1 15 4.8V6m5 4H4m1-4h14a1 1 0 0 1 1 1v11a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V7a1 1 0 0 1 1-1Zm5 4v2h4v-2"/></svg>
-        </span>
-        <span>Job Discovery</span>
-      </a>
-      <span class="freshness" id="freshness">Loading current jobs…</span>
+    <a class="brand" href="./" aria-label="Job Discovery home">
+      <span class="brand-mark" aria-hidden="true">JD</span>
+      <span class="brand-word">Job Discovery</span>
+    </a>
+
+    <div class="board-status">
+      <span class="flap-count" id="job-count" role="img" aria-label="Loading role count"></span>
+      <span class="board-status-copy">
+        <span class="board-status-label">roles on the board</span>
+        <span class="freshness" id="freshness">Loading current jobs…</span>
+      </span>
     </div>
 
     <nav class="view-tabs" aria-label="Job views">
@@ -38,8 +44,8 @@
     </nav>
 
     <div class="header-actions">
-      <button class="button button-secondary" id="resume-open" type="button">
-        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3v18M3 12h18M5.6 5.6l12.8 12.8m0-12.8L5.6 18.4"/></svg>
+      <button class="button button-board" id="resume-open" type="button">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M8 3h8a1 1 0 0 1 1 1v16a1 1 0 0 1-1 1H8a1 1 0 0 1-1-1V4a1 1 0 0 1 1-1Zm2 5h4m-4 4h4m-4 4h2"/></svg>
         Match resume
       </button>
       <a class="icon-link" id="repo-link" href="https://github.com/IrishMehta/daily-job-board" target="_blank" rel="noopener noreferrer" aria-label="About this board">
@@ -62,10 +68,12 @@
       </button>
     </div>
 
-    <div class="filter-panel" id="filter-panel">
+    <div class="filter-panel" id="filter-panel" aria-label="Filters">
       <div class="mobile-filter-header">
-        <strong>Refine jobs</strong>
-        <button class="icon-button" id="mobile-filter-close" type="button" aria-label="Close filters">×</button>
+        <strong>Refine the board</strong>
+        <button class="icon-button" id="mobile-filter-close" type="button" aria-label="Close filters">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="m6 6 12 12M18 6 6 18"/></svg>
+        </button>
       </div>
       <label class="filter-field">Focus
         <select id="domain-filter"><option value="">All focus areas</option></select>
@@ -105,7 +113,10 @@
           <option value="company_asc">Company A–Z</option>
         </select>
       </label>
-      <button class="button button-quiet clear-button" id="clear-filters" type="button">Clear all</button>
+      <div class="sheet-footer">
+        <button class="button button-quiet clear-button" id="clear-filters" type="button">Clear all</button>
+        <button class="button button-apply" id="filter-apply" type="button">Show all roles</button>
+      </div>
     </div>
     <div class="active-filters hidden" id="active-filters" aria-label="Active filters"></div>
   </section>
@@ -124,9 +135,9 @@
       <div class="results-scroll">
         <div class="job-list" id="job-list" role="listbox" aria-label="Job results" tabindex="0"></div>
         <div class="empty-state hidden" id="empty-state">
-          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M9 6V5a2 2 0 0 1 2-2h2a2 2 0 0 1 2 2v1M5 6h14a1 1 0 0 1 1 1v11a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V7a1 1 0 0 1 1-1Z"/></svg>
-          <h2 id="empty-title">No jobs match these filters</h2>
-          <p id="empty-copy">Clear one or more filters to broaden the search.</p>
+          <span class="empty-flaps" aria-hidden="true"><span>N</span><span>O</span><span class="empty-flap-gap"></span><span>M</span><span>A</span><span>T</span><span>C</span><span>H</span></span>
+          <h2 id="empty-title">Nothing on the board matches</h2>
+          <p id="empty-copy">Clear one or more filters to widen the search.</p>
           <button class="button button-secondary" id="empty-action" type="button">Clear filters</button>
         </div>
         <button class="load-more hidden" id="load-more" type="button">Load 40 more jobs</button>
@@ -153,7 +164,9 @@
         <span class="dialog-kicker">Private, in-browser matching</span>
         <h2 id="resume-title">Find closer matches</h2>
       </div>
-      <button class="icon-button" value="cancel" aria-label="Close resume matcher">×</button>
+      <button class="icon-button" value="cancel" aria-label="Close resume matcher">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="m6 6 12 12M18 6 6 18"/></svg>
+      </button>
     </form>
     <div class="dialog-body">
       <p>Your resume stays in this tab. It is never uploaded or saved.</p>
