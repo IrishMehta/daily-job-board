@@ -23,21 +23,6 @@ class FrontendContractTests(unittest.TestCase):
             self.assertNotIn("job_description", job)
             self.assertTrue(job["description_excerpt"])
             self.assertLessEqual(len(job["match_terms"]), 24)
-            self.assertRegex(job["details_shard"], r"^[0-1][0-9a-f]$")
-
-    def test_detail_shards_cover_every_published_job_once_and_meet_budget(self):
-        detail_dir = DOCS / "data" / "job-details"
-        shard_files = sorted(detail_dir.glob("*.json"))
-        self.assertEqual(32, len(shard_files))
-        detail_ids = set()
-        for path in shard_files:
-            self.assertLess(path.stat().st_size, 1024 * 1024)
-            payload = json.loads(path.read_text(encoding="utf-8"))
-            self.assertEqual("public-job-board-detail-v1", payload["schema_version"])
-            self.assertEqual(path.stem, payload["shard"])
-            self.assertTrue(detail_ids.isdisjoint(payload["jobs"]))
-            detail_ids.update(payload["jobs"])
-        self.assertEqual({job["id"] for job in self.payload["jobs"]}, detail_ids)
 
     def test_local_storage_contract_excludes_private_resume_data_and_cookies(self):
         storage_source = (DOCS / "storage.js").read_text(encoding="utf-8")

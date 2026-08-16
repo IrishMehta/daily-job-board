@@ -20,13 +20,23 @@ def write_jsonl(path: Path, records):
 
 
 class PublicBoardListingsTests(unittest.TestCase):
-    def test_title_classifier_includes_broad_tech_groups_and_excludes_recruiting(self):
-        families = B.compile_title_families(None)
-        exclusions = B.compile_patterns(B.DEFAULT_EXCLUDE_PATTERNS)
+    def test_live_config_title_policy_covers_tech_groups_and_excludes_recruiting(self):
+        families = B.compile_title_families(B.LISTINGS_CONFIG.get("title_families"))
+        exclusions = B.compile_patterns(B.LISTINGS_CONFIG.get("title_exclude_patterns") or [])
         self.assertIn("product_management", B.classify_title("Senior Product Manager", families, exclusions))
         self.assertIn("business_systems_analysis", B.classify_title("Business Systems Analyst", families, exclusions))
         self.assertIn("cybersecurity", B.classify_title("Security Engineer", families, exclusions))
+        self.assertIn("internships", B.classify_title("Software Engineering Intern", families, exclusions))
         self.assertEqual([], B.classify_title("Technical Recruiter", families, exclusions))
+        self.assertEqual([], B.classify_title("Marketing Intern", families, exclusions))
+
+    def test_missing_title_policy_fails_loudly_instead_of_falling_back(self):
+        with self.assertRaises(ValueError):
+            B.compile_title_families(None)
+        with self.assertRaises(ValueError):
+            B.compile_title_families([])
+        with self.assertRaises(ValueError):
+            B.compile_title_families([{"id": "", "patterns": []}])
 
     def test_builder_filters_and_deduplicates_before_using_description_cache(self):
         today = date(2026, 8, 13)
@@ -148,3 +158,127 @@ class PublicBoardListingsTests(unittest.TestCase):
 
 if __name__ == "__main__":
     unittest.main()
+
+
+class PublicDescriptionFetchTests(unittest.TestCase):
+    def _prefilter_record(self, family, title, job_id, source, external_path=None):
+        record = {
+            "family": family,
+            "company": "Example",
+            "source_endpoint": source,
+            "title_raw": title,
+            "posted_on_normalized": date(2026, 8, 13).isoformat(),
+            "location_raw": "Austin, TX",
+            "location_status": "usa",
+            "location_in_usa": True,
+            "absolute_url": f"https://example.test/apply/{job_id}",
+            "job_id": job_id,
+            "raw_listing": {"externalPath": external_path} if external_path else {},
+        }
+        return record
+
+    def test_fetch_rescues_descriptionless_candidates_and_caches_results(self):
+        with tempfile.TemporaryDirectory() as directory:
+            root = Path(directory)
+            prefilter_path = root / "prefilter.jsonl"
+            cache_path = root / "public_cache.jsonl"
+            write_jsonl(
+                prefilter_path,
+                [
+                    self._prefilter_record(
+                        "workday", "Software Engineering Intern", "R-1",
+                        "https://acme.wd1.myworkdayjobs.com/wday/cxs/acme/intern/jobs",
+                        external_path="/job/Austin/Software-Engineering-Intern_R-1",
+                    ),
+                    self._prefilter_record(
+                        "greenhouse", "Machine Learning Intern", "77",
+                        "https://boards-api.greenhouse.io/v1/boards/acme/jobs",
+                    ),
+                    self._prefilter_record(
+                        "greenhouse", "Data Science Intern", "88",
+                        "https://boards-api.greenhouse.io/v1/boards/acme/jobs",
+                    ),
+                ],
+            )
+            calls = []
+
+            def fake_http_get(url):
+                calls.append(url)
+                if url.endswith("R-1"):
+                    return {"jobPostingInfo": {"jobDescription": "<p>Build intern tooling with Python.</p>"}}
+                if url.endswith("/77"):
+                    return {"content": "&lt;p&gt;Train models. Requires Python.&lt;/p&gt;"}
+                return {"content": ""}
+
+            records, summary = B.build_public_board_listings(
+                prefilter_path,
+                filtered_cache_path=None,
+                posted_within_days=7,
+                reference_date=date(2026, 8, 13),
+                public_description_cache_path=cache_path,
+                max_description_fetches=10,
+                http_get=fake_http_get,
+            )
+            self.assertEqual(summary["counts"]["description_fetch_attempted"], 3)
+            self.assertEqual(summary["counts"]["description_fetch_succeeded"], 2)
+            self.assertEqual(summary["counts"]["description_fetch_unusable"], 1)
+            self.assertEqual(summary["counts"]["records_selected"], 2)
+            descriptions = {record["job_id"]: record["job_description"] for record in records}
+            self.assertIn("Build intern tooling with Python.", descriptions["R-1"])
+            self.assertIn("Train models. Requires Python.", descriptions["77"])
+            self.assertTrue(all(record["description_source"] == "public_fetch" for record in records))
+
+            # Second run: successes come from the cache, the unusable one is
+            # negative-cached, so no HTTP requests happen at all.
+            calls.clear()
+            records_again, summary_again = B.build_public_board_listings(
+                prefilter_path,
+                filtered_cache_path=None,
+                posted_within_days=7,
+                reference_date=date(2026, 8, 13),
+                public_description_cache_path=cache_path,
+                max_description_fetches=10,
+                http_get=fake_http_get,
+            )
+            self.assertEqual(calls, [])
+            self.assertEqual(len(records_again), 2)
+            self.assertEqual(summary_again["counts"].get("description_fetch_attempted", 0), 0)
+            self.assertTrue(all(record["description_source"] == "public_fetch_cache" for record in records_again))
+
+    def test_fetch_budget_and_transient_errors_do_not_poison_the_cache(self):
+        with tempfile.TemporaryDirectory() as directory:
+            root = Path(directory)
+            prefilter_path = root / "prefilter.jsonl"
+            cache_path = root / "public_cache.jsonl"
+            write_jsonl(
+                prefilter_path,
+                [
+                    self._prefilter_record(
+                        "greenhouse", "Software Engineer Intern", "1",
+                        "https://boards-api.greenhouse.io/v1/boards/acme/jobs",
+                    ),
+                    self._prefilter_record(
+                        "greenhouse", "Data Engineer Intern", "2",
+                        "https://boards-api.greenhouse.io/v1/boards/acme/jobs",
+                    ),
+                ],
+            )
+
+            def failing_http_get(url):
+                raise RuntimeError("boom")
+
+            records, summary = B.build_public_board_listings(
+                prefilter_path,
+                filtered_cache_path=None,
+                posted_within_days=7,
+                reference_date=date(2026, 8, 13),
+                public_description_cache_path=cache_path,
+                max_description_fetches=1,
+                http_get=failing_http_get,
+            )
+            self.assertEqual(records, [])
+            self.assertEqual(summary["counts"]["description_fetch_attempted"], 1)
+            self.assertEqual(summary["counts"]["description_fetch_failed"], 1)
+            self.assertEqual(summary["counts"]["description_fetch_skipped_budget"], 1)
+            self.assertEqual(summary["counts"]["excluded_missing_usable_description"], 2)
+            self.assertFalse(cache_path.exists())
