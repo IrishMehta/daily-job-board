@@ -38,6 +38,9 @@ class FrontendContractTests(unittest.TestCase):
         self.assertIn('id="job-list"', html)
         self.assertIn('id="detail-pane"', html)
         self.assertIn('data-view="shortlist"', html)
+        self.assertIn('class="button button-board observatory-link"', html)
+        self.assertIn('href="https://irishmehta.github.io/JobAutomation/"', html)
+        self.assertIn('aria-label="Open Pipeline Observatory"', html)
         self.assertIn('type="module" src="./app.js"', html)
 
 
