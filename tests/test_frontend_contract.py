@@ -41,6 +41,9 @@ class FrontendContractTests(unittest.TestCase):
         self.assertIn('class="button button-board observatory-link"', html)
         self.assertIn('href="https://irishmehta.github.io/JobAutomation/"', html)
         self.assertIn('aria-label="Open Pipeline Observatory"', html)
+        self.assertIn('class="button button-board api-docs-link"', html)
+        self.assertIn('href="https://job-api.irishmehta.workers.dev/docs"', html)
+        self.assertIn('aria-label="Open API documentation"', html)
         self.assertIn('type="module" src="./app.js"', html)
 
 

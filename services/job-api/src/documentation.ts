@@ -336,33 +336,51 @@ export function docsHandler(request: Request): Response {
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="description" content="Documentation for the Irish Mehta Public Job API">
+  <meta name="theme-color" content="#1a1d27">
   <title>Public Job API</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Archivo:ital,wdth,wght@0,62..125,100..900;1,62..125,100..900&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet">
   <style>
-    :root { color-scheme: light; --ink:#142019; --muted:#607067; --line:#d9ded9; --paper:#f7f6f0; --panel:#fff; --accent:#5f7f18; --dark:#101a14; }
+    :root { color-scheme:light; --board:#1a1d27; --board-raised:#252938; --board-line:#343a4c; --board-text:#f4f5f1; --board-dim:#8d94a7; --flap:#ffc24b; --flap-ink:#92610a; --paper:#f2f3ef; --surface:#fff; --surface-dim:#f7f8f4; --ink:#1c1f2a; --muted:#5c6370; --line:#e0e2da; --line-strong:#c7cabf; --radius:4px; --sans:"Archivo",ui-sans-serif,system-ui,sans-serif; --mono:"IBM Plex Mono",ui-monospace,monospace; }
     * { box-sizing:border-box; }
-    body { margin:0; background:var(--paper); color:var(--ink); font:16px/1.6 Inter, ui-sans-serif, system-ui, sans-serif; }
-    header { background:var(--dark); color:#f4f7f2; border-bottom:3px solid #b7ed43; }
+    html { background:var(--paper); }
+    body { margin:0; background:var(--paper); color:var(--ink); font:15px/1.6 var(--sans); -webkit-font-smoothing:antialiased; }
+    a { color:inherit; }
+    :focus-visible { outline:2px solid var(--flap); outline-offset:2px; }
+    header { background:var(--board); color:var(--board-text); border-bottom:2px solid var(--flap); }
     nav, main { width:min(1100px, calc(100% - 32px)); margin:auto; }
-    nav { min-height:64px; display:flex; align-items:center; justify-content:space-between; gap:20px; }
-    nav strong { letter-spacing:.02em; } nav a { color:#dce8dc; text-decoration:none; margin-left:18px; }
+    nav { min-height:60px; display:flex; align-items:center; justify-content:space-between; gap:20px; }
+    .brand { display:flex; align-items:center; gap:10px; color:var(--board-text); text-decoration:none; }
+    .brand-mark { display:grid; width:30px; height:30px; place-items:center; border:1px solid var(--board-line); border-radius:3px; background:var(--board-raised); color:var(--flap); font:600 10px var(--mono); }
+    .brand-word { font-size:15px; font-weight:800; font-stretch:122%; letter-spacing:.05em; text-transform:uppercase; }
+    .nav-links { display:flex; align-items:center; gap:8px; }
+    .nav-links a { min-height:36px; display:inline-flex; align-items:center; padding:0 12px; border:1px solid var(--board-line); border-radius:var(--radius); background:var(--board-raised); color:var(--board-text); font-size:12px; font-weight:650; text-decoration:none; }
+    .nav-links a:hover { border-color:rgba(255,194,75,.55); color:var(--flap); }
     main { padding:52px 0 80px; }
-    .eyebrow { color:var(--accent); font:700 12px/1.2 ui-monospace, monospace; letter-spacing:.12em; text-transform:uppercase; }
+    .eyebrow { color:var(--flap-ink); font:600 11px/1.2 var(--mono); letter-spacing:.12em; text-transform:uppercase; }
     h1 { max-width:760px; margin:10px 0 14px; font-size:clamp(38px, 6vw, 68px); line-height:1; letter-spacing:-.045em; }
     h2 { margin:0 0 12px; font-size:24px; } h3 { margin:0 0 8px; }
     .lead { max-width:760px; color:var(--muted); font-size:19px; }
     .grid { display:grid; grid-template-columns:repeat(3, 1fr); gap:16px; margin:36px 0; }
-    .card, section { background:var(--panel); border:1px solid var(--line); }
-    .card { padding:22px; } .step { color:var(--accent); font:700 12px ui-monospace, monospace; }
+    .card, section { background:var(--surface); border:1px solid var(--line); border-radius:var(--radius); }
+    .card { padding:22px; } .step { color:var(--flap-ink); font:600 11px var(--mono); letter-spacing:.08em; }
+    .card p { color:var(--muted); }
     section { margin-top:18px; padding:28px; }
-    code, pre { font-family:"SFMono-Regular", Consolas, monospace; }
-    code { font-size:.9em; } pre { overflow:auto; background:#111a15; color:#e7eee6; padding:18px; border-radius:3px; font-size:13px; }
+    code, pre { font-family:var(--mono); }
+    code { font-size:.9em; } pre { overflow:auto; margin:16px 0; padding:18px; border:1px solid var(--board-line); border-top:2px solid var(--flap); border-radius:var(--radius); background:var(--board); color:var(--board-text); font-size:12px; }
     table { width:100%; border-collapse:collapse; } th, td { padding:11px 8px; border-bottom:1px solid var(--line); text-align:left; vertical-align:top; } th { font-size:12px; text-transform:uppercase; letter-spacing:.08em; }
-    .links a { color:#345900; font-weight:650; } .note { border-left:4px solid #b7ed43; padding-left:16px; color:var(--muted); }
-    @media (max-width:760px) { .grid { grid-template-columns:1fr; } nav span { display:none; } main { padding-top:36px; } section { padding:20px; } table { display:block; overflow:auto; } }
+    th { color:var(--muted); font:600 10px var(--mono); }
+    tbody tr:hover { background:var(--surface-dim); }
+    .links a { color:var(--flap-ink); font-weight:700; } .note { border-left:3px solid var(--flap); padding-left:16px; color:var(--muted); }
+    @media (max-width:760px) { .grid { grid-template-columns:1fr; } .brand-word { display:none; } .nav-links { gap:4px; } .nav-links a { min-height:32px; padding:0 7px; font-size:10px; } .nav-links a:last-child { display:none; } main { padding-top:36px; } section { padding:20px; } table { display:block; overflow:auto; } }
   </style>
 </head>
 <body>
-  <header><nav><strong>Public Job API</strong><span><a href="${safeOrigin}/v1/status">Status</a><a href="${safeOrigin}/openapi.json">OpenAPI</a><a href="${safeOrigin}/llms.txt">LLM guide</a></span></nav></header>
+  <header><nav>
+    <a class="brand" href="https://irishmehta.github.io/daily-job-board/" aria-label="Open Job Discovery board"><span class="brand-mark" aria-hidden="true">API</span><span class="brand-word">Public Job API</span></a>
+    <span class="nav-links"><a href="https://irishmehta.github.io/daily-job-board/">Job board</a><a href="${safeOrigin}/v1/status">Status</a><a href="${safeOrigin}/openapi.json">OpenAPI</a><a href="${safeOrigin}/llms.txt">LLM guide</a></span>
+  </nav></header>
   <main>
     <div class="eyebrow">Read-only · public · no authentication</div>
     <h1>Search the public job board programmatically.</h1>
