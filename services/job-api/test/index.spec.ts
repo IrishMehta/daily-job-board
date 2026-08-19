@@ -1,5 +1,5 @@
 import { env } from "cloudflare:workers";
-import { beforeEach, describe, expect, it } from "vitest";
+import { beforeAll, describe, expect, it } from "vitest";
 import worker from "../src/index";
 
 const DATASET_VERSION = "test-dataset";
@@ -92,7 +92,7 @@ async function request(path: string, method = "GET"): Promise<Response> {
 	);
 }
 
-beforeEach(async () => {
+beforeAll(async () => {
 	await env.DB.prepare(
 		`INSERT INTO dataset_versions (
 			version, source_sha256, source_schema_version, taxonomy_version,
