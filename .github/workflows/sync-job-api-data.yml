@@ -1,0 +1,94 @@
+name: Sync public jobs to D1
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - "docs/data/public_jobs.json"
+      - ".github/workflows/sync-job-api-data.yml"
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: job-api-dataset-sync
+  cancel-in-progress: false
+
+jobs:
+  sync:
+    runs-on: ubuntu-latest
+    timeout-minutes: 45
+
+    defaults:
+      run:
+        working-directory: services/job-api
+
+    env:
+      CLOUDFLARE_API_TOKEN: ${{ secrets.CLOUDFLARE_API_TOKEN }}
+      CLOUDFLARE_ACCOUNT_ID: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
+
+    steps:
+      - name: Checkout public board
+        uses: actions/checkout@v4
+
+      - name: Set up Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: npm
+          cache-dependency-path: services/job-api/package-lock.json
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.13"
+
+      - name: Install Worker dependencies
+        run: npm ci
+
+      - name: Run API checks
+        run: |
+          npm run typecheck
+          npm run test:run
+          python -m unittest tests.test_build_d1_import
+
+      - name: Validate dataset and build import
+        run: npm run db:build-import
+
+      - name: Load inactive dataset
+        run: npm run db:load:remote
+
+      - name: Activate validated dataset
+        run: npm run db:activate:remote
+
+      - name: Verify live API version
+        run: |
+          set -euo pipefail
+
+          expected_version="$(
+            python -c "import json; print(json.load(open('generated/import-manifest.json'))['dataset_version'])"
+          )"
+
+          expected_jobs="$(
+            python -c "import json; print(json.load(open('generated/import-manifest.json'))['expected_counts']['jobs'])"
+          )"
+
+          status_json="$(
+            curl --fail --silent --show-error \
+              --retry 5 --retry-delay 3 \
+              https://job-api.irishmehta.workers.dev/v1/status
+          )"
+
+          actual_version="$(
+            python -c "import json,sys; print(json.load(sys.stdin)['dataset']['version'])" <<< "$status_json"
+          )"
+
+          actual_jobs="$(
+            python -c "import json,sys; print(json.load(sys.stdin)['dataset']['total_jobs'])" <<< "$status_json"
+          )"
+
+          test "$actual_version" = "$expected_version"
+          test "$actual_jobs" = "$expected_jobs"
+
+          echo "Activated dataset $actual_version with $actual_jobs jobs"
