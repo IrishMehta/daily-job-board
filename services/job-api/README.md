@@ -57,6 +57,9 @@ GET /v1/status
 GET /v1/jobs
 GET /v1/jobs/{url-encoded-job-id}
 GET /v1/facets
+GET /docs
+GET /openapi.json
+GET /llms.txt
 ```
 
 `GET /v1/jobs` supports these optional filters in any combination:
@@ -87,3 +90,11 @@ Run the Worker checks without entering Vitest watch mode:
 npm run typecheck
 npm run test:run
 ```
+
+The documentation routes are dataset-independent, so setup guidance remains
+available even before the first validated production import is activated.
+After deployment, the public entry points are:
+
+- `https://job-api.irishmehta.workers.dev/docs` for people
+- `https://job-api.irishmehta.workers.dev/openapi.json` for API clients
+- `https://job-api.irishmehta.workers.dev/llms.txt` for browsing-enabled assistants

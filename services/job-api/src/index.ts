@@ -10,10 +10,18 @@ import {
 	jsonResponse,
 	optionsResponse,
 } from "./http";
+import {
+	docsHandler,
+	llmsTxtHandler,
+	openApiHandler,
+} from "./documentation";
 
 const SERVICE_DESCRIPTION = {
 	name: "Irish Mehta Public Job API",
 	version: "v1",
+	documentation: "/docs",
+	openapi: "/openapi.json",
+	llm_instructions: "/llms.txt",
 	endpoints: {
 		status: "/v1/status",
 		jobs: "/v1/jobs",
@@ -36,6 +44,9 @@ export default {
 			if (url.pathname === "/") {
 				return jsonResponse(SERVICE_DESCRIPTION, 200, "public, max-age=300");
 			}
+			if (url.pathname === "/docs") return docsHandler(request);
+			if (url.pathname === "/openapi.json") return openApiHandler(request);
+			if (url.pathname === "/llms.txt") return llmsTxtHandler(request);
 			if (url.pathname === "/v1/status") return await statusHandler(env);
 			if (url.pathname === "/v1/jobs") return await jobsHandler(request, env);
 			if (url.pathname === "/v1/facets") return await facetsHandler(env);

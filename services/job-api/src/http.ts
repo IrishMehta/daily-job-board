@@ -36,6 +36,21 @@ export function optionsResponse(): Response {
 	return new Response(null, { status: 204, headers: COMMON_HEADERS });
 }
 
+export function documentResponse(
+	body: string,
+	contentType: string,
+	cacheControl = "public, max-age=300",
+): Response {
+	return new Response(body, {
+		status: 200,
+		headers: {
+			...COMMON_HEADERS,
+			"Cache-Control": cacheControl,
+			"Content-Type": contentType,
+		},
+	});
+}
+
 export function errorResponse(error: ApiError): Response {
 	return jsonResponse(
 		{
