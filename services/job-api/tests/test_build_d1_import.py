@@ -1,13 +1,16 @@
 import json
 import sqlite3
+import sys
 import tempfile
 import unittest
 from pathlib import Path
 
-from scripts.build_d1_import import ValidationError, build_import
-
-
 SERVICE_ROOT = Path(__file__).resolve().parents[1]
+sys.path.insert(0, str(SERVICE_ROOT))
+
+from scripts.build_d1_import import ValidationError, build_import  # noqa: E402
+
+
 MIGRATION = SERVICE_ROOT / "migrations" / "0001_initial.sql"
 
 

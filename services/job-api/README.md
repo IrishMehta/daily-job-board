@@ -47,3 +47,43 @@ npm run db:activate:local
 The equivalent `db:load:remote` and `db:activate:remote` commands are deliberately
 separate. Production activation should run only after the staged counts have
 been checked.
+
+## Read API
+
+The Worker exposes a read-only v1 interface:
+
+```text
+GET /v1/status
+GET /v1/jobs
+GET /v1/jobs/{url-encoded-job-id}
+GET /v1/facets
+```
+
+`GET /v1/jobs` supports these optional filters in any combination:
+
+```text
+q
+career_bucket
+experience_level
+authorization_category
+sponsorship_status
+company
+state
+domain
+specialization
+industry
+posted_since
+limit
+cursor
+```
+
+Results are ordered by posting date descending and then stable job ID. `limit`
+defaults to 20 and is capped at 50. When more results exist, the response
+includes an opaque `next_cursor`; callers should reuse it with the same filters.
+
+Run the Worker checks without entering Vitest watch mode:
+
+```sh
+npm run typecheck
+npm run test:run
+```
