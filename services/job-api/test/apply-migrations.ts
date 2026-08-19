@@ -1,10 +1,6 @@
 import { env } from "cloudflare:workers";
-import { applyD1Migrations } from "cloudflare:test";
+import { applyD1Migrations, type D1Migration } from "cloudflare:test";
 
-declare module "cloudflare:workers" {
-	interface ProvidedEnv extends Env {
-		TEST_MIGRATIONS: D1Migration[];
-	}
-}
+const testEnv = env as Env & { TEST_MIGRATIONS: D1Migration[] };
 
-await applyD1Migrations(env.DB, env.TEST_MIGRATIONS);
+await applyD1Migrations(testEnv.DB, testEnv.TEST_MIGRATIONS);

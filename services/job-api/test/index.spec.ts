@@ -1,5 +1,4 @@
 import { env } from "cloudflare:workers";
-import { createExecutionContext } from "cloudflare:test";
 import { beforeEach, describe, expect, it } from "vitest";
 import worker from "../src/index";
 
@@ -90,7 +89,6 @@ async function request(path: string, method = "GET"): Promise<Response> {
 	return worker.fetch(
 		new Request(`https://example.com${path}`, { method }),
 		env,
-		createExecutionContext(),
 	);
 }
 
