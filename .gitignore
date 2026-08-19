@@ -13,3 +13,13 @@
 !tests/test_public_board_listings.py
 !tests/test_frontend_contract.py
 !tests/test_taxonomy_navigation.py
+
+# Keep the public job API source and its deployment workflow.
+!services/
+!services/job-api/
+!services/job-api/**
+!.github/
+!.github/workflows/
+!.github/workflows/deploy-job-api.yml
+
+!.github/workflows/sync-job-api-data.yml
