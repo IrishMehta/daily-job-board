@@ -17,6 +17,7 @@ describe("API without an active dataset", () => {
 		const docsHtml = await docs.text();
 		expect(docsHtml).toContain("Search the public job board programmatically");
 		expect(docsHtml).toContain("ai_machine_learning");
+		expect(docsHtml).toContain("state=CA");
 
 		const openapi = await request("/openapi.json");
 		expect(openapi.status).toBe(200);
@@ -31,6 +32,9 @@ describe("API without an active dataset", () => {
 		const instructions = await llms.text();
 		expect(instructions).toContain("GET https://example.com/v1/facets");
 		expect(instructions).toContain("early_career_or_new_grad");
+		expect(instructions).toContain("state=CA");
+		expect(instructions).toContain("Empty and sparse result policy");
+		expect(instructions).toContain("Never silently remove or widen state");
 		expect(instructions).toContain("does not install the API as a native tool");
 	});
 

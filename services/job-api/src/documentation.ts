@@ -292,9 +292,19 @@ Rules:
 - limit defaults to 20 and cannot exceed 50.
 - Exact taxonomy values should come from /v1/facets.
 - Results are ordered by posted_on descending, then stable job ID.
+- Prefer domain and specialization filters over q when the taxonomy represents the user's intent. q is a literal substring search across broad searchable text, not relevance-ranked search.
 
-Example: early-career ML engineering jobs in Arizona
-${origin}/v1/jobs?career_bucket=early_career_or_new_grad&domain=ai_machine_learning&specialization=machine_learning&state=AZ&limit=10
+## Empty and sparse result policy
+
+Run the user's exact search first. If it returns no jobs:
+1. Remove q when it was only a supplemental keyword, then retry.
+2. If still empty, remove specialization while retaining domain, career bucket, location, and explicit eligibility constraints.
+3. If the exact search returns fewer than 3 jobs, present those exact matches before offering a clearly labeled broader search.
+4. Never silently remove or widen state, work-authorization, sponsorship, experience-level, or career-bucket constraints. Ask the user or clearly disclose the proposed relaxation.
+5. Never claim that a broadened result satisfies a filter that was removed.
+
+Example: early-career ML engineering jobs in California
+${origin}/v1/jobs?career_bucket=early_career_or_new_grad&domain=ai_machine_learning&specialization=machine_learning&state=CA&limit=10
 
 Example: recent data-science jobs
 ${origin}/v1/jobs?specialization=data_science&posted_since=${postedSinceExample}&limit=10
@@ -317,7 +327,7 @@ export function docsHandler(request: Request): Response {
 	const origin = apiOrigin(request);
 	const postedSinceExample = sevenDaysAgo();
 	const safeOrigin = escapeHtml(origin);
-	const example = `${origin}/v1/jobs?career_bucket=early_career_or_new_grad&domain=ai_machine_learning&specialization=machine_learning&state=AZ&limit=10`;
+	const example = `${origin}/v1/jobs?career_bucket=early_career_or_new_grad&domain=ai_machine_learning&specialization=machine_learning&state=CA&limit=10`;
 	const safeExample = escapeHtml(example);
 	return documentResponse(
 		`<!doctype html>
@@ -366,7 +376,7 @@ export function docsHandler(request: Request): Response {
 
     <section>
       <h2>Quick example</h2>
-      <p>Early-career ML engineering jobs in Arizona:</p>
+      <p>Early-career ML engineering jobs in California:</p>
       <pre>GET ${safeExample}</pre>
       <p class="links"><a href="${safeExample}">Run this request →</a></p>
     </section>
