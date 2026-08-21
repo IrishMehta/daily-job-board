@@ -34,6 +34,13 @@ class TaxonomyNavigationTests(unittest.TestCase):
         self.assertIn("filterAndSortJobs(state.jobs, state.filters", self.app)
         self.assertNotIn("Choose a domain", self.index)
 
+    def test_experience_filter_uses_minimum_only(self):
+        self.assertIn(
+            "yearsActive && job.yoe_min != null && job.yoe_min > years",
+            self.matching,
+        )
+        self.assertNotIn("job.yoe_max < years", self.matching)
+
     def test_mobile_filters_use_a_bottom_sheet(self):
         self.assertIn("function openFilters()", self.app)
         self.assertIn("function closeFilters()", self.app)
