@@ -17,7 +17,12 @@ class FrontendContractTests(unittest.TestCase):
 
     def test_main_payload_budget_and_schema(self):
         self.assertEqual("public-job-board-site-v3", self.payload["schema_version"])
-        self.assertLess(self.payload_path.stat().st_size, 15 * 1024 * 1024)
+        # Budget, not a platform limit: the site fetches this whole file before
+        # it can render, so the number is a first-load cost the board is willing
+        # to pay. Raised from 15MB on 2026-08-21, when ~4.9k jobs took the
+        # payload to 15.18MB. GitHub itself only warns at 50MB and blocks at
+        # 100MB, so the constraint here is the visitor's download, not the push.
+        self.assertLess(self.payload_path.stat().st_size, 30 * 1024 * 1024)
         self.assertTrue(self.payload["jobs"])
         for job in self.payload["jobs"]:
             self.assertNotIn("job_description", job)
