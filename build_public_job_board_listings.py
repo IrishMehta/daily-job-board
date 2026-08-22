@@ -210,6 +210,56 @@ def canonical_url(value: Any) -> str:
     return urlunsplit((parsed.scheme.casefold(), parsed.netloc.casefold(), path, parsed.query, ""))
 
 
+def canonical_public_job_url(record: Mapping[str, Any]) -> str:
+    """Return a browser URL for a public-board posting.
+
+    Workday's CXS listing API returns ``externalPath`` values relative to the
+    tenant host (for example, ``/job/Austin/Engineer_R-1``).  The public
+    browser route also needs the career-site slug from the CXS endpoint (for
+    example, ``/Acme/job/Austin/Engineer_R-1``).  The extractor's personal
+    detail path already resolves this, but the public path intentionally reads
+    the append-only prefilter, so repair the URL here for both historical and
+    newly scraped records.
+    """
+    raw_url = normalize_text(record.get("absolute_url") or record.get("url"))
+    if normalize_text(record.get("family")).casefold() != "workday":
+        return raw_url
+
+    raw_listing = record.get("raw_listing")
+    if not isinstance(raw_listing, Mapping):
+        return raw_url
+    external_path = normalize_text(raw_listing.get("externalPath"))
+    source_endpoint = normalize_text(record.get("source_endpoint"))
+    if not external_path.startswith("/") or not source_endpoint:
+        return raw_url
+
+    source = urlsplit(source_endpoint)
+    source_parts = [part for part in source.path.split("/") if part]
+    if len(source_parts) < 5 or source_parts[:2] != ["wday", "cxs"] or source_parts[-1] != "jobs":
+        return raw_url
+    site = source_parts[3]
+    if not site or external_path.startswith("/%s/" % site) or external_path.startswith("/en-US/%s/" % site):
+        return raw_url
+
+    parsed_url = urlsplit(raw_url)
+    if not parsed_url.scheme or not parsed_url.netloc:
+        return raw_url
+    if parsed_url.netloc.casefold() != source.netloc.casefold():
+        return raw_url
+    if parsed_url.path.rstrip("/") != external_path.rstrip("/"):
+        return raw_url
+
+    return urlunsplit(
+        (
+            parsed_url.scheme,
+            parsed_url.netloc,
+            "/%s%s" % (site, external_path),
+            parsed_url.query,
+            "",
+        )
+    )
+
+
 def record_identity_keys(record: Mapping[str, Any]) -> Tuple[str, ...]:
     """Return URL and extractor-ID keys for cache reuse and deduplication.
 

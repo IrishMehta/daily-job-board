@@ -20,6 +20,26 @@ def write_jsonl(path: Path, records):
 
 
 class PublicBoardListingsTests(unittest.TestCase):
+    def test_workday_url_gets_career_site_slug_from_cxs_endpoint(self):
+        record = {
+            "family": "workday",
+            "source_endpoint": "https://acme.wd1.myworkdayjobs.com/wday/cxs/acme/Acme/jobs",
+            "absolute_url": "https://acme.wd1.myworkdayjobs.com/job/Austin/Software-Engineer_R-1",
+            "raw_listing": {"externalPath": "/job/Austin/Software-Engineer_R-1"},
+        }
+        self.assertEqual(
+            "https://acme.wd1.myworkdayjobs.com/Acme/job/Austin/Software-Engineer_R-1",
+            B.canonical_public_job_url(record),
+        )
+    def test_workday_url_is_not_double_prefixed(self):
+        record = {
+            "family": "workday",
+            "source_endpoint": "https://acme.wd1.myworkdayjobs.com/wday/cxs/acme/Acme/jobs",
+            "absolute_url": "https://acme.wd1.myworkdayjobs.com/Acme/job/Austin/Software-Engineer_R-1",
+            "raw_listing": {"externalPath": "/job/Austin/Software-Engineer_R-1"},
+        }
+        self.assertEqual(record["absolute_url"], B.canonical_public_job_url(record))
+
     def test_live_config_title_policy_covers_tech_groups_and_excludes_recruiting(self):
         families = B.compile_title_families(B.LISTINGS_CONFIG.get("title_families"))
         exclusions = B.compile_patterns(B.LISTINGS_CONFIG.get("title_exclude_patterns") or [])
