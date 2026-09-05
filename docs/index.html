@@ -64,12 +64,17 @@
 
   <section class="search-shell" aria-label="Search and filter jobs">
     <div class="search-row">
-      <label class="search-field" for="search-input">
-        <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="11" cy="11" r="6"/><path d="m16 16 4 4"/></svg>
-        <span class="sr-only">Search jobs</span>
-        <input id="search-input" type="search" placeholder="Search roles, companies, skills, or locations" autocomplete="off">
-        <kbd aria-label="Keyboard shortcut slash">/</kbd>
-      </label>
+      <div class="search-combobox">
+        <label class="search-field" for="search-input">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="11" cy="11" r="6"/><path d="m16 16 4 4"/></svg>
+          <span class="sr-only">Search jobs</span>
+          <input id="search-input" type="search" placeholder="Search roles, companies, skills, or locations" autocomplete="off"
+            role="combobox" aria-autocomplete="list" aria-expanded="false" aria-controls="search-suggestions">
+          <span class="search-state hidden" id="search-state" aria-hidden="true"></span>
+          <kbd aria-label="Keyboard shortcut slash">/</kbd>
+        </label>
+        <div class="search-suggestions hidden" id="search-suggestions" role="listbox" aria-label="Search suggestions"></div>
+      </div>
       <button class="button button-secondary mobile-filter-button" id="mobile-filter-open" type="button" aria-expanded="false" aria-controls="filter-panel">
         <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 7h16M7 12h10m-7 5h4"/></svg>
         Filters <span class="filter-badge hidden" id="mobile-filter-count">0</span>
@@ -117,6 +122,7 @@
       </label>
       <label class="filter-field">Sort
         <select id="sort-filter">
+          <option value="relevance">Best match</option>
           <option value="date_desc">Newest first</option>
           <option value="date_asc">Oldest first</option>
           <option value="experience_asc">Experience: low to high</option>
@@ -129,6 +135,7 @@
         <button class="button button-apply" id="filter-apply" type="button">Show all roles</button>
       </div>
     </div>
+    <div class="search-assist hidden" id="search-assist" aria-live="polite"></div>
     <div class="active-filters hidden" id="active-filters" aria-label="Active filters"></div>
   </section>
 

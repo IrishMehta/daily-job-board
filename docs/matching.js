@@ -41,8 +41,9 @@ function compareExperience(left, right) {
   return (left.yoe_max ?? a) - (right.yoe_max ?? b);
 }
 
-export function filterAndSortJobs(jobs, filters, { shortlist = null, resumeActive = false } = {}) {
+export function filterAndSortJobs(jobs, filters, { shortlist = null, resumeActive = false, searchScores = null } = {}) {
   const queryTokens = tokenize(filters.query);
+  const rankedSearch = Boolean(filters.query) && searchScores instanceof Map;
   const location = normalizeText(filters.location);
   const cutoff = postedCutoff(filters.postedRange, jobs);
   const years = Number.parseInt(filters.experienceYears, 10);
@@ -58,12 +59,17 @@ export function filterAndSortJobs(jobs, filters, { shortlist = null, resumeActiv
     if (filters.careerBuckets.length && !filters.careerBuckets.includes(job.career_bucket)) return false;
     if (filters.authorizationCategories.length && !filters.authorizationCategories.includes(job.authorization_category)) return false;
     if (filters.sponsorshipStatuses.length && !filters.sponsorshipStatuses.includes(job.sponsorship_status)) return false;
+    if (rankedSearch) return searchScores.has(job.id);
     return queryTokens.every((token) => job._searchText.includes(token));
   });
 
   filtered.sort((a, b) => {
     if (resumeActive) {
       return (b._resumeScore ?? -Infinity) - (a._resumeScore ?? -Infinity)
+        || String(b.posted_on).localeCompare(String(a.posted_on));
+    }
+    if (filters.sort === "relevance" && rankedSearch) {
+      return (searchScores.get(b.id) ?? Number.NEGATIVE_INFINITY) - (searchScores.get(a.id) ?? Number.NEGATIVE_INFINITY)
         || String(b.posted_on).localeCompare(String(a.posted_on));
     }
     if (filters.sort === "date_asc") return String(a.posted_on).localeCompare(String(b.posted_on));

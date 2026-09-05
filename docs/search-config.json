@@ -1,0 +1,51 @@
+{
+  "schema_version": "public-job-board-search-v1",
+  "field_weights": {
+    "title": 10,
+    "match_terms": 7,
+    "taxonomy": 6,
+    "company": 5,
+    "location": 4,
+    "experience": 3,
+    "authorization": 3,
+    "summary": 2,
+    "excerpt": 1
+  },
+  "stopwords": [
+    "a", "about", "and", "are", "as", "at", "be", "been", "by", "for", "from", "has", "have",
+    "in", "is", "it", "of", "on", "or", "our", "that", "the", "their", "this", "to", "we", "will",
+    "with", "you", "your", "experience", "role", "team", "work", "years"
+  ],
+  "protected_terms": ["c", "c++", "c#", ".net", "r", "go"],
+  "synonym_groups": [
+    { "canonical": "machine learning", "aliases": ["ml"] },
+    { "canonical": "machine learning engineer", "aliases": ["mle"] },
+    { "canonical": "artificial intelligence", "aliases": ["ai"] },
+    { "canonical": "natural language processing", "aliases": ["nlp"] },
+    { "canonical": "large language model", "aliases": ["llm", "llms"] },
+    { "canonical": "generative ai", "aliases": ["genai", "gen ai", "generative artificial intelligence"] },
+    { "canonical": "software engineer", "aliases": ["swe", "software engineering"] },
+    { "canonical": "software development engineer", "aliases": ["sde"] },
+    { "canonical": "site reliability engineer", "aliases": ["sre", "site reliability engineering"] },
+    { "canonical": "quality assurance", "aliases": ["qa"] },
+    { "canonical": "user interface", "aliases": ["ui"] },
+    { "canonical": "user experience", "aliases": ["ux"] }
+  ],
+  "prefix": {
+    "min_length": 3,
+    "max_expansions": 24,
+    "score_multiplier": 0.8
+  },
+  "fuzzy": {
+    "min_length": 4,
+    "max_expansions": 4,
+    "short_max_distance": 1,
+    "long_term_length": 8,
+    "long_max_distance": 2,
+    "score_multiplier": 0.65
+  },
+  "alias_score_multiplier": 0.9,
+  "exact_title_phrase_bonus": 12,
+  "other_phrase_bonus": 5,
+  "suggestion_limit": 8
+}

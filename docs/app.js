@@ -9,6 +9,7 @@ import {
   toggleShortlist,
 } from "./storage.js";
 import { explainResumeMatch, filterAndSortJobs, normalizeText, ResumeMatcher, tokenize } from "./matching.js";
+import { isCurrentSearchResponse } from "./search.js";
 
 const PAGE_BATCH = 40;
 const FILTER_PARAM_MAP = {
@@ -40,10 +41,23 @@ const state = {
   resumeActive: false,
   resumeTokens: [],
   resumeMode: "",
+  searchReady: false,
+  searchPending: false,
+  searchFailed: false,
+  searchScores: null,
+  searchLexicalCount: null,
+  searchSuggestions: [],
+  searchHighlightTerms: [],
+  searchCorrectedQuery: "",
+  suggestionIndex: -1,
+  suggestionsOpen: false,
+  latestSearchRequestId: 0,
+  emptyActionMode: "clear-filters",
 };
 
 const els = Object.fromEntries([
-  "freshness", "job-count", "filter-apply", "all-count", "shortlist-count", "repo-link", "resume-open", "search-input", "mobile-filter-open",
+  "freshness", "job-count", "filter-apply", "all-count", "shortlist-count", "repo-link", "resume-open", "search-input", "search-state",
+  "search-suggestions", "search-assist", "mobile-filter-open",
   "mobile-filter-close", "mobile-filter-count", "filter-panel", "domain-filter", "specialization-filter",
   "industry-filter", "location-filter", "location-suggestions", "career-filter", "experience-years-filter", "authorization-filter",
   "sponsorship-filter", "posted-filter", "sort-filter", "clear-filters", "active-filters", "storage-warning",
@@ -53,6 +67,7 @@ const els = Object.fromEntries([
 ].map((id) => [id.replaceAll("-", "_"), document.getElementById(id)]));
 
 const resumeMatcher = new ResumeMatcher((message) => setResumeStatus(message));
+let searchWorker = null;
 let searchTimer = null;
 let toastTimer = null;
 
@@ -63,6 +78,30 @@ function escapeHtml(value) {
     .replaceAll(">", "&gt;")
     .replaceAll('"', "&quot;")
     .replaceAll("'", "&#39;");
+}
+
+function escapeRegExp(value) {
+  return String(value).replace(/[.*+?^${}()|[\]\\]/g, "\\$&");
+}
+
+function highlightText(value, terms = state.searchHighlightTerms) {
+  const text = String(value ?? "");
+  if (!state.filters.query || !terms.length) return escapeHtml(text);
+  const alternatives = [...new Set(terms.map((term) => String(term).trim()).filter(Boolean))]
+    .sort((left, right) => right.length - left.length)
+    .map(escapeRegExp);
+  if (!alternatives.length) return escapeHtml(text);
+  const matcher = new RegExp(`(^|[^a-z0-9+#.])(${alternatives.join("|")})(?=$|[^a-z0-9+#.])`, "gi");
+  let output = "";
+  let cursor = 0;
+  for (const match of text.matchAll(matcher)) {
+    const start = match.index + match[1].length;
+    const end = start + match[2].length;
+    output += escapeHtml(text.slice(cursor, start));
+    output += `<mark>${escapeHtml(text.slice(start, end))}</mark>`;
+    cursor = end;
+  }
+  return output + escapeHtml(text.slice(cursor));
 }
 
 function bookmarkIcon() {
@@ -133,16 +172,18 @@ function prepareJobs(payload) {
     const domains = [...new Set(paths.map((path) => path.domain).filter(Boolean))];
     const specializations = [...new Set(paths.flatMap((path) => path.specializations ?? []).filter(Boolean))];
     const industries = [...new Set(paths.map((path) => path.industry).filter(Boolean))];
-    const taxonomyText = [
+    const taxonomyLabels = [
       ...domains.map((value) => labels.domains.get(value) || value),
       ...specializations.map((value) => labels.specializations.get(value) || value),
       ...industries.map((value) => labels.industries.get(value) || value),
-    ].join(" ");
+    ];
+    const taxonomyText = taxonomyLabels.join(" ");
     return {
       ...job,
       _domains: domains,
       _specializations: specializations,
       _industries: industries,
+      _taxonomyLabels: taxonomyLabels,
       _locationSearch: normalizeText([job.location, ...(job.location_profile?.search_terms ?? [])].join(" ")),
       _searchText: normalizeText([
         job.title, job.company, job.location, job.experience_display, job.work_authorization_display,
@@ -151,6 +192,111 @@ function prepareJobs(payload) {
       _resumeScore: null,
     };
   });
+}
+
+function searchDocuments() {
+  return state.jobs.map((job) => ({
+    id: job.id,
+    posted_on: job.posted_on,
+    fields: {
+      title: job.title,
+      match_terms: job.match_terms,
+      taxonomy: job._taxonomyLabels,
+      company: job.company,
+      location: [job.location, ...(job.location_profile?.search_terms ?? [])],
+      experience: job.experience_display,
+      authorization: [job.work_authorization_display, job.authorization_category_label, job.sponsorship_status],
+      summary: job.summary,
+      excerpt: job.description_excerpt,
+    },
+    suggestions: [
+      { category: "Role", label: job.title },
+      { category: "Company", label: job.company },
+      { category: "Location", label: job.location },
+      ...(job.match_terms ?? []).map((label) => ({ category: "Skill", label })),
+      ...job._taxonomyLabels.map((label) => ({ category: "Focus", label })),
+    ],
+  }));
+}
+
+function failAdvancedSearch() {
+  state.searchFailed = true;
+  state.searchReady = false;
+  state.searchPending = false;
+  state.searchScores = null;
+  state.searchLexicalCount = null;
+  state.searchSuggestions = [];
+  state.searchCorrectedQuery = "";
+  state.searchHighlightTerms = tokenize(state.filters.query);
+  state.suggestionsOpen = false;
+  if (searchWorker) searchWorker.terminate();
+  searchWorker = null;
+  render();
+}
+
+function requestAdvancedSearch() {
+  const query = state.filters.query.trim();
+  state.latestSearchRequestId += 1;
+  if (!query) {
+    state.searchPending = false;
+    state.searchScores = null;
+    state.searchLexicalCount = null;
+    state.searchSuggestions = [];
+    state.searchCorrectedQuery = "";
+    state.searchHighlightTerms = [];
+    state.suggestionIndex = -1;
+    state.suggestionsOpen = false;
+    return;
+  }
+  if (!state.searchReady || !searchWorker) {
+    state.searchHighlightTerms = tokenize(query);
+    return;
+  }
+  state.searchPending = true;
+  state.searchScores = null;
+  state.searchLexicalCount = null;
+  state.searchSuggestions = [];
+  state.searchCorrectedQuery = "";
+  state.suggestionIndex = -1;
+  searchWorker.postMessage({ type: "query", requestId: state.latestSearchRequestId, query });
+}
+
+function startSearchWorker() {
+  if (!("Worker" in window)) {
+    failAdvancedSearch();
+    return;
+  }
+  try {
+    searchWorker = new Worker("./search-worker.js", { type: "module" });
+    searchWorker.addEventListener("message", (event) => {
+      const message = event.data ?? {};
+      if (message.type === "ready") {
+        state.searchReady = true;
+        state.searchFailed = false;
+        requestAdvancedSearch();
+        render();
+        return;
+      }
+      if (message.type === "error") {
+        failAdvancedSearch();
+        return;
+      }
+      if (!isCurrentSearchResponse(state.latestSearchRequestId, message)) return;
+      state.searchPending = false;
+      state.searchScores = new Map(message.matches.map(({ documentIndex, score }) => [state.jobs[documentIndex]?.id, score]).filter(([id]) => id));
+      state.searchLexicalCount = message.matches.length;
+      state.searchSuggestions = message.suggestions ?? [];
+      state.searchCorrectedQuery = message.correctedQuery ?? "";
+      state.searchHighlightTerms = message.highlightTerms ?? [];
+      state.suggestionIndex = -1;
+      state.suggestionsOpen = document.activeElement === els.search_input && state.searchSuggestions.length > 0;
+      render();
+    });
+    searchWorker.addEventListener("error", failAdvancedSearch);
+    searchWorker.postMessage({ type: "init", documents: searchDocuments() });
+  } catch {
+    failAdvancedSearch();
+  }
 }
 
 function parseListParam(value) {
@@ -164,6 +310,7 @@ function readUrlState(filters) {
     if (!params.has(param)) return;
     next[key] = ARRAY_FILTERS.has(key) ? parseListParam(params.get(param)) : (params.get(param) || DEFAULT_FILTERS[key]);
   });
+  if (params.has("q") && !params.has("sort") && next.query) next.sort = "relevance";
   state.view = params.get("view") === "shortlist" ? "shortlist" : "all";
   return sanitizeFilters(next);
 }
@@ -290,6 +437,72 @@ function renderActiveFilters() {
   els.mobile_filter_count.classList.toggle("hidden", !chips.length);
 }
 
+function renderSearchChrome() {
+  let status = "";
+  if (!state.searchReady && !state.searchFailed) status = "Indexing";
+  else if (state.searchPending) status = "Searching";
+  else if (state.searchFailed && state.filters.query) status = "Basic search";
+  els.search_state.textContent = status;
+  els.search_state.title = state.searchFailed
+    ? "Advanced search is unavailable; transparent keyword matching is active."
+    : status ? `${status}…` : "";
+  els.search_state.classList.toggle("hidden", !status);
+
+  if (state.searchCorrectedQuery && state.filters.query) {
+    els.search_assist.innerHTML = `Did you mean <button type="button" data-corrected-query="${escapeHtml(state.searchCorrectedQuery)}">${escapeHtml(state.searchCorrectedQuery)}</button>?`;
+    els.search_assist.classList.remove("hidden");
+  } else {
+    els.search_assist.innerHTML = "";
+    els.search_assist.classList.add("hidden");
+  }
+
+  const open = state.suggestionsOpen && state.searchSuggestions.length > 0;
+  els.search_suggestions.innerHTML = state.searchSuggestions.map((suggestion, index) => `
+    <button class="search-suggestion${index === state.suggestionIndex ? " is-active" : ""}" id="search-suggestion-${index}"
+      type="button" role="option" aria-selected="${index === state.suggestionIndex}" data-suggestion-index="${index}">
+      <span>${highlightText(suggestion.label, tokenize(state.filters.query))}</span><small>${escapeHtml(suggestion.category)}</small>
+    </button>`).join("");
+  els.search_suggestions.classList.toggle("hidden", !open);
+  els.search_input.setAttribute("aria-expanded", String(open));
+  if (open && state.suggestionIndex >= 0) {
+    els.search_input.setAttribute("aria-activedescendant", `search-suggestion-${state.suggestionIndex}`);
+  } else {
+    els.search_input.removeAttribute("aria-activedescendant");
+  }
+}
+
+function setSearchQuery(value, { keepFocus = false } = {}) {
+  const previous = state.filters.query.trim();
+  const next = String(value ?? "").trim();
+  state.filters.query = next;
+  if (!previous && next) state.filters.sort = "relevance";
+  if (previous && !next && state.filters.sort === "relevance") state.filters.sort = "date_desc";
+  state.visibleLimit = PAGE_BATCH;
+  state.selectedId = "";
+  els.search_input.value = next;
+  els.sort_filter.value = state.filters.sort;
+  persist();
+  writeUrlState();
+  requestAdvancedSearch();
+  render();
+  if (keepFocus) els.search_input.focus();
+}
+
+function clearStructuredFilters() {
+  const query = state.filters.query;
+  const sort = state.filters.sort;
+  state.filters = freshFilters();
+  state.filters.query = query;
+  state.filters.sort = sort;
+  state.view = "all";
+  state.visibleLimit = PAGE_BATCH;
+  state.selectedId = "";
+  syncControlsFromState();
+  persist();
+  writeUrlState();
+  render();
+}
+
 function authSignalClass(job) {
   if (job.sponsorship_status === "supports_sponsorship") return "signal-positive";
   if (["requires_us_citizenship", "requires_us_person_status", "requires_security_clearance_or_public_trust", "no_sponsorship"].includes(job.authorization_category)
@@ -316,6 +529,7 @@ function currentResults() {
   return filterAndSortJobs(state.jobs, state.filters, {
     shortlist: state.view === "shortlist" ? state.shortlist : null,
     resumeActive: state.resumeActive,
+    searchScores: state.searchScores,
   });
 }
 
@@ -324,16 +538,20 @@ function renderJobList(results) {
   els.job_list.innerHTML = visible.map((job) => {
     const saved = Boolean(state.shortlist[job.id]);
     const days = jobAgeDays(job.posted_on);
+    const location = job.location || "Location not stated";
+    const experience = job.experience_display || "Experience not stated";
+    const sponsorship = sponsorshipLabel(job);
+    const specialization = primarySpecialization(job);
     return `
       <div class="job-row${state.selectedId === job.id ? " is-selected" : ""}" role="option" tabindex="-1" aria-selected="${state.selectedId === job.id}" data-job-id="${escapeHtml(job.id)}">
         <div class="job-age-cell"><span class="job-age${days === 0 ? " is-new" : ""}">${days === 0 ? "NEW" : `${days}D<small>AGO</small>`}</span></div>
         <div class="job-main">
-          <h2 class="job-title">${escapeHtml(job.title)}</h2>
-          <p class="job-company">${escapeHtml(job.company)}<span class="job-loc-sep">·</span><span class="job-loc">${escapeHtml(job.location || "Location not stated")}</span></p>
+          <h2 class="job-title">${highlightText(job.title)}</h2>
+          <p class="job-company">${highlightText(job.company)}<span class="job-loc-sep">·</span><span class="job-loc">${highlightText(location)}</span></p>
           <div class="job-meta">
-            <span>${escapeHtml(job.experience_display || "Experience not stated")}</span>
-            <span class="${authSignalClass(job)}">${escapeHtml(sponsorshipLabel(job))}</span>
-            <span>${escapeHtml(primarySpecialization(job))}</span>
+            <span>${highlightText(experience)}</span>
+            <span class="${authSignalClass(job)}">${highlightText(sponsorship)}</span>
+            <span>${highlightText(specialization)}</span>
           </div>
         </div>
         <button class="shortlist-button${saved ? " is-saved" : ""}" type="button" data-shortlist-id="${escapeHtml(job.id)}" aria-label="${saved ? "Remove from" : "Add to"} shortlist" aria-pressed="${saved}">${bookmarkIcon()}</button>
@@ -348,10 +566,24 @@ function renderEmpty(results) {
   els.job_list.classList.toggle("hidden", empty);
   if (!empty) return;
   if (state.view === "shortlist" && !Object.keys(state.shortlist).length) {
+    state.emptyActionMode = "browse-all";
     els.empty_title.textContent = "Your shortlist is empty";
     els.empty_copy.textContent = "Bookmark promising roles from All jobs to compare them here.";
     els.empty_action.textContent = "Browse all jobs";
+  } else if (state.filters.query && state.searchLexicalCount === 0 && !state.searchPending) {
+    state.emptyActionMode = "clear-search";
+    els.empty_title.textContent = "No search matches yet";
+    els.empty_copy.textContent = state.searchCorrectedQuery
+      ? "Try the suggested spelling above or remove one search term."
+      : "Try a broader role, skill, company, or location term.";
+    els.empty_action.textContent = "Clear search";
+  } else if (state.filters.query && state.searchLexicalCount > 0) {
+    state.emptyActionMode = "clear-structured";
+    els.empty_title.textContent = "Matches are hidden by filters";
+    els.empty_copy.textContent = `${formatCount(state.searchLexicalCount)} search ${state.searchLexicalCount === 1 ? "match is" : "matches are"} outside the current filters or view.`;
+    els.empty_action.textContent = "Clear filters";
   } else {
+    state.emptyActionMode = "clear-filters";
     els.empty_title.textContent = "Nothing on the board matches";
     els.empty_copy.textContent = "Clear one or more filters to widen the search.";
     els.empty_action.textContent = "Clear filters";
@@ -368,8 +600,7 @@ function taxonomyDetail(job) {
   job._domains.forEach((value) => tags.push(maps.domains.get(value) || value));
   job._specializations.forEach((value) => tags.push(maps.specializations.get(value) || value));
   job._industries.forEach((value) => tags.push(maps.industries.get(value) || value));
-  const evidence = (job.classification_paths ?? []).map((path) => path.evidence_quote).find((value) => value && value !== "Not explicitly stated");
-  return { tags: [...new Set(tags)], evidence };
+  return [...new Set(tags)];
 }
 
 function renderMatchEvidence(job) {
@@ -416,7 +647,7 @@ function renderDetail() {
     return;
   }
   const saved = Boolean(state.shortlist[job.id]);
-  const taxonomy = taxonomyDetail(job);
+  const taxonomyTags = taxonomyDetail(job);
   const sponsorship = job.sponsorship_status === "supports_sponsorship" ? "Supports sponsorship"
     : job.sponsorship_status === "no_sponsorship" ? "No sponsorship" : "Not specified";
   els.detail_content.innerHTML = `
@@ -442,8 +673,7 @@ function renderDetail() {
     ${renderMatchEvidence(job)}
     <section class="detail-section">
       <h3>Role classification</h3>
-      <div class="taxonomy-row">${taxonomy.tags.map((tag) => `<span class="taxonomy-tag">${escapeHtml(tag)}</span>`).join("") || '<span class="taxonomy-tag">Uncategorized</span>'}</div>
-      ${taxonomy.evidence ? `<div class="evidence-block">“${escapeHtml(taxonomy.evidence)}”</div>` : ""}
+      <div class="taxonomy-row">${taxonomyTags.map((tag) => `<span class="taxonomy-tag">${escapeHtml(tag)}</span>`).join("") || '<span class="taxonomy-tag">Uncategorized</span>'}</div>
       <p class="disclosure">Classification and authorization signals are model-derived. Verify all requirements on the employer site.</p>
     </section>`;
 }
@@ -465,7 +695,9 @@ function render() {
     button.setAttribute("aria-pressed", String(active));
   });
   els.results_heading.textContent = state.view === "shortlist" ? "Shortlist" : "All jobs";
-  els.results_summary.textContent = `${formatCount(results.length)} ${results.length === 1 ? "role" : "roles"} in view`;
+  els.results_summary.textContent = state.searchPending && state.filters.query
+    ? `Searching ${formatCount(results.length)} current ${results.length === 1 ? "match" : "matches"}…`
+    : `${formatCount(results.length)} ${results.length === 1 ? "role" : "roles"} in view`;
   els.all_count.textContent = `(${formatCount(state.jobs.length)})`;
   els.shortlist_count.textContent = formatCount(Object.keys(state.shortlist).length);
   if (els.filter_apply) els.filter_apply.textContent = `Show ${formatCount(results.length)} ${results.length === 1 ? "role" : "roles"}`;
@@ -473,7 +705,9 @@ function render() {
   els.match_mode.classList.toggle("hidden", !state.resumeActive);
   els.sort_filter.disabled = state.resumeActive;
   els.sort_filter.title = state.resumeActive ? "Resume relevance controls sorting while matching is active." : "";
+  els.job_list.setAttribute("aria-busy", String(state.searchPending));
   els.resume_clear.classList.toggle("hidden", !state.resumeActive);
+  renderSearchChrome();
   renderActiveFilters();
   renderJobList(results);
   renderEmpty(results);
@@ -488,6 +722,7 @@ function clearFilters() {
   syncControlsFromState();
   persist();
   writeUrlState();
+  requestAdvancedSearch();
   render();
 }
 
@@ -559,13 +794,48 @@ function bindEvents() {
   }));
   els.search_input.addEventListener("input", () => {
     window.clearTimeout(searchTimer);
+    state.suggestionsOpen = false;
+    renderSearchChrome();
     searchTimer = window.setTimeout(() => {
-      state.filters.query = els.search_input.value.trim();
-      state.visibleLimit = PAGE_BATCH;
-      persist();
-      writeUrlState();
-      render();
+      setSearchQuery(els.search_input.value);
     }, 120);
+  });
+  els.search_input.addEventListener("focus", () => {
+    state.suggestionsOpen = state.searchSuggestions.length > 0;
+    renderSearchChrome();
+  });
+  els.search_input.addEventListener("keydown", (event) => {
+    if (!["ArrowDown", "ArrowUp", "Enter", "Escape"].includes(event.key)) return;
+    if (event.key === "Escape") {
+      state.suggestionsOpen = false;
+      state.suggestionIndex = -1;
+      renderSearchChrome();
+      return;
+    }
+    if (!state.searchSuggestions.length) return;
+    if (event.key === "Enter") {
+      if (!state.suggestionsOpen || state.suggestionIndex < 0) return;
+      event.preventDefault();
+      setSearchQuery(state.searchSuggestions[state.suggestionIndex].query, { keepFocus: true });
+      return;
+    }
+    event.preventDefault();
+    state.suggestionsOpen = true;
+    const direction = event.key === "ArrowDown" ? 1 : -1;
+    const start = state.suggestionIndex < 0 ? (direction > 0 ? -1 : 0) : state.suggestionIndex;
+    state.suggestionIndex = (start + direction + state.searchSuggestions.length) % state.searchSuggestions.length;
+    renderSearchChrome();
+  });
+  els.search_suggestions.addEventListener("mousedown", (event) => event.preventDefault());
+  els.search_suggestions.addEventListener("click", (event) => {
+    const optionButton = event.target.closest("[data-suggestion-index]");
+    if (!optionButton) return;
+    const suggestion = state.searchSuggestions[Number(optionButton.dataset.suggestionIndex)];
+    if (suggestion) setSearchQuery(suggestion.query, { keepFocus: true });
+  });
+  els.search_assist.addEventListener("click", (event) => {
+    const correction = event.target.closest("[data-corrected-query]");
+    if (correction) setSearchQuery(correction.dataset.correctedQuery, { keepFocus: true });
   });
   document.addEventListener("keydown", (event) => {
     if (event.key === "/" && !/input|textarea|select/i.test(document.activeElement?.tagName)) {
@@ -573,9 +843,18 @@ function bindEvents() {
       els.search_input.focus();
     }
     if (event.key === "Escape") {
+      state.suggestionsOpen = false;
+      state.suggestionIndex = -1;
+      renderSearchChrome();
       closeFilters();
       document.body.classList.remove("detail-open");
     }
+  });
+  document.addEventListener("click", (event) => {
+    if (event.target.closest(".search-combobox")) return;
+    state.suggestionsOpen = false;
+    state.suggestionIndex = -1;
+    renderSearchChrome();
   });
   els.domain_filter.addEventListener("change", () => {
     state.filters.domains = els.domain_filter.value ? [els.domain_filter.value] : [];
@@ -619,6 +898,10 @@ function bindEvents() {
     const button = event.target.closest("[data-clear-key]");
     if (!button) return;
     const key = button.dataset.clearKey;
+    if (key === "query") {
+      setSearchQuery("");
+      return;
+    }
     if (Array.isArray(state.filters[key])) state.filters[key] = state.filters[key].filter((value) => value !== button.dataset.clearValue);
     else state.filters[key] = DEFAULT_FILTERS[key];
     syncControlsFromState();
@@ -652,8 +935,12 @@ function bindEvents() {
   });
   els.load_more.addEventListener("click", () => { state.visibleLimit += PAGE_BATCH; render(); });
   els.empty_action.addEventListener("click", () => {
-    if (state.view === "shortlist" && !Object.keys(state.shortlist).length) {
+    if (state.emptyActionMode === "browse-all") {
       state.view = "all"; writeUrlState(); render();
+    } else if (state.emptyActionMode === "clear-search") {
+      setSearchQuery("");
+    } else if (state.emptyActionMode === "clear-structured") {
+      clearStructuredFilters();
     } else clearFilters();
   });
   els.mobile_filter_open.addEventListener("click", openFilters);
@@ -670,12 +957,14 @@ function bindEvents() {
     state.shortlist = pruneShortlist(loaded.value.shortlist, new Set(state.jobs.map((job) => job.id))).shortlist;
     state.storageWarning = loaded.warning;
     syncControlsFromState();
+    requestAdvancedSearch();
     render();
   });
   window.addEventListener("popstate", () => {
     state.filters = readUrlState(state.filters);
     state.view = new URLSearchParams(window.location.search).get("view") === "shortlist" ? "shortlist" : "all";
     syncControlsFromState();
+    requestAdvancedSearch();
     render();
   });
 }
@@ -708,6 +997,7 @@ async function init() {
   bindEvents();
   writeUrlState();
   render();
+  window.setTimeout(startSearchWorker, 0);
   if (requestedJobId && state.jobs.some((job) => job.id === requestedJobId)) {
     await selectJob(requestedJobId);
   }

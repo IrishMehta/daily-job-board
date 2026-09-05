@@ -1,0 +1,95 @@
+<!doctype html>
+<html lang="en">
+<head><meta charset="utf-8"><title>Search unit tests</title></head>
+<body>
+  <h1>Browser search unit tests</h1>
+  <pre id="results">Running…</pre>
+  <script type="module">
+    import {
+      SearchIndex,
+      damerauLevenshtein,
+      isCurrentSearchResponse,
+      normalizeSearchText,
+      tokenizeSearchText,
+    } from "../docs/search.js";
+
+    const config = await fetch("../docs/search-config.json").then((response) => response.json());
+    const fields = (values) => ({
+      title: "", match_terms: [], taxonomy: [], company: "", location: "",
+      experience: "", authorization: "", summary: "", excerpt: "", ...values,
+    });
+    const documents = [
+      {
+        id: "ml", posted_on: "2026-09-05",
+        fields: fields({
+          title: "Machine Learning Engineer", match_terms: ["Python", "PyTorch"],
+          taxonomy: ["Artificial Intelligence", "Healthcare"], company: "Health Labs", location: "Boston, MA",
+        }),
+        suggestions: [{ category: "Role", label: "Machine Learning Engineer" }, { category: "Skill", label: "Python" }],
+      },
+      {
+        id: "software", posted_on: "2026-09-06",
+        fields: fields({ title: "Senior Software Engineer", summary: "Build machine learning infrastructure", company: "Example" }),
+        suggestions: [{ category: "Role", label: "Software Engineer" }],
+      },
+      {
+        id: "cpp", posted_on: "2026-09-04",
+        fields: fields({ title: "C++ Developer", match_terms: ["C++", ".NET"], summary: "Build native services" }),
+        suggestions: [{ category: "Skill", label: "C++" }, { category: "Skill", label: ".NET" }],
+      },
+      {
+        id: "r", posted_on: "2026-09-03",
+        fields: fields({ title: "R Data Analyst", match_terms: ["R", "statistics"] }),
+        suggestions: [{ category: "Role", label: "R Data Analyst" }],
+      },
+      {
+        id: "sre", posted_on: "2026-09-02",
+        fields: fields({ title: "Site Reliability Engineer", match_terms: ["Kubernetes"] }),
+        suggestions: [{ category: "Role", label: "Site Reliability Engineer" }],
+      },
+    ];
+    const index = new SearchIndex(documents, config);
+    const lines = [];
+    function assert(condition, message) {
+      if (!condition) throw new Error(message);
+      lines.push(`PASS  ${message}`);
+    }
+    function ids(query) { return index.search(query).matches.map((match) => documents[match.documentIndex].id); }
+
+    try {
+      assert(normalizeSearchText("Développeur & AI") === "developpeur and ai", "normalizes accents, case, and ampersands");
+      const protectedTokens = tokenizeSearchText("R C++ .NET", {
+        stopwords: new Set(config.stopwords), protectedTerms: new Set(config.protected_terms),
+      }).map((token) => token.term);
+      assert(protectedTokens.join("|") === "r|c++|.net", "preserves protected technical terms");
+      const plurals = tokenizeSearchText("companies services classes", {
+        stopwords: new Set(config.stopwords), protectedTerms: new Set(config.protected_terms),
+      }).map((token) => token.term);
+      assert(plurals.join("|") === "company|service|class", "normalizes common English plurals conservatively");
+      assert(damerauLevenshtein("softwre", "software", 2) === 1, "handles adjacent typo distance");
+      assert(ids("ML engineer")[0] === "ml", "expands ML and ranks the title match first");
+      assert(ids("machine learning")[0] === "ml", "weights title matches above summary matches");
+      assert(ids("python healthcare").join(",") === "ml", "requires every query concept");
+      const typo = index.search("softwre engineer");
+      assert(documents[typo.matches[0].documentIndex].id === "software", "finds bounded typo matches");
+      assert(typo.correctedQuery === "software engineer", "returns a transparent spelling correction");
+      assert(ids("mach engineer")[0] === "ml", "supports prefix matching");
+      assert(ids("C++").join(",") === "cpp", "searches C++ literally");
+      assert(ids(".NET").join(",") === "cpp", "searches .NET literally");
+      assert(ids("R").join(",") === "r", "searches the one-character R language");
+      assert(ids("SRE")[0] === "sre", "expands controlled role aliases");
+      assert(index.suggest("softw").some((item) => item.label === "Software Engineer"), "suggests guided role completions");
+      assert(isCurrentSearchResponse(7, { type: "results", requestId: 7 }), "accepts the latest worker response");
+      assert(!isCurrentSearchResponse(7, { type: "results", requestId: 6 }), "rejects stale worker responses");
+      document.title = "PASS — Search unit tests";
+      document.getElementById("results").textContent = `${lines.join("\n")}\n\n${lines.length} tests passed.`;
+      document.body.dataset.result = "pass";
+    } catch (error) {
+      document.title = "FAIL — Search unit tests";
+      document.getElementById("results").textContent = `${lines.join("\n")}\n\nFAIL  ${error.stack || error}`;
+      document.body.dataset.result = "fail";
+      throw error;
+    }
+  </script>
+</body>
+</html>

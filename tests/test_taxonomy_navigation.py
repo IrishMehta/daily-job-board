@@ -34,6 +34,11 @@ class TaxonomyNavigationTests(unittest.TestCase):
         self.assertIn("filterAndSortJobs(state.jobs, state.filters", self.app)
         self.assertNotIn("Choose a domain", self.index)
 
+    def test_role_classification_omits_model_evidence_quote(self):
+        self.assertIn("<h3>Role classification</h3>", self.app)
+        self.assertNotIn("evidence-block", self.app)
+        self.assertNotIn(".evidence-block", self.styles)
+
     def test_experience_filter_uses_minimum_only(self):
         self.assertIn(
             "yearsActive && job.yoe_min != null && job.yoe_min > years",

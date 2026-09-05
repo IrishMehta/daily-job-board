@@ -1,0 +1,60 @@
+<!doctype html>
+<html lang="en">
+<head><meta charset="utf-8"><title>Search performance benchmark</title></head>
+<body>
+  <h1>Browser search performance benchmark</h1>
+  <pre id="results">Loading current board…</pre>
+  <script type="module">
+    import { SearchIndex } from "../docs/search.js";
+
+    const [config, payload] = await Promise.all([
+      fetch("../docs/search-config.json").then((response) => response.json()),
+      fetch("../docs/data/public_jobs.json").then((response) => response.json()),
+    ]);
+    const documents = payload.jobs.map((job) => {
+      const taxonomy = (job.classification_paths ?? []).flatMap((path) => [
+        path.domain, ...(path.specializations ?? []), path.industry,
+      ]).filter(Boolean).map((value) => value.replaceAll("_", " "));
+      return {
+        id: job.id,
+        posted_on: job.posted_on,
+        fields: {
+          title: job.title, match_terms: job.match_terms, taxonomy, company: job.company,
+          location: [job.location, ...(job.location_profile?.search_terms ?? [])],
+          experience: job.experience_display,
+          authorization: [job.work_authorization_display, job.authorization_category_label, job.sponsorship_status],
+          summary: job.summary, excerpt: job.description_excerpt,
+        },
+        suggestions: [
+          { category: "Role", label: job.title }, { category: "Company", label: job.company },
+          { category: "Location", label: job.location },
+          ...(job.match_terms ?? []).map((label) => ({ category: "Skill", label })),
+          ...taxonomy.map((label) => ({ category: "Focus", label })),
+        ],
+      };
+    });
+    const buildStarted = performance.now();
+    const index = new SearchIndex(documents, config);
+    const buildMs = performance.now() - buildStarted;
+    const queries = ["software engineer", "machine learning", "softwre engineer", "C++", ".NET", "SRE", "data analyst"];
+    const timings = queries.map((query) => {
+      const started = performance.now();
+      const result = index.search(query);
+      return { query, elapsed: performance.now() - started, matches: result.matches.length };
+    });
+    const maximum = Math.max(...timings.map((timing) => timing.elapsed));
+    const lines = [
+      `${documents.length.toLocaleString()} jobs indexed in ${buildMs.toFixed(1)} ms`,
+      "",
+      ...timings.map((timing) => `${timing.elapsed.toFixed(1).padStart(7)} ms  ${String(timing.matches).padStart(5)} matches  ${timing.query}`),
+      "",
+      `Maximum query time: ${maximum.toFixed(1)} ms`,
+    ];
+    const passed = maximum <= 100;
+    document.title = `${passed ? "PASS" : "FAIL"} — Search performance`;
+    document.getElementById("results").textContent = `${lines.join("\n")}\n\n${passed ? "PASS" : "FAIL"}: 100 ms query budget.`;
+    document.body.dataset.result = passed ? "pass" : "fail";
+    if (!passed) throw new Error(`Search query budget exceeded: ${maximum.toFixed(1)} ms`);
+  </script>
+</body>
+</html>

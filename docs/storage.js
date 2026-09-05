@@ -49,7 +49,7 @@ export function sanitizeFilters(value) {
   filters.experienceYears = cleanYears(input.experienceYears);
   ARRAY_FILTERS.forEach((key) => { filters[key] = cleanStringArray(input[key]); });
   filters.postedRange = ["1d", "3d", "7d"].includes(input.postedRange) ? input.postedRange : "7d";
-  filters.sort = ["date_desc", "date_asc", "experience_asc", "experience_desc", "company_asc"].includes(input.sort)
+  filters.sort = ["relevance", "date_desc", "date_asc", "experience_asc", "experience_desc", "company_asc"].includes(input.sort)
     ? input.sort
     : "date_desc";
   return filters;
