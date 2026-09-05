@@ -22,6 +22,7 @@ const ALLOWED_JOB_PARAMETERS = new Set([
 ]);
 
 interface ActiveDatasetRow {
+	storage_version: string;
 	version: string;
 	source_schema_version: string;
 	taxonomy_version: string;
@@ -93,7 +94,8 @@ async function activeDataset(db: D1Database): Promise<ActiveDatasetRow | null> {
 	return db
 		.prepare(
 			`SELECT
-				dv.version, dv.source_schema_version, dv.taxonomy_version,
+				dv.version AS storage_version, dv.source_sha256 AS version,
+				dv.source_schema_version, dv.taxonomy_version,
 				dv.generated_at, dv.imported_at, dv.total_openings,
 				dv.posted_within_days, dv.taxonomy_json,
 				dv.career_buckets_json, dv.authorization_categories_json,
@@ -284,7 +286,7 @@ export async function jobsHandler(request: Request, env: Env): Promise<Response>
 	const cursor = decodeCursor(readSingleParameter(url.searchParams, "cursor"));
 
 	const where = ["j.dataset_version = ?"];
-	const bindings: BindValue[] = [dataset.version];
+	const bindings: BindValue[] = [dataset.storage_version];
 	const filtersApplied: Record<string, string> = {};
 
 	const directFilters: Array<[string, string, string, (value: string) => string]> = [
@@ -431,7 +433,7 @@ export async function jobDetailHandler(
 		 WHERE j.dataset_version = ? AND j.job_id = ?
 		 LIMIT 1`,
 	)
-		.bind(dataset.version, jobId)
+		.bind(dataset.storage_version, jobId)
 		.first<JobRow>();
 	if (!row) {
 		throw new ApiError(404, "job_not_found", "No job with that ID exists in the active dataset.");
@@ -451,7 +453,7 @@ export async function jobDetailHandler(
 
 export async function facetsHandler(env: Env): Promise<Response> {
 	const dataset = requireActiveDataset(await activeDataset(env.DB));
-	const version = dataset.version;
+	const version = dataset.storage_version;
 	const results = await env.DB.batch<FacetRow>([
 		env.DB.prepare(
 			`SELECT career_bucket AS value, career_bucket_label AS label, COUNT(*) AS count

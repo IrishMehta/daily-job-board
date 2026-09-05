@@ -20,33 +20,31 @@ npm run db:migrate:remote
 The Worker accesses the database through the `DB` binding in `wrangler.jsonc`.
 Never use `--remote` for routine local development or tests.
 
-## Build a dataset import
+## Build an incremental dataset sync
 
-From this directory, validate the published payload and generate a staged load
-plus a separately guarded activation:
+From this directory, validate the published payload and generate a transactional
+incremental sync:
 
 ```sh
-npm run db:build-import
+npm run db:build-sync
 ```
 
-This writes `generated/load.sql`, `generated/activate.sql`, and
-`generated/import-manifest.json`. Generated files are intentionally ignored.
-Loading does not change the API's active dataset. The activation statement only
-switches the singleton pointer when all expected job, classification, and
-specialization rows are present.
+This writes `generated/sync.sql` and `generated/import-manifest.json`. Generated
+files are intentionally ignored. The sync uses stable job IDs: it upserts new or
+changed jobs, deletes jobs absent from the source payload, and rebuilds normalized
+classification rows only for changed jobs. It runs in one transaction, so readers
+see either the old board or the completed update.
 
 Exercise the complete process against local D1 with:
 
 ```sh
 npm run db:migrate:local
-npm run db:build-import
-npm run db:load:local
-npm run db:activate:local
+npm run db:build-sync
+npm run db:sync:local
 ```
 
-The equivalent `db:load:remote` and `db:activate:remote` commands are deliberately
-separate. Production activation should run only after the staged counts have
-been checked.
+The equivalent production command is `npm run db:sync:remote`. Apply migrations
+explicitly before the first remote incremental sync.
 
 ## Read API
 

@@ -53,14 +53,14 @@ jobs:
           npm run test:run
           python -m unittest tests.test_build_d1_import
 
-      - name: Validate dataset and build import
-        run: npm run db:build-import
+      - name: Apply database migrations
+        run: npm run db:migrate:remote
 
-      - name: Load inactive dataset
-        run: npm run db:load:remote
+      - name: Validate dataset and build incremental sync
+        run: npm run db:build-sync
 
-      - name: Activate validated dataset
-        run: npm run db:activate:remote
+      - name: Apply incremental sync
+        run: npm run db:sync:remote
 
       - name: Verify live API version
         run: |
@@ -91,4 +91,4 @@ jobs:
           test "$actual_version" = "$expected_version"
           test "$actual_jobs" = "$expected_jobs"
 
-          echo "Activated dataset $actual_version with $actual_jobs jobs"
+          echo "Synced dataset $actual_version with $actual_jobs jobs"

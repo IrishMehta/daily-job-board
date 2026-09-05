@@ -1,3 +1,4 @@
+import copy
 import json
 import sqlite3
 import sys
@@ -11,7 +12,12 @@ sys.path.insert(0, str(SERVICE_ROOT))
 from scripts.build_d1_import import ValidationError, build_import  # noqa: E402
 
 
-MIGRATION = SERVICE_ROOT / "migrations" / "0001_initial.sql"
+MIGRATIONS = sorted((SERVICE_ROOT / "migrations").glob("*.sql"))
+
+
+def apply_migrations(connection):
+    for migration in MIGRATIONS:
+        connection.executescript(migration.read_text(encoding="utf-8"))
 
 
 def sample_payload():
@@ -70,7 +76,7 @@ def sample_payload():
 
 
 class BuildD1ImportTests(unittest.TestCase):
-    def test_builds_load_and_guarded_activation_sql(self):
+    def test_builds_transactional_incremental_sync(self):
         with tempfile.TemporaryDirectory() as temporary_directory:
             root = Path(temporary_directory)
             source = root / "public_jobs.json"
@@ -82,34 +88,115 @@ class BuildD1ImportTests(unittest.TestCase):
             self.assertEqual(manifest["expected_counts"]["jobs"], 1)
             self.assertEqual(manifest["expected_counts"]["classifications"], 1)
             self.assertEqual(manifest["expected_counts"]["specializations"], 1)
-            self.assertIn("O''Brien AI", (output / "load.sql").read_text(encoding="utf-8"))
+            self.assertEqual(manifest["sync_mode"], "incremental_upsert_delete")
+            sync_sql = (output / "sync.sql").read_text(encoding="utf-8")
+            self.assertIn("BEGIN;", sync_sql)
+            self.assertIn("COMMIT;", sync_sql)
+            self.assertIn("O''Brien AI", sync_sql)
+            self.assertNotIn("DELETE FROM dataset_versions", sync_sql)
 
             connection = sqlite3.connect(":memory:")
-            connection.executescript(MIGRATION.read_text(encoding="utf-8"))
-            connection.executescript((output / "load.sql").read_text(encoding="utf-8"))
-            connection.executescript((output / "activate.sql").read_text(encoding="utf-8"))
+            apply_migrations(connection)
+            connection.executescript(sync_sql)
             active_version = connection.execute(
                 "SELECT active_dataset_version FROM api_state WHERE singleton = 1"
             ).fetchone()[0]
-            self.assertEqual(active_version, manifest["dataset_version"])
+            self.assertEqual(active_version, "current")
+            source_sha256 = connection.execute(
+                "SELECT source_sha256 FROM dataset_versions WHERE version = 'current'"
+            ).fetchone()[0]
+            self.assertEqual(source_sha256, manifest["dataset_version"])
 
-    def test_incomplete_dataset_is_not_activated(self):
+    def test_upserts_changed_jobs_and_deletes_missing_jobs(self):
+        with tempfile.TemporaryDirectory() as temporary_directory:
+            root = Path(temporary_directory)
+            source = root / "public_jobs.json"
+            output = root / "generated"
+            original = sample_payload()
+            source.write_text(json.dumps(original), encoding="utf-8")
+            build_import(source, output)
+
+            connection = sqlite3.connect(":memory:")
+            apply_migrations(connection)
+            connection.executescript((output / "sync.sql").read_text(encoding="utf-8"))
+
+            updated = copy.deepcopy(original)
+            updated_job = updated["jobs"][0]
+            updated_job["title"] = "Senior ML Engineer"
+            updated_job["classification_paths"][0]["specializations"] = ["ml_platform"]
+            added_job = copy.deepcopy(updated_job)
+            added_job["id"] = "https://example.com/jobs/2"
+            added_job["job_link"] = "https://example.com/jobs/2"
+            added_job["title"] = "Applied Scientist"
+            updated["jobs"].append(added_job)
+            updated["total_openings"] = 2
+            updated["generated_at"] = "2026-08-20T08:00:00Z"
+            source.write_text(json.dumps(updated), encoding="utf-8")
+            build_import(source, output)
+            connection.executescript((output / "sync.sql").read_text(encoding="utf-8"))
+
+            self.assertEqual(connection.execute("SELECT COUNT(*) FROM jobs").fetchone()[0], 2)
+            self.assertEqual(
+                connection.execute(
+                    "SELECT specialization FROM job_specializations WHERE job_id = ?",
+                    ("https://example.com/jobs/1",),
+                ).fetchone()[0],
+                "ml_platform",
+            )
+
+            updated["jobs"] = [added_job]
+            updated["total_openings"] = 1
+            updated["generated_at"] = "2026-08-21T08:00:00Z"
+            source.write_text(json.dumps(updated), encoding="utf-8")
+            build_import(source, output)
+            connection.executescript((output / "sync.sql").read_text(encoding="utf-8"))
+
+            self.assertEqual(connection.execute("SELECT COUNT(*) FROM jobs").fetchone()[0], 1)
+            self.assertEqual(
+                connection.execute("SELECT job_id FROM jobs").fetchone()[0],
+                "https://example.com/jobs/2",
+            )
+
+    def test_reuses_an_existing_active_namespace_without_full_copy(self):
         with tempfile.TemporaryDirectory() as temporary_directory:
             root = Path(temporary_directory)
             source = root / "public_jobs.json"
             output = root / "generated"
             source.write_text(json.dumps(sample_payload()), encoding="utf-8")
-            build_import(source, output)
+            manifest = build_import(source, output)
 
             connection = sqlite3.connect(":memory:")
-            connection.executescript(MIGRATION.read_text(encoding="utf-8"))
-            connection.executescript((output / "load.sql").read_text(encoding="utf-8"))
-            connection.execute("DELETE FROM jobs")
-            connection.executescript((output / "activate.sql").read_text(encoding="utf-8"))
-            active_version = connection.execute(
-                "SELECT active_dataset_version FROM api_state WHERE singleton = 1"
-            ).fetchone()[0]
-            self.assertIsNone(active_version)
+            apply_migrations(connection)
+            connection.execute(
+                """INSERT INTO dataset_versions (
+                    version, source_sha256, source_schema_version, taxonomy_version,
+                    generated_at, total_openings, posted_within_days, taxonomy_json,
+                    career_buckets_json, authorization_categories_json, sponsorship_statuses_json
+                ) VALUES ('legacy-active', 'old', '3', 'old', '2026-08-18T00:00:00Z',
+                          1, 30, '{}', '[]', '[]', '[]')"""
+            )
+            connection.execute(
+                "UPDATE api_state SET active_dataset_version = 'legacy-active' WHERE singleton = 1"
+            )
+            connection.executescript((output / "sync.sql").read_text(encoding="utf-8"))
+
+            self.assertEqual(
+                connection.execute(
+                    "SELECT active_dataset_version FROM api_state WHERE singleton = 1"
+                ).fetchone()[0],
+                "legacy-active",
+            )
+            self.assertEqual(
+                connection.execute("SELECT COUNT(*) FROM jobs WHERE dataset_version = 'legacy-active'")
+                .fetchone()[0],
+                1,
+            )
+            self.assertEqual(
+                connection.execute(
+                    "SELECT source_sha256 FROM dataset_versions WHERE version = 'legacy-active'"
+                ).fetchone()[0],
+                manifest["source_sha256"],
+            )
 
     def test_rejects_mismatched_total(self):
         with tempfile.TemporaryDirectory() as temporary_directory:

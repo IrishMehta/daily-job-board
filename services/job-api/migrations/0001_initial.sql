@@ -1,8 +1,7 @@
 PRAGMA foreign_keys = ON;
 
--- Every publication is imported as an immutable dataset. The API switches the
--- active version only after an import has been validated, so readers never see
--- a partially refreshed board.
+-- This stores metadata for the active job namespace. Incremental syncs update
+-- that namespace in a transaction, so readers never see a partial refresh.
 CREATE TABLE dataset_versions (
     version TEXT PRIMARY KEY,
     source_sha256 TEXT NOT NULL UNIQUE,
@@ -18,7 +17,8 @@ CREATE TABLE dataset_versions (
     sponsorship_statuses_json TEXT NOT NULL
 );
 
--- This singleton pointer is the atomic publication boundary.
+-- This singleton identifies the namespace queried by the API. It is also used
+-- to bootstrap a new database with the stable `current` namespace.
 CREATE TABLE api_state (
     singleton INTEGER PRIMARY KEY CHECK (singleton = 1),
     active_dataset_version TEXT,

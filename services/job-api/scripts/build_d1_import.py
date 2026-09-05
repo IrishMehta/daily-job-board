@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Validate the published board payload and build a two-phase D1 import."""
+"""Validate the published board payload and build an incremental D1 sync."""
 
 from __future__ import annotations
 
@@ -102,6 +102,11 @@ def _sql(value: Any) -> str:
 def _insert(table: str, columns: list[str], values: list[Any]) -> str:
     rendered = ", ".join(_sql(value) for value in values)
     return f"INSERT OR IGNORE INTO {table} ({', '.join(columns)}) VALUES ({rendered});"
+
+
+def _same_job_clause(table: str, columns: list[str], job: dict[str, Any]) -> str:
+    """Return a NULL-safe comparison between a stored job and a payload job."""
+    return " AND ".join(f"{table}.{column} IS {_sql(job[column])}" for column in columns)
 
 
 def _validate_payload(payload: Any) -> tuple[dict[str, Any], list[dict[str, Any]]]:
@@ -234,9 +239,8 @@ def build_import(input_path: Path, output_dir: Path) -> dict[str, Any]:
     if len(set(links)) != len(links):
         raise ValidationError("jobs contains duplicate job_link values")
 
-    version = source_sha256
     job_columns = [
-        "dataset_version", "job_id", "posted_on", "company", "title", "location",
+        "job_id", "posted_on", "company", "title", "location",
         "location_label", "city", "region", "region_code", "country", "country_code",
         "location_search_terms_json", "career_bucket", "career_bucket_label",
         "experience_level", "experience_level_label", "yoe_min", "yoe_max",
@@ -245,88 +249,139 @@ def build_import(input_path: Path, output_dir: Path) -> dict[str, Any]:
         "description_excerpt", "match_terms_json", "classification_paths_json", "job_link",
         "search_text",
     ]
+    sync_token = source_sha256
+    metadata_columns = [
+        "source_sha256", "source_schema_version", "taxonomy_version", "generated_at",
+        "total_openings", "posted_within_days", "taxonomy_json", "career_buckets_json",
+        "authorization_categories_json", "sponsorship_statuses_json",
+    ]
+    metadata_values = [
+        source_sha256, root["schema_version"], root["taxonomy_version"], root["generated_at"],
+        root["total_openings"], root["posted_within_days"], _json(root["taxonomy"]),
+        _json(root["career_buckets"]), _json(root["authorization_categories"]),
+        _json(root["sponsorship_statuses"]),
+    ]
 
-    load_lines = [
+    sync_lines = [
         "PRAGMA foreign_keys = ON;",
-        f"-- Dataset version: {version}",
+        "BEGIN;",
+        f"-- Incremental sync token: {sync_token}",
+        "-- A new database uses the stable namespace 'current'. Existing databases keep",
+        "-- their active namespace, avoiding a one-time full-copy migration.",
         (
-            "DELETE FROM dataset_versions "
-            f"WHERE version = {_sql(version)} "
-            "AND NOT EXISTS (SELECT 1 FROM api_state WHERE active_dataset_version = "
-            f"{_sql(version)});"
+            "INSERT INTO dataset_versions (version, source_sha256, source_schema_version, "
+            "taxonomy_version, generated_at, total_openings, posted_within_days, taxonomy_json, "
+            "career_buckets_json, authorization_categories_json, sponsorship_statuses_json) "
+            f"SELECT 'current', {', '.join(_sql(value) for value in metadata_values)} "
+            "WHERE EXISTS (SELECT 1 FROM api_state "
+            "WHERE singleton = 1 AND active_dataset_version IS NULL);"
         ),
-        _insert(
-            "dataset_versions",
-            [
-                "version", "source_sha256", "source_schema_version", "taxonomy_version",
-                "generated_at", "total_openings", "posted_within_days", "taxonomy_json",
-                "career_buckets_json", "authorization_categories_json",
-                "sponsorship_statuses_json",
-            ],
-            [
-                version, source_sha256, root["schema_version"], root["taxonomy_version"],
-                root["generated_at"], root["total_openings"], root["posted_within_days"],
-                _json(root["taxonomy"]), _json(root["career_buckets"]),
-                _json(root["authorization_categories"]), _json(root["sponsorship_statuses"]),
-            ],
+        (
+            "UPDATE api_state SET active_dataset_version = 'current', "
+            "updated_at = strftime('%Y-%m-%dT%H:%M:%fZ', 'now') "
+            "WHERE singleton = 1 AND active_dataset_version IS NULL;"
+        ),
+        (
+            "UPDATE dataset_versions SET "
+            + ", ".join(
+                f"{column} = {_sql(value)}"
+                for column, value in zip(metadata_columns, metadata_values, strict=True)
+            )
+            + " WHERE version = (SELECT active_dataset_version FROM api_state WHERE singleton = 1);"
         ),
     ]
+
+    # Mark the desired IDs first, then remove jobs absent from the new payload. The marker is
+    # deliberately unindexed: it costs one lightweight write per live job and avoids staging a
+    # second full dataset just to discover deletions.
+    for job in jobs:
+        sync_lines.append(
+            "UPDATE jobs SET last_seen_sync = "
+            f"{_sql(sync_token)} WHERE dataset_version = "
+            "(SELECT active_dataset_version FROM api_state WHERE singleton = 1) "
+            f"AND job_id = {_sql(job['job_id'])} "
+            f"AND last_seen_sync IS NOT {_sql(sync_token)};"
+        )
+    sync_lines.append(
+        "DELETE FROM jobs WHERE dataset_version = "
+        "(SELECT active_dataset_version FROM api_state WHERE singleton = 1) "
+        f"AND last_seen_sync IS NOT {_sql(sync_token)};"
+    )
 
     classification_count = 0
     specialization_count = 0
     for job in jobs:
-        load_lines.append(
-            _insert("jobs", job_columns, [version, *[job[column] for column in job_columns[1:]]])
+        same_job = _same_job_clause("jobs", job_columns, job)
+        changed_job_exists = (
+            "EXISTS (SELECT 1 FROM jobs WHERE dataset_version = "
+            "(SELECT active_dataset_version FROM api_state WHERE singleton = 1) "
+            f"AND job_id = {_sql(job['job_id'])} AND NOT ({same_job}))"
+        )
+        # The normalized classification rows are derived from classification_paths_json. Rebuild
+        # them only when the corresponding job content changes.
+        sync_lines.extend(
+            [
+                "DELETE FROM job_specializations WHERE dataset_version = "
+                "(SELECT active_dataset_version FROM api_state WHERE singleton = 1) "
+                f"AND job_id = {_sql(job['job_id'])} AND {changed_job_exists};",
+                "DELETE FROM job_classifications WHERE dataset_version = "
+                "(SELECT active_dataset_version FROM api_state WHERE singleton = 1) "
+                f"AND job_id = {_sql(job['job_id'])} AND {changed_job_exists};",
+            ]
+        )
+        update_columns = [column for column in job_columns if column != "job_id"]
+        sync_lines.append(
+            "INSERT INTO jobs (dataset_version, "
+            + ", ".join(job_columns)
+            + ", last_seen_sync) VALUES ((SELECT active_dataset_version FROM api_state "
+            "WHERE singleton = 1), "
+            + ", ".join(_sql(job[column]) for column in job_columns)
+            + f", {_sql(sync_token)}) ON CONFLICT(dataset_version, job_id) DO UPDATE SET "
+            + ", ".join(f"{column} = excluded.{column}" for column in update_columns)
+            + ", last_seen_sync = excluded.last_seen_sync"
+            + f" WHERE NOT ({same_job});"
         )
         for path_index, classification in enumerate(job["classifications"]):
             classification_count += 1
-            load_lines.append(
+            sync_lines.append(
                 _insert(
                     "job_classifications",
                     ["dataset_version", "job_id", "path_index", "domain", "industry", "confidence"],
                     [
-                        version, job["job_id"], path_index, classification["domain"],
+                        "__ACTIVE_DATASET__", job["job_id"], path_index, classification["domain"],
                         classification["industry"], classification["confidence"],
                     ],
+                ).replace(
+                    "'__ACTIVE_DATASET__'",
+                    "(SELECT active_dataset_version FROM api_state WHERE singleton = 1)",
+                    1,
                 )
             )
             for specialization in classification["specializations"]:
                 specialization_count += 1
-                load_lines.append(
+                sync_lines.append(
                     _insert(
                         "job_specializations",
                         ["dataset_version", "job_id", "path_index", "specialization"],
-                        [version, job["job_id"], path_index, specialization],
+                        ["__ACTIVE_DATASET__", job["job_id"], path_index, specialization],
+                    ).replace(
+                        "'__ACTIVE_DATASET__'",
+                        "(SELECT active_dataset_version FROM api_state WHERE singleton = 1)",
+                        1,
                     )
                 )
 
     expected_jobs = len(jobs)
-    activation_conditions = "\n  AND ".join(
+    sync_lines.extend(
         [
-            f"(SELECT COUNT(*) FROM jobs WHERE dataset_version = {_sql(version)}) = {expected_jobs}",
-            (
-                "(SELECT COUNT(*) FROM job_classifications WHERE dataset_version = "
-                f"{_sql(version)}) = {classification_count}"
-            ),
-            (
-                "(SELECT COUNT(*) FROM job_specializations WHERE dataset_version = "
-                f"{_sql(version)}) = {specialization_count}"
-            ),
+            "COMMIT;",
+            "-- The API continues to use the same storage namespace; only changed rows were written.",
         ]
     )
-    activate_lines = [
-        "PRAGMA foreign_keys = ON;",
-        f"-- Activate only if every expected row for {version} is present.",
-        "UPDATE api_state",
-        f"SET active_dataset_version = {_sql(version)},",
-        "    updated_at = strftime('%Y-%m-%dT%H:%M:%fZ', 'now')",
-        "WHERE singleton = 1",
-        f"  AND {activation_conditions};",
-        "SELECT active_dataset_version, updated_at FROM api_state WHERE singleton = 1;",
-    ]
 
     manifest = {
-        "dataset_version": version,
+        "dataset_version": source_sha256,
+        "sync_mode": "incremental_upsert_delete",
         "source_file": input_path.name,
         "source_sha256": source_sha256,
         "source_generated_at": root["generated_at"],
@@ -339,8 +394,7 @@ def build_import(input_path: Path, output_dir: Path) -> dict[str, Any]:
     }
 
     output_dir.mkdir(parents=True, exist_ok=True)
-    (output_dir / "load.sql").write_text("\n".join(load_lines) + "\n", encoding="utf-8")
-    (output_dir / "activate.sql").write_text("\n".join(activate_lines) + "\n", encoding="utf-8")
+    (output_dir / "sync.sql").write_text("\n".join(sync_lines) + "\n", encoding="utf-8")
     (output_dir / "import-manifest.json").write_text(
         json.dumps(manifest, indent=2, sort_keys=True) + "\n", encoding="utf-8"
     )
