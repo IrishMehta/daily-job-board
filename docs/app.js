@@ -8,7 +8,7 @@ import {
   sanitizeFilters,
   toggleShortlist,
 } from "./storage.js";
-import { explainResumeMatch, filterAndSortJobs, normalizeText, ResumeMatcher, tokenize } from "./matching.js";
+import { countFacetValues, explainResumeMatch, filterAndSortJobs, normalizeText, ResumeMatcher, sortFacetItems, tokenize } from "./matching.js";
 import { isCurrentSearchResponse } from "./search.js";
 
 const PAGE_BATCH = 40;
@@ -70,6 +70,7 @@ const resumeMatcher = new ResumeMatcher((message) => setResumeStatus(message));
 let searchWorker = null;
 let searchTimer = null;
 let toastTimer = null;
+let renderedFacetState = "";
 
 function escapeHtml(value) {
   return String(value ?? "")
@@ -353,29 +354,89 @@ function option(value, label, count) {
   return `<option value="${escapeHtml(value)}">${escapeHtml(label)}${Number.isFinite(count) ? ` (${formatCount(count)})` : ""}</option>`;
 }
 
-function populateFilters() {
-  const taxonomy = state.payload.taxonomy ?? {};
-  els.domain_filter.insertAdjacentHTML("beforeend", (taxonomy.domains ?? []).map((item) => option(item.value, item.label, item.count)).join(""));
-  els.industry_filter.insertAdjacentHTML("beforeend", (taxonomy.industries ?? []).map((item) => option(item.value, item.label, item.count)).join(""));
-  els.career_filter.insertAdjacentHTML("beforeend", (state.payload.career_buckets ?? []).map((item) => option(item.value, item.label, item.count)).join(""));
-  els.authorization_filter.insertAdjacentHTML("beforeend", (state.payload.authorization_categories ?? []).map((item) => option(item.value, item.label, item.count)).join(""));
-  els.sponsorship_filter.insertAdjacentHTML("beforeend", (state.payload.sponsorship_statuses ?? []).map((item) => option(item.value, item.label, item.count)).join(""));
-  const locations = state.payload.locations ?? [...new Set(state.jobs.map((job) => job.location))].map((value) => ({ value }));
-  els.location_suggestions.innerHTML = locations.slice(0, 100).map((item) => `<option value="${escapeHtml(item.value)}"></option>`).join("");
-  updateSpecializationOptions();
-  syncControlsFromState();
+function uniqueFacetItems(items) {
+  return [...new Map(items.map((item) => [item.value, item])).values()];
 }
 
-function updateSpecializationOptions() {
+function facetStateSignature() {
+  const { sort, ...filters } = state.filters;
+  return JSON.stringify({
+    filters,
+    view: state.view,
+    shortlist: state.view === "shortlist" ? Object.keys(state.shortlist).sort() : [],
+    searchPending: state.searchPending,
+    searchFailed: state.searchFailed,
+    searchRequest: state.searchScores instanceof Map ? state.latestSearchRequestId : 0,
+    jobCount: state.jobs.length,
+  });
+}
+
+function setFacetOptions(element, defaultLabel, items, counts, selectedValue) {
+  element.innerHTML = option("", defaultLabel)
+    + sortFacetItems(uniqueFacetItems(items)).map((item) => option(item.value, item.label, counts.get(item.value) ?? 0)).join("");
+  element.value = selectedValue || "";
+}
+
+function updateFacetOptions({ force = false } = {}) {
+  const signature = facetStateSignature();
+  if (!force && signature === renderedFacetState) return;
+  const taxonomy = state.payload.taxonomy ?? {};
   const selectedDomain = state.filters.domains[0] || "";
-  const domains = state.payload.taxonomy?.domains ?? [];
-  const candidates = selectedDomain
+  const domains = taxonomy.domains ?? [];
+  const specializationItems = selectedDomain
     ? domains.find((item) => item.value === selectedDomain)?.specializations ?? []
     : domains.flatMap((item) => item.specializations ?? []);
-  const unique = [...new Map(candidates.map((item) => [item.value, item])).values()];
-  els.specialization_filter.innerHTML = '<option value="">All specializations</option>'
-    + unique.map((item) => option(item.value, item.label, item.count)).join("");
-  if (!unique.some((item) => state.filters.specializations.includes(item.value))) state.filters.specializations = [];
+  const shared = {
+    shortlist: state.view === "shortlist" ? state.shortlist : null,
+    searchScores: state.searchScores,
+  };
+  const definitions = [
+    {
+      element: els.domain_filter, defaultLabel: "All focus areas", key: "domains", items: domains,
+      values: (job) => job._domains, ignoreFilters: ["domains", "specializations"],
+    },
+    {
+      element: els.specialization_filter, defaultLabel: "All specializations", key: "specializations", items: specializationItems,
+      values: (job) => job._specializations, ignoreFilters: ["specializations"],
+    },
+    {
+      element: els.industry_filter, defaultLabel: "All industries", key: "industries", items: taxonomy.industries ?? [],
+      values: (job) => job._industries, ignoreFilters: ["industries"],
+    },
+    {
+      element: els.career_filter, defaultLabel: "All experience", key: "careerBuckets", items: state.payload.career_buckets ?? [],
+      values: (job) => job.career_bucket, ignoreFilters: ["careerBuckets"],
+    },
+    {
+      element: els.authorization_filter, defaultLabel: "Any authorization", key: "authorizationCategories", items: state.payload.authorization_categories ?? [],
+      values: (job) => job.authorization_category, ignoreFilters: ["authorizationCategories"],
+    },
+    {
+      element: els.sponsorship_filter, defaultLabel: "Any sponsorship", key: "sponsorshipStatuses", items: state.payload.sponsorship_statuses ?? [],
+      values: (job) => job.sponsorship_status, ignoreFilters: ["sponsorshipStatuses"],
+    },
+  ];
+  definitions.forEach((definition) => {
+    const counts = countFacetValues(state.jobs, state.filters, definition.values, {
+      ...shared,
+      ignoreFilters: definition.ignoreFilters,
+    });
+    setFacetOptions(
+      definition.element,
+      definition.defaultLabel,
+      definition.items,
+      counts,
+      state.filters[definition.key][0],
+    );
+  });
+  renderedFacetState = signature;
+}
+
+function populateFilters() {
+  const locations = state.payload.locations ?? [...new Set(state.jobs.map((job) => job.location))].map((value) => ({ value }));
+  els.location_suggestions.innerHTML = locations.slice(0, 100).map((item) => `<option value="${escapeHtml(item.value)}"></option>`).join("");
+  updateFacetOptions({ force: true });
+  syncControlsFromState();
 }
 
 function setSingleArrayFilter(key, value) {
@@ -390,7 +451,6 @@ function setSingleArrayFilter(key, value) {
 function syncControlsFromState() {
   els.search_input.value = state.filters.query;
   els.domain_filter.value = state.filters.domains[0] || "";
-  updateSpecializationOptions();
   els.specialization_filter.value = state.filters.specializations[0] || "";
   els.industry_filter.value = state.filters.industries[0] || "";
   els.location_filter.value = state.filters.location;
@@ -707,6 +767,7 @@ function render() {
   els.sort_filter.title = state.resumeActive ? "Resume relevance controls sorting while matching is active." : "";
   els.job_list.setAttribute("aria-busy", String(state.searchPending));
   els.resume_clear.classList.toggle("hidden", !state.resumeActive);
+  updateFacetOptions();
   renderSearchChrome();
   renderActiveFilters();
   renderJobList(results);
@@ -859,7 +920,6 @@ function bindEvents() {
   els.domain_filter.addEventListener("change", () => {
     state.filters.domains = els.domain_filter.value ? [els.domain_filter.value] : [];
     state.filters.specializations = [];
-    updateSpecializationOptions();
     setSingleArrayFilter("domains", els.domain_filter.value);
   });
   els.specialization_filter.addEventListener("change", () => setSingleArrayFilter("specializations", els.specialization_filter.value));

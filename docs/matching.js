@@ -20,6 +20,12 @@ export function tokenize(value) {
   return normalizeText(value).split(" ").filter((token) => token.length > 1 && !STOPWORDS.has(token));
 }
 
+export function sortFacetItems(items) {
+  return [...items].sort((left, right) =>
+    String(left.label || left.value).localeCompare(String(right.label || right.value), "en", { sensitivity: "base" })
+      || String(left.value).localeCompare(String(right.value)));
+}
+
 function hasAny(jobValues, selectedValues) {
   return !selectedValues.length || selectedValues.some((value) => jobValues.includes(value));
 }
@@ -41,27 +47,43 @@ function compareExperience(left, right) {
   return (left.yoe_max ?? a) - (right.yoe_max ?? b);
 }
 
-export function filterAndSortJobs(jobs, filters, { shortlist = null, resumeActive = false, searchScores = null } = {}) {
+export function filterJobs(jobs, filters, { shortlist = null, searchScores = null, ignoreFilters = [] } = {}) {
+  const ignored = new Set(ignoreFilters);
   const queryTokens = tokenize(filters.query);
   const rankedSearch = Boolean(filters.query) && searchScores instanceof Map;
   const location = normalizeText(filters.location);
   const cutoff = postedCutoff(filters.postedRange, jobs);
   const years = Number.parseInt(filters.experienceYears, 10);
   const yearsActive = Number.isInteger(years) && years >= 0;
-  const filtered = jobs.filter((job) => {
+  return jobs.filter((job) => {
     if (shortlist && !shortlist[job.id]) return false;
-    if (cutoff && new Date(`${job.posted_on}T00:00:00`) < cutoff) return false;
-    if (location && !job._locationSearch.includes(location)) return false;
-    if (!hasAny(job._domains, filters.domains)) return false;
-    if (!hasAny(job._specializations, filters.specializations)) return false;
-    if (!hasAny(job._industries, filters.industries)) return false;
-    if (yearsActive && job.yoe_min != null && job.yoe_min > years) return false;
-    if (filters.careerBuckets.length && !filters.careerBuckets.includes(job.career_bucket)) return false;
-    if (filters.authorizationCategories.length && !filters.authorizationCategories.includes(job.authorization_category)) return false;
-    if (filters.sponsorshipStatuses.length && !filters.sponsorshipStatuses.includes(job.sponsorship_status)) return false;
+    if (!ignored.has("postedRange") && cutoff && new Date(`${job.posted_on}T00:00:00`) < cutoff) return false;
+    if (!ignored.has("location") && location && !job._locationSearch.includes(location)) return false;
+    if (!ignored.has("domains") && !hasAny(job._domains, filters.domains)) return false;
+    if (!ignored.has("specializations") && !hasAny(job._specializations, filters.specializations)) return false;
+    if (!ignored.has("industries") && !hasAny(job._industries, filters.industries)) return false;
+    if (!ignored.has("experienceYears") && yearsActive && job.yoe_min != null && job.yoe_min > years) return false;
+    if (!ignored.has("careerBuckets") && filters.careerBuckets.length && !filters.careerBuckets.includes(job.career_bucket)) return false;
+    if (!ignored.has("authorizationCategories") && filters.authorizationCategories.length && !filters.authorizationCategories.includes(job.authorization_category)) return false;
+    if (!ignored.has("sponsorshipStatuses") && filters.sponsorshipStatuses.length && !filters.sponsorshipStatuses.includes(job.sponsorship_status)) return false;
     if (rankedSearch) return searchScores.has(job.id);
     return queryTokens.every((token) => job._searchText.includes(token));
   });
+}
+
+export function countFacetValues(jobs, filters, valueSelector, options = {}) {
+  const counts = new Map();
+  filterJobs(jobs, filters, options).forEach((job) => {
+    const selected = valueSelector(job);
+    const values = Array.isArray(selected) ? selected : [selected];
+    new Set(values.filter(Boolean)).forEach((value) => counts.set(value, (counts.get(value) ?? 0) + 1));
+  });
+  return counts;
+}
+
+export function filterAndSortJobs(jobs, filters, { shortlist = null, resumeActive = false, searchScores = null } = {}) {
+  const rankedSearch = Boolean(filters.query) && searchScores instanceof Map;
+  const filtered = filterJobs(jobs, filters, { shortlist, searchScores });
 
   filtered.sort((a, b) => {
     if (resumeActive) {

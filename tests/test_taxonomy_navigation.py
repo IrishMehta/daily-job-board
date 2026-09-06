@@ -19,8 +19,16 @@ class TaxonomyNavigationTests(unittest.TestCase):
         self.assertIn('id="domain-filter"', self.index)
         self.assertIn('id="specialization-filter"', self.index)
         self.assertIn('id="industry-filter"', self.index)
-        self.assertIn("function updateSpecializationOptions()", self.app)
+        self.assertIn("function updateFacetOptions(", self.app)
         self.assertIn("hasAny(job._domains, filters.domains)", self.matching)
+
+    def test_facets_are_contextual_and_alphabetized(self):
+        self.assertIn("countFacetValues(state.jobs, state.filters", self.app)
+        self.assertIn('ignoreFilters: ["domains", "specializations"]', self.app)
+        self.assertIn("sortFacetItems(uniqueFacetItems(items))", self.app)
+        self.assertIn("localeCompare", self.matching)
+        self.assertIn("export function countFacetValues", self.matching)
+        self.assertIn("export function sortFacetItems", self.matching)
 
     def test_filters_are_shareable_in_url_state(self):
         self.assertIn('domains: "domain"', self.app)

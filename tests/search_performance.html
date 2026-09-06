@@ -6,6 +6,7 @@
   <pre id="results">Loading current board…</pre>
   <script type="module">
     import { SearchIndex } from "../docs/search.js";
+    import { countFacetValues, normalizeText } from "../docs/matching.js";
 
     const [config, payload] = await Promise.all([
       fetch("../docs/search-config.json").then((response) => response.json()),
@@ -43,18 +44,47 @@
       return { query, elapsed: performance.now() - started, matches: result.matches.length };
     });
     const maximum = Math.max(...timings.map((timing) => timing.elapsed));
+    const facetJobs = payload.jobs.map((job) => {
+      const paths = job.classification_paths ?? [];
+      return {
+        ...job,
+        _domains: [...new Set(paths.map((path) => path.domain).filter(Boolean))],
+        _specializations: [...new Set(paths.flatMap((path) => path.specializations ?? []).filter(Boolean))],
+        _industries: [...new Set(paths.map((path) => path.industry).filter(Boolean))],
+        _locationSearch: normalizeText([job.location, ...(job.location_profile?.search_terms ?? [])].join(" ")),
+        _searchText: "",
+      };
+    });
+    const facetFilters = {
+      query: "", domains: ["software_engineering"], specializations: [], industries: [], location: "",
+      careerBuckets: [], authorizationCategories: [], sponsorshipStatuses: [], experienceYears: "", postedRange: "7d",
+    };
+    const facetDefinitions = [
+      [(job) => job._domains, ["domains", "specializations"]],
+      [(job) => job._specializations, ["specializations"]],
+      [(job) => job._industries, ["industries"]],
+      [(job) => job.career_bucket, ["careerBuckets"]],
+      [(job) => job.authorization_category, ["authorizationCategories"]],
+      [(job) => job.sponsorship_status, ["sponsorshipStatuses"]],
+    ];
+    const facetStarted = performance.now();
+    facetDefinitions.forEach(([selector, ignoreFilters]) => {
+      countFacetValues(facetJobs, facetFilters, selector, { ignoreFilters });
+    });
+    const facetMs = performance.now() - facetStarted;
     const lines = [
       `${documents.length.toLocaleString()} jobs indexed in ${buildMs.toFixed(1)} ms`,
       "",
       ...timings.map((timing) => `${timing.elapsed.toFixed(1).padStart(7)} ms  ${String(timing.matches).padStart(5)} matches  ${timing.query}`),
       "",
       `Maximum query time: ${maximum.toFixed(1)} ms`,
+      `All contextual facets: ${facetMs.toFixed(1)} ms`,
     ];
-    const passed = maximum <= 100;
+    const passed = maximum <= 100 && facetMs <= 100;
     document.title = `${passed ? "PASS" : "FAIL"} — Search performance`;
-    document.getElementById("results").textContent = `${lines.join("\n")}\n\n${passed ? "PASS" : "FAIL"}: 100 ms query budget.`;
+    document.getElementById("results").textContent = `${lines.join("\n")}\n\n${passed ? "PASS" : "FAIL"}: 100 ms query and facet budgets.`;
     document.body.dataset.result = passed ? "pass" : "fail";
-    if (!passed) throw new Error(`Search query budget exceeded: ${maximum.toFixed(1)} ms`);
+    if (!passed) throw new Error(`Browser budget exceeded: query ${maximum.toFixed(1)} ms; facets ${facetMs.toFixed(1)} ms`);
   </script>
 </body>
 </html>

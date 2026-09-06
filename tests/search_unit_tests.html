@@ -12,6 +12,7 @@
       normalizeSearchText,
       tokenizeSearchText,
     } from "../docs/search.js";
+    import { countFacetValues, filterAndSortJobs, sortFacetItems } from "../docs/matching.js";
 
     const config = await fetch("../docs/search-config.json").then((response) => response.json());
     const fields = (values) => ({
@@ -81,6 +82,38 @@
       assert(index.suggest("softw").some((item) => item.label === "Software Engineer"), "suggests guided role completions");
       assert(isCurrentSearchResponse(7, { type: "results", requestId: 7 }), "accepts the latest worker response");
       assert(!isCurrentSearchResponse(7, { type: "results", requestId: 6 }), "rejects stale worker responses");
+      const facetJobs = [
+        {
+          id: "ai-health", posted_on: "2026-09-05", _searchText: "", _locationSearch: "boston",
+          _domains: ["ai"], _specializations: ["ml"], _industries: ["health"], yoe_min: 1,
+          career_bucket: "early", authorization_category: "open", sponsorship_status: "unknown",
+        },
+        {
+          id: "ai-finance", posted_on: "2026-09-05", _searchText: "", _locationSearch: "new york",
+          _domains: ["ai"], _specializations: ["nlp"], _industries: ["finance"], yoe_min: 4,
+          career_bucket: "mid", authorization_category: "open", sponsorship_status: "supports",
+        },
+        {
+          id: "software-health", posted_on: "2026-09-05", _searchText: "", _locationSearch: "seattle",
+          _domains: ["software"], _specializations: ["backend"], _industries: ["health"], yoe_min: 2,
+          career_bucket: "early", authorization_category: "restricted", sponsorship_status: "unknown",
+        },
+      ];
+      const facetFilters = {
+        query: "", domains: ["ai"], specializations: [], industries: ["health"], location: "",
+        careerBuckets: [], authorizationCategories: [], sponsorshipStatuses: [], experienceYears: "", postedRange: "7d",
+      };
+      const industryCounts = countFacetValues(facetJobs, facetFilters, (job) => job._industries, { ignoreFilters: ["industries"] });
+      assert(industryCounts.get("health") === 1 && industryCounts.get("finance") === 1, "counts each facet while ignoring its own selection");
+      const domainCounts = countFacetValues(facetJobs, facetFilters, (job) => job._domains, { ignoreFilters: ["domains", "specializations"] });
+      assert(domainCounts.get("ai") === 1 && domainCounts.get("software") === 1, "keeps other active filters in contextual counts");
+      const sortedLabels = sortFacetItems([{ value: "z", label: "Zebra" }, { value: "a", label: "alpha" }, { value: "b", label: "Beta" }])
+        .map((item) => item.label).join("|");
+      assert(sortedLabels === "alpha|Beta|Zebra", "sorts filter options alphabetically without case bias");
+      const rankedFilters = { ...facetFilters, query: "engineer", industries: [], domains: [], sort: "relevance" };
+      const rankedJobs = facetJobs.map((job) => ({ ...job, _searchText: "engineer" }));
+      const ranked = filterAndSortJobs(rankedJobs, rankedFilters, { searchScores: new Map([["ai-health", 1], ["ai-finance", 3]]) });
+      assert(ranked.map((job) => job.id).join("|") === "ai-finance|ai-health", "preserves relevance sorting after shared filter extraction");
       document.title = "PASS — Search unit tests";
       document.getElementById("results").textContent = `${lines.join("\n")}\n\n${lines.length} tests passed.`;
       document.body.dataset.result = "pass";
