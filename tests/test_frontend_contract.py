@@ -51,6 +51,25 @@ class FrontendContractTests(unittest.TestCase):
         self.assertIn('aria-label="Open API documentation"', html)
         self.assertIn('type="module" src="./app.js"', html)
 
+    def test_market_trends_tab_is_lazy_and_aggregate_only(self):
+        html = (DOCS / "index.html").read_text(encoding="utf-8")
+        app_source = (DOCS / "app.js").read_text(encoding="utf-8")
+        market_source = (DOCS / "market-analysis.js").read_text(encoding="utf-8")
+        payload_path = DOCS / "data" / "market_analysis.json"
+        payload = json.loads(payload_path.read_text(encoding="utf-8"))
+
+        self.assertIn('data-view="market"', html)
+        self.assertIn('id="market-analysis"', html)
+        self.assertIn('id="market-domain-filter"', html)
+        self.assertIn('id="market-specialization-filter"', html)
+        self.assertIn('from "./market-analysis.js"', app_source)
+        self.assertIn('fetch(DATA_URL)', market_source)
+        self.assertEqual("market-analysis-public-v1", payload["schema_version"])
+        self.assertLess(payload_path.stat().st_size, 5 * 1024 * 1024)
+        serialized = json.dumps(payload).casefold()
+        for forbidden in ("job_description", "evidence_snippet", "/scratch/", "https://"):
+            self.assertNotIn(forbidden, serialized)
+
 
 if __name__ == "__main__":
     unittest.main()

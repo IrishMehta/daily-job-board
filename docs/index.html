@@ -41,6 +41,7 @@
       <button class="view-tab" type="button" data-view="shortlist" aria-pressed="false">
         Shortlist <span class="tab-count" id="shortlist-count">0</span>
       </button>
+      <button class="view-tab" type="button" data-view="market" aria-pressed="false">Market trends</button>
     </nav>
 
     <div class="header-actions">
@@ -62,7 +63,7 @@
     </div>
   </header>
 
-  <section class="search-shell" aria-label="Search and filter jobs">
+  <section class="search-shell" id="search-shell" aria-label="Search and filter jobs">
     <div class="search-row">
       <div class="search-combobox">
         <label class="search-field" for="search-input">
@@ -141,7 +142,7 @@
 
   <div class="storage-warning hidden" id="storage-warning" role="status"></div>
 
-  <main class="workspace">
+  <main class="workspace" id="jobs-workspace">
     <section class="results-pane" aria-labelledby="results-heading">
       <div class="results-toolbar">
         <div>
@@ -172,6 +173,28 @@
       </div>
       <div class="detail-content hidden" id="detail-content"></div>
     </aside>
+  </main>
+
+  <main class="market-analysis hidden" id="market-analysis" aria-labelledby="market-heading">
+    <header class="market-hero">
+      <div>
+        <span class="market-kicker">Aggregate US technology hiring signals</span>
+        <h1 id="market-heading">Market trends</h1>
+        <p id="market-freshness">The first 30-day Spark backfill has not been published yet.</p>
+      </div>
+      <div class="market-controls" id="market-controls">
+        <label>Focus
+          <select id="market-domain-filter"><option value="">All focus areas</option></select>
+        </label>
+        <label>Specialization
+          <select id="market-specialization-filter"><option value="">All specializations</option></select>
+        </label>
+      </div>
+    </header>
+    <div class="market-notice hidden" id="market-notice" role="status"></div>
+    <div class="market-content" id="market-content" aria-live="polite">
+      <div class="market-loading">Open this tab to load aggregate market data.</div>
+    </div>
   </main>
 
   <div class="sheet-backdrop hidden" id="sheet-backdrop"></div>

@@ -10,6 +10,7 @@ import {
 } from "./storage.js";
 import { countFacetValues, explainResumeMatch, filterAndSortJobs, normalizeText, ResumeMatcher, sortFacetItems, tokenize } from "./matching.js";
 import { isCurrentSearchResponse } from "./search.js";
+import { createMarketAnalysis } from "./market-analysis.js";
 
 const PAGE_BATCH = 40;
 const FILTER_PARAM_MAP = {
@@ -63,10 +64,11 @@ const els = Object.fromEntries([
   "sponsorship-filter", "posted-filter", "sort-filter", "clear-filters", "active-filters", "storage-warning",
   "results-heading", "results-summary", "match-mode", "job-list", "empty-state", "empty-title", "empty-copy",
   "empty-action", "load-more", "detail-pane", "detail-empty", "detail-content", "sheet-backdrop", "resume-dialog",
-  "resume-input", "resume-status", "resume-clear", "resume-apply", "toast",
+  "resume-input", "resume-status", "resume-clear", "resume-apply", "toast", "search-shell", "jobs-workspace",
 ].map((id) => [id.replaceAll("-", "_"), document.getElementById(id)]));
 
 const resumeMatcher = new ResumeMatcher((message) => setResumeStatus(message));
+const marketAnalysis = createMarketAnalysis();
 let searchWorker = null;
 let searchTimer = null;
 let toastTimer = null;
@@ -312,7 +314,7 @@ function readUrlState(filters) {
     next[key] = ARRAY_FILTERS.has(key) ? parseListParam(params.get(param)) : (params.get(param) || DEFAULT_FILTERS[key]);
   });
   if (params.has("q") && !params.has("sort") && next.query) next.sort = "relevance";
-  state.view = params.get("view") === "shortlist" ? "shortlist" : "all";
+  state.view = ["shortlist", "market"].includes(params.get("view")) ? params.get("view") : "all";
   return sanitizeFilters(next);
 }
 
@@ -325,7 +327,7 @@ function writeUrlState() {
       params.set(param, Array.isArray(value) ? value.join(",") : value);
     }
   });
-  if (state.view === "shortlist") params.set("view", "shortlist");
+  if (state.view !== "all") params.set("view", state.view);
   const query = params.toString();
   window.history.replaceState({}, "", `${window.location.pathname}${query ? `?${query}` : ""}`);
 }
@@ -746,14 +748,26 @@ function selectJob(id, { openMobile = true } = {}) {
 }
 
 function render() {
-  if (!state.payload) return;
-  const results = currentResults();
-  if (state.selectedId && !results.some((job) => job.id === state.selectedId)) state.selectedId = "";
   document.querySelectorAll("[data-view]").forEach((button) => {
     const active = button.dataset.view === state.view;
     button.classList.toggle("is-active", active);
     button.setAttribute("aria-pressed", String(active));
   });
+  const marketView = state.view === "market";
+  els.search_shell.classList.toggle("hidden", marketView);
+  els.jobs_workspace.classList.toggle("hidden", marketView);
+  els.storage_warning.classList.toggle("hidden", marketView || !state.storageWarning);
+  if (marketView) {
+    marketAnalysis.show();
+    els.all_count.textContent = `(${formatCount(state.jobs.length)})`;
+    els.shortlist_count.textContent = formatCount(Object.keys(state.shortlist).length);
+    document.body.classList.remove("detail-open");
+    return;
+  }
+  marketAnalysis.hide();
+  if (!state.payload) return;
+  const results = currentResults();
+  if (state.selectedId && !results.some((job) => job.id === state.selectedId)) state.selectedId = "";
   els.results_heading.textContent = state.view === "shortlist" ? "Shortlist" : "All jobs";
   els.results_summary.textContent = state.searchPending && state.filters.query
     ? `Searching ${formatCount(results.length)} current ${results.length === 1 ? "match" : "matches"}…`
@@ -1022,7 +1036,6 @@ function bindEvents() {
   });
   window.addEventListener("popstate", () => {
     state.filters = readUrlState(state.filters);
-    state.view = new URLSearchParams(window.location.search).get("view") === "shortlist" ? "shortlist" : "all";
     syncControlsFromState();
     requestAdvancedSearch();
     render();
@@ -1035,6 +1048,8 @@ async function init() {
   state.filters = readUrlState(loaded.value.filters);
   state.shortlist = loaded.value.shortlist;
   state.storageWarning = loaded.warning;
+  bindEvents();
+  render();
 
   const response = await fetch("./data/public_jobs.json");
   if (!response.ok) throw new Error(`Current jobs could not be loaded (${response.status}).`);
@@ -1054,7 +1069,6 @@ async function init() {
   renderFlapCount(state.jobs.length);
   if (state.payload.repo_url) els.repo_link.href = state.payload.repo_url;
   populateFilters();
-  bindEvents();
   writeUrlState();
   render();
   window.setTimeout(startSearchWorker, 0);
