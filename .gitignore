@@ -8,25 +8,12 @@
 !README.md
 !docs/
 !docs/**
-!build_public_job_board_listings.py
 !tests/
-!tests/test_public_board_listings.py
 !tests/test_frontend_contract.py
 !tests/test_taxonomy_navigation.py
-
-# Track the Spark market-analysis implementation, but never its local warehouse,
-# checkpoints, or staged source tails.
-market_analysis/
-# !market_analysis/*.py
-# !market_analysis/*.md
-# !market_analysis/*.txt
-# !market_analysis/ontology_sources.json
-# !market_analysis/skill_ontology_overrides.json
-# !market_analysis/tests/
-# !market_analysis/tests/**
-# market_analysis/data/
-# market_analysis/state/
-# market_analysis/staging/
+!tests/test_advanced_search_contract.py
+!tests/search_unit_tests.html
+!tests/search_performance.html
 
 # Keep the public job API source and its deployment workflow.
 !services/
