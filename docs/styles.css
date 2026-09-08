@@ -572,9 +572,20 @@ mark { padding: 0 2px; border-radius: 3px; background: rgba(255, 194, 75, 0.34);
 
 /* Geographic gravity */
 .market-geography-grid { grid-template-columns: minmax(470px, .95fr) minmax(0, 1.05fr); }
-.state-map { display: grid; grid-template-columns: repeat(12, minmax(25px, 1fr)); grid-template-rows: repeat(8, 37px); gap: 4px; max-width: 650px; margin: 5px auto 0; }
-.state-tile { display: grid; place-items: center; border: 1px dashed #d4d7ce; border-radius: 4px; color: #a4a99f; font-family: var(--font-mono); font-size: 8px; }
-.state-tile.has-data { border-style: solid; border-color: rgba(146,97,10,.12); background: rgba(255,194,75,var(--heat)); color: #392b0b; font-weight: 650; box-shadow: 0 2px 7px rgba(100,73,18,.07); }
+.state-choropleth { display: grid; gap: 8px; }
+.us-state-map { display: block; width: 100%; height: auto; max-height: 400px; overflow: visible; }
+.map-insets rect { fill: #f7f8f4; stroke: #d9dcd3; stroke-width: 1; stroke-dasharray: 4 5; }
+.map-insets text { fill: #a0a69c; stroke: none; font-family: var(--font-mono); font-size: 9px; letter-spacing: .14em; }
+.us-state-shape { fill: #f0f1ed; stroke: #fff; stroke-width: 2; stroke-linejoin: round; vector-effect: non-scaling-stroke; transition: fill 150ms ease, filter 150ms ease, stroke 150ms ease; }
+.us-state-shape:not(.has-data) { fill: #eceee8 !important; stroke: #d7dad2; }
+.us-state-shape:hover { filter: brightness(.92) saturate(1.08); stroke: var(--ink); stroke-width: 2.5; }
+.map-state-labels text { fill: #3a2c0b; stroke: #fff; stroke-width: 3; paint-order: stroke; font-family: var(--font-mono); font-size: 11px; font-weight: 700; text-anchor: middle; dominant-baseline: middle; pointer-events: none; }
+.map-scale { display: grid; grid-template-columns: auto minmax(100px, 180px) auto; align-items: center; justify-content: center; gap: 8px; color: var(--subtle); font-family: var(--font-mono); font-size: 8px; }
+.map-scale i { height: 7px; border-radius: 99px; background: linear-gradient(90deg, rgba(255,194,75,.16), #ffc24b); }
+.map-leaders { display: grid; grid-template-columns: repeat(6, 1fr); gap: 5px; margin-top: 3px; }
+.map-leaders span { display: grid; grid-template-columns: auto 1fr auto; align-items: center; gap: 6px; padding: 7px 8px; border: 1px solid #e4e6df; border-radius: 4px; background: #fafbf8; }
+.map-leaders i { color: var(--subtle); font-family: var(--font-mono); font-size: 7px; font-style: normal; }
+.map-leaders b { font-size: 9px; }.map-leaders em { color: var(--flap-ink); font-family: var(--font-mono); font-size: 8px; font-style: normal; }
 .locality-field { display: flex; min-height: 324px; align-content: center; align-items: center; justify-content: center; gap: 6px; padding: 8px; flex-wrap: wrap; }
 .locality-orb { display: grid; flex: 0 0 var(--orb); width: var(--orb); height: var(--orb); place-content: center; overflow: hidden; border-radius: 50%; background: #eceee8; text-align: center; box-shadow: inset 0 0 0 1px rgba(28,31,42,.08), 0 5px 14px rgba(18,20,28,.07); }
 .locality-orb b { max-width: calc(var(--orb) - 14px); overflow: hidden; font-size: clamp(7px, calc(var(--orb) / 8), 12px); text-overflow: ellipsis; white-space: nowrap; }
@@ -757,8 +768,9 @@ mark { padding: 0 2px; border-radius: 3px; background: rgba(255, 194, 75, 0.34);
   .skill-matrix-head, .skill-matrix-row { min-width: 540px; }
   .salary-axis { margin-left: 0; }
   .salary-rail-row { grid-template-columns: 1fr; gap: 16px; padding: 10px 0 15px; }
-  .state-map { grid-template-rows: repeat(8, 30px); gap: 3px; }
-  .state-tile { font-size: 7px; }
+  .us-state-map { min-width: 520px; }
+  .state-choropleth { overflow-x: auto; }
+  .map-leaders { grid-template-columns: repeat(3, minmax(80px, 1fr)); min-width: 320px; }
   .locality-field { min-height: 260px; padding: 0; }
   .market-context-grid { grid-template-columns: 1fr; }
   .industry-mosaic { grid-template-columns: repeat(10, 1fr); }

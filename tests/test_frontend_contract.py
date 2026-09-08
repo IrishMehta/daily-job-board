@@ -76,9 +76,13 @@ class FrontendContractTests(unittest.TestCase):
 
         for visual in (
             "pulseChart", "roleMap", "skillHeatmap", "salaryRails",
-            "stateTileMap", "industryMosaic", "skillNetwork",
+            "stateChoropleth", "industryMosaic", "skillNetwork",
         ):
             self.assertIn(f"function {visual}", market_source)
+        self.assertIn('from "./us-states-map.js"', market_source)
+        map_source = (DOCS / "us-states-map.js").read_text(encoding="utf-8")
+        self.assertEqual(51, map_source.count('{"id":"'))
+        self.assertIn("US Census Bureau", map_source)
         self.assertIn('data-market-role=', market_source)
         self.assertIn("market-brief", styles)
         self.assertIn("prefers-reduced-motion", styles)

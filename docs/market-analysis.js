@@ -1,14 +1,6 @@
-const DATA_URL = "./data/market_analysis.json";
+import { US_STATE_PATHS } from "./us-states-map.js";
 
-const STATE_GRID = {
-  AK: [1, 1], ME: [12, 1], WI: [7, 2], VT: [11, 2], NH: [12, 2],
-  WA: [1, 3], ID: [2, 3], MT: [3, 3], ND: [5, 3], MN: [6, 3], IL: [7, 3], MI: [8, 3], NY: [10, 3], MA: [11, 3],
-  OR: [1, 4], NV: [2, 4], WY: [3, 4], SD: [5, 4], IA: [6, 4], IN: [7, 4], OH: [8, 4], PA: [9, 4], NJ: [10, 4], CT: [11, 4], RI: [12, 4],
-  CA: [1, 5], UT: [2, 5], CO: [3, 5], NE: [5, 5], MO: [6, 5], KY: [7, 5], WV: [8, 5], VA: [9, 5], MD: [10, 5], DE: [11, 5],
-  AZ: [2, 6], NM: [3, 6], KS: [5, 6], AR: [6, 6], TN: [7, 6], NC: [9, 6], SC: [10, 6], DC: [11, 6],
-  OK: [5, 7], LA: [6, 7], MS: [7, 7], AL: [8, 7], GA: [9, 7],
-  HI: [1, 8], TX: [5, 8], FL: [10, 8],
-};
+const DATA_URL = "./data/market_analysis.json";
 
 function escapeHtml(value) {
   return String(value ?? "")
@@ -204,15 +196,38 @@ function salaryRails(items) {
   </div>`;
 }
 
-function stateTileMap(items) {
+function pathCenter(path) {
+  const coordinates = [...path.matchAll(/(-?\d+(?:\.\d+)?),(-?\d+(?:\.\d+)?)/g)]
+    .map((match) => [Number(match[1]), Number(match[2])]);
+  if (!coordinates.length) return [0, 0];
+  const xs = coordinates.map(([x]) => x);
+  const ys = coordinates.map(([, y]) => y);
+  return [(Math.min(...xs) + Math.max(...xs)) / 2, (Math.min(...ys) + Math.max(...ys)) / 2];
+}
+
+function stateChoropleth(items) {
   const byState = new Map((items || []).map((item) => [String(item.key).toUpperCase(), item]));
   const maximum = Math.max(...[...byState.values()].map((item) => number(item.count)), 1);
-  return `<div class="state-map" role="img" aria-label="US state hiring intensity tile map">
-    ${Object.entries(STATE_GRID).map(([key, [column, row]]) => {
-      const item = byState.get(key);
-      const strength = item ? Math.sqrt(number(item.count) / maximum) : 0;
-      return `<span class="state-tile${item ? " has-data" : ""}" style="grid-column:${column};grid-row:${row};--heat:${strength.toFixed(3)}" title="${item ? `${escapeHtml(key)}: ${fullCount(item.count)} jobs` : `${key}: below reporting threshold`}">${key}</span>`;
-    }).join("")}
+  const leaders = (items || []).slice(0, 6);
+  const leaderKeys = new Set(leaders.slice(0, 5).map((item) => String(item.key).toUpperCase()));
+  return `<div class="state-choropleth">
+    <svg class="us-state-map" viewBox="0 0 1050 620" role="img" aria-label="United States choropleth map; darker states have more deduplicated technology job demand">
+      <g class="map-insets" aria-hidden="true"><rect x="10" y="414" width="270" height="194" rx="8"/><text x="24" y="436">ALASKA</text><rect x="294" y="516" width="220" height="91" rx="8"/><text x="308" y="538">HAWAII</text></g>
+      <g class="map-states">
+        ${US_STATE_PATHS.map((state) => {
+          const item = byState.get(state.id);
+          const strength = item ? Math.sqrt(number(item.count) / maximum) : 0;
+          const opacity = item ? 0.16 + strength * 0.84 : 0;
+          return `<path class="us-state-shape${item ? " has-data" : ""}" data-state="${state.id}" d="${state.d}" style="--heat:${strength.toFixed(3)};fill:rgba(255,194,75,${opacity.toFixed(3)})"><title>${escapeHtml(state.name)}: ${item ? `${fullCount(item.count)} jobs (${percent(item.share, 1)})` : "below the public reporting threshold"}</title></path>`;
+        }).join("")}
+      </g>
+      <g class="map-state-labels" aria-hidden="true">${US_STATE_PATHS.filter((state) => leaderKeys.has(state.id)).map((state) => {
+        const [x, y] = pathCenter(state.d);
+        return `<text x="${x.toFixed(1)}" y="${y.toFixed(1)}">${state.id}</text>`;
+      }).join("")}</g>
+    </svg>
+    <div class="map-scale" aria-hidden="true"><span>Lower signal</span><i></i><span>Higher signal</span></div>
+    <div class="map-leaders" aria-label="States with the most deduplicated jobs">${leaders.map((item, index) => `<span><i>${String(index + 1).padStart(2, "0")}</i><b>${escapeHtml(String(item.key).toUpperCase())}</b><em>${fullCount(item.count)}</em></span>`).join("")}</div>
   </div>`;
 }
 
@@ -410,7 +425,7 @@ export function createMarketAnalysis() {
       <div class="market-story-grid market-geography-grid" id="market-geography">
         <section class="market-card market-card-map">
           ${panelHeader("Geographic gravity", "Where opportunity accumulates", "Color intensity = 30-day demand")}
-          ${stateTileMap(payload.locations.states)}
+          ${stateChoropleth(payload.locations.states)}
         </section>
         <section class="market-card market-card-localities">
           ${panelHeader("City field", "Leading local hiring centers", "Orb size = job clusters")}
