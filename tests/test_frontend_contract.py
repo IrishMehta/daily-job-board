@@ -49,6 +49,9 @@ class FrontendContractTests(unittest.TestCase):
         self.assertIn('class="button button-board api-docs-link"', html)
         self.assertIn('href="https://job-api.irishmehta.workers.dev/docs"', html)
         self.assertIn('aria-label="Open API documentation"', html)
+        self.assertIn('class="button button-board market-action"', html)
+        self.assertIn('class="github-mark"', html)
+        self.assertIn('aria-label="View this project on GitHub"', html)
         self.assertIn('type="module" src="./app.js"', html)
 
     def test_market_trends_tab_is_lazy_and_aggregate_only(self):

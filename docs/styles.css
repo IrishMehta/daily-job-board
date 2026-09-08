@@ -155,12 +155,14 @@ svg { width: 18px; height: 18px; fill: none; stroke: currentColor; stroke-width:
 .button-quiet:hover { background: #ebece6; color: var(--ink); }
 .button-board { border-color: var(--board-line); background: var(--board-raised); color: var(--board-text); }
 .button-board:hover { border-color: rgba(255, 194, 75, 0.55); color: var(--flap); }
+.market-action.is-active { border-color: rgba(255, 194, 75, .75); background: #10131b; color: var(--flap); box-shadow: inset 0 -2px 0 var(--flap); }
 .button-apply { background: var(--flap); color: #251900; font-weight: 700; }
 .button-apply:hover { background: #ffcf70; }
 .icon-link, .icon-button { width: 38px; padding: 0; border-color: var(--line); background: var(--surface); color: var(--muted); }
 .icon-link:hover, .icon-button:hover { color: var(--ink); border-color: var(--line-strong); }
 .app-header .icon-link { border-color: var(--board-line); background: var(--board-raised); color: var(--board-dim); }
 .app-header .icon-link:hover { color: var(--flap); border-color: rgba(255, 194, 75, 0.55); }
+.github-mark { fill: currentColor; stroke: none; }
 
 /* ------------------------------------------------------------------
    Search + filters
