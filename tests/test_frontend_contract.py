@@ -70,6 +70,19 @@ class FrontendContractTests(unittest.TestCase):
         for forbidden in ("job_description", "evidence_snippet", "/scratch/", "https://"):
             self.assertNotIn(forbidden, serialized)
 
+    def test_market_trends_uses_explanatory_visual_system(self):
+        market_source = (DOCS / "market-analysis.js").read_text(encoding="utf-8")
+        styles = (DOCS / "styles.css").read_text(encoding="utf-8")
+
+        for visual in (
+            "pulseChart", "roleMap", "skillHeatmap", "salaryRails",
+            "stateTileMap", "industryMosaic", "skillNetwork",
+        ):
+            self.assertIn(f"function {visual}", market_source)
+        self.assertIn('data-market-role=', market_source)
+        self.assertIn("market-brief", styles)
+        self.assertIn("prefers-reduced-motion", styles)
+
 
 if __name__ == "__main__":
     unittest.main()
