@@ -76,7 +76,7 @@ def sample_payload():
 
 
 class BuildD1ImportTests(unittest.TestCase):
-    def test_builds_transactional_incremental_sync(self):
+    def test_builds_remote_import_compatible_incremental_sync(self):
         with tempfile.TemporaryDirectory() as temporary_directory:
             root = Path(temporary_directory)
             source = root / "public_jobs.json"
@@ -90,8 +90,9 @@ class BuildD1ImportTests(unittest.TestCase):
             self.assertEqual(manifest["expected_counts"]["specializations"], 1)
             self.assertEqual(manifest["sync_mode"], "incremental_upsert_delete")
             sync_sql = (output / "sync.sql").read_text(encoding="utf-8")
-            self.assertIn("BEGIN;", sync_sql)
-            self.assertIn("COMMIT;", sync_sql)
+            self.assertNotIn("BEGIN;", sync_sql)
+            self.assertNotIn("COMMIT;", sync_sql)
+            self.assertIn("Wrangler applies this file atomically", sync_sql)
             self.assertIn("O''Brien AI", sync_sql)
             self.assertNotIn("DELETE FROM dataset_versions", sync_sql)
 

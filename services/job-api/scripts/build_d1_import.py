@@ -264,7 +264,8 @@ def build_import(input_path: Path, output_dir: Path) -> dict[str, Any]:
 
     sync_lines = [
         "PRAGMA foreign_keys = ON;",
-        "BEGIN;",
+        # The remote Wrangler file importer applies the complete file atomically and
+        # rejects explicit transaction statements in uploaded SQL.
         f"-- Incremental sync token: {sync_token}",
         "-- A new database uses the stable namespace 'current'. Existing databases keep",
         "-- their active namespace, avoiding a one-time full-copy migration.",
@@ -374,8 +375,8 @@ def build_import(input_path: Path, output_dir: Path) -> dict[str, Any]:
     expected_jobs = len(jobs)
     sync_lines.extend(
         [
-            "COMMIT;",
-            "-- The API continues to use the same storage namespace; only changed rows were written.",
+            "-- Wrangler applies this file atomically. The API continues to use the same",
+            "-- storage namespace; only changed rows were written.",
         ]
     )
 

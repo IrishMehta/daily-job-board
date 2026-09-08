@@ -413,7 +413,7 @@ export function createMarketAnalysis() {
         <section class="market-card market-card-skills">
           ${panelHeader("Skill persistence", "What employers repeatedly ask for", skillNote)}
           ${skillHeatmap(context.skills)}
-          <p class="market-caveat">Exact O*NET/curated alias matches; the skill ontology is under active quality review.</p>
+          <p class="market-caveat">Exact O*NET and project-custom skill matches with curated aliases.</p>
         </section>
       </div>
 
@@ -455,7 +455,7 @@ export function createMarketAnalysis() {
 
       <footer class="market-methodology">
         <div><span>How to read this</span><p>Counts represent deduplicated job clusters in a rolling ${payload.window_days}-day window. Daily values are posting-date observations, so weekends and the newest dates naturally run lower.</p></div>
-        <div><span>Classification</span><p>Validated Qwen primary taxonomy path · O*NET exact/curated skill aliases · cohorts below ${payload.methodology.minimum_group_size} jobs suppressed.</p></div>
+        <div><span>Classification</span><p>Validated Qwen primary taxonomy path · O*NET and project-custom skill aliases · cohorts below ${payload.methodology.minimum_group_size} jobs suppressed.</p></div>
         <div><span>Compensation</span><p>USD annualized salary; base or unspecified scope included, total compensation excluded. Salary charts always show their sample size.</p></div>
         <div><span>Deduplication</span><p>Exact identity plus MinHash similarity ≥ ${payload.methodology.duplicate_similarity}; one posting cluster contributes one count.</p></div>
       </footer>`;

@@ -22,8 +22,8 @@ Never use `--remote` for routine local development or tests.
 
 ## Build an incremental dataset sync
 
-From this directory, validate the published payload and generate a transactional
-incremental sync:
+From this directory, validate the published payload and generate an incremental
+sync for Wrangler's transactional remote file importer:
 
 ```sh
 npm run db:build-sync
@@ -32,8 +32,9 @@ npm run db:build-sync
 This writes `generated/sync.sql` and `generated/import-manifest.json`. Generated
 files are intentionally ignored. The sync uses stable job IDs: it upserts new or
 changed jobs, deletes jobs absent from the source payload, and rebuilds normalized
-classification rows only for changed jobs. It runs in one transaction, so readers
-see either the old board or the completed update.
+classification rows only for changed jobs. Wrangler applies the remote file
+atomically, so the generated SQL omits explicit `BEGIN`/`COMMIT` statements and
+readers see either the old board or the completed update.
 
 Exercise the complete process against local D1 with:
 
