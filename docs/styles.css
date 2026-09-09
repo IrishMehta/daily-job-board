@@ -541,17 +541,15 @@ mark { padding: 0 2px; border-radius: 3px; background: rgba(255, 194, 75, 0.34);
 .role-tile-label { font-size: 13px; font-weight: 750; }
 .role-tile-count { font-family: var(--font-mono); font-size: 10px; }
 .skill-matrix { display: grid; min-width: 0; font-size: 11px; }
-.skill-matrix-head, .skill-matrix-row { display: grid; grid-template-columns: minmax(145px, 1.45fr) repeat(4, minmax(52px, .62fr)) 50px; align-items: center; gap: 6px; }
+.skill-matrix-head, .skill-matrix-row { display: grid; grid-template-columns: minmax(0, 1fr) 58px minmax(0, 1fr) 58px; align-items: center; gap: 6px 8px; }
 .skill-matrix-head { padding: 0 4px 7px; color: var(--subtle); font-family: var(--font-mono); font-size: 7.5px; text-align: center; text-transform: uppercase; }
-.skill-matrix-head span:first-child { text-align: left; }
+.skill-matrix-head span:nth-child(odd) { text-align: left; }
 .skill-matrix-row { min-height: 35px; padding: 4px; border-top: 1px solid #eceee8; }
 .skill-name { display: grid; min-width: 0; }
 .skill-name b { overflow: hidden; font-size: 11px; text-overflow: ellipsis; white-space: nowrap; }
 .skill-name small { color: var(--subtle); font-size: 8.5px; }
-.skill-heat { position: relative; display: grid; height: 25px; place-items: center; overflow: hidden; border: 1px solid rgba(146,97,10,.08); border-radius: 4px; }
-.skill-heat i { position: absolute; inset: 0; background: rgba(255,194,75,var(--heat)); }
-.skill-heat em { position: relative; color: #3a2c0b; font-family: var(--font-mono); font-size: 8px; font-style: normal; font-weight: 600; }
-.skill-matrix-row > strong { text-align: right; font-family: var(--font-mono); font-size: 9.5px; }
+.skill-count { display: grid; height: 25px; place-items: center; overflow: hidden; border: 1px solid rgba(146,97,10,.08); border-radius: 4px; background: rgba(255,194,75,var(--heat)); color: #3a2c0b; font-family: var(--font-mono); font-size: 8px; font-weight: 600; }
+.skill-name.is-empty, .skill-count.is-empty { visibility: hidden; }
 
 /* Salary distribution rails */
 .market-card-salary { padding-bottom: 26px; }
@@ -766,8 +764,8 @@ mark { padding: 0 2px; border-radius: 3px; background: rgba(255, 194, 75, 0.34);
   .market-card-header small { text-align: left; }
   .pulse-summary { display: grid; gap: 4px; }
   .pulse-key { margin-left: 0; }
-  .skill-matrix { overflow-x: auto; }
-  .skill-matrix-head, .skill-matrix-row { min-width: 540px; }
+  .skill-matrix { overflow-x: hidden; }
+  .skill-matrix-head, .skill-matrix-row { min-width: 0; }
   .salary-axis { margin-left: 0; }
   .salary-rail-row { grid-template-columns: 1fr; gap: 16px; padding: 10px 0 15px; }
   .us-state-map { min-width: 520px; }

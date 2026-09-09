@@ -147,32 +147,16 @@ function roleMap(items, activeKey = "", itemType = "domain") {
   </svg>`;
 }
 
-function fourWeekBuckets(daily) {
-  const points = (daily || []).slice(-28);
-  return [0, 1, 2, 3].map((week) => {
-    const group = points.slice(week * 7, week * 7 + 7);
-    return {
-      value: group.reduce((sum, point) => sum + number(point.count), 0),
-      label: group.length ? `${shortDate(group[0].date)}–${shortDate(group.at(-1).date)}` : `Week ${week + 1}`,
-    };
-  });
-}
-
 function skillHeatmap(items) {
-  const visible = (items || []).slice(0, 14).map((item) => ({ ...item, weeks: fourWeekBuckets(item.daily) }));
+  const visible = (items || []).slice(0, 24);
   if (!visible.length) return '<p class="market-empty">No skills meet the reporting threshold for this focus area.</p>';
-  const maximum = Math.max(...visible.flatMap((item) => item.weeks.map((week) => week.value)), 1);
-  const weekLabels = visible[0].weeks.map((week) => week.label);
-  return `<div class="skill-matrix" role="table" aria-label="Top skills by weekly job demand">
-    <div class="skill-matrix-head" role="row"><span role="columnheader">Skill signal</span>${weekLabels.map((label) => `<span role="columnheader">${escapeHtml(label)}</span>`).join("")}<span role="columnheader">30d</span></div>
-    ${visible.map((item) => `<div class="skill-matrix-row" role="row">
-      <span class="skill-name" role="cell"><b>${escapeHtml(item.skill)}</b><small>${percent(item.share, 1)} of jobs</small></span>
-      ${item.weeks.map((week) => {
-        const strength = Math.sqrt(week.value / maximum);
-        return `<span class="skill-heat" role="cell" style="--heat:${strength.toFixed(3)}"><i></i><em>${count(week.value)}</em><span class="sr-only">${escapeHtml(item.skill)}, ${escapeHtml(week.label)}: ${fullCount(week.value)} jobs</span></span>`;
-      }).join("")}
-      <strong role="cell">${count(item.count)}</strong>
-    </div>`).join("")}
+  const maximum = Math.max(...visible.map((item) => number(item.count)), 1);
+  const rows = [];
+  for (let index = 0; index < visible.length; index += 2) rows.push([visible[index], visible[index + 1]]);
+  const cell = (item) => item ? `<span class="skill-name" role="cell"><b>${escapeHtml(item.skill)}</b><small>${percent(item.share, 1)} of jobs</small></span><strong class="skill-count" role="cell" style="--heat:${Math.sqrt(number(item.count) / maximum).toFixed(3)}">${count(item.count)}<span class="sr-only">${escapeHtml(item.skill)}: ${fullCount(item.count)} jobs in the rolling 30-day window</span></strong>` : '<span class="skill-name is-empty" role="cell" aria-hidden="true"></span><strong class="skill-count is-empty" role="cell" aria-hidden="true"></strong>';
+  return `<div class="skill-matrix" role="table" aria-label="Top skills by 30-day job demand">
+    <div class="skill-matrix-head" role="row"><span role="columnheader">Skill</span><span role="columnheader">Jobs · 30d</span><span role="columnheader">Skill</span><span role="columnheader">Jobs · 30d</span></div>
+    ${rows.map(([left, right]) => `<div class="skill-matrix-row" role="row">${cell(left)}${cell(right)}</div>`).join("")}
   </div>`;
 }
 
@@ -336,16 +320,26 @@ export function createMarketAnalysis() {
     const specializationItem = payload.roles.specializations.find((item) => item.key === specialization);
     const selectedRole = specializationItem || domainItem;
     const roleLabel = selectedRole?.label || "US technology hiring";
+    const cohortKey = specialization
+      ? `specialization:${specialization}`
+      : domain
+        ? `domain:${domain}`
+        : "all";
+    const cohort = payload.cohorts?.[cohortKey] || {};
     const daily = selectedRole?.daily || payload.daily_demand;
-    const skillDomain = domain || specializationItem?.domain || "all";
-    const skills = payload.skills.filter((item) => item.domain === skillDomain);
+    const skillDomain = specializationItem?.domain || domain || "all";
+    const skills = cohort.skills?.length
+      ? cohort.skills
+      : payload.skills.filter((item) => item.domain === skillDomain);
     const peerRoles = domain || specialization
       ? payload.roles.specializations.filter((item) => item.domain === skillDomain)
       : payload.roles.domains;
     const salarySpecialization = payload.salary.specializations.filter((item) => item.key === specialization);
     const salaryDomain = payload.salary.domains.filter((item) => item.key === domain);
-    const salaryItems = specialization ? salarySpecialization : domain ? salaryDomain : payload.salary.domains.filter((item) => item.key !== "uncategorized");
-    return { domain, specialization, domainItem, specializationItem, selectedRole, roleLabel, daily, skills, peerRoles, salaryItems };
+    const salaryItems = selectedRole && cohort.salary?.length
+      ? cohort.salary
+      : specialization ? salarySpecialization : domain ? salaryDomain : payload.salary.domains.filter((item) => item.key !== "uncategorized");
+    return { domain, specialization, domainItem, specializationItem, selectedRole, roleLabel, daily, skills, peerRoles, salaryItems, cohort };
   }
 
   function marketBrief(context) {
@@ -374,10 +368,10 @@ export function createMarketAnalysis() {
     const coverage = payload.coverage || {};
     const gaps = coverage.missing_dates || [];
     const topCity = payload.locations.localities?.[0];
-    const remote = payload.locations.work_modes.find((item) => item.key === "remote");
-    const workModeTotal = payload.locations.work_modes.reduce((sum, item) => sum + number(item.count), 0);
+    const remote = (context.cohort.work_modes || payload.locations.work_modes).find((item) => item.key === "remote");
+    const workModeTotal = context.cohort.work_modes?.reduce((sum, item) => sum + number(item.count), 0) || 0;
     const roleMapTitle = context.domain || context.specialization ? `${context.domainItem?.label || context.roleLabel} specializations` : "Where the market is concentrated";
-    const skillNote = context.specialization ? "Skills shown at focus-area level" : "Weekly persistence, not keyword volume";
+    const skillNote = context.specialization ? "30-day frequency · specialization level" : "30-day frequency · ranked by cluster count";
 
     freshness.textContent = `Through ${payload.as_of_date} · rolling ${payload.window_days} days · ${coverage.valid_snapshot_days || 0} valid snapshots`;
     notice.classList.toggle("hidden", !gaps.length && !coverage.quarantined_snapshot_days);
@@ -392,7 +386,7 @@ export function createMarketAnalysis() {
       </section>
 
       <section class="market-kpis" aria-label="Market overview">
-        <div class="market-kpi-primary"><span>Visible opportunities</span><strong>${fullCount(overview.deduplicated_clusters)}</strong><small>unique job clusters · rolling 30 days</small></div>
+        <div class="market-kpi-primary"><span>Visible opportunities</span><strong>${fullCount(context.cohort.count ?? overview.deduplicated_clusters)}</strong><small>unique job clusters · rolling 30 days</small></div>
         <div><span>Signal cleaned</span><strong>${percent(overview.duplicate_rate, 1)}</strong><small>${fullCount(overview.duplicate_members)} duplicate listings removed</small></div>
         <div><span>Taxonomy coverage</span><strong>${percent(overview.taxonomy_coverage, 1)}</strong><small>classified into Qwen role families</small></div>
         <div><span>Salary visibility</span><strong>${percent(overview.salary_coverage, 1)}</strong><small>${fullCount(overview.salary_samples)} usable USD ranges</small></div>
@@ -425,7 +419,7 @@ export function createMarketAnalysis() {
       <div class="market-story-grid market-geography-grid" id="market-geography">
         <section class="market-card market-card-map">
           ${panelHeader("Geographic gravity", "Where opportunity accumulates", "Color intensity = 30-day demand")}
-          ${stateChoropleth(payload.locations.states)}
+          ${stateChoropleth(context.cohort.states || payload.locations.states)}
         </section>
         <section class="market-card market-card-localities">
           ${panelHeader("City field", "Leading local hiring centers", "Orb size = job clusters")}
@@ -436,21 +430,21 @@ export function createMarketAnalysis() {
       <div class="market-context-grid">
         <section class="market-card">
           ${panelHeader("Workplace shape", "Where work happens")}
-          ${workModeRibbon(payload.locations.work_modes)}
+          ${workModeRibbon(context.cohort.work_modes || payload.locations.work_modes)}
         </section>
         <section class="market-card">
           ${panelHeader("Career ladder", "Who the market is hiring")}
-          ${careerLadder(payload.roles.career_levels)}
+          ${careerLadder(context.cohort.career_levels || payload.roles.career_levels)}
         </section>
         <section class="market-card market-card-context-wide">
           ${panelHeader("Industry exposure", "The contexts shaping demand")}
-          ${industryMosaic(payload.roles.industries)}
+          ${industryMosaic(context.cohort.industries || payload.roles.industries)}
         </section>
       </div>
 
       <section class="market-card market-card-wide market-card-network" id="market-skill-network">
         ${panelHeader("Skill ecosystem", "Technologies that travel together", "Top public pairs · each pair counted once per cluster")}
-        ${skillNetwork(payload.skill_cooccurrence)}
+        ${skillNetwork(context.cohort.skill_cooccurrence || payload.skill_cooccurrence)}
       </section>
 
       <footer class="market-methodology">
