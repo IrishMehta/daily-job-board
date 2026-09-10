@@ -171,9 +171,14 @@ function salaryRails(items) {
     <div class="salary-axis"><span>${money(floor)}</span><span>${money(floor + span / 2)}</span><span>${money(ceiling)}</span></div>
     ${visible.map((item) => `<div class="salary-rail-row">
       <div><b>${escapeHtml(item.label)}</b><small>n=${fullCount(item.sample_size)}</small></div>
-      <div class="salary-track" role="img" aria-label="${escapeHtml(item.label)} salary: ${money(item.p25)} at P25, ${money(item.p50)} median, ${money(item.p75)} at P75; ${fullCount(item.sample_size)} observations">
-        <i style="left:${position(item.p25).toFixed(1)}%;width:${Math.max(1, position(item.p75) - position(item.p25)).toFixed(1)}%"></i>
-        <b style="left:${position(item.p50).toFixed(1)}%"><span>${money(item.p50)}</span></b>
+      <div class="salary-rail-visual">
+        <div class="salary-track-meta"><span><b>P25</b>${money(item.p25)}</span><span><b>Median</b>${money(item.p50)}</span><span><b>P75</b>${money(item.p75)}</span></div>
+        <div class="salary-track" role="img" aria-label="${escapeHtml(item.label)} salary: ${money(item.p25)} at P25, ${money(item.p50)} median, ${money(item.p75)} at P75; ${fullCount(item.sample_size)} observations">
+          <i style="left:${position(item.p25).toFixed(1)}%;width:${Math.max(1, position(item.p75) - position(item.p25)).toFixed(1)}%"></i>
+          <span class="salary-endpoint" style="left:${position(item.p25).toFixed(1)}%" aria-hidden="true"></span>
+          <span class="salary-endpoint" style="left:${position(item.p75).toFixed(1)}%" aria-hidden="true"></span>
+          <b style="left:${position(item.p50).toFixed(1)}%" aria-hidden="true"></b>
+        </div>
       </div>
     </div>`).join("")}
     <div class="salary-legend"><span><i></i>P25–P75 range</span><span><i></i>median</span></div>
@@ -465,7 +470,7 @@ export function createMarketAnalysis() {
 
       <footer class="market-methodology">
         <div><span>How to read this</span><p>Counts represent deduplicated job clusters in a rolling ${payload.window_days}-day window. Daily values are posting-date observations, so weekends and the newest dates naturally run lower.</p></div>
-        <div><span>Classification</span><p>Validated Qwen primary taxonomy path · O*NET and project-custom skill aliases · cohorts below ${payload.methodology.minimum_group_size} jobs suppressed.</p></div>
+        <div><span>Classification</span><p>Validated Qwen primary taxonomy path · O*NET and project-custom skill aliases · small cohorts are shown with sample sizes.</p></div>
         <div><span>Compensation</span><p>USD annualized salary; base or unspecified scope included, total compensation excluded. Salary charts always show their sample size.</p></div>
         <div><span>Deduplication</span><p>Exact identity plus MinHash similarity ≥ ${payload.methodology.duplicate_similarity}; one posting cluster contributes one count.</p></div>
       </footer>`;
