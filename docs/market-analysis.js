@@ -308,6 +308,8 @@ export function createMarketAnalysis() {
   const notice = document.getElementById("market-notice");
   const domainFilter = document.getElementById("market-domain-filter");
   const specializationFilter = document.getElementById("market-specialization-filter");
+  const stateFilter = document.getElementById("market-state-filter");
+  const careerFilter = document.getElementById("market-career-filter");
   const controls = document.getElementById("market-controls");
   let payload = null;
   let loading = false;
@@ -316,30 +318,39 @@ export function createMarketAnalysis() {
   function selectedContext() {
     const domain = domainFilter.value;
     const specialization = specializationFilter.value;
+    const state = stateFilter.value;
+    const career = careerFilter.value;
     const domainItem = payload.roles.domains.find((item) => item.key === domain);
     const specializationItem = payload.roles.specializations.find((item) => item.key === specialization);
     const selectedRole = specializationItem || domainItem;
-    const roleLabel = selectedRole?.label || "US technology hiring";
+    const roleLabel = [selectedRole?.label || "US technology hiring", state, career ? career.replaceAll("_", " ") : ""]
+      .filter(Boolean).map((item) => item.replace(/^\w/, (letter) => letter.toUpperCase())).join(" · ");
     const cohortKey = specialization
       ? `specialization:${specialization}`
       : domain
         ? `domain:${domain}`
         : "all";
-    const cohort = payload.cohorts?.[cohortKey] || {};
+    const sliceKey = `${cohortKey}|state:${state || "all"}|career:${career || "all"}`;
+    const cohort = state || career
+      ? payload.cohort_slices?.[sliceKey] || {}
+      : payload.cohorts?.[cohortKey] || {};
+    const scoped = Boolean(state || career);
     const daily = selectedRole?.daily || payload.daily_demand;
     const skillDomain = specializationItem?.domain || domain || "all";
     const skills = cohort.skills?.length
       ? cohort.skills
-      : payload.skills.filter((item) => item.domain === skillDomain);
+      : scoped ? [] : payload.skills.filter((item) => item.domain === skillDomain);
     const peerRoles = domain || specialization
       ? payload.roles.specializations.filter((item) => item.domain === skillDomain)
       : payload.roles.domains;
     const salarySpecialization = payload.salary.specializations.filter((item) => item.key === specialization);
     const salaryDomain = payload.salary.domains.filter((item) => item.key === domain);
-    const salaryItems = selectedRole && cohort.salary?.length
+    const salaryItems = scoped
+      ? cohort.salary || []
+      : selectedRole && cohort.salary?.length
       ? cohort.salary
       : specialization ? salarySpecialization : domain ? salaryDomain : payload.salary.domains.filter((item) => item.key !== "uncategorized");
-    return { domain, specialization, domainItem, specializationItem, selectedRole, roleLabel, daily, skills, peerRoles, salaryItems, cohort };
+    return { domain, specialization, state, career, domainItem, specializationItem, selectedRole, roleLabel, daily, skills, peerRoles, salaryItems, cohort, scoped };
   }
 
   function marketBrief(context) {
@@ -368,8 +379,13 @@ export function createMarketAnalysis() {
     const coverage = payload.coverage || {};
     const gaps = coverage.missing_dates || [];
     const topCity = payload.locations.localities?.[0];
-    const remote = (context.cohort.work_modes || payload.locations.work_modes).find((item) => item.key === "remote");
-    const workModeTotal = context.cohort.work_modes?.reduce((sum, item) => sum + number(item.count), 0) || 0;
+    const workModes = context.cohort.work_modes?.length ? context.cohort.work_modes : context.scoped ? [] : payload.locations.work_modes;
+    const states = context.cohort.states?.length ? context.cohort.states : context.scoped ? [] : payload.locations.states;
+    const careerLevels = context.cohort.career_levels?.length ? context.cohort.career_levels : context.scoped ? [] : payload.roles.career_levels;
+    const industries = context.cohort.industries?.length ? context.cohort.industries : context.scoped ? [] : payload.roles.industries;
+    const skillPairs = context.cohort.skill_cooccurrence?.length ? context.cohort.skill_cooccurrence : context.scoped ? [] : payload.skill_cooccurrence;
+    const remote = workModes.find((item) => item.key === "remote");
+    const workModeTotal = workModes.reduce((sum, item) => sum + number(item.count), 0);
     const roleMapTitle = context.domain || context.specialization ? `${context.domainItem?.label || context.roleLabel} specializations` : "Where the market is concentrated";
     const skillNote = context.specialization ? "30-day frequency · specialization level" : "30-day frequency · ranked by cluster count";
 
@@ -386,7 +402,7 @@ export function createMarketAnalysis() {
       </section>
 
       <section class="market-kpis" aria-label="Market overview">
-        <div class="market-kpi-primary"><span>Visible opportunities</span><strong>${fullCount(context.cohort.count ?? overview.deduplicated_clusters)}</strong><small>unique job clusters · rolling 30 days</small></div>
+        <div class="market-kpi-primary"><span>Visible opportunities</span><strong>${fullCount(context.scoped ? context.cohort.count || 0 : context.cohort.count ?? overview.deduplicated_clusters)}</strong><small>unique job clusters · rolling 30 days</small></div>
         <div><span>Signal cleaned</span><strong>${percent(overview.duplicate_rate, 1)}</strong><small>${fullCount(overview.duplicate_members)} duplicate listings removed</small></div>
         <div><span>Taxonomy coverage</span><strong>${percent(overview.taxonomy_coverage, 1)}</strong><small>classified into Qwen role families</small></div>
         <div><span>Salary visibility</span><strong>${percent(overview.salary_coverage, 1)}</strong><small>${fullCount(overview.salary_samples)} usable USD ranges</small></div>
@@ -419,7 +435,7 @@ export function createMarketAnalysis() {
       <div class="market-story-grid market-geography-grid" id="market-geography">
         <section class="market-card market-card-map">
           ${panelHeader("Geographic gravity", "Where opportunity accumulates", "Color intensity = 30-day demand")}
-          ${stateChoropleth(context.cohort.states || payload.locations.states)}
+            ${stateChoropleth(states)}
         </section>
         <section class="market-card market-card-localities">
           ${panelHeader("City field", "Leading local hiring centers", "Orb size = job clusters")}
@@ -430,21 +446,21 @@ export function createMarketAnalysis() {
       <div class="market-context-grid">
         <section class="market-card">
           ${panelHeader("Workplace shape", "Where work happens")}
-          ${workModeRibbon(context.cohort.work_modes || payload.locations.work_modes)}
+          ${workModeRibbon(workModes)}
         </section>
         <section class="market-card">
           ${panelHeader("Career ladder", "Who the market is hiring")}
-          ${careerLadder(context.cohort.career_levels || payload.roles.career_levels)}
+          ${careerLadder(careerLevels)}
         </section>
         <section class="market-card market-card-context-wide">
           ${panelHeader("Industry exposure", "The contexts shaping demand")}
-          ${industryMosaic(context.cohort.industries || payload.roles.industries)}
+          ${industryMosaic(industries)}
         </section>
       </div>
 
       <section class="market-card market-card-wide market-card-network" id="market-skill-network">
         ${panelHeader("Skill ecosystem", "Technologies that travel together", "Top public pairs · each pair counted once per cluster")}
-        ${skillNetwork(context.cohort.skill_cooccurrence || payload.skill_cooccurrence)}
+        ${skillNetwork(skillPairs)}
       </section>
 
       <footer class="market-methodology">
@@ -461,6 +477,8 @@ export function createMarketAnalysis() {
   function populateFilters() {
     domainFilter.innerHTML = option("", "All focus areas") + payload.roles.domains.filter((item) => item.key !== "uncategorized").map((item) => option(item.key, item.label)).join("");
     populateSpecializations();
+    stateFilter.innerHTML = option("", "All states") + (payload.locations.states || []).map((item) => option(item.key, item.label || item.key)).join("");
+    careerFilter.innerHTML = option("", "All experience buckets") + (payload.roles.career_levels || []).map((item) => option(item.key, item.label)).join("");
   }
 
   function populateSpecializations() {
@@ -493,6 +511,8 @@ export function createMarketAnalysis() {
 
   domainFilter.addEventListener("change", () => { populateSpecializations(); render(); });
   specializationFilter.addEventListener("change", render);
+  stateFilter.addEventListener("change", render);
+  careerFilter.addEventListener("change", render);
   function activateRoleTile(tile) {
     if (tile.dataset.marketRoleType === "domain") {
       domainFilter.value = tile.dataset.marketRole;

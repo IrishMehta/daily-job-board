@@ -68,6 +68,8 @@ class FrontendContractTests(unittest.TestCase):
         self.assertIn('id="market-analysis"', html)
         self.assertIn('id="market-domain-filter"', html)
         self.assertIn('id="market-specialization-filter"', html)
+        self.assertIn('id="market-state-filter"', html)
+        self.assertIn('id="market-career-filter"', html)
         self.assertIn('from "./market-analysis.js"', app_source)
         self.assertIn('fetch(DATA_URL)', market_source)
         self.assertIn('aria-label="Top skills by 30-day job demand"', market_source)
@@ -76,6 +78,7 @@ class FrontendContractTests(unittest.TestCase):
         self.assertEqual("market-analysis-public-v2", payload["schema_version"])
         self.assertIn("cohorts", payload)
         self.assertIn("all", payload["cohorts"])
+        self.assertIn("cohort_slices", payload)
         self.assertLess(payload_path.stat().st_size, 10 * 1024 * 1024)
         serialized = json.dumps(payload).casefold()
         for forbidden in ("job_description", "evidence_snippet", "/scratch/", "https://"):
