@@ -302,8 +302,8 @@ function skillNetwork(pairs) {
   </div>`;
 }
 
-function option(value, label) {
-  return `<option value="${escapeHtml(value)}">${escapeHtml(label)}</option>`;
+function option(value, label, selected = false) {
+  return `<option value="${escapeHtml(value)}"${selected ? " selected" : ""}>${escapeHtml(label)}</option>`;
 }
 
 function panelHeader(kicker, title, note = "") {
@@ -434,7 +434,7 @@ export function createMarketAnalysis() {
         </section>
         <section class="market-card market-card-skills">
           ${panelHeader("Skill persistence", "What employers repeatedly ask for", skillNote)}
-          <div class="skill-panel-filter"><label for="market-skill-category-filter">Category</label><select id="market-skill-category-filter">${option("", "All skill categories")}${(payload.skill_categories || []).map((item) => option(item.key, item.label)).join("")}</select></div>
+          <div class="skill-panel-filter"><label for="market-skill-category-filter">Category</label><select id="market-skill-category-filter">${option("", "All skill categories", !skillCategory)}${(payload.skill_categories || []).map((item) => option(item.key, item.label, item.key === skillCategory)).join("")}</select></div>
           ${skillHeatmap(context.skills)}
           <p class="market-caveat">Exact O*NET and project-custom skill matches with curated aliases; categorized for dashboard use.</p>
         </section>

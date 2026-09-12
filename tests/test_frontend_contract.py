@@ -81,6 +81,8 @@ class FrontendContractTests(unittest.TestCase):
         self.assertIn("cohort_slices", payload)
         self.assertIn("skill_categories", payload)
         self.assertIn("market-skill-category-filter", market_source)
+        self.assertIn('option(value, label, selected = false)', market_source)
+        self.assertIn('item.key === skillCategory', market_source)
         self.assertTrue(all("category" in item for item in payload.get("skills", [])))
         self.assertLess(payload_path.stat().st_size, 25 * 1024 * 1024)
         serialized = json.dumps(payload).casefold()
