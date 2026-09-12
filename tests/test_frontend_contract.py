@@ -79,6 +79,8 @@ class FrontendContractTests(unittest.TestCase):
         self.assertIn("cohorts", payload)
         self.assertIn("all", payload["cohorts"])
         self.assertIn("cohort_slices", payload)
+        self.assertIn("skill_categories", payload)
+        self.assertTrue(all("category" in item for item in payload.get("skills", [])))
         self.assertLess(payload_path.stat().st_size, 10 * 1024 * 1024)
         serialized = json.dumps(payload).casefold()
         for forbidden in ("job_description", "evidence_snippet", "/scratch/", "https://"):

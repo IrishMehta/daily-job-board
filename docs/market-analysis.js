@@ -153,7 +153,7 @@ function skillHeatmap(items) {
   const maximum = Math.max(...visible.map((item) => number(item.count)), 1);
   const rows = [];
   for (let index = 0; index < visible.length; index += 2) rows.push([visible[index], visible[index + 1]]);
-  const cell = (item) => item ? `<span class="skill-name" role="cell"><b>${escapeHtml(item.skill)}</b><small>${percent(item.share, 1)} of jobs</small></span><strong class="skill-count" role="cell" style="--heat:${Math.sqrt(number(item.count) / maximum).toFixed(3)}">${count(item.count)}<span class="sr-only">${escapeHtml(item.skill)}: ${fullCount(item.count)} jobs in the rolling 30-day window</span></strong>` : '<span class="skill-name is-empty" role="cell" aria-hidden="true"></span><strong class="skill-count is-empty" role="cell" aria-hidden="true"></strong>';
+  const cell = (item) => item ? `<span class="skill-name" role="cell"><b>${escapeHtml(item.skill)}</b><small class="skill-category">${escapeHtml(String(item.category || "Unclassified").replaceAll("_", " "))}</small><small>${percent(item.share, 1)} of jobs</small></span><strong class="skill-count" role="cell" style="--heat:${Math.sqrt(number(item.count) / maximum).toFixed(3)}">${count(item.count)}<span class="sr-only">${escapeHtml(item.skill)}: ${fullCount(item.count)} jobs in the rolling 30-day window</span></strong>` : '<span class="skill-name is-empty" role="cell" aria-hidden="true"></span><strong class="skill-count is-empty" role="cell" aria-hidden="true"></strong>';
   return `<div class="skill-matrix" role="table" aria-label="Top skills by 30-day job demand">
     <div class="skill-matrix-head" role="row"><span role="columnheader">Skill</span><span role="columnheader">Jobs · 30d</span><span role="columnheader">Skill</span><span role="columnheader">Jobs · 30d</span></div>
     ${rows.map(([left, right]) => `<div class="skill-matrix-row" role="row">${cell(left)}${cell(right)}</div>`).join("")}
@@ -428,7 +428,7 @@ export function createMarketAnalysis() {
         <section class="market-card market-card-skills">
           ${panelHeader("Skill persistence", "What employers repeatedly ask for", skillNote)}
           ${skillHeatmap(context.skills)}
-          <p class="market-caveat">Exact O*NET and project-custom skill matches with curated aliases.</p>
+          <p class="market-caveat">Exact O*NET and project-custom skill matches with curated aliases; categorized for dashboard use.</p>
         </section>
       </div>
 
