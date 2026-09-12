@@ -550,6 +550,8 @@ mark { padding: 0 2px; border-radius: 3px; background: rgba(255, 194, 75, 0.34);
 .skill-name small { color: var(--subtle); font-size: 8.5px; }.skill-name .skill-category { color: var(--flap-ink); font-family: var(--font-mono); font-size: 7px; letter-spacing: .04em; text-transform: uppercase; }
 .skill-count { display: grid; height: 25px; place-items: center; overflow: hidden; border: 1px solid rgba(146,97,10,.08); border-radius: 4px; background: rgba(255,194,75,var(--heat)); color: #3a2c0b; font-family: var(--font-mono); font-size: 8px; font-weight: 600; }
 .skill-name.is-empty, .skill-count.is-empty { visibility: hidden; }
+.skill-category-legend { display: flex; gap: 5px; margin: 0 0 10px; flex-wrap: wrap; }
+.skill-category-legend span { padding: 4px 6px; border: 1px solid #e4e6df; border-radius: 3px; color: var(--flap-ink); font-family: var(--font-mono); font-size: 7px; letter-spacing: .04em; text-transform: uppercase; }
 
 /* Salary distribution rails */
 .market-card-salary { padding-bottom: 26px; }

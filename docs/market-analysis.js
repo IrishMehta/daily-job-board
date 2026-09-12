@@ -160,6 +160,11 @@ function skillHeatmap(items) {
   </div>`;
 }
 
+function skillCategoryLegend(categories) {
+  if (!categories?.length) return "";
+  return `<div class="skill-category-legend" aria-label="Skill categories">${categories.map((item) => `<span>${escapeHtml(item.label || String(item.key || "").replaceAll("_", " "))}</span>`).join("")}</div>`;
+}
+
 function salaryRails(items) {
   const visible = (items || []).filter((item) => item.p25 != null && item.p50 != null && item.p75 != null).slice(0, 10);
   if (!visible.length) return '<p class="market-empty">Not enough disclosed salaries meet the USD annual-base policy.</p>';
@@ -427,6 +432,7 @@ export function createMarketAnalysis() {
         </section>
         <section class="market-card market-card-skills">
           ${panelHeader("Skill persistence", "What employers repeatedly ask for", skillNote)}
+          ${skillCategoryLegend(payload.skill_categories)}
           ${skillHeatmap(context.skills)}
           <p class="market-caveat">Exact O*NET and project-custom skill matches with curated aliases; categorized for dashboard use.</p>
         </section>
