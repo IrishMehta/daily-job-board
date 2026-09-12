@@ -540,18 +540,21 @@ mark { padding: 0 2px; border-radius: 3px; background: rgba(255, 194, 75, 0.34);
 .role-tile text { pointer-events: none; fill: #20232d; stroke: none; }
 .role-tile-label { font-size: 13px; font-weight: 750; }
 .role-tile-count { font-family: var(--font-mono); font-size: 10px; }
-.skill-matrix { display: grid; max-height: 430px; min-width: 0; overflow-y: auto; padding-right: 5px; font-size: 11px; }
-.skill-matrix-head, .skill-matrix-row { display: grid; grid-template-columns: minmax(0, 1fr) 58px minmax(0, 1fr) 58px; align-items: center; gap: 6px 8px; }
-.skill-matrix-head { padding: 0 4px 7px; color: var(--subtle); font-family: var(--font-mono); font-size: 7.5px; text-align: center; text-transform: uppercase; }
-.skill-matrix-head span:nth-child(odd) { text-align: left; }
-.skill-matrix-row { min-height: 35px; padding: 4px; border-top: 1px solid #eceee8; }
+.skill-sections { max-height: 430px; overflow-y: auto; padding-right: 5px; }
+.skill-category-section { margin-bottom: 15px; }
+.skill-category-section:last-child { margin-bottom: 0; }
+.skill-category-section h3 { margin: 0; padding: 8px 4px 6px; border-bottom: 2px solid var(--viz-amber); color: var(--flap-ink); font-family: var(--font-mono); font-size: 9px; letter-spacing: .08em; text-transform: uppercase; }
+.skill-category-table { display: grid; font-size: 11px; }
+.skill-category-row { display: grid; grid-template-columns: minmax(0, 1fr) 78px; align-items: center; gap: 8px; min-height: 36px; padding: 4px; border-top: 1px solid #eceee8; }
+.skill-category-header { min-height: 24px; padding-top: 7px; border-top: 0; color: var(--subtle); font-family: var(--font-mono); font-size: 7.5px; text-transform: uppercase; }
+.skill-category-header span:last-child { text-align: center; }
 .skill-name { display: grid; min-width: 0; }
 .skill-name b { overflow: hidden; font-size: 11px; text-overflow: ellipsis; white-space: nowrap; }
 .skill-name small { color: var(--subtle); font-size: 8.5px; }.skill-name .skill-category { color: var(--flap-ink); font-family: var(--font-mono); font-size: 7px; letter-spacing: .04em; text-transform: uppercase; }
 .skill-count { display: grid; height: 25px; place-items: center; overflow: hidden; border: 1px solid rgba(146,97,10,.08); border-radius: 4px; background: rgba(255,194,75,var(--heat)); color: #3a2c0b; font-family: var(--font-mono); font-size: 8px; font-weight: 600; }
 .skill-name.is-empty, .skill-count.is-empty { visibility: hidden; }
-.skill-category-legend { display: flex; gap: 5px; margin: 0 0 10px; flex-wrap: wrap; }
-.skill-category-legend span { padding: 4px 6px; border: 1px solid #e4e6df; border-radius: 3px; color: var(--flap-ink); font-family: var(--font-mono); font-size: 7px; letter-spacing: .04em; text-transform: uppercase; }
+.skill-panel-filter { display: grid; grid-template-columns: auto minmax(160px, 240px); align-items: center; justify-content: end; gap: 7px; margin: 0 0 9px; color: var(--subtle); font-family: var(--font-mono); font-size: 8px; text-transform: uppercase; }
+.skill-panel-filter select { height: 29px; padding: 0 26px 0 8px; border: 1px solid var(--line-strong); border-radius: 4px; background: #fff; color: var(--ink); font-family: var(--font-mono); font-size: 9px; }
 
 /* Salary distribution rails */
 .market-card-salary { padding-bottom: 26px; }
@@ -769,8 +772,8 @@ mark { padding: 0 2px; border-radius: 3px; background: rgba(255, 194, 75, 0.34);
   .market-card-header small { text-align: left; }
   .pulse-summary { display: grid; gap: 4px; }
   .pulse-key { margin-left: 0; }
-  .skill-matrix { overflow-x: hidden; }
-  .skill-matrix-head, .skill-matrix-row { min-width: 0; }
+  .skill-sections { overflow-x: hidden; }
+  .skill-category-row { min-width: 0; }
   .salary-axis { margin-left: 0; }
   .salary-rail-row { grid-template-columns: 1fr; gap: 16px; padding: 10px 0 15px; }
   .us-state-map { min-width: 520px; }

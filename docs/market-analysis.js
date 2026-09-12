@@ -148,21 +148,20 @@ function roleMap(items, activeKey = "", itemType = "domain") {
 }
 
 function skillHeatmap(items) {
-  const visible = (items || []).slice(0, 24);
+  const visible = items || [];
   if (!visible.length) return '<p class="market-empty">No skills meet the reporting threshold for this focus area.</p>';
-  const maximum = Math.max(...visible.map((item) => number(item.count)), 1);
-  const rows = [];
-  for (let index = 0; index < visible.length; index += 2) rows.push([visible[index], visible[index + 1]]);
-  const cell = (item) => item ? `<span class="skill-name" role="cell"><b>${escapeHtml(item.skill)}</b><small class="skill-category">${escapeHtml(String(item.category || "Unclassified").replaceAll("_", " "))}</small><small>${percent(item.share, 1)} of jobs</small></span><strong class="skill-count" role="cell" style="--heat:${Math.sqrt(number(item.count) / maximum).toFixed(3)}">${count(item.count)}<span class="sr-only">${escapeHtml(item.skill)}: ${fullCount(item.count)} jobs in the rolling 30-day window</span></strong>` : '<span class="skill-name is-empty" role="cell" aria-hidden="true"></span><strong class="skill-count is-empty" role="cell" aria-hidden="true"></strong>';
-  return `<div class="skill-matrix" role="table" aria-label="Top skills by 30-day job demand">
-    <div class="skill-matrix-head" role="row"><span role="columnheader">Skill</span><span role="columnheader">Jobs · 30d</span><span role="columnheader">Skill</span><span role="columnheader">Jobs · 30d</span></div>
-    ${rows.map(([left, right]) => `<div class="skill-matrix-row" role="row">${cell(left)}${cell(right)}</div>`).join("")}
-  </div>`;
-}
-
-function skillCategoryLegend(categories) {
-  if (!categories?.length) return "";
-  return `<div class="skill-category-legend" aria-label="Skill categories">${categories.map((item) => `<span>${escapeHtml(item.label || String(item.key || "").replaceAll("_", " "))}</span>`).join("")}</div>`;
+  const groups = new Map();
+  visible.forEach((item) => {
+    const key = item.category || "unclassified";
+    if (!groups.has(key)) groups.set(key, []);
+    groups.get(key).push(item);
+  });
+  const categoryLabel = (value) => String(value || "unclassified").replaceAll("_", " ").replace(/\b\w/g, (letter) => letter.toUpperCase());
+  return `<div class="skill-sections" aria-label="Skills by category">${[...groups.entries()].map(([category, categoryItems]) => {
+    const maximum = Math.max(...categoryItems.map((item) => number(item.count)), 1);
+    categoryItems.sort((left, right) => number(right.count) - number(left.count) || String(left.skill).localeCompare(String(right.skill)));
+    return `<section class="skill-category-section"><h3>${escapeHtml(categoryLabel(category))}</h3><div class="skill-category-table" role="table" aria-label="${escapeHtml(categoryLabel(category))} skills"><div class="skill-category-row skill-category-header" role="row"><span role="columnheader">Skill</span><span role="columnheader">Jobs · 30d</span></div>${categoryItems.map((item) => `<div class="skill-category-row" role="row"><span class="skill-name" role="cell"><b>${escapeHtml(item.skill)}</b><small>${percent(item.share, 1)} of jobs</small></span><strong class="skill-count" role="cell" style="--heat:${Math.sqrt(number(item.count) / maximum).toFixed(3)}">${count(item.count)}<span class="sr-only">${escapeHtml(item.skill)}: ${fullCount(item.count)} jobs in the rolling 30-day window</span></strong></div>`).join("")}</div></section>`;
+  }).join("")}</div>`;
 }
 
 function salaryRails(items) {
@@ -324,6 +323,7 @@ export function createMarketAnalysis() {
   let payload = null;
   let loading = false;
   let loaded = false;
+  let skillCategory = "";
 
   function selectedContext() {
     const domain = domainFilter.value;
@@ -347,9 +347,10 @@ export function createMarketAnalysis() {
     const scoped = Boolean(state || career);
     const daily = selectedRole?.daily || payload.daily_demand;
     const skillDomain = specializationItem?.domain || domain || "all";
-    const skills = cohort.skills?.length
+    const availableSkills = cohort.skills?.length
       ? cohort.skills
       : scoped ? [] : payload.skills.filter((item) => item.domain === skillDomain);
+    const skills = availableSkills.filter((item) => !skillCategory || item.category === skillCategory);
     const peerRoles = domain || specialization
       ? payload.roles.specializations.filter((item) => item.domain === skillDomain)
       : payload.roles.domains;
@@ -360,7 +361,7 @@ export function createMarketAnalysis() {
       : selectedRole && cohort.salary?.length
       ? cohort.salary
       : specialization ? salarySpecialization : domain ? salaryDomain : payload.salary.domains.filter((item) => item.key !== "uncategorized");
-    return { domain, specialization, state, career, domainItem, specializationItem, selectedRole, roleLabel, daily, skills, peerRoles, salaryItems, cohort, scoped };
+    return { domain, specialization, state, career, skillCategory, domainItem, specializationItem, selectedRole, roleLabel, daily, skills, peerRoles, salaryItems, cohort, scoped };
   }
 
   function marketBrief(context) {
@@ -393,7 +394,8 @@ export function createMarketAnalysis() {
     const states = context.cohort.states?.length ? context.cohort.states : context.scoped ? [] : payload.locations.states;
     const careerLevels = context.cohort.career_levels?.length ? context.cohort.career_levels : context.scoped ? [] : payload.roles.career_levels;
     const industries = context.cohort.industries?.length ? context.cohort.industries : context.scoped ? [] : payload.roles.industries;
-    const skillPairs = context.cohort.skill_cooccurrence?.length ? context.cohort.skill_cooccurrence : context.scoped ? [] : payload.skill_cooccurrence;
+    const allSkillPairs = context.cohort.skill_cooccurrence?.length ? context.cohort.skill_cooccurrence : context.scoped ? [] : payload.skill_cooccurrence;
+    const skillPairs = allSkillPairs.filter((item) => !context.skillCategory || item.category_a === context.skillCategory || item.category_b === context.skillCategory);
     const remote = workModes.find((item) => item.key === "remote");
     const workModeTotal = workModes.reduce((sum, item) => sum + number(item.count), 0);
     const roleMapTitle = context.domain || context.specialization ? `${context.domainItem?.label || context.roleLabel} specializations` : "Where the market is concentrated";
@@ -432,7 +434,7 @@ export function createMarketAnalysis() {
         </section>
         <section class="market-card market-card-skills">
           ${panelHeader("Skill persistence", "What employers repeatedly ask for", skillNote)}
-          ${skillCategoryLegend(payload.skill_categories)}
+          <div class="skill-panel-filter"><label for="market-skill-category-filter">Category</label><select id="market-skill-category-filter">${option("", "All skill categories")}${(payload.skill_categories || []).map((item) => option(item.key, item.label)).join("")}</select></div>
           ${skillHeatmap(context.skills)}
           <p class="market-caveat">Exact O*NET and project-custom skill matches with curated aliases; categorized for dashboard use.</p>
         </section>
@@ -535,6 +537,12 @@ export function createMarketAnalysis() {
     render();
     root.scrollTo({ top: 0, behavior: window.matchMedia("(prefers-reduced-motion: reduce)").matches ? "auto" : "smooth" });
   }
+  content.addEventListener("change", (event) => {
+    if (event.target?.id === "market-skill-category-filter") {
+      skillCategory = event.target.value;
+      render();
+    }
+  });
   content.addEventListener("click", (event) => {
     const tile = event.target.closest?.("[data-market-role]");
     if (tile) activateRoleTile(tile);
