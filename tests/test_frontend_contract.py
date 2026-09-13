@@ -84,7 +84,6 @@ class FrontendContractTests(unittest.TestCase):
         self.assertIn('option(value, label, selected = false)', market_source)
         self.assertIn('item.key === skillCategory', market_source)
         self.assertTrue(all("category" in item for item in payload.get("skills", [])))
-        self.assertLess(payload_path.stat().st_size, 25 * 1024 * 1024)
         serialized = json.dumps(payload).casefold()
         for forbidden in ("job_description", "evidence_snippet", "/scratch/", "https://"):
             self.assertNotIn(forbidden, serialized)

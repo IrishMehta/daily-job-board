@@ -31,6 +31,12 @@ function cleanString(value, maxLength = 300) {
   return typeof value === "string" ? value.trim().slice(0, maxLength) : "";
 }
 
+function cleanQuery(value, maxLength = 300) {
+  if (typeof value !== "string") return "";
+  const query = value.slice(0, maxLength);
+  return query.trim() ? query : "";
+}
+
 function cleanStringArray(value) {
   if (!Array.isArray(value)) return [];
   return [...new Set(value.map((item) => cleanString(item, 120)).filter(Boolean))].slice(0, 50);
@@ -44,7 +50,7 @@ function cleanYears(value) {
 export function sanitizeFilters(value) {
   const input = value && typeof value === "object" ? value : {};
   const filters = freshFilters();
-  filters.query = cleanString(input.query);
+  filters.query = cleanQuery(input.query);
   filters.location = cleanString(input.location);
   filters.experienceYears = cleanYears(input.experienceYears);
   ARRAY_FILTERS.forEach((key) => { filters[key] = cleanStringArray(input[key]); });

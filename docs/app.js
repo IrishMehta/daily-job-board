@@ -536,7 +536,8 @@ function renderSearchChrome() {
 
 function setSearchQuery(value, { keepFocus = false } = {}) {
   const previous = state.filters.query.trim();
-  const next = String(value ?? "").trim();
+  const raw = String(value ?? "");
+  const next = raw.trim() ? raw : "";
   state.filters.query = next;
   if (!previous && next) state.filters.sort = "relevance";
   if (previous && !next && state.filters.sort === "relevance") state.filters.sort = "date_desc";
