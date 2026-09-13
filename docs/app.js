@@ -329,7 +329,8 @@ function writeUrlState() {
   });
   if (state.view !== "all") params.set("view", state.view);
   const query = params.toString();
-  window.history.replaceState({}, "", `${window.location.pathname}${query ? `?${query}` : ""}`);
+  const hash = window.location.hash;
+  window.history.replaceState({}, "", `${window.location.pathname}${query ? `?${query}` : ""}${hash}`);
 }
 
 function persist() {
