@@ -29,6 +29,18 @@ class FrontendContractTests(unittest.TestCase):
             self.assertTrue(job["description_excerpt"])
             self.assertLessEqual(len(job["match_terms"]), 24)
 
+    def test_first_visit_guide_has_six_steps_and_no_shortlist_step(self):
+        html = (DOCS / "index.html").read_text(encoding="utf-8")
+        tour_source = (DOCS / "product-tour.js").read_text(encoding="utf-8")
+        self.assertIn('id="product-tour"', html)
+        self.assertIn('data-tour-launch', html)
+        self.assertIn('id="tour-skip"', html)
+        self.assertIn('id="tour-next"', html)
+        self.assertIn('id="tour-back"', html)
+        self.assertIn('import { createProductTour } from "./product-tour.js";', (DOCS / "app.js").read_text(encoding="utf-8"))
+        self.assertEqual(tour_source.count("title:"), 6)
+        self.assertNotIn("shortlist", tour_source.casefold())
+
     def test_local_storage_contract_excludes_private_resume_data_and_cookies(self):
         storage_source = (DOCS / "storage.js").read_text(encoding="utf-8")
         app_source = (DOCS / "app.js").read_text(encoding="utf-8")

@@ -439,6 +439,22 @@ mark { padding: 0 2px; border-radius: 3px; background: rgba(255, 194, 75, 0.34);
 }
 .sheet-backdrop { position: fixed; z-index: 80; inset: 0; background: rgba(16, 18, 26, 0.5); }
 
+/* First-visit product tour. The spotlight uses an oversized shadow so the
+   highlighted control remains visible without cloning or reparenting it. */
+.product-tour { position: fixed; z-index: 500; inset: 0; color: var(--ink); }
+.tour-backdrop { position: absolute; inset: 0; cursor: pointer; }
+.tour-spotlight { position: fixed; z-index: 1; border: 2px solid var(--flap); box-shadow: 0 0 0 100vmax rgba(10, 13, 21, .7), 0 0 0 5px rgba(255, 194, 75, .2); pointer-events: none; transition: top 180ms ease, left 180ms ease, width 180ms ease, height 180ms ease; }
+.tour-card { position: fixed; z-index: 2; display: grid; gap: 10px; max-width: calc(100vw - 32px); padding: 18px; border: 1px solid #303647; border-radius: 14px; background: var(--surface); box-shadow: 0 20px 60px rgba(0, 0, 0, .32); }
+.tour-card-topline { display: flex; align-items: center; justify-content: space-between; gap: 12px; }
+.tour-kicker { color: var(--flap-ink); font: 600 10px var(--font-mono); letter-spacing: .13em; text-transform: uppercase; }
+.tour-step-count { color: var(--subtle); font: 500 10px var(--font-mono); }
+.tour-card h2 { margin: 0; font-size: 21px; line-height: 1.15; letter-spacing: -.025em; }
+.tour-card p { margin: 0; color: var(--muted); font-size: 13px; line-height: 1.55; }
+.tour-actions { display: flex; align-items: center; justify-content: space-between; gap: 12px; margin-top: 5px; }
+.tour-step-actions { display: flex; gap: 8px; }
+.tour-actions .button { min-height: 36px; }
+.tour-actions .button-quiet { padding-right: 4px; padding-left: 4px; }
+
 /* ------------------------------------------------------------------
    Market trends — aggregate-only Spark analytics
    ------------------------------------------------------------------ */
@@ -735,6 +751,8 @@ mark { padding: 0 2px; border-radius: 3px; background: rgba(255, 194, 75, 0.34);
   .skill-network-wrap { grid-template-columns: 1fr; }
   .pair-ledger { grid-template-columns: repeat(2, 1fr); gap: 0 16px; }
   .market-methodology { grid-template-columns: repeat(2, 1fr); }
+
+  .tour-card { padding: 16px; }
 }
 
 @media (max-width: 520px) {
@@ -787,6 +805,9 @@ mark { padding: 0 2px; border-radius: 3px; background: rgba(255, 194, 75, 0.34);
   .skill-network-wrap { overflow-x: auto; }
   .pair-ledger { grid-template-columns: 1fr; min-width: 0; }
   .market-methodology { grid-template-columns: 1fr; }
+  .tour-card { right: 16px; left: 16px; width: auto !important; max-width: none; }
+  .tour-card h2 { font-size: 19px; }
+  .tour-card p { font-size: 12.5px; }
 }
 
 @media (prefers-reduced-motion: reduce) {

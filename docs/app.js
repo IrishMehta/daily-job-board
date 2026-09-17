@@ -11,6 +11,7 @@ import {
 import { countFacetValues, explainResumeMatch, filterAndSortJobs, normalizeText, ResumeMatcher, sortFacetItems, tokenize } from "./matching.js";
 import { isCurrentSearchResponse } from "./search.js";
 import { createMarketAnalysis } from "./market-analysis.js";
+import { createProductTour } from "./product-tour.js";
 
 const PAGE_BATCH = 40;
 const FILTER_PARAM_MAP = {
@@ -69,6 +70,7 @@ const els = Object.fromEntries([
 
 const resumeMatcher = new ResumeMatcher((message) => setResumeStatus(message));
 const marketAnalysis = createMarketAnalysis();
+const productTour = createProductTour();
 let searchWorker = null;
 let searchTimer = null;
 let toastTimer = null;
@@ -889,13 +891,18 @@ function bindEvents() {
       renderSearchChrome();
       return;
     }
-    if (!state.searchSuggestions.length) return;
     if (event.key === "Enter") {
-      if (!state.suggestionsOpen || state.suggestionIndex < 0) return;
       event.preventDefault();
-      setSearchQuery(state.searchSuggestions[state.suggestionIndex].query, { keepFocus: true });
+      if (state.suggestionsOpen && state.suggestionIndex >= 0 && state.searchSuggestions.length) {
+        setSearchQuery(state.searchSuggestions[state.suggestionIndex].query, { keepFocus: true });
+        return;
+      }
+      state.suggestionsOpen = false;
+      state.suggestionIndex = -1;
+      renderSearchChrome();
       return;
     }
+    if (!state.searchSuggestions.length) return;
     event.preventDefault();
     state.suggestionsOpen = true;
     const direction = event.key === "ArrowDown" ? 1 : -1;
@@ -1077,6 +1084,7 @@ async function init() {
   if (requestedJobId && state.jobs.some((job) => job.id === requestedJobId)) {
     await selectJob(requestedJobId);
   }
+  window.setTimeout(() => productTour.autoStart(), 650);
 }
 
 await init().catch((error) => {

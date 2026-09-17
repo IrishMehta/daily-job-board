@@ -56,6 +56,11 @@ class AdvancedSearchContractTests(unittest.TestCase):
         self.assertIn("queryTokens.every", self.matching)
         self.assertIn("searchFailed", self.app)
 
+    def test_enter_dismisses_unselected_suggestions(self):
+        self.assertIn('if (state.suggestionsOpen && state.suggestionIndex >= 0 && state.searchSuggestions.length)', self.app)
+        self.assertIn('state.suggestionsOpen = false;', self.app)
+        self.assertIn('state.suggestionIndex = -1;', self.app)
+
 
 if __name__ == "__main__":
     unittest.main()
