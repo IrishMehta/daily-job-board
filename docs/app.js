@@ -58,11 +58,11 @@ const state = {
 };
 
 const els = Object.fromEntries([
-  "freshness", "job-count", "filter-apply", "all-count", "shortlist-count", "repo-link", "resume-open", "search-input", "search-state",
+  "freshness", "job-count", "filter-apply", "all-count", "shortlist-count", "repo-link", "resume-open", "search-input", "search-clear", "search-state",
   "search-suggestions", "search-assist", "mobile-filter-open",
   "mobile-filter-close", "mobile-filter-count", "filter-panel", "domain-filter", "specialization-filter",
   "industry-filter", "location-filter", "location-suggestions", "career-filter", "experience-years-filter", "authorization-filter",
-  "sponsorship-filter", "posted-filter", "sort-filter", "clear-filters", "active-filters", "storage-warning",
+  "sponsorship-filter", "posted-filter", "sort-filter", "advanced-filters-toggle", "advanced-filter-count", "clear-filters", "active-filters", "storage-warning",
   "results-heading", "results-summary", "match-mode", "job-list", "empty-state", "empty-title", "empty-copy",
   "empty-action", "load-more", "detail-pane", "detail-empty", "detail-content", "sheet-backdrop", "resume-dialog",
   "resume-input", "resume-status", "resume-clear", "resume-apply", "toast", "search-shell", "jobs-workspace",
@@ -75,6 +75,7 @@ let searchWorker = null;
 let searchTimer = null;
 let toastTimer = null;
 let renderedFacetState = "";
+let advancedFiltersOpen = false;
 
 function escapeHtml(value) {
   return String(value ?? "")
@@ -128,18 +129,27 @@ function jobAgeDays(value) {
   return Math.max(0, Math.round((today - date) / 86400000));
 }
 
+function formatCalendarDate(value, { includeYear = true } = {}) {
+  const raw = String(value || "");
+  const date = new Date(raw.length === 10 ? `${raw}T12:00:00` : raw);
+  if (Number.isNaN(date.getTime())) return String(value || "Unknown date");
+  return date.toLocaleDateString(undefined, {
+    month: "short",
+    day: "numeric",
+    ...(includeYear ? { year: "numeric" } : {}),
+  });
+}
+
 function formatGeneratedAt(value) {
   const date = new Date(value);
   if (Number.isNaN(date.getTime())) return "Current US openings";
-  const today = new Date();
-  const sameDay = date.toDateString() === today.toDateString();
-  return sameDay ? "Updated today · 7-day window" : `Updated ${date.toLocaleDateString(undefined, { month: "short", day: "numeric" })} · 7-day window`;
+  return `Updated ${formatCalendarDate(date.toISOString().slice(0, 10))} · 7-day window`;
 }
 
 function renderFlapCount(total) {
   if (!els.job_count) return;
   const text = formatCount(total);
-  els.job_count.setAttribute("aria-label", `${text} roles on the board`);
+  els.job_count.setAttribute("aria-label", `${text} open roles`);
   els.job_count.innerHTML = [...text].map((ch, i) =>
     `<span class="flap-tile${/\d/.test(ch) ? "" : " flap-sep"}" style="--i:${i}">${escapeHtml(ch)}</span>`).join("");
   if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) return;
@@ -512,6 +522,8 @@ function renderSearchChrome() {
     ? "Advanced search is unavailable; transparent keyword matching is active."
     : status ? `${status}…` : "";
   els.search_state.classList.toggle("hidden", !status);
+  els.search_clear.classList.toggle("hidden", !state.filters.query);
+  els.search_clear.setAttribute("aria-hidden", String(!state.filters.query));
 
   if (state.searchCorrectedQuery && state.filters.query) {
     els.search_assist.innerHTML = `Did you mean <button type="button" data-corrected-query="${escapeHtml(state.searchCorrectedQuery)}">${escapeHtml(state.searchCorrectedQuery)}</button>?`;
@@ -554,6 +566,11 @@ function setSearchQuery(value, { keepFocus = false } = {}) {
   if (keepFocus) els.search_input.focus();
 }
 
+function clearSearchQuery() {
+  window.clearTimeout(searchTimer);
+  setSearchQuery("", { keepFocus: true });
+}
+
 function clearStructuredFilters() {
   const query = state.filters.query;
   const sort = state.filters.sort;
@@ -578,9 +595,9 @@ function authSignalClass(job) {
 }
 
 function sponsorshipLabel(job) {
-  if (job.sponsorship_status === "supports_sponsorship") return "Sponsorship supported";
-  if (job.sponsorship_status === "no_sponsorship") return "No sponsorship";
-  return job.authorization_category_label || "Authorization not specified";
+  if (job.sponsorship_status === "supports_sponsorship") return "Visa: sponsorship supported";
+  if (job.sponsorship_status === "no_sponsorship") return "Visa: no sponsorship";
+  return `Work auth: ${job.authorization_category_label || "not stated"}`;
 }
 
 function primarySpecialization(job) {
@@ -604,20 +621,21 @@ function renderJobList(results) {
   els.job_list.innerHTML = visible.map((job) => {
     const saved = Boolean(state.shortlist[job.id]);
     const days = jobAgeDays(job.posted_on);
+    const ageLabel = days === 0 ? "Today" : formatCalendarDate(job.posted_on, { includeYear: false });
     const location = job.location || "Location not stated";
     const experience = job.experience_display || "Experience not stated";
     const sponsorship = sponsorshipLabel(job);
     const specialization = primarySpecialization(job);
     return `
       <div class="job-row${state.selectedId === job.id ? " is-selected" : ""}" role="option" tabindex="-1" aria-selected="${state.selectedId === job.id}" data-job-id="${escapeHtml(job.id)}">
-        <div class="job-age-cell"><span class="job-age${days === 0 ? " is-new" : ""}">${days === 0 ? "NEW" : `${days}D<small>AGO</small>`}</span></div>
+        <div class="job-age-cell"><span class="job-age${days === 0 ? " is-new" : ""}">${escapeHtml(ageLabel)}</span></div>
         <div class="job-main">
           <h2 class="job-title">${highlightText(job.title)}</h2>
           <p class="job-company">${highlightText(job.company)}<span class="job-loc-sep">·</span><span class="job-loc">${highlightText(location)}</span></p>
           <div class="job-meta">
-            <span>${highlightText(experience)}</span>
+            <span>Level: ${highlightText(experience)}</span>
             <span class="${authSignalClass(job)}">${highlightText(sponsorship)}</span>
-            <span>${highlightText(specialization)}</span>
+            <span>Focus: ${highlightText(specialization)}</span>
           </div>
         </div>
         <button class="shortlist-button${saved ? " is-saved" : ""}" type="button" data-shortlist-id="${escapeHtml(job.id)}" aria-label="${saved ? "Remove from" : "Add to"} shortlist" aria-pressed="${saved}">${bookmarkIcon()}</button>
@@ -634,7 +652,7 @@ function renderEmpty(results) {
   if (state.view === "shortlist" && !Object.keys(state.shortlist).length) {
     state.emptyActionMode = "browse-all";
     els.empty_title.textContent = "Your shortlist is empty";
-    els.empty_copy.textContent = "Bookmark promising roles from All jobs to compare them here.";
+    els.empty_copy.textContent = "Bookmark promising roles from All roles to compare them here.";
     els.empty_action.textContent = "Browse all jobs";
   } else if (state.filters.query && state.searchLexicalCount === 0 && !state.searchPending) {
     state.emptyActionMode = "clear-search";
@@ -714,8 +732,8 @@ function renderDetail() {
   }
   const saved = Boolean(state.shortlist[job.id]);
   const taxonomyTags = taxonomyDetail(job);
-  const sponsorship = job.sponsorship_status === "supports_sponsorship" ? "Supports sponsorship"
-    : job.sponsorship_status === "no_sponsorship" ? "No sponsorship" : "Not specified";
+  const sponsorship = job.sponsorship_status === "supports_sponsorship" ? "Sponsorship available"
+    : job.sponsorship_status === "no_sponsorship" ? "No sponsorship available" : "Not stated";
   els.detail_content.innerHTML = `
     <header class="detail-header">
       <div class="detail-header-top">
@@ -723,17 +741,17 @@ function renderDetail() {
         <button class="icon-button mobile-detail-close" type="button" data-close-detail aria-label="Close job details">${closeIcon()}</button>
       </div>
       <h2>${escapeHtml(job.title)}</h2>
-      <p class="detail-subline">Posted ${escapeHtml(new Date(`${job.posted_on}T00:00:00`).toLocaleDateString(undefined, { year: "numeric", month: "long", day: "numeric" }))}</p>
+      <p class="detail-subline">Posted ${escapeHtml(formatCalendarDate(job.posted_on))} <span class="detail-scroll-note">Scroll for full details</span></p>
       <div class="detail-actions">
         <button class="button button-secondary${saved ? " is-saved" : ""}" type="button" data-shortlist-id="${escapeHtml(job.id)}" aria-pressed="${saved}">${bookmarkIcon()} ${saved ? "Shortlisted" : "Shortlist"}</button>
-        ${job.job_link ? `<a class="button button-primary" href="${escapeHtml(job.job_link)}" target="_blank" rel="noopener noreferrer">Apply on company site <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M14 5h5v5m0-5-9 9M19 13v6H5V5h6"/></svg></a>` : ""}
+        ${job.job_link ? `<a class="button button-primary" data-apply-link href="${escapeHtml(job.job_link)}" target="_blank" rel="noopener noreferrer" aria-label="Apply on company site; opens in a new tab">Apply on company site <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M14 5h5v5m0-5-9 9M19 13v6H5V5h6"/></svg></a>` : ""}
       </div>
     </header>
     <div class="decision-grid">
       <div class="decision-item"><span class="decision-label">Location</span><span class="decision-value">${escapeHtml(job.location || "Not stated")}</span></div>
       <div class="decision-item"><span class="decision-label">Experience</span><span class="decision-value">${escapeHtml(job.experience_display || "Not stated")}</span></div>
-      <div class="decision-item"><span class="decision-label">Sponsorship</span><span class="decision-value ${authSignalClass(job)}">${escapeHtml(sponsorship)}</span></div>
-      <div class="decision-item"><span class="decision-label">Authorization</span><span class="decision-value ${authSignalClass(job)}">${escapeHtml(job.authorization_category_label || "Not specified")}</span></div>
+      <div class="decision-item"><span class="decision-label">Visa sponsorship</span><span class="decision-value ${authSignalClass(job)}">${escapeHtml(sponsorship)}</span></div>
+      <div class="decision-item"><span class="decision-label">Work authorization</span><span class="decision-value ${authSignalClass(job)}">${escapeHtml(job.authorization_category_label || "Not stated")}</span></div>
     </div>
     ${summarySection(job)}
     ${renderMatchEvidence(job)}
@@ -772,7 +790,8 @@ function render() {
   if (!state.payload) return;
   const results = currentResults();
   if (state.selectedId && !results.some((job) => job.id === state.selectedId)) state.selectedId = "";
-  els.results_heading.textContent = state.view === "shortlist" ? "Shortlist" : "All jobs";
+  if (!state.selectedId && results.length && state.view === "all") state.selectedId = results[0].id;
+  els.results_heading.textContent = state.view === "shortlist" ? "Shortlist" : "All roles";
   els.results_summary.textContent = state.searchPending && state.filters.query
     ? `Searching ${formatCount(results.length)} current ${results.length === 1 ? "match" : "matches"}…`
     : `${formatCount(results.length)} ${results.length === 1 ? "role" : "roles"} in view`;
@@ -875,10 +894,18 @@ function bindEvents() {
     window.clearTimeout(searchTimer);
     state.suggestionsOpen = false;
     renderSearchChrome();
+    if (!els.search_input.value.trim()) {
+      clearSearchQuery();
+      return;
+    }
     searchTimer = window.setTimeout(() => {
       setSearchQuery(els.search_input.value);
     }, 120);
   });
+  els.search_input.addEventListener("search", () => {
+    if (!els.search_input.value.trim()) clearSearchQuery();
+  });
+  els.search_clear.addEventListener("click", clearSearchQuery);
   els.search_input.addEventListener("focus", () => {
     state.suggestionsOpen = state.searchSuggestions.length > 0;
     renderSearchChrome();
@@ -976,6 +1003,12 @@ function bindEvents() {
     state.filters.sort = els.sort_filter.value;
     persist(); writeUrlState(); render();
   });
+  els.advanced_filters_toggle.addEventListener("click", () => {
+    advancedFiltersOpen = !advancedFiltersOpen;
+    els.filter_panel.classList.toggle("is-advanced-open", advancedFiltersOpen);
+    els.advanced_filters_toggle.setAttribute("aria-expanded", String(advancedFiltersOpen));
+    els.advanced_filters_toggle.firstChild.textContent = advancedFiltersOpen ? "Fewer filters " : "More filters ";
+  });
   els.clear_filters.addEventListener("click", clearFilters);
   els.active_filters.addEventListener("click", (event) => {
     const button = event.target.closest("[data-clear-key]");
@@ -1014,6 +1047,13 @@ function bindEvents() {
   els.detail_content.addEventListener("click", (event) => {
     const save = event.target.closest("[data-shortlist-id]");
     if (save) { toggleSaved(save.dataset.shortlistId); return; }
+    const apply = event.target.closest("[data-apply-link]");
+    if (apply) {
+      showToast("Opening the employer site in a new tab…");
+      apply.classList.add("is-opening");
+      window.setTimeout(() => apply.classList.remove("is-opening"), 1800);
+      return;
+    }
     if (event.target.closest("[data-close-detail]")) document.body.classList.remove("detail-open");
   });
   els.load_more.addEventListener("click", () => { state.visibleLimit += PAGE_BATCH; render(); });

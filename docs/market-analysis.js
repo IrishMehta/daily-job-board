@@ -39,6 +39,12 @@ function shortDate(value) {
   return date.toLocaleDateString(undefined, { month: "short", day: "numeric" });
 }
 
+function fullDate(value) {
+  const date = new Date(`${value}T12:00:00`);
+  if (Number.isNaN(date.getTime())) return value;
+  return date.toLocaleDateString(undefined, { month: "short", day: "numeric", year: "numeric" });
+}
+
 function isWeekend(value) {
   const day = new Date(`${value}T12:00:00`).getDay();
   return day === 0 || day === 6;
@@ -347,7 +353,7 @@ export function createMarketAnalysis() {
     const qualityNote = gaps.length
       ? `${gaps.length} archive ${gaps.length === 1 ? "day" : "days"} missing · observed counts only`
       : `${coverage.valid_snapshot_days || 0} valid snapshots · observed counts only`;
-    freshness.textContent = `Through ${payload.as_of_date} · rolling ${payload.window_days} days · ${coverage.valid_snapshot_days || 0} valid snapshots`;
+    freshness.textContent = `Through ${fullDate(payload.as_of_date)} · rolling ${payload.window_days} days · ${coverage.valid_snapshot_days || 0} valid snapshots`;
     notice.classList.toggle("hidden", !gaps.length && !coverage.quarantined_snapshot_days);
     notice.textContent = gaps.length
       ? `Coverage note: ${gaps.length} archive ${gaps.length === 1 ? "day is" : "days are"} missing. Counts are observed, never interpolated; the newest posting dates may still be incomplete.`
@@ -370,7 +376,7 @@ export function createMarketAnalysis() {
           <p>${marketBrief(context)}</p>
           <div class="market-brief-links"><a href="#market-role-terrain">See the role mix <span>↓</span></a><a href="#market-geography">Find the hotspots <span>↓</span></a></div>
         </div>
-        <div class="market-brief-stamp"><b>${escapeHtml(payload.as_of_date.slice(5).replace("-", "."))}</b><span>AS OF</span><small>${payload.window_days}d window</small></div>
+        <div class="market-brief-stamp"><b>${escapeHtml(shortDate(payload.as_of_date))}</b><span>AS OF</span><small>${payload.window_days}d window</small></div>
       </section>
 
       <section class="market-kpis" aria-label="Market overview">

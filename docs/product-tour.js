@@ -2,7 +2,7 @@ const TOUR_STORAGE_KEY = "jobDiscoveryBoard:product-tour:v1";
 
 const STEPS = [
   {
-    target: () => document.getElementById("search-shell"),
+    target: () => document.querySelector(".search-field"),
     title: "Start with a question",
     copy: "Search roles, skills, companies, or locations. The board understands everyday job-search terms and common typos.",
   },
@@ -68,6 +68,7 @@ export function createProductTour() {
   const launchers = document.querySelectorAll("[data-tour-launch]");
   let stepIndex = 0;
   let active = false;
+  let complete = false;
   let previousFocus = null;
 
   function currentTarget() {
@@ -82,10 +83,23 @@ export function createProductTour() {
   function position() {
     if (!active) return;
     const target = currentTarget();
-    if (!target) return;
+    if (complete || !target) {
+      spotlight.classList.add("hidden");
+      card.style.width = `${Math.min(420, window.innerWidth - 32)}px`;
+      card.style.left = `${Math.max(16, (window.innerWidth - card.offsetWidth) / 2)}px`;
+      card.style.top = `${Math.max(16, (window.innerHeight - card.offsetHeight) / 2)}px`;
+      return;
+    }
     const rect = target.getBoundingClientRect();
-    if (!rect.width || !rect.height) return;
+    if (!rect.width || !rect.height) {
+      spotlight.classList.add("hidden");
+      card.style.width = `${Math.min(380, window.innerWidth - 32)}px`;
+      card.style.left = `${Math.max(16, (window.innerWidth - card.offsetWidth) / 2)}px`;
+      card.style.top = `${Math.max(16, (window.innerHeight - card.offsetHeight) / 2)}px`;
+      return;
+    }
 
+    spotlight.classList.remove("hidden");
     const padding = 8;
     spotlight.style.top = `${Math.max(4, rect.top - padding)}px`;
     spotlight.style.left = `${Math.max(4, rect.left - padding)}px`;
@@ -107,11 +121,25 @@ export function createProductTour() {
 
   function renderStep() {
     const step = STEPS[stepIndex];
+    complete = false;
+    card.classList.remove("is-complete");
     title.textContent = step.title;
     copy.textContent = step.copy;
     stepCount.textContent = `${stepIndex + 1} of ${STEPS.length}`;
     back.classList.toggle("hidden", stepIndex === 0);
     next.textContent = stepIndex === STEPS.length - 1 ? "Done" : "Next";
+    window.requestAnimationFrame(position);
+  }
+
+  function renderCompletion() {
+    complete = true;
+    spotlight.classList.add("hidden");
+    card.classList.add("is-complete");
+    title.textContent = "You’re ready to explore";
+    copy.textContent = "That’s the whole workflow. You can replay this guide anytime from the Guide button in the header.";
+    stepCount.textContent = "Tour complete";
+    back.classList.add("hidden");
+    next.textContent = "Start exploring";
     window.requestAnimationFrame(position);
   }
 
@@ -121,6 +149,8 @@ export function createProductTour() {
     root.classList.add("hidden");
     root.setAttribute("aria-hidden", "true");
     spotlight.removeAttribute("style");
+    spotlight.classList.remove("hidden");
+    card.classList.remove("is-complete");
     if (remember) rememberSeen();
     if (previousFocus && typeof previousFocus.focus === "function") {
       previousFocus.focus({ preventScroll: true });
@@ -130,6 +160,7 @@ export function createProductTour() {
 
   function activate() {
     active = true;
+    complete = false;
     root.classList.remove("hidden");
     root.setAttribute("aria-hidden", "false");
     renderStep();
@@ -150,8 +181,13 @@ export function createProductTour() {
   }
 
   function advance() {
-    if (stepIndex === STEPS.length - 1) {
+    if (complete) {
       close();
+      return;
+    }
+    if (stepIndex === STEPS.length - 1) {
+      rememberSeen();
+      renderCompletion();
       return;
     }
     stepIndex += 1;
