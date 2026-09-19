@@ -506,7 +506,10 @@ function renderActiveFilters() {
       chips.push(`<span class="filter-chip">${escapeHtml(label)}<button type="button" data-clear-key="${escapeHtml(key)}" data-clear-value="${escapeHtml(entry)}" aria-label="Remove ${escapeHtml(label)}">×</button></span>`);
     });
   });
-  els.active_filters.innerHTML = chips.join("");
+  const activeLabel = chips.length === 1 ? "1 active filter" : `${chips.length} active filters`;
+  els.active_filters.innerHTML = chips.length
+    ? `<span class="active-filters-label">${activeLabel}</span>${chips.join("")}`
+    : "";
   els.active_filters.classList.toggle("hidden", !chips.length);
   els.mobile_filter_count.textContent = String(chips.length);
   els.mobile_filter_count.classList.toggle("hidden", !chips.length);
@@ -883,6 +886,18 @@ function clearResume() {
 }
 
 function bindEvents() {
+  const headerTools = document.querySelector(".header-tools");
+  const toolsSummary = headerTools?.querySelector("summary");
+  const positionToolsMenu = () => {
+    if (!toolsSummary) return;
+    const rect = toolsSummary.getBoundingClientRect();
+    headerTools.style.setProperty("--tools-menu-top", `${Math.round(rect.bottom + 8)}px`);
+  };
+  headerTools?.addEventListener("toggle", positionToolsMenu);
+  window.addEventListener("resize", positionToolsMenu);
+  window.addEventListener("scroll", positionToolsMenu, true);
+  positionToolsMenu();
+
   document.querySelectorAll("[data-view]").forEach((button) => button.addEventListener("click", () => {
     state.view = button.dataset.view;
     state.visibleLimit = PAGE_BATCH;
@@ -1008,6 +1023,7 @@ function bindEvents() {
     els.filter_panel.classList.toggle("is-advanced-open", advancedFiltersOpen);
     els.advanced_filters_toggle.setAttribute("aria-expanded", String(advancedFiltersOpen));
     els.advanced_filters_toggle.firstChild.textContent = advancedFiltersOpen ? "Fewer filters " : "More filters ";
+    els.advanced_filter_count.textContent = advancedFiltersOpen ? "" : "(4 available)";
   });
   els.clear_filters.addEventListener("click", clearFilters);
   els.active_filters.addEventListener("click", (event) => {

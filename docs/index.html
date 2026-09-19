@@ -122,20 +122,20 @@
         <input id="location-filter" type="search" list="location-suggestions" placeholder="Any location" autocomplete="off">
         <datalist id="location-suggestions"></datalist>
       </label>
-      <label class="filter-field advanced-filter">Industry
-        <select id="industry-filter"><option value="">All industries</option></select>
-      </label>
       <label class="filter-field">Role level
         <select id="career-filter"><option value="">All experience</option></select>
       </label>
-      <label class="filter-field advanced-filter">Your experience (years)
-        <input id="experience-years-filter" type="number" min="0" max="60" step="1" inputmode="numeric" placeholder="Any" autocomplete="off">
-      </label>
-      <label class="filter-field advanced-filter">Work authorization
+      <label class="filter-field">Work authorization
         <select id="authorization-filter"><option value="">Any authorization</option></select>
       </label>
-      <label class="filter-field advanced-filter">Visa sponsorship
+      <label class="filter-field">Visa sponsorship
         <select id="sponsorship-filter"><option value="">Any sponsorship</option></select>
+      </label>
+      <label class="filter-field advanced-filter">Industry
+        <select id="industry-filter"><option value="">All industries</option></select>
+      </label>
+      <label class="filter-field advanced-filter">Your experience (years)
+        <input id="experience-years-filter" type="number" min="0" max="60" step="1" inputmode="numeric" placeholder="Any" autocomplete="off">
       </label>
       <label class="filter-field advanced-filter">Posted within
         <select id="posted-filter">
@@ -154,7 +154,7 @@
           <option value="company_asc">Company A–Z</option>
         </select>
       </label>
-      <button class="advanced-filter-toggle" id="advanced-filters-toggle" type="button" aria-expanded="false" aria-controls="filter-panel">More filters <span id="advanced-filter-count">5</span></button>
+      <button class="advanced-filter-toggle" id="advanced-filters-toggle" type="button" aria-expanded="false" aria-controls="filter-panel">More filters <span id="advanced-filter-count">(4 available)</span></button>
       <div class="sheet-footer">
         <button class="button button-quiet clear-button" id="clear-filters" type="button">Clear all</button>
         <button class="button button-apply" id="filter-apply" type="button">Show all roles</button>
@@ -214,13 +214,13 @@
           <select id="market-domain-filter"><option value="">All focus areas</option></select>
         </label>
         <label>Specialization
-          <select id="market-specialization-filter"><option value="">All specializations</option></select>
+          <select id="market-specialization-filter" title="Filter by specialization"><option value="">All specializations</option></select>
         </label>
         <label>State
           <select id="market-state-filter"><option value="">All states</option></select>
         </label>
         <label>Experience bucket
-          <select id="market-career-filter"><option value="">All experience buckets</option></select>
+          <select id="market-career-filter" title="Filter by experience bucket"><option value="">All experience buckets</option></select>
         </label>
       </div>
     </header>
