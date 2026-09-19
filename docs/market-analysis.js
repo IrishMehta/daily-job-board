@@ -280,6 +280,13 @@ export function createMarketAnalysis() {
   const stateFilter = document.getElementById("market-state-filter");
   const careerFilter = document.getElementById("market-career-filter");
   const controls = document.getElementById("market-controls");
+  const syncControlsDisclosure = () => {
+    // Desktop has no visible summary trigger, so the filter fields must stay
+    // open there. Mobile keeps the compact, user-controlled disclosure.
+    controls.open = !window.matchMedia("(max-width: 640px)").matches;
+  };
+  syncControlsDisclosure();
+  window.addEventListener("resize", syncControlsDisclosure);
   let payload = null;
   let loading = false;
   let loaded = false;
