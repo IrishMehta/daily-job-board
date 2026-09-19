@@ -1385,7 +1385,11 @@ async function init() {
   if (validRequestedJobId) {
     await selectJob(validRequestedJobId, { navigate: false });
   }
-  window.setTimeout(() => productTour.autoStart(), 650);
+  window.setTimeout(() => {
+    // A shared Market Trends link should open directly into the dashboard;
+    // the board tour is only relevant to the job-search view.
+    if (state.view !== "market") productTour.autoStart();
+  }, 650);
 }
 
 await init().catch((error) => {

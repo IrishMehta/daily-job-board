@@ -234,20 +234,23 @@
         <h1 id="market-heading">Market trends</h1>
         <p id="market-freshness">30-day market coverage loads when you open this view.</p>
       </div>
-      <div class="market-controls hidden" id="market-controls">
-        <label>Focus
-          <select id="market-domain-filter"><option value="">All focus areas</option></select>
-        </label>
-        <label>Specialization
-          <select id="market-specialization-filter" title="Filter by specialization"><option value="">All specializations</option></select>
-        </label>
-        <label>State
-          <select id="market-state-filter"><option value="">All states</option></select>
-        </label>
-        <label>Experience bucket
-          <select id="market-career-filter" title="Filter by experience bucket"><option value="">All experience buckets</option></select>
-        </label>
-      </div>
+      <details class="market-controls hidden" id="market-controls">
+        <summary><span>Tailor this view</span><small id="market-filter-summary">All tracked postings</small></summary>
+        <div class="market-control-fields">
+          <label>Focus
+            <select id="market-domain-filter"><option value="">All focus areas</option></select>
+          </label>
+          <label>Specialization
+            <select id="market-specialization-filter" title="Filter by specialization"><option value="">All specializations</option></select>
+          </label>
+          <label>State
+            <select id="market-state-filter"><option value="">All states</option></select>
+          </label>
+          <label>Experience bucket
+            <select id="market-career-filter" title="Filter by experience bucket"><option value="">All experience buckets</option></select>
+          </label>
+        </div>
+      </details>
     </header>
     <div class="market-notice hidden" id="market-notice" role="status"></div>
     <div class="market-content" id="market-content" aria-live="polite">
