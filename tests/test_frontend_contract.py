@@ -111,7 +111,7 @@ class FrontendContractTests(unittest.TestCase):
         self.assertIn('from "./market-analysis.js"', app_source)
         self.assertIn('fetch(DATA_URL)', market_source)
         self.assertIn('aria-label="Skills by category"', market_source)
-        self.assertIn('Jobs · 30d', market_source)
+        self.assertIn('Clusters · 30d', market_source)
         self.assertNotIn('weekly job demand', market_source)
         self.assertEqual("market-analysis-public-v2", payload["schema_version"])
         self.assertIn("cohorts", payload)

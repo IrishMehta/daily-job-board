@@ -108,13 +108,13 @@ function pulseChart(points, label, missingDates = []) {
 
   return `<div class="pulse-wrap">
     <div class="pulse-summary" aria-label="Demand chart summary">
-      <span><b>${fullCount(maximum)}</b> peak on ${shortDate(points[peakIndex].date)}</span>
-      <span><b>${fullCount(Math.round(weekdayAverage))}</b> average weekday intake</span>
-      <span><b>${fullCount(Math.round(recentAverage))}</b> average in the last 7 days</span>
+    <span><b>${fullCount(maximum)}</b> peak observed on ${shortDate(points[peakIndex].date)}</span>
+      <span><b>${fullCount(Math.round(weekdayAverage))}</b> average weekday clusters</span>
+      <span><b>${fullCount(Math.round(recentAverage))}</b> average clusters in the last 7 days</span>
       <span class="pulse-key"><i></i> daily <i></i> 7-day signal</span>
     </div>
     <div class="pulse-reading"><strong>What this says</strong><span>The 7-day signal is <b>${changeLabel}</b> versus the previous 7 days. Daily spikes and dips are normal; use the smoothed line to judge direction.</span></div>
-    <svg class="market-pulse" viewBox="0 0 ${width} ${height}" role="img" aria-label="${escapeHtml(label)} daily deduplicated demand over 30 days">
+    <svg class="market-pulse" viewBox="0 0 ${width} ${height}" role="img" aria-label="${escapeHtml(label)} daily observed job clusters over 30 days">
       <defs>
         <linearGradient id="pulse-area" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#7fb4c2" stop-opacity=".28"/><stop offset="1" stop-color="#7fb4c2" stop-opacity=".03"/></linearGradient>
         <filter id="pulse-glow"><feGaussianBlur stdDeviation="4" result="blur"/><feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge></filter>
@@ -125,7 +125,7 @@ function pulseChart(points, label, missingDates = []) {
       <path class="pulse-area" d="${area}"/>
       <path class="pulse-line" d="${line}"/>
       <path class="pulse-average" d="${averageLine}"/>
-      ${coordinates.map((point, index) => `<circle class="pulse-point${index >= coordinates.length - 2 ? " is-latest" : ""}${missing.has(point.date) ? " is-missing" : ""}" cx="${point.x}" cy="${point.y}" r="4"><title>${escapeHtml(shortDate(point.date))}: ${fullCount(point.count)} postings${missing.has(point.date) ? " · coverage gap" : ""}</title></circle>`).join("")}
+      ${coordinates.map((point, index) => `<circle class="pulse-point${index >= coordinates.length - 2 ? " is-latest" : ""}${missing.has(point.date) ? " is-missing" : ""}" cx="${point.x}" cy="${point.y}" r="4"><title>${escapeHtml(shortDate(point.date))}: ${fullCount(point.count)} observed clusters${missing.has(point.date) ? " · coverage gap" : ""}</title></circle>`).join("")}
       ${coordinates.filter((_, index) => index === 0 || index === coordinates.length - 1 || (index % 7 === 0 && index < coordinates.length - 2)).map((point, index, labels) => `<text class="pulse-date" x="${point.x}" y="${height - 12}" text-anchor="${index === 0 ? "start" : index === labels.length - 1 ? "end" : "middle"}">${escapeHtml(shortDate(point.date))}</text>`).join("")}
     </svg>
   </div>`;
@@ -141,13 +141,13 @@ function roleMap(items, activeKey = "", itemType = "domain", shareLabel = "Share
   if (!visible.length) return '<p class="market-empty">No role groups meet the reporting threshold.</p>';
   const maximum = Math.max(...visible.map((item) => number(item.count)), 1);
   const total = ranked.reduce((sum, item) => sum + number(item.count), 0);
-  return `<div class="role-rank-list" aria-label="Role families ranked by deduplicated job demand">
+  return `<div class="role-rank-list" aria-label="Role groups ranked by observed job clusters">
     <div class="role-rank-guide"><span>Top ${Math.min(5, ranked.length)}${ranked.length > 5 ? ` of ${ranked.length}` : ""}</span><span>${escapeHtml(shareLabel)} · click to focus</span></div>
     ${visible.map((item, index) => {
       const selected = activeKey && item.key === activeKey;
       const width = Math.max(4, number(item.count) / maximum * 100);
       const share = number(item.count) / Math.max(total, 1);
-      return `<button class="role-rank-row tone-${index % 7}${selected ? " is-selected" : ""}" type="button" data-market-role="${escapeHtml(item.key)}" data-market-role-type="${itemType}" aria-pressed="${selected}" aria-label="Filter to ${escapeHtml(item.label)}, ${fullCount(item.count)} jobs">
+      return `<button class="role-rank-row tone-${index % 7}${selected ? " is-selected" : ""}" type="button" data-market-role="${escapeHtml(item.key)}" data-market-role-type="${itemType}" aria-pressed="${selected}" aria-label="Filter to ${escapeHtml(item.label)}, ${fullCount(item.count)} observed job clusters">
         <span class="role-rank-meta"><i>${String(index + 1).padStart(2, "0")}</i><b>${escapeHtml(item.label)}</b><em>${fullCount(item.count)} · ${percent(share, 1)}</em></span>
         <span class="role-rank-track"><i style="width:${width.toFixed(1)}%"></i></span>
       </button>`;
@@ -160,7 +160,7 @@ function skillHeatmap(items) {
   const visible = ranked.slice(0, 10);
   if (!visible.length) return '<p class="market-empty">No skills meet the reporting threshold for this focus area.</p>';
   const categoryLabel = (value) => humanLabel(value || "unclassified");
-  return `<div class="skill-board"><div class="skill-board-guide"><span>Top ${visible.length} skills</span><span>${ranked.length > visible.length ? `Showing ${visible.length} of ${ranked.length}` : "All reported skills"}</span></div><div class="skill-table" role="table" aria-label="Skills by category"><div class="skill-table-row skill-table-header" role="row"><span role="columnheader">#</span><span role="columnheader">Skill</span><span role="columnheader">Share</span><span role="columnheader">Jobs · 30d</span></div>${visible.map((item, index) => `<div class="skill-table-row" role="row"><span class="skill-rank" role="cell">${String(index + 1).padStart(2, "0")}</span><span class="skill-main" role="cell"><b>${escapeHtml(item.skill)}</b><small>${escapeHtml(categoryLabel(item.category))}</small></span><span class="skill-share" role="cell">${percent(item.share, 1)}</span><strong class="skill-count" role="cell">${count(item.count)}<span class="sr-only">${escapeHtml(item.skill)}: ${fullCount(item.count)} jobs in the rolling 30-day window</span></strong></div>`).join("")}</div>${ranked.length > visible.length ? '<p class="skill-board-more">Use the category filter above to explore a different slice.</p>' : ""}</div>`;
+  return `<div class="skill-board"><div class="skill-board-guide"><span>Top ${visible.length} skills</span><span>${ranked.length > visible.length ? `Showing ${visible.length} of ${ranked.length}` : "All reported skills"}</span></div><div class="skill-table" role="table" aria-label="Skills by category"><div class="skill-table-row skill-table-header" role="row"><span role="columnheader">#</span><span role="columnheader">Skill</span><span role="columnheader">Share</span><span role="columnheader">Clusters · 30d</span></div>${visible.map((item, index) => `<div class="skill-table-row" role="row"><span class="skill-rank" role="cell">${String(index + 1).padStart(2, "0")}</span><span class="skill-main" role="cell"><b>${escapeHtml(item.skill)}</b><small>${escapeHtml(categoryLabel(item.category))}</small></span><span class="skill-share" role="cell">${percent(item.share, 1)}</span><strong class="skill-count" role="cell">${count(item.count)}<span class="sr-only">${escapeHtml(item.skill)}: ${fullCount(item.count)} observed clusters in the rolling 30-day window</span></strong></div>`).join("")}</div>${ranked.length > visible.length ? '<p class="skill-board-more">Use the category filter above to explore a different slice.</p>' : ""}</div>`;
 }
 
 function salaryRails(items) {
@@ -200,14 +200,14 @@ function stateChoropleth(items) {
   const leaders = (items || []).slice(0, 6);
   const leaderKeys = new Set(leaders.slice(0, 5).map((item) => String(item.key).toUpperCase()));
   return `<div class="state-choropleth">
-    <svg class="us-state-map" viewBox="0 0 1050 620" role="img" aria-label="United States choropleth map; darker states have more deduplicated technology job demand">
+    <svg class="us-state-map" viewBox="0 0 1050 620" role="img" aria-label="United States choropleth map; darker states have more observed technology job clusters">
       <g class="map-insets" aria-hidden="true"><rect x="10" y="414" width="270" height="194" rx="8"/><text x="24" y="436">ALASKA</text><rect x="294" y="516" width="220" height="91" rx="8"/><text x="308" y="538">HAWAII</text></g>
       <g class="map-states">
         ${US_STATE_PATHS.map((state) => {
           const item = byState.get(state.id);
           const strength = item ? Math.sqrt(number(item.count) / maximum) : 0;
           const opacity = item ? 0.16 + strength * 0.84 : 0;
-          return `<path class="us-state-shape${item ? " has-data" : ""}" data-state="${state.id}" d="${state.d}" style="--heat:${strength.toFixed(3)};fill:rgba(255,194,75,${opacity.toFixed(3)})"><title>${escapeHtml(state.name)}: ${item ? `${fullCount(item.count)} jobs (${percent(item.share, 1)})` : "below the public reporting threshold"}</title></path>`;
+          return `<path class="us-state-shape${item ? " has-data" : ""}" data-state="${state.id}" d="${state.d}" style="--heat:${strength.toFixed(3)};fill:rgba(255,194,75,${opacity.toFixed(3)})"><title>${escapeHtml(state.name)}: ${item ? `${fullCount(item.count)} observed clusters (${percent(item.share, 1)})` : "below the public reporting threshold"}</title></path>`;
         }).join("")}
       </g>
       <g class="map-state-labels" aria-hidden="true">${US_STATE_PATHS.filter((state) => leaderKeys.has(state.id)).map((state) => {
@@ -216,7 +216,7 @@ function stateChoropleth(items) {
       }).join("")}</g>
     </svg>
     <div class="map-scale" aria-hidden="true"><span>Lower signal</span><i></i><span>Higher signal</span></div>
-    <div class="map-leaders" aria-label="States with the most deduplicated jobs">${leaders.map((item, index) => `<span><i>${String(index + 1).padStart(2, "0")}</i><b>${escapeHtml(String(item.key).toUpperCase())}</b><em>${fullCount(item.count)}</em></span>`).join("")}</div>
+    <div class="map-leaders" aria-label="States with the most observed job clusters">${leaders.map((item, index) => `<span><i>${String(index + 1).padStart(2, "0")}</i><b>${escapeHtml(String(item.key).toUpperCase())}</b><em>${fullCount(item.count)}</em></span>`).join("")}</div>
   </div>`;
 }
 
@@ -224,7 +224,7 @@ function localityField(items, emptyMessage = "No city groups meet the reporting 
   const visible = (items || []).slice(0, 8);
   if (!visible.length) return `<p class="market-empty">${escapeHtml(emptyMessage)}</p>`;
   const maximum = Math.max(...visible.map((item) => number(item.count)), 1);
-  return `<div class="locality-list" aria-label="Leading city markets"><div class="locality-list-guide"><span>City</span><span>Job clusters</span></div>${visible.map((item, index) => {
+  return `<div class="locality-list" aria-label="Leading city markets by observed job clusters"><div class="locality-list-guide"><span>City</span><span>Observed clusters</span></div>${visible.map((item, index) => {
     const width = Math.max(5, number(item.count) / maximum * 100);
     return `<div class="locality-row"><span class="locality-rank">${String(index + 1).padStart(2, "0")}</span><div><b>${escapeHtml(item.label.replace(/, [A-Za-z]{2}$/, ""))}</b><i><span style="width:${width.toFixed(1)}%"></span></i></div><strong>${fullCount(item.count)}</strong></div>`;
   }).join("")}</div>`;
@@ -233,9 +233,10 @@ function localityField(items, emptyMessage = "No city groups meet the reporting 
 function workModeRibbon(items) {
   const total = (items || []).reduce((sum, item) => sum + number(item.count), 0);
   if (!total) return '<p class="market-empty">Work-mode data is unavailable.</p>';
+  const displayLabel = (item) => item.key === "onsite_or_unspecified" ? "Not marked remote" : item.label;
   return `<div class="mode-ribbon" role="img" aria-label="Work mode composition">
-    <div>${items.map((item, index) => `<i class="tone-${index}" style="width:${(number(item.count) / total * 100).toFixed(2)}%"><span>${number(item.count) / total > 0.08 ? escapeHtml(item.label) : ""}</span></i>`).join("")}</div>
-    <ul>${items.map((item, index) => `<li><i class="tone-${index}"></i><span>${escapeHtml(item.label)}</span><b>${percent(number(item.count) / total, 1)}</b><small>${fullCount(item.count)} jobs</small></li>`).join("")}</ul>
+    <div>${items.map((item, index) => `<i class="tone-${index}" style="width:${(number(item.count) / total * 100).toFixed(2)}%"><span>${number(item.count) / total > 0.08 ? escapeHtml(displayLabel(item)) : ""}</span></i>`).join("")}</div>
+    <ul>${items.map((item, index) => `<li><i class="tone-${index}"></i><span>${escapeHtml(displayLabel(item))}</span><b>${percent(number(item.count) / total, 1)}</b><small>${fullCount(item.count)} clusters</small></li>`).join("")}</ul>
   </div>`;
 }
 
@@ -258,7 +259,7 @@ function skillNetwork(pairs, cohortCount = 0) {
   return `<div class="pair-list" aria-label="Most common skill combinations"><p class="pair-list-intro">These skills are frequently mentioned in the same job clusters. Use them as search or learning keywords; mentions do not prove that both are required.</p><div class="pair-grid">${visiblePairs.map((pair, index) => {
     const share = number(pair.count) / Math.max(number(cohortCount), 1);
     const query = encodeURIComponent(`${pair.skill_a} ${pair.skill_b}`);
-    return `<div class="pair-card"><i>${String(index + 1).padStart(2, "0")}</i><div><b>${escapeHtml(pair.skill_a)}</b><span>+</span><b>${escapeHtml(pair.skill_b)}</b><small>${percent(share, 1)} of this view</small></div><strong>${fullCount(pair.count)}<small>job clusters</small></strong><a href="./?q=${query}">Browse 7-day roles →</a></div>`;
+    return `<div class="pair-card"><i>${String(index + 1).padStart(2, "0")}</i><div><b>${escapeHtml(pair.skill_a)}</b><span>+</span><b>${escapeHtml(pair.skill_b)}</b><small>${percent(share, 1)} of this view</small></div><strong>${fullCount(pair.count)}<small>job clusters</small></strong><a href="./?q=${query}">Browse related 7-day roles →</a></div>`;
   }).join("")}</div></div>`;
 }
 
@@ -316,12 +317,19 @@ export function createMarketAnalysis() {
         ? `domain:${domain}`
         : "all";
     const sliceKey = `${cohortKey}|state:${state || "all"}|career:${career || "all"}`;
-    const cohort = state || career
+    const scoped = Boolean(state || career);
+    const cohortAvailable = !scoped || Boolean(payload.cohort_slices?.[sliceKey]);
+    const cohort = scoped
       ? payload.cohort_slices?.[sliceKey] || {}
       : payload.cohorts?.[cohortKey] || {};
     const hasFilters = Boolean(domain || specialization || state || career);
-    const scoped = Boolean(state || career);
-    const daily = selectedRole?.daily || payload.daily_demand;
+    const daily = scoped && !cohortAvailable ? [] : selectedRole?.daily || payload.daily_demand;
+    const pulseLabel = selectedRole?.label || "US technology hiring";
+    const pulseNote = !cohortAvailable
+      ? "No published time series for this filter combination"
+      : scoped
+      ? `Role-level trend · not narrowed by selected ${[state ? "state" : "", career ? "experience" : ""].filter(Boolean).join(" or ")}`
+      : selectedRole ? "Selected role-level trend" : "Overall tracked trend";
     const skillDomain = specializationItem?.domain || domain || "all";
     const availableSkills = cohort.skills?.length
       ? cohort.skills
@@ -329,7 +337,9 @@ export function createMarketAnalysis() {
     const skills = availableSkills.filter((item) => skillCategory === "technical"
       ? TECHNICAL_SKILL_CATEGORIES.has(item.category)
       : !skillCategory || item.category === skillCategory);
-    const peerRoles = domain || specialization
+    const peerRoles = scoped
+      ? []
+      : domain || specialization
       ? payload.roles.specializations.filter((item) => item.domain === skillDomain)
       : payload.roles.domains;
     const salarySpecialization = payload.salary.specializations.filter((item) => item.key === specialization);
@@ -339,10 +349,11 @@ export function createMarketAnalysis() {
       : selectedRole && cohort.salary?.length
       ? cohort.salary
       : specialization ? salarySpecialization : domain ? salaryDomain : payload.salary.domains.filter((item) => item.key !== "uncategorized");
-    return { domain, specialization, state, career, skillCategory, domainItem, specializationItem, selectedRole, roleLabel, daily, skills, peerRoles, salaryItems, cohort, scoped, hasFilters };
+    return { domain, specialization, state, career, skillCategory, domainItem, specializationItem, selectedRole, roleLabel, pulseLabel, pulseNote, daily, skills, peerRoles, salaryItems, cohort, cohortAvailable, scoped, hasFilters };
   }
 
   function salaryForBrief(context) {
+    if (!context.cohortAvailable) return null;
     if (!context.hasFilters) return payload.salary.overall?.[0] || null;
     if (context.specialization) return payload.salary.specializations.find((item) => item.key === context.specialization) || null;
     if (context.domain && !context.scoped) return payload.salary.domains.find((item) => item.key === context.domain) || null;
@@ -359,17 +370,22 @@ export function createMarketAnalysis() {
   }
 
   function marketBrief(context, overview) {
+    if (!context.cohortAvailable) {
+      return `No published aggregate is available for the selected ${context.state ? "state" : "experience"} combination. Clear a filter or choose another option to see the available market evidence.`;
+    }
     const topSkill = context.skills[0];
-    const cohortCount = number(context.cohort.count || overview.deduplicated_clusters);
+    const cohortCount = context.scoped ? number(context.cohort.count) : number(context.cohort.count || overview.deduplicated_clusters);
     const experience = [...(context.cohort.career_levels || [])]
       .filter((item) => item.key !== "uncategorized")
       .sort((left, right) => number(right.count) - number(left.count))[0];
     const scope = context.hasFilters ? `In tracked ${escapeHtml(context.roleLabel)} postings,` : "In the postings we track,";
     const rolePhrase = experience
       ? `${scope} <strong>${escapeHtml(experience.label)}</strong> is the largest experience group at <strong>${percent(experience.share, 1)}</strong> (${fullCount(experience.count)} of ${fullCount(cohortCount)} observed clusters).`
+      : context.scoped
+        ? `${scope} this view contains <strong>${fullCount(cohortCount)}</strong> observed clusters; an experience breakdown is not available for this slice.`
       : context.selectedRole
-        ? `<strong>${escapeHtml(context.roleLabel)}</strong> accounts for <strong>${percent(context.selectedRole.share, 1)}</strong> of observed classified demand.`
-        : `<strong>${escapeHtml(payload.roles.domains.find((item) => item.key !== "uncategorized")?.label || "Technology roles")}</strong> is the largest classified hiring field.`;
+        ? `<strong>${escapeHtml(context.roleLabel)}</strong> accounts for <strong>${percent(context.selectedRole.share, 1)}</strong> of observed classified clusters.`
+        : `<strong>${escapeHtml(payload.roles.domains.find((item) => item.key !== "uncategorized")?.label || "Technology roles")}</strong> is the largest classified role family.`;
     const skillPhrase = topSkill ? `<strong>${escapeHtml(topSkill.skill)}</strong> appears in ${percent(topSkill.share, 1)} of matching clusters.` : "Skill coverage is below the reporting floor.";
     const salary = salaryForBrief(context);
     const salaryPhrase = salary
@@ -414,6 +430,8 @@ export function createMarketAnalysis() {
     const salaryCoverage = context.hasFilters
       ? salarySamples / Math.max(number(context.cohort.count), 1)
       : number(overview.salary_coverage);
+    const salaryVisibility = salarySamples ? percent(salaryCoverage, 1) : "—";
+    const salaryVisibilityNote = salarySamples ? `${fullCount(salarySamples)} usable USD ranges` : "No disclosed ranges in this view";
     const hasLocalityRollup = Object.prototype.hasOwnProperty.call(context.cohort, "localities");
     const localities = hasLocalityRollup
       ? context.cohort.localities || []
@@ -437,7 +455,11 @@ export function createMarketAnalysis() {
       : !context.skillCategory || item.category_a === context.skillCategory || item.category_b === context.skillCategory);
     const remote = workModes.find((item) => item.key === "remote");
     const workModeTotal = workModes.reduce((sum, item) => sum + number(item.count), 0);
-    const roleMapTitle = context.domain || context.specialization ? `${context.domainItem?.label || context.roleLabel} specializations` : "Most openings by role family";
+    const roleMapTitleBase = context.domain || context.specialization ? `${context.domainItem?.label || context.roleLabel} specializations` : "Most observed clusters by role family";
+    const roleMapTitle = context.scoped ? `${roleMapTitleBase} · unavailable for this slice` : roleMapTitleBase;
+    const roleMapNote = context.scoped
+      ? "Role breakdown is not published for the selected state/experience slice"
+      : "Counts are observed clusters · percentages use the displayed cohort";
     const experienceSalary = context.salaryItems.some((item) => ["internship", "early_career_or_new_grad", "mid_career_or_senior", "managerial"].includes(item.key));
     const salaryPanelNote = experienceSalary
       ? "USD annual base · grouped by experience · median and middle 50%"
@@ -468,20 +490,20 @@ export function createMarketAnalysis() {
         <div class="market-brief-copy">
           <div class="market-brief-eyebrow"><span>30-day market brief</span><i></i><span>${escapeHtml(context.roleLabel)}</span></div>
           <p>${marketBrief(context, overview)}</p>
-          <div class="market-brief-links"><a class="market-brief-action" href="${browseHref(context)}">Browse matching 7-day roles <span>→</span></a><a href="#market-role-terrain">See the role mix <span>↓</span></a><a href="#market-geography">Find the hotspots <span>↓</span></a></div>
+          <div class="market-brief-links"><a class="market-brief-action" href="${browseHref(context)}">Browse related 7-day roles <span>→</span></a><a href="#market-role-terrain">See the role mix <span>↓</span></a><a href="#market-geography">Find the hotspots <span>↓</span></a></div>
         </div>
         <div class="market-brief-stamp"><b>${escapeHtml(shortDate(payload.as_of_date))}</b><span>AS OF</span><small>${payload.window_days}d window</small></div>
       </section>
 
       <section class="market-kpis" aria-label="Market overview">
-        <div class="market-kpi-primary"><span>Observed job clusters</span><strong>${fullCount(context.scoped ? context.cohort.count || 0 : context.cohort.count ?? overview.deduplicated_clusters)}</strong><small>rolling 30-day postings · not an open-role count</small></div>
-        <div class="market-kpi-pay"><span>Salary visibility</span><strong>${percent(salaryCoverage, 1)}</strong><small>${fullCount(salarySamples)} usable USD ranges</small></div>
-        <div class="market-kpi-remote"><span>Remote signal</span><strong>${percent(number(remote?.count) / Math.max(workModeTotal, 1), 1)}</strong><small>explicitly remote listings</small></div>
-        <div class="market-kpi-city"><span>${context.hasFilters ? "Top city in this view" : "Largest city pulse"}</span><strong>${escapeHtml(topCity?.label?.replace(/, [A-Za-z]{2}$/, "") || "—")}</strong><small>${topCity ? `${fullCount(topCity.count)} deduplicated jobs` : "No city aggregate for this view"}</small></div>
+        <div class="market-kpi-primary"><span>Observed job clusters</span><strong>${fullCount(context.scoped ? context.cohort.count || 0 : context.cohort.count ?? overview.deduplicated_clusters)}</strong><small>rolling 30-day observations · not an open-role count</small></div>
+        <div class="market-kpi-pay"><span>Salary visibility</span><strong>${salaryVisibility}</strong><small>${salaryVisibilityNote}</small></div>
+        <div class="market-kpi-remote"><span>Remote signal</span><strong>${workModeTotal ? percent(number(remote?.count) / workModeTotal, 1) : "—"}</strong><small>${workModeTotal ? "explicitly remote clusters" : "work-mode data unavailable"}</small></div>
+        <div class="market-kpi-city"><span>${context.hasFilters ? "Top city in this view" : "Largest city pulse"}</span><strong>${escapeHtml(topCity?.label?.replace(/, [A-Za-z]{2}$/, "") || "—")}</strong><small>${topCity ? `${fullCount(topCity.count)} observed clusters` : "No city aggregate for this view"}</small></div>
       </section>
 
       <section class="market-quality-strip" aria-label="Data quality">
-        <div class="market-quality-label"><span>Data coverage</span><b>Know what you’re seeing</b></div>
+        <div class="market-quality-label"><span>Data coverage · full sample</span><b>Know what you’re seeing</b></div>
         <div><strong>${percent(overview.duplicate_rate, 1)}</strong><span>duplicate listings removed</span></div>
         <div><strong>${percent(overview.taxonomy_coverage, 1)}</strong><span>taxonomy coverage · not accuracy</span></div>
         <div><strong>${coverage.valid_snapshot_days || 0}</strong><span>valid daily snapshots</span></div>
@@ -489,17 +511,17 @@ export function createMarketAnalysis() {
       </section>
 
       <section class="market-card market-card-dark market-card-wide market-card-pulse" id="market-pulse">
-        ${panelHeader("01 · Hiring pulse", `${context.roleLabel}: demand over the last 30 days`, "Yellow = daily · cyan = 7-day signal · shaded = weekend · gaps marked")}
-        ${pulseChart(context.daily, context.roleLabel, gaps)}
+        ${panelHeader("01 · Hiring pulse", `${context.pulseLabel}: observed job clusters over the last 30 days`, `${context.pulseNote} · shaded = weekend · gaps marked`)}
+        ${pulseChart(context.daily, context.pulseLabel, gaps)}
       </section>
 
       <div class="market-story-grid" id="market-role-terrain">
         <section class="market-card market-card-role">
-          ${panelHeader("02 · Role mix", roleMapTitle, "Counts are observed clusters · percentages use the displayed cohort")}
-          ${roleMap(context.peerRoles, context.specialization || context.domain, context.domain || context.specialization ? "specialization" : "domain", context.domain || context.specialization ? "Share within this focus" : "Share of classified demand")}
+          ${panelHeader("02 · Role mix", roleMapTitle, roleMapNote)}
+          ${roleMap(context.peerRoles, context.specialization || context.domain, context.domain || context.specialization ? "specialization" : "domain", context.domain || context.specialization ? "Share within this focus" : "Share of classified clusters")}
         </section>
         <section class="market-card market-card-skills">
-          ${panelHeader("03 · Skill demand", "Technical skills mentioned most often", "Mentions in tracked postings · filter by category")}
+          ${panelHeader("03 · Skill demand", "Technical skills mentioned most often", "Mentions in observed clusters · filter by category")}
           <div class="skill-panel-filter"><label for="market-skill-category-filter">Category</label><select id="market-skill-category-filter">${option("technical", "Technical skills", skillCategory === "technical")}${option("", "All skill categories", !skillCategory)}${(payload.skill_categories || []).map((item) => option(item.key, item.label, item.key === skillCategory)).join("")}</select></div>
           ${skillHeatmap(context.skills)}
           <p class="market-caveat">Exact O*NET and project-custom skill matches with curated aliases; categorized for dashboard use.</p>
@@ -513,7 +535,7 @@ export function createMarketAnalysis() {
 
       <div class="market-story-grid market-geography-grid" id="market-geography">
         <section class="market-card market-card-map">
-          ${panelHeader("05 · Places", "Where jobs are clustering", "Darker states = more openings")}
+          ${panelHeader("05 · Places", "Where postings are clustering", "Darker states = more observed clusters")}
             ${stateChoropleth(states)}
         </section>
         <section class="market-card market-card-localities">
@@ -524,7 +546,7 @@ export function createMarketAnalysis() {
 
       <div class="market-context-grid" id="market-context">
         <section class="market-card">
-          ${panelHeader("Work setup", "Remote, hybrid, or onsite?")}
+          ${panelHeader("Work setup", "How work setup is described", "Remote and hybrid are explicit; the rest may be onsite or unspecified")}
           ${workModeRibbon(workModes)}
         </section>
         <section class="market-card">
