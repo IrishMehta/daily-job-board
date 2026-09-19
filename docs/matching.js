@@ -194,6 +194,7 @@ export class ResumeMatcher {
     const resumeTokens = [...new Set(tokenize(rawResume))];
     try {
       await this.load();
+      this.onProgress("Ranking roles locally…");
       const chunks = splitChunks(rawResume);
       const tensor = await this.extractor(chunks, { pooling: "mean", normalize: true });
       const embedding = tensorMean(tensor);

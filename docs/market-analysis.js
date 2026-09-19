@@ -256,6 +256,14 @@ export function createMarketAnalysis() {
   let loaded = false;
   let skillCategory = "";
 
+  function loadingMarkup() {
+    return `<div class="market-loading" aria-label="Preparing market data">
+      <div class="market-skeleton market-skeleton-wide"></div>
+      <div class="market-skeleton-row"><div class="market-skeleton"></div><div class="market-skeleton"></div><div class="market-skeleton"></div></div>
+      <strong>Preparing the market view</strong><span>Coverage and freshness will appear when the aggregate data is ready.</span>
+    </div>`;
+  }
+
   function selectedContext() {
     const domain = domainFilter.value;
     const specialization = specializationFilter.value;
@@ -311,14 +319,16 @@ export function createMarketAnalysis() {
 
   function render() {
     if (!payload || payload.status !== "ready") {
-      const message = payload?.message || "The first production Spark backfill has not completed.";
-      freshness.textContent = message;
-      content.innerHTML = `<div class="market-unavailable"><strong>Market data is not available yet</strong><p>${escapeHtml(message)}</p></div>`;
+      const message = payload?.message || "The 30-day aggregate is still being prepared.";
+      freshness.textContent = "Coverage not available yet · aggregate window pending";
+      content.innerHTML = `<div class="market-unavailable"><strong>Market coverage is not published yet</strong><p>${escapeHtml(message)}</p></div>`;
       controls.classList.add("hidden");
+      root.setAttribute("aria-busy", "false");
       return;
     }
 
     controls.classList.remove("hidden");
+    root.setAttribute("aria-busy", "false");
     const context = selectedContext();
     const overview = payload.overview;
     const coverage = payload.coverage || {};
@@ -481,7 +491,9 @@ export function createMarketAnalysis() {
   async function load() {
     if (loaded || loading) return;
     loading = true;
-    content.innerHTML = '<div class="market-loading"><i></i><strong>Reading the market</strong><span>Loading aggregate hiring signals…</span></div>';
+    root.setAttribute("aria-busy", "true");
+    freshness.textContent = "Loading 30-day aggregate · coverage will appear when ready";
+    content.innerHTML = loadingMarkup();
     try {
       const response = await fetch(DATA_URL);
       if (!response.ok) throw new Error(`Market data could not be loaded (${response.status}).`);
@@ -491,7 +503,8 @@ export function createMarketAnalysis() {
       render();
     } catch (error) {
       content.innerHTML = `<div class="market-unavailable"><strong>Market data is unavailable</strong><p>${escapeHtml(error.message)}</p></div>`;
-      freshness.textContent = "Unable to load the aggregate dataset.";
+      freshness.textContent = "Unable to load aggregate coverage · try again later";
+      root.setAttribute("aria-busy", "false");
     } finally {
       loading = false;
     }

@@ -69,11 +69,11 @@
       </a>
         </div>
       </details>
-      <button class="button button-board guide-action" type="button" data-tour-launch aria-haspopup="dialog" aria-controls="product-tour" aria-label="Open guided tour">
+      <button class="button button-board guide-action" type="button" data-tour-launch aria-haspopup="dialog" aria-controls="product-tour" aria-label="Open guided tour" title="Open guided tour">
         <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M9.8 9a2.3 2.3 0 1 1 3.6 1.9c-.9.6-1.4 1-1.4 2.1m0 3.1h.01"/></svg>
         Guide
       </button>
-      <button class="button button-board market-action" type="button" data-view="market" aria-pressed="false" aria-label="Open market trends">
+      <button class="button button-board market-action" type="button" data-view="market" aria-pressed="false" aria-label="Open market trends" title="Open market trends">
         <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 18V6m0 12h16M7 15l3-4 3 2 5-7"/><path d="m15 6 3 0 0 3"/></svg>
         Market trends
       </button>
@@ -84,6 +84,18 @@
   </header>
 
   <section class="search-shell" id="search-shell" aria-label="Search and filter jobs">
+    <div class="search-intro">
+      <div>
+        <span class="search-kicker">A clearer way to search</span>
+        <p><strong>Fresh tech roles from the last 7 days</strong> — filter by location, experience, authorization, and sponsorship.</p>
+      </div>
+      <div class="starter-searches" aria-label="Starter searches">
+        <span>Try</span>
+        <button type="button" class="starter-search" data-starter-query="software engineer">Software Engineer</button>
+        <button type="button" class="starter-search" data-starter-query="remote data">Remote data</button>
+        <button type="button" class="starter-search" data-starter-query="machine learning">Machine learning</button>
+      </div>
+    </div>
     <div class="search-row">
       <div class="search-combobox">
       <label class="search-field" for="search-input">
@@ -112,20 +124,20 @@
           <svg viewBox="0 0 24 24" aria-hidden="true"><path d="m6 6 12 12M18 6 6 18"/></svg>
         </button>
       </div>
-      <label class="filter-field">Role focus
+      <label class="filter-field advanced-filter">Role focus
         <select id="domain-filter"><option value="">All focus areas</option></select>
       </label>
-      <label class="filter-field">Specialization
+      <label class="filter-field advanced-filter">Specialization
         <select id="specialization-filter"><option value="">All specializations</option></select>
       </label>
       <label class="filter-field">Location
         <input id="location-filter" type="search" list="location-suggestions" placeholder="Any location" autocomplete="off">
         <datalist id="location-suggestions"></datalist>
       </label>
-      <label class="filter-field">Role level
-        <select id="career-filter"><option value="">All experience</option></select>
+      <label class="filter-field">Experience level
+        <select id="career-filter"><option value="">All experience levels</option></select>
       </label>
-      <label class="filter-field">Work authorization
+      <label class="filter-field advanced-filter">Work authorization
         <select id="authorization-filter"><option value="">Any authorization</option></select>
       </label>
       <label class="filter-field">Visa sponsorship
@@ -154,7 +166,7 @@
           <option value="company_asc">Company A–Z</option>
         </select>
       </label>
-      <button class="advanced-filter-toggle" id="advanced-filters-toggle" type="button" aria-expanded="false" aria-controls="filter-panel">More filters <span id="advanced-filter-count">(4 available)</span></button>
+      <button class="advanced-filter-toggle" id="advanced-filters-toggle" type="button" aria-expanded="false" aria-controls="filter-panel">More filters <span id="advanced-filter-count">(7 available)</span></button>
       <div class="sheet-footer">
         <button class="button button-quiet clear-button" id="clear-filters" type="button">Clear all</button>
         <button class="button button-apply" id="filter-apply" type="button">Show all roles</button>
@@ -174,9 +186,16 @@
           <p id="results-summary" aria-live="polite">Loading jobs…</p>
         </div>
         <div class="results-toolbar-notes">
+          <button class="shortlist-clear-filters hidden" id="shortlist-clear-filters" type="button">Show all saved jobs</button>
+          <span class="sort-note hidden" id="sort-note"></span>
           <span class="pane-scroll-note">Scroll to browse</span>
           <span class="match-mode hidden" id="match-mode"></span>
         </div>
+      </div>
+      <div class="results-trust" id="results-trust">
+        <span class="trust-mark">Fresh 7-day feed</span>
+        <span id="results-trust-copy">Updated daily · US technology roles</span>
+        <button class="info-badge" type="button" title="The board is refreshed daily. Market Trends uses a separate rolling aggregate and may deduplicate similar postings." aria-label="About freshness and job counts">i</button>
       </div>
       <div class="results-scroll" aria-label="Scrollable job results">
         <div class="job-list" id="job-list" role="listbox" aria-label="Job results" tabindex="0"></div>
@@ -185,6 +204,7 @@
           <h2 id="empty-title">Nothing on the board matches</h2>
           <p id="empty-copy">Clear one or more filters to widen the search.</p>
           <button class="button button-secondary" id="empty-action" type="button">Clear filters</button>
+          <div class="empty-suggestions" id="empty-suggestions" aria-label="Ways to broaden the search"></div>
         </div>
         <button class="load-more hidden" id="load-more" type="button">Load 40 more jobs</button>
       </div>
@@ -207,9 +227,9 @@
       <div>
         <span class="market-kicker">Aggregate US technology hiring signals</span>
         <h1 id="market-heading">Market trends</h1>
-        <p id="market-freshness">The first 30-day Spark backfill has not been published yet.</p>
+        <p id="market-freshness">30-day market coverage loads when you open this view.</p>
       </div>
-      <div class="market-controls" id="market-controls">
+      <div class="market-controls hidden" id="market-controls">
         <label>Focus
           <select id="market-domain-filter"><option value="">All focus areas</option></select>
         </label>
@@ -226,7 +246,11 @@
     </header>
     <div class="market-notice hidden" id="market-notice" role="status"></div>
     <div class="market-content" id="market-content" aria-live="polite">
-      <div class="market-loading">Open this tab to load aggregate market data.</div>
+      <div class="market-loading" aria-label="Preparing market data">
+        <div class="market-skeleton market-skeleton-wide"></div>
+        <div class="market-skeleton-row"><div class="market-skeleton"></div><div class="market-skeleton"></div><div class="market-skeleton"></div></div>
+        <strong>Preparing the market view</strong><span>Coverage and freshness will appear when the aggregate data is ready.</span>
+      </div>
     </div>
   </main>
 
@@ -247,9 +271,11 @@
       <label for="resume-input">Resume text</label>
       <textarea id="resume-input" rows="10" placeholder="Paste at least 200 characters of resume text"></textarea>
       <p class="form-hint" id="resume-status" aria-live="polite">Matching combines local semantic relevance with visible keyword evidence.</p>
+      <p class="matcher-progress hidden" id="resume-progress" aria-live="polite"></p>
     </div>
     <div class="dialog-actions">
       <button class="button button-quiet hidden" id="resume-clear" type="button">Turn off matching</button>
+      <button class="button button-quiet hidden" id="resume-cancel" type="button">Cancel</button>
       <button class="button button-primary" id="resume-apply" type="button">Find matches</button>
     </div>
   </dialog>

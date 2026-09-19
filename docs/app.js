@@ -39,6 +39,7 @@ const state = {
   view: "all",
   visibleLimit: PAGE_BATCH,
   selectedId: "",
+  selectionPinned: false,
   storageWarning: "",
   resumeActive: false,
   resumeTokens: [],
@@ -55,6 +56,9 @@ const state = {
   suggestionsOpen: false,
   latestSearchRequestId: 0,
   emptyActionMode: "clear-filters",
+  resumeBusy: false,
+  resumeCancelRequested: false,
+  resumeRunId: 0,
   companyBrands: {},
 };
 
@@ -64,9 +68,9 @@ const els = Object.fromEntries([
   "mobile-filter-close", "mobile-filter-count", "filter-panel", "domain-filter", "specialization-filter",
   "industry-filter", "location-filter", "location-suggestions", "career-filter", "experience-years-filter", "authorization-filter",
   "sponsorship-filter", "posted-filter", "sort-filter", "advanced-filters-toggle", "advanced-filter-count", "clear-filters", "active-filters", "storage-warning",
-  "results-heading", "results-summary", "match-mode", "job-list", "empty-state", "empty-title", "empty-copy",
-  "empty-action", "load-more", "detail-pane", "detail-empty", "detail-content", "sheet-backdrop", "resume-dialog",
-  "resume-input", "resume-status", "resume-clear", "resume-apply", "toast", "search-shell", "jobs-workspace",
+  "results-heading", "results-summary", "shortlist-clear-filters", "sort-note", "results-trust-copy", "match-mode", "job-list", "empty-state", "empty-title", "empty-copy",
+  "empty-action", "empty-suggestions", "load-more", "detail-pane", "detail-empty", "detail-content", "sheet-backdrop", "resume-dialog",
+  "resume-input", "resume-status", "resume-progress", "resume-clear", "resume-cancel", "resume-apply", "toast", "search-shell", "jobs-workspace",
 ].map((id) => [id.replaceAll("-", "_"), document.getElementById(id)]));
 
 const resumeMatcher = new ResumeMatcher((message) => setResumeStatus(message));
@@ -157,7 +161,7 @@ function compactJobDate(value) {
 function formatGeneratedAt(value) {
   const date = new Date(value);
   if (Number.isNaN(date.getTime())) return "Current US openings";
-  return `Updated ${formatCalendarDate(date.toISOString().slice(0, 10))} · 7-day window`;
+  return `Updated ${formatCalendarDate(date.toISOString().slice(0, 10))} · 7-day feed`;
 }
 
 function renderFlapCount(total) {
@@ -355,6 +359,8 @@ function readUrlState(filters) {
 }
 
 function writeUrlState() {
+  const { history = "replace", jobId = "" } = arguments[0] || {};
+  const historyMethod = history === "push" ? "pushState" : "replaceState";
   const params = new URLSearchParams();
   Object.entries(FILTER_PARAM_MAP).forEach(([key, param]) => {
     const value = state.filters[key];
@@ -364,9 +370,14 @@ function writeUrlState() {
     }
   });
   if (state.view !== "all") params.set("view", state.view);
+  if (jobId) params.set("job", jobId);
   const query = params.toString();
   const hash = window.location.hash;
-  window.history.replaceState({}, "", `${window.location.pathname}${query ? `?${query}` : ""}${hash}`);
+  window.history[historyMethod]({}, "", `${window.location.pathname}${query ? `?${query}` : ""}${hash}`);
+}
+
+function isCompactViewport() {
+  return window.matchMedia("(max-width: 840px), (max-height: 600px) and (max-width: 1000px)").matches;
 }
 
 function persist() {
@@ -482,6 +493,7 @@ function setSingleArrayFilter(key, value) {
   state.filters[key] = value ? [value] : [];
   state.visibleLimit = PAGE_BATCH;
   state.selectedId = "";
+  state.selectionPinned = false;
   persist();
   writeUrlState();
   render();
@@ -506,7 +518,7 @@ function filterLabel(key, value) {
   if (key === "location") return `Location: ${value}`;
   if (key === "experienceYears") return `Fits ${value} ${value === "1" ? "yr" : "yrs"}`;
   if (key === "postedRange") return { "1d": "Posted: 24 hours", "3d": "Posted: 3 days", "7d": "" }[value] || value;
-  if (key === "sort") return value === "date_desc" ? "" : `Sort: ${els.sort_filter.selectedOptions[0]?.textContent || value}`;
+  if (key === "sort") return "";
   const lookup = {
     domains: els.domain_filter,
     specializations: els.specialization_filter,
@@ -522,6 +534,7 @@ function filterLabel(key, value) {
 function renderActiveFilters() {
   const chips = [];
   Object.entries(state.filters).forEach(([key, value]) => {
+    if (key === "sort") return;
     const values = Array.isArray(value) ? value : [value];
     values.filter(Boolean).forEach((entry) => {
       if (entry === DEFAULT_FILTERS[key]) return;
@@ -584,6 +597,7 @@ function setSearchQuery(value, { keepFocus = false } = {}) {
   if (previous && !next && state.filters.sort === "relevance") state.filters.sort = "date_desc";
   state.visibleLimit = PAGE_BATCH;
   state.selectedId = "";
+  state.selectionPinned = false;
   els.search_input.value = next;
   els.sort_filter.value = state.filters.sort;
   persist();
@@ -607,6 +621,7 @@ function clearStructuredFilters() {
   state.view = "all";
   state.visibleLimit = PAGE_BATCH;
   state.selectedId = "";
+  state.selectionPinned = false;
   syncControlsFromState();
   persist();
   writeUrlState();
@@ -627,12 +642,40 @@ function sponsorshipLabel(job) {
   return `Work auth: ${job.authorization_category_label || "not stated"}`;
 }
 
+function sponsorshipDecision(job) {
+  if (job.sponsorship_status === "supports_sponsorship") return "Likely sponsorship supported";
+  if (job.sponsorship_status === "no_sponsorship") return "Likely no sponsorship";
+  return "Sponsorship not stated";
+}
+
+function authorizationDecision(job) {
+  if (job.authorization_category === "open_or_not_specified") return "Likely open / not specified";
+  return job.authorization_category_label || "Authorization not stated";
+}
+
 function primarySpecialization(job) {
   const map = taxonomyMaps(state.payload).specializations;
   const values = job._specializations;
   if (!values.length) return "Uncategorized";
   const label = map.get(values[0]) || values[0].replaceAll("_", " ");
   return values.length > 1 ? `${label} +${values.length - 1}` : label;
+}
+
+function searchMatchReasons(job) {
+  if (!state.filters.query) return [];
+  const terms = state.searchHighlightTerms.length ? state.searchHighlightTerms : tokenize(state.filters.query);
+  const fields = [
+    ["role title", job.title],
+    ["company", job.company],
+    ["skills", (job.match_terms ?? []).join(" ")],
+    ["focus", job._taxonomyLabels.join(" ")],
+    ["location", job.location],
+    ["summary", [job.summary, job.description_excerpt].filter(Boolean).join(" ")],
+  ];
+  return fields.filter(([, value]) => {
+    const normalized = normalizeText(value);
+    return terms.some((term) => normalized.includes(normalizeText(term)));
+  }).map(([label]) => label).slice(0, 3);
 }
 
 function currentResults() {
@@ -653,6 +696,7 @@ function renderJobList(results) {
     const experience = job.experience_display || "Experience not stated";
     const sponsorship = sponsorshipLabel(job);
     const specialization = primarySpecialization(job);
+    const matchReasons = searchMatchReasons(job);
     return `
       <div class="job-row${state.selectedId === job.id ? " is-selected" : ""}" role="option" tabindex="-1" aria-selected="${state.selectedId === job.id}" data-job-id="${escapeHtml(job.id)}">
         <div class="job-age-cell"><span class="job-age${days === 0 ? " is-new" : ""}">${days === 0 ? escapeHtml(ageLabel) : ageLabel}</span></div>
@@ -664,6 +708,7 @@ function renderJobList(results) {
             <span class="${authSignalClass(job)}">${highlightText(sponsorship)}</span>
             <span>Focus: ${highlightText(specialization)}</span>
           </div>
+          ${matchReasons.length ? `<p class="match-context">Matched in ${matchReasons.map((reason) => `<span>${escapeHtml(reason)}</span>`).join(" · ")}</p>` : ""}
         </div>
         <button class="shortlist-button${saved ? " is-saved" : ""}" type="button" data-shortlist-id="${escapeHtml(job.id)}" aria-label="${saved ? "Remove from" : "Add to"} shortlist" aria-pressed="${saved}">${bookmarkIcon()}</button>
       </div>`;
@@ -675,30 +720,54 @@ function renderEmpty(results) {
   const empty = results.length === 0;
   els.empty_state.classList.toggle("hidden", !empty);
   els.job_list.classList.toggle("hidden", empty);
+  els.empty_suggestions.innerHTML = "";
   if (!empty) return;
-  if (state.view === "shortlist" && !Object.keys(state.shortlist).length) {
+  if (state.searchPending && state.filters.query) {
+    state.emptyActionMode = "clear-search";
+    els.empty_title.textContent = "Searching the board";
+    els.empty_copy.textContent = "Checking role titles, skills, companies, and locations…";
+    els.empty_action.classList.add("hidden");
+  } else if (state.view === "shortlist" && !Object.keys(state.shortlist).length) {
+    els.empty_action.classList.remove("hidden");
     state.emptyActionMode = "browse-all";
     els.empty_title.textContent = "Your shortlist is empty";
     els.empty_copy.textContent = "Bookmark promising roles from All roles to compare them here.";
     els.empty_action.textContent = "Browse all jobs";
   } else if (state.filters.query && state.searchLexicalCount === 0 && !state.searchPending) {
+    els.empty_action.classList.remove("hidden");
     state.emptyActionMode = "clear-search";
     els.empty_title.textContent = "No search matches yet";
     els.empty_copy.textContent = state.searchCorrectedQuery
       ? "Try the suggested spelling above or remove one search term."
       : "Try a broader role, skill, company, or location term.";
     els.empty_action.textContent = "Clear search";
+    els.empty_suggestions.innerHTML = ["software engineer", "data analyst", "machine learning"]
+      .map((query) => `<button type="button" class="empty-suggestion" data-empty-query="${escapeHtml(query)}">Try ${escapeHtml(query)}</button>`).join("");
   } else if (state.filters.query && state.searchLexicalCount > 0) {
+    els.empty_action.classList.remove("hidden");
     state.emptyActionMode = "clear-structured";
     els.empty_title.textContent = "Matches are hidden by filters";
     els.empty_copy.textContent = `${formatCount(state.searchLexicalCount)} search ${state.searchLexicalCount === 1 ? "match is" : "matches are"} outside the current filters or view.`;
     els.empty_action.textContent = "Clear filters";
+    els.empty_suggestions.innerHTML = relaxationButtons();
   } else {
+    els.empty_action.classList.remove("hidden");
     state.emptyActionMode = "clear-filters";
     els.empty_title.textContent = "Nothing on the board matches";
     els.empty_copy.textContent = "Clear one or more filters to widen the search.";
     els.empty_action.textContent = "Clear filters";
+    els.empty_suggestions.innerHTML = relaxationButtons();
   }
+}
+
+function relaxationButtons() {
+  const active = [];
+  if (state.filters.sponsorshipStatuses.length) active.push(["sponsorshipStatuses", "Remove sponsorship filter"]);
+  if (state.filters.authorizationCategories.length) active.push(["authorizationCategories", "Remove authorization filter"]);
+  if (state.filters.careerBuckets.length || state.filters.experienceYears) active.push(["careerBuckets", "Broaden experience"]);
+  if (state.filters.location) active.push(["location", "Broaden location"]);
+  if (!active.length) return "";
+  return active.map(([key, label]) => `<button type="button" class="empty-suggestion" data-relax-key="${escapeHtml(key)}">${escapeHtml(label)}</button>`).join("");
 }
 
 function selectedJob() {
@@ -759,8 +828,8 @@ function renderDetail() {
   }
   const saved = Boolean(state.shortlist[job.id]);
   const taxonomyTags = taxonomyDetail(job);
-  const sponsorship = job.sponsorship_status === "supports_sponsorship" ? "Sponsorship available"
-    : job.sponsorship_status === "no_sponsorship" ? "No sponsorship available" : "Not stated";
+  const sponsorship = sponsorshipDecision(job);
+  const authorization = authorizationDecision(job);
   els.detail_content.innerHTML = `
     <header class="detail-header">
       <div class="detail-header-top">
@@ -777,9 +846,10 @@ function renderDetail() {
     <div class="decision-grid">
       <div class="decision-item"><span class="decision-label">Location</span><span class="decision-value">${escapeHtml(job.location || "Not stated")}</span></div>
       <div class="decision-item"><span class="decision-label">Experience</span><span class="decision-value">${escapeHtml(job.experience_display || "Not stated")}</span></div>
-      <div class="decision-item"><span class="decision-label">Visa sponsorship</span><span class="decision-value ${authSignalClass(job)}">${escapeHtml(sponsorship)}</span></div>
-      <div class="decision-item"><span class="decision-label">Work authorization</span><span class="decision-value ${authSignalClass(job)}">${escapeHtml(job.authorization_category_label || "Not stated")}</span></div>
+      <div class="decision-item"><span class="decision-label">Visa sponsorship <button class="info-badge" type="button" title="This is an inferred signal from the posting text, not a guarantee." aria-label="Visa sponsorship definition">i</button></span><span class="decision-value ${authSignalClass(job)}">${escapeHtml(sponsorship)}</span></div>
+      <div class="decision-item"><span class="decision-label">Work authorization <button class="info-badge" type="button" title="Open or not specified means no restriction was detected. Not stated means the posting was silent." aria-label="Work authorization definition">i</button></span><span class="decision-value ${authSignalClass(job)}">${escapeHtml(authorization)}</span></div>
     </div>
+    <p class="eligibility-note"><span class="info-badge" aria-hidden="true">i</span><span><strong>Eligibility signals are inferred.</strong> Confirm sponsorship, citizenship, and clearance requirements with the employer before applying.</span></p>
     ${summarySection(job)}
     ${renderMatchEvidence(job)}
     <section class="detail-section">
@@ -789,11 +859,18 @@ function renderDetail() {
     </section>`;
 }
 
-function selectJob(id, { openMobile = true } = {}) {
+function selectJob(id, { openMobile = true, navigate = true } = {}) {
   if (!state.jobs.some((job) => job.id === id)) return;
   state.selectedId = id;
-  if (openMobile && window.matchMedia("(max-width: 840px)").matches) document.body.classList.add("detail-open");
+  state.selectionPinned = true;
+  if (openMobile && isCompactViewport()) document.body.classList.add("detail-open");
+  if (navigate) writeUrlState({ history: "push", jobId: id });
   render();
+}
+
+function closeDetail({ updateHistory = true } = {}) {
+  document.body.classList.remove("detail-open");
+  if (updateHistory && new URLSearchParams(window.location.search).has("job")) writeUrlState();
 }
 
 function render() {
@@ -816,17 +893,37 @@ function render() {
   marketAnalysis.hide();
   if (!state.payload) return;
   const results = currentResults();
-  if (state.selectedId && !results.some((job) => job.id === state.selectedId)) state.selectedId = "";
-  if (!state.selectedId && results.length && state.view === "all") state.selectedId = results[0].id;
+  if (state.selectedId && !results.some((job) => job.id === state.selectedId)) {
+    state.selectedId = "";
+    state.selectionPinned = false;
+  }
+  if (!state.selectionPinned && results.length) state.selectedId = results[0].id;
+  if (!results.length) {
+    state.selectedId = "";
+    state.selectionPinned = false;
+  }
   els.results_heading.textContent = state.view === "shortlist" ? "Shortlist" : "All roles";
+  const employerCount = new Set(results.map((job) => job.company).filter(Boolean)).size;
+  const shortlistTotal = Object.keys(state.shortlist).length;
+  const shortlistHasFilters = state.filters.query || state.filters.location || state.filters.domains.length
+    || state.filters.specializations.length || state.filters.industries.length || state.filters.careerBuckets.length
+    || state.filters.authorizationCategories.length || state.filters.sponsorshipStatuses.length || state.filters.experienceYears;
   els.results_summary.textContent = state.searchPending && state.filters.query
     ? `Searching ${formatCount(results.length)} current ${results.length === 1 ? "match" : "matches"}…`
-    : `${formatCount(results.length)} ${results.length === 1 ? "role" : "roles"} in view`;
+    : state.view === "shortlist"
+      ? `${formatCount(results.length)} of ${formatCount(shortlistTotal)} saved ${shortlistTotal === 1 ? "role" : "roles"}${shortlistHasFilters ? " · filters active" : ""}`
+    : state.filters.query
+      ? `${formatCount(results.length)} ${results.length === 1 ? "role" : "roles"} · ${formatCount(employerCount)} employers · matched terms highlighted`
+      : `${formatCount(results.length)} ${results.length === 1 ? "role" : "roles"} in view`;
+  els.shortlist_clear_filters.classList.toggle("hidden", state.view !== "shortlist" || !shortlistHasFilters || results.length === shortlistTotal);
   els.all_count.textContent = `(${formatCount(state.jobs.length)})`;
   els.shortlist_count.textContent = formatCount(Object.keys(state.shortlist).length);
   if (els.filter_apply) els.filter_apply.textContent = `Show ${formatCount(results.length)} ${results.length === 1 ? "role" : "roles"}`;
   els.match_mode.textContent = state.resumeActive ? `Sorted by ${state.resumeMode}` : "";
   els.match_mode.classList.toggle("hidden", !state.resumeActive);
+  const sortLabel = els.sort_filter.selectedOptions[0]?.textContent || "";
+  els.sort_note.textContent = state.resumeActive ? "" : `Sort: ${sortLabel}`;
+  els.sort_note.classList.toggle("hidden", state.resumeActive || state.filters.sort === DEFAULT_FILTERS.sort || !sortLabel);
   els.sort_filter.disabled = state.resumeActive;
   els.sort_filter.title = state.resumeActive ? "Resume relevance controls sorting while matching is active." : "";
   els.job_list.setAttribute("aria-busy", String(state.searchPending));
@@ -837,6 +934,10 @@ function render() {
   renderJobList(results);
   renderEmpty(results);
   renderDetail();
+  const freshToday = results.filter((job) => jobAgeDays(job.posted_on) === 0).length;
+  els.results_trust_copy.textContent = state.payload.generated_at
+    ? `${formatGeneratedAt(state.payload.generated_at)} · ${formatCount(freshToday)} fresh today · US roles`
+    : "Updated daily · US technology roles";
   renderStorageWarning();
 }
 
@@ -844,6 +945,20 @@ function clearFilters() {
   state.filters = freshFilters();
   state.visibleLimit = PAGE_BATCH;
   state.selectedId = "";
+  state.selectionPinned = false;
+  syncControlsFromState();
+  persist();
+  writeUrlState();
+  requestAdvancedSearch();
+  render();
+}
+
+function clearShortlistFilters() {
+  state.filters = freshFilters();
+  state.view = "shortlist";
+  state.visibleLimit = PAGE_BATCH;
+  state.selectedId = "";
+  state.selectionPinned = false;
   syncControlsFromState();
   persist();
   writeUrlState();
@@ -874,6 +989,21 @@ function closeFilters() {
 function setResumeStatus(message, error = false) {
   els.resume_status.textContent = message;
   els.resume_status.classList.toggle("is-error", error);
+  if (!state.resumeBusy) {
+    els.resume_progress.textContent = "";
+    els.resume_progress.classList.add("hidden");
+    return;
+  }
+  const lower = String(message).toLowerCase();
+  const stage = lower.includes("loading") || lower.includes("preparing")
+    ? "Step 1 of 3 · Preparing the local matcher"
+    : lower.includes("starting")
+      ? "Step 2 of 3 · Starting the browser runtime"
+      : lower.includes("ranking") || lower.includes("semantic") || lower.includes("keyword")
+        ? "Step 3 of 3 · Ranking your roles"
+        : "Step 1 of 3 · Preparing the local matcher";
+  els.resume_progress.textContent = stage;
+  els.resume_progress.classList.remove("hidden");
 }
 
 async function applyResume() {
@@ -882,10 +1012,16 @@ async function applyResume() {
     setResumeStatus("Paste at least 200 non-whitespace characters and 20 meaningful words.", true);
     return;
   }
+  const runId = ++state.resumeRunId;
+  state.resumeBusy = true;
+  state.resumeCancelRequested = false;
   els.resume_apply.disabled = true;
-  setResumeStatus("Preparing local matching…");
+  els.resume_cancel.classList.remove("hidden");
+  els.resume_cancel.disabled = false;
+  setResumeStatus("Preparing local matching… Usually 10–30 seconds on the first run.");
   try {
     const result = await resumeMatcher.score(raw, state.jobs);
+    if (state.resumeCancelRequested || state.resumeRunId !== runId) return;
     state.resumeActive = true;
     state.resumeTokens = result.resumeTokens;
     state.resumeMode = result.mode;
@@ -893,15 +1029,33 @@ async function applyResume() {
     setResumeStatus(`Matching is active (${result.mode}). Nothing was uploaded or saved.`);
     els.resume_dialog.close();
     render();
+  } catch (error) {
+    if (!state.resumeCancelRequested) setResumeStatus(`Matching could not start: ${error.message || "try again"}.`, true);
   } finally {
-    els.resume_apply.disabled = false;
+    if (state.resumeRunId === runId) {
+      state.resumeBusy = false;
+      els.resume_apply.disabled = false;
+      els.resume_cancel.classList.add("hidden");
+      setResumeStatus(els.resume_status.textContent, els.resume_status.classList.contains("is-error"));
+    }
   }
+}
+
+function cancelResume() {
+  state.resumeCancelRequested = true;
+  state.resumeBusy = false;
+  els.resume_apply.disabled = false;
+  els.resume_cancel.disabled = true;
+  els.resume_cancel.classList.add("hidden");
+  setResumeStatus("Matching canceled. Your resume remains in this tab.");
 }
 
 function clearResume() {
   state.resumeActive = false;
   state.resumeTokens = [];
   state.resumeMode = "";
+  state.resumeBusy = false;
+  state.resumeCancelRequested = false;
   state.jobs.forEach((job) => { job._resumeScore = null; });
   els.resume_input.value = "";
   setResumeStatus("Matching combines local semantic relevance with visible keyword evidence.");
@@ -910,6 +1064,8 @@ function clearResume() {
 }
 
 function bindEvents() {
+  const advancedFilterCount = document.querySelectorAll(".advanced-filter").length;
+  els.advanced_filter_count.textContent = `(${advancedFilterCount} available)`;
   const headerTools = document.querySelector(".header-tools");
   const toolsSummary = headerTools?.querySelector("summary");
   const positionToolsMenu = () => {
@@ -926,8 +1082,12 @@ function bindEvents() {
     state.view = button.dataset.view;
     state.visibleLimit = PAGE_BATCH;
     state.selectedId = "";
+    state.selectionPinned = false;
     writeUrlState();
     render();
+  }));
+  document.querySelectorAll("[data-starter-query]").forEach((button) => button.addEventListener("click", () => {
+    setSearchQuery(button.dataset.starterQuery, { keepFocus: true });
   }));
   els.search_input.addEventListener("input", () => {
     window.clearTimeout(searchTimer);
@@ -952,6 +1112,8 @@ function bindEvents() {
   els.search_input.addEventListener("keydown", (event) => {
     if (!["ArrowDown", "ArrowUp", "Enter", "Escape"].includes(event.key)) return;
     if (event.key === "Escape") {
+      event.preventDefault();
+      event.stopPropagation();
       state.suggestionsOpen = false;
       state.suggestionIndex = -1;
       renderSearchChrome();
@@ -992,12 +1154,13 @@ function bindEvents() {
       event.preventDefault();
       els.search_input.focus();
     }
+    if (event.key === "Escape" && event.target.closest?.("#search-input")) return;
     if (event.key === "Escape") {
       state.suggestionsOpen = false;
       state.suggestionIndex = -1;
       renderSearchChrome();
       closeFilters();
-      document.body.classList.remove("detail-open");
+      closeDetail();
     }
   });
   document.addEventListener("click", (event) => {
@@ -1020,6 +1183,8 @@ function bindEvents() {
       const years = Number.parseInt(els.experience_years_filter.value, 10);
       state.filters.experienceYears = Number.isInteger(years) && years >= 0 && years <= 60 ? String(years) : "";
       state.visibleLimit = PAGE_BATCH;
+      state.selectedId = "";
+      state.selectionPinned = false;
       persist(); writeUrlState(); render();
     }, 160);
   });
@@ -1030,16 +1195,22 @@ function bindEvents() {
     searchTimer = window.setTimeout(() => {
       state.filters.location = els.location_filter.value.trim();
       state.visibleLimit = PAGE_BATCH;
+      state.selectedId = "";
+      state.selectionPinned = false;
       persist(); writeUrlState(); render();
     }, 120);
   });
   els.posted_filter.addEventListener("change", () => {
     state.filters.postedRange = els.posted_filter.value;
     state.visibleLimit = PAGE_BATCH;
+    state.selectedId = "";
+    state.selectionPinned = false;
     persist(); writeUrlState(); render();
   });
   els.sort_filter.addEventListener("change", () => {
     state.filters.sort = els.sort_filter.value;
+    state.selectedId = "";
+    state.selectionPinned = false;
     persist(); writeUrlState(); render();
   });
   els.advanced_filters_toggle.addEventListener("click", () => {
@@ -1047,9 +1218,10 @@ function bindEvents() {
     els.filter_panel.classList.toggle("is-advanced-open", advancedFiltersOpen);
     els.advanced_filters_toggle.setAttribute("aria-expanded", String(advancedFiltersOpen));
     els.advanced_filters_toggle.firstChild.textContent = advancedFiltersOpen ? "Fewer filters " : "More filters ";
-    els.advanced_filter_count.textContent = advancedFiltersOpen ? "" : "(4 available)";
+    els.advanced_filter_count.textContent = advancedFiltersOpen ? "" : `(${advancedFilterCount} available)`;
   });
   els.clear_filters.addEventListener("click", clearFilters);
+  els.shortlist_clear_filters.addEventListener("click", clearShortlistFilters);
   els.active_filters.addEventListener("click", (event) => {
     const button = event.target.closest("[data-clear-key]");
     if (!button) return;
@@ -1094,7 +1266,7 @@ function bindEvents() {
       window.setTimeout(() => apply.classList.remove("is-opening"), 1800);
       return;
     }
-    if (event.target.closest("[data-close-detail]")) document.body.classList.remove("detail-open");
+    if (event.target.closest("[data-close-detail]")) closeDetail();
   });
   els.load_more.addEventListener("click", () => { state.visibleLimit += PAGE_BATCH; render(); });
   [els.detail_content, els.job_list].forEach((container) => {
@@ -1113,12 +1285,35 @@ function bindEvents() {
       clearStructuredFilters();
     } else clearFilters();
   });
+  els.empty_suggestions.addEventListener("click", (event) => {
+    const queryButton = event.target.closest("[data-empty-query]");
+    if (queryButton) {
+      setSearchQuery(queryButton.dataset.emptyQuery);
+      return;
+    }
+    const relaxButton = event.target.closest("[data-relax-key]");
+    if (!relaxButton) return;
+    const key = relaxButton.dataset.relaxKey;
+    if (key === "careerBuckets") {
+      state.filters.careerBuckets = [];
+      state.filters.experienceYears = "";
+    } else if (Array.isArray(state.filters[key])) {
+      state.filters[key] = [];
+    } else {
+      state.filters[key] = DEFAULT_FILTERS[key];
+    }
+    state.selectedId = "";
+    state.selectionPinned = false;
+    syncControlsFromState();
+    persist(); writeUrlState(); requestAdvancedSearch(); render();
+  });
   els.mobile_filter_open.addEventListener("click", openFilters);
   els.mobile_filter_close.addEventListener("click", closeFilters);
   els.filter_apply.addEventListener("click", closeFilters);
   els.sheet_backdrop.addEventListener("click", closeFilters);
   els.resume_open.addEventListener("click", () => els.resume_dialog.showModal());
   els.resume_apply.addEventListener("click", applyResume);
+  els.resume_cancel.addEventListener("click", cancelResume);
   els.resume_clear.addEventListener("click", clearResume);
   window.addEventListener("storage", (event) => {
     if (event.key !== STORAGE_KEY) return;
@@ -1126,12 +1321,18 @@ function bindEvents() {
     state.filters = loaded.value.filters;
     state.shortlist = pruneShortlist(loaded.value.shortlist, new Set(state.jobs.map((job) => job.id))).shortlist;
     state.storageWarning = loaded.warning;
+    state.selectedId = "";
+    state.selectionPinned = false;
     syncControlsFromState();
     requestAdvancedSearch();
     render();
   });
   window.addEventListener("popstate", () => {
     state.filters = readUrlState(state.filters);
+    const requestedJobId = new URLSearchParams(window.location.search).get("job") || "";
+    state.selectedId = requestedJobId && state.jobs.some((job) => job.id === requestedJobId) ? requestedJobId : "";
+    state.selectionPinned = Boolean(state.selectedId);
+    document.body.classList.toggle("detail-open", Boolean(state.selectedId && isCompactViewport()));
     syncControlsFromState();
     requestAdvancedSearch();
     render();
@@ -1176,11 +1377,12 @@ async function init() {
   renderFlapCount(state.jobs.length);
   if (state.payload.repo_url) els.repo_link.href = state.payload.repo_url;
   populateFilters();
-  writeUrlState();
+  const validRequestedJobId = requestedJobId && state.jobs.some((job) => job.id === requestedJobId) ? requestedJobId : "";
+  writeUrlState({ jobId: validRequestedJobId });
   render();
   window.setTimeout(startSearchWorker, 0);
-  if (requestedJobId && state.jobs.some((job) => job.id === requestedJobId)) {
-    await selectJob(requestedJobId);
+  if (validRequestedJobId) {
+    await selectJob(validRequestedJobId, { navigate: false });
   }
   window.setTimeout(() => productTour.autoStart(), 650);
 }

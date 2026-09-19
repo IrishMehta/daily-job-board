@@ -1,5 +1,9 @@
 const TOUR_STORAGE_KEY = "jobDiscoveryBoard:product-tour:v1";
 
+function compactViewport() {
+  return window.matchMedia("(max-width: 840px), (max-height: 600px) and (max-width: 1000px)").matches;
+}
+
 const STEPS = [
   {
     target: () => document.querySelector(".search-field"),
@@ -7,7 +11,7 @@ const STEPS = [
     copy: "Search roles, skills, companies, or locations. The board understands everyday job-search terms and common typos.",
   },
   {
-    target: () => window.matchMedia("(max-width: 840px)").matches
+    target: () => compactViewport()
       ? document.getElementById("mobile-filter-open")
       : document.getElementById("filter-panel"),
     title: "Narrow the board",
@@ -19,7 +23,7 @@ const STEPS = [
     copy: "Each result shows the role, company, location, experience, and authorization signal so you can compare quickly.",
   },
   {
-    target: () => window.matchMedia("(max-width: 840px)").matches
+    target: () => compactViewport()
       ? document.getElementById("job-list")
       : document.getElementById("detail-pane"),
     title: "Open the full posting",
