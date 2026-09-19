@@ -40,6 +40,9 @@ class FrontendContractTests(unittest.TestCase):
         self.assertIn("companyInitials(company)", app_source)
         self.assertIn('companyAvatar(job.company, "row")', app_source)
         self.assertIn("company-avatar-row", styles)
+        self.assertIn(".company-avatar.has-logo { border-color: transparent; background: transparent; }", styles)
+        self.assertIn("width: 44px; height: 44px", styles)
+        self.assertIn("width: 28px; height: 28px", styles)
         self.assertIn('loading="lazy"', app_source)
         self.assertIn("object-fit: contain", styles)
 
