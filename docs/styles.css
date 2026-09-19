@@ -325,7 +325,8 @@ mark { padding: 0 2px; border-radius: 3px; background: rgba(255, 194, 75, 0.34);
 
 .job-main { min-width: 0; padding: 13px 48px 13px 16px; }
 .job-title { margin: 0; overflow: hidden; font-size: 14.5px; font-weight: 700; letter-spacing: -0.005em; line-height: 1.35; text-overflow: ellipsis; white-space: nowrap; }
-.job-company { margin: 3px 0 0; overflow: hidden; color: #39404e; font-size: 12.5px; font-weight: 600; text-overflow: ellipsis; white-space: nowrap; }
+.job-company { display: flex; min-width: 0; align-items: center; gap: 7px; margin: 5px 0 0; color: #39404e; font-size: 12.5px; font-weight: 600; }
+.job-company-text { min-width: 0; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
 .job-company .job-loc-sep { color: var(--subtle); font-weight: 400; padding: 0 3px; }
 .job-company .job-loc { color: var(--muted); font-weight: 450; }
 .job-meta { display: flex; align-items: center; flex-wrap: wrap; gap: 5px; margin-top: 10px; color: var(--muted); font-size: 10px; font-weight: 550; letter-spacing: 0; }
@@ -395,10 +396,17 @@ mark { padding: 0 2px; border-radius: 3px; background: rgba(255, 194, 75, 0.34);
 .detail-header-top { display: flex; align-items: center; justify-content: space-between; gap: 16px; }
 .company-line { display: flex; align-items: center; gap: 10px; color: #39404e; font-size: 13px; font-weight: 650; }
 .company-avatar {
-  display: grid; width: 32px; height: 32px; place-items: center;
+  position: relative; display: grid; width: 32px; height: 32px; flex: 0 0 32px; overflow: hidden; place-items: center;
   border: 1px solid var(--board-line); border-radius: 10px; background: var(--board); color: var(--flap);
   font-family: var(--font-mono); font-size: 11px; font-weight: 600; text-transform: uppercase;
 }
+.company-initials { grid-area: 1 / 1; }
+.company-avatar-row { width: 22px; height: 22px; flex-basis: 22px; border-radius: 7px; font-size: 8px; }
+.company-logo {
+  position: absolute; inset: 0; width: 100%; height: 100%; box-sizing: border-box; padding: 3px;
+  background: #fff; object-fit: contain;
+}
+.company-logo[hidden] { display: none; }
 .detail-header h2 { margin: 14px 0 7px; font-size: clamp(20px, 2vw, 27px); font-weight: 780; line-height: 1.18; letter-spacing: -0.02em; }
 .detail-subline { margin: 0; color: var(--muted); font-family: var(--font-mono); font-size: 10.5px; letter-spacing: 0.03em; }
 .detail-scroll-note { margin-left: 10px; color: var(--subtle); }

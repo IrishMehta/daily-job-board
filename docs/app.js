@@ -55,6 +55,7 @@ const state = {
   suggestionsOpen: false,
   latestSearchRequestId: 0,
   emptyActionMode: "clear-filters",
+  companyBrands: {},
 };
 
 const els = Object.fromEntries([
@@ -166,6 +167,16 @@ function renderFlapCount(total) {
 
 function companyInitials(value) {
   return String(value || "?").split(/\s+/).filter(Boolean).slice(0, 2).map((part) => part[0]).join("").toUpperCase();
+}
+
+function companyAvatar(company, variant = "") {
+  const brand = state.companyBrands[String(company || "")];
+  const logo = brand?.logo;
+  const variantClass = variant ? ` company-avatar-${variant}` : "";
+  return `<span class="company-avatar${variantClass}${logo ? " has-logo" : ""}">`
+    + `<span class="company-initials">${escapeHtml(companyInitials(company))}</span>`
+    + (logo ? `<img class="company-logo" src="${escapeHtml(logo)}" alt="" loading="lazy" decoding="async">` : "")
+    + `</span>`;
 }
 
 function taxonomyMaps(payload) {
@@ -634,7 +645,7 @@ function renderJobList(results) {
         <div class="job-age-cell"><span class="job-age${days === 0 ? " is-new" : ""}">${escapeHtml(ageLabel)}</span></div>
         <div class="job-main">
           <h2 class="job-title">${highlightText(job.title)}</h2>
-          <p class="job-company">${highlightText(job.company)}<span class="job-loc-sep">·</span><span class="job-loc">${highlightText(location)}</span></p>
+          <p class="job-company">${companyAvatar(job.company, "row")}<span class="job-company-text">${highlightText(job.company)}<span class="job-loc-sep">·</span><span class="job-loc">${highlightText(location)}</span></span></p>
           <div class="job-meta">
             <span>Level: ${highlightText(experience)}</span>
             <span class="${authSignalClass(job)}">${highlightText(sponsorship)}</span>
@@ -740,7 +751,7 @@ function renderDetail() {
   els.detail_content.innerHTML = `
     <header class="detail-header">
       <div class="detail-header-top">
-        <div class="company-line"><span class="company-avatar">${escapeHtml(companyInitials(job.company))}</span>${escapeHtml(job.company)}</div>
+        <div class="company-line">${companyAvatar(job.company)}${escapeHtml(job.company)}</div>
         <button class="icon-button mobile-detail-close" type="button" data-close-detail aria-label="Close job details">${closeIcon()}</button>
       </div>
       <h2>${escapeHtml(job.title)}</h2>
@@ -1073,6 +1084,13 @@ function bindEvents() {
     if (event.target.closest("[data-close-detail]")) document.body.classList.remove("detail-open");
   });
   els.load_more.addEventListener("click", () => { state.visibleLimit += PAGE_BATCH; render(); });
+  [els.detail_content, els.job_list].forEach((container) => {
+    container.addEventListener("error", (event) => {
+      if (event.target instanceof HTMLImageElement && event.target.classList.contains("company-logo")) {
+        event.target.hidden = true;
+      }
+    }, true);
+  });
   els.empty_action.addEventListener("click", () => {
     if (state.emptyActionMode === "browse-all") {
       state.view = "all"; writeUrlState(); render();
@@ -1116,9 +1134,20 @@ async function init() {
   bindEvents();
   render();
 
-  const response = await fetch("./data/public_jobs.json");
+  const [response, brandResponse] = await Promise.all([
+    fetch("./data/public_jobs.json"),
+    fetch("./data/company_brands.json").catch(() => null),
+  ]);
   if (!response.ok) throw new Error(`Current jobs could not be loaded (${response.status}).`);
   state.payload = await response.json();
+  if (brandResponse?.ok) {
+    try {
+      const brandPayload = await brandResponse.json();
+      if (brandPayload?.schema_version === "public-company-brands-v1" && brandPayload.companies) {
+        state.companyBrands = brandPayload.companies;
+      }
+    } catch (_error) { /* Branding is optional; initials remain available. */ }
+  }
   state.jobs = prepareJobs(state.payload);
 
   const pruned = pruneShortlist(state.shortlist, new Set(state.jobs.map((job) => job.id)));

@@ -29,6 +29,20 @@ class FrontendContractTests(unittest.TestCase):
             self.assertTrue(job["description_excerpt"])
             self.assertLessEqual(len(job["match_terms"]), 24)
 
+    def test_company_logo_manifest_is_optional_and_keeps_initials_fallback(self):
+        manifest = json.loads((DOCS / "data" / "company_brands.json").read_text(encoding="utf-8"))
+        app_source = (DOCS / "app.js").read_text(encoding="utf-8")
+        styles = (DOCS / "styles.css").read_text(encoding="utf-8")
+
+        self.assertEqual("public-company-brands-v1", manifest["schema_version"])
+        self.assertIn("companies", manifest)
+        self.assertIn('fetch("./data/company_brands.json").catch(() => null)', app_source)
+        self.assertIn("companyInitials(company)", app_source)
+        self.assertIn('companyAvatar(job.company, "row")', app_source)
+        self.assertIn("company-avatar-row", styles)
+        self.assertIn('loading="lazy"', app_source)
+        self.assertIn("object-fit: contain", styles)
+
     def test_first_visit_guide_has_six_steps_and_no_shortlist_step(self):
         html = (DOCS / "index.html").read_text(encoding="utf-8")
         tour_source = (DOCS / "product-tour.js").read_text(encoding="utf-8")
