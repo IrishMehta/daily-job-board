@@ -46,6 +46,15 @@ class FrontendContractTests(unittest.TestCase):
         self.assertIn('loading="lazy"', app_source)
         self.assertIn("object-fit: contain", styles)
 
+    def test_mobile_job_date_places_month_on_second_line(self):
+        app_source = (DOCS / "app.js").read_text(encoding="utf-8")
+        styles = (DOCS / "styles.css").read_text(encoding="utf-8")
+
+        self.assertIn('class="job-age-date"', app_source)
+        self.assertIn('class="job-age-month"', app_source)
+        self.assertIn('class="job-age-day"', app_source)
+        self.assertIn(".job-age-date { flex-direction: column-reverse", styles)
+
     def test_first_visit_guide_has_six_steps_and_no_shortlist_step(self):
         html = (DOCS / "index.html").read_text(encoding="utf-8")
         tour_source = (DOCS / "product-tour.js").read_text(encoding="utf-8")

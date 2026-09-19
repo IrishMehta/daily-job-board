@@ -141,6 +141,19 @@ function formatCalendarDate(value, { includeYear = true } = {}) {
   });
 }
 
+function compactJobDate(value) {
+  const raw = String(value || "");
+  const date = new Date(raw.length === 10 ? `${raw}T12:00:00` : raw);
+  if (Number.isNaN(date.getTime())) return escapeHtml(value || "Unknown");
+  const month = date.toLocaleDateString(undefined, { month: "short" });
+  const day = date.toLocaleDateString(undefined, { day: "numeric" });
+  const label = formatCalendarDate(value, { includeYear: false });
+  return `<span class="job-age-date" aria-label="${escapeHtml(label)}">`
+    + `<span class="job-age-month" aria-hidden="true">${escapeHtml(month)}</span>`
+    + `<span class="job-age-day" aria-hidden="true">${escapeHtml(day)}</span>`
+    + `</span>`;
+}
+
 function formatGeneratedAt(value) {
   const date = new Date(value);
   if (Number.isNaN(date.getTime())) return "Current US openings";
@@ -635,14 +648,14 @@ function renderJobList(results) {
   els.job_list.innerHTML = visible.map((job) => {
     const saved = Boolean(state.shortlist[job.id]);
     const days = jobAgeDays(job.posted_on);
-    const ageLabel = days === 0 ? "Today" : formatCalendarDate(job.posted_on, { includeYear: false });
+    const ageLabel = days === 0 ? "Today" : compactJobDate(job.posted_on);
     const location = job.location || "Location not stated";
     const experience = job.experience_display || "Experience not stated";
     const sponsorship = sponsorshipLabel(job);
     const specialization = primarySpecialization(job);
     return `
       <div class="job-row${state.selectedId === job.id ? " is-selected" : ""}" role="option" tabindex="-1" aria-selected="${state.selectedId === job.id}" data-job-id="${escapeHtml(job.id)}">
-        <div class="job-age-cell"><span class="job-age${days === 0 ? " is-new" : ""}">${escapeHtml(ageLabel)}</span></div>
+        <div class="job-age-cell"><span class="job-age${days === 0 ? " is-new" : ""}">${days === 0 ? escapeHtml(ageLabel) : ageLabel}</span></div>
         <div class="job-main">
           <h2 class="job-title">${highlightText(job.title)}</h2>
           <p class="job-company">${companyAvatar(job.company, "row")}<span class="job-company-text">${highlightText(job.company)}<span class="job-loc-sep">·</span><span class="job-loc">${highlightText(location)}</span></span></p>

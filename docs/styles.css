@@ -318,6 +318,7 @@ mark { padding: 0 2px; border-radius: 3px; background: rgba(255, 194, 75, 0.34);
   transition: background 180ms ease, border-color 180ms ease;
 }
 .job-age { color: var(--muted); font-size: 10px; font-weight: 650; letter-spacing: 0.02em; text-align: center; line-height: 1.2; }
+.job-age-date { display: inline-flex; gap: 3px; }
 .job-age small { display: block; margin-top: 1px; color: var(--subtle); font-size: 7.5px; font-weight: 500; letter-spacing: 0.14em; }
 .job-row.is-selected .job-age small { color: var(--board-dim); }
 .job-age.is-new { color: var(--flap-ink); }
@@ -798,6 +799,8 @@ mark { padding: 0 2px; border-radius: 3px; background: rgba(255, 194, 75, 0.34);
   .filter-panel { grid-template-columns: 1fr; }
   .results-toolbar { min-height: 54px; padding: 9px 14px; }
   .job-row { grid-template-columns: 46px minmax(0, 1fr); }
+  .job-age-date { flex-direction: column-reverse; gap: 0; line-height: 1.05; }
+  .job-age-month { font-size: 8px; font-weight: 550; letter-spacing: 0.04em; }
   .job-main { padding: 12px 44px 12px 13px; }
   .job-title { white-space: normal; }
   .detail-header, .detail-section { padding: 18px 16px; }
