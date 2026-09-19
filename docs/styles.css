@@ -174,6 +174,18 @@ svg { width: 18px; height: 18px; fill: none; stroke: currentColor; stroke-width:
    Search + filters
    ------------------------------------------------------------------ */
 
+.board-content {
+  display: flex;
+  min-height: 0;
+  flex: 1;
+  flex-direction: column;
+}
+.board-scroll { display: contents; }
+.search-shell { order: 2; }
+.search-intro { order: 1; }
+.storage-warning { order: 3; }
+.workspace { order: 4; }
+
 .search-shell {
   flex: none;
   padding: 12px 20px 10px;
@@ -733,6 +745,18 @@ mark { padding: 0 2px; border-radius: 3px; background: rgba(255, 194, 75, 0.34);
 @media (max-width: 840px), (max-height: 600px) and (max-width: 1000px) {
   body.detail-open { overflow: hidden; }
 
+  /* Keep search controls in the app shell, while the guidance and results
+     header travel with the single mobile results scroll surface. */
+  .board-content { display: flex; min-height: 0; flex-direction: column; }
+  .search-shell { order: 1; }
+  .board-scroll {
+    display: flex; min-height: 0; flex: 1; flex-direction: column; order: 2;
+    overflow-y: auto; overscroll-behavior-y: contain; scrollbar-gutter: stable;
+  }
+  .board-scroll .search-intro { order: 1; flex: none; }
+  .board-scroll .storage-warning { order: 2; flex: none; }
+  .board-scroll .workspace { order: 3; flex: none; min-height: auto; }
+
   .app-header { gap: 8px 14px; min-height: 54px; padding: 0 14px; }
   .brand-word { display: none; }
   .board-status { order: 2; }
@@ -784,7 +808,8 @@ mark { padding: 0 2px; border-radius: 3px; background: rgba(255, 194, 75, 0.34);
   .filter-chip { flex: none; }
 
   .workspace { display: block; min-height: 0; padding: 0; }
-  .results-pane { height: 100%; border: 0; border-radius: 0; box-shadow: none; }
+  .results-pane { height: auto; overflow: visible; border: 0; border-radius: 0; box-shadow: none; }
+  .results-scroll { flex: none; overflow: visible; }
   .detail-pane { position: fixed; z-index: 100; inset: 0; display: none; border: 0; border-radius: 0; background: var(--paper); box-shadow: none; }
   body.detail-open .detail-pane { display: block; }
   .detail-content { width: 100%; min-height: 100%; margin: 0; padding-bottom: 76px; overflow-x: hidden; border: 0; border-radius: 0; }

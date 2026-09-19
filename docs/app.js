@@ -70,7 +70,7 @@ const els = Object.fromEntries([
   "sponsorship-filter", "posted-filter", "sort-filter", "advanced-filters-toggle", "advanced-filter-count", "clear-filters", "active-filters", "storage-warning",
   "results-heading", "results-summary", "shortlist-clear-filters", "sort-note", "results-trust-copy", "match-mode", "job-list", "empty-state", "empty-title", "empty-copy",
   "empty-action", "empty-suggestions", "load-more", "detail-pane", "detail-empty", "detail-content", "sheet-backdrop", "resume-dialog",
-  "resume-input", "resume-status", "resume-progress", "resume-clear", "resume-cancel", "resume-apply", "toast", "search-shell", "jobs-workspace",
+  "resume-input", "resume-status", "resume-progress", "resume-clear", "resume-cancel", "resume-apply", "toast", "board-content", "search-shell", "jobs-workspace",
 ].map((id) => [id.replaceAll("-", "_"), document.getElementById(id)]));
 
 const resumeMatcher = new ResumeMatcher((message) => setResumeStatus(message));
@@ -880,6 +880,7 @@ function render() {
     button.setAttribute("aria-pressed", String(active));
   });
   const marketView = state.view === "market";
+  els.board_content.classList.toggle("hidden", marketView);
   els.search_shell.classList.toggle("hidden", marketView);
   els.jobs_workspace.classList.toggle("hidden", marketView);
   els.storage_warning.classList.toggle("hidden", marketView || !state.storageWarning);

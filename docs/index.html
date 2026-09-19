@@ -83,19 +83,8 @@
     </div>
   </header>
 
+  <div class="board-content" id="board-content">
   <section class="search-shell" id="search-shell" aria-label="Search and filter jobs">
-    <div class="search-intro">
-      <div>
-        <span class="search-kicker">A clearer way to search</span>
-        <p><strong>Fresh tech roles from the last 7 days</strong> — filter by location, experience, authorization, and sponsorship.</p>
-      </div>
-      <div class="starter-searches" aria-label="Starter searches">
-        <span>Try</span>
-        <button type="button" class="starter-search" data-starter-query="software engineer">Software Engineer</button>
-        <button type="button" class="starter-search" data-starter-query="remote data">Remote data</button>
-        <button type="button" class="starter-search" data-starter-query="machine learning">Machine learning</button>
-      </div>
-    </div>
     <div class="search-row">
       <div class="search-combobox">
       <label class="search-field" for="search-input">
@@ -176,6 +165,20 @@
     <div class="active-filters hidden" id="active-filters" aria-label="Active filters"></div>
   </section>
 
+  <div class="board-scroll" id="board-scroll">
+    <div class="search-intro">
+      <div>
+        <span class="search-kicker">A clearer way to search</span>
+        <p><strong>Fresh tech roles from the last 7 days</strong> — filter by location, experience, authorization, and sponsorship.</p>
+      </div>
+      <div class="starter-searches" aria-label="Starter searches">
+        <span>Try</span>
+        <button type="button" class="starter-search" data-starter-query="software engineer">Software Engineer</button>
+        <button type="button" class="starter-search" data-starter-query="remote data">Remote data</button>
+        <button type="button" class="starter-search" data-starter-query="machine learning">Machine learning</button>
+      </div>
+    </div>
+
   <div class="storage-warning hidden" id="storage-warning" role="status"></div>
 
   <main class="workspace" id="jobs-workspace">
@@ -221,6 +224,8 @@
       <div class="detail-content hidden" id="detail-content"></div>
     </aside>
   </main>
+  </div>
+  </div>
 
   <main class="market-analysis hidden" id="market-analysis" aria-labelledby="market-heading">
     <header class="market-hero">
