@@ -1400,3 +1400,75 @@ mark { padding: 0 2px; border-radius: 3px; background: rgba(255, 194, 75, 0.34);
   .pair-grid, .market-methodology-grid { grid-template-columns: 1fr; }
   .market-methodology-grid > div { border-right: 0; }
 }
+
+/* Short tablet/laptop viewports need page scrolling. Keeping the desktop
+   header and split panes locked here leaves too little room for the board. */
+@media (min-width: 1001px) and (max-width: 1280px) and (max-height: 720px) {
+  body {
+    display: block;
+    height: auto;
+    min-height: 100dvh;
+    overflow-x: hidden;
+    overflow-y: auto;
+  }
+
+  .app-header {
+    min-height: 50px;
+    padding: 0 14px;
+    gap: 8px 14px;
+    flex-wrap: nowrap;
+  }
+  .brand { flex: none; gap: 7px; }
+  .brand-mark { width: 26px; height: 26px; font-size: 11px; }
+  .brand-word { font-size: 14px; }
+  .board-status { flex: none; gap: 8px; }
+  .flap-count { gap: 2px; }
+  .flap-tile { min-width: 19px; height: 26px; font-size: 13px; }
+  .board-status-label { font-size: 8px; }
+  .freshness { max-width: 230px; font-size: 8.5px; }
+  .view-tabs { flex: none; gap: 14px; }
+  .view-tab { font-size: 11.5px; }
+  .tab-count { min-width: 17px; height: 17px; font-size: 9px; }
+  .header-actions { flex: none; gap: 4px; }
+  .header-actions .button-board { min-height: 32px; padding: 0 9px; font-size: 11px; }
+  .header-actions .icon-link { width: 34px; height: 34px; }
+
+  .board-content { display: block; min-height: 0; }
+  .search-shell {
+    position: sticky;
+    z-index: 60;
+    top: 0;
+    padding: 6px 0 5px;
+    border-bottom-color: var(--line-strong);
+    box-shadow: 0 5px 16px rgba(18, 20, 28, .08);
+  }
+  .search-row { gap: 8px; }
+  .search-field { height: 40px; border-radius: 10px; }
+  .search-field input { font-size: 14px; }
+  .search-field kbd { font-size: 10px; }
+  .filter-panel { gap: 6px; margin-top: 6px; padding: 7px; border-radius: 10px; }
+  .filter-field { gap: 3px; font-size: 9px; }
+  .filter-field input, .filter-field select { height: 32px; padding-right: 22px; padding-left: 8px; font-size: 12px; }
+  .advanced-filter-toggle { min-height: 32px; padding: 0 8px; font-size: 9px; }
+  .advanced-filter-toggle span { font-size: 8px; }
+  .clear-button { min-height: 32px; padding: 0 8px; font-size: 11px; }
+  .active-filters { gap: 5px; padding-top: 5px; }
+  .active-filters-label { font-size: 8px; }
+  .filter-chip { min-height: 22px; padding: 0 7px; font-size: 10px; }
+  .filter-chip button { width: 15px; height: 15px; font-size: 13px; }
+
+  .search-intro { display: none; }
+  .board-scroll { display: block; min-height: 0; overflow: visible; }
+  .workspace {
+    display: grid;
+    width: min(var(--desktop-content-max), calc(100% - var(--desktop-content-gutter)));
+    min-height: 0;
+    height: auto;
+    padding-top: 10px;
+    padding-bottom: 18px;
+    overflow: visible;
+  }
+  .results-pane, .detail-pane { height: auto; min-height: 0; overflow: visible; }
+  .results-scroll { flex: none; overflow: visible; }
+  .detail-pane { overscroll-behavior: auto; }
+}
