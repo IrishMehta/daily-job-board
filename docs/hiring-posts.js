@@ -32,6 +32,13 @@ function option(value, text) {
   return `<option value="${escapeHtml(value)}">${escapeHtml(text)}</option>`;
 }
 
+export function compareHiringPostDates(left, right, order = "newest") {
+  const leftTime = new Date(left?.published_at || 0).getTime();
+  const rightTime = new Date(right?.published_at || 0).getTime();
+  const direction = order === "oldest" ? 1 : -1;
+  return direction * (leftTime - rightTime);
+}
+
 export function createHiringPosts() {
   const root = document.getElementById("hiring-posts");
   const content = document.getElementById("hiring-posts-content");
@@ -41,6 +48,7 @@ export function createHiringPosts() {
   const roleFilter = document.getElementById("hiring-posts-role-filter");
   const contactFilter = document.getElementById("hiring-posts-contact-filter");
   const posterFilter = document.getElementById("hiring-posts-poster-filter");
+  const sortControl = document.getElementById("hiring-posts-sort");
   let payload = null;
   let loading = false;
 
@@ -55,7 +63,7 @@ export function createHiringPosts() {
 
   function filteredPosts() {
     const query = search.value.trim().toLocaleLowerCase();
-    return payload.posts.filter((post) => {
+    const posts = payload.posts.filter((post) => {
       if (roleFilter.value && !(post.role_families || []).includes(roleFilter.value)) return false;
       if (contactFilter.value && !(post.contact_methods || []).includes(contactFilter.value)) return false;
       if (posterFilter.value && post.poster_relationship !== posterFilter.value) return false;
@@ -63,6 +71,7 @@ export function createHiringPosts() {
       return [post.author_name, post.company, post.summary, ...(post.roles || []), ...(post.locations || [])]
         .join(" ").toLocaleLowerCase().includes(query);
     });
+    return posts.sort((left, right) => compareHiringPostDates(left, right, sortControl.value));
   }
 
   function postCard(post) {
@@ -78,6 +87,7 @@ export function createHiringPosts() {
       </div>
       <h2>${escapeHtml(roleLabel)}</h2>
       <p class="hiring-byline"><strong>${escapeHtml(post.author_name)}</strong>${post.company ? ` · ${escapeHtml(post.company)}` : ""}</p>
+      ${post.hiring_manager_name ? `<p class="hiring-manager">Hiring manager · <strong>${escapeHtml(post.hiring_manager_name)}</strong></p>` : ""}
       <p class="hiring-summary">${escapeHtml(post.summary)}</p>
       <div class="hiring-tags">
         ${(post.role_families || []).map((item) => `<span>${escapeHtml(item)}</span>`).join("")}
@@ -126,7 +136,7 @@ export function createHiringPosts() {
     }
   }
 
-  [search, roleFilter, contactFilter, posterFilter].forEach((control) => control.addEventListener("input", render));
+  [search, roleFilter, contactFilter, posterFilter, sortControl].forEach((control) => control.addEventListener("input", render));
   return {
     show() { root.classList.remove("hidden"); load(); },
     hide() { root.classList.add("hidden"); },
