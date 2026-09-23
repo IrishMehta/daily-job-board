@@ -536,7 +536,7 @@ mark { padding: 0 2px; border-radius: 3px; background: rgba(255, 194, 75, 0.34);
 .hiring-posts-kicker { color: var(--flap-ink); font: 600 10px var(--font-mono); letter-spacing: .12em; text-transform: uppercase; }
 .hiring-posts-hero h1 { margin: 4px 0 6px; font-size: clamp(30px, 4vw, 48px); line-height: 1; letter-spacing: -.045em; }
 .hiring-posts-hero p { max-width: 620px; margin: 0; color: var(--muted); font: 10.5px var(--font-mono); }
-.hiring-posts-filters { display: grid; grid-template-columns: minmax(190px, 1.4fr) repeat(3, minmax(135px, 1fr)); gap: 8px; width: min(720px, 62vw); }
+.hiring-posts-filters { display: grid; grid-template-columns: minmax(190px, 1.4fr) repeat(4, minmax(120px, 1fr)); gap: 8px; width: min(840px, 66vw); }
 .hiring-posts-filters label { display: grid; gap: 4px; color: var(--subtle); font: 9px var(--font-mono); letter-spacing: .06em; text-transform: uppercase; }
 .hiring-posts-filters input, .hiring-posts-filters select { width: 100%; min-width: 0; height: 40px; padding: 0 10px; border: 1px solid var(--line-strong); border-radius: 7px; background: #fff; color: var(--ink); font: 12px var(--font-sans); }
 .hiring-posts-content { max-width: 1320px; margin: 0 auto; }
@@ -553,6 +553,8 @@ mark { padding: 0 2px; border-radius: 3px; background: rgba(255, 194, 75, 0.34);
 .hiring-card h2 { margin: 15px 0 5px; font-size: 17px; line-height: 1.25; letter-spacing: -.015em; }
 .hiring-byline { margin: 0; color: var(--muted); font-size: 11px; }
 .hiring-byline strong { color: var(--ink); }
+.hiring-manager { margin: 7px 0 0; color: var(--muted); font-size: 10px; }
+.hiring-manager strong { color: var(--flap-ink); }
 .hiring-summary { flex: 1; margin: 15px 0; color: #414753; font-size: 13px; line-height: 1.55; }
 .hiring-tags { display: flex; flex-wrap: wrap; gap: 5px; }
 .hiring-tags span { padding: 4px 7px; border: 1px solid var(--line); border-radius: 999px; background: var(--surface-dim); color: var(--muted); font-size: 9px; }
@@ -560,7 +562,7 @@ mark { padding: 0 2px; border-radius: 3px; background: rgba(255, 194, 75, 0.34);
 .hiring-actions { display: flex; flex-wrap: wrap; gap: 7px; margin-top: 17px; padding-top: 13px; border-top: 1px solid var(--line); }
 .hiring-actions .button { min-height: 35px; font-size: 11px; }
 
-@media (max-width: 1100px) {
+@media (max-width: 1350px) {
   .hiring-posts-hero { align-items: stretch; flex-direction: column; }
   .hiring-posts-filters { width: 100%; }
   .hiring-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
