@@ -146,7 +146,7 @@ svg { width: 18px; height: 18px; fill: none; stroke: currentColor; stroke-width:
 .header-tools > summary { list-style: none; }
 .header-tools > summary::-webkit-details-marker { display: none; }
 .header-tools[open] > summary { border-color: rgba(255, 194, 75, .75); color: var(--flap); }
-.tools-menu { position: fixed; z-index: 90; top: var(--tools-menu-top, 68px); right: 12px; left: auto; display: grid; width: min(220px, calc(100vw - 24px)); max-height: calc(100vh - var(--tools-menu-top, 68px) - 12px); gap: 4px; padding: 6px; overflow-y: auto; border: 1px solid var(--board-line); border-radius: 10px; background: var(--board); box-shadow: var(--shadow-pop); }
+.tools-menu { position: fixed; z-index: 90; top: var(--tools-menu-top, 68px); right: 12px; left: var(--tools-menu-left, auto); display: grid; width: min(220px, calc(100vw - 24px)); max-height: calc(100vh - var(--tools-menu-top, 68px) - 12px); gap: 4px; padding: 6px; overflow-y: auto; border: 1px solid var(--board-line); border-radius: 10px; background: var(--board); box-shadow: var(--shadow-pop); }
 .tools-menu .button-board { justify-content: flex-start; width: 100%; min-height: 36px; padding: 0 10px; border: 0; background: transparent; font-size: 12px; }
 
 .button, .icon-link, .icon-button, .load-more {
@@ -526,6 +526,52 @@ mark { padding: 0 2px; border-radius: 3px; background: rgba(255, 194, 75, 0.34);
 .tour-step-actions { display: flex; gap: 8px; }
 .tour-actions .button { min-height: 36px; }
 .tour-actions .button-quiet { padding-right: 4px; padding-left: 4px; }
+
+/* ------------------------------------------------------------------
+   Hiring posts — independent public LinkedIn signal feed
+   ------------------------------------------------------------------ */
+
+.hiring-posts { flex: 1; min-height: 0; overflow-y: auto; padding: 28px clamp(16px, 3vw, 44px) 64px; background: #f2f3ef; }
+.hiring-posts-hero { display: flex; max-width: 1320px; align-items: end; justify-content: space-between; gap: 28px; margin: 0 auto 22px; }
+.hiring-posts-kicker { color: var(--flap-ink); font: 600 10px var(--font-mono); letter-spacing: .12em; text-transform: uppercase; }
+.hiring-posts-hero h1 { margin: 4px 0 6px; font-size: clamp(30px, 4vw, 48px); line-height: 1; letter-spacing: -.045em; }
+.hiring-posts-hero p { max-width: 620px; margin: 0; color: var(--muted); font: 10.5px var(--font-mono); }
+.hiring-posts-filters { display: grid; grid-template-columns: minmax(190px, 1.4fr) repeat(3, minmax(135px, 1fr)); gap: 8px; width: min(720px, 62vw); }
+.hiring-posts-filters label { display: grid; gap: 4px; color: var(--subtle); font: 9px var(--font-mono); letter-spacing: .06em; text-transform: uppercase; }
+.hiring-posts-filters input, .hiring-posts-filters select { width: 100%; min-width: 0; height: 40px; padding: 0 10px; border: 1px solid var(--line-strong); border-radius: 7px; background: #fff; color: var(--ink); font: 12px var(--font-sans); }
+.hiring-posts-content { max-width: 1320px; margin: 0 auto; }
+.hiring-loading, .hiring-empty { display: grid; min-height: 360px; place-content: center; justify-items: center; text-align: center; color: var(--muted); }
+.hiring-loading strong, .hiring-empty strong { color: var(--ink); font-size: 18px; }
+.hiring-loading span, .hiring-empty p { margin: 5px 0 0; font-size: 12px; }
+.hiring-results-note { margin-bottom: 10px; color: var(--subtle); font: 9px var(--font-mono); letter-spacing: .08em; text-transform: uppercase; }
+.hiring-grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 13px; }
+.hiring-card { display: flex; min-width: 0; flex-direction: column; padding: 18px; border: 1px solid var(--line); border-radius: 14px; background: var(--surface); box-shadow: 0 6px 20px rgba(18,20,28,.055); }
+.hiring-card-topline { display: flex; align-items: center; justify-content: space-between; gap: 12px; }
+.hiring-card-topline time { color: var(--subtle); font: 9px var(--font-mono); }
+.hiring-signal { padding: 4px 7px; border: 1px solid var(--line); border-radius: 999px; color: var(--muted); font: 700 8px var(--font-mono); letter-spacing: .06em; text-transform: uppercase; }
+.hiring-signal.is-direct { border-color: var(--go-line); background: var(--go-soft); color: var(--go); }
+.hiring-card h2 { margin: 15px 0 5px; font-size: 17px; line-height: 1.25; letter-spacing: -.015em; }
+.hiring-byline { margin: 0; color: var(--muted); font-size: 11px; }
+.hiring-byline strong { color: var(--ink); }
+.hiring-summary { flex: 1; margin: 15px 0; color: #414753; font-size: 13px; line-height: 1.55; }
+.hiring-tags { display: flex; flex-wrap: wrap; gap: 5px; }
+.hiring-tags span { padding: 4px 7px; border: 1px solid var(--line); border-radius: 999px; background: var(--surface-dim); color: var(--muted); font-size: 9px; }
+.hiring-tags .is-dm { border-color: var(--warn-line); background: var(--warn-soft); color: var(--warn); font-weight: 700; }
+.hiring-actions { display: flex; flex-wrap: wrap; gap: 7px; margin-top: 17px; padding-top: 13px; border-top: 1px solid var(--line); }
+.hiring-actions .button { min-height: 35px; font-size: 11px; }
+
+@media (max-width: 1100px) {
+  .hiring-posts-hero { align-items: stretch; flex-direction: column; }
+  .hiring-posts-filters { width: 100%; }
+  .hiring-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+}
+
+@media (max-width: 640px) {
+  .hiring-posts { padding: 22px 13px 48px; }
+  .hiring-posts-filters { grid-template-columns: 1fr 1fr; }
+  .hiring-posts-filters label:first-child { grid-column: 1 / -1; }
+  .hiring-grid { grid-template-columns: 1fr; }
+}
 
 /* ------------------------------------------------------------------
    Market trends — aggregate-only Spark analytics

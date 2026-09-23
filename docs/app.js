@@ -11,6 +11,7 @@ import {
 import { countFacetValues, explainResumeMatch, filterAndSortJobs, normalizeText, ResumeMatcher, sortFacetItems, tokenize } from "./matching.js";
 import { isCurrentSearchResponse } from "./search.js";
 import { createMarketAnalysis } from "./market-analysis.js";
+import { createHiringPosts } from "./hiring-posts.js";
 import { createProductTour } from "./product-tour.js";
 
 const PAGE_BATCH = 40;
@@ -75,6 +76,7 @@ const els = Object.fromEntries([
 
 const resumeMatcher = new ResumeMatcher((message) => setResumeStatus(message));
 const marketAnalysis = createMarketAnalysis();
+const hiringPosts = createHiringPosts();
 const productTour = createProductTour();
 let searchWorker = null;
 let searchTimer = null;
@@ -354,7 +356,7 @@ function readUrlState(filters) {
     next[key] = ARRAY_FILTERS.has(key) ? parseListParam(params.get(param)) : (params.get(param) || DEFAULT_FILTERS[key]);
   });
   if (params.has("q") && !params.has("sort") && next.query) next.sort = "relevance";
-  state.view = ["shortlist", "market"].includes(params.get("view")) ? params.get("view") : "all";
+  state.view = ["shortlist", "market", "hiring"].includes(params.get("view")) ? params.get("view") : "all";
   return sanitizeFilters(next);
 }
 
@@ -880,11 +882,14 @@ function render() {
     button.setAttribute("aria-pressed", String(active));
   });
   const marketView = state.view === "market";
-  els.board_content.classList.toggle("hidden", marketView);
-  els.search_shell.classList.toggle("hidden", marketView);
-  els.jobs_workspace.classList.toggle("hidden", marketView);
-  els.storage_warning.classList.toggle("hidden", marketView || !state.storageWarning);
+  const hiringView = state.view === "hiring";
+  const auxiliaryView = marketView || hiringView;
+  els.board_content.classList.toggle("hidden", auxiliaryView);
+  els.search_shell.classList.toggle("hidden", auxiliaryView);
+  els.jobs_workspace.classList.toggle("hidden", auxiliaryView);
+  els.storage_warning.classList.toggle("hidden", auxiliaryView || !state.storageWarning);
   if (marketView) {
+    hiringPosts.hide();
     marketAnalysis.show();
     els.all_count.textContent = `(${formatCount(state.jobs.length)})`;
     els.shortlist_count.textContent = formatCount(Object.keys(state.shortlist).length);
@@ -892,6 +897,14 @@ function render() {
     return;
   }
   marketAnalysis.hide();
+  if (hiringView) {
+    hiringPosts.show();
+    els.all_count.textContent = `(${formatCount(state.jobs.length)})`;
+    els.shortlist_count.textContent = formatCount(Object.keys(state.shortlist).length);
+    document.body.classList.remove("detail-open");
+    return;
+  }
+  hiringPosts.hide();
   if (!state.payload) return;
   const results = currentResults();
   if (state.selectedId && !results.some((job) => job.id === state.selectedId)) {
@@ -1073,6 +1086,14 @@ function bindEvents() {
     if (!toolsSummary) return;
     const rect = toolsSummary.getBoundingClientRect();
     headerTools.style.setProperty("--tools-menu-top", `${Math.round(rect.bottom + 8)}px`);
+
+    // Keep the menu attached to the control that opened it while clamping it
+    // inside the viewport. A fixed menu aligned to the viewport edge looks
+    // detached on tablet widths and can be difficult to discover.
+    const menuWidth = Math.min(220, Math.max(0, window.innerWidth - 24));
+    const menuRight = Math.min(window.innerWidth - 12, rect.right);
+    const menuLeft = Math.max(12, menuRight - menuWidth);
+    headerTools.style.setProperty("--tools-menu-left", `${Math.round(menuLeft)}px`);
   };
   headerTools?.addEventListener("toggle", positionToolsMenu);
   window.addEventListener("resize", positionToolsMenu);
@@ -1388,7 +1409,7 @@ async function init() {
   window.setTimeout(() => {
     // A shared Market Trends link should open directly into the dashboard;
     // the board tour is only relevant to the job-search view.
-    if (state.view !== "market") productTour.autoStart();
+    if (["all", "shortlist"].includes(state.view)) productTour.autoStart();
   }, 650);
 }
 

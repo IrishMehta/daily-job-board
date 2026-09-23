@@ -46,6 +46,7 @@
 
     <nav class="view-tabs" aria-label="Job views">
       <button class="view-tab is-active" type="button" data-view="all" aria-pressed="true">All roles <span id="all-count"></span></button>
+      <button class="view-tab" type="button" data-view="hiring" aria-pressed="false">Hiring posts <span class="tab-count" id="hiring-posts-count"></span></button>
       <button class="view-tab resume-tab" id="resume-open" type="button" aria-haspopup="dialog" aria-controls="resume-dialog">Match resume</button>
       <button class="view-tab" type="button" data-view="shortlist" aria-pressed="false">
         Shortlist <span class="tab-count" id="shortlist-count">0</span>
@@ -259,6 +260,33 @@
         <div class="market-skeleton-row"><div class="market-skeleton"></div><div class="market-skeleton"></div><div class="market-skeleton"></div></div>
         <strong>Preparing the market view</strong><span>Coverage and freshness will appear when the aggregate data is ready.</span>
       </div>
+    </div>
+  </main>
+
+  <main class="hiring-posts hidden" id="hiring-posts" aria-labelledby="hiring-posts-heading">
+    <header class="hiring-posts-hero">
+      <div>
+        <span class="hiring-posts-kicker">Direct signals from public LinkedIn posts</span>
+        <h1 id="hiring-posts-heading">Hiring posts</h1>
+        <p id="hiring-posts-freshness">Current AI, machine-learning, and data hiring signals load when you open this view.</p>
+      </div>
+      <div class="hiring-posts-filters" aria-label="Filter hiring posts">
+        <label>Search
+          <input id="hiring-posts-search" type="search" placeholder="Role, company, author, or location">
+        </label>
+        <label>Role family
+          <select id="hiring-posts-role-filter"><option value="">All role families</option></select>
+        </label>
+        <label>Contact
+          <select id="hiring-posts-contact-filter"><option value="">Any contact method</option></select>
+        </label>
+        <label>Posted by
+          <select id="hiring-posts-poster-filter"><option value="">Any poster type</option></select>
+        </label>
+      </div>
+    </header>
+    <div class="hiring-posts-content" id="hiring-posts-content" aria-live="polite">
+      <div class="hiring-loading"><strong>Preparing hiring signals</strong><span>Public posts and verified application links will appear here.</span></div>
     </div>
   </main>
 

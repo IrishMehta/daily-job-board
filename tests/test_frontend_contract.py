@@ -126,6 +126,24 @@ class FrontendContractTests(unittest.TestCase):
         for forbidden in ("job_description", "evidence_snippet", "/scratch/", "https://"):
             self.assertNotIn(forbidden, serialized)
 
+    def test_hiring_posts_tab_is_lazy_and_keeps_raw_post_text_private(self):
+        html = (DOCS / "index.html").read_text(encoding="utf-8")
+        app_source = (DOCS / "app.js").read_text(encoding="utf-8")
+        hiring_source = (DOCS / "hiring-posts.js").read_text(encoding="utf-8")
+        payload = json.loads((DOCS / "data" / "hiring_posts.json").read_text(encoding="utf-8"))
+
+        self.assertIn('data-view="hiring"', html)
+        self.assertIn('id="hiring-posts"', html)
+        self.assertIn('id="hiring-posts-search"', html)
+        self.assertIn('from "./hiring-posts.js"', app_source)
+        self.assertIn('fetch(DATA_URL)', hiring_source)
+        self.assertIn('rel="noopener noreferrer"', hiring_source)
+        self.assertEqual("hiring-posts-public-v1", payload["schema_version"])
+        self.assertEqual(14, payload["retention_days"])
+        serialized = json.dumps(payload).casefold()
+        for forbidden in ("post_text", "author_comments", "evidence", "alert_subject", "/scratch/"):
+            self.assertNotIn(forbidden, serialized)
+
     def test_market_trends_uses_explanatory_visual_system(self):
         market_source = (DOCS / "market-analysis.js").read_text(encoding="utf-8")
         styles = (DOCS / "styles.css").read_text(encoding="utf-8")
