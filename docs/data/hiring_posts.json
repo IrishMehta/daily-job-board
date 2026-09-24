@@ -1,8 +1,37 @@
 {
   "schema_version": "hiring-posts-public-v1",
-  "generated_at": "2026-09-23T16:31:00.193168Z",
+  "generated_at": "2026-09-24T12:28:37.699235Z",
   "retention_days": 14,
   "posts": [
+    {
+      "id": "7508496897754640387",
+      "linkedin_url": "https://www.linkedin.com/posts/madhu-chavre-915a1b136_%F0%9D%97%AA%F0%9D%97%B2%F0%9D%97%BF%F0%9D%97%B2-%F0%9D%97%9B%F0%9D%97%B6%F0%9D%97%BF%F0%9D%97%B6%F0%9D%97%BB%F0%9D%97%B4-%F0%9D%97%94%F0%9D%97%9C%F0%9D%97%A0%F0%9D%97%9F-%F0%9D%97%A3%F0%9D%98%86%F0%9D%98%81%F0%9D%97%B5%F0%9D%97%BC%F0%9D%97%BB-activity-7508496897754640387-rBF1",
+      "author_name": "Madhu Chavre",
+      "author_profile_url": "",
+      "published_at": "2026-09-23T12:06:01.550Z",
+      "summary": "TechAbbot is hiring an AI/ML Python Developer for an on-site role in Ahmedabad with 5+ years of experience required.",
+      "post_type": "active_opening",
+      "poster_intent": "employer_hiring",
+      "target_role_match": "direct_target",
+      "poster_relationship": "unknown",
+      "hiring_manager_name": "",
+      "contact_methods": [
+        "email"
+      ],
+      "role_families": [
+        "AI / Machine Learning"
+      ],
+      "roles": [
+        "AI/ML Python Developer"
+      ],
+      "company": "TechAbbot",
+      "locations": [
+        "Ahmedabad"
+      ],
+      "work_arrangement": "On-site",
+      "application_links": [],
+      "source_quality": "full_post"
+    },
     {
       "id": "7507973951453736960",
       "linkedin_url": "https://www.linkedin.com/posts/v2ai_hiring-wearev2ai-ai-activity-7507973951453736960-Zg71",
@@ -472,6 +501,35 @@
       "source_quality": "full_post"
     },
     {
+      "id": "7508052522494849024",
+      "linkedin_url": "https://www.linkedin.com/posts/shruti-bajpai_were-hiring-data-scientist-ai-applied-activity-7508052522494849024-H23x",
+      "author_name": "Shruti Bajpai",
+      "author_profile_url": "",
+      "published_at": "2026-09-22T06:40:14.232Z",
+      "summary": "A company is hiring a Data Scientist – AI/ Applied AI Scientist for an on-site role in Delhi NCR with a focus on machine learning, generative AI, LLMs, and production-grade AI systems.",
+      "post_type": "active_opening",
+      "poster_intent": "employer_hiring",
+      "target_role_match": "direct_target",
+      "poster_relationship": "hiring_manager",
+      "hiring_manager_name": "",
+      "contact_methods": [
+        "apply_link"
+      ],
+      "role_families": [
+        "AI / Machine Learning"
+      ],
+      "roles": [
+        "Data Scientist – AI/ Applied AI Scientist"
+      ],
+      "company": "",
+      "locations": [
+        "Delhi NCR"
+      ],
+      "work_arrangement": "On-site",
+      "application_links": [],
+      "source_quality": "full_post"
+    },
+    {
       "id": "7508024719150080002",
       "linkedin_url": "https://www.linkedin.com/posts/jakerudin_hiring-hiring-aiengineering-activity-7508024719150080002-uPWG",
       "author_name": "Jake Rudin",
@@ -505,12 +563,68 @@
       "source_quality": "full_post"
     },
     {
+      "id": "7507934445333684224",
+      "linkedin_url": "https://www.linkedin.com/posts/vedika-patel-5863b534a_were-hiring-aiml-engineer-freshers-activity-7507934445333684224-JvfA",
+      "author_name": "Vedika Patel",
+      "author_profile_url": "https://www.linkedin.com/in/vedika-patel-5863b534a",
+      "published_at": "2026-09-21T22:51:02.443Z",
+      "summary": "An organization is hiring an AI/ML Engineer with 0–3 years of experience, welcoming freshers, to develop and deploy machine learning models and work on real-world AI applications.",
+      "post_type": "active_opening",
+      "poster_intent": "employer_hiring",
+      "target_role_match": "direct_target",
+      "poster_relationship": "unknown",
+      "hiring_manager_name": "",
+      "contact_methods": [
+        "comment",
+        "email"
+      ],
+      "role_families": [
+        "AI / Machine Learning"
+      ],
+      "roles": [
+        "AI/ML Engineer"
+      ],
+      "company": "",
+      "locations": [],
+      "work_arrangement": "Unspecified",
+      "application_links": [],
+      "source_quality": "full_post"
+    },
+    {
       "id": "7507934396059156480",
       "linkedin_url": "https://www.linkedin.com/posts/vidhi-patel-23759141b_were-hiring-aiml-engineer-freshers-activity-7507934396059156480-ayzY",
       "author_name": "Vidhi Patel",
       "author_profile_url": "https://www.linkedin.com/in/vidhi-patel-23759141b",
       "published_at": "2026-09-21T22:50:50.628Z",
       "summary": "An organization is hiring an AI/ML Engineer with 0–3 years of experience, welcoming freshers, with responsibilities in developing and deploying machine learning models and working with real-world AI/ML applications.",
+      "post_type": "active_opening",
+      "poster_intent": "employer_hiring",
+      "target_role_match": "direct_target",
+      "poster_relationship": "unknown",
+      "hiring_manager_name": "",
+      "contact_methods": [
+        "comment",
+        "email"
+      ],
+      "role_families": [
+        "AI / Machine Learning"
+      ],
+      "roles": [
+        "AI/ML Engineer"
+      ],
+      "company": "",
+      "locations": [],
+      "work_arrangement": "Unspecified",
+      "application_links": [],
+      "source_quality": "full_post"
+    },
+    {
+      "id": "7507934141280276480",
+      "linkedin_url": "https://www.linkedin.com/posts/yash-patel-17b654301_were-hiring-aiml-engineer-freshers-activity-7507934141280276480-Mt6R",
+      "author_name": "Yash Patel",
+      "author_profile_url": "https://www.linkedin.com/in/yash-patel-17b654301",
+      "published_at": "2026-09-21T22:49:49.950Z",
+      "summary": "An organization is hiring an AI/ML Engineer with 0–3 years of experience, welcoming freshers, with responsibilities in developing and deploying machine learning models and working on real-world AI applications.",
       "post_type": "active_opening",
       "poster_intent": "employer_hiring",
       "target_role_match": "direct_target",
@@ -1262,35 +1376,6 @@
       ],
       "company": "Microsoft",
       "locations": [],
-      "work_arrangement": "Unspecified",
-      "application_links": [],
-      "source_quality": "full_post"
-    },
-    {
-      "id": "7506327544699297793",
-      "linkedin_url": "https://www.linkedin.com/posts/mariia-herasymova-hr-recruitment-expert_microsoftcareers-hiring-softwareengineering-activity-7506327544699297793-o_mN",
-      "author_name": "LinkedIn author",
-      "author_profile_url": "",
-      "published_at": "2026-09-18T08:22:40Z",
-      "summary": "Microsoft is hiring a Senior Software Engineer for the PALM team in Prague, focusing on AI-integrated tools for incident investigation and production reliability within Microsoft Security.",
-      "post_type": "active_opening",
-      "poster_intent": "sharing_opening",
-      "target_role_match": "direct_target",
-      "poster_relationship": "recruiter",
-      "hiring_manager_name": "Andrej",
-      "contact_methods": [
-        "apply_link"
-      ],
-      "role_families": [
-        "AI / Machine Learning"
-      ],
-      "roles": [
-        "Senior Software Engineer"
-      ],
-      "company": "Microsoft",
-      "locations": [
-        "Prague"
-      ],
       "work_arrangement": "Unspecified",
       "application_links": [],
       "source_quality": "full_post"
