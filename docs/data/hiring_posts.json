@@ -1,8 +1,102 @@
 {
   "schema_version": "hiring-posts-public-v1",
-  "generated_at": "2026-09-24T12:28:37.699235Z",
+  "generated_at": "2026-09-25T12:31:36.098760Z",
   "retention_days": 14,
   "posts": [
+    {
+      "id": "7509004400791605248",
+      "linkedin_url": "https://www.linkedin.com/posts/tamir-shklaz_were-hiring-engineers-to-build-ai-that-saves-activity-7509004400791605248-yAyH",
+      "author_name": "LinkedIn author",
+      "author_profile_url": "",
+      "published_at": "2026-09-25T08:15:36Z",
+      "summary": "HealthLeap is hiring Full Stack/Product Engineers, Forward Deployed Engineers, and Technical PMs for on-site roles in San Francisco to build AI that improves clinical outcomes.",
+      "post_type": "active_opening",
+      "poster_intent": "employer_hiring",
+      "target_role_match": "direct_target",
+      "poster_relationship": "hiring_manager",
+      "hiring_manager_name": "",
+      "contact_methods": [
+        "apply_link",
+        "email"
+      ],
+      "role_families": [
+        "AI / Machine Learning"
+      ],
+      "roles": [
+        "Full Stack / Product Engineers",
+        "Forward Deployed Engineers",
+        "Technical PMs"
+      ],
+      "company": "HealthLeap",
+      "locations": [
+        "San Francisco, CA"
+      ],
+      "work_arrangement": "On-site",
+      "application_links": [],
+      "source_quality": "full_post"
+    },
+    {
+      "id": "7508857289878163456",
+      "linkedin_url": "https://www.linkedin.com/posts/kesari007_sharing-some-fresh-hiring-opportunities-activity-7508857289878163456-ox5Y",
+      "author_name": "Ankur Kesharwani",
+      "author_profile_url": "",
+      "published_at": "2026-09-24T11:58:05.728Z",
+      "summary": "Multiple companies are hiring: EA for a Software Engineer in Hyderabad, EXL for a Data Engineer in Gurugram, and Gleantap for an AI Backend Engineer in India; apply links provided.",
+      "post_type": "active_opening",
+      "poster_intent": "sharing_opening",
+      "target_role_match": "mixed_with_target",
+      "poster_relationship": "aggregator",
+      "hiring_manager_name": "",
+      "contact_methods": [
+        "apply_link"
+      ],
+      "role_families": [
+        "Data Engineering",
+        "AI / Machine Learning"
+      ],
+      "roles": [
+        "Data Engineer",
+        "AI Backend Engineer"
+      ],
+      "company": "Multiple",
+      "locations": [
+        "Hyderabad, India",
+        "Gurugram",
+        "India"
+      ],
+      "work_arrangement": "Unspecified",
+      "application_links": [],
+      "source_quality": "full_post"
+    },
+    {
+      "id": "7508578549956730880",
+      "linkedin_url": "https://www.linkedin.com/posts/parisalak_hiring-ai-responsibleai-activity-7508578549956730880-Vtj0",
+      "author_name": "Parisa Lak , PhD, MBA",
+      "author_profile_url": "",
+      "published_at": "2026-09-23T17:30:28.951Z",
+      "summary": "Hiring for multiple Manager/Senior Manager roles in AI Model Risk Management focused on AI governance, oversight, and responsible AI within a financial services context.",
+      "post_type": "active_opening",
+      "poster_intent": "employer_hiring",
+      "target_role_match": "direct_target",
+      "poster_relationship": "hiring_manager",
+      "hiring_manager_name": "",
+      "contact_methods": [
+        "apply_link"
+      ],
+      "role_families": [
+        "AI Security"
+      ],
+      "roles": [
+        "Manager / Senior Manager, AI Model Risk Governance, Standards & Enablement",
+        "Manager / Senior Manager, AI Model Risk Oversight & Challenge",
+        "Manager / Senior Manager, AI Model Risk & Operational Risk Oversight, Global Risk"
+      ],
+      "company": "",
+      "locations": [],
+      "work_arrangement": "Unspecified",
+      "application_links": [],
+      "source_quality": "full_post"
+    },
     {
       "id": "7508496897754640387",
       "linkedin_url": "https://www.linkedin.com/posts/madhu-chavre-915a1b136_%F0%9D%97%AA%F0%9D%97%B2%F0%9D%97%BF%F0%9D%97%B2-%F0%9D%97%9B%F0%9D%97%B6%F0%9D%97%BF%F0%9D%97%B6%F0%9D%97%BB%F0%9D%97%B4-%F0%9D%97%94%F0%9D%97%9C%F0%9D%97%A0%F0%9D%97%9F-%F0%9D%97%A3%F0%9D%98%86%F0%9D%98%81%F0%9D%97%B5%F0%9D%97%BC%F0%9D%97%BB-activity-7508496897754640387-rBF1",
@@ -437,6 +531,33 @@
         "UAE"
       ],
       "work_arrangement": "On-site",
+      "application_links": [],
+      "source_quality": "full_post"
+    },
+    {
+      "id": "7508098674007203840",
+      "linkedin_url": "https://www.linkedin.com/posts/lukecarter20_were-excited-to-be-hiring-another-data-scientist-activity-7508098674007203840-Ejzv",
+      "author_name": "Luke Carter",
+      "author_profile_url": "",
+      "published_at": "2026-09-22T09:43:37.609Z",
+      "summary": "TFG is hiring a Data Scientist for the Technology Solutions squad, seeking someone with sports context and experience in modeling and pipeline work using AI tooling.",
+      "post_type": "active_opening",
+      "poster_intent": "employer_hiring",
+      "target_role_match": "direct_target",
+      "poster_relationship": "hiring_manager",
+      "hiring_manager_name": "",
+      "contact_methods": [
+        "unspecified"
+      ],
+      "role_families": [
+        "Data Science"
+      ],
+      "roles": [
+        "Data Scientist"
+      ],
+      "company": "TFG",
+      "locations": [],
+      "work_arrangement": "Unspecified",
       "application_links": [],
       "source_quality": "full_post"
     },
@@ -1381,6 +1502,35 @@
       "source_quality": "full_post"
     },
     {
+      "id": "7506327544699297793",
+      "linkedin_url": "https://www.linkedin.com/posts/mariia-herasymova-hr-recruitment-expert_microsoftcareers-hiring-softwareengineering-activity-7506327544699297793-o_mN",
+      "author_name": "LinkedIn author",
+      "author_profile_url": "",
+      "published_at": "2026-09-18T08:22:40Z",
+      "summary": "Microsoft is hiring a Senior Software Engineer for the PALM team in Prague, focusing on AI-integrated tools for incident investigation and production reliability within Microsoft Security.",
+      "post_type": "active_opening",
+      "poster_intent": "sharing_opening",
+      "target_role_match": "direct_target",
+      "poster_relationship": "recruiter",
+      "hiring_manager_name": "Andrej",
+      "contact_methods": [
+        "apply_link"
+      ],
+      "role_families": [
+        "AI / Machine Learning"
+      ],
+      "roles": [
+        "Senior Software Engineer"
+      ],
+      "company": "Microsoft",
+      "locations": [
+        "Prague"
+      ],
+      "work_arrangement": "Unspecified",
+      "application_links": [],
+      "source_quality": "full_post"
+    },
+    {
       "id": "7506531384690253824",
       "linkedin_url": "https://www.linkedin.com/posts/reddy-rahul-saddala-ba70a8253_machinelearning-artificialintelligence-activity-7506531384690253824-BeKE",
       "author_name": "REDDY RAHUL SADDALA",
@@ -1926,33 +2076,6 @@
       "locations": [
         "India"
       ],
-      "work_arrangement": "Unspecified",
-      "application_links": [],
-      "source_quality": "full_post"
-    },
-    {
-      "id": "7505659520916832273",
-      "linkedin_url": "https://www.linkedin.com/posts/gard-rogne-315738252_im-hiring-an-ai-chatbot-expert-im-looking-activity-7505659520916832273-L5dw",
-      "author_name": "Gard Rogne",
-      "author_profile_url": "",
-      "published_at": "2026-09-15T16:11:18.170Z",
-      "summary": "An AI Chatbot Expert is being hired to build AI chatbot systems for business use, including automation, lead qualification, and customer support.",
-      "post_type": "active_opening",
-      "poster_intent": "employer_hiring",
-      "target_role_match": "direct_target",
-      "poster_relationship": "hiring_manager",
-      "hiring_manager_name": "",
-      "contact_methods": [
-        "dm"
-      ],
-      "role_families": [
-        "AI / Machine Learning"
-      ],
-      "roles": [
-        "AI Chatbot Expert"
-      ],
-      "company": "",
-      "locations": [],
       "work_arrangement": "Unspecified",
       "application_links": [],
       "source_quality": "full_post"
