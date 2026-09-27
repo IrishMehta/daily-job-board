@@ -1,8 +1,150 @@
 {
   "schema_version": "hiring-posts-public-v1",
-  "generated_at": "2026-09-26T12:01:59.762984Z",
+  "generated_at": "2026-09-27T12:43:54.218615Z",
   "retention_days": 14,
   "posts": [
+    {
+      "id": "7509841086840836096",
+      "linkedin_url": "https://www.linkedin.com/posts/kamal-sharma-2a654a191_%F0%9D%97%A1%F0%9D%97%A2%F0%9D%97%AA-%F0%9D%97%9B%F0%9D%97%9C%F0%9D%97%A5%F0%9D%97%9C%F0%9D%97%A1%F0%9D%97%9A-%F0%9D%97%9B%F0%9D%97%96%F0%9D%97%9F%F0%9D%97%A7%F0%9D%97%B2%F0%9D%97%B0%F0%9D%97%B5-activity-7509841086840836096-RjTz",
+      "author_name": "Kamal Sharma",
+      "author_profile_url": "",
+      "published_at": "2026-09-27T05:07:21.202Z",
+      "summary": "HCLTech is hiring an AI Engineer for a role in Noida, Uttar Pradesh. The position targets AI/ML freshers with skills in Python, machine learning, and related technologies.",
+      "post_type": "active_opening",
+      "poster_intent": "sharing_opening",
+      "target_role_match": "direct_target",
+      "poster_relationship": "aggregator",
+      "hiring_manager_name": "",
+      "contact_methods": [
+        "apply_link"
+      ],
+      "role_families": [
+        "AI / Machine Learning"
+      ],
+      "roles": [
+        "AI Engineer"
+      ],
+      "company": "HCLTech",
+      "locations": [
+        "Noida, Uttar Pradesh"
+      ],
+      "work_arrangement": "Unspecified",
+      "application_links": [],
+      "source_quality": "full_post"
+    },
+    {
+      "id": "7509819280545390592",
+      "linkedin_url": "https://www.linkedin.com/posts/cseprofessor_hiring-internship-ai-activity-7509819280545390592-7Rtq",
+      "author_name": "Vijay K.",
+      "author_profile_url": "",
+      "published_at": "2026-09-27T03:40:42.176Z",
+      "summary": "Codexaon is hiring an AI Full Stack Developer Intern for a hybrid or online role in Bengaluru, India, with a focus on building AI-powered web applications using React, Node.js, Python, and Generative AI technologies.",
+      "post_type": "active_opening",
+      "poster_intent": "employer_hiring",
+      "target_role_match": "direct_target",
+      "poster_relationship": "unknown",
+      "hiring_manager_name": "",
+      "contact_methods": [
+        "apply_link",
+        "comment"
+      ],
+      "role_families": [
+        "AI / Machine Learning"
+      ],
+      "roles": [
+        "AI Full Stack Developer Intern"
+      ],
+      "company": "Codexaon",
+      "locations": [
+        "Bengaluru, India"
+      ],
+      "work_arrangement": "Hybrid",
+      "application_links": [],
+      "source_quality": "full_post"
+    },
+    {
+      "id": "7509658324905189376",
+      "linkedin_url": "https://www.linkedin.com/posts/akshika_%F0%9D%97%A7%F0%9D%97%B5%F0%9D%97%B2-%F0%9D%97%97-%F0%9D%97%98-%F0%9D%97%A6%F0%9D%97%B5%F0%9D%97%AE%F0%9D%98%84-%F0%9D%97%9A%F0%9D%97%BF%F0%9D%97%BC%F0%9D%98%82%F0%9D%97%BD-%F0%9D%97%B6%F0%9D%98%80-%F0%9D%97%B5%F0%9D%97%B6%F0%9D%97%BF%F0%9D%97%B6%F0%9D%97%BB%F0%9D%97%B4-activity-7509658324905189376-kklz",
+      "author_name": "Dr Akshika Wijesundara",
+      "author_profile_url": "https://www.linkedin.com/in/akshika",
+      "published_at": "2026-09-26T17:01:07.361Z",
+      "summary": "The D. E. Shaw Group is hiring an Applied AI Engineer for a hybrid role in New York, NY, focused on building and deploying AI agents and user-facing applications.",
+      "post_type": "active_opening",
+      "poster_intent": "employer_hiring",
+      "target_role_match": "direct_target",
+      "poster_relationship": "hiring_manager",
+      "hiring_manager_name": "",
+      "contact_methods": [
+        "unspecified"
+      ],
+      "role_families": [
+        "AI / Machine Learning"
+      ],
+      "roles": [
+        "Applied AI Engineer"
+      ],
+      "company": "The D. E. Shaw Group",
+      "locations": [
+        "New York, NY"
+      ],
+      "work_arrangement": "Hybrid",
+      "application_links": [],
+      "source_quality": "full_post"
+    },
+    {
+      "id": "7509552388349931520",
+      "linkedin_url": "https://www.linkedin.com/posts/taomar_hiring-strategicprojects-projectleadership-activity-7509552388349931520-FXkv",
+      "author_name": "Tamer Omar, MBA, PMP",
+      "author_profile_url": "",
+      "published_at": "2026-09-26T10:00:10.118Z",
+      "summary": "A fully remote Strategic Project Lead role is open, focused on leading complex projects for top AI lab customers, involving technical and operational workflows in data, AI, and machine learning.",
+      "post_type": "active_opening",
+      "poster_intent": "employer_hiring",
+      "target_role_match": "direct_target",
+      "poster_relationship": "unknown",
+      "hiring_manager_name": "",
+      "contact_methods": [
+        "apply_link"
+      ],
+      "role_families": [
+        "AI / Machine Learning"
+      ],
+      "roles": [
+        "Strategic Project Lead"
+      ],
+      "company": "",
+      "locations": [],
+      "work_arrangement": "Remote",
+      "application_links": [],
+      "source_quality": "full_post"
+    },
+    {
+      "id": "7509496115914960896",
+      "linkedin_url": "https://www.linkedin.com/posts/ahmad-haider-phd-0a792b5_hiring-engineering-data-activity-7509496115914960896-omrB",
+      "author_name": "Ahmad Haider, PhD",
+      "author_profile_url": "https://www.linkedin.com/in/ahmad-haider-phd-0a792b5",
+      "published_at": "2026-09-26T06:16:33.708Z",
+      "summary": "Natera is hiring a Director, Data Product Engineering to lead the development of AI-native data products and transform data engineering practices using data mesh and semantic modeling.",
+      "post_type": "active_opening",
+      "poster_intent": "employer_hiring",
+      "target_role_match": "direct_target",
+      "poster_relationship": "team_member",
+      "hiring_manager_name": "",
+      "contact_methods": [
+        "apply_link"
+      ],
+      "role_families": [
+        "Data Engineering"
+      ],
+      "roles": [
+        "Director, Data Product Engineering"
+      ],
+      "company": "Natera",
+      "locations": [],
+      "work_arrangement": "Unspecified",
+      "application_links": [],
+      "source_quality": "full_post"
+    },
     {
       "id": "7509417302082105344",
       "linkedin_url": "https://www.linkedin.com/posts/dhanraj-shinemaven_hiring-now-aiml-developer-genai-llm-activity-7509417302082105344-gjQt",
@@ -29,6 +171,92 @@
         "Hyderabad"
       ],
       "work_arrangement": "Hybrid",
+      "application_links": [],
+      "source_quality": "full_post"
+    },
+    {
+      "id": "7509389738278080512",
+      "linkedin_url": "https://www.linkedin.com/posts/deepenpanchal_were-hiring-my-team-is-hiring-an-ai-activity-7509389738278080512-XlTC",
+      "author_name": "Deepen Panchal",
+      "author_profile_url": "https://www.linkedin.com/in/deepenpanchal",
+      "published_at": "2026-09-25T23:13:51.319Z",
+      "summary": "A team is hiring an AI Engineer to work on improving a Data Agent through model evaluation, tool calls, retrieval, and continual learning. Contact via comment.",
+      "post_type": "active_opening",
+      "poster_intent": "employer_hiring",
+      "target_role_match": "direct_target",
+      "poster_relationship": "hiring_manager",
+      "hiring_manager_name": "",
+      "contact_methods": [
+        "comment"
+      ],
+      "role_families": [
+        "AI / Machine Learning"
+      ],
+      "roles": [
+        "AI Engineer"
+      ],
+      "company": "",
+      "locations": [],
+      "work_arrangement": "Unspecified",
+      "application_links": [],
+      "source_quality": "full_post"
+    },
+    {
+      "id": "7509296185849917441",
+      "linkedin_url": "https://www.linkedin.com/posts/nkyriazidisitechscope_hiring-activity-7509296185849917441-76ZH",
+      "author_name": "Nikos Kyriazidis",
+      "author_profile_url": "",
+      "published_at": "2026-09-25T17:02:06.682Z",
+      "summary": "A Senior AI Engineer is being hired for a fully remote role based in Greece, with a focus on LLMs, GenAI, and production AI in a SaaS product.",
+      "post_type": "active_opening",
+      "poster_intent": "employer_hiring",
+      "target_role_match": "direct_target",
+      "poster_relationship": "unknown",
+      "hiring_manager_name": "",
+      "contact_methods": [
+        "dm"
+      ],
+      "role_families": [
+        "AI / Machine Learning"
+      ],
+      "roles": [
+        "Senior AI Engineer"
+      ],
+      "company": "",
+      "locations": [
+        "Greece"
+      ],
+      "work_arrangement": "Remote",
+      "application_links": [],
+      "source_quality": "full_post"
+    },
+    {
+      "id": "7509269120517984257",
+      "linkedin_url": "https://www.linkedin.com/posts/mjonna_im-hiring-a-director-of-ai-enablement-to-activity-7509269120517984257-kHl6",
+      "author_name": "Manoj Jonna",
+      "author_profile_url": "https://www.linkedin.com/in/mjonna",
+      "published_at": "2026-09-25T15:14:33.804Z",
+      "summary": "Crunchyroll is hiring a Director of AI Enablement to lead AI-driven workflow transformation and adoption, based in LA or Dallas.",
+      "post_type": "active_opening",
+      "poster_intent": "employer_hiring",
+      "target_role_match": "direct_target",
+      "poster_relationship": "hiring_manager",
+      "hiring_manager_name": "",
+      "contact_methods": [
+        "apply_link"
+      ],
+      "role_families": [
+        "AI / Machine Learning"
+      ],
+      "roles": [
+        "Director of AI Enablement"
+      ],
+      "company": "Crunchyroll",
+      "locations": [
+        "LA",
+        "Dallas"
+      ],
+      "work_arrangement": "Unspecified",
       "application_links": [],
       "source_quality": "full_post"
     },
@@ -61,6 +289,87 @@
         "San Francisco, CA"
       ],
       "work_arrangement": "On-site",
+      "application_links": [],
+      "source_quality": "full_post"
+    },
+    {
+      "id": "7509021165823381505",
+      "linkedin_url": "https://www.linkedin.com/posts/christine-o-donnell-2410a189_hiring-ai-cloudarchitecture-activity-7509021165823381505-MZiw",
+      "author_name": "Christine O'Donnell",
+      "author_profile_url": "https://www.linkedin.com/in/christine-o-donnell-2410a189",
+      "published_at": "2026-09-24T22:49:16.797Z",
+      "summary": "A Staff AI Architect role is open for a senior software engineer with AWS, Kubernetes, DevOps, and AI systems expertise to lead scalable cloud and agentic AI platforms.",
+      "post_type": "active_opening",
+      "poster_intent": "sharing_opening",
+      "target_role_match": "direct_target",
+      "poster_relationship": "unknown",
+      "hiring_manager_name": "",
+      "contact_methods": [
+        "apply_link"
+      ],
+      "role_families": [
+        "AI / Machine Learning"
+      ],
+      "roles": [
+        "Staff AI Architect"
+      ],
+      "company": "",
+      "locations": [],
+      "work_arrangement": "Unspecified",
+      "application_links": [],
+      "source_quality": "full_post"
+    },
+    {
+      "id": "7508895936581017600",
+      "linkedin_url": "https://www.linkedin.com/posts/varmer_emma-is-hiring-an-ai-change-lead-this-is-activity-7508895936581017600-rvU3",
+      "author_name": "Henrik Varmer",
+      "author_profile_url": "",
+      "published_at": "2026-09-24T14:31:39.819Z",
+      "summary": "VELUX is hiring an AI Change Lead, a role central to shaping foundational AI work and enabling AI adoption across the global organization.",
+      "post_type": "active_opening",
+      "poster_intent": "sharing_opening",
+      "target_role_match": "direct_target",
+      "poster_relationship": "unknown",
+      "hiring_manager_name": "Emma",
+      "contact_methods": [
+        "unspecified"
+      ],
+      "role_families": [
+        "AI / Machine Learning"
+      ],
+      "roles": [
+        "AI Change Lead"
+      ],
+      "company": "VELUX",
+      "locations": [],
+      "work_arrangement": "Unspecified",
+      "application_links": [],
+      "source_quality": "full_post"
+    },
+    {
+      "id": "7508885595058921472",
+      "linkedin_url": "https://www.linkedin.com/posts/pqrst_hiring-phd-iitroorkee-iimahmedabad-activity-7508885595058921472-yDQo",
+      "author_name": "Dr. Amit Upadhyay",
+      "author_profile_url": "",
+      "published_at": "2026-09-24T13:50:34.208Z",
+      "summary": "DoMS, IIT Roorkee in collaboration with Krishnamurthy Tandon School of AI, IIM Ahmedabad is hiring PhD/JRF candidates for research in optimization, operations research, and AI applied to transportation and logistics.",
+      "post_type": "active_opening",
+      "poster_intent": "employer_hiring",
+      "target_role_match": "direct_target",
+      "poster_relationship": "hiring_manager",
+      "hiring_manager_name": "Ankur Sinha",
+      "contact_methods": [
+        "email"
+      ],
+      "role_families": [
+        "AI / Machine Learning"
+      ],
+      "roles": [
+        "PhD / JRF candidate"
+      ],
+      "company": "DoMS, IIT Roorkee in collaboration with Krishnamurthy Tandon School of AI, IIM Ahmedabad",
+      "locations": [],
+      "work_arrangement": "Unspecified",
       "application_links": [],
       "source_quality": "full_post"
     },
@@ -206,35 +515,6 @@
         "Ahmedabad"
       ],
       "work_arrangement": "On-site",
-      "application_links": [],
-      "source_quality": "full_post"
-    },
-    {
-      "id": "7507973951453736960",
-      "linkedin_url": "https://www.linkedin.com/posts/v2ai_hiring-wearev2ai-ai-activity-7507973951453736960-Zg71",
-      "author_name": "LinkedIn author",
-      "author_profile_url": "",
-      "published_at": "2026-09-23T04:10:50Z",
-      "summary": "V2 AI is hiring for Data Scientist and AI Engineer roles focused on AI/ML and generative AI, with applications directed to a job link.",
-      "post_type": "general_hiring",
-      "poster_intent": "company_hiring",
-      "target_role_match": "direct_target",
-      "poster_relationship": "company_page",
-      "hiring_manager_name": "",
-      "contact_methods": [
-        "apply_link"
-      ],
-      "role_families": [
-        "Data Science",
-        "AI / Machine Learning"
-      ],
-      "roles": [
-        "Data Scientist",
-        "AI Engineer – Open-Source LLM Adaptation"
-      ],
-      "company": "V2 AI",
-      "locations": [],
-      "work_arrangement": "Unspecified",
       "application_links": [],
       "source_quality": "full_post"
     },
