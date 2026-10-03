@@ -1080,6 +1080,17 @@ function clearResume() {
 function bindEvents() {
   const advancedFilterCount = document.querySelectorAll(".advanced-filter").length;
   els.advanced_filter_count.textContent = `(${advancedFilterCount} available)`;
+  const syncBoardStickyOffset = () => {
+    if (!els.search_shell) return;
+    const boardScroll = document.getElementById("board-scroll");
+    const boardTop = boardScroll?.getBoundingClientRect().top ?? els.search_shell.getBoundingClientRect().bottom;
+    document.documentElement.style.setProperty("--board-sticky-top", `${Math.max(0, Math.ceil(boardTop))}px`);
+  };
+  const searchShellObserver = "ResizeObserver" in window ? new ResizeObserver(syncBoardStickyOffset) : null;
+  searchShellObserver?.observe(els.search_shell);
+  window.addEventListener("resize", syncBoardStickyOffset);
+  syncBoardStickyOffset();
+
   const headerTools = document.querySelector(".header-tools");
   const toolsSummary = headerTools?.querySelector("summary");
   const positionToolsMenu = () => {
