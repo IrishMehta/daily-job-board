@@ -25,8 +25,8 @@
   --radius-sm: 7px;
   --radius: 10px;
   --radius-lg: 14px;
-  --font-sans: "Forum", Georgia, "Times New Roman", serif;
-  --font-mono: "VT323", ui-monospace, "SFMono-Regular", Menlo, Consolas, monospace;
+  --font-sans: "Archivo", ui-sans-serif, system-ui, -apple-system, "Segoe UI", sans-serif;
+  --font-mono: "IBM Plex Mono", ui-monospace, "SFMono-Regular", Menlo, Consolas, monospace;
   --shadow-pop: 0 14px 40px rgba(18, 20, 28, 0.18);
   --board-sticky-top: 0px;
   --desktop-content-max: 1840px;
