@@ -96,12 +96,16 @@ svg { width: 18px; height: 18px; fill: none; stroke: currentColor; stroke-width:
 .brand-mark {
   display: grid; place-items: center;
   width: 30px; height: 30px;
+  padding: 1px;
+  overflow: hidden;
   border: 1px solid var(--board-line);
   border-radius: var(--radius-sm);
   background: var(--board-raised);
-  color: var(--flap);
-  font-family: var(--font-mono);
-  font-size: 12px; font-weight: 600;
+}
+.brand-logo {
+  display: block;
+  width: 100%; height: 100%;
+  object-fit: contain;
 }
 .brand-word {
   font-size: 15px;
@@ -182,11 +186,20 @@ svg { width: 18px; height: 18px; fill: none; stroke: currentColor; stroke-width:
   flex: 1;
   flex-direction: column;
 }
-.board-scroll { display: contents; }
-.search-shell { order: 2; }
-.search-intro { order: 1; }
-.storage-warning { order: 3; }
-.workspace { order: 4; }
+.board-scroll {
+  display: flex;
+  min-height: 0;
+  flex: 1;
+  flex-direction: column;
+  order: 2;
+  overflow-y: auto;
+  overscroll-behavior-y: contain;
+  scrollbar-gutter: stable;
+}
+.search-shell { order: 1; }
+.board-scroll .search-intro { order: 1; flex: none; }
+.board-scroll .storage-warning { order: 2; }
+.board-scroll .workspace { order: 3; flex: none; min-height: 100%; }
 
 .search-shell {
   flex: none;
@@ -1519,4 +1532,38 @@ mark { padding: 0 2px; border-radius: 3px; background: rgba(255, 194, 75, 0.34);
   .results-pane, .detail-pane { height: auto; min-height: 0; overflow: visible; }
   .results-scroll { flex: none; overflow: visible; }
   .detail-pane { overscroll-behavior: auto; }
+}
+
+/* Medium desktop widths cannot fit the full brand, status, four view tabs, and
+   three labeled actions on one row. Keep the header single-line and let the
+   secondary actions use their already-visible icons instead of wrapping below
+   the primary navigation. */
+@media (min-width: 1001px) and (max-width: 1599px) {
+  .app-header {
+    flex-wrap: nowrap;
+    gap: 8px 14px;
+    min-height: 56px;
+    padding: 0 14px;
+  }
+  .brand { flex: none; gap: 7px; }
+  .brand-mark { width: 27px; height: 27px; font-size: 11px; }
+  .brand-word { font-size: 14px; }
+  .board-status { flex: none; gap: 8px; }
+  .flap-count { gap: 2px; }
+  .flap-tile { min-width: 19px; height: 27px; font-size: 13px; }
+  .board-status-copy { max-width: 190px; }
+  .freshness { max-width: 190px; font-size: 9px; }
+  .view-tabs { min-width: 0; flex: 1; justify-content: flex-end; gap: 14px; }
+  .view-tab { font-size: 12px; white-space: nowrap; }
+  .header-actions { flex: none; gap: 4px; }
+  .header-actions > .header-tools > summary,
+  .header-actions > .guide-action,
+  .header-actions > .market-action {
+    width: 36px;
+    min-height: 34px;
+    padding: 0;
+    gap: 0;
+    font-size: 0;
+  }
+  .header-actions .icon-link { width: 34px; height: 34px; }
 }
