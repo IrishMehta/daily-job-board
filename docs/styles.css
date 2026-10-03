@@ -320,6 +320,7 @@ mark { padding: 0 2px; border-radius: 3px; background: rgba(255, 194, 75, 0.34);
 }
 .results-pane {
   display: flex; min-width: 0; min-height: 0; flex-direction: column; overflow: hidden;
+  container: results-pane / inline-size;
   border: 1px solid var(--line); border-radius: var(--radius-lg); background: var(--paper);
   box-shadow: 0 8px 28px rgba(18, 20, 28, 0.055);
 }
@@ -335,6 +336,22 @@ mark { padding: 0 2px; border-radius: 3px; background: rgba(255, 194, 75, 0.34);
 
 .results-scroll { min-height: 0; flex: 1; overflow-y: auto; overscroll-behavior: contain; scrollbar-gutter: stable; }
 .job-list { display: flex; flex-direction: column; gap: 10px; padding: 12px 14px 2px; }
+
+/* Use the available results-pane width, not the viewport width. This keeps
+   split-screen details usable while taking advantage of wide list views. */
+@container results-pane (min-width: 720px) {
+  .job-list {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    align-items: stretch;
+  }
+  .job-list .job-title {
+    overflow: visible;
+    text-overflow: clip;
+    white-space: normal;
+    overflow-wrap: anywhere;
+  }
+}
 
 .job-row {
   position: relative;
