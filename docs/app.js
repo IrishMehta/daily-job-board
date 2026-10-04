@@ -1084,7 +1084,7 @@ function bindEvents() {
     if (!els.search_shell) return;
     const boardScroll = document.getElementById("board-scroll");
     const boardTop = boardScroll?.getBoundingClientRect().top ?? els.search_shell.getBoundingClientRect().bottom;
-    document.documentElement.style.setProperty("--board-sticky-top", `${Math.max(0, Math.ceil(boardTop))}px`);
+    document.documentElement.style.setProperty("--board-viewport-top", `${Math.max(0, Math.ceil(boardTop))}px`);
   };
   const searchShellObserver = "ResizeObserver" in window ? new ResizeObserver(syncBoardStickyOffset) : null;
   searchShellObserver?.observe(els.search_shell);
