@@ -1006,7 +1006,11 @@ mark { padding: 0 2px; border-radius: 3px; background: rgba(255, 194, 75, 0.34);
   .active-filters { overflow-x: auto; flex-wrap: nowrap; padding-bottom: 2px; }
   .filter-chip { flex: none; }
 
-  .workspace { display: block; min-height: 0; padding: 0; }
+  /* This is a flex item inside .board-scroll. `width: auto` combined with the
+     desktop `margin: 0 auto` can collapse its used width to zero in Firefox,
+     leaving a tall but invisible job list. Make the mobile reading surface
+     explicitly fill the scroll container. */
+  .workspace { display: block; width: 100%; min-height: 0; margin: 0; padding: 0; }
   .results-pane { height: auto; overflow: visible; border: 0; border-radius: 0; box-shadow: none; }
   .results-scroll { flex: none; overflow: visible; }
   .detail-pane { position: fixed; z-index: 100; inset: 0; display: none; border: 0; border-radius: 0; background: var(--paper); box-shadow: none; }

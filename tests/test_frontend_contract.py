@@ -56,6 +56,14 @@ class FrontendContractTests(unittest.TestCase):
         self.assertIn('class="job-age-day"', app_source)
         self.assertIn(".job-age-date { flex-direction: column-reverse", styles)
 
+    def test_mobile_results_workspace_cannot_collapse_to_zero_width(self):
+        styles = (DOCS / "styles.css").read_text(encoding="utf-8")
+
+        self.assertIn(
+            ".workspace { display: block; width: 100%; min-height: 0; margin: 0; padding: 0; }",
+            styles,
+        )
+
     def test_first_visit_guide_has_six_steps_and_no_shortlist_step(self):
         html = (DOCS / "index.html").read_text(encoding="utf-8")
         tour_source = (DOCS / "product-tour.js").read_text(encoding="utf-8")
