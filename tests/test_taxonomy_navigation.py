@@ -30,6 +30,26 @@ class TaxonomyNavigationTests(unittest.TestCase):
         self.assertIn("export function countFacetValues", self.matching)
         self.assertIn("export function sortFacetItems", self.matching)
 
+    def test_categorical_facets_support_multiple_selections(self):
+        for filter_id in (
+            "domain-filter",
+            "specialization-filter",
+            "industry-filter",
+            "career-filter",
+            "authorization-filter",
+            "sponsorship-filter",
+        ):
+            self.assertIn(f'id="{filter_id}" multiple', self.index)
+        self.assertIn('class="multi-select-trigger"', self.index)
+        self.assertIn("function setArrayFilter(", self.app)
+        self.assertIn("selectedValues.some", self.matching)
+
+    def test_multiple_role_focuses_offer_their_combined_specializations(self):
+        self.assertIn("function specializationItemsForDomains(domains)", self.app)
+        self.assertIn("taxonomyDomains.filter((item) => selectedDomains.has(item.value))", self.app)
+        self.assertIn("relevantDomains.flatMap((item) => item.specializations", self.app)
+        self.assertIn("pruneSpecializationsForDomains()", self.app)
+
     def test_filters_are_shareable_in_url_state(self):
         self.assertIn('domains: "domain"', self.app)
         self.assertIn('specializations: "specialization"', self.app)

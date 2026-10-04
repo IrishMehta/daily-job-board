@@ -19,7 +19,7 @@ describe("API without an active dataset", () => {
 		expect(docsHtml).toContain("ai_machine_learning");
 		expect(docsHtml).toContain("state=CA");
 		expect(docsHtml).toContain("--board:#1a1d27");
-		expect(docsHtml).toContain("https://irishmehta.github.io/daily-job-board/");
+		expect(docsHtml).toContain("https://irishmehta.com/daily-job-board/");
 
 		const openapi = await request("/openapi.json");
 		expect(openapi.status).toBe(200);

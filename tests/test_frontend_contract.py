@@ -1,6 +1,7 @@
 """Static contract checks for the zero-build public dashboard."""
 
 import json
+import re
 import unittest
 from pathlib import Path
 
@@ -94,6 +95,48 @@ class FrontendContractTests(unittest.TestCase):
         self.assertIn('class="github-mark"', html)
         self.assertIn('aria-label="View this project on GitHub"', html)
         self.assertIn('type="module" src="./app.js"', html)
+
+    def test_site_level_search_and_social_metadata_use_canonical_domain(self):
+        html = (DOCS / "index.html").read_text(encoding="utf-8")
+        robots = (DOCS / "robots.txt").read_text(encoding="utf-8")
+        sitemap = (DOCS / "sitemap.xml").read_text(encoding="utf-8")
+        canonical_url = "https://irishmehta.com/daily-job-board/"
+        social_image = f"{canonical_url}assets/job-discovery-mark.png"
+
+        self.assertIn(
+            "<title>Fresh US Tech Jobs, Updated Daily | Job Discovery</title>",
+            html,
+        )
+        self.assertIn(
+            '<meta property="og:title" content="Fresh US Tech Jobs, Updated Daily">',
+            html,
+        )
+        self.assertIn(
+            '<meta name="twitter:title" content="Fresh US Tech Jobs, Updated Daily">',
+            html,
+        )
+        self.assertIn(f'<link rel="canonical" href="{canonical_url}">', html)
+        self.assertIn(f'<meta property="og:url" content="{canonical_url}">', html)
+        self.assertIn(f'<meta property="og:image" content="{social_image}">', html)
+        self.assertIn(f'<meta name="twitter:image" content="{social_image}">', html)
+        self.assertIn('<meta name="twitter:card" content="summary">', html)
+        self.assertIn('<script type="application/ld+json">', html)
+        structured_data_match = re.search(
+            r'<script type="application/ld\+json">\s*(.*?)\s*</script>',
+            html,
+            flags=re.DOTALL,
+        )
+        self.assertIsNotNone(structured_data_match)
+        structured_data = json.loads(structured_data_match.group(1))
+        self.assertEqual("WebSite", structured_data["@type"])
+        self.assertEqual(canonical_url, structured_data["url"])
+        self.assertNotIn('"@type": "JobPosting"', html)
+        self.assertNotIn('<meta name="keywords"', html)
+        self.assertIn(f"Sitemap: {canonical_url}sitemap.xml", robots)
+        self.assertIn(f"<loc>{canonical_url}</loc>", sitemap)
+
+        for source in (html, robots, sitemap):
+            self.assertNotIn("irishmehta.github.io/daily-job-board", source)
 
     def test_market_trends_tab_is_lazy_and_aggregate_only(self):
         html = (DOCS / "index.html").read_text(encoding="utf-8")

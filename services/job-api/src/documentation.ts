@@ -378,8 +378,8 @@ export function docsHandler(request: Request): Response {
 </head>
 <body>
   <header><nav>
-    <a class="brand" href="https://irishmehta.github.io/daily-job-board/" aria-label="Open Job Discovery board"><span class="brand-mark" aria-hidden="true">API</span><span class="brand-word">Public Job API</span></a>
-    <span class="nav-links"><a href="https://irishmehta.github.io/daily-job-board/">Job board</a><a href="${safeOrigin}/v1/status">Status</a><a href="${safeOrigin}/openapi.json">OpenAPI</a><a href="${safeOrigin}/llms.txt">LLM guide</a></span>
+    <a class="brand" href="https://irishmehta.com/daily-job-board/" aria-label="Open Job Discovery board"><span class="brand-mark" aria-hidden="true">API</span><span class="brand-word">Public Job API</span></a>
+    <span class="nav-links"><a href="https://irishmehta.com/daily-job-board/">Job board</a><a href="${safeOrigin}/v1/status">Status</a><a href="${safeOrigin}/openapi.json">OpenAPI</a><a href="${safeOrigin}/llms.txt">LLM guide</a></span>
   </nav></header>
   <main>
     <div class="eyebrow">Read-only · public · no authentication</div>

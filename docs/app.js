@@ -83,6 +83,7 @@ let searchTimer = null;
 let toastTimer = null;
 let renderedFacetState = "";
 let advancedFiltersOpen = false;
+let openMultiSelectKey = "";
 
 function escapeHtml(value) {
   return String(value ?? "")
@@ -423,21 +424,99 @@ function facetStateSignature() {
   });
 }
 
-function setFacetOptions(element, defaultLabel, items, counts, selectedValue) {
-  element.innerHTML = option("", defaultLabel)
-    + sortFacetItems(uniqueFacetItems(items)).map((item) => option(item.value, item.label, counts.get(item.value) ?? 0)).join("");
-  element.value = selectedValue || "";
+function specializationItemsForDomains(domains) {
+  const taxonomyDomains = state.payload?.taxonomy?.domains ?? [];
+  const selectedDomains = new Set(domains);
+  const relevantDomains = selectedDomains.size
+    ? taxonomyDomains.filter((item) => selectedDomains.has(item.value))
+    : taxonomyDomains;
+  return uniqueFacetItems(relevantDomains.flatMap((item) => item.specializations ?? []));
+}
+
+function pruneSpecializationsForDomains() {
+  if (!state.payload || !state.filters.domains.length) return;
+  const valid = new Set(specializationItemsForDomains(state.filters.domains).map((item) => item.value));
+  state.filters.specializations = state.filters.specializations.filter((value) => valid.has(value));
+}
+
+function multiSelectSummary(defaultLabel, items, selectedValues) {
+  if (!selectedValues.length) return defaultLabel;
+  if (selectedValues.length > 1) return `${selectedValues.length} selected`;
+  const match = items.find((item) => item.value === selectedValues[0]);
+  return match?.label || selectedValues[0];
+}
+
+function syncMultiSelectOpenState(wrapper, key) {
+  const isOpen = openMultiSelectKey === key;
+  wrapper.classList.toggle("is-open", isOpen);
+  const trigger = wrapper.querySelector(".multi-select-trigger");
+  const menu = wrapper.querySelector(".multi-select-menu");
+  trigger?.setAttribute("aria-expanded", String(isOpen));
+  if (!menu) return;
+  menu.hidden = !isOpen;
+  menu.classList.remove("align-right");
+  if (isOpen && menu.getBoundingClientRect().right > window.innerWidth - 12) menu.classList.add("align-right");
+}
+
+function closeMultiSelectMenus() {
+  openMultiSelectKey = "";
+  document.querySelectorAll(".multi-select").forEach((wrapper) => {
+    syncMultiSelectOpenState(wrapper, wrapper.dataset.filterKey);
+  });
+}
+
+function toggleMultiSelectMenu(key) {
+  openMultiSelectKey = openMultiSelectKey === key ? "" : key;
+  document.querySelectorAll(".multi-select").forEach((wrapper) => {
+    syncMultiSelectOpenState(wrapper, wrapper.dataset.filterKey);
+  });
+}
+
+function setFacetOptions(element, defaultLabel, key, items, counts, selectedValues) {
+  const sortedItems = sortFacetItems(uniqueFacetItems(items));
+  const selected = new Set(selectedValues);
+  element.innerHTML = sortedItems.map((item) => option(item.value, item.label, counts.get(item.value) ?? 0)).join("");
+  [...element.options].forEach((entry) => { entry.selected = selected.has(entry.value); });
+
+  const wrapper = element.closest(".multi-select");
+  if (!wrapper) return;
+  const trigger = wrapper.querySelector(".multi-select-trigger");
+  const value = wrapper.querySelector(".multi-select-value");
+  const menu = wrapper.querySelector(".multi-select-menu");
+  const summary = multiSelectSummary(defaultLabel, sortedItems, selectedValues);
+  const fieldName = wrapper.closest(".filter-field")?.querySelector(":scope > span")?.textContent?.trim() || defaultLabel;
+  value.textContent = summary;
+  trigger.title = selectedValues.length > 1
+    ? selectedValues.map((selectedValue) => sortedItems.find((item) => item.value === selectedValue)?.label || selectedValue).join(", ")
+    : "";
+  trigger.setAttribute("aria-label", `${fieldName}: ${summary}. Select one or more.`);
+  trigger.disabled = !sortedItems.length;
+  wrapper.classList.toggle("has-selection", selectedValues.length > 0);
+  menu.setAttribute("role", "group");
+  menu.setAttribute("aria-label", `${fieldName} options`);
+  menu.innerHTML = `
+    <div class="multi-select-menu-header">
+      <span>Select one or more</span>
+      <button type="button" data-multi-clear="${escapeHtml(key)}"${selectedValues.length ? "" : " disabled"}>Clear</button>
+    </div>
+    <div class="multi-select-options">
+      ${sortedItems.map((item) => {
+        const count = counts.get(item.value) ?? 0;
+        return `<label class="multi-select-option">
+          <input type="checkbox" value="${escapeHtml(item.value)}" data-multi-option="${escapeHtml(key)}"${selected.has(item.value) ? " checked" : ""}>
+          <span>${escapeHtml(item.label)}</span><small>${formatCount(count)}</small>
+        </label>`;
+      }).join("")}
+    </div>`;
+  syncMultiSelectOpenState(wrapper, key);
 }
 
 function updateFacetOptions({ force = false } = {}) {
   const signature = facetStateSignature();
   if (!force && signature === renderedFacetState) return;
   const taxonomy = state.payload.taxonomy ?? {};
-  const selectedDomain = state.filters.domains[0] || "";
   const domains = taxonomy.domains ?? [];
-  const specializationItems = selectedDomain
-    ? domains.find((item) => item.value === selectedDomain)?.specializations ?? []
-    : domains.flatMap((item) => item.specializations ?? []);
+  const specializationItems = specializationItemsForDomains(state.filters.domains);
   const shared = {
     shortlist: state.view === "shortlist" ? state.shortlist : null,
     searchScores: state.searchScores,
@@ -476,9 +555,10 @@ function updateFacetOptions({ force = false } = {}) {
     setFacetOptions(
       definition.element,
       definition.defaultLabel,
+      definition.key,
       definition.items,
       counts,
-      state.filters[definition.key][0],
+      state.filters[definition.key],
     );
   });
   renderedFacetState = signature;
@@ -491,26 +571,39 @@ function populateFilters() {
   syncControlsFromState();
 }
 
-function setSingleArrayFilter(key, value) {
-  state.filters[key] = value ? [value] : [];
+function setArrayFilter(key, values, { focusValue = "" } = {}) {
+  state.filters[key] = [...new Set(values.filter(Boolean))];
+  if (key === "domains") pruneSpecializationsForDomains();
   state.visibleLimit = PAGE_BATCH;
   state.selectedId = "";
   state.selectionPinned = false;
   persist();
   writeUrlState();
   render();
+  if (focusValue) {
+    window.requestAnimationFrame(() => {
+      const wrapper = document.querySelector(`.multi-select[data-filter-key="${key}"]`);
+      [...(wrapper?.querySelectorAll("[data-multi-option]") ?? [])]
+        .find((input) => input.value === focusValue)?.focus();
+    });
+  }
 }
 
 function syncControlsFromState() {
   els.search_input.value = state.filters.query;
-  els.domain_filter.value = state.filters.domains[0] || "";
-  els.specialization_filter.value = state.filters.specializations[0] || "";
-  els.industry_filter.value = state.filters.industries[0] || "";
+  [
+    [els.domain_filter, state.filters.domains],
+    [els.specialization_filter, state.filters.specializations],
+    [els.industry_filter, state.filters.industries],
+    [els.career_filter, state.filters.careerBuckets],
+    [els.authorization_filter, state.filters.authorizationCategories],
+    [els.sponsorship_filter, state.filters.sponsorshipStatuses],
+  ].forEach(([element, selectedValues]) => {
+    const selected = new Set(selectedValues);
+    [...element.options].forEach((entry) => { entry.selected = selected.has(entry.value); });
+  });
   els.location_filter.value = state.filters.location;
-  els.career_filter.value = state.filters.careerBuckets[0] || "";
   els.experience_years_filter.value = state.filters.experienceYears;
-  els.authorization_filter.value = state.filters.authorizationCategories[0] || "";
-  els.sponsorship_filter.value = state.filters.sponsorshipStatuses[0] || "";
   els.posted_filter.value = state.filters.postedRange;
   els.sort_filter.value = state.filters.sort;
 }
@@ -956,6 +1049,7 @@ function render() {
 }
 
 function clearFilters() {
+  closeMultiSelectMenus();
   state.filters = freshFilters();
   state.visibleLimit = PAGE_BATCH;
   state.selectedId = "";
@@ -968,6 +1062,7 @@ function clearFilters() {
 }
 
 function clearShortlistFilters() {
+  closeMultiSelectMenus();
   state.filters = freshFilters();
   state.view = "shortlist";
   state.visibleLimit = PAGE_BATCH;
@@ -995,6 +1090,7 @@ function openFilters() {
 }
 
 function closeFilters() {
+  closeMultiSelectMenus();
   els.filter_panel.classList.remove("is-open");
   els.sheet_backdrop.classList.add("hidden");
   els.mobile_filter_open.setAttribute("aria-expanded", "false");
@@ -1189,6 +1285,10 @@ function bindEvents() {
     }
     if (event.key === "Escape" && event.target.closest?.("#search-input")) return;
     if (event.key === "Escape") {
+      if (openMultiSelectKey) {
+        closeMultiSelectMenus();
+        return;
+      }
       state.suggestionsOpen = false;
       state.suggestionIndex = -1;
       renderSearchChrome();
@@ -1197,19 +1297,33 @@ function bindEvents() {
     }
   });
   document.addEventListener("click", (event) => {
+    if (!event.target.closest(".multi-select") && openMultiSelectKey) closeMultiSelectMenus();
     if (event.target.closest(".search-combobox")) return;
     state.suggestionsOpen = false;
     state.suggestionIndex = -1;
     renderSearchChrome();
   });
-  els.domain_filter.addEventListener("change", () => {
-    state.filters.domains = els.domain_filter.value ? [els.domain_filter.value] : [];
-    state.filters.specializations = [];
-    setSingleArrayFilter("domains", els.domain_filter.value);
+  els.filter_panel.addEventListener("click", (event) => {
+    const trigger = event.target.closest(".multi-select-trigger");
+    if (trigger) {
+      toggleMultiSelectMenu(trigger.closest(".multi-select").dataset.filterKey);
+      return;
+    }
+    const clear = event.target.closest("[data-multi-clear]");
+    if (clear) {
+      setArrayFilter(clear.dataset.multiClear, []);
+      window.requestAnimationFrame(() => document.querySelector(`.multi-select[data-filter-key="${clear.dataset.multiClear}"] .multi-select-trigger`)?.focus());
+    }
   });
-  els.specialization_filter.addEventListener("change", () => setSingleArrayFilter("specializations", els.specialization_filter.value));
-  els.industry_filter.addEventListener("change", () => setSingleArrayFilter("industries", els.industry_filter.value));
-  els.career_filter.addEventListener("change", () => setSingleArrayFilter("careerBuckets", els.career_filter.value));
+  els.filter_panel.addEventListener("change", (event) => {
+    const input = event.target.closest("[data-multi-option]");
+    if (!input) return;
+    const key = input.dataset.multiOption;
+    const values = input.checked
+      ? [...state.filters[key], input.value]
+      : state.filters[key].filter((value) => value !== input.value);
+    setArrayFilter(key, values, { focusValue: input.value });
+  });
   els.experience_years_filter.addEventListener("input", () => {
     window.clearTimeout(searchTimer);
     searchTimer = window.setTimeout(() => {
@@ -1221,8 +1335,6 @@ function bindEvents() {
       persist(); writeUrlState(); render();
     }, 160);
   });
-  els.authorization_filter.addEventListener("change", () => setSingleArrayFilter("authorizationCategories", els.authorization_filter.value));
-  els.sponsorship_filter.addEventListener("change", () => setSingleArrayFilter("sponsorshipStatuses", els.sponsorship_filter.value));
   els.location_filter.addEventListener("input", () => {
     window.clearTimeout(searchTimer);
     searchTimer = window.setTimeout(() => {
@@ -1247,6 +1359,7 @@ function bindEvents() {
     persist(); writeUrlState(); render();
   });
   els.advanced_filters_toggle.addEventListener("click", () => {
+    closeMultiSelectMenus();
     advancedFiltersOpen = !advancedFiltersOpen;
     els.filter_panel.classList.toggle("is-advanced-open", advancedFiltersOpen);
     els.advanced_filters_toggle.setAttribute("aria-expanded", String(advancedFiltersOpen));
@@ -1265,6 +1378,7 @@ function bindEvents() {
     }
     if (Array.isArray(state.filters[key])) state.filters[key] = state.filters[key].filter((value) => value !== button.dataset.clearValue);
     else state.filters[key] = DEFAULT_FILTERS[key];
+    if (key === "domains") pruneSpecializationsForDomains();
     syncControlsFromState();
     persist(); writeUrlState(); render();
   });
@@ -1354,6 +1468,7 @@ function bindEvents() {
     state.filters = loaded.value.filters;
     state.shortlist = pruneShortlist(loaded.value.shortlist, new Set(state.jobs.map((job) => job.id))).shortlist;
     state.storageWarning = loaded.warning;
+    pruneSpecializationsForDomains();
     state.selectedId = "";
     state.selectionPinned = false;
     syncControlsFromState();
@@ -1362,6 +1477,7 @@ function bindEvents() {
   });
   window.addEventListener("popstate", () => {
     state.filters = readUrlState(state.filters);
+    pruneSpecializationsForDomains();
     const requestedJobId = new URLSearchParams(window.location.search).get("job") || "";
     state.selectedId = requestedJobId && state.jobs.some((job) => job.id === requestedJobId) ? requestedJobId : "";
     state.selectionPinned = Boolean(state.selectedId);
@@ -1387,6 +1503,7 @@ async function init() {
   ]);
   if (!response.ok) throw new Error(`Current jobs could not be loaded (${response.status}).`);
   state.payload = await response.json();
+  pruneSpecializationsForDomains();
   if (brandResponse?.ok) {
     try {
       const brandPayload = await brandResponse.json();

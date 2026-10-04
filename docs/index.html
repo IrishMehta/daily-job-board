@@ -3,11 +3,10 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>US Tech Job Discovery | Fresh AI, Data &amp; Software Roles</title>
+  <title>Fresh US Tech Jobs, Updated Daily | Job Discovery</title>
   <link rel="icon" type="image/png" sizes="64x64" href="./favicon.png">
   <link rel="apple-touch-icon" sizes="180x180" href="./apple-touch-icon.png">
-  <meta name="description" content="Search and shortlist fresh US technology jobs by role, experience, location, sponsorship, and work authorization.">
-  <meta name="keywords" content="tech jobs, software engineering jobs, AI jobs, machine learning jobs, data jobs, sponsorship jobs, early career jobs">
+  <meta name="description" content="Discover fresh US technology jobs updated daily. Filter openings by experience, location, visa sponsorship, and work authorization.">
   <meta name="robots" content="index,follow">
   <meta name="theme-color" content="#1a1d27">
   <!-- Google tag (gtag.js) -->
@@ -18,12 +17,32 @@
     gtag('js', new Date());
     gtag('config', 'G-K69VHDX1TY');
   </script>
-  <link rel="canonical" href="https://irishmehta.github.io/daily-job-board/">
+  <link rel="canonical" href="https://irishmehta.com/daily-job-board/">
   <meta property="og:type" content="website">
-  <meta property="og:title" content="US Tech Job Discovery">
-  <meta property="og:description" content="A focused workspace for searching and shortlisting fresh US technology roles.">
-  <meta property="og:url" content="https://irishmehta.github.io/daily-job-board/">
-  <meta name="twitter:card" content="summary_large_image">
+  <meta property="og:site_name" content="Job Discovery">
+  <meta property="og:title" content="Fresh US Tech Jobs, Updated Daily">
+  <meta property="og:description" content="Discover fresh US technology jobs updated daily, with filters for experience, location, visa sponsorship, and work authorization.">
+  <meta property="og:url" content="https://irishmehta.com/daily-job-board/">
+  <meta property="og:image" content="https://irishmehta.com/daily-job-board/assets/job-discovery-mark.png">
+  <meta property="og:image:type" content="image/png">
+  <meta property="og:image:width" content="512">
+  <meta property="og:image:height" content="512">
+  <meta property="og:image:alt" content="Job Discovery logo">
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="Fresh US Tech Jobs, Updated Daily">
+  <meta name="twitter:description" content="Discover fresh US technology jobs updated daily, with filters for experience, location, visa sponsorship, and work authorization.">
+  <meta name="twitter:image" content="https://irishmehta.com/daily-job-board/assets/job-discovery-mark.png">
+  <meta name="twitter:image:alt" content="Job Discovery logo">
+  <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "WebSite",
+      "name": "Job Discovery",
+      "alternateName": "US Tech Job Discovery",
+      "url": "https://irishmehta.com/daily-job-board/",
+      "description": "Discover fresh US technology jobs updated daily. Filter openings by experience, location, visa sponsorship, and work authorization."
+    }
+  </script>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Archivo:ital,wdth,wght@0,62..125,100..900;1,62..125,100..900&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet">
@@ -116,28 +135,70 @@
           <svg viewBox="0 0 24 24" aria-hidden="true"><path d="m6 6 12 12M18 6 6 18"/></svg>
         </button>
       </div>
-      <label class="filter-field advanced-filter">Role focus
-        <select id="domain-filter"><option value="">All focus areas</option></select>
-      </label>
-      <label class="filter-field advanced-filter">Specialization
-        <select id="specialization-filter"><option value="">All specializations</option></select>
-      </label>
+      <div class="filter-field advanced-filter">
+        <span>Role focus</span>
+        <div class="multi-select" data-filter-key="domains" data-default-label="All focus areas">
+          <button class="multi-select-trigger" type="button" aria-haspopup="true" aria-expanded="false">
+            <span class="multi-select-value">All focus areas</span><span class="multi-select-chevron" aria-hidden="true"></span>
+          </button>
+          <div class="multi-select-menu" hidden></div>
+          <select class="multi-select-native" id="domain-filter" multiple hidden aria-hidden="true" tabindex="-1"></select>
+        </div>
+      </div>
+      <div class="filter-field advanced-filter">
+        <span>Specialization</span>
+        <div class="multi-select" data-filter-key="specializations" data-default-label="All specializations">
+          <button class="multi-select-trigger" type="button" aria-haspopup="true" aria-expanded="false">
+            <span class="multi-select-value">All specializations</span><span class="multi-select-chevron" aria-hidden="true"></span>
+          </button>
+          <div class="multi-select-menu" hidden></div>
+          <select class="multi-select-native" id="specialization-filter" multiple hidden aria-hidden="true" tabindex="-1"></select>
+        </div>
+      </div>
       <label class="filter-field">Location
         <input id="location-filter" type="search" list="location-suggestions" placeholder="Any location" autocomplete="off">
         <datalist id="location-suggestions"></datalist>
       </label>
-      <label class="filter-field">Experience level
-        <select id="career-filter"><option value="">All experience levels</option></select>
-      </label>
-      <label class="filter-field advanced-filter">Work authorization
-        <select id="authorization-filter"><option value="">Any authorization</option></select>
-      </label>
-      <label class="filter-field">Visa sponsorship
-        <select id="sponsorship-filter"><option value="">Any sponsorship</option></select>
-      </label>
-      <label class="filter-field advanced-filter">Industry
-        <select id="industry-filter"><option value="">All industries</option></select>
-      </label>
+      <div class="filter-field">
+        <span>Experience level</span>
+        <div class="multi-select" data-filter-key="careerBuckets" data-default-label="All experience levels">
+          <button class="multi-select-trigger" type="button" aria-haspopup="true" aria-expanded="false">
+            <span class="multi-select-value">All experience levels</span><span class="multi-select-chevron" aria-hidden="true"></span>
+          </button>
+          <div class="multi-select-menu" hidden></div>
+          <select class="multi-select-native" id="career-filter" multiple hidden aria-hidden="true" tabindex="-1"></select>
+        </div>
+      </div>
+      <div class="filter-field advanced-filter">
+        <span>Work authorization</span>
+        <div class="multi-select" data-filter-key="authorizationCategories" data-default-label="Any authorization">
+          <button class="multi-select-trigger" type="button" aria-haspopup="true" aria-expanded="false">
+            <span class="multi-select-value">Any authorization</span><span class="multi-select-chevron" aria-hidden="true"></span>
+          </button>
+          <div class="multi-select-menu" hidden></div>
+          <select class="multi-select-native" id="authorization-filter" multiple hidden aria-hidden="true" tabindex="-1"></select>
+        </div>
+      </div>
+      <div class="filter-field">
+        <span>Visa sponsorship</span>
+        <div class="multi-select" data-filter-key="sponsorshipStatuses" data-default-label="Any sponsorship">
+          <button class="multi-select-trigger" type="button" aria-haspopup="true" aria-expanded="false">
+            <span class="multi-select-value">Any sponsorship</span><span class="multi-select-chevron" aria-hidden="true"></span>
+          </button>
+          <div class="multi-select-menu" hidden></div>
+          <select class="multi-select-native" id="sponsorship-filter" multiple hidden aria-hidden="true" tabindex="-1"></select>
+        </div>
+      </div>
+      <div class="filter-field advanced-filter">
+        <span>Industry</span>
+        <div class="multi-select" data-filter-key="industries" data-default-label="All industries">
+          <button class="multi-select-trigger" type="button" aria-haspopup="true" aria-expanded="false">
+            <span class="multi-select-value">All industries</span><span class="multi-select-chevron" aria-hidden="true"></span>
+          </button>
+          <div class="multi-select-menu" hidden></div>
+          <select class="multi-select-native" id="industry-filter" multiple hidden aria-hidden="true" tabindex="-1"></select>
+        </div>
+      </div>
       <label class="filter-field advanced-filter">Your experience (years)
         <input id="experience-years-filter" type="number" min="0" max="60" step="1" inputmode="numeric" placeholder="Any" autocomplete="off">
       </label>
