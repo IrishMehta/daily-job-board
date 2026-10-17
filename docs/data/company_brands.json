@@ -1,5 +1,9 @@
 {
   "companies": {
+    "15Five": {
+      "brand_id": "15five-ee0fb84a",
+      "logo": "./assets/company-logos/logo-a16d7e9304800f4bc762.webp"
+    },
     "1Password": {
       "brand_id": "1password-d58fc8da",
       "logo": "./assets/company-logos/logo-fd76ddcd62b2f8736c98.webp"
@@ -8,10 +12,6 @@
       "brand_id": "1x-a048e640",
       "logo": "./assets/company-logos/logo-cc8d9bf0c2e08c0d2485.webp"
     },
-    "2K": {
-      "brand_id": "2k-2dbd9afb",
-      "logo": "./assets/company-logos/logo-6aa2fea487fee36253d2.webp"
-    },
     "2K Games": {
       "brand_id": "2k-games-2981572f",
       "logo": "./assets/company-logos/logo-6aa2fea487fee36253d2.webp"
@@ -19,6 +19,10 @@
     "3M": {
       "brand_id": "3m-a2b0b6da",
       "logo": "./assets/company-logos/logo-ca95167806352ecaa565.webp"
+    },
+    "84.51": {
+      "brand_id": "84-51-4aa9124d",
+      "logo": "./assets/company-logos/logo-58da5122f6a593be1491.webp"
     },
     "A-TEK": {
       "brand_id": "a-tek-3d49d61a",
@@ -55,6 +59,10 @@
     "AIR Communities": {
       "brand_id": "air-communities-714ef8e4",
       "logo": "./assets/company-logos/logo-7f157dae32835312f622.webp"
+    },
+    "AIUC": {
+      "brand_id": "aiuc-a5a0deb3",
+      "logo": "./assets/company-logos/logo-f304fa512d80b53986c8.webp"
     },
     "ALTEN": {
       "brand_id": "alten-5df7b8af",
@@ -96,13 +104,21 @@
       "brand_id": "at-t-b55e1037",
       "logo": "./assets/company-logos/logo-5f2f8e9fa266053374b4.webp"
     },
+    "AVER": {
+      "brand_id": "aver-e533b0d6",
+      "logo": "./assets/company-logos/logo-41cfa7c93d63c2f83eb3.webp"
+    },
+    "AVEVA": {
+      "brand_id": "aveva-9fe67468",
+      "logo": "./assets/company-logos/logo-9ba6a9d9516ec71086ef.webp"
+    },
     "AWS": {
       "brand_id": "aws-7d150728",
       "logo": "./assets/company-logos/logo-fa3e8072e9ceb936e32d.webp"
     },
-    "Abacus Insights": {
-      "brand_id": "abacus-insights-3c67818a",
-      "logo": "./assets/company-logos/logo-fa08238e63effeadec81.webp"
+    "Abacus Technology": {
+      "brand_id": "abacus-technology-c8886f08",
+      "logo": "./assets/company-logos/logo-a218ba0f3a58c12ada5e.webp"
     },
     "Abaka AI": {
       "brand_id": "abaka-ai-ac1b3939",
@@ -124,17 +140,25 @@
       "brand_id": "abile-group-4c3a9a59",
       "logo": "./assets/company-logos/logo-c394d996eb77ba112607.webp"
     },
-    "Academy District 20": {
-      "brand_id": "academy-district-20-90eee24d",
-      "logo": "./assets/company-logos/logo-352f7591296d53d937ad.webp"
+    "Abnormal AI": {
+      "brand_id": "abnormal-ai-1539f5a6",
+      "logo": "./assets/company-logos/logo-2ef9ba7dc62be7322e16.webp"
     },
     "Acceldata": {
       "brand_id": "acceldata-bdc65a4a",
       "logo": "./assets/company-logos/logo-525da1173788dba2ae7e.webp"
     },
+    "Acciona Energía": {
+      "brand_id": "acciona-energia-a9b455aa",
+      "logo": "./assets/company-logos/logo-6b70771a7ba2419d1026.webp"
+    },
     "Accountabilities": {
       "brand_id": "accountabilities-6ca9d73b",
       "logo": "./assets/company-logos/logo-1ff5be9bef85b3ab7085.webp"
+    },
+    "Ace IT Careers": {
+      "brand_id": "ace-it-careers-73824576",
+      "logo": "./assets/company-logos/logo-c5a720e92ba0247ce151.webp"
     },
     "Acronaviation": {
       "brand_id": "acronaviation-ac88e9a2",
@@ -176,6 +200,10 @@
       "brand_id": "aerovironment-538b4c6f",
       "logo": "./assets/company-logos/logo-f9df0f3ebb96d098a1bb.webp"
     },
+    "Aerospace Corporation": {
+      "brand_id": "aerospace-corporation-2c4edba0",
+      "logo": "./assets/company-logos/logo-44af4dfae6a6ab40de67.webp"
+    },
     "Afero": {
       "brand_id": "afero-1a6d22ff",
       "logo": "./assets/company-logos/logo-b37e35539719653ab910.webp"
@@ -203,6 +231,10 @@
     "Agilent Technologies, Inc.": {
       "brand_id": "agilent-technologies-inc-0c1bf6ee",
       "logo": "./assets/company-logos/logo-422f03c50538e4c35e33.webp"
+    },
+    "Agilysys": {
+      "brand_id": "agilysys-f4556add",
+      "logo": "./assets/company-logos/logo-c3fb4eb400b14279411a.webp"
     },
     "Air Liquide": {
       "brand_id": "air-liquide-277c4133",
@@ -232,14 +264,6 @@
       "brand_id": "ajaia-51d55327",
       "logo": "./assets/company-logos/logo-c5a720e92ba0247ce151.webp"
     },
-    "Akamai": {
-      "brand_id": "akamai-a3c4d61d",
-      "logo": "./assets/company-logos/logo-331f6f3995721d5dfd4c.webp"
-    },
-    "Akamai Technologies, Inc.": {
-      "brand_id": "akamai-technologies-inc-e1211d13",
-      "logo": "./assets/company-logos/logo-331f6f3995721d5dfd4c.webp"
-    },
     "Alchemy": {
       "brand_id": "alchemy-924b68a8",
       "logo": "./assets/company-logos/logo-d407564dded3b7f69dfe.webp"
@@ -248,6 +272,10 @@
       "brand_id": "alcon-49783de4",
       "logo": "./assets/company-logos/logo-7e23137458d1e6e4244f.webp"
     },
+    "Alexion": {
+      "brand_id": "alexion-4694df6e",
+      "logo": "./assets/company-logos/logo-6911be561a2231120614.webp"
+    },
     "Align": {
       "brand_id": "align-adcbf60c",
       "logo": "./assets/company-logos/logo-4552689481fbbf83d21b.webp"
@@ -255,6 +283,10 @@
     "Alkami": {
       "brand_id": "alkami-01a7b79c",
       "logo": "./assets/company-logos/logo-ff77ac4aa51998812c6b.webp"
+    },
+    "Allegion": {
+      "brand_id": "allegion-5401f675",
+      "logo": "./assets/company-logos/logo-1a7ad997969d007edb84.webp"
     },
     "Allen Control Systems": {
       "brand_id": "allen-control-systems-dd7236d5",
@@ -276,13 +308,13 @@
       "brand_id": "alluxio-ebc6ffa1",
       "logo": "./assets/company-logos/logo-d1e527655a32bea5555f.webp"
     },
+    "AlphaSense": {
+      "brand_id": "alphasense-68323c14",
+      "logo": "./assets/company-logos/logo-087e36c2c8739785d72e.webp"
+    },
     "AlphaX": {
       "brand_id": "alphax-4722683d",
       "logo": "./assets/company-logos/logo-1f2f8d9ff75484b260db.webp"
-    },
-    "AltaMed": {
-      "brand_id": "altamed-371fe7fa",
-      "logo": "./assets/company-logos/logo-5cd47a93b84b73b5a1ee.webp"
     },
     "Altamira Technologies": {
       "brand_id": "altamira-technologies-60c3dadf",
@@ -348,10 +380,6 @@
       "brand_id": "american-express-066b5b5a",
       "logo": "./assets/company-logos/logo-7f31dd1ef1bfc39ddaa1.webp"
     },
-    "American Heart Association": {
-      "brand_id": "american-heart-association-d1cc3a83",
-      "logo": "./assets/company-logos/logo-7c80b977e8714652bcde.webp"
-    },
     "American Systems": {
       "brand_id": "american-systems-b32164a5",
       "logo": "./assets/company-logos/logo-446f617753b0a7b93ecf.webp"
@@ -363,6 +391,10 @@
     "Ameriprise Financial": {
       "brand_id": "ameriprise-financial-60964cbb",
       "logo": "./assets/company-logos/logo-2b7304c9a909117bd639.webp"
+    },
+    "Ames Construction": {
+      "brand_id": "ames-construction-7938eb72",
+      "logo": "./assets/company-logos/logo-dd33c7090c99b26ac988.webp"
     },
     "Amgen": {
       "brand_id": "amgen-48272715",
@@ -376,6 +408,10 @@
       "brand_id": "analog-devices-bb424f07",
       "logo": "./assets/company-logos/logo-f34d81f3a4182b3fdf45.webp"
     },
+    "Analytical Mechanics Associates": {
+      "brand_id": "analytical-mechanics-associates-41b85a6c",
+      "logo": "./assets/company-logos/logo-d1385867095cc9ed4665.webp"
+    },
     "Andersen": {
       "brand_id": "andersen-c21a2dd1",
       "logo": "./assets/company-logos/logo-dc5a7a796b839e8e403a.webp"
@@ -387,6 +423,10 @@
     "Anduril Industries": {
       "brand_id": "anduril-industries-83defd0b",
       "logo": "./assets/company-logos/logo-54107adbcc56602dfc31.webp"
+    },
+    "AnewHealth": {
+      "brand_id": "anewhealth-b3a88fb6",
+      "logo": "./assets/company-logos/logo-cd13aa66cea71b5c240c.webp"
     },
     "Angel City FC": {
       "brand_id": "angel-city-fc-e87e33d4",
@@ -415,6 +455,10 @@
     "ApertureHealth": {
       "brand_id": "aperturehealth-6f497669",
       "logo": "./assets/company-logos/logo-273bd2f89755e93bc84d.webp"
+    },
+    "Apex": {
+      "brand_id": "apex-846be5fc",
+      "logo": "./assets/company-logos/logo-c729972f526d2598c0e8.webp"
     },
     "Apex Fintech Solutions": {
       "brand_id": "apex-fintech-solutions-7fde9866",
@@ -448,17 +492,9 @@
       "brand_id": "aptiv-4f8317ad",
       "logo": "./assets/company-logos/logo-75672bbb322e70aef166.webp"
     },
-    "Aptiv / Wind River": {
-      "brand_id": "aptiv-wind-river-78b9621d",
-      "logo": "./assets/company-logos/logo-75672bbb322e70aef166.webp"
-    },
     "Arbitalhealth": {
       "brand_id": "arbitalhealth-666022c0",
       "logo": "./assets/company-logos/logo-129af44b56b4c5c62770.webp"
-    },
-    "Arbor Energy": {
-      "brand_id": "arbor-energy-4f68c32a",
-      "logo": "./assets/company-logos/logo-a163ab4920ad20695c6a.webp"
     },
     "Arc Institute": {
       "brand_id": "arc-institute-2d54d63f",
@@ -472,13 +508,17 @@
       "brand_id": "ardian-da824e8b",
       "logo": "./assets/company-logos/logo-b6993b1f329297c14936.webp"
     },
+    "Aritzia": {
+      "brand_id": "aritzia-263756ed",
+      "logo": "./assets/company-logos/logo-fb599aa840e9f42d6fce.webp"
+    },
     "Arizona State University": {
       "brand_id": "arizona-state-university-ac7aeed6",
       "logo": "./assets/company-logos/logo-6d0425650e56f2180146.webp"
     },
-    "ArkBlueCross": {
-      "brand_id": "arkbluecross-d3ccc2f8",
-      "logo": "./assets/company-logos/logo-4347672730b719770079.webp"
+    "Arkestro": {
+      "brand_id": "arkestro-689c4596",
+      "logo": "./assets/company-logos/logo-72337d27f4a90e2e2dc2.webp"
     },
     "Arrow": {
       "brand_id": "arrow-864ea39f",
@@ -488,9 +528,17 @@
       "brand_id": "asana-4de4a07a",
       "logo": "./assets/company-logos/logo-ac52d128e86f20276750.webp"
     },
+    "Ascent": {
+      "brand_id": "ascent-5e3d4aff",
+      "logo": "./assets/company-logos/logo-a906084e84f6688beb9b.webp"
+    },
     "Ascera": {
       "brand_id": "ascera-2d2b9568",
       "logo": "./assets/company-logos/logo-94bf90722e5820e91e9a.webp"
+    },
+    "AspenTech": {
+      "brand_id": "aspentech-c0f27a65",
+      "logo": "./assets/company-logos/logo-eb85022f8852a017893f.webp"
     },
     "Aspendental": {
       "brand_id": "aspendental-764e3c90",
@@ -500,9 +548,9 @@
       "brand_id": "assetmark-8cdbfdd1",
       "logo": "./assets/company-logos/logo-f32aa120d7e3b588fcb6.webp"
     },
-    "Associated Electric Cooperative": {
-      "brand_id": "associated-electric-cooperative-093bcb1c",
-      "logo": "./assets/company-logos/logo-35f4d4cf56f785927c82.webp"
+    "Assort Health": {
+      "brand_id": "assort-health-f3d05a0f",
+      "logo": "./assets/company-logos/logo-f18741c0f68dc7918f31.webp"
     },
     "Assurant": {
       "brand_id": "assurant-54b4ebe3",
@@ -560,10 +608,6 @@
       "brand_id": "aumovio-c27e13bd",
       "logo": "./assets/company-logos/logo-a80d7dade377ac260549.webp"
     },
-    "Aurelian": {
-      "brand_id": "aurelian-619c0ed1",
-      "logo": "./assets/company-logos/logo-82a8aad7eadedce81449.webp"
-    },
     "Aurora": {
       "brand_id": "aurora-9b89025c",
       "logo": "./assets/company-logos/logo-bda889e4ea12a55ae170.webp"
@@ -576,10 +620,6 @@
       "brand_id": "auto-owners-79485ed0",
       "logo": "./assets/company-logos/logo-20b06f731587262a4133.webp"
     },
-    "AutoZone": {
-      "brand_id": "autozone-bc02f7ea",
-      "logo": "./assets/company-logos/logo-b8c3a21b762be3fa987f.webp"
-    },
     "Automobile Club of Southern California": {
       "brand_id": "automobile-club-of-southern-california-8eccf62b",
       "logo": "./assets/company-logos/logo-b05acd965ec6416ce89d.webp"
@@ -588,21 +628,13 @@
       "brand_id": "availity-b6542d15",
       "logo": "./assets/company-logos/logo-260146e0d352de1e1001.webp"
     },
-    "Avaloq": {
-      "brand_id": "avaloq-7b1398ef",
-      "logo": "./assets/company-logos/logo-18cc196853b3c445c909.webp"
-    },
-    "Avangrid Management Company, LLC": {
-      "brand_id": "avangrid-management-company-llc-bef36029",
-      "logo": "./assets/company-logos/logo-beb9e89f4d4183c3f9b6.webp"
+    "Avantor": {
+      "brand_id": "avantor-d17a164a",
+      "logo": "./assets/company-logos/logo-5febf19a07fc7a73b282.webp"
     },
     "Avera": {
       "brand_id": "avera-509dc1fc",
       "logo": "./assets/company-logos/logo-2f51082ba86a0e105deb.webp"
-    },
-    "AvidXchange": {
-      "brand_id": "avidxchange-39a93138",
-      "logo": "./assets/company-logos/logo-be70a9a1022e65deb352.webp"
     },
     "Axalta": {
       "brand_id": "axalta-32d5fbbb",
@@ -612,6 +644,10 @@
       "brand_id": "axiom-space-a4074992",
       "logo": "./assets/company-logos/logo-e69e92c385ceb4cf5100.webp"
     },
+    "Axle": {
+      "brand_id": "axle-cd18f524",
+      "logo": "./assets/company-logos/logo-f26adfc560c59d69c9f8.webp"
+    },
     "Axos": {
       "brand_id": "axos-65b3568d",
       "logo": "./assets/company-logos/logo-7750581bbd4df335824a.webp"
@@ -619,6 +655,10 @@
     "Azul": {
       "brand_id": "azul-a4bd1d3a",
       "logo": "./assets/company-logos/logo-17410e0f898332c92ecd.webp"
+    },
+    "BCore": {
+      "brand_id": "bcore-0c56d1a2",
+      "logo": "./assets/company-logos/logo-b2f1110d0ad5bcffe228.webp"
     },
     "BD": {
       "brand_id": "bd-5e657ff6",
@@ -644,49 +684,45 @@
       "brand_id": "bny-5af53503",
       "logo": "./assets/company-logos/logo-58a0ed420705dff9f80d.webp"
     },
-    "BP": {
-      "brand_id": "bp-226a193a",
-      "logo": "./assets/company-logos/logo-e59de08fa7a643158648.webp"
-    },
     "BTI": {
       "brand_id": "bti-45d3346f",
       "logo": "./assets/company-logos/logo-04017b09bd360e22f037.webp"
+    },
+    "BW Papersystems": {
+      "brand_id": "bw-papersystems-f347fe60",
+      "logo": "./assets/company-logos/logo-3d5fba65e68b733fee43.webp"
     },
     "Backcountry": {
       "brand_id": "backcountry-616610fc",
       "logo": "./assets/company-logos/logo-91b831267ab0b863d0fe.webp"
     },
-    "Badger Meter": {
-      "brand_id": "badger-meter-d0b114ea",
-      "logo": "./assets/company-logos/logo-01c85cc2d798ec811b6c.webp"
-    },
     "Baker Hughes": {
       "brand_id": "baker-hughes-3e13e313",
       "logo": "./assets/company-logos/logo-1664ecd321ab6ccf529c.webp"
-    },
-    "Bandwidth": {
-      "brand_id": "bandwidth-2c7210c5",
-      "logo": "./assets/company-logos/logo-7c63b801bcac838d5243.webp"
     },
     "Bank of America": {
       "brand_id": "bank-of-america-2cbb9e58",
       "logo": "./assets/company-logos/logo-bea84ba3674463b56bd8.webp"
     },
+    "Bankerstoolbox": {
+      "brand_id": "bankerstoolbox-37ca4225",
+      "logo": "./assets/company-logos/logo-3826d07d52f55d02f970.webp"
+    },
     "Baptist Health": {
       "brand_id": "baptist-health-31f1051e",
       "logo": "./assets/company-logos/logo-8a6cd5244c4f18c3307a.webp"
+    },
+    "Barbaricum": {
+      "brand_id": "barbaricum-1b594dec",
+      "logo": "./assets/company-logos/logo-0788e83c7f60e3b749e6.webp"
     },
     "Barclays": {
       "brand_id": "barclays-71f566ab",
       "logo": "./assets/company-logos/logo-0c1f3125ff0a13d4cdf7.webp"
     },
-    "Barr": {
-      "brand_id": "barr-8fa319f9",
-      "logo": "./assets/company-logos/logo-cca959ea677c620b1798.webp"
-    },
-    "Barracuda Networks Inc": {
-      "brand_id": "barracuda-networks-inc-4d8f8c09",
-      "logo": "./assets/company-logos/logo-3826d07d52f55d02f970.webp"
+    "Barry-Wehmiller": {
+      "brand_id": "barry-wehmiller-00df7d1c",
+      "logo": "./assets/company-logos/logo-3d5fba65e68b733fee43.webp"
     },
     "Base": {
       "brand_id": "base-cae66217",
@@ -706,6 +742,10 @@
     },
     "Becton, Dickinson and Company": {
       "brand_id": "becton-dickinson-and-company-0f34c393",
+      "logo": "./assets/company-logos/logo-85376f29d2198c39aa91.webp"
+    },
+    "Becton, Dickinson, and Company": {
+      "brand_id": "becton-dickinson-and-company-e90ac7eb",
       "logo": "./assets/company-logos/logo-85376f29d2198c39aa91.webp"
     },
     "Bedrock": {
@@ -752,10 +792,6 @@
       "brand_id": "bio-techne-ebd9ae5f",
       "logo": "./assets/company-logos/logo-9b53493d07cb18b23827.webp"
     },
-    "BitGo": {
-      "brand_id": "bitgo-3736199f",
-      "logo": "./assets/company-logos/logo-1d357faf4bdebe310a3c.webp"
-    },
     "Bitful Consulting": {
       "brand_id": "bitful-consulting-93b0feeb",
       "logo": "./assets/company-logos/logo-65c8e10f13b954a8ac3e.webp"
@@ -772,13 +808,17 @@
       "brand_id": "blacksky-5d753fbd",
       "logo": "./assets/company-logos/logo-8305adee481229949d8e.webp"
     },
+    "Blackstone": {
+      "brand_id": "blackstone-5388a5a5",
+      "logo": "./assets/company-logos/logo-a7ae8f8b692e8166ca3b.webp"
+    },
+    "Blattner Energy": {
+      "brand_id": "blattner-energy-14b36ada",
+      "logo": "./assets/company-logos/logo-0b812670bb7fd0b7291c.webp"
+    },
     "Blend": {
       "brand_id": "blend-727c1e41",
       "logo": "./assets/company-logos/logo-de17099622616b1dd483.webp"
-    },
-    "Blink Health": {
-      "brand_id": "blink-health-685f0fda",
-      "logo": "./assets/company-logos/logo-fa1945daa2ca45a7b92f.webp"
     },
     "Blissway Inc.": {
       "brand_id": "blissway-inc-3f546024",
@@ -792,21 +832,29 @@
       "brand_id": "bloom-energy-23ef1c26",
       "logo": "./assets/company-logos/logo-3d023b4039854ee71042.webp"
     },
-    "Bloomberg Industry Group": {
-      "brand_id": "bloomberg-industry-group-fd25b1bf",
-      "logo": "./assets/company-logos/logo-c27ffb3d70419236da61.webp"
+    "Blooming Health": {
+      "brand_id": "blooming-health-ba3fdb2f",
+      "logo": "./assets/company-logos/logo-17b30814e9283bacd3e7.webp"
+    },
+    "Blue Cross & Blue Shield of Mississippi": {
+      "brand_id": "blue-cross-blue-shield-of-mississippi-b3a97dc9",
+      "logo": "./assets/company-logos/logo-75e2d4ebdaed75e23d12.webp"
     },
     "Blue Cross NC": {
       "brand_id": "blue-cross-nc-2b331f82",
       "logo": "./assets/company-logos/logo-889a35838b62c7b8eaef.webp"
     },
-    "Blue Cross and Blue Shield of Kansas City": {
-      "brand_id": "blue-cross-and-blue-shield-of-kansas-city-735ed97b",
-      "logo": "./assets/company-logos/logo-2bab911b0f5a3514b460.webp"
+    "Blue Cross and Blue Shield of Nebraska": {
+      "brand_id": "blue-cross-and-blue-shield-of-nebraska-457d5b7a",
+      "logo": "./assets/company-logos/logo-cacf9d9be4af4533264a.webp"
     },
     "Blue Diamond Growers": {
       "brand_id": "blue-diamond-growers-e0315dce",
       "logo": "./assets/company-logos/logo-f5f3059bc0b52031b856.webp"
+    },
+    "Blue Line Distribution": {
+      "brand_id": "blue-line-distribution-c378fcea",
+      "logo": "./assets/company-logos/logo-8fc8847b893b08dc2f9e.webp"
     },
     "Blue Origin": {
       "brand_id": "blue-origin-0af1be88",
@@ -860,10 +908,6 @@
       "brand_id": "boston-engineering-b1a383b2",
       "logo": "./assets/company-logos/logo-d5f6465aa875bece9747.webp"
     },
-    "Boston Medical Center": {
-      "brand_id": "boston-medical-center-e637e22c",
-      "logo": "./assets/company-logos/logo-3ed1f20cc6b4b4e6871e.webp"
-    },
     "Boston Scientific": {
       "brand_id": "boston-scientific-431a43c1",
       "logo": "./assets/company-logos/logo-fc16e684d606820979c9.webp"
@@ -884,9 +928,21 @@
       "brand_id": "braintrust-c0a49b8a",
       "logo": "./assets/company-logos/logo-5af0ee12043f577fbc17.webp"
     },
+    "Braze": {
+      "brand_id": "braze-82c82540",
+      "logo": "./assets/company-logos/logo-3146e7bc5f0668f50559.webp"
+    },
+    "Bretton AI": {
+      "brand_id": "bretton-ai-602e4e54",
+      "logo": "./assets/company-logos/logo-410bf40d1428fd671df4.webp"
+    },
     "BrightEdge": {
       "brand_id": "brightedge-73557a5d",
       "logo": "./assets/company-logos/logo-2735ffaaee3e45edc790.webp"
+    },
+    "Brightli": {
+      "brand_id": "brightli-6c653640",
+      "logo": "./assets/company-logos/logo-741855f27a9ac955a2de.webp"
     },
     "Brillio": {
       "brand_id": "brillio-bd7ecbd9",
@@ -904,13 +960,13 @@
       "brand_id": "broadridge-d1063c33",
       "logo": "./assets/company-logos/logo-fc189643230777cc9a59.webp"
     },
+    "Brown & Brown": {
+      "brand_id": "brown-brown-9ee9cc81",
+      "logo": "./assets/company-logos/logo-83ff7febbbf347d63052.webp"
+    },
     "Brown Brothers Harriman": {
       "brand_id": "brown-brothers-harriman-d5f0306e",
       "logo": "./assets/company-logos/logo-42069552c4599daec6c8.webp"
-    },
-    "BryceTech": {
-      "brand_id": "brycetech-b6c61f03",
-      "logo": "./assets/company-logos/logo-b2ae71a02f557761ee70.webp"
     },
     "Buildertrend": {
       "brand_id": "buildertrend-31135ce0",
@@ -931,10 +987,6 @@
     "Bungie": {
       "brand_id": "bungie-12832688",
       "logo": "./assets/company-logos/logo-b740b481704478ca1617.webp"
-    },
-    "BusRight": {
-      "brand_id": "busright-b96e5fdc",
-      "logo": "./assets/company-logos/logo-931dfc4f619e2d129e2e.webp"
     },
     "Businessolver": {
       "brand_id": "businessolver-c7d629b1",
@@ -980,17 +1032,17 @@
       "brand_id": "cathexis-75679ca7",
       "logo": "./assets/company-logos/logo-1cc9d6f3699a079c8a55.webp"
     },
-    "CCC Intelligent Solutions Inc.": {
-      "brand_id": "ccc-intelligent-solutions-inc-2f98cde0",
-      "logo": "./assets/company-logos/logo-28de7e8796f60397e7d3.webp"
-    },
-    "CHG Healthcare": {
-      "brand_id": "chg-healthcare-76dccce6",
-      "logo": "./assets/company-logos/logo-875bb28bf37871b8dbc9.webp"
+    "CBRE": {
+      "brand_id": "cbre-bee10fce",
+      "logo": "./assets/company-logos/logo-cea74d8c3098f21a9cb6.webp"
     },
     "CIBC": {
       "brand_id": "cibc-8eae1407",
       "logo": "./assets/company-logos/logo-9b8e5f21af27a7fb9758.webp"
+    },
+    "CLEAResult": {
+      "brand_id": "clearesult-353a88a6",
+      "logo": "./assets/company-logos/logo-17b5855038c468951415.webp"
     },
     "CME Group": {
       "brand_id": "cme-group-ea2c7095",
@@ -999,6 +1051,10 @@
     "CMG": {
       "brand_id": "cmg-1ae2af0e",
       "logo": "./assets/company-logos/logo-3f13b24e67d946aac995.webp"
+    },
+    "COUNTRY Financial": {
+      "brand_id": "country-financial-404ac937",
+      "logo": "./assets/company-logos/logo-b7fb880c23c8e44c3b54.webp"
     },
     "CRC Group": {
       "brand_id": "crc-group-29949459",
@@ -1024,13 +1080,13 @@
       "brand_id": "calabrio-d94e7440",
       "logo": "./assets/company-logos/logo-b1000bd88f4ec8392f39.webp"
     },
-    "Cambridge Mobile Telematics": {
-      "brand_id": "cambridge-mobile-telematics-db816f88",
-      "logo": "./assets/company-logos/logo-e47b7bb4fff1c6196f4d.webp"
+    "Calista": {
+      "brand_id": "calista-c37a4150",
+      "logo": "./assets/company-logos/logo-7fdfc4f41028e874f26b.webp"
     },
-    "Camping World": {
-      "brand_id": "camping-world-621d3c24",
-      "logo": "./assets/company-logos/logo-75731eb6070f137ba0d0.webp"
+    "Caliza": {
+      "brand_id": "caliza-f6c054d3",
+      "logo": "./assets/company-logos/logo-34b074dbe674e2a5bd4f.webp"
     },
     "CannonDesign": {
       "brand_id": "cannondesign-3a4a83bb",
@@ -1060,14 +1116,6 @@
       "brand_id": "cardinal-health-b275ebb5",
       "logo": "./assets/company-logos/logo-2bef3a6e78cd16a8a641.webp"
     },
-    "Care Access": {
-      "brand_id": "care-access-499f4a22",
-      "logo": "./assets/company-logos/logo-a6c066b7b86ef6e75973.webp"
-    },
-    "Care.com": {
-      "brand_id": "care-com-14276c77",
-      "logo": "./assets/company-logos/logo-876ce89ca8a347516f67.webp"
-    },
     "Careers Lmi.Icims.Com": {
       "brand_id": "careers-lmi-icims-com-99bd6f36",
       "logo": "./assets/company-logos/logo-49685083c1b236ed875c.webp"
@@ -1087,10 +1135,6 @@
     "Carlyle": {
       "brand_id": "carlyle-142c8875",
       "logo": "./assets/company-logos/logo-384dd29ac1ee9ba99e31.webp"
-    },
-    "Carnegie Mellon University": {
-      "brand_id": "carnegie-mellon-university-c5235efb",
-      "logo": "./assets/company-logos/logo-d8d928f327e84c5d15c8.webp"
     },
     "Carrier": {
       "brand_id": "carrier-5803587e",
@@ -1112,6 +1156,10 @@
       "brand_id": "celsius-f05ca418",
       "logo": "./assets/company-logos/logo-b4b67b597129f8ba3e8e.webp"
     },
+    "Cencora": {
+      "brand_id": "cencora-eaeca89c",
+      "logo": "./assets/company-logos/logo-1be9ae8d335f4d046268.webp"
+    },
     "Center for Employment Opportunities": {
       "brand_id": "center-for-employment-opportunities-d26ff7ad",
       "logo": "./assets/company-logos/logo-f742e9da57e0a8e90ce7.webp"
@@ -1119,6 +1167,10 @@
     "Centerfield": {
       "brand_id": "centerfield-7bbe6e84",
       "logo": "./assets/company-logos/logo-6cf383ab4e5c180c70e3.webp"
+    },
+    "Centric Software": {
+      "brand_id": "centric-software-94c6ddf0",
+      "logo": "./assets/company-logos/logo-e23a601d8c9568b669bd.webp"
     },
     "CesiumAstro": {
       "brand_id": "cesiumastro-eca1050e",
@@ -1140,6 +1192,10 @@
       "brand_id": "chargepoint-5e14b211",
       "logo": "./assets/company-logos/logo-c3c65fc94e3bac11d9c3.webp"
     },
+    "Charles River Associates": {
+      "brand_id": "charles-river-associates-94870a62",
+      "logo": "./assets/company-logos/logo-be89df1ed321be4303e1.webp"
+    },
     "Charlie Health": {
       "brand_id": "charlie-health-8a2733ce",
       "logo": "./assets/company-logos/logo-9afc6fb2832c0baf9320.webp"
@@ -1156,33 +1212,37 @@
       "brand_id": "checkr-6deb06c9",
       "logo": "./assets/company-logos/logo-2ab1d023aee5e3d368d5.webp"
     },
+    "Chickasaw Nation Industries, Inc.": {
+      "brand_id": "chickasaw-nation-industries-inc-8ed3c839",
+      "logo": "./assets/company-logos/logo-8d9ae0678abe0a37f04a.webp"
+    },
     "Chime": {
       "brand_id": "chime-41a68bae",
       "logo": "./assets/company-logos/logo-3650e258de40057561b1.webp"
+    },
+    "Chirprobotics": {
+      "brand_id": "chirprobotics-dee4947e",
+      "logo": "./assets/company-logos/logo-827bc101249bdaa78f71.webp"
+    },
+    "Christie's": {
+      "brand_id": "christie-s-e639d3e9",
+      "logo": "./assets/company-logos/logo-391b1ad412e33390982c.webp"
     },
     "Christman Constructors, Inc.": {
       "brand_id": "christman-constructors-inc-a6e1e038",
       "logo": "./assets/company-logos/logo-daa8112ebaa37533e6ba.webp"
     },
-    "Cie": {
-      "brand_id": "cie-7735de1e",
-      "logo": "./assets/company-logos/logo-bd040eef4fcb0e9e8335.webp"
-    },
     "Cigna": {
       "brand_id": "cigna-f19cb2e9",
       "logo": "./assets/company-logos/logo-fc0bd672d0589c3b2423.webp"
-    },
-    "Cint": {
-      "brand_id": "cint-a60ad809",
-      "logo": "./assets/company-logos/logo-a17e6cb0790f8ef2f550.webp"
     },
     "Circle": {
       "brand_id": "circle-8a39178d",
       "logo": "./assets/company-logos/logo-820165e2ec3c40a6d922.webp"
     },
-    "CircleLogistics1": {
-      "brand_id": "circlelogistics1-97da2e57",
-      "logo": "./assets/company-logos/logo-1fb3e680678e474e101b.webp"
+    "CircleCI": {
+      "brand_id": "circleci-d3566809",
+      "logo": "./assets/company-logos/logo-4ee709d91cd66bd4352d.webp"
     },
     "Cisco": {
       "brand_id": "cisco-e73b79a0",
@@ -1196,13 +1256,13 @@
       "brand_id": "city-and-county-of-denver-e2eda3fe",
       "logo": "./assets/company-logos/logo-2f75a77fd87da59e8af0.webp"
     },
-    "City and County of San Francisco": {
-      "brand_id": "city-and-county-of-san-francisco-4af85258",
-      "logo": "./assets/company-logos/logo-ca2c563153ababf2c38e.webp"
-    },
     "City of Austin": {
       "brand_id": "city-of-austin-dc287d94",
       "logo": "./assets/company-logos/logo-cfa22777b8e33f96cfa8.webp"
+    },
+    "City of Boulder": {
+      "brand_id": "city-of-boulder-582a9761",
+      "logo": "./assets/company-logos/logo-662376d4c8524abd3ded.webp"
     },
     "City of Charlotte": {
       "brand_id": "city-of-charlotte-8881cbfa",
@@ -1220,9 +1280,9 @@
       "brand_id": "city-of-philadelphia-e1861102",
       "logo": "./assets/company-logos/logo-be44b1cc5ab177b09065.webp"
     },
-    "Cleo Communications US, LLC": {
-      "brand_id": "cleo-communications-us-llc-392af8ea",
-      "logo": "./assets/company-logos/logo-3a9132242b8e2fef9845.webp"
+    "Claryo": {
+      "brand_id": "claryo-a62778dc",
+      "logo": "./assets/company-logos/logo-d72b9418236cd744a61e.webp"
     },
     "Clera": {
       "brand_id": "clera-8785635f",
@@ -1232,9 +1292,17 @@
       "brand_id": "clickhouse-7e099f39",
       "logo": "./assets/company-logos/logo-688c9b6ab11a304fa7b4.webp"
     },
+    "Cloaked": {
+      "brand_id": "cloaked-247c7b26",
+      "logo": "./assets/company-logos/logo-fcb8596736f6757f2e89.webp"
+    },
     "Clockwork Systems": {
       "brand_id": "clockwork-systems-08ae3fb8",
       "logo": "./assets/company-logos/logo-77e9ef42c519eeb8f3e0.webp"
+    },
+    "Cloudera": {
+      "brand_id": "cloudera-2f265a69",
+      "logo": "./assets/company-logos/logo-52c401a00b0df1786be7.webp"
     },
     "Cloudflare": {
       "brand_id": "cloudflare-738e22f0",
@@ -1256,14 +1324,6 @@
       "brand_id": "coderabbit-fc34547c",
       "logo": "./assets/company-logos/logo-79032ffdf38360af150d.webp"
     },
-    "Cognite": {
-      "brand_id": "cognite-034cd030",
-      "logo": "./assets/company-logos/logo-909f062e4eeda0d8f9ee.webp"
-    },
-    "Cognition": {
-      "brand_id": "cognition-ac32f27b",
-      "logo": "./assets/company-logos/logo-01e764857c34c4d41339.webp"
-    },
     "Cohere Health": {
       "brand_id": "cohere-health-58c0a71f",
       "logo": "./assets/company-logos/logo-99160b197c94988e9002.webp"
@@ -1284,6 +1344,10 @@
       "brand_id": "column-881d5fb6",
       "logo": "./assets/company-logos/logo-58331a055859869c28ed.webp"
     },
+    "Comcast": {
+      "brand_id": "comcast-4ad259ee",
+      "logo": "./assets/company-logos/logo-f5894363d9c75e6cc8f1.webp"
+    },
     "Commerce Bank": {
       "brand_id": "commerce-bank-63d283e5",
       "logo": "./assets/company-logos/logo-6d4af55168d93787e981.webp"
@@ -1300,10 +1364,6 @@
       "brand_id": "commure-af5f4c60",
       "logo": "./assets/company-logos/logo-496fa18b2da4d09b5ef3.webp"
     },
-    "CompassX": {
-      "brand_id": "compassx-4279dea1",
-      "logo": "./assets/company-logos/logo-a03923a6b94f97f22b46.webp"
-    },
     "Computer Services, Inc.": {
       "brand_id": "computer-services-inc-6a484672",
       "logo": "./assets/company-logos/logo-05bb47f3f012c9367edf.webp"
@@ -1316,13 +1376,13 @@
       "brand_id": "concept-reply-a68f1403",
       "logo": "./assets/company-logos/logo-775e2dc116dd52436dc1.webp"
     },
+    "Concord Group Insurance": {
+      "brand_id": "concord-group-insurance-0981598f",
+      "logo": "./assets/company-logos/logo-9d1ba3f833fb40715d52.webp"
+    },
     "Concurrence": {
       "brand_id": "concurrence-40fe9426",
       "logo": "./assets/company-logos/logo-8cf7e6fa0a174430f749.webp"
-    },
-    "Confisa International Group": {
-      "brand_id": "confisa-international-group-44822b36",
-      "logo": "./assets/company-logos/logo-7d251df0cfa98ac40bbf.webp"
     },
     "ConnectDER": {
       "brand_id": "connectder-dc20f7ba",
@@ -1336,6 +1396,10 @@
       "brand_id": "constellation-brands-8cc7b4da",
       "logo": "./assets/company-logos/logo-aca1755f90125a0d57d3.webp"
     },
+    "Consult Red": {
+      "brand_id": "consult-red-0b064834",
+      "logo": "./assets/company-logos/logo-6e93ac36d26f5acc7916.webp"
+    },
     "Consumer AI": {
       "brand_id": "consumer-ai-ed955295",
       "logo": "./assets/company-logos/logo-e34c3d7f92ddc709b691.webp"
@@ -1344,25 +1408,33 @@
       "brand_id": "continental-ad21acb8",
       "logo": "./assets/company-logos/logo-b491c94bca4d5cb186c6.webp"
     },
+    "Cook Systems": {
+      "brand_id": "cook-systems-e5db7fcb",
+      "logo": "./assets/company-logos/logo-4be413a92b88a3d59563.webp"
+    },
     "Copeland": {
       "brand_id": "copeland-b8c7447a",
       "logo": "./assets/company-logos/logo-7ff59ca1d242c087b902.webp"
     },
-    "Core One": {
-      "brand_id": "core-one-792a776c",
-      "logo": "./assets/company-logos/logo-24c0ca8b7ae3cd489ad1.webp"
+    "Core Specialty": {
+      "brand_id": "core-specialty-74752cef",
+      "logo": "./assets/company-logos/logo-e76d0f0897c0e92f619e.webp"
     },
     "CoreWeave": {
       "brand_id": "coreweave-8348e091",
       "logo": "./assets/company-logos/logo-9d1421ea56de56b01891.webp"
     },
-    "Corridor": {
-      "brand_id": "corridor-fd09da60",
-      "logo": "./assets/company-logos/logo-360b429ee298ec66bdb1.webp"
-    },
     "CorroHealth": {
       "brand_id": "corrohealth-a3d5e59b",
       "logo": "./assets/company-logos/logo-71d421ce0ada70731917.webp"
+    },
+    "Corteva": {
+      "brand_id": "corteva-d6cb2812",
+      "logo": "./assets/company-logos/logo-85d01befaf52c4ff9d43.webp"
+    },
+    "Cotality": {
+      "brand_id": "cotality-9b852a42",
+      "logo": "./assets/company-logos/logo-ce62c70ac798fb72ae53.webp"
     },
     "Coupang": {
       "brand_id": "coupang-5b8c59f6",
@@ -1384,10 +1456,6 @@
       "brand_id": "coxhealth-40467a58",
       "logo": "./assets/company-logos/logo-4cf8796278700a48d85b.webp"
     },
-    "Cpsi": {
-      "brand_id": "cpsi-89e143fd",
-      "logo": "./assets/company-logos/logo-759096ba6736e084c319.webp"
-    },
     "Crane Aerospace & Electronics": {
       "brand_id": "crane-aerospace-electronics-ee3914bc",
       "logo": "./assets/company-logos/logo-127fdc7e03876264122b.webp"
@@ -1400,6 +1468,10 @@
       "brand_id": "credit-acceptance-6c4a1fb0",
       "logo": "./assets/company-logos/logo-21b33f2a5ee8f0cb00b3.webp"
     },
+    "Cricut": {
+      "brand_id": "cricut-e4533c64",
+      "logo": "./assets/company-logos/logo-91ce38f3685755b899ba.webp"
+    },
     "CrowdHealth": {
       "brand_id": "crowdhealth-81e040af",
       "logo": "./assets/company-logos/logo-f4c5fb9b02c05543e748.webp"
@@ -1411,10 +1483,6 @@
     "Crusoe": {
       "brand_id": "crusoe-d41ebd9f",
       "logo": "./assets/company-logos/logo-dfaa4347a1950f3c9470.webp"
-    },
-    "Crypto.com": {
-      "brand_id": "crypto-com-23ba4d0e",
-      "logo": "./assets/company-logos/logo-da87ccf8cbdcb9b9b642.webp"
     },
     "Cubic": {
       "brand_id": "cubic-ce371d3c",
@@ -1432,17 +1500,13 @@
       "brand_id": "cushman-wakefield-f7eea3b1",
       "logo": "./assets/company-logos/logo-6f14a6fee7035a7e1b62.webp"
     },
-    "Customers Bank": {
-      "brand_id": "customers-bank-1cbac7a7",
-      "logo": "./assets/company-logos/logo-30b9d3a5a09da2ef2147.webp"
+    "Cyber B.A.T.": {
+      "brand_id": "cyber-b-a-t-e93d7958",
+      "logo": "./assets/company-logos/logo-3826d07d52f55d02f970.webp"
     },
     "Cytiva": {
       "brand_id": "cytiva-96946b06",
       "logo": "./assets/company-logos/logo-0428ead6d3dd7eefea54.webp"
-    },
-    "D476 Groton COLUMBIA Construction Support Engineering": {
-      "brand_id": "d476-groton-columbia-construction-support-engineering-bfa7f47d",
-      "logo": "./assets/company-logos/logo-7c80b977e8714652bcde.webp"
     },
     "DISCO": {
       "brand_id": "disco-3bea44f9",
@@ -1452,9 +1516,9 @@
       "brand_id": "dmi-60045b07",
       "logo": "./assets/company-logos/logo-b362df5ff651eca432c9.webp"
     },
-    "DTCC": {
-      "brand_id": "dtcc-94705f9b",
-      "logo": "./assets/company-logos/logo-872cc99adc61caa1bcc5.webp"
+    "DT": {
+      "brand_id": "dt-fefbdb67",
+      "logo": "./assets/company-logos/logo-d618e77f125f2b136df3.webp"
     },
     "DUAL North America": {
       "brand_id": "dual-north-america-4a139928",
@@ -1464,9 +1528,9 @@
       "brand_id": "dv-trading-ae248918",
       "logo": "./assets/company-logos/logo-c5185846520c0205895a.webp"
     },
-    "DYOPATH": {
-      "brand_id": "dyopath-e8df41d9",
-      "logo": "./assets/company-logos/logo-a7299a7ca99e6661fa2d.webp"
+    "DXC Technology": {
+      "brand_id": "dxc-technology-799b0c7c",
+      "logo": "./assets/company-logos/logo-01b9e0aae43c0b7a0431.webp"
     },
     "DaVita": {
       "brand_id": "davita-4c8f530d",
@@ -1480,13 +1544,13 @@
       "brand_id": "daimler-truck-north-america-a5a3ce9e",
       "logo": "./assets/company-logos/logo-2f189aee4f44745dcb78.webp"
     },
-    "Dana-Farber Cancer Institute": {
-      "brand_id": "dana-farber-cancer-institute-a8bf9401",
-      "logo": "./assets/company-logos/logo-0704dd452242ca3ef158.webp"
-    },
     "Danaher": {
       "brand_id": "danaher-35100dc3",
       "logo": "./assets/company-logos/logo-0428ead6d3dd7eefea54.webp"
+    },
+    "Darktrace": {
+      "brand_id": "darktrace-f157f212",
+      "logo": "./assets/company-logos/logo-33561e381c1c9103219d.webp"
     },
     "DataIntellect": {
       "brand_id": "dataintellect-5354ca2b",
@@ -1499,6 +1563,10 @@
     "Datadog": {
       "brand_id": "datadog-4d8bd97f",
       "logo": "./assets/company-logos/logo-9e39606f974d8b354d28.webp"
+    },
+    "Dataminr": {
+      "brand_id": "dataminr-ba839bfe",
+      "logo": "./assets/company-logos/logo-88efa6f89384df63dd00.webp"
     },
     "David Yurman": {
       "brand_id": "david-yurman-290fc3f5",
@@ -1520,33 +1588,17 @@
       "brand_id": "decagon-5aa1ab8d",
       "logo": "./assets/company-logos/logo-44b4a1dd13f134c78a58.webp"
     },
-    "Deepgram": {
-      "brand_id": "deepgram-f8849d86",
-      "logo": "./assets/company-logos/logo-75792396f407e884b66e.webp"
-    },
-    "Delart": {
-      "brand_id": "delart-eb568ffb",
-      "logo": "./assets/company-logos/logo-69af34d584d7eb54cb11.webp"
-    },
     "Delaware Nation Industries": {
       "brand_id": "delaware-nation-industries-e0690124",
       "logo": "./assets/company-logos/logo-1a4d2adf69091b4137dd.webp"
     },
-    "Delinea": {
-      "brand_id": "delinea-a77c64b2",
-      "logo": "./assets/company-logos/logo-2d6f525e07cdfd29b751.webp"
-    },
-    "Dell": {
-      "brand_id": "dell-d0e2ece1",
-      "logo": "./assets/company-logos/logo-44ddaa7e81a543d91239.webp"
-    },
-    "Delta Dental of New Jersey, Inc.": {
-      "brand_id": "delta-dental-of-new-jersey-inc-231f8ab9",
-      "logo": "./assets/company-logos/logo-051974216bfe6de94a4f.webp"
-    },
     "Delta Faucet Company": {
       "brand_id": "delta-faucet-company-c0d38e4a",
       "logo": "./assets/company-logos/logo-b770bf5e411a373c5cfe.webp"
+    },
+    "Delta Solutions and Strategies": {
+      "brand_id": "delta-solutions-and-strategies-6dc82aab",
+      "logo": "./assets/company-logos/logo-c5a5008b95b55d13fa6e.webp"
     },
     "Dentsu": {
       "brand_id": "dentsu-8519efa7",
@@ -1556,13 +1608,17 @@
       "brand_id": "denver-health-4c4f681b",
       "logo": "./assets/company-logos/logo-800b7fcac5b1e34503a2.webp"
     },
+    "Design Group": {
+      "brand_id": "design-group-1181e378",
+      "logo": "./assets/company-logos/logo-3d5fba65e68b733fee43.webp"
+    },
     "Dev Technology": {
       "brand_id": "dev-technology-ad08572c",
       "logo": "./assets/company-logos/logo-ef437fca80f275f36acf.webp"
     },
-    "DeviantArt": {
-      "brand_id": "deviantart-71959cfd",
-      "logo": "./assets/company-logos/logo-f4165bee46bf7a963916.webp"
+    "Devoteam": {
+      "brand_id": "devoteam-549c476c",
+      "logo": "./assets/company-logos/logo-442d28ffc9d29fde3868.webp"
     },
     "Devoted Health": {
       "brand_id": "devoted-health-4f2878b7",
@@ -1580,13 +1636,13 @@
       "brand_id": "digicert-77633e4c",
       "logo": "./assets/company-logos/logo-1db97d5edc702944a4b9.webp"
     },
+    "Digital Turbine": {
+      "brand_id": "digital-turbine-0ffca35b",
+      "logo": "./assets/company-logos/logo-d618e77f125f2b136df3.webp"
+    },
     "DigitalOcean": {
       "brand_id": "digitalocean-042e9398",
       "logo": "./assets/company-logos/logo-4a1cc09b8298fe9d7ea5.webp"
-    },
-    "Dimensional": {
-      "brand_id": "dimensional-16188fca",
-      "logo": "./assets/company-logos/logo-2e533bda2b976419b2a9.webp"
     },
     "Direct Supply": {
       "brand_id": "direct-supply-0bad171d",
@@ -1608,10 +1664,6 @@
       "brand_id": "diversified-services-network-inc-05aa9285",
       "logo": "./assets/company-logos/logo-c5a720e92ba0247ce151.webp"
     },
-    "DomainTools": {
-      "brand_id": "domaintools-3fb7e7c5",
-      "logo": "./assets/company-logos/logo-e5931fcb9cdbd2b548bd.webp"
-    },
     "DoorDash": {
       "brand_id": "doordash-b0126946",
       "logo": "./assets/company-logos/logo-d29b7b303b3ca7d4756b.webp"
@@ -1632,17 +1684,25 @@
       "brand_id": "drata-9224bb7d",
       "logo": "./assets/company-logos/logo-72be8cf91f87bee3a9a6.webp"
     },
+    "DrinkPAK": {
+      "brand_id": "drinkpak-7d93d711",
+      "logo": "./assets/company-logos/logo-16059d18a1f55117bb2a.webp"
+    },
+    "DriveTime": {
+      "brand_id": "drivetime-09433b4a",
+      "logo": "./assets/company-logos/logo-58b604e655a423707918.webp"
+    },
     "Drivetrain": {
       "brand_id": "drivetrain-49c02101",
       "logo": "./assets/company-logos/logo-e1f951691b4f65cf9ccb.webp"
     },
+    "Dropbox": {
+      "brand_id": "dropbox-75170593",
+      "logo": "./assets/company-logos/logo-4c478ae2770501e43896.webp"
+    },
     "Duck Creek Technologies": {
       "brand_id": "duck-creek-technologies-98e9e9e2",
       "logo": "./assets/company-logos/logo-4784cc69d571864bca4f.webp"
-    },
-    "Duke Energy": {
-      "brand_id": "duke-energy-e766ad16",
-      "logo": "./assets/company-logos/logo-65242ad5dda836eaf16c.webp"
     },
     "Duolingo": {
       "brand_id": "duolingo-be6a9996",
@@ -1652,13 +1712,17 @@
       "brand_id": "dyna-robotics-156573ce",
       "logo": "./assets/company-logos/logo-5eac665c835cf55a9e0f.webp"
     },
+    "E2 Consulting Engineers, LP": {
+      "brand_id": "e2-consulting-engineers-lp-2bf42943",
+      "logo": "./assets/company-logos/logo-74647024fe83c3bbe5e6.webp"
+    },
     "EB Groton Shipyard": {
       "brand_id": "eb-groton-shipyard-21fba0a2",
       "logo": "./assets/company-logos/logo-7c80b977e8714652bcde.webp"
     },
-    "ELEVI": {
-      "brand_id": "elevi-2039f0ca",
-      "logo": "./assets/company-logos/logo-c69506599e0eeb508b72.webp"
+    "EBIT PMO": {
+      "brand_id": "ebit-pmo-b9b15dea",
+      "logo": "./assets/company-logos/logo-7c80b977e8714652bcde.webp"
     },
     "ENFOS, Inc.": {
       "brand_id": "enfos-inc-b9749d0a",
@@ -1680,6 +1744,10 @@
       "brand_id": "eqt-corporation-a2c3caef",
       "logo": "./assets/company-logos/logo-15a3a86f06745b5992b3.webp"
     },
+    "ERPA": {
+      "brand_id": "erpa-5140418d",
+      "logo": "./assets/company-logos/logo-071bae7c50bd0ab476a7.webp"
+    },
     "ETAP": {
       "brand_id": "etap-c80f9808",
       "logo": "./assets/company-logos/logo-b650ec52dd484202ac97.webp"
@@ -1692,25 +1760,33 @@
       "brand_id": "eaton-28236bb6",
       "logo": "./assets/company-logos/logo-d6897b6a3aa62f5503ca.webp"
     },
+    "Ebara Elliott Energy": {
+      "brand_id": "ebara-elliott-energy-dbbe7926",
+      "logo": "./assets/company-logos/logo-346dafc14a505358d1ae.webp"
+    },
     "Echo Neurotechnologies": {
       "brand_id": "echo-neurotechnologies-516d1ee2",
       "logo": "./assets/company-logos/logo-d9da37964daa51bda682.webp"
+    },
+    "Ecolab": {
+      "brand_id": "ecolab-c9023b3e",
+      "logo": "./assets/company-logos/logo-f3a85812ec790500da3f.webp"
+    },
+    "Edelman": {
+      "brand_id": "edelman-784cbff9",
+      "logo": "./assets/company-logos/logo-6cfc7745e9cadc60dde4.webp"
+    },
+    "Edwards": {
+      "brand_id": "edwards-66f86b1f",
+      "logo": "./assets/company-logos/logo-77244bdffe8b8b7eb774.webp"
     },
     "Egis": {
       "brand_id": "egis-25d4a430",
       "logo": "./assets/company-logos/logo-bc694210cf5e4019bda1.webp"
     },
-    "Eight Sleep": {
-      "brand_id": "eight-sleep-b1ead21a",
-      "logo": "./assets/company-logos/logo-6e5fa0bed809253088e7.webp"
-    },
     "Eightfold": {
       "brand_id": "eightfold-97f75857",
       "logo": "./assets/company-logos/logo-4d16a309b5eeecb848cd.webp"
-    },
-    "Ekkt.Fa.Us2.Oraclecloud.Com": {
-      "brand_id": "ekkt-fa-us2-oraclecloud-com-35a70144",
-      "logo": "./assets/company-logos/logo-e2caf860338d46e67f2b.webp"
     },
     "Elanco": {
       "brand_id": "elanco-c552d94a",
@@ -1756,25 +1832,29 @@
       "brand_id": "enablecomp-1ea4a8bb",
       "logo": "./assets/company-logos/logo-2bcee85178ae921ae420.webp"
     },
-    "Enbridge": {
-      "brand_id": "enbridge-60b65a79",
-      "logo": "./assets/company-logos/logo-8e0dbfacedf6c19eba6f.webp"
-    },
-    "Encoura": {
-      "brand_id": "encoura-54b4b3ca",
-      "logo": "./assets/company-logos/logo-f64c7a842c6e06df6bee.webp"
-    },
     "Endava": {
       "brand_id": "endava-358bfb6e",
       "logo": "./assets/company-logos/logo-4b6463d00108b1bfedf4.webp"
+    },
+    "EngFlow": {
+      "brand_id": "engflow-65e6dbad",
+      "logo": "./assets/company-logos/logo-f9a188e93418e43b4f47.webp"
     },
     "Engramme": {
       "brand_id": "engramme-0b484d86",
       "logo": "./assets/company-logos/logo-e22395683a729ad1405b.webp"
     },
-    "Enovix": {
-      "brand_id": "enovix-6715cbba",
-      "logo": "./assets/company-logos/logo-d9264f0032e79801da03.webp"
+    "Ensc": {
+      "brand_id": "ensc-a64362c4",
+      "logo": "./assets/company-logos/logo-330cd1d0c2375b4b261b.webp"
+    },
+    "Entrust": {
+      "brand_id": "entrust-f0228cfd",
+      "logo": "./assets/company-logos/logo-0ce9f6530493a4e6c25b.webp"
+    },
+    "Envita Solutions": {
+      "brand_id": "envita-solutions-19b0c5ae",
+      "logo": "./assets/company-logos/logo-d8557215c48ab4cb2508.webp"
     },
     "Equifax": {
       "brand_id": "equifax-7953047b",
@@ -1783,6 +1863,10 @@
     "Equiniti": {
       "brand_id": "equiniti-1b91b868",
       "logo": "./assets/company-logos/logo-0f6d708346d2cd22a5b5.webp"
+    },
+    "Equinix": {
+      "brand_id": "equinix-a7c0e2de",
+      "logo": "./assets/company-logos/logo-7195fe1bcec0abed2ca6.webp"
     },
     "EquipmentShare": {
       "brand_id": "equipmentshare-a63669ec",
@@ -1856,14 +1940,6 @@
       "brand_id": "fa-evmr-saasfaprod1-fa-ocs-oraclecloud-com-625e36b4",
       "logo": "./assets/company-logos/logo-2810e6d144108e75b0ae.webp"
     },
-    "Fa Ewjt Saasfaprod1.Fa.Ocs.Oraclecloud.Com": {
-      "brand_id": "fa-ewjt-saasfaprod1-fa-ocs-oraclecloud-com-158be102",
-      "logo": "./assets/company-logos/logo-7d833de8333daa432c6b.webp"
-    },
-    "Falcata/TSC": {
-      "brand_id": "falcata-tsc-7ee849d2",
-      "logo": "./assets/company-logos/logo-69950cde3cca8c905edc.webp"
-    },
     "FanDuel": {
       "brand_id": "fanduel-cb87b788",
       "logo": "./assets/company-logos/logo-5a658d50c18ddf67257d.webp"
@@ -1888,6 +1964,10 @@
       "brand_id": "fastly-0f214b80",
       "logo": "./assets/company-logos/logo-5cbddf9029ffc6f0ffc4.webp"
     },
+    "Federal Reserve Bank of Atlanta": {
+      "brand_id": "federal-reserve-bank-of-atlanta-0cf3e718",
+      "logo": "./assets/company-logos/logo-c2b39689b12c0a817be2.webp"
+    },
     "Federal Reserve Bank of Dallas": {
       "brand_id": "federal-reserve-bank-of-dallas-3a8334e7",
       "logo": "./assets/company-logos/logo-c2b39689b12c0a817be2.webp"
@@ -1904,17 +1984,21 @@
       "brand_id": "federal-reserve-bank-of-philadelphia-e32d44b8",
       "logo": "./assets/company-logos/logo-c2b39689b12c0a817be2.webp"
     },
+    "Federal Reserve Bank of Richmond": {
+      "brand_id": "federal-reserve-bank-of-richmond-ff9eade7",
+      "logo": "./assets/company-logos/logo-c2b39689b12c0a817be2.webp"
+    },
     "Ferguson": {
       "brand_id": "ferguson-78d3c5c0",
       "logo": "./assets/company-logos/logo-e3f820e06b2f99e0aef2.webp"
     },
+    "Ferrovial": {
+      "brand_id": "ferrovial-904c5d5c",
+      "logo": "./assets/company-logos/logo-79381e33761a96d7a7ed.webp"
+    },
     "Fidelity": {
       "brand_id": "fidelity-f611beab",
       "logo": "./assets/company-logos/logo-81cc82cbd874ad13331b.webp"
-    },
-    "Field AI": {
-      "brand_id": "field-ai-53439382",
-      "logo": "./assets/company-logos/logo-89cb62b0f2d0296bc0ec.webp"
     },
     "FieldAI": {
       "brand_id": "fieldai-a8f97ab7",
@@ -1968,25 +2052,17 @@
       "brand_id": "flex-222f930b",
       "logo": "./assets/company-logos/logo-63f5f36ecde985cbb887.webp"
     },
-    "Florence Healthcare": {
-      "brand_id": "florence-healthcare-ceb64780",
-      "logo": "./assets/company-logos/logo-733006e1259f2d64626d.webp"
-    },
     "Flossy": {
       "brand_id": "flossy-6fe81528",
       "logo": "./assets/company-logos/logo-6873530bb0db58be3a3c.webp"
     },
-    "Focused Energy": {
-      "brand_id": "focused-energy-472ef7a1",
-      "logo": "./assets/company-logos/logo-ab363389aff8a343c4c7.webp"
+    "Fluke": {
+      "brand_id": "fluke-7625d82f",
+      "logo": "./assets/company-logos/logo-707aeabec6157c65d046.webp"
     },
     "Ford": {
       "brand_id": "ford-b2808c94",
       "logo": "./assets/company-logos/logo-82d948e4b3e335f35d7c.webp"
-    },
-    "Ford Motor Company": {
-      "brand_id": "ford-motor-company-eb98a341",
-      "logo": "./assets/company-logos/logo-96ed9c74d61369244f9d.webp"
     },
     "FormFactor, Inc.": {
       "brand_id": "formfactor-inc-afa60b16",
@@ -1996,13 +2072,33 @@
       "brand_id": "formlabs-eb48c4ec",
       "logo": "./assets/company-logos/logo-552219d11f93b02d735b.webp"
     },
-    "Foundation Health": {
-      "brand_id": "foundation-health-938fbbff",
-      "logo": "./assets/company-logos/logo-88736c0940255c20a387.webp"
+    "Fort Bend County": {
+      "brand_id": "fort-bend-county-4d579769",
+      "logo": "./assets/company-logos/logo-c65ecd5f8931f85d814d.webp"
+    },
+    "Fort Robotics": {
+      "brand_id": "fort-robotics-c7d9ef46",
+      "logo": "./assets/company-logos/logo-2ad007101724dda9ae36.webp"
+    },
+    "Fortive": {
+      "brand_id": "fortive-44d32dc3",
+      "logo": "./assets/company-logos/logo-f1aceee24926211a8370.webp"
+    },
+    "Foth": {
+      "brand_id": "foth-1e0276d5",
+      "logo": "./assets/company-logos/logo-c16bba114691579cf043.webp"
+    },
+    "Fox Valley Technical College": {
+      "brand_id": "fox-valley-technical-college-9299e1f6",
+      "logo": "./assets/company-logos/logo-e1fda18dbdddea046fba.webp"
     },
     "Fractal": {
       "brand_id": "fractal-60f4bf5a",
       "logo": "./assets/company-logos/logo-95487ef22a8fde184e03.webp"
+    },
+    "Fragomen": {
+      "brand_id": "fragomen-67dd6104",
+      "logo": "./assets/company-logos/logo-0e5fb0089d5e3523910d.webp"
     },
     "Freudenberg": {
       "brand_id": "freudenberg-f230324b",
@@ -2012,13 +2108,33 @@
       "brand_id": "frost-d7bf0c9e",
       "logo": "./assets/company-logos/logo-ec5e094f901acd8cef1a.webp"
     },
+    "Fuku": {
+      "brand_id": "fuku-379fe838",
+      "logo": "./assets/company-logos/logo-c5a720e92ba0247ce151.webp"
+    },
+    "Furientis": {
+      "brand_id": "furientis-224421ff",
+      "logo": "./assets/company-logos/logo-839fd2cc741c8aabba63.webp"
+    },
+    "FurtherAI": {
+      "brand_id": "furtherai-5c94f7fa",
+      "logo": "./assets/company-logos/logo-9c4d79b712070f381047.webp"
+    },
+    "Fuse": {
+      "brand_id": "fuse-125c521a",
+      "logo": "./assets/company-logos/logo-12241f8ee600605880e5.webp"
+    },
+    "G Adventures": {
+      "brand_id": "g-adventures-98fb0232",
+      "logo": "./assets/company-logos/logo-983283af615824c09678.webp"
+    },
+    "G2IT": {
+      "brand_id": "g2it-8f2be724",
+      "logo": "./assets/company-logos/logo-55ac34f1fda32f068e15.webp"
+    },
     "GDIT": {
       "brand_id": "gdit-cd4a6ae7",
       "logo": "./assets/company-logos/logo-d16ce387bfc37fc322ad.webp"
-    },
-    "GDKN": {
-      "brand_id": "gdkn-e0dff4a5",
-      "logo": "./assets/company-logos/logo-325b8be4e0e8aa88fac8.webp"
     },
     "GE Aerospace": {
       "brand_id": "ge-aerospace-a83512a7",
@@ -2035,6 +2151,10 @@
     "GEICO": {
       "brand_id": "geico-a638e70f",
       "logo": "./assets/company-logos/logo-99c0715b2b48d86fd7d4.webp"
+    },
+    "GRAIL": {
+      "brand_id": "grail-3fe2c527",
+      "logo": "./assets/company-logos/logo-073d8b4eabd812995aea.webp"
     },
     "GSK": {
       "brand_id": "gsk-e79afbc1",
@@ -2056,6 +2176,14 @@
       "brand_id": "garner-health-f7ca66b7",
       "logo": "./assets/company-logos/logo-ab2d9555945608866d7e.webp"
     },
+    "Gartner": {
+      "brand_id": "gartner-0616a267",
+      "logo": "./assets/company-logos/logo-b756b4cab8d1ec9ff2dd.webp"
+    },
+    "Gelber Group": {
+      "brand_id": "gelber-group-36cc526a",
+      "logo": "./assets/company-logos/logo-835f8fe7b747aea8dd13.webp"
+    },
     "Generac": {
       "brand_id": "generac-8b5b4f7c",
       "logo": "./assets/company-logos/logo-b1c416ec8fec9dbb7da0.webp"
@@ -2068,13 +2196,33 @@
       "brand_id": "general-dynamics-information-technology-e8cb20ab",
       "logo": "./assets/company-logos/logo-d16ce387bfc37fc322ad.webp"
     },
+    "General Intuition & Medal": {
+      "brand_id": "general-intuition-medal-18c5c60a",
+      "logo": "./assets/company-logos/logo-b34b5ba114dea679035f.webp"
+    },
     "General Motors": {
       "brand_id": "general-motors-a57526b5",
       "logo": "./assets/company-logos/logo-f6b234743d7ed3c8226f.webp"
     },
+    "Genesis Cancer and Blood Institute": {
+      "brand_id": "genesis-cancer-and-blood-institute-88898291",
+      "logo": "./assets/company-logos/logo-0453e089b0f5f79f2ac3.webp"
+    },
+    "Genius AI": {
+      "brand_id": "genius-ai-d4d611ce",
+      "logo": "./assets/company-logos/logo-882f0048ec35cb3f978c.webp"
+    },
     "Genworth": {
       "brand_id": "genworth-7c712593",
       "logo": "./assets/company-logos/logo-46869f8bce7746af55a8.webp"
+    },
+    "Ghost Story Games": {
+      "brand_id": "ghost-story-games-c85056d7",
+      "logo": "./assets/company-logos/logo-9ec30c7e473dec9530ca.webp"
+    },
+    "Gigs At Gigs": {
+      "brand_id": "gigs-at-gigs-e740d32c",
+      "logo": "./assets/company-logos/logo-9f8c9eab8ae1ed7794b7.webp"
     },
     "GitLab": {
       "brand_id": "gitlab-9d96d9d5",
@@ -2096,6 +2244,10 @@
       "brand_id": "globus-medical-4eda5fc6",
       "logo": "./assets/company-logos/logo-c626ea5af56985ca745f.webp"
     },
+    "Goodshuffle Pro": {
+      "brand_id": "goodshuffle-pro-9baabe9b",
+      "logo": "./assets/company-logos/logo-a18f0ae9edcdd61d9ae2.webp"
+    },
     "Google": {
       "brand_id": "google-bbdefa29",
       "logo": "./assets/company-logos/logo-ce4f228a79f24c82afd3.webp"
@@ -2104,9 +2256,9 @@
       "brand_id": "gopuff-2b3f49c7",
       "logo": "./assets/company-logos/logo-d5686b2bf924911b6177.webp"
     },
-    "Gradial": {
-      "brand_id": "gradial-7b9c5865",
-      "logo": "./assets/company-logos/logo-55d0c96926abb282379a.webp"
+    "Grady Health System": {
+      "brand_id": "grady-health-system-15554736",
+      "logo": "./assets/company-logos/logo-33e142d37c88e6a3c926.webp"
     },
     "Gramian Consulting Group": {
       "brand_id": "gramian-consulting-group-0496e0ca",
@@ -2120,13 +2272,9 @@
       "brand_id": "great-american-insurance-group-a146ea7d",
       "logo": "./assets/company-logos/logo-cfab581a8edcabc63fff.webp"
     },
-    "Great Gray Group": {
-      "brand_id": "great-gray-group-81d765b1",
-      "logo": "./assets/company-logos/logo-3ba08e9ce9cd24eb9af0.webp"
-    },
-    "Greenpoint Technologies": {
-      "brand_id": "greenpoint-technologies-f5311fae",
-      "logo": "./assets/company-logos/logo-87e90aafc5783c45681e.webp"
+    "Greenheck Group": {
+      "brand_id": "greenheck-group-a98c3b5f",
+      "logo": "./assets/company-logos/logo-0adce9a1f0be75e191f1.webp"
     },
     "Guidewire": {
       "brand_id": "guidewire-af5c69f8",
@@ -2136,13 +2284,13 @@
       "brand_id": "gusto-95f3aff4",
       "logo": "./assets/company-logos/logo-3df8399f28a91ae00a1a.webp"
     },
+    "H1": {
+      "brand_id": "h1-33112ee1",
+      "logo": "./assets/company-logos/logo-c382ba39f0ef1caa44a3.webp"
+    },
     "HARMAN": {
       "brand_id": "harman-ea7c003b",
       "logo": "./assets/company-logos/logo-e4a773b008f54992716b.webp"
-    },
-    "HD Supply": {
-      "brand_id": "hd-supply-84f0da02",
-      "logo": "./assets/company-logos/logo-c49f09a262b1433304a7.webp"
     },
     "HP": {
       "brand_id": "hp-93969d19",
@@ -2156,10 +2304,6 @@
       "brand_id": "hrl-laboratories-6b1f88f9",
       "logo": "./assets/company-logos/logo-1138fe859b1509cc5d5a.webp"
     },
-    "Hadrian": {
-      "brand_id": "hadrian-5e8d0bae",
-      "logo": "./assets/company-logos/logo-4495f9c797d013918728.webp"
-    },
     "Haleon": {
       "brand_id": "haleon-93344f3f",
       "logo": "./assets/company-logos/logo-5619d077a5cc40b4c7b6.webp"
@@ -2168,9 +2312,17 @@
       "brand_id": "hancock-whitney-a9688e43",
       "logo": "./assets/company-logos/logo-da6fb790c3385ab878b2.webp"
     },
+    "Happen Bank": {
+      "brand_id": "happen-bank-80dc0662",
+      "logo": "./assets/company-logos/logo-72966d3897b5e310fde1.webp"
+    },
     "Harbinger": {
       "brand_id": "harbinger-fc6ef38e",
       "logo": "./assets/company-logos/logo-124f8f28ba7e512a2749.webp"
+    },
+    "HarbourVest": {
+      "brand_id": "harbourvest-0edd9af7",
+      "logo": "./assets/company-logos/logo-ec0f3fce6f4e068cdc5f.webp"
     },
     "Harness": {
       "brand_id": "harness-49f75646",
@@ -2183,6 +2335,10 @@
     "Harvey": {
       "brand_id": "harvey-c9fd53f3",
       "logo": "./assets/company-logos/logo-e556527d35ce6627a6d6.webp"
+    },
+    "Headway": {
+      "brand_id": "headway-8da43fa8",
+      "logo": "./assets/company-logos/logo-386819ba2c7d05b8b9fc.webp"
     },
     "Health Care Service Corporation": {
       "brand_id": "health-care-service-corporation-b292236b",
@@ -2204,9 +2360,17 @@
       "brand_id": "hewlett-packard-enterprise-b064e693",
       "logo": "./assets/company-logos/logo-76c374783fdc783be2c6.webp"
     },
+    "Hims & Hers": {
+      "brand_id": "hims-hers-9f082fa3",
+      "logo": "./assets/company-logos/logo-33c44e11776e9417c472.webp"
+    },
     "Hinge Health": {
       "brand_id": "hinge-health-96d8a228",
       "logo": "./assets/company-logos/logo-6ebd663e064b257f76af.webp"
+    },
+    "Hippocratic AI": {
+      "brand_id": "hippocratic-ai-84747781",
+      "logo": "./assets/company-logos/logo-ac3618b0398d40554e9f.webp"
     },
     "Honeywell Aerospace": {
       "brand_id": "honeywell-aerospace-99f0f573",
@@ -2216,14 +2380,6 @@
       "brand_id": "horizon3-3c281516",
       "logo": "./assets/company-logos/logo-8f37d6dcbf154f1adf60.webp"
     },
-    "Housecall Pro": {
-      "brand_id": "housecall-pro-4b4b56d1",
-      "logo": "./assets/company-logos/logo-d72b420488963a7ae2e4.webp"
-    },
-    "Hubble Network": {
-      "brand_id": "hubble-network-a18b231b",
-      "logo": "./assets/company-logos/logo-7126815fd402a0aa9fbd.webp"
-    },
     "Human Interest": {
       "brand_id": "human-interest-5d5bb17c",
       "logo": "./assets/company-logos/logo-1e0ecbbf766b8015ae34.webp"
@@ -2232,6 +2388,10 @@
       "brand_id": "humana-93babfec",
       "logo": "./assets/company-logos/logo-f84cccc262a84026427c.webp"
     },
+    "Huntington": {
+      "brand_id": "huntington-c97202cf",
+      "logo": "./assets/company-logos/logo-8243d6e55a375652768d.webp"
+    },
     "Huron": {
       "brand_id": "huron-a1cb44b0",
       "logo": "./assets/company-logos/logo-c3049bbc979fca535915.webp"
@@ -2239,10 +2399,6 @@
     "Hy-Vee": {
       "brand_id": "hy-vee-61badf91",
       "logo": "./assets/company-logos/logo-6b98723777f380818fd2.webp"
-    },
-    "Hypori": {
-      "brand_id": "hypori-38e7adf1",
-      "logo": "./assets/company-logos/logo-2bad32946ec2aa6ff423.webp"
     },
     "Hyve": {
       "brand_id": "hyve-a1e2a39a",
@@ -2264,9 +2420,17 @@
       "brand_id": "idexx-cf73ffdf",
       "logo": "./assets/company-logos/logo-e190eb2690ba97a6ecd5.webp"
     },
+    "ITW": {
+      "brand_id": "itw-b108cc2e",
+      "logo": "./assets/company-logos/logo-e2f09d1c72dffa8baebf.webp"
+    },
     "Ibotta": {
       "brand_id": "ibotta-88b1b00d",
       "logo": "./assets/company-logos/logo-60c441c56d1733fd84b2.webp"
+    },
+    "Impinj": {
+      "brand_id": "impinj-0b6e0007",
+      "logo": "./assets/company-logos/logo-a7204f17f1fb30cc92c0.webp"
     },
     "Incora": {
       "brand_id": "incora-916c250f",
@@ -2320,6 +2484,14 @@
       "brand_id": "intuitive-8a4212d7",
       "logo": "./assets/company-logos/logo-b3504c614e03c039d957.webp"
     },
+    "Invenergy": {
+      "brand_id": "invenergy-e32717af",
+      "logo": "./assets/company-logos/logo-7d755c1765f08f6b4a08.webp"
+    },
+    "Invesco": {
+      "brand_id": "invesco-f4a027b5",
+      "logo": "./assets/company-logos/logo-06bc392893bdb343bbbb.webp"
+    },
     "IonQ": {
       "brand_id": "ionq-ba3a47ae",
       "logo": "./assets/company-logos/logo-273a4024844feed74c75.webp"
@@ -2336,6 +2508,10 @@
       "brand_id": "ivy-tech-4b52f525",
       "logo": "./assets/company-logos/logo-26191c3308eba87c77bf.webp"
     },
+    "JPMC": {
+      "brand_id": "jpmc-74c4c166",
+      "logo": "./assets/company-logos/logo-ce92a1624c1cc5780d59.webp"
+    },
     "JPMorgan Chase": {
       "brand_id": "jpmorgan-chase-309e3153",
       "logo": "./assets/company-logos/logo-ce92a1624c1cc5780d59.webp"
@@ -2347,6 +2523,10 @@
     "Jabil": {
       "brand_id": "jabil-5313be21",
       "logo": "./assets/company-logos/logo-75770377fe964f55d07a.webp"
+    },
+    "Jackson": {
+      "brand_id": "jackson-dc355ec7",
+      "logo": "./assets/company-logos/logo-99d4e1f5b32a59a8a69b.webp"
     },
     "JeffreyM Consulting": {
       "brand_id": "jeffreym-consulting-20aca803",
@@ -2376,21 +2556,25 @@
       "brand_id": "jones-lang-lasalle-09dc322c",
       "logo": "./assets/company-logos/logo-3bbf42af6e1256b07ccd.webp"
     },
-    "Jpmc": {
-      "brand_id": "jpmc-74c4c166",
-      "logo": "./assets/company-logos/logo-ce92a1624c1cc5780d59.webp"
-    },
-    "Judi Health": {
-      "brand_id": "judi-health-1a1ff455",
-      "logo": "./assets/company-logos/logo-b0ed2fbd994f8b5db1f0.webp"
-    },
     "Justworks": {
       "brand_id": "justworks-30b301fc",
       "logo": "./assets/company-logos/logo-2d783dea109ae7b67a47.webp"
     },
+    "KION Group": {
+      "brand_id": "kion-group-be82cba2",
+      "logo": "./assets/company-logos/logo-019084c01bc525cf007f.webp"
+    },
     "KLA": {
       "brand_id": "kla-d59ffd35",
       "logo": "./assets/company-logos/logo-c676dc9c4240c2a064c3.webp"
+    },
+    "KPI Solutions": {
+      "brand_id": "kpi-solutions-4b20ccbb",
+      "logo": "./assets/company-logos/logo-ed62518cfbd3e8c4cff3.webp"
+    },
+    "Katmai": {
+      "brand_id": "katmai-4cff8dee",
+      "logo": "./assets/company-logos/logo-6e93ac36d26f5acc7916.webp"
     },
     "Keeper Security": {
       "brand_id": "keeper-security-13eaa726",
@@ -2404,10 +2588,6 @@
       "brand_id": "kihomac-5ee203b4",
       "logo": "./assets/company-logos/logo-79070723a17ec9f8a897.webp"
     },
-    "Kion Group": {
-      "brand_id": "kion-group-be82cba2",
-      "logo": "./assets/company-logos/logo-019084c01bc525cf007f.webp"
-    },
     "Klaviyo": {
       "brand_id": "klaviyo-5879f104",
       "logo": "./assets/company-logos/logo-20d7b46f1df79f776ebc.webp"
@@ -2416,10 +2596,6 @@
       "brand_id": "kobie-701f6d2a",
       "logo": "./assets/company-logos/logo-940bee200a379b4b9cbf.webp"
     },
-    "Kong": {
-      "brand_id": "kong-28877ae8",
-      "logo": "./assets/company-logos/logo-20574d6b68ec4cd29fcc.webp"
-    },
     "Kraft Heinz": {
       "brand_id": "kraft-heinz-d9a1a215",
       "logo": "./assets/company-logos/logo-a77315307dce9d576ca5.webp"
@@ -2427,6 +2603,14 @@
     "Kraken": {
       "brand_id": "kraken-686d22d6",
       "logo": "./assets/company-logos/logo-6c99bd35000ebc7ce133.webp"
+    },
+    "Kunai": {
+      "brand_id": "kunai-44b312a9",
+      "logo": "./assets/company-logos/logo-4b146186df405d8009b9.webp"
+    },
+    "Kyndryl": {
+      "brand_id": "kyndryl-0b9ee0b9",
+      "logo": "./assets/company-logos/logo-24f2124848b200030b04.webp"
     },
     "LILT": {
       "brand_id": "lilt-f510914e",
@@ -2460,6 +2644,10 @@
       "brand_id": "lancedb-57feacd1",
       "logo": "./assets/company-logos/logo-68cd7bc59bfa87aa66dc.webp"
     },
+    "Land O'Lakes": {
+      "brand_id": "land-o-lakes-3c7b1f06",
+      "logo": "./assets/company-logos/logo-34de2c0ca124b8429dcf.webp"
+    },
     "LangChain": {
       "brand_id": "langchain-f3f2184b",
       "logo": "./assets/company-logos/logo-a2963b10f23b387c6adf.webp"
@@ -2468,9 +2656,9 @@
       "brand_id": "lawrence-livermore-national-laboratory-439bba4a",
       "logo": "./assets/company-logos/logo-cf4fb071a42a01f61b8d.webp"
     },
-    "Leica Biosystems": {
-      "brand_id": "leica-biosystems-f44b62d9",
-      "logo": "./assets/company-logos/logo-0428ead6d3dd7eefea54.webp"
+    "Leap": {
+      "brand_id": "leap-a76f47a6",
+      "logo": "./assets/company-logos/logo-6a07849c6308c9d6ddd9.webp"
     },
     "Leidos": {
       "brand_id": "leidos-5d11926d",
@@ -2488,6 +2676,10 @@
       "brand_id": "lexisnexisa-risk-solutions-a9ec6ab2",
       "logo": "./assets/company-logos/logo-b6e4334e2cd71e2321e5.webp"
     },
+    "Life Fitness": {
+      "brand_id": "life-fitness-22395db8",
+      "logo": "./assets/company-logos/logo-215673e38c33de666adb.webp"
+    },
     "Liftoff": {
       "brand_id": "liftoff-dd05f523",
       "logo": "./assets/company-logos/logo-a32f7459844172a649d3.webp"
@@ -2495,10 +2687,6 @@
     "Light & Wonder": {
       "brand_id": "light-wonder-03571cf3",
       "logo": "./assets/company-logos/logo-b1b3efb9b02a2aadd910.webp"
-    },
-    "Lightcast": {
-      "brand_id": "lightcast-567877b2",
-      "logo": "./assets/company-logos/logo-2443ca24b2c99f91d7bb.webp"
     },
     "Lightfield": {
       "brand_id": "lightfield-e2e2d8b1",
@@ -2512,6 +2700,10 @@
       "brand_id": "lilly-202bd009",
       "logo": "./assets/company-logos/logo-5b562018129a7a7994bc.webp"
     },
+    "Lineage": {
+      "brand_id": "lineage-0713f136",
+      "logo": "./assets/company-logos/logo-06a7c99abe345f56d4b2.webp"
+    },
     "LinkedIn": {
       "brand_id": "linkedin-84308bea",
       "logo": "./assets/company-logos/logo-45756b719b8442ffd96e.webp"
@@ -2520,21 +2712,21 @@
       "brand_id": "live-nation-entertainment-d09d76c1",
       "logo": "./assets/company-logos/logo-0b6fe3fdead7454e5590.webp"
     },
-    "LiveRamp, Inc.": {
-      "brand_id": "liveramp-inc-bb5a56a4",
-      "logo": "./assets/company-logos/logo-086dc514e7231a77461f.webp"
+    "LiveView Technologies": {
+      "brand_id": "liveview-technologies-86764353",
+      "logo": "./assets/company-logos/logo-b3f015aad2fcfe1d526d.webp"
     },
     "Lockheed Martin": {
       "brand_id": "lockheed-martin-c3760135",
       "logo": "./assets/company-logos/logo-bf079dc60b93abc8e0b8.webp"
     },
-    "Loft Orbital": {
-      "brand_id": "loft-orbital-eb094ee8",
-      "logo": "./assets/company-logos/logo-4e6e418fcd26ed9db5ee.webp"
-    },
     "Logic20/20": {
       "brand_id": "logic20-20-776afdcd",
       "logo": "./assets/company-logos/logo-819659fdaea3857a8a15.webp"
+    },
+    "Logicalis": {
+      "brand_id": "logicalis-fba317b4",
+      "logo": "./assets/company-logos/logo-371f60e68a039b35b34a.webp"
     },
     "Lowe's": {
       "brand_id": "lowe-s-5649703e",
@@ -2548,9 +2740,9 @@
       "brand_id": "lumeris-3a70f1cb",
       "logo": "./assets/company-logos/logo-3d02ee0d7d6aecaf9c03.webp"
     },
-    "Lumos AI Research": {
-      "brand_id": "lumos-ai-research-a997f3e3",
-      "logo": "./assets/company-logos/logo-035a7d5d09ca70ce06a5.webp"
+    "Lyft": {
+      "brand_id": "lyft-09a2f489",
+      "logo": "./assets/company-logos/logo-7586381841629398c9a7.webp"
     },
     "Lyric": {
       "brand_id": "lyric-acf660ae",
@@ -2560,6 +2752,10 @@
       "brand_id": "m-t-bank-07aa95dc",
       "logo": "./assets/company-logos/logo-23da58d024490e73c6fe.webp"
     },
+    "MGM Resorts": {
+      "brand_id": "mgm-resorts-13839604",
+      "logo": "./assets/company-logos/logo-aa37c1ef1bd1c1b3a28a.webp"
+    },
     "MKS": {
       "brand_id": "mks-f7ca345e",
       "logo": "./assets/company-logos/logo-cd613b187319d1b7d810.webp"
@@ -2568,9 +2764,9 @@
       "brand_id": "mlabs-a21bc4a1",
       "logo": "./assets/company-logos/logo-ca5f2709d03fcf27ba6f.webp"
     },
-    "Magnet Forensics": {
-      "brand_id": "magnet-forensics-c1287713",
-      "logo": "./assets/company-logos/logo-9f1b922faa16fcb08b08.webp"
+    "Maersk": {
+      "brand_id": "maersk-4ac6b1d4",
+      "logo": "./assets/company-logos/logo-0bcbb8144220dbdf9adb.webp"
     },
     "Maine State Government": {
       "brand_id": "maine-state-government-fdabc135",
@@ -2592,6 +2788,10 @@
       "brand_id": "marmon-5053eb78",
       "logo": "./assets/company-logos/logo-b7de5a4b02f6679e82dd.webp"
     },
+    "Mars": {
+      "brand_id": "mars-d158be41",
+      "logo": "./assets/company-logos/logo-e910751978869bd000f4.webp"
+    },
     "Marsh": {
       "brand_id": "marsh-428e626f",
       "logo": "./assets/company-logos/logo-f88f6a8cb7c0eb72637d.webp"
@@ -2604,17 +2804,13 @@
       "brand_id": "mastercard-07863e7a",
       "logo": "./assets/company-logos/logo-026d4ad6d6665846576c.webp"
     },
-    "Mattel": {
-      "brand_id": "mattel-dcfa08fc",
-      "logo": "./assets/company-logos/logo-2190309af99e94bd68fc.webp"
+    "Matternet": {
+      "brand_id": "matternet-28aff76e",
+      "logo": "./assets/company-logos/logo-b90d770ab41b85a66b42.webp"
     },
     "Maverikcareers": {
       "brand_id": "maverikcareers-1083a242",
       "logo": "./assets/company-logos/logo-3826d07d52f55d02f970.webp"
-    },
-    "Maxinsights": {
-      "brand_id": "maxinsights-aa53b89e",
-      "logo": "./assets/company-logos/logo-6601968511f9be9ff2c8.webp"
     },
     "McKesson": {
       "brand_id": "mckesson-5ac20c74",
@@ -2632,6 +2828,10 @@
       "brand_id": "meeru-ai-inc-adbb4f8e",
       "logo": "./assets/company-logos/logo-c5a720e92ba0247ce151.webp"
     },
+    "Menasha Corporation": {
+      "brand_id": "menasha-corporation-9463ffcc",
+      "logo": "./assets/company-logos/logo-97fcab74bbce7da74f3c.webp"
+    },
     "Mercer University": {
       "brand_id": "mercer-university-68022d01",
       "logo": "./assets/company-logos/logo-cc26f9a49ec3a8aeb38f.webp"
@@ -2647,6 +2847,10 @@
     "Meridianlink": {
       "brand_id": "meridianlink-a2d8a6cb",
       "logo": "./assets/company-logos/logo-131219ce157b94dfb045.webp"
+    },
+    "MetaPhase": {
+      "brand_id": "metaphase-7f79fc5d",
+      "logo": "./assets/company-logos/logo-3826d07d52f55d02f970.webp"
     },
     "MetroStar": {
       "brand_id": "metrostar-37c80cff",
@@ -2684,6 +2888,10 @@
       "brand_id": "miratech-f4944f47",
       "logo": "./assets/company-logos/logo-97d4ccf2f131d547269a.webp"
     },
+    "Mitsubishi UFJ Financial Group": {
+      "brand_id": "mitsubishi-ufj-financial-group-12e3d073",
+      "logo": "./assets/company-logos/logo-9e8b2ac2e052f37148b4.webp"
+    },
     "ModMed": {
       "brand_id": "modmed-c4edfb2c",
       "logo": "./assets/company-logos/logo-2cb3ce45f01e9ed29113.webp"
@@ -2691,6 +2899,10 @@
     "Mohegan": {
       "brand_id": "mohegan-87bb7371",
       "logo": "./assets/company-logos/logo-7a9aedda9547f21b6fa2.webp"
+    },
+    "Molecular Devices": {
+      "brand_id": "molecular-devices-7c41355f",
+      "logo": "./assets/company-logos/logo-0428ead6d3dd7eefea54.webp"
     },
     "Momentive": {
       "brand_id": "momentive-ce6712e8",
@@ -2720,9 +2932,25 @@
       "brand_id": "motional-9f8230c4",
       "logo": "./assets/company-logos/logo-6122136d50d871bb02eb.webp"
     },
+    "Motiva": {
+      "brand_id": "motiva-cdf32394",
+      "logo": "./assets/company-logos/logo-65bd643f375624130890.webp"
+    },
+    "Motorola Solutions": {
+      "brand_id": "motorola-solutions-9b51eb20",
+      "logo": "./assets/company-logos/logo-f7212737107072163996.webp"
+    },
     "Mudflap": {
       "brand_id": "mudflap-7da6d5bb",
       "logo": "./assets/company-logos/logo-47717429ff8d0e5152f3.webp"
+    },
+    "MyFitnessPal": {
+      "brand_id": "myfitnesspal-34c61d93",
+      "logo": "./assets/company-logos/logo-7f2f60f892cdc9c056b3.webp"
+    },
+    "N.C. Department of Information Technology": {
+      "brand_id": "n-c-department-of-information-technology-c233c20d",
+      "logo": "./assets/company-logos/logo-ff6cc9d57e2641bd3d15.webp"
     },
     "NBA": {
       "brand_id": "nba-1f1a4d92",
@@ -2748,13 +2976,13 @@
       "brand_id": "nff-inc-656ad845",
       "logo": "./assets/company-logos/logo-7694f673d7bd3b709455.webp"
     },
+    "NICO National Indemnity Company": {
+      "brand_id": "nico-national-indemnity-company-518ec7bd",
+      "logo": "./assets/company-logos/logo-8783aec01aec6a8ffd7f.webp"
+    },
     "NTT DATA": {
       "brand_id": "ntt-data-68bad0bf",
       "logo": "./assets/company-logos/logo-4c32cc377cd7935b9055.webp"
-    },
-    "NV5": {
-      "brand_id": "nv5-b0e27b33",
-      "logo": "./assets/company-logos/logo-e785304a742395649ecd.webp"
     },
     "NVIDIA": {
       "brand_id": "nvidia-8d4321d9",
@@ -2836,10 +3064,6 @@
       "brand_id": "newton-research-3aad11cf",
       "logo": "./assets/company-logos/logo-8e48f8da46ebe13f37d5.webp"
     },
-    "NexHealth": {
-      "brand_id": "nexhealth-abda0ff8",
-      "logo": "./assets/company-logos/logo-cb041a3247d1ad01db61.webp"
-    },
     "Nexamp": {
       "brand_id": "nexamp-15cd4a19",
       "logo": "./assets/company-logos/logo-a192666d02d9565d4fb7.webp"
@@ -2855,10 +3079,6 @@
     "Nike": {
       "brand_id": "nike-5dd95c98",
       "logo": "./assets/company-logos/logo-109bf09f604a99f790be.webp"
-    },
-    "NinjaTrader": {
-      "brand_id": "ninjatrader-248f10ea",
-      "logo": "./assets/company-logos/logo-566686fc070a86decf86.webp"
     },
     "Nissan": {
       "brand_id": "nissan-44e8dd36",
@@ -2936,10 +3156,6 @@
       "brand_id": "okta-65819e19",
       "logo": "./assets/company-logos/logo-d0c8ebdfa58122efdb30.webp"
     },
-    "Olsson": {
-      "brand_id": "olsson-11f62616",
-      "logo": "./assets/company-logos/logo-46c96306e5eb940bdfe5.webp"
-    },
     "Ondo Finance": {
       "brand_id": "ondo-finance-49791262",
       "logo": "./assets/company-logos/logo-cacdc97f46cba37a0648.webp"
@@ -2956,10 +3172,6 @@
       "brand_id": "opengov-f20cabb9",
       "logo": "./assets/company-logos/logo-07aeb35fa262ef3321d6.webp"
     },
-    "OpenRouter": {
-      "brand_id": "openrouter-7f871cbf",
-      "logo": "./assets/company-logos/logo-6098f867020c5a8139fd.webp"
-    },
     "Openlane": {
       "brand_id": "openlane-ce29a065",
       "logo": "./assets/company-logos/logo-7c121541425f6da2ebbe.webp"
@@ -2971,10 +3183,6 @@
     "Oracle Cloud": {
       "brand_id": "oracle-cloud-50a8694b",
       "logo": "./assets/company-logos/logo-58a0ed420705dff9f80d.webp"
-    },
-    "Oraclecloud": {
-      "brand_id": "oraclecloud-f36f2463",
-      "logo": "./assets/company-logos/logo-cb1d062ac6f008e3ce50.webp"
     },
     "Orion Innovation": {
       "brand_id": "orion-innovation-40d6105a",
@@ -3012,6 +3220,10 @@
       "brand_id": "palantir-c21b962e",
       "logo": "./assets/company-logos/logo-3ed5cbad848d58233ad0.webp"
     },
+    "Panera": {
+      "brand_id": "panera-50b637df",
+      "logo": "./assets/company-logos/logo-1da953e7a238643191af.webp"
+    },
     "Panera Bread": {
       "brand_id": "panera-bread-ba753f9d",
       "logo": "./assets/company-logos/logo-1da953e7a238643191af.webp"
@@ -3036,10 +3248,6 @@
       "brand_id": "pax8-e876b6b9",
       "logo": "./assets/company-logos/logo-dd88f619646c6ec18aa5.webp"
     },
-    "Payscale": {
-      "brand_id": "payscale-7f95162f",
-      "logo": "./assets/company-logos/logo-b0817cde3c722c24e482.webp"
-    },
     "Peak Energy": {
       "brand_id": "peak-energy-d3db72d5",
       "logo": "./assets/company-logos/logo-ebf872ce0fbf220d6835.webp"
@@ -3052,10 +3260,6 @@
       "brand_id": "penn-state-aed649ff",
       "logo": "./assets/company-logos/logo-cfcf58cfc6ba0535ccd2.webp"
     },
-    "Pennant": {
-      "brand_id": "pennant-98f3e60e",
-      "logo": "./assets/company-logos/logo-df48f9c54ea315b1dd89.webp"
-    },
     "Pentair": {
       "brand_id": "pentair-522bed94",
       "logo": "./assets/company-logos/logo-eb4ca769fe12dbc395e1.webp"
@@ -3067,6 +3271,10 @@
     "Peregrine Advisors": {
       "brand_id": "peregrine-advisors-20a401d5",
       "logo": "./assets/company-logos/logo-5a2871140b415bf2a9b9.webp"
+    },
+    "Perplexity": {
+      "brand_id": "perplexity-45d780f8",
+      "logo": "./assets/company-logos/logo-e5be4374c2a14ee42bf1.webp"
     },
     "Persona": {
       "brand_id": "persona-5e815286",
@@ -3088,10 +3296,6 @@
       "brand_id": "phoenix-contact-3324afa4",
       "logo": "./assets/company-logos/logo-b247f8c31120cefae799.webp"
     },
-    "Pima County": {
-      "brand_id": "pima-county-0d5fdb6c",
-      "logo": "./assets/company-logos/logo-be7c1b20211da0286753.webp"
-    },
     "Pinterest": {
       "brand_id": "pinterest-75348dc2",
       "logo": "./assets/company-logos/logo-f99ee1b509fa57cd2821.webp"
@@ -3107,6 +3311,10 @@
     "Plaid": {
       "brand_id": "plaid-45cd2fb5",
       "logo": "./assets/company-logos/logo-c8eb3222aff11df99f40.webp"
+    },
+    "Planet": {
+      "brand_id": "planet-cb5815fe",
+      "logo": "./assets/company-logos/logo-35a506a1d90509824455.webp"
     },
     "Plastipak": {
       "brand_id": "plastipak-f035af00",
@@ -3144,6 +3352,10 @@
       "brand_id": "pointone-845abf00",
       "logo": "./assets/company-logos/logo-ddc07f39be984e5391b1.webp"
     },
+    "Polaris": {
+      "brand_id": "polaris-6c296fde",
+      "logo": "./assets/company-logos/logo-2748cb046b379b787c6c.webp"
+    },
     "Polaris Inc.": {
       "brand_id": "polaris-inc-6dd30a4c",
       "logo": "./assets/company-logos/logo-2748cb046b379b787c6c.webp"
@@ -3152,13 +3364,13 @@
       "brand_id": "polymarket-b0c5fbfc",
       "logo": "./assets/company-logos/logo-56958ee006a70e67a2a6.webp"
     },
-    "Poshmark": {
-      "brand_id": "poshmark-f44230f5",
-      "logo": "./assets/company-logos/logo-447d6b67ef01cd360950.webp"
+    "Pratt & Whitney": {
+      "brand_id": "pratt-whitney-becc2b02",
+      "logo": "./assets/company-logos/logo-cf098435a873654aff3f.webp"
     },
-    "Prenuvo": {
-      "brand_id": "prenuvo-8036b128",
-      "logo": "./assets/company-logos/logo-7586381841629398c9a7.webp"
+    "Prime Intellect": {
+      "brand_id": "prime-intellect-fa373257",
+      "logo": "./assets/company-logos/logo-aff3fae36dc1af2e28cf.webp"
     },
     "PrizePicks": {
       "brand_id": "prizepicks-47c010aa",
@@ -3179,6 +3391,22 @@
     "Prologis": {
       "brand_id": "prologis-9a6719fe",
       "logo": "./assets/company-logos/logo-674d6870a839ffa43cd3.webp"
+    },
+    "Protiviti": {
+      "brand_id": "protiviti-a0c45a53",
+      "logo": "./assets/company-logos/logo-0e2007d0802eb2457ee0.webp"
+    },
+    "Provectus": {
+      "brand_id": "provectus-87b2ec46",
+      "logo": "./assets/company-logos/logo-a782bdb2497c91314e0d.webp"
+    },
+    "Prudential Financial, Inc.": {
+      "brand_id": "prudential-financial-inc-3cdcc85e",
+      "logo": "./assets/company-logos/logo-ee3dc94ee59acc4f7e87.webp"
+    },
+    "Public Consulting Group": {
+      "brand_id": "public-consulting-group-21068fc0",
+      "logo": "./assets/company-logos/logo-a9f91211406a2d3bbda1.webp"
     },
     "PwC": {
       "brand_id": "pwc-e4ffb7bd",
@@ -3224,10 +3452,6 @@
       "brand_id": "quest-software-186aece0",
       "logo": "./assets/company-logos/logo-0540b993c862c9c7bd04.webp"
     },
-    "Queueinc": {
-      "brand_id": "queueinc-f134df0d",
-      "logo": "./assets/company-logos/logo-4f4fbeee62075b66b8d1.webp"
-    },
     "Quindar": {
       "brand_id": "quindar-6497541e",
       "logo": "./assets/company-logos/logo-15ee6970e857f4af98f4.webp"
@@ -3236,9 +3460,17 @@
       "brand_id": "rave-aerospace-llc-6fcc608f",
       "logo": "./assets/company-logos/logo-4b6f927322569db7d505.webp"
     },
+    "RBC": {
+      "brand_id": "rbc-9c758eed",
+      "logo": "./assets/company-logos/logo-05044945efd90f119b00.webp"
+    },
     "RESPEC": {
       "brand_id": "respec-a6e5fb34",
       "logo": "./assets/company-logos/logo-b8ff05512b081f7b7a29.webp"
+    },
+    "RSM": {
+      "brand_id": "rsm-7a7fc2c0",
+      "logo": "./assets/company-logos/logo-d872ceda9fb18e709fd3.webp"
     },
     "RTX": {
       "brand_id": "rtx-8c6e8e8b",
@@ -3259,6 +3491,10 @@
     "Rainmaker": {
       "brand_id": "rainmaker-739de437",
       "logo": "./assets/company-logos/logo-4e365976b1156047245c.webp"
+    },
+    "Ramp": {
+      "brand_id": "ramp-f7d9f5a9",
+      "logo": "./assets/company-logos/logo-14af9850552f5d38f77d.webp"
     },
     "Raydar": {
       "brand_id": "raydar-fd94df5d",
@@ -3332,6 +3568,10 @@
       "brand_id": "replit-53b69ef9",
       "logo": "./assets/company-logos/logo-8037d5b0462a6ee387e6.webp"
     },
+    "Repsol": {
+      "brand_id": "repsol-8569380a",
+      "logo": "./assets/company-logos/logo-6bb743198ae9e2162551.webp"
+    },
     "Republic Services": {
       "brand_id": "republic-services-155ed805",
       "logo": "./assets/company-logos/logo-355f8576100769587fa1.webp"
@@ -3340,9 +3580,9 @@
       "brand_id": "riot-games-59441739",
       "logo": "./assets/company-logos/logo-b5cfed76c335505bd6d7.webp"
     },
-    "Ripple": {
-      "brand_id": "ripple-591b66b1",
-      "logo": "./assets/company-logos/logo-19786068b8ae8e1f1069.webp"
+    "Riverside Research": {
+      "brand_id": "riverside-research-e2640548",
+      "logo": "./assets/company-logos/logo-5867d36a51192442b1b2.webp"
     },
     "Rivian and Volkswagen Group Technologies": {
       "brand_id": "rivian-and-volkswagen-group-technologies-77bedb47",
@@ -3356,10 +3596,6 @@
       "brand_id": "rocket-c58dd0a3",
       "logo": "./assets/company-logos/logo-802351e823902ff3cd92.webp"
     },
-    "Rockstar": {
-      "brand_id": "rockstar-0f47dd87",
-      "logo": "./assets/company-logos/logo-c5a720e92ba0247ce151.webp"
-    },
     "Rockwell Automation": {
       "brand_id": "rockwell-automation-3fac3110",
       "logo": "./assets/company-logos/logo-4d408c142b9f3ba4811d.webp"
@@ -3367,6 +3603,10 @@
     "Rockwool Group": {
       "brand_id": "rockwool-group-006fd89f",
       "logo": "./assets/company-logos/logo-6df709686b99aaa203eb.webp"
+    },
+    "Rogo": {
+      "brand_id": "rogo-ae497905",
+      "logo": "./assets/company-logos/logo-892b0dfa745549c88872.webp"
     },
     "Roku": {
       "brand_id": "roku-db041e4c",
@@ -3379,10 +3619,6 @@
     "Rover": {
       "brand_id": "rover-b0c5f417",
       "logo": "./assets/company-logos/logo-45cf6616fa914f05b640.webp"
-    },
-    "Rula": {
-      "brand_id": "rula-e50d7497",
-      "logo": "./assets/company-logos/logo-07c60fd61bbe5b0fc7c7.webp"
     },
     "Runpod": {
       "brand_id": "runpod-31d1b3d5",
@@ -3399,6 +3635,10 @@
     "SAPITBusinessSysteme": {
       "brand_id": "sapitbusinesssysteme-44c7b2f1",
       "logo": "./assets/company-logos/logo-31e637c9dc392ec7b12d.webp"
+    },
+    "SAS": {
+      "brand_id": "sas-96166e27",
+      "logo": "./assets/company-logos/logo-df98816951dbbceb11f0.webp"
     },
     "SBTGlobalInc": {
       "brand_id": "sbtglobalinc-5409be1a",
@@ -3428,13 +3668,17 @@
       "brand_id": "str-8c25cb36",
       "logo": "./assets/company-logos/logo-b91c9dc84ce65a446e9e.webp"
     },
-    "SageSure": {
-      "brand_id": "sagesure-a46b29e0",
-      "logo": "./assets/company-logos/logo-0d44de096fd8c25099d3.webp"
+    "Saalex": {
+      "brand_id": "saalex-94a118a2",
+      "logo": "./assets/company-logos/logo-3dac711fde50be242b3c.webp"
     },
     "Sagecor": {
       "brand_id": "sagecor-bf6f76ce",
       "logo": "./assets/company-logos/logo-3826d07d52f55d02f970.webp"
+    },
+    "SailPoint": {
+      "brand_id": "sailpoint-aae2a299",
+      "logo": "./assets/company-logos/logo-9b129915bc2d6730b280.webp"
     },
     "Salesforce": {
       "brand_id": "salesforce-3ccbd910",
@@ -3447,6 +3691,10 @@
     "Samsara": {
       "brand_id": "samsara-2b219c9d",
       "logo": "./assets/company-logos/logo-b5b72989a916e7c3a3a3.webp"
+    },
+    "Samsung": {
+      "brand_id": "samsung-968e2d5b",
+      "logo": "./assets/company-logos/logo-537ceb15bd8e90ad3934.webp"
     },
     "Samsung Austin Semiconductor": {
       "brand_id": "samsung-austin-semiconductor-cb43dabb",
@@ -3480,10 +3728,6 @@
       "brand_id": "saronic-technologies-3e7e4ed3",
       "logo": "./assets/company-logos/logo-1e503f2b2ba6243f1203.webp"
     },
-    "Scalian": {
-      "brand_id": "scalian-6f66f415",
-      "logo": "./assets/company-logos/logo-d52c66a6212cc63795f4.webp"
-    },
     "SchoolsFirst FCU": {
       "brand_id": "schoolsfirst-fcu-7aab42ca",
       "logo": "./assets/company-logos/logo-99c3789bb8721899623d.webp"
@@ -3516,6 +3760,10 @@
       "brand_id": "sensata-07f189c2",
       "logo": "./assets/company-logos/logo-dd3956a69d09975aa88e.webp"
     },
+    "Sentara": {
+      "brand_id": "sentara-ccbe33de",
+      "logo": "./assets/company-logos/logo-c31531207b6d31a9cecb.webp"
+    },
     "Sentinellabs": {
       "brand_id": "sentinellabs-d8a1b2ef",
       "logo": "./assets/company-logos/logo-e9fa5d5b37cb63da8f1f.webp"
@@ -3527,6 +3775,10 @@
     "ServiceNow": {
       "brand_id": "servicenow-b5738c16",
       "logo": "./assets/company-logos/logo-d41bd64f48db4bbb8915.webp"
+    },
+    "ServiceTitan": {
+      "brand_id": "servicetitan-87e4ea09",
+      "logo": "./assets/company-logos/logo-18eb115c509c64da5f61.webp"
     },
     "SharkNinja": {
       "brand_id": "sharkninja-bac2eabf",
@@ -3552,6 +3804,10 @@
       "brand_id": "signet-jewelers-2ad77ce1",
       "logo": "./assets/company-logos/logo-7fbf9c4edb8fd49bf703.webp"
     },
+    "Silicon Labs": {
+      "brand_id": "silicon-labs-a6c0c5dd",
+      "logo": "./assets/company-logos/logo-f2e8271fb26a86a6fd05.webp"
+    },
     "Skydio": {
       "brand_id": "skydio-d4690300",
       "logo": "./assets/company-logos/logo-4a41365e448274183b93.webp"
@@ -3564,6 +3820,14 @@
       "brand_id": "smith-nephew-fa28649f",
       "logo": "./assets/company-logos/logo-ef2d9811fc48e46575cc.webp"
     },
+    "Smithfield Foods": {
+      "brand_id": "smithfield-foods-88035465",
+      "logo": "./assets/company-logos/logo-f8976f0110196e823d80.webp"
+    },
+    "Smiths Group": {
+      "brand_id": "smiths-group-d30f113c",
+      "logo": "./assets/company-logos/logo-023685fff607ff65c941.webp"
+    },
     "Snap Inc.": {
       "brand_id": "snap-inc-4ab76e85",
       "logo": "./assets/company-logos/logo-0f99fc02d1b3f15482e4.webp"
@@ -3572,10 +3836,6 @@
       "brand_id": "socotec-9d9ea124",
       "logo": "./assets/company-logos/logo-f76cc8dcd913486586c5.webp"
     },
-    "Socure": {
-      "brand_id": "socure-fd34e6e5",
-      "logo": "./assets/company-logos/logo-c24e6d5da75f814e70ce.webp"
-    },
     "Software Mind": {
       "brand_id": "software-mind-130e0638",
       "logo": "./assets/company-logos/logo-530c9bad231d4902e579.webp"
@@ -3583,10 +3843,6 @@
     "Solace": {
       "brand_id": "solace-2d140b32",
       "logo": "./assets/company-logos/logo-0841671fedefb2637b7d.webp"
-    },
-    "Solaris Energy Infrastructure": {
-      "brand_id": "solaris-energy-infrastructure-59c41c70",
-      "logo": "./assets/company-logos/logo-02bdb56b723684d046e2.webp"
     },
     "Solaris Oilfield Infrastructure LLC": {
       "brand_id": "solaris-oilfield-infrastructure-llc-cc966eef",
@@ -3604,9 +3860,9 @@
       "brand_id": "sony-pictures-entertainment-82a630c0",
       "logo": "./assets/company-logos/logo-fffa1e39bbcb281ed0d3.webp"
     },
-    "Sopra Steria": {
-      "brand_id": "sopra-steria-76601955",
-      "logo": "./assets/company-logos/logo-d9385a6166845a2b3e66.webp"
+    "South Jersey Industries": {
+      "brand_id": "south-jersey-industries-e3eda725",
+      "logo": "./assets/company-logos/logo-01e837474dfae0a367cc.webp"
     },
     "SpaceX": {
       "brand_id": "spacex-e78bdeba",
@@ -3619,14 +3875,6 @@
     "Spreedly": {
       "brand_id": "spreedly-33bea2c3",
       "logo": "./assets/company-logos/logo-bc65268da8ed43ec3753.webp"
-    },
-    "Spring Health": {
-      "brand_id": "spring-health-d6da0d5d",
-      "logo": "./assets/company-logos/logo-9dc7ecb8d62f74f99a9c.webp"
-    },
-    "StackAdapt": {
-      "brand_id": "stackadapt-b326ea8b",
-      "logo": "./assets/company-logos/logo-fcf671bf039eea512d9b.webp"
     },
     "Stanford": {
       "brand_id": "stanford-de19c97d",
@@ -3660,6 +3908,14 @@
       "brand_id": "steel-dynamics-5c795cd1",
       "logo": "./assets/company-logos/logo-5845d42be4a50fe8e9df.webp"
     },
+    "Strata": {
+      "brand_id": "strata-82ba7e1f",
+      "logo": "./assets/company-logos/logo-3826a265aa65b8635174.webp"
+    },
+    "Stride, Inc.": {
+      "brand_id": "stride-inc-0a3ccd8c",
+      "logo": "./assets/company-logos/logo-f2deae4892ef130454b5.webp"
+    },
     "Stripe": {
       "brand_id": "stripe-2bed2032",
       "logo": "./assets/company-logos/logo-2bda07ceab450c56ca25.webp"
@@ -3675,10 +3931,6 @@
     "Substack": {
       "brand_id": "substack-d4116333",
       "logo": "./assets/company-logos/logo-abe975c7e66a581a1fd5.webp"
-    },
-    "Sumitomo Electric": {
-      "brand_id": "sumitomo-electric-f3a3f2b6",
-      "logo": "./assets/company-logos/logo-7f76d7230b8dbcbc084a.webp"
     },
     "SunSource": {
       "brand_id": "sunsource-5929f4f1",
@@ -3716,33 +3968,25 @@
       "brand_id": "t-mobile-3a6425e1",
       "logo": "./assets/company-logos/logo-d819eb98ec83dbdf6c5a.webp"
     },
-    "T. Rowe Price": {
-      "brand_id": "t-rowe-price-63da0409",
-      "logo": "./assets/company-logos/logo-8689baf0ad945264ff12.webp"
-    },
     "TD Bank": {
       "brand_id": "td-bank-0555d709",
       "logo": "./assets/company-logos/logo-3eed7e0383fac1675ac4.webp"
+    },
+    "TD SYNNEX": {
+      "brand_id": "td-synnex-1a20c0cc",
+      "logo": "./assets/company-logos/logo-b61275928b86f0a59447.webp"
     },
     "TEL": {
       "brand_id": "tel-f4313db6",
       "logo": "./assets/company-logos/logo-88a19677a3aefa1c3c99.webp"
     },
-    "TELUS Digital": {
-      "brand_id": "telus-digital-a61b0ba7",
-      "logo": "./assets/company-logos/logo-1f3f144722cd4f299e91.webp"
-    },
-    "TOMORROW HIRE": {
-      "brand_id": "tomorrow-hire-8237b20d",
-      "logo": "./assets/company-logos/logo-68e533d608873ecd3622.webp"
-    },
     "TP-Link Systems Inc.": {
       "brand_id": "tp-link-systems-inc-2bbf7adc",
       "logo": "./assets/company-logos/logo-699be47c4a4df97f2476.webp"
     },
-    "TRM Labs": {
-      "brand_id": "trm-labs-e21d81dd",
-      "logo": "./assets/company-logos/logo-589448e3b424efc6cd8b.webp"
+    "TRUMPF": {
+      "brand_id": "trumpf-7c0c080b",
+      "logo": "./assets/company-logos/logo-b784d4484b7110b06098.webp"
     },
     "TTM Technologies, Inc.": {
       "brand_id": "ttm-technologies-inc-cf6e4641",
@@ -3756,10 +4000,6 @@
       "brand_id": "taara-09975dab",
       "logo": "./assets/company-logos/logo-af5d85fa573c03202f3c.webp"
     },
-    "Tabs": {
-      "brand_id": "tabs-32d3feda",
-      "logo": "./assets/company-logos/logo-d1a57087c829797c1f28.webp"
-    },
     "Talan": {
       "brand_id": "talan-ca5b11fa",
       "logo": "./assets/company-logos/logo-9275452c1afee2f7f1c2.webp"
@@ -3767,10 +4007,6 @@
     "Target": {
       "brand_id": "target-34a04005",
       "logo": "./assets/company-logos/logo-f69f8e97a445f580a98e.webp"
-    },
-    "Taskrabbit": {
-      "brand_id": "taskrabbit-a9e29734",
-      "logo": "./assets/company-logos/logo-328eda7f7d01fccad3f9.webp"
     },
     "Tatari": {
       "brand_id": "tatari-719bc3f2",
@@ -3816,6 +4052,10 @@
       "brand_id": "tessera-labs-37688c35",
       "logo": "./assets/company-logos/logo-cb337daf9cb58fd4168f.webp"
     },
+    "TetraScience": {
+      "brand_id": "tetrascience-b63430ee",
+      "logo": "./assets/company-logos/logo-6e93ac36d26f5acc7916.webp"
+    },
     "Texas Instruments": {
       "brand_id": "texas-instruments-08bca3e5",
       "logo": "./assets/company-logos/logo-6f8e7a121dc41fcafa3c.webp"
@@ -3848,9 +4088,13 @@
       "brand_id": "the-ohio-state-university-f4985c5d",
       "logo": "./assets/company-logos/logo-5970873a3e0d4c011f5e.webp"
     },
-    "The Sandbox Companies Inc.": {
-      "brand_id": "the-sandbox-companies-inc-fc0252ce",
-      "logo": "./assets/company-logos/logo-7d99df3757d8bcb4b592.webp"
+    "The Texas A&M System Offices": {
+      "brand_id": "the-texas-a-m-system-offices-50ed3315",
+      "logo": "./assets/company-logos/logo-993264a4ddc770b46dca.webp"
+    },
+    "The Texas A&M University System": {
+      "brand_id": "the-texas-a-m-university-system-262f4de9",
+      "logo": "./assets/company-logos/logo-993264a4ddc770b46dca.webp"
     },
     "The Washington Post": {
       "brand_id": "the-washington-post-5ab376d8",
@@ -3859,10 +4103,6 @@
     "Thermo Fisher Scientific": {
       "brand_id": "thermo-fisher-scientific-a7fc7daf",
       "logo": "./assets/company-logos/logo-5f0f06c698cb0f63df32.webp"
-    },
-    "Thorlabs": {
-      "brand_id": "thorlabs-b7b1f33d",
-      "logo": "./assets/company-logos/logo-c5a720e92ba0247ce151.webp"
     },
     "Thornton Tomasetti": {
       "brand_id": "thornton-tomasetti-aadebc29",
@@ -3892,17 +4132,25 @@
       "brand_id": "tin-can-b110d5e4",
       "logo": "./assets/company-logos/logo-c64301d9f5f7dd6854b8.webp"
     },
+    "Tinder": {
+      "brand_id": "tinder-ca5e8bb9",
+      "logo": "./assets/company-logos/logo-36a32852b39806a0588a.webp"
+    },
     "Toast": {
       "brand_id": "toast-a60ec1cf",
       "logo": "./assets/company-logos/logo-6cb414d87ee200fc4a5b.webp"
     },
+    "Tomorrow.io": {
+      "brand_id": "tomorrow-io-095b829e",
+      "logo": "./assets/company-logos/logo-a9a3c50f423144bb14a2.webp"
+    },
+    "Topgolf": {
+      "brand_id": "topgolf-05463a65",
+      "logo": "./assets/company-logos/logo-8d850e1ccf4b424379db.webp"
+    },
     "Torch Technologies": {
       "brand_id": "torch-technologies-9f62a44f",
       "logo": "./assets/company-logos/logo-61a50a85e1bf49941a6f.webp"
-    },
-    "Toshiba Global Commerce Solutions": {
-      "brand_id": "toshiba-global-commerce-solutions-12b57bf6",
-      "logo": "./assets/company-logos/logo-caddf2ae4e25698a2bbb.webp"
     },
     "Total Wine & More": {
       "brand_id": "total-wine-more-668e68f4",
@@ -3936,17 +4184,21 @@
       "brand_id": "travel-leisure-co-7c35d83d",
       "logo": "./assets/company-logos/logo-d5c8119a5c12dee425d4.webp"
     },
+    "Trend Micro": {
+      "brand_id": "trend-micro-f93c7a69",
+      "logo": "./assets/company-logos/logo-d1a34e475577e81f0d9e.webp"
+    },
     "Trilogy Federal": {
       "brand_id": "trilogy-federal-85d7a3cd",
       "logo": "./assets/company-logos/logo-2c8c58e46b4f6cb7c093.webp"
     },
+    "Trimble": {
+      "brand_id": "trimble-9044b6ba",
+      "logo": "./assets/company-logos/logo-80174a5562e8a4053385.webp"
+    },
     "Triumph": {
       "brand_id": "triumph-9bb8c09c",
       "logo": "./assets/company-logos/logo-982d20a69b160d082bae.webp"
-    },
-    "Trive Market": {
-      "brand_id": "trive-market-170cc1a6",
-      "logo": "./assets/company-logos/logo-79cd123fb8dc00b2c856.webp"
     },
     "Truelogic": {
       "brand_id": "truelogic-3ba9f76e",
@@ -3980,6 +4232,10 @@
       "brand_id": "tusker-bdea6028",
       "logo": "./assets/company-logos/logo-c1354a73b029671cdd16.webp"
     },
+    "Twenty": {
+      "brand_id": "twenty-7c2c4df7",
+      "logo": "./assets/company-logos/logo-7afc12fcd169cef95cf9.webp"
+    },
     "Two Six Technologies": {
       "brand_id": "two-six-technologies-f48f0432",
       "logo": "./assets/company-logos/logo-8a0d8ceef3e9ae584015.webp"
@@ -3996,9 +4252,21 @@
       "brand_id": "u-s-bank-0936d844",
       "logo": "./assets/company-logos/logo-88ea79c637f0f630ca29.webp"
     },
-    "UKG": {
-      "brand_id": "ukg-8d1ae0ed",
-      "logo": "./assets/company-logos/logo-7b787d8d80c27b14d79a.webp"
+    "U.S. Customs and Border Protection": {
+      "brand_id": "u-s-customs-and-border-protection-33b271c2",
+      "logo": "./assets/company-logos/logo-d16ce387bfc37fc322ad.webp"
+    },
+    "UMB": {
+      "brand_id": "umb-ca3f67cf",
+      "logo": "./assets/company-logos/logo-5aab8f520b3d607c2cab.webp"
+    },
+    "UMass Memorial Health": {
+      "brand_id": "umass-memorial-health-e7b1578a",
+      "logo": "./assets/company-logos/logo-cf2dd7a6819c842de745.webp"
+    },
+    "UPS": {
+      "brand_id": "ups-a513bdd2",
+      "logo": "./assets/company-logos/logo-87f27c02c5e9e5b3a203.webp"
     },
     "USAA": {
       "brand_id": "usaa-ca6a7c40",
@@ -4019,6 +4287,10 @@
     "Unisys": {
       "brand_id": "unisys-2e9ec14f",
       "logo": "./assets/company-logos/logo-2a91681686eccf59eae9.webp"
+    },
+    "UnitedMasters": {
+      "brand_id": "unitedmasters-b162fd32",
+      "logo": "./assets/company-logos/logo-c2aca52c205abafbc29c.webp"
     },
     "Unity": {
       "brand_id": "unity-a5790b06",
@@ -4056,6 +4328,10 @@
       "brand_id": "upstart-7cf8ed38",
       "logo": "./assets/company-logos/logo-5e4d9282dbf53049be5c.webp"
     },
+    "Ursa Major": {
+      "brand_id": "ursa-major-6c6f84a6",
+      "logo": "./assets/company-logos/logo-8d429a8c20755a8f7bd0.webp"
+    },
     "VGS": {
       "brand_id": "vgs-accdb850",
       "logo": "./assets/company-logos/logo-81f742bc3ddd026e6420.webp"
@@ -4067,6 +4343,14 @@
     "Valeo": {
       "brand_id": "valeo-be5ef310",
       "logo": "./assets/company-logos/logo-29a01dc1102cff6926bb.webp"
+    },
+    "Valmet": {
+      "brand_id": "valmet-af29329b",
+      "logo": "./assets/company-logos/logo-1222b00714b46c65cae4.webp"
+    },
+    "Vanta": {
+      "brand_id": "vanta-58c2655d",
+      "logo": "./assets/company-logos/logo-171fb5f752ff2089199c.webp"
     },
     "Vantor": {
       "brand_id": "vantor-f839701f",
@@ -4080,6 +4364,10 @@
       "brand_id": "varda-space-industries-3780bd37",
       "logo": "./assets/company-logos/logo-0414303821720d3fdfd1.webp"
     },
+    "Vector Atomic": {
+      "brand_id": "vector-atomic-b75dc6a8",
+      "logo": "./assets/company-logos/logo-65916b7a25e6d78fbf65.webp"
+    },
     "Veeam": {
       "brand_id": "veeam-a9e92196",
       "logo": "./assets/company-logos/logo-fdcc3659c095eb763d01.webp"
@@ -4091,10 +4379,6 @@
     "Veeva Systems": {
       "brand_id": "veeva-systems-c594a38b",
       "logo": "./assets/company-logos/logo-25826b754bd856e808ca.webp"
-    },
-    "Velera": {
-      "brand_id": "velera-3be707d0",
-      "logo": "./assets/company-logos/logo-355e4f8055014178fa90.webp"
     },
     "Veolia": {
       "brand_id": "veolia-44497a0b",
@@ -4116,13 +4400,13 @@
       "brand_id": "visionist-6140a0e2",
       "logo": "./assets/company-logos/logo-fd9104e00302a6640b47.webp"
     },
+    "Viz.ai": {
+      "brand_id": "viz-ai-417d2224",
+      "logo": "./assets/company-logos/logo-3c2a61b71585987e7703.webp"
+    },
     "Vizient": {
       "brand_id": "vizient-4d7c279a",
       "logo": "./assets/company-logos/logo-3f1aea52de73ceff05ee.webp"
-    },
-    "Voya Financial": {
-      "brand_id": "voya-financial-b4a27669",
-      "logo": "./assets/company-logos/logo-ea0737cb9ac324d5e550.webp"
     },
     "Vultr": {
       "brand_id": "vultr-439fc2dc",
@@ -4160,6 +4444,10 @@
       "brand_id": "walmart-943c3eeb",
       "logo": "./assets/company-logos/logo-f8388a7026e7159f8dde.webp"
     },
+    "Ware Malcomb": {
+      "brand_id": "ware-malcomb-f418eba1",
+      "logo": "./assets/company-logos/logo-d93c27f3f160201333d9.webp"
+    },
     "Washington University in St. Louis": {
       "brand_id": "washington-university-in-st-louis-81d7f68f",
       "logo": "./assets/company-logos/logo-3af6122d5cc80047865d.webp"
@@ -4192,6 +4480,10 @@
       "brand_id": "welo-data-0d7ef945",
       "logo": "./assets/company-logos/logo-059837720e59a0d19525.webp"
     },
+    "Western Union": {
+      "brand_id": "western-union-d07e976b",
+      "logo": "./assets/company-logos/logo-b8c8ac9c18cf354b4454.webp"
+    },
     "Wintrust": {
       "brand_id": "wintrust-11ffd47e",
       "logo": "./assets/company-logos/logo-8a3df94826b9b83cb4d4.webp"
@@ -4216,14 +4508,6 @@
       "brand_id": "workiva-e785b65f",
       "logo": "./assets/company-logos/logo-b5657eb24efe6558cb15.webp"
     },
-    "Woven by Toyota": {
-      "brand_id": "woven-by-toyota-b21ba2e0",
-      "logo": "./assets/company-logos/logo-e9ecb5b3a05401367653.webp"
-    },
-    "Wpromote": {
-      "brand_id": "wpromote-4aafa58b",
-      "logo": "./assets/company-logos/logo-91518ddf976b217effa2.webp"
-    },
     "Xcel Energy": {
       "brand_id": "xcel-energy-64fb100a",
       "logo": "./assets/company-logos/logo-83477e392bb8a889726b.webp"
@@ -4240,6 +4524,10 @@
       "brand_id": "yahoo-a7a4ded2",
       "logo": "./assets/company-logos/logo-1e11aa0486c2c3c44eca.webp"
     },
+    "ZOLL": {
+      "brand_id": "zoll-fa3c8666",
+      "logo": "./assets/company-logos/logo-e1634c073e1693472068.webp"
+    },
     "ZOLL Medical Corporation": {
       "brand_id": "zoll-medical-corporation-76a35d2b",
       "logo": "./assets/company-logos/logo-e1634c073e1693472068.webp"
@@ -4248,13 +4536,13 @@
       "brand_id": "zayo-25840752",
       "logo": "./assets/company-logos/logo-caa1f2a7679a5c525d8a.webp"
     },
-    "Zeeco": {
-      "brand_id": "zeeco-9262244f",
-      "logo": "./assets/company-logos/logo-bb68582d41e86e078455.webp"
-    },
     "Zekelman Industries": {
       "brand_id": "zekelman-industries-39b1064f",
       "logo": "./assets/company-logos/logo-636ab5ab5b45db920617.webp"
+    },
+    "Zello": {
+      "brand_id": "zello-0d64635e",
+      "logo": "./assets/company-logos/logo-c4a5070e361ec1855829.webp"
     },
     "Zillow": {
       "brand_id": "zillow-5a08fbb3",
@@ -4267,6 +4555,18 @@
     "Zipline": {
       "brand_id": "zipline-e134c033",
       "logo": "./assets/company-logos/logo-1a34295c480605535cbf.webp"
+    },
+    "Zoetis": {
+      "brand_id": "zoetis-aab63e84",
+      "logo": "./assets/company-logos/logo-244a128720efc957c035.webp"
+    },
+    "Zone 5 Technologies": {
+      "brand_id": "zone-5-technologies-7603b9f5",
+      "logo": "./assets/company-logos/logo-a654d3dfe60ebf86c0ed.webp"
+    },
+    "ZoomInfo": {
+      "brand_id": "zoominfo-ca4920e0",
+      "logo": "./assets/company-logos/logo-a1b40a055edadb8da953.webp"
     },
     "Zoox": {
       "brand_id": "zoox-6e681cf4",
@@ -4292,13 +4592,13 @@
       "brand_id": "biomerieux-5c3da1c6",
       "logo": "./assets/company-logos/logo-7163adbfd5c59d0eab0b.webp"
     },
+    "bp": {
+      "brand_id": "bp-226a193a",
+      "logo": "./assets/company-logos/logo-e59de08fa7a643158648.webp"
+    },
     "clearcapital": {
       "brand_id": "clearcapital-f0770be6",
       "logo": "./assets/company-logos/logo-6b64266f9349f7bd034d.webp"
-    },
-    "crypto": {
-      "brand_id": "crypto-da2f073e",
-      "logo": "./assets/company-logos/logo-da87ccf8cbdcb9b9b642.webp"
     },
     "d-Matrix": {
       "brand_id": "d-matrix-41922380",
@@ -4336,11 +4636,23 @@
       "brand_id": "jobgether-44135870",
       "logo": "./assets/company-logos/logo-1ff5be9bef85b3ab7085.webp"
     },
+    "nVent": {
+      "brand_id": "nvent-e947d3b9",
+      "logo": "./assets/company-logos/logo-4a0c5385ced4113613c6.webp"
+    },
+    "repligen": {
+      "brand_id": "repligen-c4a62c71",
+      "logo": "./assets/company-logos/logo-219555cdf1a78271b144.webp"
+    },
     "talentpluto": {
       "brand_id": "talentpluto-cd278283",
       "logo": "./assets/company-logos/logo-6cc6e1ee5d6c41d86267.webp"
+    },
+    "webAI": {
+      "brand_id": "webai-c0c817af",
+      "logo": "./assets/company-logos/logo-b5c14755afec05fb14b1.webp"
     }
   },
-  "generated_at": "2026-10-16T15:29:54.850649Z",
+  "generated_at": "2026-10-17T23:15:38.178962Z",
   "schema_version": "public-company-brands-v1"
 }
