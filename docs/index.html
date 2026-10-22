@@ -155,10 +155,16 @@
           <select class="multi-select-native" id="specialization-filter" multiple hidden aria-hidden="true" tabindex="-1"></select>
         </div>
       </div>
-      <label class="filter-field">Location
-        <input id="location-filter" type="search" list="location-suggestions" placeholder="Any location" autocomplete="off">
-        <datalist id="location-suggestions"></datalist>
-      </label>
+      <div class="filter-field">
+        <span>Location</span>
+        <div class="multi-select" data-filter-key="location" data-default-label="Any location">
+          <button class="multi-select-trigger" type="button" aria-haspopup="true" aria-expanded="false">
+            <span class="multi-select-value">Any location</span><span class="multi-select-chevron" aria-hidden="true"></span>
+          </button>
+          <div class="multi-select-menu" hidden></div>
+          <select class="multi-select-native" id="location-filter" multiple hidden aria-hidden="true" tabindex="-1"></select>
+        </div>
+      </div>
       <div class="filter-field">
         <span>Experience level</span>
         <div class="multi-select" data-filter-key="careerBuckets" data-default-label="All experience levels">

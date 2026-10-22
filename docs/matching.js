@@ -51,14 +51,14 @@ export function filterJobs(jobs, filters, { shortlist = null, searchScores = nul
   const ignored = new Set(ignoreFilters);
   const queryTokens = tokenize(filters.query);
   const rankedSearch = Boolean(filters.query) && searchScores instanceof Map;
-  const location = normalizeText(filters.location);
   const cutoff = postedCutoff(filters.postedRange, jobs);
   const years = Number.parseInt(filters.experienceYears, 10);
   const yearsActive = Number.isInteger(years) && years >= 0;
   return jobs.filter((job) => {
     if (shortlist && !shortlist[job.id]) return false;
     if (!ignored.has("postedRange") && cutoff && new Date(`${job.posted_on}T00:00:00`) < cutoff) return false;
-    if (!ignored.has("location") && location && !job._locationSearch.includes(location)) return false;
+    const locationFilters = Array.isArray(filters.location) ? filters.location : [];
+    if (!ignored.has("location") && !hasAny(job._locationCategories ?? [], locationFilters)) return false;
     if (!ignored.has("domains") && !hasAny(job._domains, filters.domains)) return false;
     if (!ignored.has("specializations") && !hasAny(job._specializations, filters.specializations)) return false;
     if (!ignored.has("industries") && !hasAny(job._industries, filters.industries)) return false;

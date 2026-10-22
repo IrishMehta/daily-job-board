@@ -1,3 +1,5 @@
+import { sanitizeLocationFilterValues } from "./location-filters.js";
+
 export const STORAGE_KEY = "jobDiscoveryBoard:v1";
 
 export const DEFAULT_FILTERS = Object.freeze({
@@ -5,7 +7,7 @@ export const DEFAULT_FILTERS = Object.freeze({
   domains: [],
   specializations: [],
   industries: [],
-  location: "",
+  location: [],
   careerBuckets: [],
   authorizationCategories: [],
   sponsorshipStatuses: [],
@@ -15,6 +17,7 @@ export const DEFAULT_FILTERS = Object.freeze({
 });
 
 const ARRAY_FILTERS = [
+  "location",
   "domains",
   "specializations",
   "industries",
@@ -51,9 +54,10 @@ export function sanitizeFilters(value) {
   const input = value && typeof value === "object" ? value : {};
   const filters = freshFilters();
   filters.query = cleanQuery(input.query);
-  filters.location = cleanString(input.location);
   filters.experienceYears = cleanYears(input.experienceYears);
-  ARRAY_FILTERS.forEach((key) => { filters[key] = cleanStringArray(input[key]); });
+  ARRAY_FILTERS.forEach((key) => {
+    filters[key] = key === "location" ? sanitizeLocationFilterValues(input[key]) : cleanStringArray(input[key]);
+  });
   filters.postedRange = ["1d", "3d", "7d"].includes(input.postedRange) ? input.postedRange : "7d";
   filters.sort = ["relevance", "date_desc", "date_asc", "experience_asc", "experience_desc", "company_asc"].includes(input.sort)
     ? input.sort

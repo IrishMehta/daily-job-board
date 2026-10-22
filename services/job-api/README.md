@@ -3,6 +3,30 @@
 Cloudflare Worker and D1-backed read API for the already-public job board data.
 The canonical source remains `docs/data/public_jobs.json`.
 
+Reviewed 2026-10-15 against the local Worker, importer, package scripts, and sync workflow.
+See [frontend development](../../DEVELOPMENT.md) for the zero-build site and data contracts.
+
+## Setup and checks
+
+Run the commands below from `services/job-api/`. CI currently uses Node 22 and Python 3.13.
+Install dependencies before invoking the package scripts:
+
+```sh
+npm ci
+python -m unittest tests.test_build_d1_import
+npm run typecheck
+npm run test:run
+```
+
+Use an activated Python environment on a cluster. `db:build-sync` also invokes Python;
+it reads the public source JSON and writes ignored local SQL/manifest files. No remote
+write occurs until an explicit remote migration or sync command is run. Refresh binding
+types with `npm run cf-typegen` after changing bindings in `wrangler.jsonc`.
+
+Current Cloudflare command semantics are documented in the official
+[Wrangler D1 reference](https://developers.cloudflare.com/workers/wrangler/commands/d1/).
+Retrieve current documentation again when changing Worker/D1 behavior or limits.
+
 ## Database environments
 
 Local development uses Wrangler's local D1 database. Apply migrations with:
@@ -46,6 +70,12 @@ npm run db:sync:local
 
 The equivalent production command is `npm run db:sync:remote`. Apply migrations
 explicitly before the first remote incremental sync.
+
+The repository's `.github/workflows/sync-job-api-data.yml` applies migrations on every
+sync, validates the generated dataset, applies the incremental update, and checks
+`/v1/status` against the manifest's source hash and expected job count. The stable active
+namespace is reused. API activation time comes from the active-state update; the original
+dataset-version import timestamp is a separate field and need not advance on every sync.
 
 ## Read API
 

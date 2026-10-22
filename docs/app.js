@@ -13,6 +13,7 @@ import { isCurrentSearchResponse } from "./search.js";
 import { createMarketAnalysis } from "./market-analysis.js";
 import { createHiringPosts } from "./hiring-posts.js";
 import { createProductTour } from "./product-tour.js";
+import { LOCATION_FILTER_OPTIONS, locationCategoriesForJob, locationFilterLabel } from "./location-filters.js";
 
 const PAGE_BATCH = 40;
 const FILTER_PARAM_MAP = {
@@ -29,7 +30,7 @@ const FILTER_PARAM_MAP = {
   sort: "sort",
 };
 const ARRAY_FILTERS = new Set([
-  "domains", "specializations", "industries", "careerBuckets", "authorizationCategories", "sponsorshipStatuses",
+  "location", "domains", "specializations", "industries", "careerBuckets", "authorizationCategories", "sponsorshipStatuses",
 ]);
 
 const state = {
@@ -67,7 +68,7 @@ const els = Object.fromEntries([
   "freshness", "job-count", "filter-apply", "all-count", "shortlist-count", "repo-link", "resume-open", "search-input", "search-clear", "search-state",
   "search-suggestions", "search-assist", "mobile-filter-open",
   "mobile-filter-close", "mobile-filter-count", "filter-panel", "domain-filter", "specialization-filter",
-  "industry-filter", "location-filter", "location-suggestions", "career-filter", "experience-years-filter", "authorization-filter",
+  "industry-filter", "location-filter", "career-filter", "experience-years-filter", "authorization-filter",
   "sponsorship-filter", "posted-filter", "sort-filter", "advanced-filters-toggle", "advanced-filter-count", "clear-filters", "active-filters", "storage-warning",
   "results-heading", "results-summary", "shortlist-clear-filters", "sort-note", "results-trust-copy", "match-mode", "job-list", "empty-state", "empty-title", "empty-copy",
   "empty-action", "empty-suggestions", "load-more", "detail-pane", "detail-empty", "detail-content", "sheet-backdrop", "resume-dialog",
@@ -230,6 +231,7 @@ function prepareJobs(payload) {
       _specializations: specializations,
       _industries: industries,
       _taxonomyLabels: taxonomyLabels,
+      _locationCategories: locationCategoriesForJob(job),
       _locationSearch: normalizeText([job.location, ...(job.location_profile?.search_terms ?? [])].join(" ")),
       _searchText: normalizeText([
         job.title, job.company, job.location, job.experience_display, job.work_authorization_display,
@@ -473,7 +475,7 @@ function toggleMultiSelectMenu(key) {
 }
 
 function setFacetOptions(element, defaultLabel, key, items, counts, selectedValues) {
-  const sortedItems = sortFacetItems(uniqueFacetItems(items));
+  const sortedItems = key === "location" ? uniqueFacetItems(items) : sortFacetItems(uniqueFacetItems(items));
   const selected = new Set(selectedValues);
   element.innerHTML = sortedItems.map((item) => option(item.value, item.label, counts.get(item.value) ?? 0)).join("");
   [...element.options].forEach((entry) => { entry.selected = selected.has(entry.value); });
@@ -535,6 +537,10 @@ function updateFacetOptions({ force = false } = {}) {
       values: (job) => job._industries, ignoreFilters: ["industries"],
     },
     {
+      element: els.location_filter, defaultLabel: "Any location", key: "location", items: LOCATION_FILTER_OPTIONS,
+      values: (job) => job._locationCategories, ignoreFilters: ["location"],
+    },
+    {
       element: els.career_filter, defaultLabel: "All experience", key: "careerBuckets", items: state.payload.career_buckets ?? [],
       values: (job) => job.career_bucket, ignoreFilters: ["careerBuckets"],
     },
@@ -565,8 +571,6 @@ function updateFacetOptions({ force = false } = {}) {
 }
 
 function populateFilters() {
-  const locations = state.payload.locations ?? [...new Set(state.jobs.map((job) => job.location))].map((value) => ({ value }));
-  els.location_suggestions.innerHTML = locations.slice(0, 100).map((item) => `<option value="${escapeHtml(item.value)}"></option>`).join("");
   updateFacetOptions({ force: true });
   syncControlsFromState();
 }
@@ -592,6 +596,7 @@ function setArrayFilter(key, values, { focusValue = "" } = {}) {
 function syncControlsFromState() {
   els.search_input.value = state.filters.query;
   [
+    [els.location_filter, state.filters.location],
     [els.domain_filter, state.filters.domains],
     [els.specialization_filter, state.filters.specializations],
     [els.industry_filter, state.filters.industries],
@@ -602,7 +607,6 @@ function syncControlsFromState() {
     const selected = new Set(selectedValues);
     [...element.options].forEach((entry) => { entry.selected = selected.has(entry.value); });
   });
-  els.location_filter.value = state.filters.location;
   els.experience_years_filter.value = state.filters.experienceYears;
   els.posted_filter.value = state.filters.postedRange;
   els.sort_filter.value = state.filters.sort;
@@ -610,7 +614,7 @@ function syncControlsFromState() {
 
 function filterLabel(key, value) {
   if (key === "query") return `Search: ${value}`;
-  if (key === "location") return `Location: ${value}`;
+  if (key === "location") return `Location: ${locationFilterLabel(value)}`;
   if (key === "experienceYears") return `Fits ${value} ${value === "1" ? "yr" : "yrs"}`;
   if (key === "postedRange") return { "1d": "Posted: 24 hours", "3d": "Posted: 3 days", "7d": "" }[value] || value;
   if (key === "sort") return "";
@@ -860,7 +864,7 @@ function relaxationButtons() {
   if (state.filters.sponsorshipStatuses.length) active.push(["sponsorshipStatuses", "Remove sponsorship filter"]);
   if (state.filters.authorizationCategories.length) active.push(["authorizationCategories", "Remove authorization filter"]);
   if (state.filters.careerBuckets.length || state.filters.experienceYears) active.push(["careerBuckets", "Broaden experience"]);
-  if (state.filters.location) active.push(["location", "Broaden location"]);
+  if (state.filters.location.length) active.push(["location", "Broaden location"]);
   if (!active.length) return "";
   return active.map(([key, label]) => `<button type="button" class="empty-suggestion" data-relax-key="${escapeHtml(key)}">${escapeHtml(label)}</button>`).join("");
 }
@@ -1012,7 +1016,7 @@ function render() {
   els.results_heading.textContent = state.view === "shortlist" ? "Shortlist" : "All roles";
   const employerCount = new Set(results.map((job) => job.company).filter(Boolean)).size;
   const shortlistTotal = Object.keys(state.shortlist).length;
-  const shortlistHasFilters = state.filters.query || state.filters.location || state.filters.domains.length
+  const shortlistHasFilters = state.filters.query || state.filters.location.length || state.filters.domains.length
     || state.filters.specializations.length || state.filters.industries.length || state.filters.careerBuckets.length
     || state.filters.authorizationCategories.length || state.filters.sponsorshipStatuses.length || state.filters.experienceYears;
   els.results_summary.textContent = state.searchPending && state.filters.query
@@ -1334,16 +1338,6 @@ function bindEvents() {
       state.selectionPinned = false;
       persist(); writeUrlState(); render();
     }, 160);
-  });
-  els.location_filter.addEventListener("input", () => {
-    window.clearTimeout(searchTimer);
-    searchTimer = window.setTimeout(() => {
-      state.filters.location = els.location_filter.value.trim();
-      state.visibleLimit = PAGE_BATCH;
-      state.selectedId = "";
-      state.selectionPinned = false;
-      persist(); writeUrlState(); render();
-    }, 120);
   });
   els.posted_filter.addEventListener("change", () => {
     state.filters.postedRange = els.posted_filter.value;
