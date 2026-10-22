@@ -16,12 +16,13 @@ export const US_STATE_OPTIONS = Object.freeze([
 
 export const LOCATION_FILTER_OPTIONS = Object.freeze([
   ...US_STATE_OPTIONS,
+  { value: "DC", label: "Washington, DC" },
   { value: "remote", label: "Remote" },
   { value: "hybrid", label: "Hybrid" },
   { value: "others", label: "Others" },
 ]);
 
-const stateCodes = new Set(US_STATE_OPTIONS.map((item) => item.value));
+const locationCodes = new Set([...US_STATE_OPTIONS.map((item) => item.value), "DC"]);
 const locationValues = new Map(LOCATION_FILTER_OPTIONS.flatMap(({ value, label }) => [
   [value.toLowerCase(), value],
   [label.toLowerCase(), value],
@@ -44,8 +45,11 @@ export function locationCategoriesForJob(job) {
   const displayedStateCodes = [...locationText.matchAll(/,\s*([A-Z]{2})(?=$|\W)/g)].map((match) => match[1]);
   const standaloneStateCode = locationText.trim().toUpperCase();
   [standaloneStateCode, ...displayedStateCodes].forEach((value) => {
-    if (stateCodes.has(value) && !categories.includes(value)) categories.push(value);
+    if (locationCodes.has(value) && !categories.includes(value)) categories.push(value);
   });
+  if (/\bdistrict of columbia\b/i.test(locationText) && !categories.includes("DC")) {
+    categories.push("DC");
+  }
   if (!categories.length) categories.push("others");
   return categories;
 }
