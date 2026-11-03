@@ -1,8 +1,95 @@
 {
   "schema_version": "hiring-posts-public-v1",
-  "generated_at": "2026-11-02T12:39:42.223050Z",
+  "generated_at": "2026-11-03T04:20:07.993903Z",
   "retention_days": 14,
   "posts": [
+    {
+      "id": "7523043186156564480",
+      "linkedin_url": "https://www.linkedin.com/posts/ckallepitis_hiring-datascience-artificialintelligence-activity-7523043186156564480-cGma",
+      "author_name": "Charis Kallepitis, Ph.D.",
+      "author_profile_url": "",
+      "published_at": "2026-11-02T15:27:46.962Z",
+      "summary": "Penguin Random House is hiring a Senior Data Scientist / AI Engineer for a role based in Barcelona, part of a global team reporting into New York, with work spanning Data Science, Machine Learning, and Generative AI.",
+      "post_type": "active_opening",
+      "poster_intent": "employer_hiring",
+      "target_role_match": "direct_target",
+      "poster_relationship": "hiring_manager",
+      "hiring_manager_name": "",
+      "contact_methods": [
+        "apply_link"
+      ],
+      "role_families": [
+        "AI / Machine Learning"
+      ],
+      "roles": [
+        "Senior Data Scientist / AI Engineer"
+      ],
+      "company": "Penguin Random House",
+      "locations": [
+        "Barcelona"
+      ],
+      "work_arrangement": "Hybrid",
+      "application_links": [],
+      "source_quality": "full_post"
+    },
+    {
+      "id": "7523026665371934720",
+      "linkedin_url": "https://www.linkedin.com/posts/jackdansie_im-hiring-an-ai-engineer-for-a-series-a-activity-7523026665371934720-clQU",
+      "author_name": "Jack Dansie",
+      "author_profile_url": "",
+      "published_at": "2026-11-02T14:22:08.099Z",
+      "summary": "Jack Dansie is hiring an AI Engineer for a Series A AI startup in Berlin, with remote start possible but commitment to relocate required, focusing on building agent infrastructure for data science and engineering workflows.",
+      "post_type": "active_opening",
+      "poster_intent": "employer_hiring",
+      "target_role_match": "direct_target",
+      "poster_relationship": "unknown",
+      "hiring_manager_name": "",
+      "contact_methods": [
+        "dm"
+      ],
+      "role_families": [
+        "AI / Machine Learning"
+      ],
+      "roles": [
+        "AI Engineer"
+      ],
+      "company": "",
+      "locations": [
+        "Berlin, Germany"
+      ],
+      "work_arrangement": "Hybrid",
+      "application_links": [],
+      "source_quality": "full_post"
+    },
+    {
+      "id": "7522991209900945410",
+      "linkedin_url": "https://www.linkedin.com/posts/dhanraj-shinemaven_hiring-datascienceintern-aijobs-activity-7522991209900945410-J5rN",
+      "author_name": "Dhanraj G",
+      "author_profile_url": "",
+      "published_at": "2026-11-02T12:01:14.857Z",
+      "summary": "A Data Science Intern position is available for a remote, 6-month paid internship in India, starting November 2026, targeting students in data science and AI/ML fields.",
+      "post_type": "active_opening",
+      "poster_intent": "employer_hiring",
+      "target_role_match": "direct_target",
+      "poster_relationship": "unknown",
+      "hiring_manager_name": "",
+      "contact_methods": [
+        "apply_link"
+      ],
+      "role_families": [
+        "Data Science"
+      ],
+      "roles": [
+        "Data Science Intern"
+      ],
+      "company": "",
+      "locations": [
+        "India"
+      ],
+      "work_arrangement": "Remote",
+      "application_links": [],
+      "source_quality": "full_post"
+    },
     {
       "id": "7522949504325775360",
       "linkedin_url": "https://www.linkedin.com/posts/dhanraj-shinemaven_hiring-datascience-airesearch-activity-7522949504325775360-6S9x",
@@ -56,6 +143,154 @@
         "Bangalore"
       ],
       "work_arrangement": "Hybrid",
+      "application_links": [],
+      "source_quality": "full_post"
+    },
+    {
+      "id": "7522932978012925952",
+      "linkedin_url": "https://www.linkedin.com/posts/anshulsinghal-iitb_were-hiring-ai-intern-at-acadza-are-you-activity-7522932978012925952-696-",
+      "author_name": "Anshul Singhal",
+      "author_profile_url": "",
+      "published_at": "2026-11-02T08:09:51.292Z",
+      "summary": "Acadza is hiring an AI Intern for a remote role with a focus on building AI-powered solutions in education, requiring skills in LLMs, prompt engineering, and automation.",
+      "post_type": "active_opening",
+      "poster_intent": "employer_hiring",
+      "target_role_match": "direct_target",
+      "poster_relationship": "hiring_manager",
+      "hiring_manager_name": "",
+      "contact_methods": [
+        "email"
+      ],
+      "role_families": [
+        "AI / Machine Learning"
+      ],
+      "roles": [
+        "AI Intern"
+      ],
+      "company": "Acadza",
+      "locations": [],
+      "work_arrangement": "Remote",
+      "application_links": [],
+      "source_quality": "full_post"
+    },
+    {
+      "id": "7522927059376041984",
+      "linkedin_url": "https://www.linkedin.com/posts/manalimange_hiring-alert-ai-engineer-sde2-we-are-activity-7522927059376041984-kTR9",
+      "author_name": "Manali Mange",
+      "author_profile_url": "",
+      "published_at": "2026-11-02T07:46:20.180Z",
+      "summary": "An AI Engineer role is open for candidates with 1.5 to 2 years of experience in Bangalore, requiring skills in Python, AI agents, LLMs, RAG, and API development, with a salary budget of INR 20-25LPA.",
+      "post_type": "active_opening",
+      "poster_intent": "employer_hiring",
+      "target_role_match": "direct_target",
+      "poster_relationship": "unknown",
+      "hiring_manager_name": "",
+      "contact_methods": [
+        "apply_link"
+      ],
+      "role_families": [
+        "AI / Machine Learning"
+      ],
+      "roles": [
+        "AI Engineer"
+      ],
+      "company": "",
+      "locations": [
+        "Bangalore"
+      ],
+      "work_arrangement": "Unspecified",
+      "application_links": [],
+      "source_quality": "full_post"
+    },
+    {
+      "id": "7522925224187772928",
+      "linkedin_url": "https://www.linkedin.com/posts/shaz13_openai-uae-abudhabi-activity-7522925224187772928-dryl",
+      "author_name": "Shahebaz M.",
+      "author_profile_url": "",
+      "published_at": "2026-11-02T07:39:02.637Z",
+      "summary": "OpenAI is hiring Forward Deployed Engineers (FDEs) in the UAE, specifically Abu Dhabi, to work on applying frontier AI to real-world problems with customers.",
+      "post_type": "active_opening",
+      "poster_intent": "employer_hiring",
+      "target_role_match": "direct_target",
+      "poster_relationship": "hiring_manager",
+      "hiring_manager_name": "",
+      "contact_methods": [
+        "dm",
+        "apply_link"
+      ],
+      "role_families": [
+        "AI / Machine Learning"
+      ],
+      "roles": [
+        "FDE"
+      ],
+      "company": "OpenAI",
+      "locations": [
+        "UAE",
+        "Abu Dhabi"
+      ],
+      "work_arrangement": "Unspecified",
+      "application_links": [],
+      "source_quality": "full_post"
+    },
+    {
+      "id": "7522871600308953089",
+      "linkedin_url": "https://www.linkedin.com/posts/aeranki_hiring-ai-medical-imaging-engineer-activity-7522871600308953089-5psg",
+      "author_name": "Avinash Eranki",
+      "author_profile_url": "",
+      "published_at": "2026-11-02T04:05:57.708Z",
+      "summary": "An AI Medical Imaging Engineer is being hired with experience in medical imaging, image processing, AI algorithms, and ultrasound imaging. Application link provided.",
+      "post_type": "active_opening",
+      "poster_intent": "employer_hiring",
+      "target_role_match": "direct_target",
+      "poster_relationship": "unknown",
+      "hiring_manager_name": "",
+      "contact_methods": [
+        "apply_link"
+      ],
+      "role_families": [
+        "AI / Machine Learning"
+      ],
+      "roles": [
+        "AI Medical Imaging Engineer"
+      ],
+      "company": "",
+      "locations": [],
+      "work_arrangement": "Unspecified",
+      "application_links": [],
+      "source_quality": "full_post"
+    },
+    {
+      "id": "7522870113705013248",
+      "linkedin_url": "https://www.linkedin.com/posts/sanjana-gowda-072519245_tesla-hiring-jobsearch-activity-7522870113705013248-v75h",
+      "author_name": "Sanjana Gowda",
+      "author_profile_url": "https://www.linkedin.com/in/sanjana-gowda-072519245",
+      "published_at": "2026-11-02T04:00:03.273Z",
+      "summary": "Tesla has posted over 100 new roles, including AI, ML, and robotics positions such as Sr. Software Backend Engineer, ML Data and Sr. Software Engineer, Robotaxi. Other roles are in program management, manufacturing, and product. Apply via LinkedIn Jobs filtered to the past 24 hou",
+      "post_type": "active_opening",
+      "poster_intent": "company_hiring",
+      "target_role_match": "mixed_with_target",
+      "poster_relationship": "team_member",
+      "hiring_manager_name": "",
+      "contact_methods": [
+        "apply_link"
+      ],
+      "role_families": [
+        "AI / Machine Learning",
+        "Data Engineering"
+      ],
+      "roles": [
+        "SI Infrastructure Engineer, Optimus",
+        "Sr. Software Backend Engineer, ML Data",
+        "Sr. Software Engineer, Robotaxi"
+      ],
+      "company": "Tesla",
+      "locations": [
+        "Palo Alto",
+        "Fremont",
+        "Austin"
+      ],
+      "work_arrangement": "Unspecified",
       "application_links": [],
       "source_quality": "full_post"
     },
@@ -4041,151 +4276,6 @@
       "source_quality": "google_snippet"
     },
     {
-      "id": "7519051470730682369",
-      "linkedin_url": "https://www.linkedin.com/posts/kevin-power-scm_hiring-ai-mit-activity-7519051470730682369-zTRb",
-      "author_name": "Kevin Power",
-      "author_profile_url": "https://www.linkedin.com/in/kevin-power-scm",
-      "published_at": "2026-10-22T15:06:07.843Z",
-      "summary": "The Trade Lab is hiring exceptional engineers for an on-site role in Boston or Cambridge, building and scaling a venture-backed AI startup with direct involvement from the founder CEO/CTO.",
-      "post_type": "active_opening",
-      "poster_intent": "employer_hiring",
-      "target_role_match": "direct_target",
-      "poster_relationship": "unknown",
-      "hiring_manager_name": "",
-      "contact_methods": [
-        "dm"
-      ],
-      "role_families": [
-        "AI / Machine Learning"
-      ],
-      "roles": [
-        "Exceptional engineer"
-      ],
-      "company": "The Trade Lab",
-      "locations": [
-        "Boston, MA",
-        "Cambridge, MA"
-      ],
-      "work_arrangement": "On-site",
-      "application_links": [],
-      "source_quality": "full_post"
-    },
-    {
-      "id": "7519029311358705664",
-      "linkedin_url": "https://www.linkedin.com/posts/gergely-sandor-bihary_were-hiring-applied-ai-engineers-to-join-activity-7519029311358705664-uztT",
-      "author_name": "Gergely Bihary",
-      "author_profile_url": "",
-      "published_at": "2026-10-22T13:38:04.636Z",
-      "summary": "ElevenLabs is hiring Applied AI Engineers to build growth engines within its Marketing Engineering team, working in growth pods to automate GTM processes.",
-      "post_type": "active_opening",
-      "poster_intent": "employer_hiring",
-      "target_role_match": "direct_target",
-      "poster_relationship": "hiring_manager",
-      "hiring_manager_name": "Olivier Martin",
-      "contact_methods": [
-        "dm"
-      ],
-      "role_families": [
-        "AI / Machine Learning"
-      ],
-      "roles": [
-        "Applied AI Engineers"
-      ],
-      "company": "ElevenLabs",
-      "locations": [],
-      "work_arrangement": "Unspecified",
-      "application_links": [],
-      "source_quality": "full_post"
-    },
-    {
-      "id": "7519009958017970176",
-      "linkedin_url": "https://www.linkedin.com/posts/mansi-somani-ms_mastercard-is-hiring-for-data-engineer-activity-7519009958017970176-_WlS",
-      "author_name": "Mansi Somani",
-      "author_profile_url": "",
-      "published_at": "2026-10-22T12:21:10.440Z",
-      "summary": "Mastercard is hiring a Data Engineer for an on-site role in Pune with 1-2 years of experience, requiring skills in Java/Python, Spark, ETL, and cloud platforms, and involving work on data pipelines and AI/ML initiatives.",
-      "post_type": "active_opening",
-      "poster_intent": "employer_hiring",
-      "target_role_match": "direct_target",
-      "poster_relationship": "unknown",
-      "hiring_manager_name": "",
-      "contact_methods": [
-        "apply_link"
-      ],
-      "role_families": [
-        "Data Engineering"
-      ],
-      "roles": [
-        "Data Engineer"
-      ],
-      "company": "Mastercard",
-      "locations": [
-        "Pune"
-      ],
-      "work_arrangement": "On-site",
-      "application_links": [],
-      "source_quality": "full_post"
-    },
-    {
-      "id": "7519005106642575360",
-      "linkedin_url": "https://www.linkedin.com/posts/matti-aksela_we-are-hiring-if-you-are-or-know-a-data-activity-7519005106642575360-ZK7z",
-      "author_name": "Matti Aksela",
-      "author_profile_url": "",
-      "published_at": "2026-10-22T12:01:53.782Z",
-      "summary": "The company is hiring Data Scientists and ML/AI Engineers to contribute to an AI/ML-driven transformation of core processes.",
-      "post_type": "general_hiring",
-      "poster_intent": "employer_hiring",
-      "target_role_match": "direct_target",
-      "poster_relationship": "hiring_manager",
-      "hiring_manager_name": "",
-      "contact_methods": [
-        "unspecified"
-      ],
-      "role_families": [
-        "Data Science",
-        "AI / Machine Learning"
-      ],
-      "roles": [
-        "Data Scientist",
-        "ML/AI Engineer"
-      ],
-      "company": "",
-      "locations": [],
-      "work_arrangement": "Unspecified",
-      "application_links": [],
-      "source_quality": "full_post"
-    },
-    {
-      "id": "7519000977551785984",
-      "linkedin_url": "https://www.linkedin.com/posts/nomanakber_urgent-hiring-ai-architects-abu-dhabi-activity-7519000977551785984-0uvg",
-      "author_name": "Nohman Akbar",
-      "author_profile_url": "",
-      "published_at": "2026-10-22T11:45:29.330Z",
-      "summary": "Urgent hiring for AI Architects and Agentic AI & LLM Infrastructure Specialists in Abu Dhabi, UAE, with immediate joining required and hands-on experience in production AI deployments and NVIDIA GPU infrastructure.",
-      "post_type": "active_opening",
-      "poster_intent": "employer_hiring",
-      "target_role_match": "direct_target",
-      "poster_relationship": "hiring_manager",
-      "hiring_manager_name": "",
-      "contact_methods": [
-        "unspecified"
-      ],
-      "role_families": [
-        "AI / Machine Learning"
-      ],
-      "roles": [
-        "AI Architects",
-        "Agentic AI & LLM Infrastructure Specialists"
-      ],
-      "company": "",
-      "locations": [
-        "Abu Dhabi, UAE"
-      ],
-      "work_arrangement": "On-site",
-      "application_links": [],
-      "source_quality": "full_post"
-    },
-    {
       "id": "7518924721833463808",
       "linkedin_url": "https://www.linkedin.com/posts/vknaik88_hiring-ai-technical-architect-for-our-client-activity-7518924721833463808-ewqm",
       "author_name": "Vinayak Naik",
@@ -4439,6 +4529,41 @@
       "source_quality": "google_snippet"
     },
     {
+      "id": "7518691370262253568",
+      "linkedin_url": "https://www.linkedin.com/posts/shaneausleybutler_riot-games-is-hiring-an-analyst-to-build-activity-7518691370262253568-vJC7",
+      "author_name": "Shane Butler",
+      "author_profile_url": "https://www.linkedin.com/in/shaneausleybutler",
+      "published_at": "2026-10-21T15:15:13.200Z",
+      "summary": "A post aggregates 8 data-related job openings at companies including Riot Games, Smartsheet, Asana, Harvey, Vanta, Plaid, Upstart, and Fin, where building or evaluating AI is part of the work. Roles include analytics, data science, and AI tooling positions with various locations",
+      "post_type": "active_opening",
+      "poster_intent": "sharing_opening",
+      "target_role_match": "direct_target",
+      "poster_relationship": "aggregator",
+      "hiring_manager_name": "",
+      "contact_methods": [
+        "apply_link"
+      ],
+      "role_families": [
+        "Analytics",
+        "Data Science",
+        "AI / Machine Learning"
+      ],
+      "roles": [
+        "Principal Insights Analyst - League of Legends",
+        "Data Scientist II",
+        "Analytical Engineer",
+        "Senior Analytics Engineer, Finance",
+        "Senior Analytics Engineer",
+        "Staff Analyst, Investor Analytics",
+        "Senior Data Scientist - AI Tooling"
+      ],
+      "company": "",
+      "locations": [],
+      "work_arrangement": "Unspecified",
+      "application_links": [],
+      "source_quality": "full_post"
+    },
+    {
       "id": "7518635761643069442",
       "linkedin_url": "https://www.linkedin.com/posts/antonyredmond_recruitment-ai-hiring-activity-7518635761643069442-ehug",
       "author_name": "LinkedIn author",
@@ -4582,35 +4707,6 @@
       "source_quality": "full_post"
     },
     {
-      "id": "7518673243499626497",
-      "linkedin_url": "https://www.linkedin.com/posts/crossover_2-hour-learning-is-hiring-an-ai-driven-learning-activity-7518673243499626497-xsky",
-      "author_name": "Crossover",
-      "author_profile_url": "https://www.linkedin.com/company/crossover",
-      "published_at": "2026-10-21T14:03:11.443Z",
-      "summary": "2 Hour Learning is hiring an AI-Driven Learning Analyst for a fully remote role open to candidates worldwide, requiring experience with AI tools and K-8 coaching.",
-      "post_type": "active_opening",
-      "poster_intent": "employer_hiring",
-      "target_role_match": "direct_target",
-      "poster_relationship": "company_page",
-      "hiring_manager_name": "",
-      "contact_methods": [
-        "apply_link"
-      ],
-      "role_families": [
-        "AI / Machine Learning"
-      ],
-      "roles": [
-        "AI-Driven Learning Analyst"
-      ],
-      "company": "2 Hour Learning",
-      "locations": [
-        "Worldwide"
-      ],
-      "work_arrangement": "Remote",
-      "application_links": [],
-      "source_quality": "full_post"
-    },
-    {
       "id": "7518643203915317248",
       "linkedin_url": "https://www.linkedin.com/posts/k3vindjohnson_were-hiring-an-ai-engineer-at-pinnacle-to-activity-7518643203915317248-b4ep",
       "author_name": "Kevin D. Johnson",
@@ -4724,15 +4820,15 @@
       "source_quality": "google_snippet"
     },
     {
-      "id": "7518376811110502400",
-      "linkedin_url": "https://www.linkedin.com/posts/slbird_responsibleai-hiring-ai-activity-7518376811110502400-QkWW",
-      "author_name": "Sarah Bird",
-      "author_profile_url": "https://www.linkedin.com/in/slbird",
-      "published_at": "2026-10-20T18:25:16.453Z",
-      "summary": "Microsoft is hiring Senior and Principal Software Engineers and a Principal Product Manager for Responsible AI roles, focused on building tools for responsible AI at scale.",
+      "id": "7518407576179458048",
+      "linkedin_url": "https://www.linkedin.com/posts/praveenraja9_lifeatsra-healthai-digitalhealth-activity-7518407576179458048-br_J",
+      "author_name": "Praveen Raja",
+      "author_profile_url": "https://www.linkedin.com/in/praveenraja9",
+      "published_at": "2026-10-20T20:27:31.418Z",
+      "summary": "Samsung Research America (SRA) is hiring for multiple roles on its Digital Health team, including a Staff AI Research Engineer, with applications reviewed on a rolling basis.",
       "post_type": "active_opening",
       "poster_intent": "employer_hiring",
-      "target_role_match": "direct_target",
+      "target_role_match": "mixed_with_target",
       "poster_relationship": "hiring_manager",
       "hiring_manager_name": "",
       "contact_methods": [
@@ -4742,45 +4838,9 @@
         "AI / Machine Learning"
       ],
       "roles": [
-        "Senior Software Engineer – Responsible AI",
-        "Principal Software Engineer – Responsible AI",
-        "Principal Product Manager – Responsible AI"
+        "Staff AI Research Engineer"
       ],
-      "company": "Microsoft",
-      "locations": [],
-      "work_arrangement": "Unspecified",
-      "application_links": [],
-      "source_quality": "full_post"
-    },
-    {
-      "id": "7518370399051587584",
-      "linkedin_url": "https://www.linkedin.com/posts/tberghane_hiring-activity-7518370399051587584-g4ir",
-      "author_name": "Taylor Berghane",
-      "author_profile_url": "https://www.linkedin.com/in/tberghane",
-      "published_at": "2026-10-20T17:59:47.699Z",
-      "summary": "Taylor Berghane shares 10 AI startups hiring across various roles, including agentic AI engineers, ML engineers, and robotics engineers, with many roles in physical-world applications.",
-      "post_type": "general_hiring",
-      "poster_intent": "sharing_opening",
-      "target_role_match": "mixed_with_target",
-      "poster_relationship": "aggregator",
-      "hiring_manager_name": "",
-      "contact_methods": [
-        "unspecified"
-      ],
-      "role_families": [
-        "AI / Machine Learning"
-      ],
-      "roles": [
-        "agentic ai engineer",
-        "ml engineers on autonomy",
-        "research, backend and forward deployed robotics engineering",
-        "ml infra, research and applied ai",
-        "ml infrastructure and ml systems engineers",
-        "senior staff ai engineer",
-        "engineering roles",
-        "member of technical staff"
-      ],
-      "company": "",
+      "company": "Samsung Research America (SRA)",
       "locations": [],
       "work_arrangement": "Unspecified",
       "application_links": [],
@@ -4875,35 +4935,6 @@
       "source_quality": "google_snippet"
     },
     {
-      "id": "7518279523721834497",
-      "linkedin_url": "https://www.linkedin.com/posts/miriam-klose_were-hiring-an-ai-expert-instructional-activity-7518279523721834497-26QU",
-      "author_name": "Miriam Klose",
-      "author_profile_url": "",
-      "published_at": "2026-10-20T11:58:41.332Z",
-      "summary": "Bots & People is hiring an AI Expert & Instructional Designer for a fully remote role based in Germany, focusing on designing and delivering enterprise AI programs.",
-      "post_type": "active_opening",
-      "poster_intent": "employer_hiring",
-      "target_role_match": "direct_target",
-      "poster_relationship": "hiring_manager",
-      "hiring_manager_name": "",
-      "contact_methods": [
-        "apply_link"
-      ],
-      "role_families": [
-        "AI / Machine Learning"
-      ],
-      "roles": [
-        "AI Expert & Instructional Designer"
-      ],
-      "company": "Bots & People",
-      "locations": [
-        "Germany"
-      ],
-      "work_arrangement": "Remote",
-      "application_links": [],
-      "source_quality": "full_post"
-    },
-    {
       "id": "7518148777007017984",
       "linkedin_url": "https://www.linkedin.com/posts/arun-kumar-6899a9199_hiring-datascientist-datascience-activity-7518148777007017984-Ezji",
       "author_name": "LinkedIn author",
@@ -4927,98 +4958,6 @@
       "company": "Eagleview",
       "locations": [],
       "work_arrangement": "Unspecified",
-      "application_links": [],
-      "source_quality": "google_snippet"
-    },
-    {
-      "id": "7517903388299440128",
-      "linkedin_url": "https://www.linkedin.com/posts/latifa-alshehhi-578126120_were-hiring-senior-data-ai-consultant-activity-7517903388299440128-vGKA",
-      "author_name": "LinkedIn author",
-      "author_profile_url": "",
-      "published_at": "2026-10-19T22:29:37Z",
-      "summary": "Two openings are mentioned: a Senior Data & AI Consultant in Dubai and a role developing AI methods for population health and genomics with access to Finnish health and genetic data.",
-      "post_type": "active_opening",
-      "poster_intent": "employer_hiring",
-      "target_role_match": "direct_target",
-      "poster_relationship": "unknown",
-      "hiring_manager_name": "",
-      "contact_methods": [
-        "dm"
-      ],
-      "role_families": [
-        "AI / Machine Learning"
-      ],
-      "roles": [
-        "Senior Data & AI Consultant",
-        "AI methods developer for population health and genomics"
-      ],
-      "company": "",
-      "locations": [
-        "Dubai",
-        "Finland"
-      ],
-      "work_arrangement": "Unspecified",
-      "application_links": [],
-      "source_quality": "google_snippet"
-    },
-    {
-      "id": "7517970343374888961",
-      "linkedin_url": "https://www.linkedin.com/posts/ghazi-masood-09195a2_i-dont-care-what-youre-hiring-criteria-activity-7517970343374888961-6igv",
-      "author_name": "LinkedIn author",
-      "author_profile_url": "",
-      "published_at": "2026-10-19T20:45:37Z",
-      "summary": "A hiring manager is recruiting for an AI team in Pune and sharing a Tesla Data Engineer role in Fremont, CA; contact via DM to Mamata K.",
-      "post_type": "active_opening",
-      "poster_intent": "employer_hiring",
-      "target_role_match": "direct_target",
-      "poster_relationship": "hiring_manager",
-      "hiring_manager_name": "Mamata K.",
-      "contact_methods": [
-        "dm"
-      ],
-      "role_families": [
-        "AI / Machine Learning",
-        "Data Engineering"
-      ],
-      "roles": [
-        "AI team member",
-        "Data Engineer"
-      ],
-      "company": "Pune-based AI team",
-      "locations": [
-        "Pune",
-        "Fremont, CA"
-      ],
-      "work_arrangement": "On-site",
-      "application_links": [],
-      "source_quality": "google_snippet"
-    },
-    {
-      "id": "7517474479414099968",
-      "linkedin_url": "https://www.linkedin.com/posts/raj-g-b8aa69372_hiring-ai-engineer-agentic-ai-100-activity-7517474479414099968-dz0t",
-      "author_name": "LinkedIn author",
-      "author_profile_url": "",
-      "published_at": "2026-10-19T17:49:55Z",
-      "summary": "An AI Engineer – Agentic AI role is available in Canada with 100% remote work. The position is actively being hired.",
-      "post_type": "active_opening",
-      "poster_intent": "employer_hiring",
-      "target_role_match": "direct_target",
-      "poster_relationship": "unknown",
-      "hiring_manager_name": "",
-      "contact_methods": [
-        "apply_link"
-      ],
-      "role_families": [
-        "AI / Machine Learning"
-      ],
-      "roles": [
-        "AI Engineer – Agentic AI"
-      ],
-      "company": "",
-      "locations": [
-        "Canada"
-      ],
-      "work_arrangement": "Remote",
       "application_links": [],
       "source_quality": "google_snippet"
     }
