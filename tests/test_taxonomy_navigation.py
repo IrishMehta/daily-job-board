@@ -84,7 +84,7 @@ class TaxonomyNavigationTests(unittest.TestCase):
         self.assertIn('id="resume-dialog"', self.index)
         self.assertIn("showModal()", self.app)
         self.assertIn("Your resume stays in this tab", self.index)
-        self.assertIn("Semantic similarity only—verify", self.app)
+        self.assertIn("Semantic similarity only.", self.app)
 
 
 if __name__ == "__main__":

@@ -332,8 +332,6 @@ mark { padding: 0 2px; border-radius: 3px; background: rgba(255, 194, 75, 0.34);
 
 .storage-warning { width: min(var(--desktop-content-max), calc(100% - var(--desktop-content-gutter))); flex: none; margin: 10px auto 0; padding: 9px 12px; border: 1px solid var(--warn-line); border-radius: var(--radius); background: var(--warn-soft); color: var(--warn); font-size: 12px; }
 
-.results-trust { display: flex; min-height: 32px; align-items: center; gap: 8px; padding: 6px 18px; border-bottom: 1px solid var(--line); background: rgba(255, 255, 255, .72); color: var(--subtle); font-size: 11px; }
-.trust-mark { color: var(--go); font-weight: 750; }
 .info-badge { display: inline-grid; width: 17px; height: 17px; flex: none; place-items: center; padding: 0; border: 1px solid currentColor; border-radius: 50%; background: transparent; color: var(--subtle); cursor: help; font: 600 10px var(--font-mono); line-height: 1; }
 .info-badge:hover { color: var(--flap-ink); }
 
@@ -553,8 +551,6 @@ mark { padding: 0 2px; border-radius: 3px; background: rgba(255, 194, 75, 0.34);
 .decision-label { display: block; margin-bottom: 4px; color: var(--subtle); font-size: 9px; font-weight: 600; letter-spacing: 0.12em; text-transform: uppercase; }
 .decision-value { display: block; overflow-wrap: anywhere; font-size: 12px; font-weight: 600; line-height: 1.4; }
 .decision-label .info-badge { width: 15px; height: 15px; margin-left: 3px; vertical-align: -2px; font-size: 9px; }
-.eligibility-note { display: flex; align-items: flex-start; gap: 8px; margin: 0; padding: 10px 20px; border-bottom: 1px solid var(--line); background: #fffaf0; color: var(--muted); font-size: 11px; line-height: 1.45; }
-.eligibility-note strong { color: var(--ink); }
 
 .detail-section { padding: 22px 24px; border-bottom: 1px solid var(--line); }
 .detail-section:last-child { border-bottom: 0; }
@@ -909,7 +905,6 @@ mark { padding: 0 2px; border-radius: 3px; background: rgba(255, 194, 75, 0.34);
   .results-toolbar h1 { font-size: 18px; }
   .results-toolbar p { font-size: 11px; }
   .pane-scroll-note, .detail-scroll-note { font-size: 10px; }
-  .results-trust { min-height: 36px; padding: 7px 22px; font-size: 12px; }
   .job-list { gap: 12px; padding: 16px 18px 2px; }
   .job-row { grid-template-columns: 60px minmax(0, 1fr); }
   .job-age-cell { padding-top: 18px; }
@@ -1055,7 +1050,7 @@ mark { padding: 0 2px; border-radius: 3px; background: rgba(255, 194, 75, 0.34);
   .view-tab { padding: 0 2px; font-size: 12px; }
   .header-actions { order: initial; margin-left: 0; }
   .header-actions .guide-action { display: none; }
-  .search-intro, .results-trust { display: none; }
+  .search-intro { display: none; }
   .search-shell { padding: 6px 12px 4px; }
   .active-filters { padding-top: 4px; }
   .workspace { padding: 6px 10px 8px; }
@@ -1081,7 +1076,6 @@ mark { padding: 0 2px; border-radius: 3px; background: rgba(255, 194, 75, 0.34);
   .mobile-filter-button .filter-badge { position: absolute; top: -6px; right: -6px; }
   .filter-panel { grid-template-columns: 1fr; }
   .results-toolbar { min-height: 54px; padding: 9px 14px; }
-  .results-trust { align-items: flex-start; flex-wrap: wrap; padding: 7px 14px; }
   .results-toolbar-notes { gap: 5px; }
   .sort-note { display: none; }
   .job-row { grid-template-columns: 46px minmax(0, 1fr); }
@@ -1614,11 +1608,9 @@ mark { padding: 0 2px; border-radius: 3px; background: rgba(255, 194, 75, 0.34);
   .detail-pane { position: static; max-height: none; overscroll-behavior: auto; }
 }
 
-/* Medium desktop widths cannot fit the full brand, status, four view tabs, and
-   three labeled actions on one row. Keep the header single-line and let the
-   secondary actions use their already-visible icons instead of wrapping below
-   the primary navigation. */
-@media (min-width: 1001px) and (max-width: 1599px) {
+/* Keep secondary actions compact until the full header has enough space.
+   Let the status text shrink before navigation controls. */
+@media (min-width: 1001px) and (max-width: 1799px) {
   .app-header {
     flex-wrap: nowrap;
     gap: 8px 14px;
@@ -1628,12 +1620,13 @@ mark { padding: 0 2px; border-radius: 3px; background: rgba(255, 194, 75, 0.34);
   .brand { flex: none; gap: 7px; }
   .brand-mark { width: 27px; height: 27px; font-size: 11px; }
   .brand-word { font-size: 14px; }
-  .board-status { flex: none; gap: 8px; }
+  .board-status { flex: 0 1 auto; gap: 8px; }
+  .flap-count { flex: none; }
   .flap-count { gap: 2px; }
   .flap-tile { min-width: 19px; height: 27px; font-size: 13px; }
   .board-status-copy { max-width: 190px; }
   .freshness { max-width: 190px; font-size: 9px; }
-  .view-tabs { min-width: 0; flex: 1; justify-content: flex-end; gap: 14px; }
+  .view-tabs { flex: none; justify-content: flex-end; gap: 14px; }
   .view-tab { font-size: 12px; white-space: nowrap; }
   .header-actions { flex: none; gap: 4px; }
   .header-actions > .header-tools > summary,

@@ -70,7 +70,7 @@ const els = Object.fromEntries([
   "mobile-filter-close", "mobile-filter-count", "filter-panel", "domain-filter", "specialization-filter",
   "industry-filter", "location-filter", "career-filter", "experience-years-filter", "authorization-filter",
   "sponsorship-filter", "posted-filter", "sort-filter", "advanced-filters-toggle", "advanced-filter-count", "clear-filters", "active-filters", "storage-warning",
-  "results-heading", "results-summary", "shortlist-clear-filters", "sort-note", "results-trust-copy", "match-mode", "job-list", "empty-state", "empty-title", "empty-copy",
+  "results-heading", "results-summary", "shortlist-clear-filters", "sort-note", "match-mode", "job-list", "empty-state", "empty-title", "empty-copy",
   "empty-action", "empty-suggestions", "load-more", "detail-pane", "detail-empty", "detail-content", "sheet-backdrop", "resume-dialog",
   "resume-input", "resume-status", "resume-progress", "resume-clear", "resume-cancel", "resume-apply", "toast", "board-content", "search-shell", "jobs-workspace",
 ].map((id) => [id.replaceAll("-", "_"), document.getElementById(id)]));
@@ -893,9 +893,9 @@ function renderMatchEvidence(job) {
       <div class="match-evidence">
         ${row("Title overlap", explanation.titleMatches)}
         ${row("Posting signals", explanation.signalMatches)}
-        ${explanation.semanticOnly ? '<div class="semantic-note">Semantic similarity only—verify the posting requirements before applying.</div>' : ""}
+        ${explanation.semanticOnly ? '<div class="semantic-note">Semantic similarity only.</div>' : ""}
       </div>
-      <p class="disclosure">Guidance only. Matching runs locally and is not an eligibility decision.</p>
+      <p class="disclosure">Matching runs locally in your browser.</p>
     </section>`;
 }
 
@@ -905,14 +905,12 @@ function summarySection(job) {
     <section class="detail-section">
       <h3>Role summary</h3>
       <p class="summary-text">${escapeHtml(job.summary)}</p>
-      <p class="disclosure">AI-generated summary. The complete posting is on the employer site.</p>
     </section>`;
   }
   return `
     <section class="detail-section">
       <h3>Role summary</h3>
       <p class="summary-text">${escapeHtml(job.description_excerpt || "Open the employer posting to review the role details.")}</p>
-      <p class="disclosure">Excerpt from the posting. The complete posting is on the employer site.</p>
     </section>`;
 }
 
@@ -948,13 +946,12 @@ function renderDetail() {
       <div class="decision-item"><span class="decision-label">Visa sponsorship <button class="info-badge" type="button" title="This is an inferred signal from the posting text, not a guarantee." aria-label="Visa sponsorship definition">i</button></span><span class="decision-value ${authSignalClass(job)}">${escapeHtml(sponsorship)}</span></div>
       <div class="decision-item"><span class="decision-label">Work authorization <button class="info-badge" type="button" title="Open or not specified means no restriction was detected. Not stated means the posting was silent." aria-label="Work authorization definition">i</button></span><span class="decision-value ${authSignalClass(job)}">${escapeHtml(authorization)}</span></div>
     </div>
-    <p class="eligibility-note"><span class="info-badge" aria-hidden="true">i</span><span><strong>Eligibility signals are inferred.</strong> Confirm sponsorship, citizenship, and clearance requirements with the employer before applying.</span></p>
     ${summarySection(job)}
     ${renderMatchEvidence(job)}
     <section class="detail-section">
       <h3>Role classification</h3>
       <div class="taxonomy-row">${taxonomyTags.map((tag) => `<span class="taxonomy-tag">${escapeHtml(tag)}</span>`).join("") || '<span class="taxonomy-tag">Uncategorized</span>'}</div>
-      <p class="disclosure">Classification and authorization signals are model-derived. Verify all requirements on the employer site.</p>
+      <p class="disclosure">AI-generated insights. Verify details and eligibility on the employer site.</p>
     </section>`;
 }
 
@@ -1045,10 +1042,6 @@ function render() {
   renderJobList(results);
   renderEmpty(results);
   renderDetail();
-  const freshToday = results.filter((job) => jobAgeDays(job.posted_on) === 0).length;
-  els.results_trust_copy.textContent = state.payload.generated_at
-    ? `${formatGeneratedAt(state.payload.generated_at)} · ${formatCount(freshToday)} fresh today · US roles`
-    : "Updated daily · US technology roles";
   renderStorageWarning();
 }
 
