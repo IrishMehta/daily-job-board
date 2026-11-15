@@ -80,11 +80,14 @@ class TaxonomyNavigationTests(unittest.TestCase):
         self.assertIn('id="mobile-filter-close"', self.index)
         self.assertIn(".filter-panel.is-open", self.styles)
 
-    def test_resume_matcher_is_modal_and_private(self):
-        self.assertIn('id="resume-dialog"', self.index)
-        self.assertIn("showModal()", self.app)
-        self.assertIn("Your resume stays in this tab", self.index)
-        self.assertIn("Semantic similarity only.", self.app)
+    def test_retired_resume_matching_has_no_ui_or_model_downloads(self):
+        source = self.index + self.app + self.matching + self.styles
+        for retired in ("resume-open", "resume-dialog", "ResumeMatcher", "resumeActive",
+                        "job_embeddings", "@huggingface/transformers", "_resumeScore"):
+            with self.subTest(retired=retired):
+                self.assertNotIn(retired, source)
+        for name in ("job_embeddings.bin", "job_embeddings_manifest.json"):
+            self.assertFalse((BOARD_DIR / "docs" / "data" / name).exists())
 
 
 if __name__ == "__main__":

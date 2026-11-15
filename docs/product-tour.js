@@ -30,11 +30,6 @@ const STEPS = [
     copy: "Select a result to inspect the summary, requirements, location, and application link without losing your place.",
   },
   {
-    target: () => document.getElementById("resume-open"),
-    title: "Try private resume matching",
-    copy: "Paste your resume to sort roles by local relevance. Your resume stays in this browser and is never uploaded.",
-  },
-  {
     target: () => document.querySelector(".market-action"),
     title: "Step back and read the market",
     copy: "Market trends summarizes hiring demand, pay, locations, experience mix, and skills across the current window.",

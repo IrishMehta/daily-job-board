@@ -69,9 +69,9 @@ svg { width: 18px; height: 18px; fill: none; stroke: currentColor; stroke-width:
 .skip-link:focus { transform: none; }
 
 /* Mono utility voice: labels, ages, counts */
-.board-status-label, .freshness, .job-age, .results-toolbar p, .match-mode, .sort-note,
-.decision-label, .taxonomy-tag, .dialog-kicker, .load-more,
-.match-evidence-label, .match-term, .disclosure, .tab-count, .filter-badge {
+.board-status-label, .freshness, .job-age, .results-toolbar p, .sort-note,
+.decision-label, .taxonomy-tag, .load-more,
+.disclosure, .tab-count, .filter-badge {
   font-family: var(--font-mono);
 }
 
@@ -357,7 +357,6 @@ mark { padding: 0 2px; border-radius: 3px; background: rgba(255, 194, 75, 0.34);
 .pane-scroll-note, .detail-scroll-note { color: var(--subtle); font: 500 9px var(--font-mono); letter-spacing: .06em; text-transform: uppercase; white-space: nowrap; }
 .results-toolbar h1 { margin: 0; font-size: 15px; font-weight: 750; font-stretch: 112%; letter-spacing: 0.01em; }
 .results-toolbar p { margin: 3px 0 0; color: var(--muted); font-size: 10px; letter-spacing: 0.06em; text-transform: uppercase; }
-.match-mode { max-width: 190px; overflow: hidden; padding: 4px 8px; border: 1px solid var(--warn-line); border-radius: 999px; background: var(--warn-soft); color: var(--warn); font-size: 9px; font-weight: 600; letter-spacing: 0.06em; text-transform: uppercase; text-overflow: ellipsis; white-space: nowrap; }
 .sort-note { color: var(--muted); font-size: 9px; white-space: nowrap; }
 
 .results-scroll { min-height: 0; flex: 1; overflow-y: auto; overscroll-behavior: contain; scrollbar-gutter: stable; }
@@ -561,30 +560,10 @@ mark { padding: 0 2px; border-radius: 3px; background: rgba(255, 194, 75, 0.34);
 .taxonomy-row { display: flex; flex-wrap: wrap; gap: 6px; }
 .taxonomy-tag { padding: 4px 9px; border: 1px solid var(--line); border-radius: 999px; background: var(--surface-dim); color: var(--muted); font-size: 10px; font-weight: 500; letter-spacing: 0.04em; text-transform: uppercase; }
 .disclosure { margin-top: 12px !important; color: var(--subtle) !important; font-size: 10px; letter-spacing: 0.02em; }
-.match-evidence { display: grid; gap: 9px; }
-.match-evidence-row { display: flex; flex-wrap: wrap; align-items: center; gap: 6px; }
-.match-evidence-label { min-width: 112px; color: var(--subtle); font-size: 9.5px; font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase; }
-.match-term { padding: 3px 7px; border: 1px solid var(--go-line); border-radius: 999px; background: var(--go-soft); color: var(--go); font-size: 10.5px; font-weight: 600; }
-.semantic-note { padding: 10px 12px; border: 1px solid var(--warn-line); border-radius: var(--radius); background: var(--warn-soft); color: var(--warn); font-size: 11.5px; }
 
 /* ------------------------------------------------------------------
-   Resume dialog + toast
+   Toast
    ------------------------------------------------------------------ */
-
-.resume-dialog { width: min(620px, calc(100vw - 32px)); padding: 0; border: 1px solid var(--board-line); border-radius: 16px; background: var(--surface); color: var(--ink); box-shadow: var(--shadow-pop); }
-.resume-dialog::backdrop { background: rgba(16, 18, 26, 0.55); }
-.dialog-header { display: flex; align-items: flex-start; justify-content: space-between; margin: 0; padding: 20px 22px; border-bottom: 1px solid var(--line); }
-.dialog-kicker { color: var(--flap-ink); font-size: 9.5px; font-weight: 600; letter-spacing: 0.12em; text-transform: uppercase; }
-.dialog-header h2 { margin: 5px 0 0; font-size: 20px; font-weight: 780; letter-spacing: -0.01em; }
-.dialog-body { padding: 20px 22px; }
-.dialog-body > p { margin: 0 0 16px; color: var(--muted); font-size: 12.5px; }
-.dialog-body label { display: block; margin-bottom: 6px; font-size: 12px; font-weight: 700; }
-.dialog-body textarea { width: 100%; min-height: 210px; resize: vertical; padding: 12px; border: 1px solid var(--line-strong); border-radius: var(--radius); outline: 0; color: var(--ink); line-height: 1.55; }
-.dialog-body textarea:focus { border-color: var(--ink); box-shadow: 0 0 0 3px rgba(28, 31, 42, 0.08); }
-.form-hint { margin: 8px 0 0 !important; }
-.form-hint.is-error { color: var(--stop); }
-.matcher-progress { margin: 9px 0 0 !important; color: var(--flap-ink) !important; font: 600 10px var(--font-mono); letter-spacing: .03em; }
-.dialog-actions { display: flex; align-items: center; justify-content: flex-end; gap: 8px; padding: 14px 22px; border-top: 1px solid var(--line); }
 
 .toast {
   position: fixed; z-index: 200; right: 20px; bottom: 20px; max-width: 360px;
@@ -1086,8 +1065,6 @@ mark { padding: 0 2px; border-radius: 3px; background: rgba(255, 194, 75, 0.34);
   .detail-header, .detail-section { padding: 18px 16px; }
   .decision-grid { grid-template-columns: 1fr 1fr; }
   .decision-item { padding: 12px; }
-  .resume-dialog { width: calc(100vw - 20px); }
-  .dialog-header, .dialog-body, .dialog-actions { padding-right: 16px; padding-left: 16px; }
   .market-controls { display: grid; }
   .market-analysis { overflow-x: hidden; }
   .market-content { width: 100%; max-width: 100%; }

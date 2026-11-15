@@ -58,7 +58,7 @@ class FrontendContractTests(unittest.TestCase):
             styles,
         )
 
-    def test_first_visit_guide_has_six_steps_and_no_shortlist_step(self):
+    def test_first_visit_guide_has_five_steps_and_no_shortlist_step(self):
         html = (DOCS / "index.html").read_text(encoding="utf-8")
         tour_source = (DOCS / "product-tour.js").read_text(encoding="utf-8")
         self.assertIn('id="product-tour"', html)
@@ -67,7 +67,7 @@ class FrontendContractTests(unittest.TestCase):
         self.assertIn('id="tour-next"', html)
         self.assertIn('id="tour-back"', html)
         self.assertIn('import { createProductTour } from "./product-tour.js";', (DOCS / "app.js").read_text(encoding="utf-8"))
-        self.assertEqual(tour_source.count("title:"), 6)
+        self.assertEqual(tour_source.count("title:"), 5)
         self.assertNotIn("shortlist", tour_source.casefold())
 
     def test_local_storage_contract_excludes_private_resume_data_and_cookies(self):
@@ -91,9 +91,7 @@ class FrontendContractTests(unittest.TestCase):
         self.assertIn('href="https://job-api.irishmehta.workers.dev/docs"', html)
         self.assertIn('aria-label="Open API documentation"', html)
         self.assertIn('class="button button-board market-action"', html)
-        self.assertIn('class="view-tab resume-tab" id="resume-open"', html)
-        self.assertLess(html.index('data-view="all"'), html.index('id="resume-open"'))
-        self.assertLess(html.index('id="resume-open"'), html.index('data-view="shortlist"'))
+        self.assertLess(html.index('data-view="all"'), html.index('data-view="shortlist"'))
         self.assertIn('class="github-mark"', html)
         self.assertIn('aria-label="View this project on GitHub"', html)
         self.assertIn('type="module" src="./app.js"', html)

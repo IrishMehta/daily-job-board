@@ -8,7 +8,7 @@ import {
   sanitizeFilters,
   toggleShortlist,
 } from "./storage.js";
-import { countFacetValues, explainResumeMatch, filterAndSortJobs, normalizeText, ResumeMatcher, sortFacetItems, tokenize } from "./matching.js";
+import { countFacetValues, filterAndSortJobs, normalizeText, sortFacetItems, tokenize } from "./matching.js";
 import { isCurrentSearchResponse } from "./search.js";
 import { createMarketAnalysis } from "./market-analysis.js";
 import { createHiringPosts } from "./hiring-posts.js";
@@ -43,9 +43,6 @@ const state = {
   selectedId: "",
   selectionPinned: false,
   storageWarning: "",
-  resumeActive: false,
-  resumeTokens: [],
-  resumeMode: "",
   searchReady: false,
   searchPending: false,
   searchFailed: false,
@@ -58,24 +55,20 @@ const state = {
   suggestionsOpen: false,
   latestSearchRequestId: 0,
   emptyActionMode: "clear-filters",
-  resumeBusy: false,
-  resumeCancelRequested: false,
-  resumeRunId: 0,
   companyBrands: {},
 };
 
 const els = Object.fromEntries([
-  "freshness", "job-count", "filter-apply", "all-count", "shortlist-count", "repo-link", "resume-open", "search-input", "search-clear", "search-state",
+  "freshness", "job-count", "filter-apply", "all-count", "shortlist-count", "repo-link", "search-input", "search-clear", "search-state",
   "search-suggestions", "search-assist", "mobile-filter-open",
   "mobile-filter-close", "mobile-filter-count", "filter-panel", "domain-filter", "specialization-filter",
   "industry-filter", "location-filter", "career-filter", "experience-years-filter", "authorization-filter",
   "sponsorship-filter", "posted-filter", "sort-filter", "advanced-filters-toggle", "advanced-filter-count", "clear-filters", "active-filters", "storage-warning",
-  "results-heading", "results-summary", "shortlist-clear-filters", "sort-note", "match-mode", "job-list", "empty-state", "empty-title", "empty-copy",
-  "empty-action", "empty-suggestions", "load-more", "detail-pane", "detail-empty", "detail-content", "sheet-backdrop", "resume-dialog",
-  "resume-input", "resume-status", "resume-progress", "resume-clear", "resume-cancel", "resume-apply", "toast", "board-content", "search-shell", "jobs-workspace",
+  "results-heading", "results-summary", "shortlist-clear-filters", "sort-note", "job-list", "empty-state", "empty-title", "empty-copy",
+  "empty-action", "empty-suggestions", "load-more", "detail-pane", "detail-empty", "detail-content", "sheet-backdrop",
+  "toast", "board-content", "search-shell", "jobs-workspace",
 ].map((id) => [id.replaceAll("-", "_"), document.getElementById(id)]));
 
-const resumeMatcher = new ResumeMatcher((message) => setResumeStatus(message));
 const marketAnalysis = createMarketAnalysis();
 const hiringPosts = createHiringPosts();
 const productTour = createProductTour();
@@ -238,7 +231,6 @@ function prepareJobs(payload) {
         job.title, job.company, job.location, job.experience_display, job.work_authorization_display,
         taxonomyText, job.summary, job.description_excerpt, ...(job.match_terms ?? []),
       ].join(" ")),
-      _resumeScore: null,
     };
   });
 }
@@ -781,7 +773,6 @@ function searchMatchReasons(job) {
 function currentResults() {
   return filterAndSortJobs(state.jobs, state.filters, {
     shortlist: state.view === "shortlist" ? state.shortlist : null,
-    resumeActive: state.resumeActive,
     searchScores: state.searchScores,
   });
 }
@@ -883,23 +874,6 @@ function taxonomyDetail(job) {
   return [...new Set(tags)];
 }
 
-function renderMatchEvidence(job) {
-  if (!state.resumeActive) return "";
-  const explanation = explainResumeMatch(job, state.resumeTokens);
-  const row = (label, terms) => terms.length ? `
-    <div class="match-evidence-row"><span class="match-evidence-label">${label}</span>${terms.map((term) => `<span class="match-term">${escapeHtml(term)}</span>`).join("")}</div>` : "";
-  return `
-    <section class="detail-section">
-      <h3>Why this surfaced</h3>
-      <div class="match-evidence">
-        ${row("Title overlap", explanation.titleMatches)}
-        ${row("Posting signals", explanation.signalMatches)}
-        ${explanation.semanticOnly ? '<div class="semantic-note">Semantic similarity only.</div>' : ""}
-      </div>
-      <p class="disclosure">Matching runs locally in your browser.</p>
-    </section>`;
-}
-
 function summarySection(job) {
   if (job.summary) {
     return `
@@ -944,11 +918,10 @@ function renderDetail() {
     <div class="decision-grid">
       <div class="decision-item"><span class="decision-label">Location</span><span class="decision-value">${escapeHtml(job.location || "Not stated")}</span></div>
       <div class="decision-item"><span class="decision-label">Experience</span><span class="decision-value">${escapeHtml(job.experience_display || "Not stated")}</span></div>
-      <div class="decision-item"><span class="decision-label">Visa sponsorship <button class="info-badge" type="button" title="This is an inferred signal from the posting text, not a guarantee." aria-label="Visa sponsorship definition">i</button></span><span class="decision-value ${authSignalClass(job)}">${escapeHtml(sponsorship)}</span></div>
-      <div class="decision-item"><span class="decision-label">Work authorization <button class="info-badge" type="button" title="Open or not specified means no restriction was detected. Not stated means the posting was silent." aria-label="Work authorization definition">i</button></span><span class="decision-value ${authSignalClass(job)}">${escapeHtml(authorization)}</span></div>
+      <div class="decision-item"><span class="decision-label">Visa sponsorship</span><span class="decision-value ${authSignalClass(job)}">${escapeHtml(sponsorship)}</span></div>
+      <div class="decision-item"><span class="decision-label">Work authorization</span><span class="decision-value ${authSignalClass(job)}">${escapeHtml(authorization)}</span></div>
     </div>
     ${summarySection(job)}
-    ${renderMatchEvidence(job)}
     <section class="detail-section">
       <h3>Role classification</h3>
       <div class="taxonomy-row">${taxonomyTags.map((tag) => `<span class="taxonomy-tag">${escapeHtml(tag)}</span>`).join("") || '<span class="taxonomy-tag">Uncategorized</span>'}</div>
@@ -1028,15 +1001,10 @@ function render() {
   els.all_count.textContent = `(${formatCount(state.jobs.length)})`;
   els.shortlist_count.textContent = formatCount(Object.keys(state.shortlist).length);
   if (els.filter_apply) els.filter_apply.textContent = `Show ${formatCount(results.length)} ${results.length === 1 ? "role" : "roles"}`;
-  els.match_mode.textContent = state.resumeActive ? `Sorted by ${state.resumeMode}` : "";
-  els.match_mode.classList.toggle("hidden", !state.resumeActive);
   const sortLabel = els.sort_filter.selectedOptions[0]?.textContent || "";
-  els.sort_note.textContent = state.resumeActive ? "" : `Sort: ${sortLabel}`;
-  els.sort_note.classList.toggle("hidden", state.resumeActive || state.filters.sort === DEFAULT_FILTERS.sort || !sortLabel);
-  els.sort_filter.disabled = state.resumeActive;
-  els.sort_filter.title = state.resumeActive ? "Resume relevance controls sorting while matching is active." : "";
+  els.sort_note.textContent = `Sort: ${sortLabel}`;
+  els.sort_note.classList.toggle("hidden", state.filters.sort === DEFAULT_FILTERS.sort || !sortLabel);
   els.job_list.setAttribute("aria-busy", String(state.searchPending));
-  els.resume_clear.classList.toggle("hidden", !state.resumeActive);
   updateFacetOptions();
   renderSearchChrome();
   renderActiveFilters();
@@ -1092,83 +1060,6 @@ function closeFilters() {
   els.filter_panel.classList.remove("is-open");
   els.sheet_backdrop.classList.add("hidden");
   els.mobile_filter_open.setAttribute("aria-expanded", "false");
-}
-
-function setResumeStatus(message, error = false) {
-  els.resume_status.textContent = message;
-  els.resume_status.classList.toggle("is-error", error);
-  if (!state.resumeBusy) {
-    els.resume_progress.textContent = "";
-    els.resume_progress.classList.add("hidden");
-    return;
-  }
-  const lower = String(message).toLowerCase();
-  const stage = lower.includes("loading") || lower.includes("preparing")
-    ? "Step 1 of 3 · Preparing the local matcher"
-    : lower.includes("starting")
-      ? "Step 2 of 3 · Starting the browser runtime"
-      : lower.includes("ranking") || lower.includes("semantic") || lower.includes("keyword")
-        ? "Step 3 of 3 · Ranking your roles"
-        : "Step 1 of 3 · Preparing the local matcher";
-  els.resume_progress.textContent = stage;
-  els.resume_progress.classList.remove("hidden");
-}
-
-async function applyResume() {
-  const raw = els.resume_input.value;
-  if (raw.replace(/\s/g, "").length < 200 || tokenize(raw).length < 20) {
-    setResumeStatus("Paste at least 200 non-whitespace characters and 20 meaningful words.", true);
-    return;
-  }
-  const runId = ++state.resumeRunId;
-  state.resumeBusy = true;
-  state.resumeCancelRequested = false;
-  els.resume_apply.disabled = true;
-  els.resume_cancel.classList.remove("hidden");
-  els.resume_cancel.disabled = false;
-  setResumeStatus("Preparing local matching… Usually 10–30 seconds on the first run.");
-  try {
-    const result = await resumeMatcher.score(raw, state.jobs);
-    if (state.resumeCancelRequested || state.resumeRunId !== runId) return;
-    state.resumeActive = true;
-    state.resumeTokens = result.resumeTokens;
-    state.resumeMode = result.mode;
-    state.visibleLimit = PAGE_BATCH;
-    setResumeStatus(`Matching is active (${result.mode}). Nothing was uploaded or saved.`);
-    els.resume_dialog.close();
-    render();
-  } catch (error) {
-    if (!state.resumeCancelRequested) setResumeStatus(`Matching could not start: ${error.message || "try again"}.`, true);
-  } finally {
-    if (state.resumeRunId === runId) {
-      state.resumeBusy = false;
-      els.resume_apply.disabled = false;
-      els.resume_cancel.classList.add("hidden");
-      setResumeStatus(els.resume_status.textContent, els.resume_status.classList.contains("is-error"));
-    }
-  }
-}
-
-function cancelResume() {
-  state.resumeCancelRequested = true;
-  state.resumeBusy = false;
-  els.resume_apply.disabled = false;
-  els.resume_cancel.disabled = true;
-  els.resume_cancel.classList.add("hidden");
-  setResumeStatus("Matching canceled. Your resume remains in this tab.");
-}
-
-function clearResume() {
-  state.resumeActive = false;
-  state.resumeTokens = [];
-  state.resumeMode = "";
-  state.resumeBusy = false;
-  state.resumeCancelRequested = false;
-  state.jobs.forEach((job) => { job._resumeScore = null; });
-  els.resume_input.value = "";
-  setResumeStatus("Matching combines local semantic relevance with visible keyword evidence.");
-  els.resume_dialog.close();
-  render();
 }
 
 function bindEvents() {
@@ -1446,10 +1337,6 @@ function bindEvents() {
   els.mobile_filter_close.addEventListener("click", closeFilters);
   els.filter_apply.addEventListener("click", closeFilters);
   els.sheet_backdrop.addEventListener("click", closeFilters);
-  els.resume_open.addEventListener("click", () => els.resume_dialog.showModal());
-  els.resume_apply.addEventListener("click", applyResume);
-  els.resume_cancel.addEventListener("click", cancelResume);
-  els.resume_clear.addEventListener("click", clearResume);
   window.addEventListener("storage", (event) => {
     if (event.key !== STORAGE_KEY) return;
     const loaded = loadStorage();
