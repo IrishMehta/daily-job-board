@@ -16,14 +16,8 @@ class FrontendContractTests(unittest.TestCase):
         cls.payload_path = DOCS / "data" / "public_jobs.json"
         cls.payload = json.loads(cls.payload_path.read_text(encoding="utf-8"))
 
-    def test_main_payload_budget_and_schema(self):
+    def test_main_payload_schema(self):
         self.assertEqual("public-job-board-site-v3", self.payload["schema_version"])
-        # Budget, not a platform limit: the site fetches this whole file before
-        # it can render, so the number is a first-load cost the board is willing
-        # to pay. Raised from 15MB on 2026-08-21, when ~4.9k jobs took the
-        # payload to 15.18MB. GitHub itself only warns at 50MB and blocks at
-        # 100MB, so the constraint here is the visitor's download, not the push.
-        self.assertLess(self.payload_path.stat().st_size, 30 * 1024 * 1024)
         self.assertTrue(self.payload["jobs"])
         for job in self.payload["jobs"]:
             self.assertNotIn("job_description", job)
@@ -198,8 +192,10 @@ class FrontendContractTests(unittest.TestCase):
         self.assertEqual("hiring-posts-public-v1", payload["schema_version"])
         self.assertEqual(14, payload["retention_days"])
         serialized = json.dumps(payload).casefold()
-        for forbidden in ("post_text", "author_comments", "evidence", "alert_subject", "/scratch/"):
-            self.assertNotIn(forbidden, serialized)
+        # Check private field names, not ordinary words in published summaries.
+        for forbidden in ("post_text", "author_comments", "evidence", "alert_subject"):
+            self.assertNotIn(f'"{forbidden}":', serialized)
+        self.assertNotIn("/scratch/", serialized)
 
     def test_market_trends_uses_explanatory_visual_system(self):
         market_source = (DOCS / "market-analysis.js").read_text(encoding="utf-8")

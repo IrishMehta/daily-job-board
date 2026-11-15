@@ -259,7 +259,7 @@ function skillNetwork(pairs, cohortCount = 0) {
   return `<div class="pair-list" aria-label="Most common skill combinations"><p class="pair-list-intro">These skills are frequently mentioned in the same job clusters. Use them as search or learning keywords; mentions do not prove that both are required.</p><div class="pair-grid">${visiblePairs.map((pair, index) => {
     const share = number(pair.count) / Math.max(number(cohortCount), 1);
     const query = encodeURIComponent(`${pair.skill_a} ${pair.skill_b}`);
-    return `<div class="pair-card"><i>${String(index + 1).padStart(2, "0")}</i><div><b>${escapeHtml(pair.skill_a)}</b><span>+</span><b>${escapeHtml(pair.skill_b)}</b><small>${percent(share, 1)} of this view</small></div><strong>${fullCount(pair.count)}<small>job clusters</small></strong><a href="./?q=${query}">Browse related 7-day roles →</a></div>`;
+    return `<div class="pair-card"><i>${String(index + 1).padStart(2, "0")}</i><div><b>${escapeHtml(pair.skill_a)}</b><span>+</span><b>${escapeHtml(pair.skill_b)}</b><small>${percent(share, 1)} of this view</small></div><strong>${fullCount(pair.count)}<small>job clusters</small></strong><a href="./?q=${query}">Browse related roles →</a></div>`;
   }).join("")}</div></div>`;
 }
 
@@ -490,7 +490,7 @@ export function createMarketAnalysis() {
         <div class="market-brief-copy">
           <div class="market-brief-eyebrow"><span>30-day market brief</span><i></i><span>${escapeHtml(context.roleLabel)}</span></div>
           <p>${marketBrief(context, overview)}</p>
-          <div class="market-brief-links"><a class="market-brief-action" href="${browseHref(context)}">Browse related 7-day roles <span>→</span></a><a href="#market-role-terrain">See the role mix <span>↓</span></a><a href="#market-geography">Find the hotspots <span>↓</span></a></div>
+          <div class="market-brief-links"><a class="market-brief-action" href="${browseHref(context)}">Browse related roles <span>→</span></a><a href="#market-role-terrain">See the role mix <span>↓</span></a><a href="#market-geography">Find the hotspots <span>↓</span></a></div>
         </div>
         <div class="market-brief-stamp"><b>${escapeHtml(shortDate(payload.as_of_date))}</b><span>AS OF</span><small>${payload.window_days}d window</small></div>
       </section>
@@ -567,7 +567,7 @@ export function createMarketAnalysis() {
       <details class="market-methodology">
         <summary>About this data</summary>
         <div class="market-methodology-grid">
-          <div><span>Window and scope</span><p>Deduplicated job clusters observed over a rolling ${payload.window_days}-day window in the tracked US technology-posting sample. The seven-day job board and this 30-day market view are different datasets.</p></div>
+          <div><span>Window and scope</span><p>Deduplicated job clusters observed over a rolling ${payload.window_days}-day window in the tracked US technology-posting sample. The live job board and this market view use different date windows.</p></div>
           <div><span>Classification</span><p>Role families and skills use the validated public-board taxonomy and curated aliases.</p></div>
           <div><span>Pay</span><p>USD annualized base pay; total compensation is excluded. Salary rows show sample size; subgroup medians should not be averaged.</p></div>
           <div><span>Coverage</span><p>${coverage.valid_snapshot_days || 0} valid daily snapshots. Missing dates are shown in the coverage note and marked on the hiring-pulse chart.</p></div>

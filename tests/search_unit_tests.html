@@ -13,6 +13,7 @@
       tokenizeSearchText,
     } from "../docs/search.js";
     import { countFacetValues, filterAndSortJobs, sortFacetItems } from "../docs/matching.js";
+    import { createStorageState, freshFilters, sanitizeFilters } from "../docs/storage.js";
 
     const config = await fetch("../docs/search-config.json").then((response) => response.json());
     const fields = (values) => ({
@@ -82,6 +83,24 @@
       assert(index.suggest("softw").some((item) => item.label === "Software Engineer"), "suggests guided role completions");
       assert(isCurrentSearchResponse(7, { type: "results", requestId: 7 }), "accepts the latest worker response");
       assert(!isCurrentSearchResponse(7, { type: "results", requestId: 6 }), "rejects stale worker responses");
+      const datedJobs = [0, 2, 3, 6, 7, 14, 15, 24, 25].map((age) => {
+        const date = new Date("2026-11-14T12:00:00Z");
+        date.setUTCDate(date.getUTCDate() - age);
+        return { id: String(age), posted_on: date.toISOString().slice(0, 10), company: "Example", _searchText: "",
+          _domains: [], _specializations: [], _industries: [] };
+      });
+      for (const [range, expected] of [["1d", "0"], ["3d", "0|2"], ["7d", "0|2|3|6"],
+                                     ["15d", "0|2|3|6|7|14"], ["25d", "0|2|3|6|7|14|15|24"]]) {
+        const filters = sanitizeFilters({ ...freshFilters(), postedRange: range });
+        assert(filters.postedRange === range, `accepts the ${range} date filter`);
+        assert(filterAndSortJobs(datedJobs, filters).map((job) => job.id).join("|") === expected,
+          `applies the ${range} cutoff within a 25-day feed`);
+      }
+      assert(sanitizeFilters({ postedRange: "30d" }).postedRange === "7d", "rejects unsupported date ranges");
+      assert(createStorageState({ ...freshFilters(), postedRange: "25d" }).filters.postedRange === "25d",
+        "preserves the 25-day preference in saved storage");
+      const dateFacets = countFacetValues(datedJobs, { ...freshFilters(), postedRange: "15d" }, () => ["all"]);
+      assert(dateFacets.get("all") === 6, "date selection also updates contextual facet counts");
       const facetJobs = [
         {
           id: "ai-health", posted_on: "2026-09-05", _searchText: "", _locationSearch: "boston",

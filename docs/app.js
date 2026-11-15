@@ -162,10 +162,11 @@ function compactJobDate(value) {
     + `</span>`;
 }
 
-function formatGeneratedAt(value) {
+function formatGeneratedAt(value, windowDays) {
   const date = new Date(value);
   if (Number.isNaN(date.getTime())) return "Current US openings";
-  return `Updated ${formatCalendarDate(date.toISOString().slice(0, 10))} · 7-day feed`;
+  const windowLabel = Number.isInteger(windowDays) && windowDays > 0 ? ` · ${windowDays}-day feed` : "";
+  return `Updated ${formatCalendarDate(date.toISOString().slice(0, 10))}${windowLabel}`;
 }
 
 function renderFlapCount(total) {
@@ -616,7 +617,7 @@ function filterLabel(key, value) {
   if (key === "query") return `Search: ${value}`;
   if (key === "location") return `Location: ${locationFilterLabel(value)}`;
   if (key === "experienceYears") return `Fits ${value} ${value === "1" ? "yr" : "yrs"}`;
-  if (key === "postedRange") return { "1d": "Posted: 24 hours", "3d": "Posted: 3 days", "7d": "" }[value] || value;
+  if (key === "postedRange") return { "1d": "Posted: 24 hours", "3d": "Posted: 3 days", "7d": "", "15d": "Posted: 15 days", "25d": "Posted: 25 days" }[value] || value;
   if (key === "sort") return "";
   const lookup = {
     domains: els.domain_filter,
@@ -1505,12 +1506,12 @@ async function init() {
   state.shortlist = pruned.shortlist;
   if (pruned.removed) {
     const noun = pruned.removed === 1 ? "job" : "jobs";
-    state.storageWarning = `${pruned.removed} expired shortlisted ${noun} were removed because they left the seven-day feed.`;
+    state.storageWarning = `${pruned.removed} expired shortlisted ${noun} were removed because they left the current feed.`;
   }
   persist();
-  if (pruned.removed) state.storageWarning = `${pruned.removed} expired shortlisted ${pruned.removed === 1 ? "job was" : "jobs were"} removed because they left the seven-day feed.`;
+  if (pruned.removed) state.storageWarning = `${pruned.removed} expired shortlisted ${pruned.removed === 1 ? "job was" : "jobs were"} removed because they left the current feed.`;
 
-  els.freshness.textContent = formatGeneratedAt(state.payload.generated_at);
+  els.freshness.textContent = formatGeneratedAt(state.payload.generated_at, state.payload.posted_within_days);
   renderFlapCount(state.jobs.length);
   if (state.payload.repo_url) els.repo_link.href = state.payload.repo_url;
   populateFilters();

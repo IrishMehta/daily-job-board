@@ -32,7 +32,6 @@ function hasAny(jobValues, selectedValues) {
 
 function postedCutoff(range, jobs) {
   const days = Number.parseInt(range, 10) || 7;
-  if (days >= 7) return null;
   const latestPostedOn = jobs.reduce((latest, job) => String(job.posted_on) > latest ? String(job.posted_on) : latest, "");
   const cutoff = new Date(`${latestPostedOn}T00:00:00`);
   cutoff.setHours(0, 0, 0, 0);

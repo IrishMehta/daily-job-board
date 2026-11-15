@@ -58,7 +58,7 @@ export function sanitizeFilters(value) {
   ARRAY_FILTERS.forEach((key) => {
     filters[key] = key === "location" ? sanitizeLocationFilterValues(input[key]) : cleanStringArray(input[key]);
   });
-  filters.postedRange = ["1d", "3d", "7d"].includes(input.postedRange) ? input.postedRange : "7d";
+  filters.postedRange = ["1d", "3d", "7d", "15d", "25d"].includes(input.postedRange) ? input.postedRange : DEFAULT_FILTERS.postedRange;
   filters.sort = ["relevance", "date_desc", "date_asc", "experience_asc", "experience_desc", "company_asc"].includes(input.sort)
     ? input.sort
     : "date_desc";
