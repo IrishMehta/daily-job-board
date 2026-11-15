@@ -354,7 +354,6 @@ mark { padding: 0 2px; border-radius: 3px; background: rgba(255, 194, 75, 0.34);
 .results-toolbar-notes { display: flex; align-items: center; gap: 9px; }
 .shortlist-clear-filters { padding: 3px 7px; border: 1px solid var(--warn-line); border-radius: 999px; background: var(--warn-soft); color: var(--flap-ink); cursor: pointer; font-size: 10px; font-weight: 700; white-space: nowrap; }
 .shortlist-clear-filters:hover { border-color: var(--flap-ink); }
-.pane-scroll-note, .detail-scroll-note { color: var(--subtle); font: 500 9px var(--font-mono); letter-spacing: .06em; text-transform: uppercase; white-space: nowrap; }
 .results-toolbar h1 { margin: 0; font-size: 15px; font-weight: 750; font-stretch: 112%; letter-spacing: 0.01em; }
 .results-toolbar p { margin: 3px 0 0; color: var(--muted); font-size: 10px; letter-spacing: 0.06em; text-transform: uppercase; }
 .sort-note { color: var(--muted); font-size: 9px; white-space: nowrap; }
@@ -534,7 +533,6 @@ mark { padding: 0 2px; border-radius: 3px; background: rgba(255, 194, 75, 0.34);
 .company-logo[hidden] { display: none; }
 .detail-header h2 { margin: 14px 0 7px; font-size: clamp(20px, 2vw, 27px); font-weight: 780; line-height: 1.18; letter-spacing: -0.02em; }
 .detail-subline { margin: 0; color: var(--muted); font-family: var(--font-mono); font-size: 10.5px; letter-spacing: 0.03em; }
-.detail-scroll-note { margin-left: 10px; color: var(--subtle); }
 .detail-actions { display: flex; align-items: center; flex-wrap: wrap; gap: 8px; margin-top: 20px; }
 .detail-actions .button-primary { margin-left: auto; }
 .detail-actions .is-saved { border-color: var(--warn-line); background: var(--warn-soft); color: var(--flap-ink); }
@@ -883,7 +881,6 @@ mark { padding: 0 2px; border-radius: 3px; background: rgba(255, 194, 75, 0.34);
   .results-toolbar { min-height: 66px; padding: 12px 22px; }
   .results-toolbar h1 { font-size: 18px; }
   .results-toolbar p { font-size: 11px; }
-  .pane-scroll-note, .detail-scroll-note { font-size: 10px; }
   .job-list { gap: 12px; padding: 16px 18px 2px; }
   .job-row { grid-template-columns: 60px minmax(0, 1fr); }
   .job-age-cell { padding-top: 18px; }

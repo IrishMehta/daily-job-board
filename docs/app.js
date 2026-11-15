@@ -909,7 +909,7 @@ function renderDetail() {
         <button class="icon-button mobile-detail-close" type="button" data-close-detail aria-label="Close job details">${closeIcon()}</button>
       </div>
       <h2>${escapeHtml(job.title)}</h2>
-      <p class="detail-subline">Posted ${escapeHtml(formatCalendarDate(job.posted_on))} <span class="detail-scroll-note">Scroll for full details</span></p>
+      <p class="detail-subline">Posted ${escapeHtml(formatCalendarDate(job.posted_on))}</p>
       <div class="detail-actions">
         <button class="button button-secondary${saved ? " is-saved" : ""}" type="button" data-shortlist-id="${escapeHtml(job.id)}" aria-pressed="${saved}">${bookmarkIcon()} ${saved ? "Shortlisted" : "Shortlist"}</button>
         ${job.job_link ? `<a class="button button-primary" data-apply-link href="${escapeHtml(job.job_link)}" target="_blank" rel="noopener noreferrer" aria-label="Apply on company site; opens in a new tab">Apply on company site <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M14 5h5v5m0-5-9 9M19 13v6H5V5h6"/></svg></a>` : ""}
