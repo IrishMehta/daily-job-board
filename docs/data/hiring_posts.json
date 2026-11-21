@@ -1,8 +1,303 @@
 {
   "schema_version": "hiring-posts-public-v1",
-  "generated_at": "2026-11-20T12:36:50.519174Z",
+  "generated_at": "2026-11-21T12:28:34.556070Z",
   "retention_days": 14,
   "posts": [
+    {
+      "id": "7529623076234231811",
+      "linkedin_url": "https://www.linkedin.com/posts/gerryfp_im-hiring-ai-engineers-if-youre-excited-activity-7529623076234231811-qGYu",
+      "author_name": "Gerry Fernando Patia",
+      "author_profile_url": "https://www.linkedin.com/in/gerryfp",
+      "published_at": "2026-11-20T19:13:55.005Z",
+      "summary": "Hiring for Senior AI and Staff AI roles focused on state-of-the-art AI coding agents, including agent harnesses and evaluations. Application links provided in comments.",
+      "post_type": "active_opening",
+      "poster_intent": "employer_hiring",
+      "target_role_match": "direct_target",
+      "poster_relationship": "hiring_manager",
+      "hiring_manager_name": "",
+      "contact_methods": [
+        "apply_link"
+      ],
+      "role_families": [
+        "AI / Machine Learning"
+      ],
+      "roles": [
+        "Senior AI",
+        "Staff AI"
+      ],
+      "company": "",
+      "locations": [],
+      "work_arrangement": "Unspecified",
+      "application_links": [
+        "https://grnh.se/qjtp0qab9us",
+        "https://grnh.se/7yyhi6dy9us"
+      ],
+      "source_quality": "full_post"
+    },
+    {
+      "id": "7529582095841583104",
+      "linkedin_url": "https://www.linkedin.com/posts/ahemadsorathiya_hiring-machinelearningengineer-databricks-activity-7529582095841583104-uJbo",
+      "author_name": "Ahemad Sorathiya",
+      "author_profile_url": "",
+      "published_at": "2026-11-20T16:31:04.517Z",
+      "summary": "Databricks is hiring a Machine Learning Engineer for a remote role with a focus on training, deploying, and optimizing ML models in production.",
+      "post_type": "active_opening",
+      "poster_intent": "employer_hiring",
+      "target_role_match": "direct_target",
+      "poster_relationship": "unknown",
+      "hiring_manager_name": "",
+      "contact_methods": [
+        "dm",
+        "comment"
+      ],
+      "role_families": [
+        "AI / Machine Learning"
+      ],
+      "roles": [
+        "Machine Learning Engineer"
+      ],
+      "company": "Databricks",
+      "locations": [
+        "San Francisco, CA",
+        "Remote"
+      ],
+      "work_arrangement": "Remote",
+      "application_links": [],
+      "source_quality": "full_post"
+    },
+    {
+      "id": "7529226807921758208",
+      "linkedin_url": "https://www.linkedin.com/posts/unconvai_we-have-new-job-openings-posted-on-our-website-activity-7529226807921758208-uekz",
+      "author_name": "LinkedIn author",
+      "author_profile_url": "",
+      "published_at": "2026-11-20T15:46:09Z",
+      "summary": "Unconv.ai is hiring for AI silicon, systems, and theory roles, including analog design, verification, model optimization, and system modeling, with remote and global location options.",
+      "post_type": "general_hiring",
+      "poster_intent": "company_hiring",
+      "target_role_match": "direct_target",
+      "poster_relationship": "company_page",
+      "hiring_manager_name": "",
+      "contact_methods": [
+        "apply_link"
+      ],
+      "role_families": [
+        "AI / Machine Learning"
+      ],
+      "roles": [
+        "AI silicon, systems, and theory roles"
+      ],
+      "company": "Unconv.ai",
+      "locations": [
+        "Mountain View",
+        "Greater Seattle",
+        "Tel Aviv",
+        "Caesarea",
+        "Remote"
+      ],
+      "work_arrangement": "Remote",
+      "application_links": [],
+      "source_quality": "full_post"
+    },
+    {
+      "id": "7529530304856866816",
+      "linkedin_url": "https://www.linkedin.com/posts/jasmine-i-0b0140337_hiring-dataanalytics-dataengineering-activity-7529530304856866816-EmP6",
+      "author_name": "Jasmine I.",
+      "author_profile_url": "",
+      "published_at": "2026-11-20T13:05:16.585Z",
+      "summary": "Multiple openings in Mumbai, Navi Mumbai, and Bangalore for roles in data, AI/ML, Agentic AI, and cloud technologies, including Data Analyst, ML Engineer, Data Scientist, and AI Production Engineer positions.",
+      "post_type": "active_opening",
+      "poster_intent": "employer_hiring",
+      "target_role_match": "mixed_with_target",
+      "poster_relationship": "hiring_manager",
+      "hiring_manager_name": "",
+      "contact_methods": [
+        "email"
+      ],
+      "role_families": [
+        "Analytics",
+        "AI / Machine Learning",
+        "Data Science",
+        "Data Engineering",
+        "Other AI / Data"
+      ],
+      "roles": [
+        "Data Analyst – Decision Science",
+        "Traditional ML / ML Engineer",
+        "Data Analyst",
+        "Data Scientist – Modelling",
+        "Agentic AI Engineer",
+        "Data Governance & Quality Engineer",
+        "Data Steward / Analyst Lead",
+        "AI Production Engineer",
+        "Senior AI Production Engineer",
+        "GCP BigQuery Developer",
+        "Senior Data Mart Developer",
+        "SQL Data Analyst",
+        "Power BI",
+        "Platform Engineer"
+      ],
+      "company": "",
+      "locations": [
+        "Mumbai",
+        "Navi Mumbai",
+        "Bangalore"
+      ],
+      "work_arrangement": "On-site",
+      "application_links": [],
+      "source_quality": "full_post"
+    },
+    {
+      "id": "7529511356295753728",
+      "linkedin_url": "https://www.linkedin.com/posts/raj-vaibhaav_google-applications-open-for-data-analyst-activity-7529511356295753728-yG4O",
+      "author_name": "Raj Vaibhav",
+      "author_profile_url": "",
+      "published_at": "2026-11-20T11:49:58.896Z",
+      "summary": "Raj Vaibhav shares multiple job openings, including target roles in data engineering and analytics at companies like Google, Delta Defense, Uber, and NIKE, alongside non-target analyst roles in operations, finance, and IT.",
+      "post_type": "active_opening",
+      "poster_intent": "sharing_opening",
+      "target_role_match": "mixed_with_target",
+      "poster_relationship": "aggregator",
+      "hiring_manager_name": "",
+      "contact_methods": [
+        "apply_link"
+      ],
+      "role_families": [
+        "Analytics",
+        "Data Science",
+        "Data Engineering"
+      ],
+      "roles": [
+        "Marketing Data Analyst",
+        "Associate Data Analyst",
+        "Data Engineer",
+        "Business Intelligence Analyst",
+        "Senior Data Analyst",
+        "Lead Data and Analytics Insights Analyst"
+      ],
+      "company": "",
+      "locations": [],
+      "work_arrangement": "Unspecified",
+      "application_links": [],
+      "source_quality": "full_post"
+    },
+    {
+      "id": "7529475102418317313",
+      "linkedin_url": "https://www.linkedin.com/posts/waleed-ahmed-9b7405228_hiring-ai-cybersecurity-activity-7529475102418317313-Gw7j",
+      "author_name": "Waleed Ahmed",
+      "author_profile_url": "",
+      "published_at": "2026-11-20T09:25:55.298Z",
+      "summary": "VulSight is hiring a Senior AI Engineer for an on-site role in Islamabad, Pakistan. The role targets exceptional engineers focused on AI and cybersecurity challenges.",
+      "post_type": "active_opening",
+      "poster_intent": "employer_hiring",
+      "target_role_match": "direct_target",
+      "poster_relationship": "hiring_manager",
+      "hiring_manager_name": "",
+      "contact_methods": [
+        "dm"
+      ],
+      "role_families": [
+        "AI / Machine Learning"
+      ],
+      "roles": [
+        "Senior AI Engineer"
+      ],
+      "company": "VulSight",
+      "locations": [
+        "Islamabad, Pakistan"
+      ],
+      "work_arrangement": "On-site",
+      "application_links": [],
+      "source_quality": "full_post"
+    },
+    {
+      "id": "7529462197333438464",
+      "linkedin_url": "https://www.linkedin.com/posts/mohan-nayak-49954392_were-hiring-ai-engineer-generative-activity-7529462197333438464--CFs",
+      "author_name": "Mohan Nayak",
+      "author_profile_url": "",
+      "published_at": "2026-11-20T08:34:38.486Z",
+      "summary": "InspironLabs is hiring an AI Engineer focused on Generative AI and Agentic AI for an on-site role in Bangalore; freshers with relevant AI/ML experience are encouraged to apply.",
+      "post_type": "active_opening",
+      "poster_intent": "employer_hiring",
+      "target_role_match": "direct_target",
+      "poster_relationship": "unknown",
+      "hiring_manager_name": "",
+      "contact_methods": [
+        "email"
+      ],
+      "role_families": [
+        "AI / Machine Learning"
+      ],
+      "roles": [
+        "AI Engineer – Generative AI & Agentic AI"
+      ],
+      "company": "InspironLabs",
+      "locations": [
+        "Bangalore"
+      ],
+      "work_arrangement": "On-site",
+      "application_links": [],
+      "source_quality": "full_post"
+    },
+    {
+      "id": "7529448895857491969",
+      "linkedin_url": "https://www.linkedin.com/posts/krishna-murari-pal-620b0bb1_hiring-aijobs-machinelearning-activity-7529448895857491969-7ZQ5",
+      "author_name": "Krishna Murari Pal",
+      "author_profile_url": "",
+      "published_at": "2026-11-20T07:41:47.167Z",
+      "summary": "Vistec Partners is hiring an AI/ML Engineer with 3–6 years of experience for a hybrid role in Noida, focusing on production-grade GenAI and ML solutions.",
+      "post_type": "active_opening",
+      "poster_intent": "employer_hiring",
+      "target_role_match": "direct_target",
+      "poster_relationship": "hiring_manager",
+      "hiring_manager_name": "",
+      "contact_methods": [
+        "email",
+        "dm"
+      ],
+      "role_families": [
+        "AI / Machine Learning"
+      ],
+      "roles": [
+        "AI/ML Engineer"
+      ],
+      "company": "Vistec Partners",
+      "locations": [
+        "Noida"
+      ],
+      "work_arrangement": "Hybrid",
+      "application_links": [],
+      "source_quality": "full_post"
+    },
+    {
+      "id": "7529440460562538496",
+      "linkedin_url": "https://www.linkedin.com/posts/rkpande_were-hiring-an-ai-product-manager-and-an-activity-7529440460562538496-UytB",
+      "author_name": "Rohit Kumar Pandey",
+      "author_profile_url": "",
+      "published_at": "2026-11-20T07:08:16.036Z",
+      "summary": "Jupiter is hiring an AI Product Manager and an AI Product Designer to build AI-powered product experiences for Indian consumer finance, with a focus on real-world LLM applications and responsible design.",
+      "post_type": "active_opening",
+      "poster_intent": "employer_hiring",
+      "target_role_match": "direct_target",
+      "poster_relationship": "hiring_manager",
+      "hiring_manager_name": "Vishal S Jitendra Gupta",
+      "contact_methods": [
+        "dm",
+        "comment",
+        "email"
+      ],
+      "role_families": [
+        "AI / Machine Learning"
+      ],
+      "roles": [
+        "AI Product Manager",
+        "AI Product Designer"
+      ],
+      "company": "Jupiter",
+      "locations": [],
+      "work_arrangement": "Unspecified",
+      "application_links": [],
+      "source_quality": "full_post"
+    },
     {
       "id": "7529244038999351297",
       "linkedin_url": "https://www.linkedin.com/posts/finley-code-5ab01575_were-hiring-forward-deployed-ml-engineers-activity-7529244038999351297-CHCt",
@@ -25,6 +320,65 @@
         "Forward Deployed ML Engineer"
       ],
       "company": "Odyssey",
+      "locations": [],
+      "work_arrangement": "Unspecified",
+      "application_links": [],
+      "source_quality": "full_post"
+    },
+    {
+      "id": "7529318942415364096",
+      "linkedin_url": "https://www.linkedin.com/posts/hannah-twomey-a60a37180_hiring-forwarddeployedengineer-legaltech-activity-7529318942415364096-CWd1",
+      "author_name": "Hannah Twomey",
+      "author_profile_url": "https://www.linkedin.com/in/hannah-twomey-a60a37180",
+      "published_at": "2026-11-19T23:05:23.851Z",
+      "summary": "A recruiter is hiring Forward Deployed Engineers, Principal Engineers, and Engineering Managers for a global SaaS company's legal AI product, with roles across US and Canada in hybrid arrangements.",
+      "post_type": "active_opening",
+      "poster_intent": "recruiting_for_client",
+      "target_role_match": "direct_target",
+      "poster_relationship": "recruiter",
+      "hiring_manager_name": "",
+      "contact_methods": [
+        "dm"
+      ],
+      "role_families": [
+        "AI / Machine Learning"
+      ],
+      "roles": [
+        "Forward Deployed Engineer",
+        "Principal Engineer",
+        "Engineering Manager"
+      ],
+      "company": "",
+      "locations": [
+        "US",
+        "Canada"
+      ],
+      "work_arrangement": "Hybrid",
+      "application_links": [],
+      "source_quality": "full_post"
+    },
+    {
+      "id": "7529301077222080512",
+      "linkedin_url": "https://www.linkedin.com/posts/lucy-hu-9752431b1_hiring-openart-ai-activity-7529301077222080512-Zov8",
+      "author_name": "Lucy Hu",
+      "author_profile_url": "https://www.linkedin.com/in/lucy-hu-9752431b1",
+      "published_at": "2026-11-19T21:54:24.457Z",
+      "summary": "OpenArt AI is hiring for 30+ roles across engineering, product, design, and growth. Engineering roles are relevant to AI/ML; others are not.",
+      "post_type": "general_hiring",
+      "poster_intent": "employer_hiring",
+      "target_role_match": "mixed_with_target",
+      "poster_relationship": "team_member",
+      "hiring_manager_name": "",
+      "contact_methods": [
+        "apply_link"
+      ],
+      "role_families": [
+        "AI / Machine Learning"
+      ],
+      "roles": [
+        "Engineering roles"
+      ],
+      "company": "OpenArt AI",
       "locations": [],
       "work_arrangement": "Unspecified",
       "application_links": [],
@@ -54,6 +408,67 @@
       "company": "",
       "locations": [],
       "work_arrangement": "Remote",
+      "application_links": [],
+      "source_quality": "full_post"
+    },
+    {
+      "id": "7529290157401833472",
+      "linkedin_url": "https://www.linkedin.com/posts/hirshman_were-hiring-a-senior-data-engineer-l5-activity-7529290157401833472-POIt",
+      "author_name": "Andrew Hirshman",
+      "author_profile_url": "https://www.linkedin.com/in/hirshman",
+      "published_at": "2026-11-19T21:11:00.970Z",
+      "summary": "YouTube is hiring a Senior Data Engineer (L5) for an on-site role in New York City, Chicago, LA, or the Bay Area to build foundational data and ML infrastructure.",
+      "post_type": "active_opening",
+      "poster_intent": "employer_hiring",
+      "target_role_match": "direct_target",
+      "poster_relationship": "hiring_manager",
+      "hiring_manager_name": "",
+      "contact_methods": [
+        "apply_link"
+      ],
+      "role_families": [
+        "Data Engineering"
+      ],
+      "roles": [
+        "Senior Data Engineer (L5)"
+      ],
+      "company": "YouTube",
+      "locations": [
+        "New York City",
+        "Chicago",
+        "LA",
+        "Bay Area"
+      ],
+      "work_arrangement": "On-site",
+      "application_links": [],
+      "source_quality": "full_post"
+    },
+    {
+      "id": "7529275290989056000",
+      "linkedin_url": "https://www.linkedin.com/posts/zhangxiaoyu_were-hiring-staff-machine-learning-engineer-activity-7529275290989056000-OLyA",
+      "author_name": "Xiaoyu (Johnny) Zhang",
+      "author_profile_url": "https://www.linkedin.com/in/zhangxiaoyu",
+      "published_at": "2026-11-19T20:11:56.541Z",
+      "summary": "Apple is hiring a Staff Machine Learning Engineer for an on-site role in Cupertino to work on customer-facing ML products with ownership from infrastructure to production.",
+      "post_type": "active_opening",
+      "poster_intent": "employer_hiring",
+      "target_role_match": "direct_target",
+      "poster_relationship": "hiring_manager",
+      "hiring_manager_name": "",
+      "contact_methods": [
+        "dm"
+      ],
+      "role_families": [
+        "AI / Machine Learning"
+      ],
+      "roles": [
+        "Staff Machine Learning Engineer"
+      ],
+      "company": "Apple",
+      "locations": [
+        "Cupertino"
+      ],
+      "work_arrangement": "On-site",
       "application_links": [],
       "source_quality": "full_post"
     },
@@ -89,6 +504,60 @@
       "source_quality": "full_post"
     },
     {
+      "id": "7529254470879170560",
+      "linkedin_url": "https://www.linkedin.com/posts/swathi-bellavi_were-growing-the-team-at-odyssey-and-hiring-activity-7529254470879170560-re17",
+      "author_name": "Swathi B.",
+      "author_profile_url": "https://www.linkedin.com/in/swathi-bellavi",
+      "published_at": "2026-11-19T18:49:12.640Z",
+      "summary": "Odyssey is hiring Forward Deployed Machine Learning Engineers to work on deploying and adapting ML models for customer problems, with responsibilities spanning problem understanding, experimentation, and production deployment.",
+      "post_type": "active_opening",
+      "poster_intent": "employer_hiring",
+      "target_role_match": "direct_target",
+      "poster_relationship": "hiring_manager",
+      "hiring_manager_name": "",
+      "contact_methods": [
+        "dm"
+      ],
+      "role_families": [
+        "AI / Machine Learning"
+      ],
+      "roles": [
+        "Forward Deployed Machine Learning Engineer"
+      ],
+      "company": "Odyssey",
+      "locations": [],
+      "work_arrangement": "Unspecified",
+      "application_links": [],
+      "source_quality": "full_post"
+    },
+    {
+      "id": "7529253554008702976",
+      "linkedin_url": "https://www.linkedin.com/posts/ukmlv_were-hiring-in-physical-ai-at-the-university-activity-7529253554008702976-i8Kc",
+      "author_name": "Ulugbek Kamilov",
+      "author_profile_url": "https://www.linkedin.com/in/ukmlv",
+      "published_at": "2026-11-19T18:45:34.040Z",
+      "summary": "University of Wisconsin–Madison is hiring faculty in Physical AI across all ranks in the Department of Electrical and Computer Engineering, focusing on AI at the intersection with the physical world.",
+      "post_type": "active_opening",
+      "poster_intent": "employer_hiring",
+      "target_role_match": "direct_target",
+      "poster_relationship": "hiring_manager",
+      "hiring_manager_name": "",
+      "contact_methods": [
+        "apply_link"
+      ],
+      "role_families": [
+        "AI / Machine Learning"
+      ],
+      "roles": [
+        "Faculty in Physical AI"
+      ],
+      "company": "University of Wisconsin–Madison",
+      "locations": [],
+      "work_arrangement": "On-site",
+      "application_links": [],
+      "source_quality": "full_post"
+    },
+    {
       "id": "7529221836363022336",
       "linkedin_url": "https://www.linkedin.com/posts/johnopalaphd_were-hiring-asenior-manager-ai-security-activity-7529221836363022336-liMq",
       "author_name": "John Opala, PhD",
@@ -112,6 +581,186 @@
       "company": "Ralph Lauren",
       "locations": [],
       "work_arrangement": "Unspecified",
+      "application_links": [],
+      "source_quality": "full_post"
+    },
+    {
+      "id": "7529209578685911040",
+      "linkedin_url": "https://www.linkedin.com/posts/jaison-chacko-709407187_hiring-artificialintelligence-digitaltransformation-activity-7529209578685911040-tQh_",
+      "author_name": "Jaison Chacko",
+      "author_profile_url": "",
+      "published_at": "2026-11-19T15:50:49.507Z",
+      "summary": "L&T Energy Hydrocarbon is hiring a Lead – Artificial Intelligence & Digital Transformation for an on-site role in Vadodara to drive AI-led innovation and digital transformation across Oil & Gas EPC projects.",
+      "post_type": "active_opening",
+      "poster_intent": "employer_hiring",
+      "target_role_match": "direct_target",
+      "poster_relationship": "recruiter",
+      "hiring_manager_name": "",
+      "contact_methods": [
+        "email"
+      ],
+      "role_families": [
+        "AI / Machine Learning"
+      ],
+      "roles": [
+        "Lead – Artificial Intelligence & Digital Transformation"
+      ],
+      "company": "L&T Energy Hydrocarbon",
+      "locations": [
+        "Vadodara"
+      ],
+      "work_arrangement": "On-site",
+      "application_links": [],
+      "source_quality": "full_post"
+    },
+    {
+      "id": "7529198660816134144",
+      "linkedin_url": "https://www.linkedin.com/posts/mohamadwasim_meta-is-hiring-data-interns-for-summer-activity-7529198660816134144-K02s",
+      "author_name": "Mohammed Wasim",
+      "author_profile_url": "https://www.linkedin.com/in/mohamadwasim",
+      "published_at": "2026-11-19T15:07:26.484Z",
+      "summary": "Meta is hiring Data Scientist and Data Engineer Interns for Summer 2027 with application links provided; roles are in product analytics.",
+      "post_type": "active_opening",
+      "poster_intent": "sharing_opening",
+      "target_role_match": "direct_target",
+      "poster_relationship": "aggregator",
+      "hiring_manager_name": "",
+      "contact_methods": [
+        "apply_link"
+      ],
+      "role_families": [
+        "Data Science",
+        "Data Engineering"
+      ],
+      "roles": [
+        "Data Scientist Intern – Product Analytics",
+        "Data Engineer Intern – Product Analytics"
+      ],
+      "company": "Meta",
+      "locations": [],
+      "work_arrangement": "Unspecified",
+      "application_links": [],
+      "source_quality": "full_post"
+    },
+    {
+      "id": "7529185895204352000",
+      "linkedin_url": "https://www.linkedin.com/posts/areeba-tahir-rafique-a56a59220_hiring-juniordeveloper-javascript-activity-7529185895204352000-EoqI",
+      "author_name": "Areeba Tahir Rafique",
+      "author_profile_url": "",
+      "published_at": "2026-11-19T14:16:42.925Z",
+      "summary": "Dexterz Technologies is hiring a Junior AI/ML Developer for an on-site role in Park View City, Lahore, with experience in JavaScript, Python, and AI/ML.",
+      "post_type": "active_opening",
+      "poster_intent": "employer_hiring",
+      "target_role_match": "direct_target",
+      "poster_relationship": "hiring_manager",
+      "hiring_manager_name": "",
+      "contact_methods": [
+        "dm",
+        "email"
+      ],
+      "role_families": [
+        "AI / Machine Learning"
+      ],
+      "roles": [
+        "Junior AI/ML Developer"
+      ],
+      "company": "Dexterz Technologies",
+      "locations": [
+        "Park View City, Lahore"
+      ],
+      "work_arrangement": "On-site",
+      "application_links": [],
+      "source_quality": "full_post"
+    },
+    {
+      "id": "7529163835354828800",
+      "linkedin_url": "https://www.linkedin.com/posts/bluemachines_we-are-hiring-forward-deployed-engineer-activity-7529163835354828800-RND5",
+      "author_name": "Blue Machines AI",
+      "author_profile_url": "",
+      "published_at": "2026-11-19T12:49:03.446Z",
+      "summary": "Blue Machines AI is hiring a Forward Deployed Engineer for a remote role in the United States, focusing on deploying AI solutions including LLMs and agent orchestration into enterprise workflows.",
+      "post_type": "active_opening",
+      "poster_intent": "employer_hiring",
+      "target_role_match": "direct_target",
+      "poster_relationship": "company_page",
+      "hiring_manager_name": "",
+      "contact_methods": [
+        "apply_link"
+      ],
+      "role_families": [
+        "AI / Machine Learning"
+      ],
+      "roles": [
+        "Forward Deployed Engineer (FDE)"
+      ],
+      "company": "Blue Machines AI",
+      "locations": [
+        "Texas",
+        "New York",
+        "Pennsylvania",
+        "Florida"
+      ],
+      "work_arrangement": "Remote",
+      "application_links": [
+        "https://careers.bluemachines.ai/_/j/4285DDD947/"
+      ],
+      "source_quality": "full_post"
+    },
+    {
+      "id": "7529139674079215616",
+      "linkedin_url": "https://www.linkedin.com/posts/abushanab-mohammed_were-hiring-ai-engineer-aspire-aspire-activity-7529139674079215616-o3TW",
+      "author_name": "Mohammed Abushanab, TOT®",
+      "author_profile_url": "",
+      "published_at": "2026-11-19T11:13:02.949Z",
+      "summary": "Aspire in Jordan is hiring an AI Engineer focused on LLMs, prompt engineering, RAG, AI agents, automation, and AI security for a remote role.",
+      "post_type": "active_opening",
+      "poster_intent": "employer_hiring",
+      "target_role_match": "direct_target",
+      "poster_relationship": "unknown",
+      "hiring_manager_name": "",
+      "contact_methods": [
+        "apply_link"
+      ],
+      "role_families": [
+        "AI / Machine Learning"
+      ],
+      "roles": [
+        "AI Engineer"
+      ],
+      "company": "Aspire",
+      "locations": [
+        "Jordan"
+      ],
+      "work_arrangement": "Remote",
+      "application_links": [],
+      "source_quality": "full_post"
+    },
+    {
+      "id": "7529124382590554112",
+      "linkedin_url": "https://www.linkedin.com/posts/norhan-buckla-04956894_a-multinational-company-is-hiring-a-senior-activity-7529124382590554112-V0QP",
+      "author_name": "Norhan Buckla",
+      "author_profile_url": "",
+      "published_at": "2026-11-19T10:12:17.175Z",
+      "summary": "A multinational company is hiring a Senior Big Data Engineer for a hybrid role in Cairo. The role requires experience with Big Data technologies including Spark, Python, Hive, Kafka, and data warehousing, with AI/ML experience as a plus.",
+      "post_type": "active_opening",
+      "poster_intent": "recruiting_for_client",
+      "target_role_match": "direct_target",
+      "poster_relationship": "recruiter",
+      "hiring_manager_name": "",
+      "contact_methods": [
+        "email"
+      ],
+      "role_families": [
+        "Data Engineering"
+      ],
+      "roles": [
+        "Senior Big Data Engineer"
+      ],
+      "company": "A multinational company",
+      "locations": [
+        "Cairo"
+      ],
+      "work_arrangement": "Hybrid",
       "application_links": [],
       "source_quality": "full_post"
     },
@@ -195,6 +844,37 @@
       "company": "",
       "locations": [],
       "work_arrangement": "Remote",
+      "application_links": [],
+      "source_quality": "full_post"
+    },
+    {
+      "id": "7529095927723360256",
+      "linkedin_url": "https://www.linkedin.com/posts/el%C3%A9onore-arcelin-42a242b6_were-hiring-senior-ai-deployment-strategists-activity-7529095927723360256-hOU5",
+      "author_name": "Eléonore Arcelin",
+      "author_profile_url": "",
+      "published_at": "2026-11-19T08:19:13.006Z",
+      "summary": "Senior AI Deployment Strategists are being hired for roles in Paris and London, focusing on AI strategy and hands-on AI delivery in partnership with executives and engineers.",
+      "post_type": "active_opening",
+      "poster_intent": "employer_hiring",
+      "target_role_match": "direct_target",
+      "poster_relationship": "unknown",
+      "hiring_manager_name": "",
+      "contact_methods": [
+        "apply_link",
+        "dm"
+      ],
+      "role_families": [
+        "AI / Machine Learning"
+      ],
+      "roles": [
+        "Senior AI Deployment Strategists"
+      ],
+      "company": "",
+      "locations": [
+        "Paris",
+        "London"
+      ],
+      "work_arrangement": "Unspecified",
       "application_links": [],
       "source_quality": "full_post"
     },
@@ -352,6 +1032,35 @@
       "source_quality": "full_post"
     },
     {
+      "id": "7529054988719910914",
+      "linkedin_url": "https://www.linkedin.com/posts/rohan-aggarwal-818989188_hiring-aimlengineer-artificialintelligence-activity-7529054988719910914-fWzD",
+      "author_name": "Rohan Aggarwal",
+      "author_profile_url": "",
+      "published_at": "2026-11-19T05:36:32.387Z",
+      "summary": "Mathesis Labs is hiring an AI/ML Engineer for a role in Bangalore with a focus on AI, ML, and Generative AI technologies.",
+      "post_type": "active_opening",
+      "poster_intent": "employer_hiring",
+      "target_role_match": "direct_target",
+      "poster_relationship": "unknown",
+      "hiring_manager_name": "",
+      "contact_methods": [
+        "email"
+      ],
+      "role_families": [
+        "AI / Machine Learning"
+      ],
+      "roles": [
+        "AI/ML Engineer"
+      ],
+      "company": "Mathesis Labs",
+      "locations": [
+        "Bangalore"
+      ],
+      "work_arrangement": "Unspecified",
+      "application_links": [],
+      "source_quality": "full_post"
+    },
+    {
       "id": "7529044906565242880",
       "linkedin_url": "https://www.linkedin.com/posts/shivareddypv_build-the-future-of-conversational-ai-in-activity-7529044906565242880-oO9F",
       "author_name": "Shiva Reddy PV",
@@ -462,6 +1171,35 @@
       "company": "Ovative",
       "locations": [],
       "work_arrangement": "Unspecified",
+      "application_links": [],
+      "source_quality": "full_post"
+    },
+    {
+      "id": "7528917100699222017",
+      "linkedin_url": "https://www.linkedin.com/posts/allisonrome5002_blizzard-entertainment-is-hiring-a-data-platform-activity-7528917100699222017-BAGS",
+      "author_name": "Allison Romero",
+      "author_profile_url": "https://www.linkedin.com/in/allisonrome5002",
+      "published_at": "2026-11-18T20:28:37.320Z",
+      "summary": "Blizzard Entertainment is hiring a Data Platform Engineering Intern for an on-site role in Irvine, CA, with responsibilities including building data pipelines and platform tools for streaming and batch workloads.",
+      "post_type": "active_opening",
+      "poster_intent": "sharing_opening",
+      "target_role_match": "direct_target",
+      "poster_relationship": "aggregator",
+      "hiring_manager_name": "",
+      "contact_methods": [
+        "apply_link"
+      ],
+      "role_families": [
+        "Data Engineering"
+      ],
+      "roles": [
+        "Data Platform Engineering Intern"
+      ],
+      "company": "Blizzard Entertainment",
+      "locations": [
+        "Irvine, CA"
+      ],
+      "work_arrangement": "On-site",
       "application_links": [],
       "source_quality": "full_post"
     },
@@ -3480,33 +4218,6 @@
       "source_quality": "full_post"
     },
     {
-      "id": "7526911575274717184",
-      "linkedin_url": "https://www.linkedin.com/posts/vaibhavsisinty_im-looking-for-someone-who-is-obsessed-with-activity-7526911575274717184-C8H4",
-      "author_name": "LinkedIn author",
-      "author_profile_url": "",
-      "published_at": "2026-11-13T22:16:16Z",
-      "summary": "An 'AI Tinkerer' role is being hired, indicating a target AI/ML position, though company, location, and contact details are not specified in the snippet.",
-      "post_type": "active_opening",
-      "poster_intent": "employer_hiring",
-      "target_role_match": "direct_target",
-      "poster_relationship": "unknown",
-      "hiring_manager_name": "",
-      "contact_methods": [
-        "unspecified"
-      ],
-      "role_families": [
-        "AI / Machine Learning"
-      ],
-      "roles": [
-        "AI Tinkerer"
-      ],
-      "company": "",
-      "locations": [],
-      "work_arrangement": "Unspecified",
-      "application_links": [],
-      "source_quality": "google_snippet"
-    },
-    {
       "id": "7527069833977577472",
       "linkedin_url": "https://www.linkedin.com/posts/iameuanmackay_were-hiring-lead-data-scientist-activity-7527069833977577472-cAvk",
       "author_name": "Euan Mackay",
@@ -3561,6 +4272,35 @@
       "source_quality": "full_post"
     },
     {
+      "id": "7527052319155453952",
+      "linkedin_url": "https://www.linkedin.com/posts/julianeagu_i-am-hiring-a-researcher-for-my-team-at-databricks-activity-7527052319155453952-zbcv",
+      "author_name": "Julia Neagu",
+      "author_profile_url": "https://www.linkedin.com/in/julianeagu",
+      "published_at": "2026-11-13T16:58:38.755Z",
+      "summary": "Databricks is hiring a Researcher for its AI Research team, focused on building self-improving agents and measuring complex systems.",
+      "post_type": "active_opening",
+      "poster_intent": "employer_hiring",
+      "target_role_match": "direct_target",
+      "poster_relationship": "hiring_manager",
+      "hiring_manager_name": "",
+      "contact_methods": [
+        "apply_link"
+      ],
+      "role_families": [
+        "Research"
+      ],
+      "roles": [
+        "Researcher"
+      ],
+      "company": "Databricks",
+      "locations": [],
+      "work_arrangement": "Unspecified",
+      "application_links": [
+        "https://www.databricks.com/company/careers/engineering---pipeline/sr-research-scientist---agent-flywheel-8940421002"
+      ],
+      "source_quality": "full_post"
+    },
+    {
       "id": "7527051107903262721",
       "linkedin_url": "https://www.linkedin.com/posts/susan-xiong_were-hiring-for-a-mid-to-senior-level-data-activity-7527051107903262721-hjlr",
       "author_name": "Susan Xiong",
@@ -3582,6 +4322,33 @@
         "Data Engineer / Analytics Engineer"
       ],
       "company": "EA",
+      "locations": [],
+      "work_arrangement": "Unspecified",
+      "application_links": [],
+      "source_quality": "full_post"
+    },
+    {
+      "id": "7527050962977370112",
+      "linkedin_url": "https://www.linkedin.com/posts/jeddy-lao_hiring-ai-activity-7527050962977370112-Tf9u",
+      "author_name": "Jeddy Lao",
+      "author_profile_url": "https://www.linkedin.com/in/jeddy-lao",
+      "published_at": "2026-11-13T16:53:15.416Z",
+      "summary": "A company is hiring its first Lead AI Engineer to lead the transition from data readiness to large-scale AI execution.",
+      "post_type": "active_opening",
+      "poster_intent": "employer_hiring",
+      "target_role_match": "direct_target",
+      "poster_relationship": "unknown",
+      "hiring_manager_name": "",
+      "contact_methods": [
+        "unspecified"
+      ],
+      "role_families": [
+        "AI / Machine Learning"
+      ],
+      "roles": [
+        "Lead AI Engineer"
+      ],
+      "company": "",
       "locations": [],
       "work_arrangement": "Unspecified",
       "application_links": [],
@@ -3725,6 +4492,65 @@
         "Data Operations & Insights Analyst"
       ],
       "company": "Tribe Connect",
+      "locations": [],
+      "work_arrangement": "Unspecified",
+      "application_links": [],
+      "source_quality": "full_post"
+    },
+    {
+      "id": "7527026218991243264",
+      "linkedin_url": "https://www.linkedin.com/posts/umeton_stjude-hiring-dataandai-activity-7527026218991243264-i6-M",
+      "author_name": "🧣 Renato Umeton, Ph.D. (Hiring in Memphis)",
+      "author_profile_url": "https://www.linkedin.com/in/umeton",
+      "published_at": "2026-11-13T15:14:55.991Z",
+      "summary": "St. Jude Children's Research Hospital is hiring a Director, Data and AI for a primarily remote role with quarterly time in Memphis.",
+      "post_type": "active_opening",
+      "poster_intent": "employer_hiring",
+      "target_role_match": "direct_target",
+      "poster_relationship": "hiring_manager",
+      "hiring_manager_name": "",
+      "contact_methods": [
+        "apply_link"
+      ],
+      "role_families": [
+        "AI / Machine Learning"
+      ],
+      "roles": [
+        "Director, Data and AI"
+      ],
+      "company": "St. Jude Children's Research Hospital",
+      "locations": [
+        "Remote"
+      ],
+      "work_arrangement": "Hybrid",
+      "application_links": [
+        "https://stjude.wd1.myworkdayjobs.com/en-US/stjude/job/Director--Data-and-AI_JR8053-2"
+      ],
+      "source_quality": "full_post"
+    },
+    {
+      "id": "7527004501875138560",
+      "linkedin_url": "https://www.linkedin.com/posts/ifernandezblanc_im-hiring-looking-for-a-%F0%9D%97%97%F0%9D%97%B6%F0%9D%97%BF%F0%9D%97%B2%F0%9D%97%B0%F0%9D%98%81%F0%9D%97%BC-activity-7527004501875138560-L-0e",
+      "author_name": "Iñigo Fernández del Amo Blanco",
+      "author_profile_url": "",
+      "published_at": "2026-11-13T13:48:38.226Z",
+      "summary": "TP is hiring a Director to lead Global Data Products Owners in a role focused on building and scaling trusted data products used by operations, clients, and AI.",
+      "post_type": "active_opening",
+      "poster_intent": "employer_hiring",
+      "target_role_match": "direct_target",
+      "poster_relationship": "hiring_manager",
+      "hiring_manager_name": "",
+      "contact_methods": [
+        "apply_link",
+        "dm"
+      ],
+      "role_families": [
+        "Data Engineering"
+      ],
+      "roles": [
+        "Director to lead our Global Data Products Owners"
+      ],
+      "company": "TP",
       "locations": [],
       "work_arrangement": "Unspecified",
       "application_links": [],
@@ -3904,6 +4730,35 @@
       "source_quality": "full_post"
     },
     {
+      "id": "7526911575274717184",
+      "linkedin_url": "https://www.linkedin.com/posts/vaibhavsisinty_im-looking-for-someone-who-is-obsessed-with-activity-7526911575274717184-C8H4",
+      "author_name": "Vaibhav Sisinty",
+      "author_profile_url": "",
+      "published_at": "2026-11-13T07:39:22.798Z",
+      "summary": "An employer is hiring an AI Tinkerer for an on-site role in Bengaluru to experiment with new AI tools and create educational content about real-world use cases.",
+      "post_type": "active_opening",
+      "poster_intent": "employer_hiring",
+      "target_role_match": "direct_target",
+      "poster_relationship": "hiring_manager",
+      "hiring_manager_name": "",
+      "contact_methods": [
+        "apply_link"
+      ],
+      "role_families": [
+        "AI / Machine Learning"
+      ],
+      "roles": [
+        "AI Tinkerer"
+      ],
+      "company": "",
+      "locations": [
+        "Bengaluru"
+      ],
+      "work_arrangement": "On-site",
+      "application_links": [],
+      "source_quality": "full_post"
+    },
+    {
       "id": "7526910752402665472",
       "linkedin_url": "https://www.linkedin.com/posts/bobby-fernandez-392a0026_aventusopportunities-headofdata-dataanalytics-activity-7526910752402665472-_hby",
       "author_name": "Bobby Fernandez",
@@ -3967,6 +4822,35 @@
       "source_quality": "full_post"
     },
     {
+      "id": "7526879870593691648",
+      "linkedin_url": "https://www.linkedin.com/posts/akshatmandloi_we-are-redefining-the-way-hiring-is-done-activity-7526879870593691648-8-oW",
+      "author_name": "Akshat Mandloi",
+      "author_profile_url": "https://www.linkedin.com/in/akshatmandloi",
+      "published_at": "2026-11-13T05:33:23.814Z",
+      "summary": "smallest.ai is hiring a Software Engineer to serve as QA, DevOps, and SRE in Bengaluru, on-site, with no resume or LeetCode required.",
+      "post_type": "active_opening",
+      "poster_intent": "employer_hiring",
+      "target_role_match": "direct_target",
+      "poster_relationship": "hiring_manager",
+      "hiring_manager_name": "",
+      "contact_methods": [
+        "apply_link"
+      ],
+      "role_families": [
+        "Other AI / Data"
+      ],
+      "roles": [
+        "Software Engineer"
+      ],
+      "company": "smallest.ai",
+      "locations": [
+        "Indiranagar, Bengaluru"
+      ],
+      "work_arrangement": "On-site",
+      "application_links": [],
+      "source_quality": "full_post"
+    },
+    {
       "id": "7526862428358287360",
       "linkedin_url": "https://www.linkedin.com/posts/nishi-panchal-60b6bb2a6_were-hiring-senior-aiml-leader-remote-activity-7526862428358287360-Dzs0",
       "author_name": "Nishi Panchal",
@@ -4000,6 +4884,35 @@
       "source_quality": "full_post"
     },
     {
+      "id": "7526836761763835904",
+      "linkedin_url": "https://www.linkedin.com/posts/likhit-hs-128226163_hiring-ai-machinelearning-activity-7526836761763835904-hrM4",
+      "author_name": "likhit HS",
+      "author_profile_url": "",
+      "published_at": "2026-11-13T02:42:05.868Z",
+      "summary": "An AI/ML Engineer role is open in Germany, focusing on building, deploying, and scaling production AI/ML solutions for SaaS and enterprise use cases.",
+      "post_type": "active_opening",
+      "poster_intent": "employer_hiring",
+      "target_role_match": "direct_target",
+      "poster_relationship": "hiring_manager",
+      "hiring_manager_name": "",
+      "contact_methods": [
+        "dm"
+      ],
+      "role_families": [
+        "AI / Machine Learning"
+      ],
+      "roles": [
+        "AI/ML Engineer"
+      ],
+      "company": "",
+      "locations": [
+        "Germany"
+      ],
+      "work_arrangement": "Unspecified",
+      "application_links": [],
+      "source_quality": "full_post"
+    },
+    {
       "id": "7526817245226778624",
       "linkedin_url": "https://www.linkedin.com/posts/patrick-mcloughlin01_hiring-govtech-maryland-activity-7526817245226778624-TmED",
       "author_name": "Patrick McLoughlin",
@@ -4025,6 +4938,69 @@
         "Maryland"
       ],
       "work_arrangement": "Unspecified",
+      "application_links": [],
+      "source_quality": "full_post"
+    },
+    {
+      "id": "7526810118101913600",
+      "linkedin_url": "https://www.linkedin.com/posts/tianyi-tim-zhang-38608435_were-hiring-an-entry-level-computer-vision-activity-7526810118101913600-P_Ow",
+      "author_name": "Tianyi (Tim) Zhang",
+      "author_profile_url": "https://www.linkedin.com/in/tianyi-tim-zhang-38608435",
+      "published_at": "2026-11-13T00:56:13.523Z",
+      "summary": "Apple is hiring an entry-level Computer Vision / Data Analytics contractor for a 6-month hybrid role in Cupertino to work on battery image and data analysis with engineers and data scientists.",
+      "post_type": "active_opening",
+      "poster_intent": "employer_hiring",
+      "target_role_match": "direct_target",
+      "poster_relationship": "unknown",
+      "hiring_manager_name": "",
+      "contact_methods": [
+        "email",
+        "comment"
+      ],
+      "role_families": [
+        "AI / Machine Learning"
+      ],
+      "roles": [
+        "entry-level Computer Vision / Data Analytics contractor"
+      ],
+      "company": "Apple",
+      "locations": [
+        "Cupertino"
+      ],
+      "work_arrangement": "Hybrid",
+      "application_links": [],
+      "source_quality": "full_post"
+    },
+    {
+      "id": "7526792243861606400",
+      "linkedin_url": "https://www.linkedin.com/posts/amirtahmasebi_hiring-if-you-are-interested-in-building-activity-7526792243861606400-SDoG",
+      "author_name": "Amir Tahmasebi",
+      "author_profile_url": "https://www.linkedin.com/in/amirtahmasebi",
+      "published_at": "2026-11-12T23:45:11.972Z",
+      "summary": "There are immediate openings for Staff Data Engineer, Staff ML Engineer, Staff ML Scientist, and Staff MLOps Engineer on a Foundation AI team in Irvine, CA, with an on-site requirement.",
+      "post_type": "active_opening",
+      "poster_intent": "employer_hiring",
+      "target_role_match": "direct_target",
+      "poster_relationship": "hiring_manager",
+      "hiring_manager_name": "",
+      "contact_methods": [
+        "apply_link"
+      ],
+      "role_families": [
+        "Data Engineering",
+        "AI / Machine Learning"
+      ],
+      "roles": [
+        "Staff Data Engineer",
+        "Staff ML Engineer",
+        "Staff ML Scientist",
+        "Staff MLOps Engineer"
+      ],
+      "company": "",
+      "locations": [
+        "Irvine, CA"
+      ],
+      "work_arrangement": "On-site",
       "application_links": [],
       "source_quality": "full_post"
     },
@@ -4083,31 +5059,91 @@
       "source_quality": "google_snippet"
     },
     {
-      "id": "7526315025213575168",
-      "linkedin_url": "https://www.linkedin.com/posts/dj-davis_hiring-nowhiring-techhiring-activity-7526315025213575168-qjlT",
-      "author_name": "LinkedIn author",
+      "id": "7526749004819341312",
+      "linkedin_url": "https://www.linkedin.com/posts/mike-whitaker-038a521b3_hiring-etrading-fintech-activity-7526749004819341312--hUn",
+      "author_name": "Mike Whitaker",
       "author_profile_url": "",
-      "published_at": "2026-11-12T16:23:24Z",
-      "summary": "The post announces hiring across machine learning, AI, and data roles as part of company growth, with no specific positions or locations named.",
-      "post_type": "general_hiring",
+      "published_at": "2026-11-12T20:53:22.981Z",
+      "summary": "Hiring AI-fluent e-trading development leads for Rates, Credit, and FX roles based in New York, requiring hands-on leadership and practical AI use in development workflows.",
+      "post_type": "active_opening",
       "poster_intent": "employer_hiring",
-      "target_role_match": "mixed_with_target",
+      "target_role_match": "direct_target",
+      "poster_relationship": "hiring_manager",
+      "hiring_manager_name": "",
+      "contact_methods": [
+        "dm"
+      ],
+      "role_families": [
+        "AI / Machine Learning"
+      ],
+      "roles": [
+        "AI-Fluent E-Trading Dev Leads"
+      ],
+      "company": "",
+      "locations": [
+        "New York, NY"
+      ],
+      "work_arrangement": "On-site",
+      "application_links": [],
+      "source_quality": "full_post"
+    },
+    {
+      "id": "7526673913704071168",
+      "linkedin_url": "https://www.linkedin.com/posts/james-vinocur-1a76871_hiring-baxter-analyst-activity-7526673913704071168-1O3i",
+      "author_name": "James Vinocur",
+      "author_profile_url": "https://www.linkedin.com/in/james-vinocur-1a76871",
+      "published_at": "2026-11-12T15:54:59.865Z",
+      "summary": "Baxter is hiring an analyst for its Digital Trust & Risk team to support AI Governance and global Privacy programs in a remote role.",
+      "post_type": "active_opening",
+      "poster_intent": "employer_hiring",
+      "target_role_match": "direct_target",
       "poster_relationship": "unknown",
       "hiring_manager_name": "",
       "contact_methods": [
         "unspecified"
       ],
       "role_families": [
+        "AI Security"
+      ],
+      "roles": [
+        "analyst"
+      ],
+      "company": "Baxter",
+      "locations": [
+        "Remote"
+      ],
+      "work_arrangement": "Remote",
+      "application_links": [],
+      "source_quality": "full_post"
+    },
+    {
+      "id": "7526660077483765760",
+      "linkedin_url": "https://www.linkedin.com/posts/catherinebushong_ai-hiring-aideveloper-activity-7526660077483765760-vLNl",
+      "author_name": "Catherine “Cat” Bushong",
+      "author_profile_url": "https://www.linkedin.com/in/catherinebushong",
+      "published_at": "2026-11-12T15:00:01.052Z",
+      "summary": "Vernovis is hiring an AI Developer for an onsite role in Cincinnati, OH, with a focus on Generative AI, LLMs, and RAG architecture.",
+      "post_type": "active_opening",
+      "poster_intent": "employer_hiring",
+      "target_role_match": "direct_target",
+      "poster_relationship": "hiring_manager",
+      "hiring_manager_name": "",
+      "contact_methods": [
+        "apply_link"
+      ],
+      "role_families": [
         "AI / Machine Learning"
       ],
       "roles": [
-        "machine learning"
+        "AI Developer"
       ],
-      "company": "",
-      "locations": [],
-      "work_arrangement": "Unspecified",
+      "company": "Vernovis",
+      "locations": [
+        "Cincinnati, OH"
+      ],
+      "work_arrangement": "On-site",
       "application_links": [],
-      "source_quality": "google_snippet"
+      "source_quality": "full_post"
     },
     {
       "id": "7526654991647002624",
@@ -4135,6 +5171,37 @@
         "Remote"
       ],
       "work_arrangement": "Remote",
+      "application_links": [],
+      "source_quality": "full_post"
+    },
+    {
+      "id": "7526643780133847040",
+      "linkedin_url": "https://www.linkedin.com/posts/achalchannarasappa_hiring-forwarddeployedengineer-ai-activity-7526643780133847040-lhSK",
+      "author_name": "Achal Channarasappa",
+      "author_profile_url": "https://www.linkedin.com/in/achalchannarasappa",
+      "published_at": "2026-11-12T13:55:15.461Z",
+      "summary": "Achal Channarasappa is hiring Forward Deployed Engineers for hybrid roles in San Francisco, New York, or Austin, focused on deploying AI engineers (Devin) within financial institutions and leading AI-driven software development lifecycle transformation.",
+      "post_type": "active_opening",
+      "poster_intent": "employer_hiring",
+      "target_role_match": "direct_target",
+      "poster_relationship": "hiring_manager",
+      "hiring_manager_name": "",
+      "contact_methods": [
+        "dm"
+      ],
+      "role_families": [
+        "AI / Machine Learning"
+      ],
+      "roles": [
+        "Forward Deployed Engineer"
+      ],
+      "company": "",
+      "locations": [
+        "San Francisco, CA",
+        "New York, NY",
+        "Austin, TX"
+      ],
+      "work_arrangement": "Hybrid",
       "application_links": [],
       "source_quality": "full_post"
     },
@@ -4225,6 +5292,36 @@
       "source_quality": "full_post"
     },
     {
+      "id": "7526601903766589441",
+      "linkedin_url": "https://www.linkedin.com/posts/ashwini-k-4a9756ba_hi-all-we-are-hiring-sr-data-scientist-activity-7526601903766589441-t33O",
+      "author_name": "Ashwini K",
+      "author_profile_url": "",
+      "published_at": "2026-11-12T11:08:51.358Z",
+      "summary": "Hiring for Sr. Data Scientist and Lead Data Scientist roles in Gurgaon, requiring 4–10 years of experience and expertise in pharmaceutical/life sciences data science, including end-to-end ML model development and Real World Evidence use cases.",
+      "post_type": "active_opening",
+      "poster_intent": "employer_hiring",
+      "target_role_match": "direct_target",
+      "poster_relationship": "hiring_manager",
+      "hiring_manager_name": "",
+      "contact_methods": [
+        "email"
+      ],
+      "role_families": [
+        "Data Science"
+      ],
+      "roles": [
+        "Sr. Data Scientist",
+        "Lead Data Scientist"
+      ],
+      "company": "",
+      "locations": [
+        "Gurgaon"
+      ],
+      "work_arrangement": "Unspecified",
+      "application_links": [],
+      "source_quality": "full_post"
+    },
+    {
       "id": "7526208413857632256",
       "linkedin_url": "https://www.linkedin.com/posts/spirorokos_were-hiring-for-a-senior-software-engineer-activity-7526208413857632256-dLh4",
       "author_name": "LinkedIn author",
@@ -4252,6 +5349,122 @@
       "work_arrangement": "Unspecified",
       "application_links": [],
       "source_quality": "google_snippet"
+    },
+    {
+      "id": "7526549994019938304",
+      "linkedin_url": "https://www.linkedin.com/posts/chun-kit-teh_hiring-datascientist-aiengineer-activity-7526549994019938304-vkkh",
+      "author_name": "Chun Kit Teh",
+      "author_profile_url": "",
+      "published_at": "2026-11-12T07:42:35.109Z",
+      "summary": "A recruiter is hiring for Data Scientist and AI/Machine Learning Engineer roles in Petaling Jaya, Malaysia, on a 12-month contract with enterprise-scale AI and analytics projects.",
+      "post_type": "active_opening",
+      "poster_intent": "recruiting_for_client",
+      "target_role_match": "direct_target",
+      "poster_relationship": "unknown",
+      "hiring_manager_name": "",
+      "contact_methods": [
+        "email",
+        "dm",
+        "apply_link"
+      ],
+      "role_families": [
+        "Data Science",
+        "AI / Machine Learning"
+      ],
+      "roles": [
+        "Data Scientist",
+        "AI / Machine Learning Engineer"
+      ],
+      "company": "",
+      "locations": [
+        "Petaling Jaya, Malaysia"
+      ],
+      "work_arrangement": "On-site",
+      "application_links": [],
+      "source_quality": "full_post"
+    },
+    {
+      "id": "7526459769809805313",
+      "linkedin_url": "https://www.linkedin.com/posts/barbarasheakenny_were-hiring-a-senior-data-engineer-at-uconnect-activity-7526459769809805313-Wsh9",
+      "author_name": "Barbara Kenny",
+      "author_profile_url": "https://www.linkedin.com/in/barbarasheakenny",
+      "published_at": "2026-11-12T01:44:03.982Z",
+      "summary": "uConnect is hiring a Senior Data Engineer. The role focuses on connecting student engagement to outcomes and supporting career services with data insights.",
+      "post_type": "active_opening",
+      "poster_intent": "employer_hiring",
+      "target_role_match": "direct_target",
+      "poster_relationship": "unknown",
+      "hiring_manager_name": "",
+      "contact_methods": [
+        "dm"
+      ],
+      "role_families": [
+        "Data Engineering"
+      ],
+      "roles": [
+        "Senior Data Engineer"
+      ],
+      "company": "uConnect",
+      "locations": [],
+      "work_arrangement": "Unspecified",
+      "application_links": [],
+      "source_quality": "full_post"
+    },
+    {
+      "id": "7526397191460978688",
+      "linkedin_url": "https://www.linkedin.com/posts/abhishek-pradhan-b52a09237_were-hiring-senior-data-scientist-activity-7526397191460978688-rfMU",
+      "author_name": "Abhishek Pradhan",
+      "author_profile_url": "https://www.linkedin.com/in/abhishek-pradhan-b52a09237",
+      "published_at": "2026-11-11T21:35:24.140Z",
+      "summary": "A Senior Data Scientist role is open in Arden Hills, MN, with a hybrid work arrangement and a requirement for local candidates with a valid driver's license. Contact via email to apply.",
+      "post_type": "active_opening",
+      "poster_intent": "employer_hiring",
+      "target_role_match": "direct_target",
+      "poster_relationship": "unknown",
+      "hiring_manager_name": "",
+      "contact_methods": [
+        "email"
+      ],
+      "role_families": [
+        "Data Science"
+      ],
+      "roles": [
+        "Senior Data Scientist"
+      ],
+      "company": "",
+      "locations": [
+        "Arden Hills, MN"
+      ],
+      "work_arrangement": "Hybrid",
+      "application_links": [],
+      "source_quality": "full_post"
+    },
+    {
+      "id": "7526352010648977408",
+      "linkedin_url": "https://www.linkedin.com/posts/hannah-twomey-a60a37180_hiring-forwarddeployedengineer-legaltech-activity-7526352010648977408-Ll3c",
+      "author_name": "Hannah Twomey",
+      "author_profile_url": "https://www.linkedin.com/in/hannah-twomey-a60a37180",
+      "published_at": "2026-11-11T18:35:52.196Z",
+      "summary": "A recruiter is hiring 50 Forward Deployed Engineers for an enterprise client building AI products for legal teams, including roles for software engineers with AI experience and for lawyers who can prototype with AI tools.",
+      "post_type": "active_opening",
+      "poster_intent": "recruiting_for_client",
+      "target_role_match": "mixed_with_target",
+      "poster_relationship": "unknown",
+      "hiring_manager_name": "",
+      "contact_methods": [
+        "unspecified"
+      ],
+      "role_families": [
+        "AI / Machine Learning"
+      ],
+      "roles": [
+        "Forward Deployed Engineer"
+      ],
+      "company": "",
+      "locations": [],
+      "work_arrangement": "Unspecified",
+      "application_links": [],
+      "source_quality": "full_post"
     },
     {
       "id": "7526348468638892033",
@@ -4306,6 +5519,33 @@
         "United States"
       ],
       "work_arrangement": "Remote",
+      "application_links": [],
+      "source_quality": "full_post"
+    },
+    {
+      "id": "7526343578558730240",
+      "linkedin_url": "https://www.linkedin.com/posts/tyler-ponte-4bb8a4a8_were-hiring-principal-ai-engineers-please-activity-7526343578558730240-8UXG",
+      "author_name": "Tyler Ponte",
+      "author_profile_url": "https://www.linkedin.com/in/tyler-ponte-4bb8a4a8",
+      "published_at": "2026-11-11T18:02:21.828Z",
+      "summary": "Hiring Principal AI Engineers; interested candidates are encouraged to reach out directly.",
+      "post_type": "active_opening",
+      "poster_intent": "employer_hiring",
+      "target_role_match": "direct_target",
+      "poster_relationship": "unknown",
+      "hiring_manager_name": "",
+      "contact_methods": [
+        "dm"
+      ],
+      "role_families": [
+        "AI / Machine Learning"
+      ],
+      "roles": [
+        "Principal AI Engineers"
+      ],
+      "company": "",
+      "locations": [],
+      "work_arrangement": "Unspecified",
       "application_links": [],
       "source_quality": "full_post"
     },
@@ -4534,6 +5774,33 @@
       "source_quality": "google_snippet"
     },
     {
+      "id": "7525954202888519680",
+      "linkedin_url": "https://www.linkedin.com/posts/liutongli_im-hiring-another-position-this-time-for-activity-7525954202888519680-RN1g",
+      "author_name": "Lauren (Liutong) Li",
+      "author_profile_url": "https://www.linkedin.com/in/liutongli",
+      "published_at": "2026-11-10T16:15:07.434Z",
+      "summary": "The author is hiring for an AI UX and product design role and invites interested candidates to reach out to them and Mansoor Malik.",
+      "post_type": "active_opening",
+      "poster_intent": "employer_hiring",
+      "target_role_match": "direct_target",
+      "poster_relationship": "hiring_manager",
+      "hiring_manager_name": "",
+      "contact_methods": [
+        "dm"
+      ],
+      "role_families": [
+        "AI / Machine Learning"
+      ],
+      "roles": [
+        "AI UX and product design"
+      ],
+      "company": "",
+      "locations": [],
+      "work_arrangement": "Unspecified",
+      "application_links": [],
+      "source_quality": "full_post"
+    },
+    {
       "id": "7525751307404464128",
       "linkedin_url": "https://www.linkedin.com/posts/kavishsoningra_were-hiring-an-ai-engineer-at-altops-activity-7525751307404464128-ZdU6",
       "author_name": "LinkedIn author",
@@ -4563,6 +5830,33 @@
       "source_quality": "google_snippet"
     },
     {
+      "id": "7525881204840038400",
+      "linkedin_url": "https://www.linkedin.com/posts/divyaguptalamba_and-back-again-were-hiring-ai-red-teamers-activity-7525881204840038400-DqRL",
+      "author_name": "Divya Gupta Lamba",
+      "author_profile_url": "",
+      "published_at": "2026-11-10T11:25:03.344Z",
+      "summary": "EY GDS is hiring AI red teamers to conduct adversarial testing of LLMs and agentic workflows as part of its AI governance practice.",
+      "post_type": "active_opening",
+      "poster_intent": "employer_hiring",
+      "target_role_match": "direct_target",
+      "poster_relationship": "hiring_manager",
+      "hiring_manager_name": "",
+      "contact_methods": [
+        "dm"
+      ],
+      "role_families": [
+        "AI Security"
+      ],
+      "roles": [
+        "AI red teamers"
+      ],
+      "company": "EY GDS",
+      "locations": [],
+      "work_arrangement": "Unspecified",
+      "application_links": [],
+      "source_quality": "full_post"
+    },
+    {
       "id": "7525823994713825280",
       "linkedin_url": "https://www.linkedin.com/posts/saniya-malik-74a2351b1_were-hiring-fresh-graduates-data-analytics-activity-7525823994713825280-kHOs",
       "author_name": "LinkedIn author",
@@ -4590,6 +5884,39 @@
       "work_arrangement": "Unspecified",
       "application_links": [],
       "source_quality": "google_snippet"
+    },
+    {
+      "id": "7525786619509936128",
+      "linkedin_url": "https://www.linkedin.com/posts/jovezhong_fde-hiring-ai-activity-7525786619509936128-CUz6",
+      "author_name": "Jove Zhong",
+      "author_profile_url": "",
+      "published_at": "2026-11-10T05:09:12.444Z",
+      "summary": "Cresta is hiring Forward Deployed Engineers globally to build production AI agents and improve its AI platform, with roles across North America, Europe, and APAC.",
+      "post_type": "active_opening",
+      "poster_intent": "employer_hiring",
+      "target_role_match": "direct_target",
+      "poster_relationship": "hiring_manager",
+      "hiring_manager_name": "",
+      "contact_methods": [
+        "dm"
+      ],
+      "role_families": [
+        "AI / Machine Learning"
+      ],
+      "roles": [
+        "Forward Deployed Engineer"
+      ],
+      "company": "Cresta",
+      "locations": [
+        "London, UK",
+        "Tokyo, Japan",
+        "North America",
+        "Europe",
+        "APAC"
+      ],
+      "work_arrangement": "Unspecified",
+      "application_links": [],
+      "source_quality": "full_post"
     },
     {
       "id": "7525658292388347904",
@@ -4640,63 +5967,6 @@
       ],
       "roles": [
         "Lead Product Owner, RGM"
-      ],
-      "company": "",
-      "locations": [],
-      "work_arrangement": "Unspecified",
-      "application_links": [],
-      "source_quality": "google_snippet"
-    },
-    {
-      "id": "7524691859684687872",
-      "linkedin_url": "https://www.linkedin.com/posts/amilcar-gomes-7625895_were-hiring-aicgi-artist-full-time-freelance-activity-7524691859684687872-lQF0",
-      "author_name": "LinkedIn author",
-      "author_profile_url": "",
-      "published_at": "2026-11-08T05:18:10Z",
-      "summary": "L'Oréal is hiring an AI/CGI Artist; Naveen Bhati is hiring an AI QA Engineer; and a Senior Director – Autonomous Supply Chain Data role is open. The AI QA Engineer and Senior Director roles are relevant to AI/data hiring.",
-      "post_type": "active_opening",
-      "poster_intent": "employer_hiring",
-      "target_role_match": "mixed_with_target",
-      "poster_relationship": "unknown",
-      "hiring_manager_name": "",
-      "contact_methods": [
-        "unspecified"
-      ],
-      "role_families": [
-        "AI / Machine Learning",
-        "Data Engineering"
-      ],
-      "roles": [
-        "AI QA Engineer",
-        "Senior Director – Autonomous Supply Chain Data"
-      ],
-      "company": "L'Oréal",
-      "locations": [],
-      "work_arrangement": "Unspecified",
-      "application_links": [],
-      "source_quality": "google_snippet"
-    },
-    {
-      "id": "7524407330457702400",
-      "linkedin_url": "https://www.linkedin.com/posts/naveenbhati_im-hiring-an-ai-qa-engineer-if-youre-activity-7524407330457702400-M8cq",
-      "author_name": "LinkedIn author",
-      "author_profile_url": "",
-      "published_at": "2026-11-08T05:18:10Z",
-      "summary": "Multiple roles are posted, including AI QA Engineer and Customer Support AI Engineer, which are target roles in AI/ML; the Senior Director – Autonomous Supply Chain Data role does not qualify as a target role. Companies and locations are unspecified.",
-      "post_type": "active_opening",
-      "poster_intent": "employer_hiring",
-      "target_role_match": "mixed_with_target",
-      "poster_relationship": "unknown",
-      "hiring_manager_name": "",
-      "contact_methods": [
-        "unspecified"
-      ],
-      "role_families": [
-        "AI / Machine Learning"
-      ],
-      "roles": [
-        "AI QA Engineer",
-        "Customer Support AI Engineer"
       ],
       "company": "",
       "locations": [],
@@ -4786,147 +6056,6 @@
         "Remote"
       ],
       "work_arrangement": "Remote",
-      "application_links": [],
-      "source_quality": "google_snippet"
-    },
-    {
-      "id": "7524104188918755329",
-      "linkedin_url": "https://www.linkedin.com/posts/ottosoderlund_were-hiring-an-aiml-engineer-at-supercell-activity-7524104188918755329-Ombz",
-      "author_name": "LinkedIn author",
-      "author_profile_url": "",
-      "published_at": "2026-11-07T05:23:47Z",
-      "summary": "Supercell is hiring an AI/ML Engineer in Helsinki; another opening for an AI/ML Engineer is listed at HireKayana for a regulated banking platform.",
-      "post_type": "active_opening",
-      "poster_intent": "employer_hiring",
-      "target_role_match": "direct_target",
-      "poster_relationship": "unknown",
-      "hiring_manager_name": "",
-      "contact_methods": [
-        "unspecified"
-      ],
-      "role_families": [
-        "AI / Machine Learning"
-      ],
-      "roles": [
-        "AI/ML Engineer"
-      ],
-      "company": "Supercell",
-      "locations": [
-        "Helsinki"
-      ],
-      "work_arrangement": "Unspecified",
-      "application_links": [],
-      "source_quality": "google_snippet"
-    },
-    {
-      "id": "7524447747664609280",
-      "linkedin_url": "https://www.linkedin.com/posts/florian-scherl_we-are-hiring-our-final-founding-ai-engineer-activity-7524447747664609280-DB0M",
-      "author_name": "LinkedIn author",
-      "author_profile_url": "",
-      "published_at": "2026-11-07T01:39:48Z",
-      "summary": "explaino is hiring a Founding AI Engineer, Meta is hiring Staff+ Data Engineers, and Birlasoft is hiring a Data Analyst in Bengaluru; only the first two roles are relevant AI/data roles.",
-      "post_type": "active_opening",
-      "poster_intent": "employer_hiring",
-      "target_role_match": "mixed_with_target",
-      "poster_relationship": "unknown",
-      "hiring_manager_name": "",
-      "contact_methods": [
-        "dm"
-      ],
-      "role_families": [
-        "AI / Machine Learning",
-        "Data Engineering"
-      ],
-      "roles": [
-        "Founding AI Engineer",
-        "Staff+ Data Engineers"
-      ],
-      "company": "explaino",
-      "locations": [
-        "Unspecified"
-      ],
-      "work_arrangement": "Unspecified",
-      "application_links": [],
-      "source_quality": "google_snippet"
-    },
-    {
-      "id": "7524098104946548736",
-      "linkedin_url": "https://www.linkedin.com/posts/shahid-hassan-3369b7217_were-hiring-senior-ai-engineer-intagleo-activity-7524098104946548736-dOOY",
-      "author_name": "LinkedIn author",
-      "author_profile_url": "",
-      "published_at": "2026-11-06T17:53:19Z",
-      "summary": "Intagleo Systems is hiring a Senior AI Engineer, a role focused on AI/ML engineering and Generative AI, with an application link provided.",
-      "post_type": "active_opening",
-      "poster_intent": "employer_hiring",
-      "target_role_match": "direct_target",
-      "poster_relationship": "unknown",
-      "hiring_manager_name": "",
-      "contact_methods": [
-        "apply_link"
-      ],
-      "role_families": [
-        "AI / Machine Learning"
-      ],
-      "roles": [
-        "Senior AI Engineer"
-      ],
-      "company": "Intagleo Systems",
-      "locations": [],
-      "work_arrangement": "Unspecified",
-      "application_links": [],
-      "source_quality": "google_snippet"
-    },
-    {
-      "id": "7524451485644898304",
-      "linkedin_url": "https://www.linkedin.com/posts/paypeople_paypeoplepodcast-hrempowerment-recruitmentandselection-activity-7524451485644898304-nO8m",
-      "author_name": "LinkedIn author",
-      "author_profile_url": "",
-      "published_at": "2026-11-06T16:52:56Z",
-      "summary": "Nevis is hiring a Data Engineer to work on the world's first AI wealth system.",
-      "post_type": "active_opening",
-      "poster_intent": "employer_hiring",
-      "target_role_match": "direct_target",
-      "poster_relationship": "unknown",
-      "hiring_manager_name": "",
-      "contact_methods": [
-        "unspecified"
-      ],
-      "role_families": [
-        "Data Engineering"
-      ],
-      "roles": [
-        "Data Engineer"
-      ],
-      "company": "Nevis",
-      "locations": [],
-      "work_arrangement": "Unspecified",
-      "application_links": [],
-      "source_quality": "google_snippet"
-    },
-    {
-      "id": "7524437684388577280",
-      "linkedin_url": "https://www.linkedin.com/posts/valiotti_hiring-your-first-data-analyst-wont-fix-activity-7524437684388577280-VBr5",
-      "author_name": "LinkedIn author",
-      "author_profile_url": "",
-      "published_at": "2026-11-06T15:53:57Z",
-      "summary": "The Data and Web Science Group at the University of Mannheim is hiring a PhD or PostDoc researcher focused on neurosymbolic and trustworthy AI.",
-      "post_type": "active_opening",
-      "poster_intent": "employer_hiring",
-      "target_role_match": "direct_target",
-      "poster_relationship": "hiring_manager",
-      "hiring_manager_name": "",
-      "contact_methods": [
-        "unspecified"
-      ],
-      "role_families": [
-        "AI / Machine Learning"
-      ],
-      "roles": [
-        "PhD or PostDoc researcher"
-      ],
-      "company": "University of Mannheim",
-      "locations": [],
-      "work_arrangement": "Unspecified",
       "application_links": [],
       "source_quality": "google_snippet"
     }
